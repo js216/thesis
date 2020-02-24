@@ -1,9 +1,8 @@
 \documentclass{article}
 
 % page format
-\usepackage[letterpaper, twocolumn, left=1.7cm, right=1.7cm, top=1.4cm, bottom=1.8cm]{geometry}
+\usepackage[letterpaper, twocolumn, left=1.7cm, right=1.7cm, top=1.4cm, bottom=2.2cm]{geometry}
 \setlength{\columnsep}{1.85em}
-\usepackage{mathptmx}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage{microtype}
 \linespread{1.1}
@@ -11,6 +10,7 @@
 
 % section title formatting
 \usepackage[explicit]{titlesec}
+\usepackage{bold-extra}
 \renewcommand{\thesection}{\Roman{section}} 
 \titleformat{\section}
    {\normalfont\small\bfseries\filcenter}
@@ -45,7 +45,7 @@
 \usepackage{pgfplots}
 
 % math
-\usepackage{amsmath, amssymb, amsthm, bm}
+\usepackage{amsmath, amssymb, amsthm, bm, nicefrac}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\ex}[1]{\langle #1\rangle}
@@ -85,6 +85,8 @@
 
              O. Grasdijk, O. Timgren, J. Kastelic, T. Wright, D. DeMille
 
+             \todo{other people?}
+
              {\it\small Physics Department, Yale University, New Haven, Connecticut 06511}
           \end{minipage}
 
@@ -112,12 +114,13 @@
 
 \section{Introduction}
 
-\noindent
-The \CENTREX\ experiment aims to employ a molecular-beam resonance technique to
-measure the nuclear Schiff moment of $^{205}\Tl$ in thallium fluoride as a test
-of physics beyond the Standard Model. In the following, I outline the motivation
-from $CP$-violation and baryon asymmetry, define the Schiff moment, review
-related experiments, and present the techniques used in our measurement scheme.
+\noindent The \CENTREX\ experiment aims to employ a molecular-beam resonance
+technique to measure the nuclear Schiff moment of $^{205}\Tl$ in thallium
+fluoride as a test of physics beyond the Standard Model. In the following, I
+outline the motivation from $CP$-violation and baryon asymmetry, define the
+Schiff moment and suggest how it can be measured, review relevant features of
+the TlF molecule, and present previous experiments and the measurement scheme
+proposed in this work.
 
 \paragraph{Motivation}
 
@@ -132,7 +135,7 @@ It has been found since that while most processes preserve $CP$, certain rare
 weak interactions violate it as observed in neutral $K$ decays at the 0.003
 level \cite{christenson1964evidence} and other systems, where it can be as high
 as 0.7. \cite[chapter 13]{PDG16}. To account for the experimental evidence, the
-flavor-changing part of the starndard model quark sector includes a
+flavor-changing part of the standard model quark sector includes a
 \CPV\ phase in the \CKM\ quark-mixing matrix. \cite{peccei1995} This
 so-called Kobayashi--Maskawa mechanism, which introduced the third quark
 generation precisely to explain \CPV\ \cite{kobayashi1973cp},
@@ -156,12 +159,12 @@ possible solutions.
 
 At present, searches for \EDM s give the most sensitive constraints on
 flavor-diagonal \CPV. Conversely, given a particle physics model with
-\CPV\ we can predict what the expected \EDM\ of particles is. For
+\CPV\ we can predict what the expected \EDM\ of the particles is. For
 example, in the Standard Model, the \CKM\ phase can produce a lepton \EDM\ no
 larger than $10^{-38}\;e\cm$. Part of the reason the \EDM\ is so suppressed is
-that it cannot appear in the below the four-loop level.
+that it cannot appear below the four-loop level.
 \cite{pospelov1991electric} Given how small these effects are in the Standard
-Model, \EDM\ s thus provide nearly background-free
+Model, \EDM s thus provide nearly background-free
 evidence of new physics. In fact, the \CKM\ background would only become
 apparent when probing effects beyond the energy scale of $10^{11}\GeV$.
 \cite{pospelov2005electric}
@@ -169,7 +172,7 @@ apparent when probing effects beyond the energy scale of $10^{11}\GeV$.
 The second major motivation for searching for new physics comes from the baryon
 asymmetry of the unverse (\BAU). Compared to the current number density of photons in
 the universe ($n_\gamma \approx411\cm^{-3}$), the current baryons density
-($n_\text{B}\approx2.54\cdot 10^{-7}\cm^{-3}$) is some $6.19\cdot10^{-10}$ times
+($n_\text{B}\approx2.54\cdot 10^{-7}\cm^{-3}$) is some $1.6\cdot10^{9}$ times
 smaller \cite[Table 17]{bennett2013nine}. In contrast, the antibaryon density
 $n_{\bar{\text{B}}}$ is smaller still; the range of upper bounds for the
 antimatter-to-matter number ratio has been reported as $10^{-15}$ to $10^{-6}$
@@ -227,7 +230,7 @@ are needed.
 
 \paragraph{Schiff moment}
 
-The additional $CP$-violating forces would likely give rise to a nuclear \EDM,
+Additional $CP$-violating forces would likely give rise to a nuclear \EDM,
 whether through the \EDM\ of unpaired protons or neutrons, via \CPV\
 interactions between valence nucleons and the core of the nucleus, or other
 mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a
@@ -242,62 +245,6 @@ preferred direction in a nucleus, the dipole moment also has to point along it:
 $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the
 spin would flip direction. Assuming $CPT$ to be a good symmetry, the
 $T$-violation then leads to the $CP$-violation.
-
-However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus
-would not be observable outside of the atom. More precisely, the interaction
-energy of nonrelativistic point charged electric dipoles in an arbitrary
-external electrostatic potential has no term linear in the \EDM; relativistic
-and second-order effects are extremely small \cite{schiff1963measurability}.
-Physically, the system rearranges itself so as to screen the external field
-completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if
-existent, would be very hard to detect experimentally without a mechanism to
-bypass Schiff's theorem.
-
-In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite
-size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in
-the form \cite[eqn~22]{sushkov1984possibility}
-%
-\begin{equation}
-   \delta\phi=e\int
-   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
-   +\frac{1}{Z}(\vec d\nabla)\int
-   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
-\end{equation}
-%
-where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution.  The
-second term is responsible for the screening since it exactly cancels out the
-potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility},
-the above potential may, under certain assumptions, be written in the form
-%
-\begin{equation}
-   \label{nabla}
-   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
-\end{equation}
-%
-where $\vec S$ is the Schiff moment (\SMt)
-%
-\begin{equation}
-   \label{simpleSchiffMoment}
-   \vec S=\frac{e}{10}
-   \left[
-      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
-   \right].
-\end{equation}
-
-To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the
-definition of the delta function as the limit of Gaussian distributions:
-$\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the
-derivative of the Gaussian, we get a certain shape that is negative for $r<0$,
-positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That
-shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area
-constant, is then representative of $\nabla\delta(\vec R)$.
-
-We may think of eqns~\ref{nabla}--\ref{simpleSchiffMoment} as the potential due
-to a constant electric field along the direction of the nuclear spin $\hat I$
-inside a nucleus of radius $R$. This potential is linear in the coordinate $r$,
-truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small
-nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the
-expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
 
 \begin{figure}
    \centering
@@ -454,6 +401,63 @@ expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
    \label{graddelta}
 \end{figure}
 
+
+However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus
+would not be observable outside of the atom. More precisely, the interaction
+energy of nonrelativistic point charged electric dipoles in an arbitrary
+external electrostatic potential has no term linear in the \EDM; relativistic
+and second-order effects are extremely small \cite{schiff1963measurability}.
+Physically, the system rearranges itself so as to screen the external field
+completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if
+existent, would be very hard to detect experimentally without a mechanism to
+bypass Schiff's theorem.
+
+In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite
+size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in
+the form \cite[eqn~22]{sushkov1984possibility}
+%
+\begin{equation}
+   \delta\phi=e\int
+   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
+   +\frac{1}{Z}(\vec d\nabla)\int
+   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
+\end{equation}
+%
+where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution. The
+second term is responsible for the screening since it exactly cancels out the
+potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility},
+the above potential may, under certain assumptions, be written in the form
+%
+\begin{equation}
+   \label{nabla}
+   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
+\end{equation}
+%
+where $\vec S$ is the Schiff moment (\SMt)
+%
+\begin{equation}
+   \label{simpleSchiffMoment}
+   \vec S=\frac{e}{10}
+   \left[
+      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
+   \right].
+\end{equation}
+
+To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the
+definition of the delta function as the limit of Gaussian distributions:
+$\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the
+derivative of the Gaussian, we get a certain shape that is negative for $r<0$,
+positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That
+shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area
+constant, is then representative of $\nabla\delta(\vec R)$.
+
+We may think of eqns~\ref{nabla}--\ref{simpleSchiffMoment} as the potential due
+to a constant electric field along the direction of the nuclear spin $\hat I$
+inside a nucleus of radius $R$. This potential is linear in the coordinate $r$,
+truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small
+nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the
+expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
+
 A more sophisticated approach using the spherical multipole formalism gives a
 more general form for the leading-order Schiff moment operator which reduces to
 eqn~\ref{simpleSchiffMoment} under certain assumptions. As discussed in
@@ -478,58 +482,41 @@ an upper bound on the nucleon's \EDM\ since the nucleonic contribution to the
 interactions between valence nucleons and the core.
 \cite{sushkov1984possibility}
 
-Schiff moment and other $P,T$-violating effects give rise to an effective
-interaction of form
+\paragraph{Molecular techniques}
+
+For nuclei inside a molecule, the Schiff moment and other $P,T$-violating
+effects give rise to an effective interaction of form
 %
 \begin{equation}
    \label{interaction}
-   \H=-d\sigma\cdot\hat\lambda,
+   \H=-d\hat\sigma\cdot\hat\lambda,
 \end{equation}
 %
-where $\hbar\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vector
-along the internuclear axis in the molecule. The interaction strength can
-then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment,
-or other quantities. For example, \cite[eqn~26]{cho1991search} make use of a
-calculation from \cite{coveney1983parity} to obtain the Schiff moment $S$ from
-the interaction strength $d$:
+where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit
+vector along the internuclear axis in the molecule (in TlF, pointing towards the
+F nucleus). The interaction strength $d$, also written in frequency units as
+$\nu\equiv d/h$, can then be interpreted in terms of a molecular \EDM, proton
+\EDM, Schiff moment, or other quantities. For example,
+\cite[eqn~26]{cho1991search} use a calculation from \cite{coveney1983parity} to
+obtain the Schiff moment $S$ from the interaction strength $\nu$:
 %
 \begin{equation}
-   S=\frac{d}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
+   S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 
-\paragraph{Related experiments}
+Without an external electric field, the interaction of eqn~\ref{interaction}
+fails to produce any first order effects in any given rotational state.
+According to \cite{hinds1980experiment,wilkening1984search}, this is because the
+Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized
+molecule. However, if we apply an external field, the molecule becomes
+polarized, which destroys the inversion symmetry and a nonzero expectation
+results.
 
-The first $P,T$-violation experiment using a molecular beam of thallium fluoride
-was done in Oxford in 1969 \cite{harrison1969experimental}, the result being
-reported as $\nu=0.08\pm0.11\Hz$, or, in terms of proton \EDM, as
-$|d_\text{p}|=(7\pm9)\times10^{-21}e\cm$. They worked on the resonance involving
-a change in rotational state $(J,M_J)$ from $(1,0)$ to $(1,\pm1)$. The Tl
-resonance with nuclear spin projection changing from $\pm1/2$ to $\mp1/2$ using
-the triple resonance method in a 26~G magnetic field and 80~kV/cm electric
-field.
-
-A similar experiment giving the null result of $\nu=11\pm42\mHz$ was done
-about a decade later \cite{hinds1980experiment}. \todo{TBD}
-
-\todo{ \cite{wilkening1984search} }
-
-\todo{ \cite{cho1989tenfold} }
-
-\todo{ \cite{cho1991search} }
-
-\paragraph{Overview of the \CENTREX\ scheme}
-
-\paragraph{Molecular techniques}
-
-The linear \EDM\ effect would vanish for atoms or molecules in zero field with
-inversion symmetry; however, when placed in an external field, the polarization
-induced thereby would destroy the inversion symmetry. Compared to atoms,
-molecules are polarized much more readily in laboratory fields, making them
-ideal for such an \EDM\ measurement. Thus Sandars suggested that a molecular-beam
-resonance experiment could be used to probe the existence of an electric dipole
-moment on the proton, so long as the molecule has a heavy atom with an unpaired
-proton in the nucleus. He noted that TlF would appear to be an outstanding
-choice for such an experiment. \cite{sandars1967measurability}
+Compared to atoms, molecules are polarized much more readily in laboratory
+fields, making them ideal for such an \EDM\ measurement. Thus Sandars suggested
+that a molecular-beam resonance experiment could be used to probe the existence
+of an electric dipole moment on the proton, so long as the molecule has a heavy
+atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
 
 We can estimate the strength of the laboratory field required to efficiently
 polarize the molecule by comparing the molecular rotational level spacing
@@ -548,24 +535,85 @@ proportional to P.}
 
 \todo{Probability electrons are inside the nucleus is proportional to atomic number Z.}
 
+To obtain a measurement of $\nu$, typically a pair of states is chosen such that
+one of the states moves up in energy due to the interaction in
+eqn~\ref{interaction}, and the other one down by the same amount, increasing the
+level separation by $2\nu$. Upon reversal of externally applied fields, the
+directions of the level shifts change and a level separation of $-2\nu$ obtains
+compared to the levels in absence of the interaction. Comparing the two
+perturbations of the level spacing, a $4\nu$ difference (together with its error
+bars) can be quoted as the main result of molecular-beam symmetry-violation
+experiments.
+
 \todo{Ramsey's molecular beam resonance scheme.}
 
-The measured shift in resonance frequency between two levels with opposite
-behaviour under field reversal is related to the interaction strength of
-eqn~\ref{interaction} via
-%
-\begin{equation}
-   \label{nu}
-   \nu=-4d|\ex{\sigma\cdot\hat\lambda}|.
-\end{equation}
+\paragraph{The TlF molecule}
 
-\todo{Triple resonance method?}
+TlF is a suitable system to look for $P$ and $T$ violating interactions for a number
+of reasons \todo{ \cite{sandars1967measurability} }
+
+\todo{Born--Oppenheimer, molecular nomenclature, coupling of angular momentum,
+different bases to describe states, terms in the Hamiltonian, stark/zeeman
+shifts}
+
+\paragraph{Related experiments}
+
+The first $P,T$-violation experiment using a molecular beam of thallium fluoride
+was done in Oxford in 1969 \cite{harrison1969experimental}, the result being
+reported as $\nu=0.08\pm0.11\Hz$, or, in terms of proton \EDM, as
+$|d_\text{p}|=(7\pm9)\times10^{-21}e\cm$. They employed the triple resonance
+scheme: first, the $J=1$ molecules were transferred from $m_J=0$ to $m_J=\pm1$.
+The second resonance which changed the Tl nuclear spin projection from $\pm1/2$
+to $\mp1/2$ is not directly observable; however, after the molecules are
+transferred back to $m_J=0$, the amount of the non-observable spin flips can be
+estimated and related to the desired frequency shifts $4\nu$.
+
+About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a
+similar experiment giving the null result of $\nu=11\pm42\mHz$ or
+$|d_\text{p}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$
+and $T$ violating interactions in $^{205}$TlF, they tried to measure shifts of
+the resonant frequency which depends on the relative directions of externally
+applied parallel electric and magnetic fields. The experiment used a beam of TlF
+produced by vapors effusing from a hot oven through a state-selecting region
+that approximately transmits only molecules with $J=1$, $m_J=-1$,
+$m_\text{Tl}=+\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. In the
+interaction region, separated oscillating magnetic fields induce some molecules
+to flip the Tl spin to $m_\text{Tl}=-\nicefrac{1}{2}$. Finally, a second state
+selector transmits only the molecules without the spin flip, and the final beam
+intensity is a sensitive measure of the shift in the resonance given that the
+10~m separation of the oscillating coils results in a 20~Hz linewidth. However,
+the experiment gave an accuracy comparable to the experiment in
+\cite{harrison1969experimental} because of an unexpectedly large reduction of
+the resonance signal and high background rate.
+
+Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search}
+reduced the error bars to $\nu=8\pm21\mHz$ or
+$|d_\text{p}|=(1.3\pm2.0)\times10^{-21}e\cm$. In their experiment, the thermal
+beam of TlF passes through an electrostatic quadrupole field that focuses the
+$J=1$, $m_J=0$ state, leaving the others unselected. Thereafter, a `subsidiary
+resonance' region transfers the molecules into the state $m_J=-1$,
+$m_\text{Tl}=-\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. However, instead
+of using oscillating fields to do so, it relies on adiabatic transitions that
+conveniently happen to transfer population into the desired state. As was
+the case in the preceding experiment, the main interaction region causes the Tl
+nuclear spin to flip. Finally, second subsidiary resonance region transfers the
+flipped molecules to the $m_J=-1$ hyperfine state which is defocused by the
+second quadrupole, causing a change in the beam intensity measured at the end of
+the beamline.
+
+
+\todo{ \cite{cho1989tenfold, cho1991search} }
+
+\paragraph{Overview of the \CENTREX\ scheme}
+
+\todo{level schemes for rotational cooling, lens, state transfer, interaction,
+state transfer, detection}
 
 \todo{The 30x sensitivity improvement estimate over the state of the art.}
 
-\section{Experiment}
+\todo{adiabatic transitions}
 
-\todo{Overview of the whole thing}
+\section{Experiment}
 
 \paragraph{Beam source}
 
@@ -582,6 +630,16 @@ eqn~\ref{interaction} via
 \paragraph{State preparation 3}
 
 \paragraph{Readout}
+
+\section{Preliminary measurements}
+
+\paragraph{Optical cycling for detection}
+
+\paragraph{TlF beam properties}
+
+\paragraph{Rotational cooling}
+
+\section{Summary}
 
 % Bibliography
 {
