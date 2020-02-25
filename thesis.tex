@@ -49,6 +49,7 @@
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\ex}[1]{\langle #1\rangle}
+\newcommand{\ket}[1]{|#1\rangle}
 
 % units etc
 \newcommand{\GeV}{~\mathrm{GeV}}
@@ -68,6 +69,8 @@
 \newcommand{\CENTREX}{\textsc{centrex}}
 \renewcommand{\L}{\mathcal{L}}
 \renewcommand{\H}{\mathcal{H}}
+\newcommand{\FWHM}{\textsc{fwhm}}
+\newcommand{\RF}{\textsc{rf}}
 
 \begin{document}
 
@@ -508,9 +511,10 @@ Without an external electric field, the interaction of eqn~\ref{interaction}
 fails to produce any first order effects in any given rotational state.
 According to \cite{hinds1980experiment,wilkening1984search}, this is because the
 Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized
-molecule. However, if we apply an external field, the molecule becomes
-polarized, which destroys the inversion symmetry and a nonzero expectation
-results.
+molecule. Alternatively, the rotation of the molecule averages $\hat\lambda$ to
+zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external
+field, the molecule becomes polarized, which destroys the inversion symmetry and
+a nonzero expectation results.
 
 Compared to atoms, molecules are polarized much more readily in laboratory
 fields, making them ideal for such an \EDM\ measurement. Thus Sandars suggested
@@ -521,21 +525,12 @@ atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
 We can estimate the strength of the laboratory field required to efficiently
 polarize the molecule by comparing the molecular rotational level spacing
 $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values
-$d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment in
-a field of about $25~\text{kV/cm}$ for the $J=1$ state.
-\cite[sect~9.1]{khriplovich2012cp}
+$d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\
+alignment in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the
+internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$
+improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
 
-\todo{$10^5$ molecular enhancement.}
-
-\todo{P is zero for pure s- or p-orbitals, but can be $\sim $1 for fully
-hybridized s+p orbitals.}
-
-\todo{The difference of probability to find electron on top or bottom of nucleus
-proportional to P.}
-
-\todo{Probability electrons are inside the nucleus is proportional to atomic number Z.}
-
-To obtain a measurement of $\nu$, typically a pair of states is chosen such that
+To obtain an upper bound on $\nu$, typically a pair of states is chosen such that
 one of the states moves up in energy due to the interaction in
 eqn~\ref{interaction}, and the other one down by the same amount, increasing the
 level separation by $2\nu$. Upon reversal of externally applied fields, the
@@ -545,7 +540,40 @@ perturbations of the level spacing, a $4\nu$ difference (together with its error
 bars) can be quoted as the main result of molecular-beam symmetry-violation
 experiments.
 
-\todo{Ramsey's molecular beam resonance scheme.}
+The spacing between the levels in the preceding paragraph can be measured by a
+simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$,
+separated by an energy $\hbar\omega_0$. Subjecting the two-state system to an
+oscillating field of form $\hbar b e^{-i\omega t}$, the population transfer
+probability is given by \cite[eqn~V.10]{ramsey1956molecular}
+%
+$$
+P_{p,q}=
+\frac{(2b)^2}{(\omega_0-\omega)^2+(2b)^2}\sin^2
+\left\{
+\frac{t}{2}
+\sqrt{(\omega_0-\omega)^2+(2b)^2}
+\right\}.
+$$
+%
+We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and
+the full width at half maximum (\FWHM) is given by $\Delta\omega=4b$. For a
+resonant $\pi/2$ pulse of duration $t=\pi/2b$, the \FWHM\ will be
+$\Delta\omega=2\pi/t$, and the longer the precession period $t$, the more
+precisely we can determine the resonant frequency $\omega_0$. In principle, an
+infinitely precise measurement could be obtained by simply extending the length
+$l$ of the precession region. In practice, however, this meets with the
+following problems: (1) the beam intensity decay to zero if the beamline is too
+long; (2) we may want to measure the precession in a region where the
+oscillating field cannot be applied; (3) it is difficult to maintain uniform
+externally applied fields over an extended length.
+
+It turns out that the oscillating field does not need to extend over the entire
+length of the precession region. In Ramsey's resonance scheme, \emph{separated}
+oscillating fields are only applied in two small regions at the beginning and at
+the end of the interaction region, each applying a $\pi/2$ pulse. The resulting
+\FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation
+scheme, and the resonances are less broadened by the non-uniformity of the fixed
+field. \cite{PhysRev.78.695}
 
 \paragraph{The TlF molecule}
 
@@ -556,7 +584,7 @@ of reasons \todo{ \cite{sandars1967measurability} }
 different bases to describe states, terms in the Hamiltonian, stark/zeeman
 shifts}
 
-\paragraph{Related experiments}
+\paragraph{Previous experiments}
 
 The first $P,T$-violation experiment using a molecular beam of thallium fluoride
 was done in Oxford in 1969 \cite{harrison1969experimental}, the result being
@@ -570,7 +598,7 @@ estimated and related to the desired frequency shifts $4\nu$.
 
 About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a
 similar experiment giving the null result of $\nu=11\pm42\mHz$ or
-$|d_\text{p}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$
+$|d_\text{e}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$
 and $T$ violating interactions in $^{205}$TlF, they tried to measure shifts of
 the resonant frequency which depends on the relative directions of externally
 applied parallel electric and magnetic fields. The experiment used a beam of TlF
@@ -588,7 +616,7 @@ the resonance signal and high background rate.
 
 Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search}
 reduced the error bars to $\nu=8\pm21\mHz$ or
-$|d_\text{p}|=(1.3\pm2.0)\times10^{-21}e\cm$. In their experiment, the thermal
+$|d_\text{e}|=(1.3\pm2.0)\times10^{-21}e\cm$. In their experiment, the thermal
 beam of TlF passes through an electrostatic quadrupole field that focuses the
 $J=1$, $m_J=0$ state, leaving the others unselected. Thereafter, a `subsidiary
 resonance' region transfers the molecules into the state $m_J=-1$,
@@ -601,8 +629,27 @@ flipped molecules to the $m_J=-1$ hyperfine state which is defocused by the
 second quadrupole, causing a change in the beam intensity measured at the end of
 the beamline.
 
+Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper
+bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or
+$|d_\text{e}|=(-1.4\pm2.4)\times10^{-25}e\cm$. Again, a quadrupole selects
+$J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$
+sublevels in a combination of static and \RF\ electric fields, either
+$(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or
+$(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic
+fields in the presence of a strong electric field induce a nuclear spin flip in
+Tl, observed by a second state selector and quadrupole filter. The improved
+upper bound was due to a more intense and rotationally colder beam of TlF
+monomers, and due to an additional reversal, switching between the two hyperfine
+states as listed above.
 
-\todo{ \cite{cho1989tenfold, cho1991search} }
+\todo{Make sure I'm giving the correct EDM, either proton or neutron, for each
+experiment.}
+
+\todo{These experiments have all been about electron EDM --- why? How is Centrex
+able to be sensitive to proton EDM?}
+
+\todo{Find other, and more recent, and non-TlF, Schiff moment / proton EDM
+experiments.}
 
 \paragraph{Overview of the \CENTREX\ scheme}
 
