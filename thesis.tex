@@ -37,12 +37,15 @@
 % for notes
 \usepackage{xcolor}
 \newcommand\todo[1]{\textcolor{red}{#1}}
+\newcommand\question[1]{\textcolor{blue}{#1}}
 
 % for figures
 \usepackage{graphicx}
 \renewcommand{\part}[1]{\textit{\textbf{#1.}}}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
 
 % math
 \usepackage{amsmath, amssymb, amsthm, bm, nicefrac}
@@ -473,6 +476,7 @@ characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}. Then the
 magnitude of the \SMt\ is
 %
 \begin{equation}
+    \label{schiff}
    |\vec S|\sim d_\text{n}A^{2/3}R_0^2
 \end{equation}
 %
@@ -577,12 +581,173 @@ field. \cite{PhysRev.78.695}
 
 \paragraph{The TlF molecule}
 
-TlF is a suitable system to look for $P$ and $T$ violating interactions for a number
-of reasons \todo{ \cite{sandars1967measurability} }
+TlF is a suitable system to look for $P$ and $T$ violating interactions for a
+number of reasons: a molecular beam of thallium fluoride can readily be obtained
+by following the lead of a number of previously published papers (see next
+section); the properties of the molecular states and transitions are available
+in literature; the thallium nucleus being very heavy, the Schiff moment is
+correspondingly relatively large (as per eqn~\ref{schiff}) and contains an
+unpaired proton. \cite{sandars1967measurability} Furthermore, the existence of
+an optical cycling transition in TlF \cite{hunter2012prospects} allows for
+near-unity detection efficiency despite a limited ability to collect and detect
+individual photons. The large number of photons that can be scattered off a
+single molecule could potentially also be used to slow or trap molecules in an
+attempt to increase experimental sensitivity beyond that projected for the
+initial version of the \CENTREX\ experiment.
 
-\todo{Born--Oppenheimer, molecular nomenclature, coupling of angular momentum,
-different bases to describe states, terms in the Hamiltonian, stark/zeeman
-shifts}
+\todo{More on TlF beams}
+
+All lasers in this experiment address transitions between the $v=0$ vibrational
+sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$
+denotes the ground state, and $B$ is one of the excited states. \todo{More on
+the structure of the two electronic states}
+
+\todo{Stark and Zeeman effects}
+
+\todo{Non-adiabatic transitions}
+
+\question{What other details about TlF to describe?}
+
+\begin{figure}
+
+    % for axis breaks
+    \usetikzlibrary{decorations.markings}
+    \def\MarkLt{4pt}
+    \def\MarkSep{2pt}
+    \tikzset{
+      TwoMarks/.style={
+        postaction={decorate,
+          decoration={
+            markings,
+            mark=at position #1 with
+              {
+                  \begin{scope}[xslant=0.2]
+                  \draw[line width=\MarkSep,white,-] (0pt,-\MarkLt) -- (0pt,\MarkLt) ;
+                  \draw[-] (-0.5*\MarkSep,-\MarkLt) -- (-0.5*\MarkSep,\MarkLt) ;
+                  \draw[-] (0.5*\MarkSep,-\MarkLt) -- (0.5*\MarkSep,\MarkLt) ;
+                  \end{scope}
+              }
+           }
+        }
+      },
+      TwoMarks/.default={0.5},
+    }
+
+\begin{tikzpicture}[scale=5]
+
+   % length of energy level diagram lines
+   \def\len{.05}
+
+   % x-position and length and x-offset of the y-axis labels
+   \def\pos{-18}
+   \def\lenmark{.025}
+   \def\xoffset{.18}
+
+   % x coordinates for m = -2, ... 2
+   \def\xa{-4.5*\len}
+   \def\xb{-2.5*\len}
+   \def\xc{-0.5*\len}
+   \def\xd{+1.5*\len}
+   \def\xe{+3.5*\len}
+   \def\xf{-6.5*\len}
+   \def\xg{+5.5*\len}
+
+   % y offset for J = 1, 2
+   \def\yA{.6}
+   \def\yB{\yA+.7}
+
+   % axis
+   \draw[->,TwoMarks=0.2,TwoMarks=0.6] (\xf-\len-\xoffset, -.1)
+      -- (\xf-\len-\xoffset,\yB+.25) node[above] {$E$ [kHz]};
+
+   % J=0 labels
+   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,-.02) -- (\xg+2*\len,.02) node [black,midway,anchor=west,xshift=25] {$J=0$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, -.003325) node[anchor=east,below,xshift=\pos]
+      {-3.325} -- (\xf-\len+0.5*\lenmark-\xoffset,-.003325) node[right,below,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, .009975) node[anchor=east,above,xshift=\pos]
+      {9.975} -- (\xf-\len+0.5*\lenmark-\xoffset,.009975) node[right,above,xshift=-\pos] {$F=0$};
+
+   % J=0 lines
+   \draw (\xc, -0.003325) -- (\xc+\len, -0.003325);
+   \draw (\xb, -0.003325) -- (\xb+\len, -0.003325);
+   \draw (\xd, -0.003325) -- (\xd+\len, -0.003325);
+   \draw (\xc, 0.009975) -- (\xc+\len, 0.009975);
+
+   % J=1 labels
+   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,\yA-.2) -- (\xg+2*\len,\yA+.1) node [black,midway,anchor=west,xshift=25] {$J=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.143745) node[anchor=east,below,xshift=\pos] {-143.745} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA-.143745) node[right,below,xshift=-\pos] {$F=0$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.121506) node[anchor=east,above,xshift=\pos] {-121.506} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA-.121506) node[right,above,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA+.054446) node[anchor=east,below,xshift=\pos] {54.446} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA+.054446) node[right,below,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA+.068985) node[anchor=east,above,xshift=\pos] {68.985} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA+.068985) node[right,above,xshift=-\pos] {$F=2$};
+
+   % J=1 lines
+   \draw (\xc, \yA-.143745) -- (\xc+\len, \yA-.143745);
+   \draw (\xc, \yA-.121506) -- (\xc+\len, \yA-.121506);
+   \draw (\xb, \yA-.121506) -- (\xb+\len, \yA-.121506);
+   \draw (\xd, \yA-.121506) -- (\xd+\len, \yA-.121506);
+   \draw (\xc, \yA+.054446) -- (\xc+\len, \yA+.054446);
+   \draw (\xb, \yA+.054446) -- (\xb+\len, \yA+.054446);
+   \draw (\xd, \yA+.054446) -- (\xd+\len, \yA+.054446);
+   \draw (\xc, \yA+.068985) -- (\xc+\len, \yA+.068985);
+   \draw (\xb, \yA+.068985) -- (\xb+\len, \yA+.068985);
+   \draw (\xd, \yA+.068985) -- (\xd+\len, \yA+.068985);
+   \draw (\xa, \yA+.068985) -- (\xa+\len, \yA+.068985);
+   \draw (\xe, \yA+.068985) -- (\xe+\len, \yA+.068985);
+
+   % J=2 labels
+   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,\yB-.27) -- (\xg+2*\len,\yB+.18) node [black,midway,anchor=west,xshift=25] {$J=2$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.217455)
+   node[anchor=east,left,yshift=-5] {-217.455}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.217455) node[right,below,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.172936)
+   node[anchor=east,left,yshift=5] {-172.936}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.172936) node[right,above,xshift=-\pos] {$F=2$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB+.105876)
+   node[anchor=east,left,yshift=-5] {105.876}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB+.105876) node[right,below,xshift=-\pos] {$F=2$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB+.141095)
+   node[anchor=east,left,yshift=5] {141.095}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB+.141095) node[right,above,xshift=-\pos] {$F=3$};
+
+   % J=2 lines
+   \draw (\xc, \yB-.217455) -- (\xc+\len, \yB-.217455);
+   \draw (\xb, \yB-.217455) -- (\xb+\len, \yB-.217455);
+   \draw (\xd, \yB-.217455) -- (\xd+\len, \yB-.217455);
+   \draw (\xc, \yB-.172936) -- (\xc+\len, \yB-.172936);
+   \draw (\xb, \yB-.172936) -- (\xb+\len, \yB-.172936);
+   \draw (\xd, \yB-.172936) -- (\xd+\len, \yB-.172936);
+   \draw (\xa, \yB-.172936) -- (\xa+\len, \yB-.172936);
+   \draw (\xe, \yB-.172936) -- (\xe+\len, \yB-.172936);
+   \draw (\xc, \yB+.105876) -- (\xc+\len, \yB+.105876);
+   \draw (\xb, \yB+.105876) -- (\xb+\len, \yB+.105876);
+   \draw (\xd, \yB+.105876) -- (\xd+\len, \yB+.105876);
+   \draw (\xa, \yB+.105876) -- (\xa+\len, \yB+.105876);
+   \draw (\xe, \yB+.105876) -- (\xe+\len, \yB+.105876);
+   \draw (\xc, \yB+.141095) -- (\xc+\len, \yB+.141095);
+   \draw (\xb, \yB+.141095) -- (\xb+\len, \yB+.141095);
+   \draw (\xd, \yB+.141095) -- (\xd+\len, \yB+.141095);
+   \draw (\xa, \yB+.141095) -- (\xa+\len, \yB+.141095);
+   \draw (\xe, \yB+.141095) -- (\xe+\len, \yB+.141095);
+   \draw (\xf, \yB+.141095) -- (\xf+\len, \yB+.141095);
+   \draw (\xg, \yB+.141095) -- (\xg+\len, \yB+.141095);
+
+\end{tikzpicture}
+
+\caption{First three rotational levels in the TlF ground state ($X^1\Sigma^+$)
+zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the
+energies indicated on the axis.}
+\label{diagram}
+
+\end{figure}
+
+
 
 \paragraph{Previous experiments}
 
@@ -648,17 +813,18 @@ experiment.}
 \todo{These experiments have all been about electron EDM --- why? How is Centrex
 able to be sensitive to proton EDM?}
 
-\todo{Find other, and more recent, and non-TlF, Schiff moment / proton EDM
-experiments.}
+\question{Am I presenting the important parameters of each paper/experiment? Are
+there other things important to include here? What other (non-TlF, Schiff moment
+/ proton EDM experiments should I review here?}
 
 \paragraph{Overview of the \CENTREX\ scheme}
 
 \todo{level schemes for rotational cooling, lens, state transfer, interaction,
 state transfer, detection}
 
-\todo{The 30x sensitivity improvement estimate over the state of the art.}
+\section{Projected sensitivity}
 
-\todo{adiabatic transitions}
+\todo{The 30x sensitivity improvement estimate over the state of the art.}
 
 \section{Experiment}
 
@@ -685,6 +851,8 @@ state transfer, detection}
 \paragraph{TlF beam properties}
 
 \paragraph{Rotational cooling}
+
+\paragraph{Magnetic shielding}
 
 \section{Summary}
 
