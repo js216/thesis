@@ -34,10 +34,15 @@
    {#1}
    {}
 
-% for notes
-\usepackage{xcolor}
-\newcommand\todo[1]{\textcolor{red}{#1}}
-\newcommand\question[1]{\textcolor{blue}{#1}}
+% for notes and bibliography
+\usepackage{xcolor,hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={blue}}
+\newcommand\todo[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand\question[1]{\textcolor{red}{#1}}
 
 % for figures
 \usepackage{graphicx}
@@ -56,11 +61,15 @@
 
 % units etc
 \newcommand{\GeV}{~\mathrm{GeV}}
+\newcommand{\kVcm}{~\mathrm{kV/cm}}
 \newcommand{\cm}{~\mathrm{cm}}
 \newcommand{\Tl}{\mathrm{Tl}}
 \newcommand{\fm}{~\mathrm{fm}}
 \newcommand{\Hz}{~\mathrm{Hz}}
+\newcommand{\kHz}{~\mathrm{kHz}}
+\newcommand{\GHz}{~\mathrm{GHz}}
 \newcommand{\mHz}{~\mathrm{mHz}}
+\newcommand{\degC}{\;$^{\circ}$C}
 
 % acronyms
 \newcommand{\CPV}{\textsc{cpv}}
@@ -318,7 +327,6 @@ and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only 
    \label{graddelta}
 \end{figure}
 
-
 However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
 
 In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in the form \cite[eqn~22]{sushkov1984possibility}
@@ -400,20 +408,6 @@ We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and th
 
 It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, \emph{separated} oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
 
-\paragraph{The TlF molecule}
-
-TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers (see next section); the properties of the molecular states and transitions are available in literature; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large (as per eqn~\ref{schiff}) and contains an unpaired proton. \cite{sandars1967measurability} Furthermore, the existence of an optical cycling transition in TlF \cite{hunter2012prospects} allows for near-unity detection efficiency despite a limited ability to collect and detect individual photons. The large number of photons that can be scattered off a single molecule could potentially also be used to slow or trap molecules in an attempt to increase experimental sensitivity beyond that projected for the initial version of the \CENTREX\ experiment.
-
-\todo{More on TlF beams}
-
-All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states. \todo{More on the structure of the two electronic states}
-
-\todo{Stark and Zeeman effects}
-
-\todo{Non-adiabatic transitions}
-
-\question{What other details about TlF to describe?}
-
 \begin{figure}
 
     % for axis breaks
@@ -467,8 +461,8 @@ All lasers in this experiment address transitions between the $v=0$ vibrational 
       -- (\xf-\len-\xoffset,\yB+.25) node[above] {$E$ [kHz]};
 
    % J=0 labels
-   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,-.02) -- (\xg+2*\len,.02) node [black,midway,anchor=west,xshift=25] {$J=0$};
+   \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,-.08) -- (\xg+2*\len,.08) node [black,midway,anchor=west,xshift=25] {$J=0$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, -.003325) node[anchor=east,below,xshift=\pos]
       {-3.325} -- (\xf-\len+0.5*\lenmark-\xoffset,-.003325) node[right,below,xshift=-\pos] {$F=1$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, .009975) node[anchor=east,above,xshift=\pos]
@@ -551,24 +545,51 @@ All lasers in this experiment address transitions between the $v=0$ vibrational 
 
 \end{figure}
 
+\paragraph{The TlF molecule}
 
+TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large (as per eqn~\ref{schiff}); and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search}
+
+Traditionally, a thermal molecular source has been used to form a beam of TlF. For example, Schropp et al.\ \cite{schropp1987new} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$. Similarly, Hinds and Sandars \cite{hinds1980experiment} used a TlF-containing copper oven stabilized to a temperature of $340\pm1$\degC, forming a molecular beam from the vapor effusing from an array of channels. Hunter et al.\ used a ceramic chamber filled with TlF at 415--460\degC\ and passed the vapor through ceramic tubes and an aperture to collimate the beam. More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryogenic buffer gas source from that used by Barry, Shuman and DeMille \cite{barry2011bright} for strontium monofluoride. Instead of producing vapors by direct heating of a mass of solid TlF, the solid is kept at roughly 4~K and molecules are released by ablation with a pulsed 1064~nm laser. Once away from the solid, they are extracted from the cell by becoming entrained in the flow of cryogenic buffer gas, typically helium or neon. The resulting beam tends to be slower, colder compared with conventional methods of molecular beam production. See \cite{hutzler2012buffer} for a review of cryogenic buffer gas beam sources.
+
+All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
+
+The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect is due to direct dipole--dipole coupling between the nuclear spins; Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give it in terms of the nuclear $g$-factors and the internuclear displacement vector $\vec R$ as
+%
+$$
+\H_\text{ss}=\frac{g_1g_2\mu_N^2}{4\pi\epsilon_0c^2}
+\left\{
+    \frac{\vec I_1\cdot\vec I_2}{R^3}
+    -\frac{3(\vec I_1\cdot\vec R)(\vec I_2\cdot\vec R)}{R^5}
+\right\},
+$$
+%
+while Ramsey \cite{wilkening1984search} gives an effective form, valid for small (less than approx.\ $20\kVcm$) electric fields when $J$ is a good quantum number. See ref.\ \cite{norrgard2017hyperfine} for corresponding details of the rotational and hyperfine Hamiltonian for the excited state $B^3\Pi_1$.
+
+Externally applied electric field causes Stark effect, $ \H_\text{S}=-\vec d\cdot\vec E$, while a magnetic field gives rise to the Zeeman effect, as follows:
+%
+$$
+\H_\text{Z}=-\frac{\mu_J}{J}(\vec J\cdot\vec B)
+-\frac{\mu_1}{I_1}(\vec I_1\cdot\vec B)
+-\frac{\mu_2}{I_2}(\vec I_2\cdot\vec B).
+$$
+%
+Since molecular-beam experiments usually involve motion between regions with highly varying electric fields, care must be taken to ensure that populations do not inadvertently transfer through non-adiabatic transitions, or by loss of a quantization axis in a region where the applied fields exactly cancel.
+
+The existence of an optical cycling transition in TlF allows for near-unity detection efficiency despite a limited ability to collect and detect individual photons. \cite{hunter2012prospects} The large number of photons that can be scattered off a single molecule could also be used to slow or trap molecules, thus increasing the experimental sensitivity beyond that projected for the initial version of the \CENTREX\ experiment.
+
+\question{What other details about TlF to describe?}
 
 \paragraph{Previous experiments}
 
-\todo{Make sure I'm giving the correct EDM, either proton or neutron, for each
-experiment.}
+The first $P,T$-violation experiment using a molecular beam of thallium fluoride was done in Oxford in 1969 \cite{harrison1969experimental}, the result being reported as $\nu=0.08\pm0.11\Hz$, or, in terms of proton \EDM, as $|d_\text{p}|=(7\pm9)\times10^{-21}e\cm$. They employed the triple resonance scheme: first, the $J=1$ molecules were transferred from $m_J=0$ to $m_J=\pm1$. The second resonance which changed the Tl nuclear spin projection from $\pm1/2$ to $\mp1/2$ is not directly observable; however, after the molecules are transferred back to $m_J=0$, the amount of the non-observable spin flips can be estimated and related to the desired frequency shifts $4\nu$.
 
-The first $P,T$-violation experiment using a molecular beam of thallium fluoride was done in Oxford in 1969 \cite{harrison1969experimental}, the result being reported as $\nu=0.08\pm0.11\Hz$, or, in terms of proton \EDM, as $|d_\text{p}|=(7\pm9)\times10^{-21}e\cm$. They employed the triple resonance scheme: first, the $J=1$ molecules were transferred from $m_J=0$ to $m_J=\pm1$.  The second resonance which changed the Tl nuclear spin projection from $\pm1/2$ to $\mp1/2$ is not directly observable; however, after the molecules are transferred back to $m_J=0$, the amount of the non-observable spin flips can be estimated and related to the desired frequency shifts $4\nu$.
+About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a similar experiment giving the null result of $\nu=11\pm42\mHz$ or $|d_\text{p}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$ and $T$ violating interactions in $^{205}$TlF, they tried to measure shifts of the resonant frequency which depends on the relative directions of externally applied parallel electric and magnetic fields. The experiment used a beam of TlF produced by vapors effusing from a hot oven through a state-selecting region that approximately transmits only molecules with $J=1$, $m_J=-1$, $m_\text{Tl}=+\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. In the interaction region, separated oscillating magnetic fields induce some molecules to flip the Tl spin to $m_\text{Tl}=-\nicefrac{1}{2}$. Finally, a second state selector transmits only the molecules without the spin flip, and the final beam intensity is a sensitive measure of the shift in the resonance given that the 10~m separation of the oscillating coils results in a 20~Hz linewidth. However, the experiment gave an accuracy comparable to the experiment in \cite{harrison1969experimental} because of an unexpectedly large reduction of the resonance signal and high background rate.
 
-About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a similar experiment giving the null result of $\nu=11\pm42\mHz$ or $|d_\text{e}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$ and $T$ violating interactions in $^{205}$TlF, they tried to measure shifts of the resonant frequency which depends on the relative directions of externally applied parallel electric and magnetic fields. The experiment used a beam of TlF produced by vapors effusing from a hot oven through a state-selecting region that approximately transmits only molecules with $J=1$, $m_J=-1$, $m_\text{Tl}=+\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. In the interaction region, separated oscillating magnetic fields induce some molecules to flip the Tl spin to $m_\text{Tl}=-\nicefrac{1}{2}$. Finally, a second state selector transmits only the molecules without the spin flip, and the final beam intensity is a sensitive measure of the shift in the resonance given that the 10~m separation of the oscillating coils results in a 20~Hz linewidth. However, the experiment gave an accuracy comparable to the experiment in \cite{harrison1969experimental} because of an unexpectedly large reduction of the resonance signal and high background rate.
+Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} reduced the error bars to $\nu=8\pm21\mHz$ or $|d_\text{p}|=(1.3\pm2.0)\times10^{-21}e\cm$. In their experiment, the thermal beam of TlF passes through an electrostatic quadrupole field that focuses the $J=1$, $m_J=0$ state, leaving the others unselected. Thereafter, a `subsidiary resonance' region transfers the molecules into the state $m_J=-1$, $m_\text{Tl}=-\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. However, instead of using oscillating fields to do so, it relies on adiabatic transitions that conveniently happen to transfer population into the desired state. As was the case in the preceding experiment, the main interaction region causes the Tl nuclear spin to flip. Finally, second subsidiary resonance region transfers the flipped molecules to the $m_J=-1$ hyperfine state which is defocused by the second quadrupole, causing a change in the beam intensity measured at the end of the beamline.
 
-Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} reduced the error bars to $\nu=8\pm21\mHz$ or $|d_\text{e}|=(1.3\pm2.0)\times10^{-21}e\cm$. In their experiment, the thermal beam of TlF passes through an electrostatic quadrupole field that focuses the $J=1$, $m_J=0$ state, leaving the others unselected. Thereafter, a `subsidiary resonance' region transfers the molecules into the state $m_J=-1$, $m_\text{Tl}=-\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. However, instead of using oscillating fields to do so, it relies on adiabatic transitions that conveniently happen to transfer population into the desired state. As was the case in the preceding experiment, the main interaction region causes the Tl nuclear spin to flip. Finally, second subsidiary resonance region transfers the flipped molecules to the $m_J=-1$ hyperfine state which is defocused by the second quadrupole, causing a change in the beam intensity measured at the end of the beamline.
+Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects $J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed by a second state selector and quadrupole filter. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.
 
-Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{e}|=(-1.4\pm2.4)\times10^{-25}e\cm$. Again, a quadrupole selects $J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed by a second state selector and quadrupole filter. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.  
-\todo{These experiments have all been about electron EDM --- why? How is Centrex
-able to be sensitive to proton EDM?}
-
-\question{Am I presenting the important parameters of each paper/experiment? Are there other things important to include here? What other (non-TlF, Schiff moment / proton EDM experiments should I review here?}
+\question{What other important parameters of each experiment should I include? What other papers should I review (other molecular species, non-proton EDMs, other)?}
 
 \paragraph{Overview of the \CENTREX\ scheme}
 
@@ -617,7 +638,7 @@ able to be sensitive to proton EDM?}
    \vspace{.3cm}
    \small
    \renewcommand{\section}[2]{}
-   \bibliographystyle{plain}
+   \bibliographystyle{unsrt}
    \bibliography{references}
 }
 
