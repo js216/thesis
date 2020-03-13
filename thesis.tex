@@ -3,7 +3,6 @@
 % page format
 \usepackage[letterpaper, twocolumn, left=1.8cm, right=1.8cm, top=1.4cm, bottom=2.2cm]{geometry}
 \setlength{\columnsep}{1.85em}
-%\usepackage{mathptmx}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage{microtype}
 \linespread{1.1}
@@ -47,6 +46,7 @@
 
 % for figures
 \usepackage{graphicx}
+\usepackage[abs]{overpic}
 \renewcommand{\part}[1]{\textit{\textbf{#1.}}}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{pgfplots}
@@ -140,14 +140,14 @@
              \vspace{1.5ex}
              T. Winick, D. Kawall
 
-             {\it\small Department of Physics, University of Massachusets Amherst, Amherst, Massachusets 01003}
+             {\it\small Department of Physics, University of Massachusetts Amherst, Amherst, Massachusetts 01003}
           \end{minipage}
 
           \vspace{3ex}
 
           \begin{minipage}{.75\textwidth}
              \small
-             The \CENTREX\ experiment aims to provide a 30-fold increase in sensitivity over best present upper bounds on the strength of time-violating fundamental interactions by measuring shifts in nuclear resonant frequencies in thallium fluoride. I describe the motivation for studying these time-violating interactions, and provide an overview of past work. Since the apparatus is still under construction, I present the components already built, and estimate the timeline for completion of the experiment.
+             The \CENTREX\ experiment aims to provide a 30-fold increase in sensitivity over best present upper bounds on the strength of time-violating fundamental interactions by measuring shifts in nuclear resonant frequencies in thallium fluoride. I describe the motivation for studying these time-violating interactions, and provide an overview of past work. Since the apparatus is still under construction, I present the components already built, give preliminary data collected to date, and estimate the timeline for completion of the experiment.
           \end{minipage}
 
           \vspace{3ex}
@@ -177,7 +177,7 @@ where $G^a$ is the gluon field tensor. Experimental evidence suggests that the s
 
 At present, searches for \EDM s give the most sensitive constraints on flavor-diagonal \CPV. Conversely, given a particle physics model with \CPV\ we can predict what the expected \EDM\ of the particles is. For example, in the Standard Model, the \CKM\ phase can produce a lepton \EDM\ no larger than $10^{-38}\;e\cm$. Part of the reason the \EDM\ is so suppressed is that it cannot appear below the four-loop level.  \cite{pospelov1991electric} Given how small these effects are in the Standard Model, \EDM s thus provide nearly background-free evidence of new physics. In fact, the \CKM\ background would only become apparent when probing effects beyond the energy scale of $10^{11}\GeV$.  \cite{pospelov2005electric}
 
-The second major motivation for searching for new physics comes from the baryon asymmetry of the unverse (\BAU). Compared to the current number density of photons in the universe ($n_\gamma \approx411\cm^{-3}$), the current baryons density ($n_\text{B}\approx2.54\cdot 10^{-7}\cm^{-3}$) is some $1.6\cdot10^{9}$ times smaller \cite[Table 17]{bennett2013nine}. In contrast, the antibaryon density $n_{\bar{\text{B}}}$ is smaller still; the range of upper bounds for the antimatter-to-matter number ratio has been reported as $10^{-15}$ to $10^{-6}$ \cite{canetti2012matter}. I should note that the antimatter-to-matter ratio tends not to be used as a measure of \BAU; instead, authors tend to prefer the ratio
+The second major motivation for searching for new physics comes from the baryon asymmetry of the universe (\BAU). Compared to the current number density of photons in the universe ($n_\gamma \approx411\cm^{-3}$), the current baryons density ($n_\text{B}\approx2.54\cdot 10^{-7}\cm^{-3}$) is some $1.6\cdot10^{9}$ times smaller \cite[Table 17]{bennett2013nine}. In contrast, the antibaryon density $n_{\bar{\text{B}}}$ is smaller still; the range of upper bounds for the antimatter-to-matter number ratio has been reported as $10^{-15}$ to $10^{-6}$ \cite{canetti2012matter}. I should note that the antimatter-to-matter ratio tends not to be used as a measure of \BAU; instead, authors tend to prefer the ratio
 %
 \begin{equation}
 \eta =
@@ -637,17 +637,59 @@ Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} 
 
 Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects $J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed by a second state selector and quadrupole filter. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.
 
-\question{What other important parameters of each experiment should I include? What other papers should I review (other molecular species, non-proton EDMs, other)?}
+\question{What other important parameters of each experiment should I include? What other papers should I review (other molecular or atomic species, non-proton EDMs, other)?}
+
+\begin{figure*}
+    \begin{overpic}[width=\textwidth,unit=1mm]{figs/entire.pdf}
+            \put(22,72){beam source}
+            \put(28,68){gate valve}
+            \put(2,18.5){bellows}
+            \put(29,61){\parbox{2.5cm}{\linespread{.9}rotational\\cooling}}
+            \put(58,71){state prep 1}
+            \put(56,62){electrostatic quadruple lens}
+            \put(77,55){gate valve}
+            \put(83,47){interaction region}
+            \put(128.6,56){gate valve}
+            \put(129,62){state projection}
+            \put(129,70.5){detection chamber}
+            \put(73,20){state prep 2}
+            \put(73,26){bellows}
+            \put(132,14){bellows}
+            \put(0,  4){0}
+            \put(13, 4){0.63}
+            \put(25, 4){1.12}
+            \put(33, 4){1.42}
+            \put(50, 4){2.08}
+            \put(63, 4){2.59}
+            \put(150,4){6.09}
+            \put(163,4){6.57}
+            \put(176,4){7.08}
+    \end{overpic}
+    \caption{Overview of the \CENTREX\ beamline without the magnetic shield around the interaction region. Note that the second state-preparation region, and the detection chamber, have not yet been designed. The horizontal ordinate is given in meters.}
+    \label{entire}
+\end{figure*}
 
 \paragraph{Overview of the \CENTREX\ scheme}
 
-\todo{level schemes for rotational cooling, lens, state transfer, interaction, state transfer, detection}
+Molecules emerging from a cryogenic buffer gas beam source initially populate a range of low-lying states as described by a Boltzmann distribution with an approximate temperature of 8K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter rotational cooling region to accumulate population in a single hyperfine level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction-region electric field direction. See Fig.~\ref{entire} for an outline of the entire apparatus.
 
-\section{Projected sensitivity}
+\todo{level schemes for rotational cooling}
+
+\todo{lens}
+
+\todo{state transfer 1}
+
+\todo{interaction region}
+
+\todo{state transfer 2}
+
+\todo{detection}
+
+\paragraph{Projected sensitivity}
 
 \todo{The 30x sensitivity improvement estimate over the state of the art.}
 
-\section{Experiment}
+\section{Apparatus}
 
 \paragraph{Beam source}
 
@@ -675,7 +717,7 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 
 \paragraph{Magnetic shielding}
 
-\section{Summary}
+\section{Outlook}
 
 % Bibliography
 {
