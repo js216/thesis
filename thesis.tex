@@ -1,8 +1,9 @@
 \documentclass{article}
 
 % page format
-\usepackage[letterpaper, twocolumn, left=1.7cm, right=1.7cm, top=1.4cm, bottom=2.2cm]{geometry}
+\usepackage[letterpaper, twocolumn, left=1.8cm, right=1.8cm, top=1.4cm, bottom=2.2cm]{geometry}
 \setlength{\columnsep}{1.85em}
+%\usepackage{mathptmx}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage{microtype}
 \linespread{1.1}
@@ -87,29 +88,66 @@
 \begin{document}
 
 \twocolumn[  
+\begin{@twocolumnfalse}
+    \begin{center}
+        \begin{minipage}{.8\textwidth}
+            \centering
+            \thispagestyle{empty}
+            \vspace{2cm}
+
+            \resizebox{3cm}{!}{\includegraphics{figs/GSAS}}
+
+            \vspace{1cm}
+            {\bf\Large Search for time-reversal-symmetry violation in thallium fluoride
+            using a cryogenic buffer-gas beam source}
+
+            \vspace{1.5ex}
+            {\large
+            A dissertation prospectus by Jakob Kastelic
+
+            Advisor: David DeMille
+
+            Yale University Physics Department
+
+            March 2020}
+        \end{minipage}
+    \end{center}
+\end{@twocolumnfalse}
+]
+
+\newpage
+
+\twocolumn[  
     \begin{@twocolumnfalse}
        \begin{center}
-          \begin{minipage}{.7\textwidth}
+          \begin{minipage}{.8\textwidth}
              \centering
-             \vspace{2ex}
+             \vspace{4.5ex}
 
              {\bf\large Search for time-reversal-symmetry violation in thallium fluoride
              using a cryogenic buffer-gas beam source}
 
              \vspace{1.5ex}
+             O. Grasdijk, O. Timgren, J. Kastelic, T. Wright, S. Lamoreaux, D. DeMille
 
-             O. Grasdijk, O. Timgren, J. Kastelic, T. Wright, D. DeMille
+             {\it\small Department of Physics, Yale University, New Haven, Connecticut 06511}
 
-             \todo{other people?}
+             \vspace{1.5ex}
+             K. Wenz, M. Aitken, T. Zelevinsky
 
-             {\it\small Physics Department, Yale University, New Haven, Connecticut 06511}
+             {\it\small Department of Physics, Columbia University, New York, New York 10027}
+
+             \vspace{1.5ex}
+             T. Winick, D. Kawall
+
+             {\it\small Department of Physics, University of Massachusets Amherst, Amherst, Massachusets 01003}
           \end{minipage}
 
           \vspace{3ex}
 
           \begin{minipage}{.75\textwidth}
              \small
-             \todo{\textbf{Write the abstract.} Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis. Curabitur dictum gravida mauris. Nam arcu libero, nonummy eget, consectetuer id, vulputate a, magna. Donec vehicula augue eu neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ut leo. Cras viverra metus rhoncus sem. Nulla et lectus vestibulum urna fringilla ultrices. Phasellus eu tellus sit amet tortor gravida placerat. Integer sapien est, iaculis in, pretium quis, viverra ac, nunc. Praesent eget sem vel leo ultrices bibendum.}
+             The \CENTREX\ experiment aims to provide a 30-fold increase in sensitivity over best present upper bounds on the strength of time-violating fundamental interactions by measuring shifts in nuclear resonant frequencies in thallium fluoride. I describe the motivation for studying these time-violating interactions, and provide an overview of past work. Since the apparatus is still under construction, I present the components already built, and estimate the timeline for completion of the experiment.
           \end{minipage}
 
           \vspace{3ex}
@@ -404,9 +442,11 @@ P_{p,q}=
 \right\}.
 $$
 %
-We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and the full width at half maximum (\FWHM) is given by $\Delta\omega=4b$. For a resonant $\pi/2$ pulse of duration $t=\pi/2b$, the \FWHM\ will be $\Delta\omega=2\pi/t$, and the longer the precession period $t$, the more precisely we can determine the resonant frequency $\omega_0$. In principle, an infinitely precise measurement could be obtained by simply extending the length $l$ of the precession region. In practice, however, this meets with the following problems: (1) the beam intensity decay to zero if the beamline is too long; (2) we may want to measure the precession in a region where the oscillating field cannot be applied; (3) it is difficult to maintain uniform externally applied fields over an extended length.
+We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and the full width at half maximum (\FWHM) is given by $\Delta\omega=4b$. For a resonant $\pi/2$ pulse of duration $t=\pi/2b$, the \FWHM\ will be $\Delta\omega=2\pi/t$, and the longer the precession period $t$, the more precisely we can determine the resonant frequency $\omega_0$.
 
-It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, \emph{separated} oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
+In principle, an infinitely precise measurement could be obtained by simply extending the length $l$ of the precession region. In practice, however, this meets with the following problems: (1) the beam intensity decay to zero if the beamline is too long; (2) we may want to measure the precession in a region where the oscillating field cannot be applied; (3) it is difficult to maintain uniform externally applied fields over an extended length.
+
+It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
 
 \begin{figure}
 
@@ -553,7 +593,15 @@ Traditionally, a thermal molecular source has been used to form a beam of TlF. F
 
 All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
-The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect is due to direct dipole--dipole coupling between the nuclear spins; Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give it in terms of the nuclear $g$-factors and the internuclear displacement vector $\vec R$ as
+The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
+%
+$$
+T_{vJ}=\sum\limits_{lm}Y_{lm}(v+1/2)^l[J(J+1)]^m.
+$$
+%
+In practice, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_e\equiv Y_{01}$ and the first term $\alpha_e\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}.
+
+Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect is due to direct dipole--dipole coupling between the nuclear spins; Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give it in terms of the nuclear $g$-factors and the internuclear displacement vector $\vec R$ as
 %
 $$
 \H_\text{ss}=\frac{g_1g_2\mu_N^2}{4\pi\epsilon_0c^2}
