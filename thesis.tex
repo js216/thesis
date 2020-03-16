@@ -701,7 +701,7 @@ Molecules emerging from a cryogenic buffer gas beam source initially populate a 
 \subparagraph{Rotational cooling (Fig.~\ref{scheme})}
 Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a UV laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
 
-\todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching?}
+\todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching? Frequency-switching of microwaves vs power broadening.}
 
 \subparagraph{State transfer 1}
 The population that has been collected in the $J=0$, $F=0$ sublevel has to be moved to a state in the $J=2$ manifold, where the molecular beam can be collimated by the electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic rapid passage (\ARP): first $J=0\to1$, then $1\to2$. As the particles travel through a spatially-varying electric field, the separation between the hyperfine levels in the different $J$ states changes due to the DC Zeeman effect. In the same region, we place two microwaves beams corresponding to each pair of $J$ states, and offset them by approximately the \FWHM\ of each beam.  As the molecule traverses each beam, it is successively driven through the respective microwave resonances, making the population jump first to $J=1$, and then to $J=2$.
@@ -739,13 +739,21 @@ It turns that that an appropriate field distribution can be used as an analogue 
     \end{pmatrix},
 \end{align*}
 %
-where $u$ is the component of velocity along the beam direction, and $r_0(t)$ the pre-lens displacement of the molecule from the beam axis.
+where $u$ is the component of velocity along the beam direction (making $\dot r_0/u$ proportional to the angle relative to the axis), and $r_0(t)$ the pre-lens displacement of the molecule from the beam axis.
 
-\subparagraph{Interaction region}
+\todo{Which hyperfine state are we choosing for the lens state?}
 
 \subparagraph{State transfer 2}
+A second state preparation region will take molecules out of the lens $J=2$ state and into the appropriate $J=1$ state required by the interaction region. Details will be decided upon based on experimental results from the first state preparation region.
 
-\subparagraph{Detection}
+\subparagraph{Interaction region}
+A high external electric field polarizes the molecules to achieve a large internal electric field, thus amplifying the sensitivity to tiny effects due to the Schiff moment. The measurement will be done using the method of separated oscillatory fields as explained above.
+
+\todo{Which exact hyperfine states are to be used?}
+
+\todo{What will be our switching sequence?}
+
+\subparagraph{Projection and detection}
 
 \paragraph{Projected sensitivity}
 
@@ -809,7 +817,7 @@ See Fig.~\ref{entire} for an outline of the entire apparatus.
 
 \paragraph{Interaction region}
 
-\paragraph{State preparation 3}
+\paragraph{State projection}
 
 \paragraph{Readout}
 
