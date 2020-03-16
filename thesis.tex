@@ -87,6 +87,7 @@
 \renewcommand{\H}{\mathcal{H}}
 \newcommand{\FWHM}{\textsc{fwhm}}
 \newcommand{\RF}{\textsc{rf}}
+\newcommand{\ARP}{\textsc{arp}}
 
 \begin{document}
 
@@ -160,7 +161,7 @@
 
 \section{Introduction}
 
-\noindent The \CENTREX\ experiment aims to employ a molecular-beam resonance technique to measure the nuclear Schiff moment of $^{205}\Tl$ in thallium fluoride as a test of physics beyond the Standard Model. In the following, I outline the motivation from $CP$-violation and baryon asymmetry, define the Schiff moment and suggest how it can be measured, review relevant features of the TlF molecule, and present previous experiments and the measurement scheme proposed in this work.
+\noindent The \CENTREX\ experiment aims to employ a molecular-beam resonance technique to measure the nuclear Schiff moment of $^{205}\Tl$ in thallium fluoride as a test of physics beyond the Standard Model. In the following, I outline the motivation from $CP$-violation and baryon asymmetry, define the Schiff moment and suggest how it can be measured, review relevant features of the TlF molecule, present previous experiments, the measurement scheme proposed in this work, and the projected sensitivity increase over the state of the art.
 
 \paragraph{Motivation}
 
@@ -703,7 +704,7 @@ Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules 
 \todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching?}
 
 \subparagraph{State transfer 1}
-The population that has been collected in the $J=0$, $F=0$ sublevel has to be moved to a state in the $J=2$ manifold, where the molecular beam can be collimated by the electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic rapid passage: first $J=0\to1$, then $1\to2$. As the particles travel through a spatially-varying electric field, the separation between the hyperfine levels in the different $J$ states changes due to the DC Zeeman effect. In the same region, we place two microwaves beams corresponding to each pair of $J$ states, and offset them by approximately the \FWHM\ of each beam.  As the molecule traverses each beam, it is successively driven through the respective microwave resonances, making the population jump first to $J=1$, and then to $J=2$.
+The population that has been collected in the $J=0$, $F=0$ sublevel has to be moved to a state in the $J=2$ manifold, where the molecular beam can be collimated by the electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic rapid passage (\ARP): first $J=0\to1$, then $1\to2$. As the particles travel through a spatially-varying electric field, the separation between the hyperfine levels in the different $J$ states changes due to the DC Zeeman effect. In the same region, we place two microwaves beams corresponding to each pair of $J$ states, and offset them by approximately the \FWHM\ of each beam.  As the molecule traverses each beam, it is successively driven through the respective microwave resonances, making the population jump first to $J=1$, and then to $J=2$.
 
 To keep the state transfer adiabatic, the electric field (and the resulting level separation, and the detuning $\Delta\omega(t)$ between the microwaves and the state spacing) has to change slowly compared with the Rabi frequency of the microwaves $\Omega_{\mu\text{w}}$. For a Rabi frequency much greater than the detuning, ref.~\cite{malinovsky2001general} gives the adiabaticity condition as
 %
@@ -711,11 +712,34 @@ $$
 \Omega_{\mu\text{w}}\gg\frac{d}{dt}\Delta\omega(t).
 $$
 %
+The other requirement for \ARP\ is that the passage is \emph{rapid} compared to the spontaneous lifetime of the states involved in the transition. \cite{shore2009simple}
+
 In the Bloch sphere picture, the precession of the state vector around the Rabi vector is fast. As the field is detuned through the resonance, the Rabi vector inverts, while the state vector adiabatically follows it, achieving a near-perfect state transfer.
 
 \todo{Explain ARP more quantitatively with Bloch equations.}
 
 \subparagraph{Electrostatic quadrupole lens}
+Molecules leave the beam source spread over a wide solid angle, so the beam intensity decays roughly as the distance squared from the source. To couteract this effect, we intend to collimate the beam, or focus it on the detection region, some seven meters away from the source.
+
+It turns that that an appropriate field distribution can be used as an analogue to the optical lens \cite{cho1991tight}, the condition being that inside the lens, moleculex experience a restoring force proportional to the displacement $r$ of the molecule from the axis. For a quadrupole field, the magnitude of the field is $|E|=Vr/R^2$, where $V$ is the potential difference between oppositely-charged electrodes and $2R$ the distance between opposite electrodes. \cite{bennewitz1955fokussierung} Furthermore, since the $J=2$ state of thallium fluoride has a quadratic Stark effect at high fields ($\sim30\kVcm$), this results in the desired quadratic potential energy, or a linear restoring force. Ref.~\cite{berg1965determination} makes the optical analogy exact in terms of ray-transfer (or `ABCD') matrices, whereby the condition for focusing results in the standard expression for a thin lens of focal length $f$
+%
+\begin{align*}
+    \begin{pmatrix}
+        r\\
+        \dot r/u
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1&0\\
+        -1/f&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        r_0\\
+        \dot r_0/u
+    \end{pmatrix},
+\end{align*}
+%
+where $u$ is the component of velocity along the beam direction, and $r_0(t)$ the pre-lens displacement of the molecule from the beam axis.
 
 \subparagraph{Interaction region}
 
