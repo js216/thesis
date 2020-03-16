@@ -33,7 +33,7 @@
    {2pt}
    {#1}
    {}
-\renewcommand{\subparagraph}[1]{\textit{#1}}
+\renewcommand{\subparagraph}[1]{\textit{#1.}}
 
 % for notes and bibliography
 \usepackage{xcolor,hyperref}
@@ -42,8 +42,7 @@
     linkcolor={black},
     citecolor={black},
     urlcolor={blue}}
-\newcommand\todo[1]{\textbf{\textcolor{red}{#1}}}
-\newcommand\question[1]{\textcolor{red}{#1}}
+\newcommand\todo[1]{\textcolor{red}{#1}}
 
 % for figures
 \usepackage{graphicx}
@@ -585,7 +584,7 @@ It turns out that the oscillating field does not need to extend over the entire 
 
 \end{tikzpicture}
 
-\caption{First three rotational levels in the TlF ground state ($X^1\Sigma^+$) zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$.}
+\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$.}
 \label{diagram}
 
 \end{figure}
@@ -598,13 +597,16 @@ Traditionally, a thermal molecular source has been used to form a beam of TlF. F
 
 All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
+\todo{Change of basis transformation between the two frames}
+
+\subparagraph{Ground state}
 The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
 %
 $$
 T_{vJ}=\sum\limits_{lm}Y_{lm}(v+1/2)^l[J(J+1)]^m.
 $$
 %
-In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_e\equiv Y_{01}$ and the first term $\alpha_e\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.46992\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. %2*29.9792458*(0.223150163+0.001503850)
+In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_e\equiv Y_{01}$ and the first term $\alpha_e\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.28958\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. %2*29.9792458*(0.223150163-0.001503850)
 
 Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect is due to direct dipole--dipole coupling between the nuclear spins; Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give it in terms of the nuclear $g$-factors and the internuclear displacement vector $\vec R$ as
 %
@@ -628,11 +630,16 @@ $$
 %
 Since molecular-beam experiments usually involve motion between regions with highly varying electric fields, care must be taken to ensure that populations do not inadvertently transfer through non-adiabatic transitions, or by loss of a quantization axis in a region where the applied fields exactly cancel.
 
-\question{What is there to say about the structure of the excited state?}
+\todo{Explain the calculation of ground state Hamiltonian matrix elements.}
+
+\subparagraph{Excited state}
+\todo{What is there to say about the structure of the excited state?}
+
+\todo{Calculation of relevant branching ratios}
 
 The existence of an optical cycling transition in TlF allows for near-unity detection efficiency despite a limited ability to collect and detect individual photons. \cite{hunter2012prospects} The large number of photons that can be scattered off a single molecule could also be used to slow or trap molecules, thus increasing the experimental sensitivity beyond that projected for the initial version of the \CENTREX\ experiment.
 
-\question{What other details about TlF to describe? Perhaps more about dark states?}
+\todo{What other details about TlF to describe? Perhaps more about dark states?}
 
 \paragraph{Previous experiments}
 
@@ -644,7 +651,7 @@ Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} 
 
 Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects $J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed by a second state selector and quadrupole filter. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.
 
-\question{What other important parameters of each experiment should I include? What other papers should I review (other molecular or atomic species, non-proton EDMs, other)?}
+\todo{What other important parameters of each experiment should I include? What other papers should I review (other molecular or atomic species, non-proton EDMs, other)?}
 
 \begin{figure}
 \centering
@@ -655,7 +662,7 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
     \node (J1) at (2,.5) {$\ket{J=1}$};
     \node (J2) at (4,1) {$\ket{J=2}$};
     \node (J3) at (6,1.5) {$\ket{J=3}$};
-    \node (Je1) at (3,4) {$\ket{\widetilde{J}=1,\widetilde{F_1}=3/2,\widetilde{F}=2}$};
+    \node (Je1) at (3,4) {$\ket{\widetilde{J}=1,\widetilde{F_1}=3/2,\widetilde{F}=1}$};
 
     % Boltzmann population at 8K
     \node[below=-5pt of J0] (p0) {\footnotesize31.4~\%};
@@ -663,8 +670,8 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
     \node[below=-5pt of J2] (p2) {\footnotesize19.4~\%};
     \node[below=-5pt of J3] (p3) {\footnotesize11.9~\%};
 
-    % P2 F2 laser line
-    \draw[-{Latex[length=4mm,width=4mm]},line width=3pt,gray] (4,1.25) -- node[above,black,sloped]{$P2$ $F2$} (3.25,3.75);
+    % P2 F1 laser line
+    \draw[-{Latex[length=4mm,width=4mm]},line width=3pt,gray] (4,1.25) -- node[above,black,sloped]{$P2$ $F1$} (3.25,3.75);
 
     % spontaneous decay branching ratios
     \tikzset{snake it/.style={-{Latex[length=2mm,width=2mm]}, decorate, decoration={snake,amplitude=2pt,pre length=2pt,post length=3pt}}}
@@ -681,7 +688,7 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 
 \end{tikzpicture}
 
-    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the $P2$ $F2$ transition, while the bent arrows represent microwaves of stated frequencies (the dashed 13.4~GHz microwaves might be ommitted in the final version). The wavy lines indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling.}
+    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the UV laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves of stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy lines indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling.}
 \label{scheme}
 
 \end{figure}
@@ -690,19 +697,31 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 
 Molecules emerging from a cryogenic buffer gas beam source initially populate a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter rotational cooling region to accumulate population in a single hyperfine level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
 
-\subparagraph{Rotational cooling (Fig.~\ref{scheme}).}
-Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a UV laser beam centered on the $P2$ $F2$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=2$ level. Due to the selection rule $\Delta F=0,\pm1$, all four $J=2$ sublevels (with $F=1,2,2,3$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$, $F=1$ state. \question{Dark states? Polarization switching?}
+\subparagraph{Rotational cooling (Fig.~\ref{scheme})}
+Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a UV laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
 
+\todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching?}
 
-\todo{lens}
+\subparagraph{State transfer 1}
+The population that has been collected in the $J=0$, $F=0$ sublevel has to be moved to a state in the $J=2$ manifold, where the molecular beam can be collimated by the electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic rapid passage: first $J=0\to1$, then $1\to2$. As the particles travel through a spatially-varying electric field, the separation between the hyperfine levels in the different $J$ states changes due to the DC Zeeman effect. In the same region, we place two microwaves beams corresponding to each pair of $J$ states, and offset them by approximately the \FWHM\ of each beam.  As the molecule traverses each beam, it is successively driven through the respective microwave resonances, making the population jump first to $J=1$, and then to $J=2$.
 
-\todo{state transfer 1}
+To keep the state transfer adiabatic, the electric field (and the resulting level separation, and the detuning $\Delta\omega(t)$ between the microwaves and the state spacing) has to change slowly compared with the Rabi frequency of the microwaves $\Omega_{\mu\text{w}}$. For a Rabi frequency much greater than the detuning, ref.~\cite{malinovsky2001general} gives the adiabaticity condition as
+%
+$$
+\Omega_{\mu\text{w}}\gg\frac{d}{dt}\Delta\omega(t).
+$$
+%
+In the Bloch sphere picture, the precession of the state vector around the Rabi vector is fast. As the field is detuned through the resonance, the Rabi vector inverts, while the state vector adiabatically follows it, achieving a near-perfect state transfer.
 
-\todo{interaction region}
+\todo{Explain ARP more quantitatively with Bloch equations.}
 
-\todo{state transfer 2}
+\subparagraph{Electrostatic quadrupole lens}
 
-\todo{detection}
+\subparagraph{Interaction region}
+
+\subparagraph{State transfer 2}
+
+\subparagraph{Detection}
 
 \paragraph{Projected sensitivity}
 
@@ -738,12 +757,23 @@ Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules 
     \label{entire}
 \end{figure*}
 
+\section{Simulations}
+
+\paragraph{Rotational cooling}
+
+\paragraph{Non-adiabatic transitions}
+
+\paragraph{Floquet theory}
 
 \section{Apparatus}
 
 See Fig.~\ref{entire} for an outline of the entire apparatus.
 
+\paragraph{Control software}
+
 \paragraph{Beam source}
+
+\paragraph{Laser system}
 
 \paragraph{Rotational cooling}
 
