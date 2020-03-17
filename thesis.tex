@@ -33,6 +33,7 @@
    {2pt}
    {#1}
    {}
+\renewcommand{\subparagraph}[1]{\textit{#1.}}
 
 % for notes and bibliography
 \usepackage{xcolor,hyperref}
@@ -41,8 +42,7 @@
     linkcolor={black},
     citecolor={black},
     urlcolor={blue}}
-\newcommand\todo[1]{\textbf{\textcolor{red}{#1}}}
-\newcommand\question[1]{\textcolor{red}{#1}}
+\newcommand\todo[1]{\textcolor{red}{#1}}
 
 % for figures
 \usepackage{graphicx}
@@ -52,6 +52,9 @@
 \usepackage{pgfplots}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{positioning}
 
 % math
 \usepackage{amsmath, amssymb, amsthm, bm, nicefrac}
@@ -84,6 +87,7 @@
 \renewcommand{\H}{\mathcal{H}}
 \newcommand{\FWHM}{\textsc{fwhm}}
 \newcommand{\RF}{\textsc{rf}}
+\newcommand{\ARP}{\textsc{arp}}
 
 \begin{document}
 
@@ -147,7 +151,7 @@
 
           \begin{minipage}{.75\textwidth}
              \small
-             The \CENTREX\ experiment aims to provide a 30-fold increase in sensitivity over best present upper bounds on the strength of time-violating fundamental interactions by measuring shifts in nuclear resonant frequencies in thallium fluoride. I describe the motivation for studying these time-violating interactions, and provide an overview of past work. Since the apparatus is still under construction, I present the components already built, give preliminary data collected to date, and estimate the timeline for completion of the experiment.
+             The \CENTREX\ experiment aims to provide a 30-fold increase in sensitivity over best present upper bounds on the strength of time-violating fundamental interactions by measuring shifts in nuclear resonant frequencies in thallium fluoride. I describe the motivation for studying these time-violating interactions, and provide an overview of past work. I present the current measurement scheme for this experiment. Since the apparatus is still under construction, I present the components already built, give preliminary data collected to date, and estimate the timeline for completion of the experiment.
           \end{minipage}
 
           \vspace{3ex}
@@ -157,7 +161,7 @@
 
 \section{Introduction}
 
-\noindent The \CENTREX\ experiment aims to employ a molecular-beam resonance technique to measure the nuclear Schiff moment of $^{205}\Tl$ in thallium fluoride as a test of physics beyond the Standard Model. In the following, I outline the motivation from $CP$-violation and baryon asymmetry, define the Schiff moment and suggest how it can be measured, review relevant features of the TlF molecule, and present previous experiments and the measurement scheme proposed in this work.
+\noindent The \CENTREX\ experiment aims to employ a molecular-beam resonance technique to measure the nuclear Schiff moment of $^{205}\Tl$ in thallium fluoride as a test of physics beyond the Standard Model. In the following, I outline the motivation from $CP$-violation and baryon asymmetry, define the Schiff moment and suggest how it can be measured, review relevant features of the TlF molecule, present previous experiments, the measurement scheme proposed in this work, and the projected sensitivity increase over the state of the art.
 
 \paragraph{Motivation}
 
@@ -213,6 +217,36 @@ Additional $CP$-violating forces would likely give rise to a nuclear \EDM, wheth
 \end{equation}
 %
 and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction. Assuming $CPT$ to be a good symmetry, the $T$-violation then leads to the $CP$-violation.
+
+However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
+
+In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in the form \cite[eqn~22]{sushkov1984possibility}
+%
+\begin{equation}
+   \delta\phi=e\int
+   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
+   +\frac{1}{Z}(\vec d\nabla)\int
+   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
+\end{equation}
+%
+where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution. The second term is responsible for the screening since it exactly cancels out the potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility}, the above potential may, under certain assumptions, be written in the form
+%
+\begin{equation}
+   \label{nabla}
+   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
+\end{equation}
+%
+where $\vec S$ is the Schiff moment (\SMt)
+%
+\begin{equation}
+   \label{simpleSchiffMoment}
+   \vec S=\frac{e}{10}
+   \left[
+      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
+   \right].
+\end{equation}
+
+To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
 
 \begin{figure}
    \centering
@@ -365,35 +399,6 @@ and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only 
    \label{graddelta}
 \end{figure}
 
-However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
-
-In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in the form \cite[eqn~22]{sushkov1984possibility}
-%
-\begin{equation}
-   \delta\phi=e\int
-   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
-   +\frac{1}{Z}(\vec d\nabla)\int
-   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
-\end{equation}
-%
-where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution. The second term is responsible for the screening since it exactly cancels out the potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility}, the above potential may, under certain assumptions, be written in the form
-%
-\begin{equation}
-   \label{nabla}
-   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
-\end{equation}
-%
-where $\vec S$ is the Schiff moment (\SMt)
-%
-\begin{equation}
-   \label{simpleSchiffMoment}
-   \vec S=\frac{e}{10}
-   \left[
-      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
-   \right].
-\end{equation}
-
-To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
 
 We may think of eqns~\ref{nabla}--\ref{simpleSchiffMoment} as the potential due to a constant electric field along the direction of the nuclear spin $\hat I$ inside a nucleus of radius $R$. This potential is linear in the coordinate $r$, truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
 
@@ -580,7 +585,7 @@ It turns out that the oscillating field does not need to extend over the entire 
 
 \end{tikzpicture}
 
-\caption{First three rotational levels in the TlF ground state ($X^1\Sigma^+$) zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis.}
+\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$.}
 \label{diagram}
 
 \end{figure}
@@ -593,13 +598,16 @@ Traditionally, a thermal molecular source has been used to form a beam of TlF. F
 
 All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
+\todo{Change of basis transformation between the two frames}
+
+\subparagraph{Ground state}
 The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
 %
 $$
 T_{vJ}=\sum\limits_{lm}Y_{lm}(v+1/2)^l[J(J+1)]^m.
 $$
 %
-In practice, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_e\equiv Y_{01}$ and the first term $\alpha_e\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}.
+In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_e\equiv Y_{01}$ and the first term $\alpha_e\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.28958\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. %2*29.9792458*(0.223150163-0.001503850)
 
 Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect is due to direct dipole--dipole coupling between the nuclear spins; Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give it in terms of the nuclear $g$-factors and the internuclear displacement vector $\vec R$ as
 %
@@ -623,9 +631,16 @@ $$
 %
 Since molecular-beam experiments usually involve motion between regions with highly varying electric fields, care must be taken to ensure that populations do not inadvertently transfer through non-adiabatic transitions, or by loss of a quantization axis in a region where the applied fields exactly cancel.
 
+\todo{Explain the calculation of ground state Hamiltonian matrix elements.}
+
+\subparagraph{Excited state}
+\todo{What is there to say about the structure of the excited state?}
+
+\todo{Calculation of relevant branching ratios}
+
 The existence of an optical cycling transition in TlF allows for near-unity detection efficiency despite a limited ability to collect and detect individual photons. \cite{hunter2012prospects} The large number of photons that can be scattered off a single molecule could also be used to slow or trap molecules, thus increasing the experimental sensitivity beyond that projected for the initial version of the \CENTREX\ experiment.
 
-\question{What other details about TlF to describe?}
+\todo{What other details about TlF to describe? Perhaps more about dark states?}
 
 \paragraph{Previous experiments}
 
@@ -637,7 +652,112 @@ Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} 
 
 Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects $J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed by a second state selector and quadrupole filter. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.
 
-\question{What other important parameters of each experiment should I include? What other papers should I review (other molecular or atomic species, non-proton EDMs, other)?}
+\todo{What other important parameters of each experiment should I include? What other papers should I review (other molecular or atomic species, non-proton EDMs, other)?}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+
+    % kets
+    \node (J0) at (0,0) {$\ket{J=0}$};
+    \node (J1) at (2,.5) {$\ket{J=1}$};
+    \node (J2) at (4,1) {$\ket{J=2}$};
+    \node (J3) at (6,1.5) {$\ket{J=3}$};
+    \node (Je1) at (3,4) {$\ket{\widetilde{J}=1,\widetilde{F_1}=3/2,\widetilde{F}=1}$};
+
+    % Boltzmann population at 8K
+    \node[below=-5pt of J0] (p0) {\footnotesize31.4~\%};
+    \node[below=-5pt of J1] (p1) {\footnotesize26.7~\%};
+    \node[below=-5pt of J2] (p2) {\footnotesize19.4~\%};
+    \node[below=-5pt of J3] (p3) {\footnotesize11.9~\%};
+
+    % P2 F1 laser line
+    \draw[-{Latex[length=4mm,width=4mm]},line width=3pt,gray] (4,1.25) -- node[above,black,sloped]{$P2$ $F1$} (3.25,3.75);
+
+    % spontaneous decay branching ratios
+    \tikzset{snake it/.style={-{Latex[length=2mm,width=2mm]}, decorate, decoration={snake,amplitude=2pt,pre length=2pt,post length=3pt}}}
+    \draw[snake it] (2,3.75) -- node[left,xshift=-1pt]{\footnotesize0.365} (0,.25);
+    \draw[snake it] (2.5,3.75) -- node[left,yshift=8pt,xshift=2pt]{\footnotesize0.855} (2,.75);
+    \draw[snake it] (2.75,3.75) -- node[left,xshift=3pt,yshift=-10pt]{\footnotesize0.635} (3.5,1.25);
+    \draw[snake it] (4,3.75) -- node[right,xshift=3pt]{\footnotesize0.145} (6,1.75);
+
+    % microwaves
+    \tikzset{biarrow/.style={{Latex[length=1.5mm,width=1.5mm]}-{Latex[length=1.5mm,width=1.5mm]}}}
+    \draw[biarrow,dashed] (p0) to[bend right] node[below,sloped]{\small13.4~GHz} (p1);
+    \draw[biarrow] (p1) to[bend right] node[below,sloped]{\small26.6~GHz} (p2);
+    \draw[biarrow] (p2) to[bend right] node[below,sloped]{\small40.1~GHz} (p3);
+
+\end{tikzpicture}
+
+    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the UV laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves of stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy lines indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling.}
+\label{scheme}
+
+\end{figure}
+
+\paragraph{Overview of the \CENTREX\ scheme}
+
+Molecules emerging from a cryogenic buffer gas beam source initially populate a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter rotational cooling region to accumulate population in a single hyperfine level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
+
+\subparagraph{Rotational cooling (Fig.~\ref{scheme})}
+Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a UV laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
+
+\todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching? Frequency-switching of microwaves vs power broadening.}
+
+\subparagraph{State transfer 1}
+The population that has been collected in the $J=0$, $F=0$ sublevel has to be moved to a state in the $J=2$ manifold, where the molecular beam can be collimated by the electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic rapid passage (\ARP): first $J=0\to1$, then $1\to2$. As the particles travel through a spatially-varying electric field, the separation between the hyperfine levels in the different $J$ states changes due to the DC Zeeman effect. In the same region, we place two microwaves beams corresponding to each pair of $J$ states, and offset them by approximately the \FWHM\ of each beam.  As the molecule traverses each beam, it is successively driven through the respective microwave resonances, making the population jump first to $J=1$, and then to $J=2$.
+
+To keep the state transfer adiabatic, the electric field (and the resulting level separation, and the detuning $\Delta\omega(t)$ between the microwaves and the state spacing) has to change slowly compared with the Rabi frequency of the microwaves $\Omega_{\mu\text{w}}$. For a Rabi frequency much greater than the detuning, ref.~\cite{malinovsky2001general} gives the adiabaticity condition as
+%
+$$
+\Omega_{\mu\text{w}}\gg\frac{d}{dt}\Delta\omega(t).
+$$
+%
+The other requirement for \ARP\ is that the passage is \emph{rapid} compared to the spontaneous lifetime of the states involved in the transition. \cite{shore2009simple}
+
+In the Bloch sphere picture, the precession of the state vector around the Rabi vector is fast. As the field is detuned through the resonance, the Rabi vector inverts, while the state vector adiabatically follows it, achieving a near-perfect state transfer.
+
+\todo{Explain ARP more quantitatively with Bloch equations.}
+
+\subparagraph{Electrostatic quadrupole lens}
+Molecules leave the beam source spread over a wide solid angle, so the beam intensity decays roughly as the distance squared from the source. To couteract this effect, we intend to collimate the beam, or focus it on the detection region, some seven meters away from the source.
+
+It turns that that an appropriate field distribution can be used as an analogue to the optical lens \cite{cho1991tight}, the condition being that inside the lens, moleculex experience a restoring force proportional to the displacement $r$ of the molecule from the axis. For a quadrupole field, the magnitude of the field is $|E|=Vr/R^2$, where $V$ is the potential difference between oppositely-charged electrodes and $2R$ the distance between opposite electrodes. \cite{bennewitz1955fokussierung} Furthermore, since the $J=2$ state of thallium fluoride has a quadratic Stark effect at high fields ($\sim30\kVcm$), this results in the desired quadratic potential energy, or a linear restoring force. Ref.~\cite{berg1965determination} makes the optical analogy exact in terms of ray-transfer (or `ABCD') matrices, whereby the condition for focusing results in the standard expression for a thin lens of focal length $f$
+%
+\begin{align*}
+    \begin{pmatrix}
+        r\\
+        \dot r/u
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1&0\\
+        -1/f&1
+    \end{pmatrix}
+    \begin{pmatrix}
+        r_0\\
+        \dot r_0/u
+    \end{pmatrix},
+\end{align*}
+%
+where $u$ is the component of velocity along the beam direction (making $\dot r_0/u$ proportional to the angle relative to the axis), and $r_0(t)$ the pre-lens displacement of the molecule from the beam axis.
+
+\todo{Which hyperfine state are we choosing for the lens state?}
+
+\subparagraph{State transfer 2}
+A second state preparation region will take molecules out of the lens $J=2$ state and into the appropriate $J=1$ state required by the interaction region. Details will be decided upon based on experimental results from the first state preparation region.
+
+\subparagraph{Interaction region}
+A high external electric field polarizes the molecules to achieve a large internal electric field, thus amplifying the sensitivity to tiny effects due to the Schiff moment. The measurement will be done using the method of separated oscillatory fields as explained above.
+
+\todo{Which exact hyperfine states are to be used?}
+
+\todo{What will be our switching sequence?}
+
+\subparagraph{Projection and detection}
+
+\paragraph{Projected sensitivity}
+
+\todo{The 30x sensitivity improvement estimate over the state of the art.}
 
 \paragraph{Overview of the \CENTREX\ scheme}
 
@@ -689,11 +809,23 @@ Molecules emerging from a cryogenic buffer gas beam source initially populate a 
     \label{entire}
 \end{figure*}
 
+\section{Simulations}
+
+\paragraph{Rotational cooling}
+
+\paragraph{Non-adiabatic transitions}
+
+\paragraph{Floquet theory}
+
 \section{Apparatus}
 
 See Fig.~\ref{entire} for an outline of the entire apparatus.
 
+\paragraph{Control software}
+
 \paragraph{Beam source}
+
+\paragraph{Laser system}
 
 \paragraph{Rotational cooling}
 
@@ -705,7 +837,7 @@ See Fig.~\ref{entire} for an outline of the entire apparatus.
 
 \paragraph{Interaction region}
 
-\paragraph{State preparation 3}
+\paragraph{State projection}
 
 \paragraph{Readout}
 
