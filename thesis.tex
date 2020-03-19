@@ -94,6 +94,10 @@
 \newcommand{\LIF}{\textsc{lif}}
 \newcommand{\TDSE}{\textsc{tdse}}
 \newcommand{\TISE}{\textsc{tise}}
+\newcommand{\DAQ}{\textsc{daq}}
+\newcommand{\GUI}{\textsc{gui}}
+\newcommand{\HDF}{\textsc{hdf}}
+\newcommand{\API}{\textsc{api}}
 
 \begin{document}
 
@@ -213,46 +217,6 @@ However, it is claimed that the `amount' or the `strength' of \CPV\ in the \CKM\
 \end{equation}
 %
 where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix (see \cite[fig 12.1]{PDG16}). With quark masses from \cite[p40, ``Quark Summary Table'']{PDG16} and $A\approx3\cdot10^{-5}$ from \cite[p7]{kleinknecht2006unitarity}, we get $J\approx121\cdot 10^3\GeV^{12}$. The electroweak phase transition, occurring at temperature $T_\text{EW}\approx100\GeV$, was the latest point in the evolution of the universe when \BAU\ could have been generated \cite{fodor2000EW}. Comparing $J$ and $T_\text{EW}$, we get the desired dimensionless quantity $J/T_\text{EW}^{12}\approx10^{-20}$ to within factors of order unity and we see it is ten orders of magnitude smaller than the constant parametrizing the baryon asymmetry. Thus, new sources of \CPV\ are needed.
-
-\paragraph{Schiff moment}
-
-Additional $CP$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclear charge $\delta\rho$ as
-%
-\begin{equation}
-   \vec d=e\int\vec r\delta\rho(\vec r)\d^3 r,
-\end{equation}
-%
-and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction. Assuming $CPT$ to be a good symmetry, the $T$-violation then leads to the $CP$-violation.
-
-However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
-
-In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in the form \cite[eqn~22]{sushkov1984possibility}
-%
-\begin{equation}
-   \delta\phi=e\int
-   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
-   +\frac{1}{Z}(\vec d\nabla)\int
-   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
-\end{equation}
-%
-where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution. The second term is responsible for the screening since it exactly cancels out the potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility}, the above potential may, under certain assumptions, be written in the form
-%
-\begin{equation}
-   \label{nabla}
-   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
-\end{equation}
-%
-where $\vec S$ is the Schiff moment (\SMt)
-%
-\begin{equation}
-   \label{simpleSchiffMoment}
-   \vec S=\frac{e}{10}
-   \left[
-      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
-   \right].
-\end{equation}
-
-To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
 
 \begin{figure}
    \centering
@@ -405,6 +369,45 @@ To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the
    \label{graddelta}
 \end{figure}
 
+\paragraph{Schiff moment}
+
+Additional $CP$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclear charge $\delta\rho$ as
+%
+\begin{equation}
+   \vec d=e\int\vec r\delta\rho(\vec r)\d^3 r,
+\end{equation}
+%
+and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction. Assuming $CPT$ to be a good symmetry, the $T$-violation then leads to the $CP$-violation.
+
+However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
+
+In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in the form \cite[eqn~22]{sushkov1984possibility}
+%
+\begin{equation}
+   \delta\phi=e\int
+   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
+   +\frac{1}{Z}(\vec d\nabla)\int
+   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
+\end{equation}
+%
+where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution. The second term is responsible for the screening since it exactly cancels out the potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility}, the above potential may, under certain assumptions, be written in the form
+%
+\begin{equation}
+   \label{nabla}
+   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
+\end{equation}
+%
+where $\vec S$ is the Schiff moment (\SMt)
+%
+\begin{equation}
+   \label{simpleSchiffMoment}
+   \vec S=\frac{e}{10}
+   \left[
+      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
+   \right].
+\end{equation}
+
+To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
 
 We may think of eqns~\ref{nabla}--\ref{simpleSchiffMoment} as the potential due to a constant electric field along the direction of the nuclear spin $\hat I$ inside a nucleus of radius $R$. This potential is linear in the coordinate $r$, truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
 
@@ -442,6 +445,7 @@ We can estimate the strength of the laboratory field required to efficiently pol
 
 To obtain an upper bound on $\nu$, typically a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
 
+\subparagraph{Separated oscillatory fields}
 The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Subjecting the two-state system to an oscillating field of form $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
 %
 $$
@@ -458,6 +462,14 @@ We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and th
 In principle, an infinitely precise measurement could be obtained by simply extending the length $l$ of the precession region. In practice, however, this meets with the following problems: (1) the beam intensity decay to zero if the beamline is too long; (2) we may want to measure the precession in a region where the oscillating field cannot be applied; (3) it is difficult to maintain uniform externally applied fields over an extended length.
 
 It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
+
+\subparagraph{Beam sources}
+To form a molecular beam, traditionally a thermal molecular source has been used. For example, Schropp et al.\ \cite{schropp1987new} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$. Similarly, Hinds and Sandars \cite{hinds1980experiment} used a TlF-containing copper oven stabilized to a temperature of $340\pm1$\degC, forming a molecular beam from the vapor effusing from an array of channels. Hunter et al.\ used a ceramic chamber filled with TlF at 415--460\degC\ and passed the vapor through ceramic tubes and an aperture to collimate the beam.
+
+More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryogenic buffer gas source from that used by Barry, Shuman and DeMille \cite{barry2011bright} for strontium monofluoride. Instead of producing vapors by direct heating of a mass of solid TlF, the solid is kept at roughly 4~K and molecules are released by ablation with a pulsed 1064~nm laser. Once away from the solid, they are extracted from the cell by becoming entrained in the flow of cryogenic buffer gas, typically helium or neon. The resulting beam tends to be slower, colder compared with conventional methods of molecular beam production. See \cite{hutzler2012buffer} for a review of cryogenic buffer gas beam sources.
+
+\todo{Give quantitative details about beam sources [Hutlzer's thesis]}
+
 
 \begin{figure}
 
@@ -600,8 +612,6 @@ It turns out that the oscillating field does not need to extend over the entire 
 
 TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large (as per eqn~\ref{schiff}); and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search}
 
-Traditionally, a thermal molecular source has been used to form a beam of TlF. For example, Schropp et al.\ \cite{schropp1987new} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$. Similarly, Hinds and Sandars \cite{hinds1980experiment} used a TlF-containing copper oven stabilized to a temperature of $340\pm1$\degC, forming a molecular beam from the vapor effusing from an array of channels. Hunter et al.\ used a ceramic chamber filled with TlF at 415--460\degC\ and passed the vapor through ceramic tubes and an aperture to collimate the beam. More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryogenic buffer gas source from that used by Barry, Shuman and DeMille \cite{barry2011bright} for strontium monofluoride. Instead of producing vapors by direct heating of a mass of solid TlF, the solid is kept at roughly 4~K and molecules are released by ablation with a pulsed 1064~nm laser. Once away from the solid, they are extracted from the cell by becoming entrained in the flow of cryogenic buffer gas, typically helium or neon. The resulting beam tends to be slower, colder compared with conventional methods of molecular beam production. See \cite{hutzler2012buffer} for a review of cryogenic buffer gas beam sources.
-
 All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
 \todo{Change of basis transformation between the two frames}
@@ -626,6 +636,8 @@ $$
 $$
 %
 while Ramsey \cite{wilkening1984search} gives an effective form, valid for small (less than approx.\ $20\kVcm$) electric fields when $J$ is a good quantum number. See ref.\ \cite{norrgard2017hyperfine} for corresponding details of the rotational and hyperfine Hamiltonian for the excited state $B^3\Pi_1$.
+
+\todo{Read ch.\ 2 of Hutzler's thesis to learn more about molecular structure}
 
 Externally applied electric field causes Stark effect, $ \H_\text{S}=-\vec d\cdot\vec E$, while a magnetic field gives rise to the Zeeman effect, as follows:
 %
@@ -784,8 +796,8 @@ Molecules travelling from the first state preparation region into the electrosta
     \label{twostate}
     H=\begin{pmatrix}
         \delta-\alpha\epsilon^2&\beta\\
-        \beta&0,
-    \end{pmatrix}
+        \beta&0
+    \end{pmatrix},
 \end{align}
 %
 where $\delta\sim2\pi\times100\kHz$ is the field-free level separation, $\alpha\epsilon^2$ is the level repulsion due to a quadratic Stark effect; thus $\alpha$ sets the field at which the Stark effect cancels $\delta$ (typically, tens or hundreds of V/cm). Finally, $\beta$ is the level coupling that gives rise to the avoided crossing.
@@ -913,9 +925,29 @@ The new crossings typically appear at higher fields than the original ones and t
 
 \section{Apparatus}
 
-See Fig.~\ref{entire} for an outline of the entire apparatus.
+As detailed in the section on the measurement scheme, \CENTREX\ follows the design of a conventional molecular beam experiment. Fig.~\ref{entire} displays an outline of the entire apparatus, and the following paragraphs give information about its construction.
 
 \paragraph{Control software}
+
+The experimental parameters are monitored and controlled using a range of devices, as given in the following. Most of these have already been integrated into a central data acquisition (\DAQ) system. At present, the latter consists of a single highly configurable Python program running on all computers attached to the experiment, communicating with the devices connected to the computer and writing the obtained data to the local disk. In the future, we intend to set up a common data and backup server to deal with the greatly increased data generation rate once the entire apparatus is up and running.
+
+The program's code is divided between classes that make up the graphical user interface (\GUI), and control classes which make use of driver classes to communicate with physical instruments. In addition, all program configuration is contained in \verb`.ini` files in subdirectories of the so-called \verb`config` directory, allowing for simple modification and extension of the \DAQ\ system without changing the main program code. This configuration is loaded into the relevant \verb`Config` class (e.g.\ \verb`DeviceConfig`).  
+
+The user controls the devices through the \verb`ControlGUI`, which is a canvas for control of recording and external devices. The information in device config files is automatically read and translated into usable controls that appear in the \GUI. Underneath the graphical interface, several classes implement the program's functionality:
+
+(1) \verb`Device` objects run each within its own thread, instantiate device drivers, and poll devices at regular intervals for data as well as check for normal operation insofar as supported by the driver, pushing this information into data and events queues specific to each device. In addition, these objects serve as an unified abstract interface to all the drivers and related information, especially through the \verb`config` member (of type \verb`DeviceConfig`).
+
+(2) \verb`Monitoring`: While the \verb`Device` objects collect information from the physical devices, they neither record it nor notify the user if any abnormal condition obtains. Thus the main program instantiates one \verb`Monitoring` object to read some of the data, display it in the main interface, and send it to an external central database.
+
+(3) The \verb`HDF_writer` stores the data collected by \verb`Device` objects to an file for future reference and analysis. The files are of Hierarchical Data Format (\HDF), version 5 format \cite{doecode_9801}, a portable, cross-platform format that provides \API s for commonly scientific computing languages. The format is extensible, open, and structured, allowing storage of data and its description in terms of arbitrary attributes, column names, and groups.
+
+(4) \verb`Config` classes serve to organize access to program/device/plot configuration. Thus, instead of having classes pass ad hoc pieces of information between each other, they set an appropriately-named attribute of the relevant \verb`Config` class. The latter in term only allows to set the attributes that have been declared previously. This enables the programmer to have a clear overview of what configuration parameters exist by simply inspecting the relevant \verb`Config` class.
+
+The program is thus generic enough to make it easy to add capabilities to control any number of new devices by simply (1) writing a device driver, and (2) a device config file. Drivers are classes inside the Python modules, such that instantiating the driver class is the abstract representation of opening a connection to a physical device. In addition, a driver class provides a \verb`ReadValue()` method that implements the particulars about how reading data works, and should return a list of values, consistent with the \verb`dtype` and \verb`shape` of the device as specified in the constructor. The driver must also provide a function \verb`GetWarnings()` that is be called at regular intervals to populate the list of \verb`warnings`. This function can check for the device parameters are within normal ranges, or simply do nothing if appropriate.
+
+Upon starting, the program reads the main config file \verb`config/settings.ini` that defines general program settings; the values are read by the instance of \verb`ProgramConfig` class. Device configurations are read from \verb`.ini` files in the chosen directory. Thus choosing a different directory allows for a different set of devices or device configurations to be loaded. These files define the controls that to appear on the screen for each instance of a device, the driver commands called from these controls, and their default values.
+
+The device \verb`.ini` file should specify whether the device is a slow or a fast device.  A slow device is expected to return only a few values each time its \verb`ReadValue()` is called, and thus requires a single dataset to contain all the data. A fast device can return thousands or millions of datapoints each time it is polled, together with metadata that describes this particular set of values. Thus, the program creates a new dataset for each invocation of \verb`ReadValue()` of a fast device.
 
 \paragraph{Beam source}
 
