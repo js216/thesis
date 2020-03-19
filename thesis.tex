@@ -77,6 +77,7 @@
 \newcommand{\mHz}{~\mathrm{mHz}}
 \newcommand{\degC}{\;$^{\circ}$C}
 \newcommand{\s}{~\mathrm{s}}
+\newcommand{\inches}{~\mathrm{in}}
 
 % acronyms
 \newcommand{\CPV}{\textsc{cpv}}
@@ -98,6 +99,11 @@
 \newcommand{\GUI}{\textsc{gui}}
 \newcommand{\HDF}{\textsc{hdf}}
 \newcommand{\API}{\textsc{api}}
+\newcommand{\OFHC}{\textsc{ofhc}}
+\newcommand{\OD}{\textsc{od}}
+\newcommand{\VCR}{\textsc{vcr}}
+\newcommand{\KF}{\textsc{kf}}
+\newcommand{\PID}{\textsc{pid}}
 
 \begin{document}
 
@@ -951,7 +957,28 @@ The device \verb`.ini` file should specify whether the device is a slow or a fas
 
 \paragraph{Beam source}
 
+The beam source works by ablation of a solid sample of TlF held at cryogenic temperatures in a thermally shielded vacuum chamber. The ablated particles are expelled from the ablation cell by a flow of cold neon buffer gas. The design has been adapted from the beam source used in ref.~\cite{barry2011bright} with significant modifications.
+
+The ablation cell is a 1.500~in high cuboid with top and bottom square faces with a 2.000~in side, machined out of \OFHC\ copper (Cu 101). The internal volume consists of two intersecting cylinders of diameter $d=1.150$~in and length $L=2.000$~in. According to a formula known to Archimedes \cite{moore1974symmetrical}, the volume common to the two cylinders is $\frac{2}{3}d^3$, making the internal cell volume for two cylinders to be $V=2L\pi\frac{d^2}{4}-\frac{2}{3}d^3\approx3.14\inches^3$. The actual internal volume is larger than that due to the way windows are attached to the cell.
+
+Three of the four circular openings in the cell are closed with fused silica windows, while the forth is covered by a thin plate of \OFHC\ copper (0.050~in thickness) with a \nicefrac{1}{4}~in aperture as the molecular beam exit nozzle. Unlike similar beam sources, the exit aperture is \emph{not} followed by a conical collimator, since we found it interferes with the collision-mediated beam thermalization processes (an effect highly sensitive to the exact placement, shape, and dimensions of the collimator). In order to protect the window through which the ablation laser enters from the immediate ablation by-products, the window is offset by a 3~in-long `snorkel', a cylinder of outer diameter 1.250~in, and an hole with internal diam. of 0.9~in going through the entire length of the piece. The cylinder is terminated on one end in a way that allows attaching it to the cell, and on another by a fitting for the window.
+
+The cell opening opposite the ablation laser is covered by the target holder, a copper piece machined so as to contain a volume of solid TlF. The targets are prepared in a separate chamber by filling them with powdered 99~\%\ pure thallium(I) fluoride (supplied by Strem Chemicals, Newburyport, MA, under product number 93-8106) and heating to a temperature just above the melting point 327\degC. In the early stages of beam characterization, the target holder had a small (\nicefrac{1}{4}~in diam.) opening, covered by another snorkel and window, to allow for absorption probing the TlF population in the cell.
+
+The buffer gas is 99.999~\% pure neon, supplied by TechAir (Naugatuck, CT). Outside the vacuum chamber, neon flow is moderated by a 412 series dual-stage pressure regulator (Concoa, Virginia Beach, VA), and a mass-flow controller (MKS Instruments, Andover, MA; part number 1179C00212CR1AV) that allows up to 100~sccm of flow. The gas is fed from the bottle using \nicefrac{1}{4}~in copper tubing.
+
+The opening opposite the cell exit nozzle has a 0.375~in opening that allow optical access along the direction of the molecular beam. In addition, perpendicularly through the same hole, the neon buffer gas enters the cell through a \nicefrac{1}{16}~in opening. The gas enters the beam source vacuum chamber via a \KF\oldstylenums{40}-to-\VCR\ (\nicefrac{1}{8}~in) feedthrough (Accu-Glass Products, Valencia, CA; part number 113030). To thermally separate the room-temperature vacuum chamber from the cryogenic parts, the connection is insulated by smooth-bore seamless 304 stainless steel tubing, \nicefrac{1}{8}~in OD, 0.02~in wall thickness (McMaster-Carr Supply Company, Elmhurst, IL; part number 89895K711). The stainless tubing is approx.\ 3~ft long, wound in a coil (approx.\ diam. 3~in) to save space. The gas line is thermally connected to the 40~K shield by flowing through \nicefrac{1}{8}~in copper tubing wound around and brazed on a \nicefrac{3}{4}~in-diam.\ copper bobbin that is fixed to the 40~K shield with a threaded rod. Another similar coil of stainless tubing limits heat flow from the 40~K shield to the cell. Finally, the neon thermalizes to the cell temperature by flowing through an approx.\ 6~in-long segment of \nicefrac{1}{8}~in copper tubing that is brazed to the piece that attaches to the cell.
+
+The cell is screwed onto the cold stage of the PT815 cryocooler (made by Cryomech Inc., Syracuse, NY). The cell is shielded from ambient thermal radiation by a two-state heat shield. The outer shield, made of aluminum 1100, hangs from the top plate of the vacuum chamber on stainless threaded rods and consists of a frame with removable covering plates and is thermally connected to the `warm' stages (approx.\ 40~K) of both pulse-tube cryocoolers. The inner shield, hanging from the outer one on four \nicefrac{1}{4}~in stainless threaded rods, is made of \nicefrac{1}{4}~in thick Cu101 plates, and is connected to the cold stage of the colder PT415 cooler, which cools it to approx. 4--5~K. The 4~K shield has bare openings for optical and molecular access, while the optical ports in the 40~K shield are blocked with loosely attached windows to limit the buffer gas escaping into to rest of the apparatus. The cell--cryocooler thermal links are done via flexible copper braids to prevent damage from unmatched thermal expansion coefficients.
+
+For control of cell temperature, a number of 10--25~$\Omega$ resistors are attached directly to the cell and heated directly with standard laboratory power supply, or controlled in a \PID\ loop using the CTC100 cryogenic temperature controller (Stanford Research Systems, Sunnyvale, CA). The same controller receives temperature input from the silicon diode sensors (DT-670 from Lake Shore Cryotronics, Inc., Westerville, OH) located on the cell gas-input nozzle, cell top plate (target side), 4~K and 16~K pulse tube warm stages. The other eight sensors, recorded by the model 218 temperature monitor from Lake Shore Cryotronics, are located on the cell back snorkel, 4~K shield top plate, 40~K shield top plate, 4~K pulse tube cold head, cell top plate, 4~K shield bottom plate, 40~K shield bottom plate, and the 16~K pulse tube cold head. These eight sensors' wires are fed through the vacuum chamber using two 25-pin feedthroughs (Accu-Glass p.n.\ 100225), with corresponding vacuum-side PEEK female D-sub connectors (Accu-Glass p.n.\ 100460) for ease of disconnecting.
+
+In addition to providing thermal isolation, the shields also serve as cryopumps, lowering the pressure from $\sim10^{-6}$~torr (as achieved by turbomolecular pumps) to approx.\ $2\cdot10^{-8}$~torr. Pumping down from atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG, Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet from InstruTech LLC, Longmont, CO).
+
+Cell windows are standard fused-silica UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
+
 \paragraph{Laser system}
+
 
 \paragraph{Rotational cooling}
 
