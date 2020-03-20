@@ -104,6 +104,8 @@
 \newcommand{\VCR}{\textsc{vcr}}
 \newcommand{\KF}{\textsc{kf}}
 \newcommand{\PID}{\textsc{pid}}
+\newcommand{\UV}{\textsc{uv}}
+\newcommand{\SHG}{\textsc{shg}}
 
 \begin{document}
 
@@ -713,7 +715,7 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 
 \end{tikzpicture}
 
-    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the UV laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves of stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy lines indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling.}
+    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves of stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy lines indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling.}
 \label{scheme}
 
 \end{figure}
@@ -723,7 +725,7 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 Molecules emerging from a cryogenic buffer gas beam source initially populate a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter rotational cooling region to accumulate population in a single hyperfine level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
 
 \subparagraph{Rotational cooling (Fig.~\ref{scheme})}
-Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a UV laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
+Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a \UV\ laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
 
 \todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching? Frequency-switching of microwaves vs power broadening.}
 
@@ -959,9 +961,19 @@ The device \verb`.ini` file should specify whether the device is a slow or a fas
 
 The beam source works by ablation of a solid sample of TlF held at cryogenic temperatures in a thermally shielded vacuum chamber. The ablated particles are expelled from the ablation cell by a flow of cold neon buffer gas. The design has been adapted from the beam source used in ref.~\cite{barry2011bright} with significant modifications.
 
+\todo{Include a diagram of the beam source.}
+
 The ablation cell is a 1.500~in high cuboid with top and bottom square faces with a 2.000~in side, machined out of \OFHC\ copper (Cu 101). The internal volume consists of two intersecting cylinders of diameter $d=1.150$~in and length $L=2.000$~in. According to a formula known to Archimedes \cite{moore1974symmetrical}, the volume common to the two cylinders is $\frac{2}{3}d^3$, making the internal cell volume for two cylinders to be $V=2L\pi\frac{d^2}{4}-\frac{2}{3}d^3\approx3.14\inches^3$. The actual internal volume is larger than that due to the way windows are attached to the cell.
 
-Three of the four circular openings in the cell are closed with fused silica windows, while the forth is covered by a thin plate of \OFHC\ copper (0.050~in thickness) with a \nicefrac{1}{4}~in aperture as the molecular beam exit nozzle. Unlike similar beam sources, the exit aperture is \emph{not} followed by a conical collimator, since we found it interferes with the collision-mediated beam thermalization processes (an effect highly sensitive to the exact placement, shape, and dimensions of the collimator). In order to protect the window through which the ablation laser enters from the immediate ablation by-products, the window is offset by a 3~in-long `snorkel', a cylinder of outer diameter 1.250~in, and an hole with internal diam. of 0.9~in going through the entire length of the piece. The cylinder is terminated on one end in a way that allows attaching it to the cell, and on another by a fitting for the window.
+Three of the four circular openings in the cell are closed with fused silica windows, while the forth is covered by a thin plate of \OFHC\ copper (0.050~in thickness) with a \nicefrac{1}{4}~in aperture as the molecular beam exit nozzle. Unlike similar beam sources, the exit aperture is \emph{not} followed by a conical collimator, since we found it interferes with the collision-mediated beam thermalization processes (an effect highly sensitive to the exact placement, shape, and dimensions of the collimator). In order to protect the window through which the ablation laser (Fig.~\ref{ablationLaser}) enters from the immediate ablation by-products, the window is offset by a 3~in-long `snorkel', a cylinder of outer diameter 1.250~in, and an hole with internal diam. of 0.9~in going through the entire length of the piece. The cylinder is terminated on one end in a way that allows attaching it to the cell, and on another by a fitting for the window.
+
+\begin{figure}
+    \centering
+    \def\svgwidth{1\columnwidth}
+    \input{figs/svg/lasers1.pdf_tex}
+    \caption{The ablation laser for the beam source is a pulsed Nd:YAG, provinding 4~ns pulses of maximum energy 130~mJ at max.\ 50~Hz (Nano LG 130-50 by Litron Lasers Ltd, UK). In beam source tests, we have commonly run it such that the pulse energy is approx.\ 35~mJ, at a repetition rate of 5--10~Hz. The photodiode receives a small amount of light split off the main beam, and is used for monitoring the laser power. [Drawing by O. Grasdijk]}
+    \label{ablationLaser}
+\end{figure}
 
 The cell opening opposite the ablation laser is covered by the target holder, a copper piece machined so as to contain a volume of solid TlF. The targets are prepared in a separate chamber by filling them with powdered 99~\%\ pure thallium(I) fluoride (supplied by Strem Chemicals, Newburyport, MA, under product number 93-8106) and heating to a temperature just above the melting point 327\degC. In the early stages of beam characterization, the target holder had a small (\nicefrac{1}{4}~in diam.) opening, covered by another snorkel and window, to allow for absorption probing the TlF population in the cell.
 
@@ -975,10 +987,19 @@ For control of cell temperature, a number of 10--25~$\Omega$ resistors are attac
 
 In addition to providing thermal isolation, the shields also serve as cryopumps, lowering the pressure from $\sim10^{-6}$~torr (as achieved by turbomolecular pumps) to approx.\ $2\cdot10^{-8}$~torr. Pumping down from atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG, Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet from InstruTech LLC, Longmont, CO).
 
-Cell windows are standard fused-silica UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
+Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
+
+\begin{figure*}
+    \centering
+    \def\svgwidth{\textwidth}
+    \input{figs/svg/lasers2.pdf_tex}
+    \caption{UV laser system. \part{a} Cs reference laser. \part{b} Transfer cavity. \part{c} Two-state second harmonic generation (\SHG). The IR beam begins in the Koheras Basik fiber laser seed, amplified by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). [Drawings by O. Grasdijk]}
+    \label{lasers}
+\end{figure*}
 
 \paragraph{Laser system}
 
+See Fig.~\ref{lasers} for a diagram of the \UV\ \SHG\ laser system.
 
 \paragraph{Rotational cooling}
 

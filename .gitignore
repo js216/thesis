@@ -5,4 +5,8 @@
 *.log
 *.blg
 *.ini
+
 thesis.pdf
+
+figs/svg/*.pdf
+figs/svg/*.pdf_tex
