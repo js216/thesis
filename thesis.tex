@@ -106,6 +106,7 @@
 \newcommand{\PID}{\textsc{pid}}
 \newcommand{\UV}{\textsc{uv}}
 \newcommand{\SHG}{\textsc{shg}}
+\newcommand{\IR}{\textsc{ir}}
 
 \begin{document}
 
@@ -993,13 +994,20 @@ Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton,
     \centering
     \def\svgwidth{\textwidth}
     \input{figs/svg/lasers2.pdf_tex}
-    \caption{UV laser system. \part{a} Cs reference laser. \part{b} Transfer cavity. \part{c} Two-state second harmonic generation (\SHG). The IR beam begins in the Koheras Basik fiber laser seed, amplified by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). [Drawings by O. Grasdijk]}
+    \caption{UV laser system (see text). \part{a} Cs reference laser. \part{b} Transfer scanning cavity frequency lock. \part{c} Two-state second harmonic generation (\SHG). The IR beam begins in the Koheras Basik fiber laser seed, amplified by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). [Drawings by O. Grasdijk]}
     \label{lasers}
 \end{figure*}
 
 \paragraph{Laser system}
 
-See Fig.~\ref{lasers} for a diagram of the \UV\ \SHG\ laser system.
+See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of three systems working together to (1) provide a stable cesium reference line, (2) lock an \IR\ seed laser to the reference, and (3) to quadruple the \IR\ into a \UV\ beam that can be used to probe transitions in TlF, occuring around 271~nm.
+
+\subparagraph{Cs lock}
+The reference system combines modulation transfer and frequency modulation spectroscopy, improving the short- and long-term stability of the lock. \cite{zi2017laser} 
+
+\subparagraph{Transfer cavity}
+
+\subparagraph{Second harmonic generation}
 
 \paragraph{Rotational cooling}
 
