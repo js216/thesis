@@ -17,7 +17,7 @@
    viewBox="0 0 272.45301 139.15649"
    version="1.1"
    id="svg1345"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    sodipodi:docname="lasers2.svg"
    inkscape:export-filename="C:\Users\Olivier\Downloads\cs_reference.png"
    inkscape:export-xdpi="300"
@@ -2052,15 +2052,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0856632"
+     inkscape:zoom="1.698481"
      inkscape:cx="514.87182"
      inkscape:cy="262.9729"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="753"
-     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1061"
+     inkscape:window-x="1680"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -7883,7 +7883,7 @@
        i:dimmedPercent="50"
        i:layer="yes"
        id="g4116-71"
-       transform="matrix(0.26611419,0,0,0.26611419,221.75063,306.98338)">
+       transform="matrix(0.26611419,0,0,0.26611419,215.40059,306.98338)">
       <linearGradient
          gradientTransform="matrix(0.35,0,0,1,-119.1455,-14.3086)"
          y2="14.6836"
@@ -8179,13 +8179,13 @@
          style="font-size:3.54818916px;line-height:1.25;stroke-width:0.26611418">EOM</tspan></text>
     <text
        id="text1678"
-       y="318.20801"
-       x="214.3107"
+       y="318.73718"
+       x="211.6649"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.25782681px;line-height:0%;font-family:Arial;text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26611418;enable-background:new"
        xml:space="preserve"><tspan
          style="font-size:3.54818916px;line-height:1.25;text-align:center;text-anchor:middle;stroke-width:0.26611418"
-         y="318.20801"
-         x="214.3107"
+         y="318.73718"
+         x="211.6649"
          id="tspan1676"
          sodipodi:role="line">$\lambda/2$</tspan></text>
     <text

@@ -100,6 +100,7 @@
 \newcommand{\HDF}{\textsc{hdf}}
 \newcommand{\API}{\textsc{api}}
 \newcommand{\OFHC}{\textsc{ofhc}}
+\newcommand{\ID}{\textsc{id}}
 \newcommand{\OD}{\textsc{od}}
 \newcommand{\VCR}{\textsc{vcr}}
 \newcommand{\KF}{\textsc{kf}}
@@ -107,6 +108,13 @@
 \newcommand{\UV}{\textsc{uv}}
 \newcommand{\SHG}{\textsc{shg}}
 \newcommand{\IR}{\textsc{ir}}
+\newcommand{\EOM}{\textsc{eom}}
+\newcommand{\AOM}{\textsc{aom}}
+\newcommand{\FMS}{\textsc{fms}}
+\newcommand{\MTS}{\textsc{mts}}
+\newcommand{\FSR}{\textsc{fsr}}
+\newcommand{\PDH}{\textsc{pdh}}
+\newcommand{\FPGA}{\textsc{fpga}}
 
 \begin{document}
 
@@ -988,26 +996,36 @@ For control of cell temperature, a number of 10--25~$\Omega$ resistors are attac
 
 In addition to providing thermal isolation, the shields also serve as cryopumps, lowering the pressure from $\sim10^{-6}$~torr (as achieved by turbomolecular pumps) to approx.\ $2\cdot10^{-8}$~torr. Pumping down from atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG, Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet from InstruTech LLC, Longmont, CO).
 
-Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
-
 \begin{figure*}
     \centering
     \def\svgwidth{\textwidth}
     \input{figs/svg/lasers2.pdf_tex}
-    \caption{UV laser system (see text). \part{a} Cs reference laser. \part{b} Transfer scanning cavity frequency lock. \part{c} Two-state second harmonic generation (\SHG). The IR beam begins in the Koheras Basik fiber laser seed, amplified by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). [Drawings by O. Grasdijk]}
+    \caption{UV laser system (see text). \part{a} Cs reference laser. \part{b} Transfer scanning cavity frequency lock. \part{c} Two-state second harmonic generation (\SHG). [Drawings by O. Grasdijk]}
     \label{lasers}
 \end{figure*}
 
+Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
+
 \paragraph{Laser system}
 
-See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of three systems working together to (1) provide a stable cesium reference line, (2) lock an \IR\ seed laser to the reference, and (3) to quadruple the \IR\ into a \UV\ beam that can be used to probe transitions in TlF, occuring around 271~nm.
+See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of three systems working together to (1) provide a stable cesium reference line, (2) lock an \IR\ seed laser to the reference, and (3) to quadruple the \IR\ into a \UV\ beam that can be used to probe transitions in TlF, occuring around 271~nm. In order to provide separately-controllable laser frequencies, we have three \SHG\ systems connected to two transfer lock cavities (one of them currently under construction).
 
 \subparagraph{Cs lock}
-The reference system combines modulation transfer and frequency modulation spectroscopy, improving the short- and long-term stability of the lock. \cite{zi2017laser} 
+The reference system is based on modulation transfer spectroscopy (\MTS), a pump--probe technique resulting in sub-Doppler resolution for laser locking. An \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier frequency) before it gets passed through a vapour cell. Modulation can appear on the counterpropagating probe beam, passed through the same vapour, through the interactions of the two beams with the atomic vapour. The interactions are an example of four-wave mixing where two pump beam frequency components combine with the probe beam, resulting in a sideband for the probe beam. \cite{mccarron2008modulation} In contrast, in frequency modulation spectroscopy (\FMS) only a single modulated beam is passed through the sample and onto a detector. If the modulation frequency is large compared with the spectral feature being probed, then the laser (or \EOM) can be tuned such that only one sideband interacts with the sample. In the absence of such an interaction, the \RF\ signal arising from the beating of one sideband with the carrier cancels that arising from the other sideband. A background-free signal results When this balance is upset by phase or amplitude changes in one sideband. \cite{bjorklund1980frequency}
+
+Following ref.~\cite{zi2017laser}, the beam sourced from the diode laser (DL pro 850, Toptica, Germany) is split off for transfer cavities with two polarizing beam splitters (with the two half-wave plates controlling the amount of light sent to each transfer cavity beam). The remaining beam is split by the acousto-optic modulator (\AOM) (AOMO 3080-122 830NM from Gooch \&\ Housego, UK) with 80~MHz center frequency, AR-coated for operation at 780--850~nm, into a pump and probe beam, the pump having about twice the power of the probe. (The \AOM\ also eliminates trouble from backreflection from the Cs cell, or photodiodes.) The pump beam is phase-modulated by the custom-built \EOM\ (Thorlabs Inc.) at 3~MHz before being led through the cesium quartz cell (Thorlabs GC19075-CS, diam.\ 19~mm, length 75~mm), magnetically shielded to the milligauss level in a 6~in-long, 2~in inner diam.\, three-layer concentric mu-metal shield (modified ZG-203 from Magnetic Shield Corporation, Bensenville, IL). 
+
+The \MTS\ signal is detected by the photodiode (we have not found it necessary to make use of the \FMS), and mixed with the \EOM\ driving frequency to obtain an error signal used inside the laser controller (Toptica DLC pro) to stabilize the laser diode current and the piezo-controlled cavity, and lock it to the $F=4\to5$ transition in the hyperfine structure of the cesium D$_2$ line, occuring at 852.35641~nm \cite{steck2003cesium}. However, as the Cs reference is only used to set the scale in the \FSR\ of the transfer cavity, the choice of the hyperfine level is not important---GHz differences cause differences negligible compared to the $\approx0.5$~MHz stability required for the \IR\ science lasers.
 
 \subparagraph{Transfer cavity}
+The Fabry--P\'erot interferometer (Toptica FPI 100) with free spectral range (\FSR) 1~GHz is locked to the cesium reference (master) laser. Up to two slave lasers can be used in this scheme, one for each of the two orthogonal polarizations, while the master can be distinguished by its different wavelength and separated away with a dichroic mirror. The cavity length is modulated by slighly more than one \FSR\ to scan over the transmission peaks. The timing difference between the master and slave peaks is then fed to a \PID\ loop to lock the slave frequency.
+
+\todo{More details about the locking electronics once that's built and tested.}
 
 \subparagraph{Second harmonic generation}
+The \IR\ beam at 1087~nm is generated by the Koheras Basik fiber laser seed and amplified to $\approx2$~W by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). A small amount of power is split off for the wavemeter (671A by Bristol Instruments, Rochester, NY), which allows for a measurement of the absolute laser frequency to within 50~MHz. The rest of the beam is modulated by an \EOM\ and passed through a bowtie-configuration cavity (built by K. Wenz at Columbia, NY) containing a ppKTP crystal that generates up to 1~W of green light at 543.5~nm. The green beam is coupled into a fiber and delivered to a second \SHG\ system (Toptica SHG pro) with a similar configuration. A BBO crystal is used for frequency doubling, resulting in $\approx70$~nm of \UV\ (271.7~nm).
+
+To counteract the cavity length changes due to temperature and pressure variations, one of the cavity mirrors is attached to a piezo actuator. Using the Pound--Drever-Hall technique (\PDH), the cavity photodiode signal is mixed with the \EOM\ driving frequency in order to extract a sensitive error signal that can be used to \PID-control the piezo actuator. \cite{drever1983laser} The \UV\ lock is done with a commercial analog setup (Toptica PDH 110, PID 100, and FALC 110), while for the green cavities we are transitioning to a home-built system, based on the Red Pitaya STEMlab \FPGA\ board.
 
 \paragraph{Rotational cooling}
 
