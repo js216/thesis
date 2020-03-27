@@ -68,6 +68,7 @@
 % units etc
 \newcommand{\GeV}{~\mathrm{GeV}}
 \newcommand{\kVcm}{~\mathrm{kV/cm}}
+\newcommand{\Vcm}{~\mathrm{V/cm}}
 \newcommand{\cm}{~\mathrm{cm}}
 \newcommand{\Tl}{\mathrm{Tl}}
 \newcommand{\fm}{~\mathrm{fm}}
@@ -116,6 +117,9 @@
 \newcommand{\PDH}{\textsc{pdh}}
 \newcommand{\FPGA}{\textsc{fpga}}
 \newcommand{\DDS}{\textsc{dds}}
+\newcommand{\NMR}{\textsc{nmr}}
+\newcommand{\AC}{\textsc{ac}}
+\newcommand{\DC}{\textsc{dc}}
 
 \begin{document}
 
@@ -628,7 +632,7 @@ More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryo
 
 \paragraph{The TlF molecule}
 
-TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large (as per eqn~\ref{schiff}); and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search}
+TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large (as per eqn~\ref{schiff}); and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search} By contrast, TlF is not a suitable system for electron \EDM\ measurements due to the closed shells zero total electron spin. \cite{kozlov1995parity}
 
 All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
@@ -800,7 +804,52 @@ In general, the statistical sensitivity of a molecular \EDM\ experiment depends 
 
 \todo{The 30x sensitivity improvement estimate over the state of the art.}
 
-\todo{Checks for systematics}
+\section{Systematics}
+
+Since the experiment is expected to result in a null measurement, it is crucial to consider the possible sources of systematic error, and estimate or measure the effect they would have on the final uncertainty. In the following, I consider three kinds of effects: the frequency shifts resulting from reversal of one or more parameters; parameter scans (e.g., the order or timing of switches, or beam source ablation power); and effects that cannot be scanned or reversed, such as the residual magnetic field in the interaction chamber.
+
+\paragraph{Shifts under field reversals}
+
+We continually reverse a number of parameters that in principle should not affect the measured \NMR\ frequency $f$ if done perfectly, and measure the resulting shift
+%
+$$
+S(A,B,\ldots)\equiv f(A,B,\ldots)-f(-A,-B,\ldots).
+$$
+%
+The parameters chosen for reversals can include $E_\text{int}$, the electric field between the electrodes in the main interaction region, $M=\pm1$, which of the two hyperfine levels were chosen for the \NMR\ measurement, $E_\text{quad}$, the electric field in the electrostatic quadrupole lens, $P=\pm\pi/2$, the relative phase of the \NMR\ coils at the ends of the interaction region, $B_\text{ss}$, the magnetic field in the state-selection region, \todo{and what other things are we reversing?} The following paragraphs discuss the non-\EDM\ frequency shifts in the order of increasing number of simultaneously reversed fields.
+
+\subparagraph{Single reversal}
+The Stark effect results in the same energy levels no matter the polarity of the field. \todo{Why is that?} However, the hyperfine level spacing changes by order 1~mHz if the $\pm30\kVcm$ fields differ in magnitude by $0.1\Vcm$, as may be calculated by diagonalizing the ground-state Hamiltonian in the presence of the two near-opposite fields. The shift $S(E_\text{int})$ is thus a sensitive measure of how perfectly the interaction-region electric field is reversed. In addition to a \DC\ offset on the high-voltage electrode supply, or the finite charging time of the parallel-plate capacitor formed between the electrodes, such a shift can be due to accumulations of charges on non-conductive parts of the electrodes, their mounting structure, or the vacuum chamber itself. \todo{Any other cause for imperfect reversal? How much charge accumulation to expect? What are we doing to control all these causes?} In ref.~\cite{cho1991search}, the laboratory cancellation of the Stark asymmetry did not need to be perfect since the \EDM\ signal was cancelled by the further reversals of $B$ and $M$. \todo{Is the analogous true for \CENTREX?}
+
+\subparagraph{Coupling of two parameters}
+
+\subparagraph{Three or more parameters}
+
+\paragraph{Parameter scans}
+
+\paragraph{Residual effects}
+
+failure of field reversals to revert back to the original field
+
+$B_\text{int}$, the \DC\ magnetic field in the interaction region
+
+inhomogeneity of $E_\text{int}$
+
+\todo{The old papers reporting limits on T violation using TlF have some very relevant discussion: one (longer) one by Hinds \cite{cho1991search} and one by Ramsey, \cite{wilkening1984search}. It would be good to start with understanding all the systematics they mention in those papers.}
+
+\todo{D. Cho’s thesis (from Yale!) might have more info, if you can find it.}
+
+\todo{It might be useful to look at the discussion of systematics in this paper. \cite{commins1994improved} There, vxE is by far the largest effect, and luckily for us, that is not much of an issue in TlF (but you should understand why exactly!).  The “geometric phase” effect there is a particular type of vxE effect, and again I think it does not matter much for us, but it would again be important to understand why. A few others effects are mentioned there that might show up for us.}
+
+\todo{Some other useful things about systematics are here: \cite{vutha2010search}}
+
+Magnetic field due to the leakage current between the interaction-region electrodes.
+
+Motional magnetic field $B=\vec v\times\vec E/c$ experienced by a particle travelling with velocity $\vec v$ in the electric field $\vec E$. This can be minimized by making sure the applied magnetic field is exactly perpendicular to the motional field, so that field reversal does not change the total magnetic field magnitude.
+
+\todo{``I have wondered about “Bloch-Siegert” shifts = AC Zeeman shifts from imperfections in the RF drive fields, in combination with various E-field imperfections.  I have also wondered about doing the analogous measurement with 19F, where the interesting physics should be negligible but systematics should be about the same.''}
+
+\todo{Find more effects and dicuss their origin, magnitude estimate, how to measure, how to minimize. ``I have a few thoughts along those lines, but you should understand the known effects first.'' [DPD email from 3/24/2020]}
 
 \section{Simulations}
 
