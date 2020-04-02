@@ -64,6 +64,7 @@
 \newcommand{\bra}[1]{\langle#1|}
 \newcommand{\ket}[1]{|#1\rangle}
 \newcommand{\braket}[2]{\langle#1|#2\rangle}
+\DeclareMathOperator{\sgn}{sgn}
 
 % units etc
 \newcommand{\GeV}{~\mathrm{GeV}}
@@ -209,7 +210,7 @@ No corresponding flavor-neutral \CPV\ has been observed yet. In principle, the \
    \frac{g^2}{32\pi^2}G_{\mu\nu}^a\widetilde{G}^a_{\mu\nu},
 \end{equation}
 %
-where $G^a$ is the gluon field tensor. Experimental evidence suggests that the strength of this term relative to the usual strong interaction is $|\theta|<9\cdot10^{-11}$.  Presently accepted theories cannot explain why $\theta$ should be that small; this fine-tuning issue is known as the strong $CP$ problem. See \cite{graham2015experimental} for a brief review of a few possible solutions.
+where $G^a$ is the gluon field tensor. Experimental evidence from neutral $^{199}$Hg atoms \cite{graner2016reduced} and neutron \EDM\ experiments \cite{baker2006improved} suggests that the strength of this term relative to the usual strong interaction is $|\theta|<10^{-10}$. Presently accepted theories cannot explain why $\theta$ should be that small; this fine-tuning issue is known as the strong $CP$ problem. See \cite{graham2015experimental} for a brief review of a few possible solutions.
 
 At present, searches for \EDM s give the most sensitive constraints on flavor-diagonal \CPV. Conversely, given a particle physics model with \CPV\ we can predict what the expected \EDM\ of the particles is. For example, in the Standard Model, the \CKM\ phase can produce a lepton \EDM\ no larger than $10^{-38}\;e\cm$. Part of the reason the \EDM\ is so suppressed is that it cannot appear below the four-loop level.  \cite{pospelov1991electric} Given how small these effects are in the Standard Model, \EDM s thus provide nearly background-free evidence of new physics. In fact, the \CKM\ background would only become apparent when probing effects beyond the energy scale of $10^{11}\GeV$.  \cite{pospelov2005electric}
 
@@ -393,56 +394,51 @@ where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix (s
 
 \paragraph{Schiff moment}
 
-Additional $CP$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclear charge $\delta\rho$ as
+Additional $CP$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclean density $\rho$ as
 %
 \begin{equation}
-   \vec d=e\int\vec r\delta\rho(\vec r)\d^3 r,
+    \label{dipole}
+   \vec d\equiv e\int\vec r'\rho(\vec r')\d^3\vec r',
 \end{equation}
 %
 and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction. Assuming $CPT$ to be a good symmetry, the $T$-violation then leads to the $CP$-violation.
 
 However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
 
-In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus. This necessitates writing $P, T$-odd nuclear potentials in the form \cite[eqn~22]{sushkov1984possibility}
+In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus and there can be a measurable electrostatic interaction of nuclear $P,T$-odd nuclear moments with atomic or molecular electrons. The interaction can be presented as arising from a potential $\phi(\vec r)$ of the form \cite[eqn~1]{spevak1997enhanced}
 %
 \begin{equation}
-   \delta\phi=e\int
-   \frac{\delta\rho(\vec r)\d^3r}{|\vec R-\vec r|}
-   +\frac{1}{Z}(\vec d\nabla)\int
-   \frac{\rho_0(r)\d^3 r}{|\vec R-\vec r|},
+    \label{screened}
+    \phi(\vec r)=e
+    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r'
+    +\frac{1}{Z}(\vec d\cdot\nabla)
+    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r',
 \end{equation}
 %
-where $\rho_0(r)$ is the spherically symmetric nuclear charge distribution. The second term is responsible for the screening since it exactly cancels out the potential due to a dipole. As shown in \cite[eqn~29]{sushkov1984possibility}, the above potential may, under certain assumptions, be written in the form
-%
-\begin{equation}
-   \label{nabla}
-   \delta\phi = -4\pi\vec S\cdot\nabla\delta(\vec R),
-\end{equation}
-%
-where $\vec S$ is the Schiff moment (\SMt)
+where $\rho(\vec r)$ is the nuclear charge density, $\int\rho(\vec r)\d^3\vec r=Z$, normalized to the nuclear charge $Z$. The first term is simply the electrostatic potential of a bare nucleus, while the second term---responsible for the screening---ensures that dipole effects vanish outside the nucleus. The leading-order Schiff moment operator can under certain assumptions be taken to be the vector $\vec S$ multiplying $-4\pi\nabla\delta^3(\vec r)$, but both the assumptions involved and the derivation itself are far from simple (see appendix and ref.~\cite{liu2007atomic}). A commonly reproduced form is \cite[eqn~29]{sushkov1984possibility}
 %
 \begin{equation}
    \label{simpleSchiffMoment}
    \vec S=\frac{e}{10}
    \left[
       \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
-   \right].
+   \right],
 \end{equation}
+%
+where the averaging is weighted by the nuclear charge distribution, such that $\ex{\cdots}\equiv\int\rho(\vec r)\cdots\d^3\vec r$.
 
-To get an intuitive grasp on the expression $\nabla\delta(\vec R)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\sim\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
+To get an intuitive grasp on the expression $\nabla\delta^3(\vec r)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\propto\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
 
-We may think of eqns~\ref{nabla}--\ref{simpleSchiffMoment} as the potential due to a constant electric field along the direction of the nuclear spin $\hat I$ inside a nucleus of radius $R$. This potential is linear in the coordinate $r$, truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
-
-A more sophisticated approach using the spherical multipole formalism gives a more general form for the leading-order Schiff moment operator which reduces to eqn~\ref{simpleSchiffMoment} under certain assumptions. As discussed in \cite[sect~III]{liu2007atomic}, these may not in fact be justified.
+We may think of eqn~\ref{simpleSchiffMoment} as the potential due to a constant electric field along the direction of the nuclear spin $\hat I$ inside a nucleus of radius $R$. This potential is linear in the coordinate $r$, truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
 
 We can estimate the magnitude of the Schiff moment caused by a single valence nucleon with a dipole moment $d_\text{n}$. Assume it moves in a uniform spherical core of radius $R\approx R_0A^{1/3}$, where $R_0\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}. Then the magnitude of the \SMt\ is
 %
 \begin{equation}
     \label{schiff}
-   |\vec S|\sim d_\text{n}A^{2/3}R_0^2
+   |\vec S|\propto d_\text{n}A^{2/3}R_0^2
 \end{equation}
 %
-to within factors of order unity \cite[eqn~8.76]{khriplovich2012cp}. The $A^{2/3}$ scaling indicates that heavier atoms are preferrable for \SMt\ experiments. Note, however, that given an \SMt\ measurement, the preceding estimate provides only an upper bound on the nucleon's \EDM\ since the nucleonic contribution to the \SMt\ tends to be 10 to 100 times smaller than that due to the $P,T$-violating interactions between valence nucleons and the core.  \cite{sushkov1984possibility}
+to within factors of order unity \cite[eqn~8.76]{khriplovich2012cp}. The $A^{2/3}$ scaling indicates that heavier atoms are preferrable for \SMt\ experiments. Note, however, that a \SMt\ measurement in fact includes additive contributions from both the nucleon \EDM s, arising from short-range interactions between quarks, and also from longer-range $P,T$-violating interactions between valence nucleons and the core. In fact, in some theory models, the second contribution to the \SMt\ can be 10 to 100 times larger than that due to the nucleonic \EDM. \cite{sushkov1984possibility}
 
 \paragraph{Molecular techniques}
 
@@ -453,19 +449,19 @@ For nuclei inside a molecule, the Schiff moment and other $P,T$-violating effect
    \H=-d\hat\sigma\cdot\hat\lambda,
 \end{equation}
 %
-where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vector along the internuclear axis in the molecule (in TlF, pointing towards the F nucleus). The interaction strength $d$, also written in frequency units as $\nu\equiv d/h$, can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities. For example, \cite[eqn~26]{cho1991search} use a calculation from \cite{coveney1983parity} to obtain the Schiff moment $S$ from the interaction strength $\nu$:
+where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vector along the internuclear axis in the molecule (in TlF, we define this to point towards the F nucleus). The interaction strength $d$, also written in frequency units as $\nu\equiv d/h$, can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities. For example, \cite[eqn~26]{cho1991search} use a calculation from \cite{coveney1983parity} to obtain the Schiff moment $S$ from the interaction strength $\nu$:
 %
 \begin{equation}
    S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 
-Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state.  According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Alternatively, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
+Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Alternatively, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
 
 Compared to atoms, molecules are polarized much more readily in laboratory fields, making them ideal for such an \EDM\ measurement. Thus Sandars suggested that a molecular-beam resonance experiment could be used to probe the existence of an electric dipole moment on the proton, so long as the molecule has a heavy atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
 
 We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
 
-To obtain an upper bound on $\nu$, typically a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
+To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ results compared to the levels in absence of the interaction. Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
 
 \subparagraph{Separated oscillatory fields}
 The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Subjecting the two-state system to an oscillating field of form $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
@@ -692,6 +688,8 @@ Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} 
 
 Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects $J=0$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed after a second state selector and quadrupole filter by measuring the ion current produced by a hot, oxygenated tungsten filament. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.
 
+\todo{166Hg papers: \cite{romalis2001new} \cite{griffith2009improved} \cite{graner2016reduced}}
+
 \todo{What other important parameters of each experiment should I include? What other papers should I review (other molecular or atomic species, non-proton EDMs, other)?}
 
 \begin{figure}
@@ -761,7 +759,7 @@ In the Bloch sphere picture, the precession of the state vector around the Rabi 
 \subparagraph{Electrostatic quadrupole lens}
 Molecules leave the beam source spread over a wide solid angle, so the beam intensity decays roughly as the distance squared from the source. To couteract this effect, we intend to collimate the beam, or focus it on the detection region, some seven meters away from the source.
 
-It turns that that an appropriate field distribution can be used as an analogue to the optical lens \cite{cho1991tight}, the condition being that inside the lens, moleculex experience a restoring force proportional to the displacement $r$ of the molecule from the axis. For a quadrupole field, the magnitude of the field is $|E|=Vr/R^2$, where $V$ is the potential difference between oppositely-charged electrodes and $2R$ the distance between opposite electrodes. \cite{bennewitz1955fokussierung} Furthermore, since the $J=2$ state of thallium fluoride has a quadratic Stark effect at high fields ($\sim30\kVcm$), this results in the desired quadratic potential energy, or a linear restoring force. Ref.~\cite{berg1965determination} makes the optical analogy exact in terms of ray-transfer (or `ABCD') matrices, whereby the condition for focusing results in the standard expression for a thin lens of focal length $f$
+It turns that that an appropriate field distribution can be used as an analogue to the optical lens \cite{cho1991tight}, the condition being that inside the lens, moleculex experience a restoring force proportional to the displacement $r$ of the molecule from the axis. For a quadrupole field, the magnitude of the field is $|E|=Vr/R^2$, where $V$ is the potential difference between oppositely-charged electrodes and $2R$ the distance between opposite electrodes. \cite{bennewitz1955fokussierung} Furthermore, since the $J=2$ state of thallium fluoride has a quadratic Stark effect at high fields ($\propto30\kVcm$), this results in the desired quadratic potential energy, or a linear restoring force. Ref.~\cite{berg1965determination} makes the optical analogy exact in terms of ray-transfer (or `ABCD') matrices, whereby the condition for focusing results in the standard expression for a thin lens of focal length $f$
 %
 \begin{align*}
     \begin{pmatrix}
@@ -789,12 +787,16 @@ A second state preparation region will take molecules out of the lens $J=2$ stat
 \subparagraph{Interaction region}
 A high external electric field polarizes the molecules to achieve a large internal electric field, thus amplifying the sensitivity to tiny effects due to the Schiff moment. The measurement will be done using the method of separated oscillatory fields as explained above.
 
-\todo{Which exact hyperfine states are to be used?}
+We intend to use a pair of $J=1$, $m_J=\pm1$ states, where the molecular rotation leads to an internal magnetic field. By flipping the sign of $m_J$, the internal magnetic field can be reversed. The first \RF\ coil in the Ramsey sequence creates a superposition of thallium spin-up and spin-down states, and the phase accumulated during the interaction time is translated by the second pulse back into varying populations of the spin states. The data obtained with the two different fluorine spin directions can be used for systematic checks.
+
+If the \RF\ coils are in phase, or exactly out of phase, then zero phase accumulated by the molecule is translated by the second pulse into one of the spin projections. If instead the pulses are delayed by $P=\pm\pi/2$, then zero phase corresponds to equal populations. The latter scheme is more sensitive than the former, since the measurement is taken at the linear regime between two extrema of signal-vs-phase.
 
 \todo{What will be our switching sequence?}
 
 \subparagraph{Projection and detection}
-While the detection scheme has not yet been finalized, we expect we will be able to map the two spin states from the interaction region to two different rotational states using microwaves. Unlike some of the experiments discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to detect the amount of molecules in the final rotational states. Compared to hot-wire or absorption techniques, \LIF\ has the advantage of observing a signal against a dark background (modulo light scattered from the optics and vacuum chamber windows). \cite{tango1968spectroscopy} Furthermore, since the emitted light can be collected at different angles, we can obtain spatial information about the detection process. \cite{zare2012my}
+While the detection scheme has not yet been finalized, we expect we will be able to map the two spin states from the interaction region to two different rotational states using microwaves. Unlike some of the experiments discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to detect the amount of molecules in the final rotational states, but the pair of cycling transitions has not yet been chosen or optimized.
+
+Compared to hot-wire or absorption techniques, \LIF\ has the advantage of observing a signal against a dark background (modulo light scattered from the optics and vacuum chamber windows). \cite{tango1968spectroscopy} Furthermore, since the emitted light can be collected at different angles, we can obtain spatial information about the detection process. \cite{zare2012my} Since we are able to measure both spin-up and spin-down populations, we are to first order insensitive to changes in beam intensity and the resulting spurious systematics. The quantity of interest is the contrast, defined as the ratio of the difference and the sum of the two populations, which in principle cancels out the beam intensity. \todo{Are there other ways the intensity shift systematic can sneak in anyway?}
 
 For a near-unity \LIF\ detection efficiency, we are going to use the following optical cycling scheme. \todo{Present the optical cycling.}
 
@@ -805,8 +807,8 @@ In general, the statistical sensitivity of a molecular \EDM\ experiment depends 
 \todo{The 30x sensitivity improvement estimate over the state of the art.}
 
 \section{Systematics}
-
-Since the experiment is expected to result in a null measurement, it is crucial to consider the possible sources of systematic error, and estimate or measure the effect they would have on the final uncertainty. In the following, I consider three kinds of effects: the frequency shifts resulting from reversal of one or more parameters; parameter scans (e.g., the order or timing of switches, or beam source ablation power); and effects that cannot be scanned or reversed, such as the residual magnetic field in the interaction chamber.
+t
+Since the experiment is expected to result in a null measurement, it is crucial to consider the possible sources of systematic error, and estimate the effect they would have on the final uncertainty. Experimentally, it is important to measure what difference each of the `knobs' makes. In the following, I consider three kinds of effects: the frequency shifts resulting from reversal of one or more parameters; parameter scans (e.g., the order or timing of switches, or beam source ablation power); and effects that cannot be scanned or reversed, such as the residual magnetic field in the interaction chamber.
 
 \paragraph{Shifts under field reversals}
 
@@ -816,10 +818,38 @@ $$
 S(A,B,\ldots)\equiv f(A,B,\ldots)-f(-A,-B,\ldots).
 $$
 %
-The parameters chosen for reversals can include $E_\text{int}$, the electric field between the electrodes in the main interaction region, $M=\pm1$, which of the two hyperfine levels were chosen for the \NMR\ measurement, $E_\text{quad}$, the electric field in the electrostatic quadrupole lens, $P=\pm\pi/2$, the relative phase of the \NMR\ coils at the ends of the interaction region, $B_\text{ss}$, the magnetic field in the state-selection region, \todo{and what other things are we reversing?} The following paragraphs discuss the non-\EDM\ frequency shifts in the order of increasing number of simultaneously reversed fields.
+The parameters chosen for reversals can include $E_\text{int}$, the electric field between the electrodes in the main interaction region, $M=\pm1$, which of the two sets of two hyperfine levels were chosen for the \NMR\ measurement, $E_\text{quad}$, the electric field in the electrostatic quadrupole lens, $P=\pm\pi/2$, the relative phase of the \NMR\ coils at the ends of the interaction region, $B_\text{ss}$ and $E_\text{ss}$, the magnetic and electric fields in the state-selection region, \todo{other things in the state-selection region that is yet to be designed, and what other things are we reversing?} The following paragraphs discuss the non-\EDM\ frequency shifts in the order of increasing number of simultaneously reversed fields.
 
 \subparagraph{Single reversal}
-The Stark effect results in the same energy levels no matter the polarity of the field. \todo{Why is that?} However, the hyperfine level spacing changes by order 1~mHz if the $\pm30\kVcm$ fields differ in magnitude by $0.1\Vcm$, as may be calculated by diagonalizing the ground-state Hamiltonian in the presence of the two near-opposite fields. The shift $S(E_\text{int})$ is thus a sensitive measure of how perfectly the interaction-region electric field is reversed. In addition to a \DC\ offset on the high-voltage electrode supply, or the finite charging time of the parallel-plate capacitor formed between the electrodes, such a shift can be due to accumulations of charges on non-conductive parts of the electrodes, their mounting structure, or the vacuum chamber itself. \todo{Any other cause for imperfect reversal? How much charge accumulation to expect? What are we doing to control all these causes?} In ref.~\cite{cho1991search}, the laboratory cancellation of the Stark asymmetry did not need to be perfect since the \EDM\ signal was cancelled by the further reversals of $B$ and $M$. \todo{Is the analogous true for \CENTREX?}
+States with opposite values of $m_J$ have the same energy in the Stark effect, and, analogously, so do states no matter the polarity of the electric field. That is a consequence of time-reversal symmetry, since the direction of motion of electrons in the atom does not change the electric dipole moment, making time reversal a symmetry of the Stark effect. \cite{gottfried2013quantum} It can be shown that there exist pairs of states of opposite $m_J$ with identical matrix elements of the Stark operator $S_z$ (identical polarizabilities to first order). \cite{angel1968hyperfine} In terms of spherical harmonics, the $z$-component of the electric dipole operator is proportional to $Y_1^0$, as can be seen from the spherical multipole expansion \cite[eqn~4.1]{jackson1998classical},
+%
+\begin{equation}
+    \label{sphericalMultipole}
+    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r'=
+    \sum\limits_{\ell=0}^\infty
+    \sum\limits_{m=-\ell}^\ell
+    \frac{4\pi}{2\ell+1}
+    q_{\ell m}
+    \frac{Y_{\ell m}(\theta,\phi)}{r^{\ell+1}},
+\end{equation}
+where the multipole moment is $q_{\ell m}\equiv\int Y^*_{\ell m}(r')^\ell\rho(\vec r')\d^3\vec r'$. 
+%
+Using a standard relation from angular momentum algebra, the matrix element can be written and simplified as follows:
+%
+\begin{align*}
+    \bra{J'&,m_J'}|Y_1^0\ket{J,m_J}\\
+    &\propto\braket{J',0,1,0}{J,0}\braket{J',m_J',1,0}{J,m_J}\\
+    &\propto\begin{cases}
+        \sqrt{(J-m_J)(J+m_J)},&\text{for $J'=J-1$}\\
+        \sqrt{(J-m_J+1)(J+m_J+1)},&\text{for $J'=J+1$}\\
+    \end{cases}
+\end{align*}
+%
+Evidently, the $\sgn(m_J)$ dependence is gone.
+
+However, the hyperfine level spacing changes by order 1~mHz if the $\pm30\kVcm$ fields differ in magnitude by $0.1\Vcm$, as may be calculated by diagonalizing the ground-state Hamiltonian in the presence of the two near-opposite fields. The shift $S(E_\text{int})$ is thus a sensitive measure of how perfectly the interaction-region electric field is reversed. In addition to a \DC\ offset on the high-voltage electrode supply, or the finite charging time of the parallel-plate capacitor formed between the electrodes, such a shift can be due to accumulations of charges on non-conductive parts of the electrodes, their mounting structure, or the vacuum chamber itself. \todo{Any other cause for imperfect reversal? How much charge accumulation to expect? What are we doing to control all these causes?} In ref.~\cite{cho1991search}, the laboratory cancellation of the Stark asymmetry did not need to be perfect since the \EDM\ signal was cancelled by the further reversals of $B$ and $M$. \todo{Is the analogous true for \CENTREX?}
+
+Reversal of the fields in the state-selection region could impact the efficiency of state transfer, and thus induce spurious asymmetries in the final signal. It can also modulate the field in the interaction region through fields leaking from the state-selection region. The leaked fields
 
 \subparagraph{Coupling of two parameters}
 
@@ -867,7 +897,7 @@ Molecules travelling from the first state preparation region into the electrosta
     \end{pmatrix},
 \end{align}
 %
-where $\delta\sim2\pi\times100\kHz$ is the field-free level separation, $\alpha\epsilon^2$ is the level repulsion due to a quadratic Stark effect; thus $\alpha$ sets the field at which the Stark effect cancels $\delta$ (typically, tens or hundreds of V/cm). Finally, $\beta$ is the level coupling that gives rise to the avoided crossing.
+where $\delta\propto2\pi\times100\kHz$ is the field-free level separation, $\alpha\epsilon^2$ is the level repulsion due to a quadratic Stark effect; thus $\alpha$ sets the field at which the Stark effect cancels $\delta$ (typically, tens or hundreds of V/cm). Finally, $\beta$ is the level coupling that gives rise to the avoided crossing.
 
 The Hamiltonian $H$ may be diagonalized exactly to give the eigenenergies $E_\pm$ and states $\psi_\pm$. To investigate the effect of subjecting the molecule to a time-varying electric field $\epsilon(t)$, we can assume that at $t=0$ the system starts in the state $\psi_+$. After solving the time-dependent Schr\"odinger equation (\TDSE) $id\psi/dt=H\psi$ for the final state $\psi_\text{f}$, we can evaluate the probability $P_\text{trans}=|\braket{\psi_\text{f}}{\psi_-}|^2$ the system has transitioned to the other field-free eigenstate.
 
@@ -920,7 +950,7 @@ where the matrix elements of the extended Hamiltonian $\widetilde{H}$ are given 
 %
 Here, the lower indices refer to a particular `photonic' mode, and the upper indices refer to the matrix elements of the original Hamiltonian.
 
-The interaction term in the above general expression can easily be found for the case of the two-level model in eqn.~\ref{twostate}. When an electric field $\epsilon(t)\equiv\epsilon_\text{DC}+\epsilon_\text{AC}(t)$ is applied, the AC part of the Hamiltonian is
+The interaction term in the above general expression can easily be found for the case of the two-level model in eqn~\ref{twostate}. When an electric field $\epsilon(t)\equiv\epsilon_\text{DC}+\epsilon_\text{AC}(t)$ is applied, the AC part of the Hamiltonian is
 %
 $$
 H_\text{AC}=-\begin{pmatrix}\alpha&0\\0&0\end{pmatrix}
@@ -956,7 +986,7 @@ i.e., the 0th order effect of the AC field is a simple AC Stark shift. This sugg
 
 The higher order interactions---those due to $\delta_{n,m\pm1}$ and $\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian, effecting a tensor product with the corresponding Kronecker matrices. The effect on the spectrum is to replace the two states with an infinite set of pairs of states, each pair separated from the next by the energy $\hbar\omega$ of a single photon. Plotted as a function of the electric field, we note that in addition to the avoided crossings present in the `unperturbed' Hamiltonian, new crossings appear as a result of interactions with the virtual photons.
 
-The new crossings typically appear at higher fields than the original ones and thus do not cause transitions unless the inverting DC field is of sufficient magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet}b, the DC field is assumed to traverse the inherent avoided crossing and not much further. However, in the flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$ get reversed in a characteristic time $T_\text{fall}\sim10^{-4}\s\sim10/\delta$. In order to move the induced avoided crossings beyond the reach of these fields, the applied AC field would need to have a frequency of order $900\GHz$. Alternatively, the AC field could be confined to a region where the DC field does not depart too far from zero.
+The new crossings typically appear at higher fields than the original ones and thus do not cause transitions unless the inverting DC field is of sufficient magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet}b, the DC field is assumed to traverse the inherent avoided crossing and not much further. However, in the flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$ get reversed in a characteristic time $T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced avoided crossings beyond the reach of these fields, the applied AC field would need to have a frequency of order $900\GHz$. Alternatively, the AC field could be confined to a region where the DC field does not depart too far from zero.
 
 \paragraph{\todo{Optical cycling}}
 
@@ -1004,7 +1034,7 @@ The user controls the devices through the \verb`ControlGUI`, which is a canvas f
 
 (1) \verb`Device` objects run each within its own thread, instantiate device drivers, and poll devices at regular intervals for data as well as check for normal operation insofar as supported by the driver, pushing this information into data and events queues specific to each device. In addition, these objects serve as an unified abstract interface to all the drivers and related information, especially through the \verb`config` member (of type \verb`DeviceConfig`).
 
-(2) \verb`Monitoring`: While the \verb`Device` objects collect information from the physical devices, they neither record it nor notify the user if any abnormal condition obtains. Thus the main program instantiates one \verb`Monitoring` object to read some of the data, display it in the main interface, and send it to an external central database.
+(2) \verb`Monitoring`: While the \verb`Device` objects collect information from the physical devices, they neither record it nor notify the user in case of any abnormal condition. Thus the main program instantiates one \verb`Monitoring` object to read some of the data, display it in the main interface, and send it to an external central database.
 
 (3) The \verb`HDF_writer` stores the data collected by \verb`Device` objects to an file for future reference and analysis. The files are of Hierarchical Data Format (\HDF), version 5 format \cite{doecode_9801}, a portable, cross-platform format that provides \API s for commonly scientific computing languages. The format is extensible, open, and structured, allowing storage of data and its description in terms of arbitrary attributes, column names, and groups.
 
@@ -1044,7 +1074,7 @@ The cell is screwed onto the cold stage of the PT815 cryocooler (made by Cryomec
 
 For control of cell temperature, a number of 10--25~$\Omega$ resistors are attached directly to the cell and heated directly with standard laboratory power supply, or controlled in a \PID\ loop using the CTC100 cryogenic temperature controller (Stanford Research Systems, Sunnyvale, CA). The same controller receives temperature input from the silicon diode sensors (DT-670 from Lake Shore Cryotronics, Inc., Westerville, OH) located on the cell gas-input nozzle, cell top plate (target side), 4~K and 16~K pulse tube warm stages. The other eight sensors, recorded by the model 218 temperature monitor from Lake Shore Cryotronics, are located on the cell back snorkel, 4~K shield top plate, 40~K shield top plate, 4~K pulse tube cold head, cell top plate, 4~K shield bottom plate, 40~K shield bottom plate, and the 16~K pulse tube cold head. These eight sensors' wires are fed through the vacuum chamber using two 25-pin feedthroughs (Accu-Glass p.n.\ 100225), with corresponding vacuum-side PEEK female D-sub connectors (Accu-Glass p.n.\ 100460) for ease of disconnecting.
 
-In addition to providing thermal isolation, the shields also serve as cryopumps, lowering the pressure from $\sim10^{-6}$~torr (as achieved by turbomolecular pumps) to approx.\ $2\cdot10^{-8}$~torr. Pumping down from atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG, Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet from InstruTech LLC, Longmont, CO).
+In addition to providing thermal isolation, the shields also serve as cryopumps, lowering the pressure from $\propto10^{-6}$~torr (as achieved by turbomolecular pumps) to approx.\ $2\cdot10^{-8}$~torr. Pumping down from atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG, Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet from InstruTech LLC, Longmont, CO).
 
 \begin{figure*}
     \centering
@@ -1061,7 +1091,7 @@ Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton,
 See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of three systems working together to (1) provide a stable cesium reference line, (2) lock an \IR\ seed laser to the reference, and (3) to quadruple the \IR\ into a \UV\ beam that can be used to probe transitions in TlF, occuring around 271~nm. In order to provide separately-controllable laser frequencies, we have three \SHG\ systems connected to two transfer lock cavities (one of them currently under construction).
 
 \subparagraph{Cs lock}
-The reference system is based on modulation transfer spectroscopy (\MTS), a pump--probe technique resulting in sub-Doppler resolution for laser locking. An \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier frequency) before it gets passed through a vapour cell. Modulation can appear on the counterpropagating probe beam, passed through the same vapour, through the interactions of the two beams with the atomic vapour. The interactions are an example of four-wave mixing where two pump beam frequency components combine with the probe beam, resulting in a sideband for the probe beam. \cite{mccarron2008modulation} In contrast, in frequency modulation spectroscopy (\FMS) only a single modulated beam is passed through the sample and onto a detector. If the modulation frequency is large compared with the spectral feature being probed, then the laser (or \EOM) can be tuned such that only one sideband interacts with the sample. In the absence of such an interaction, the \RF\ signal arising from the beating of one sideband with the carrier cancels that arising from the other sideband. A background-free signal results When this balance is upset by phase or amplitude changes in one sideband. \cite{bjorklund1980frequency}
+The reference system is based on modulation transfer spectroscopy (\MTS), a pump--probe technique resulting in sub-Doppler resolution for laser locking. An \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier frequency) before it gets passed through a vapour cell. Modulation can appear on the counterpropagating probe beam, passed through the same vapour, through the interactions of the two beams with the atomic vapour. The interactions are an example of four-wave mixing where two pump beam frequency components combine with the probe beam, resulting in a sideband for the probe beam. \cite{mccarron2008modulation} In contrast, in frequency modulation spectroscopy (\FMS) only a single modulated beam is passed through the sample and onto a detector. If the modulation frequency is large compared with the spectral feature being probed, then the laser (or \EOM) can be tuned such that only one sideband interacts with the sample. In the absence of such an interaction, the \RF\ signal arising from the beating of one sideband with the carrier cancels that arising from the other sideband. When this balance is upset by phase or amplitude changes in one sideband, and a background-free signal results. \cite{bjorklund1980frequency}
 
 Following ref.~\cite{zi2017laser}, the beam sourced from the diode laser (DL pro 850, Toptica, Germany) is split off for transfer cavities with two polarizing beam splitters (with the two half-wave plates controlling the amount of light sent to each transfer cavity beam). The remaining beam is split by the acousto-optic modulator (\AOM) (AOMO 3080-122 830NM from Gooch \&\ Housego, UK) with 80~MHz center frequency, AR-coated for operation at 780--850~nm, into a pump and probe beam, the pump having about twice the power of the probe. (The \AOM\ also eliminates trouble from backreflection from the Cs cell, or photodiodes.) The pump beam is phase-modulated by the custom-built \EOM\ (Thorlabs Inc.) at 3~MHz before being led through the cesium quartz cell (Thorlabs GC19075-CS, diam.\ 19~mm, length 75~mm), magnetically shielded to the milligauss level in a 6~in-long, 2~in inner diam.\, three-layer concentric mu-metal shield (modified ZG-203 from Magnetic Shield Corporation, Bensenville, IL). 
 
@@ -1088,7 +1118,7 @@ We designed a custom aluminum vacuum chamber to allow access for the molecular b
 
 The microwave system (see Fig.~\ref{micro}) is designed to provide up to three microwave beams (at frequencies 13.4, 26.8, and 40.1~GHz, and power of order 0.1--1~W), each focused with a quasioptical lens built into the transmitting antenna so as to position the beam waist in the center of the vacuum chamber. In addition, the beams can be switched between either of the two orthogonal linear polarizations at 1--2~MHz. In order to be able to separately address the hyperfine levels in the molecular ground state, the frequency can be rapidly adjusted by means of direct digital synthesis (\DDS).
 
-The ability of an \RF\ system to resolve spectral features can be described in terms of phase noise, defined as the ratio (in decibels) of the noise in a 1~Hz bandwidth at a specified offset $f_m$, to the oscillator signal amplitude at frequency $f_O$. The maximum allowable phase noise $L_\text{max}$ (in dBc/Hz) can be estimated in terms of the desired selectivity $S/\text{dB}$ as \cite[eqn.~13.50]{pozar2006microwave}
+The ability of an \RF\ system to resolve spectral features can be described in terms of phase noise, defined as the ratio (in decibels) of the noise in a 1~Hz bandwidth at a specified offset $f_m$, to the oscillator signal amplitude at frequency $f_O$. The maximum allowable phase noise $L_\text{max}$ (in dBc/Hz) can be estimated in terms of the desired selectivity $S/\text{dB}$ as \cite[eqn~13.50]{pozar2006microwave}
 %
 $$
 L_\text{max}=C-S-I-10\log(B),
@@ -1128,6 +1158,201 @@ To be designed.
 \paragraph{Magnetic shielding}
 
 \section{Outlook}
+
+\appendix
+\section{Schiff moment}
+
+\todo{Does the fact that TlF is a molecule, not an atom, change the following derivation?}
+
+\paragraph{Shielding potential}
+
+Following appendix of ref.~\cite{spevak1997enhanced}, I find an expression that takes care of shielding nuclear \EDM\ effects as per the Schiff theorem by adding a term with zero expectation value to an atomic Hamiltonian.
+
+Consider an atom with electrons at positions $\vec r_i$ and momenta $\vec p_i$ and a nucleus with a charge distribution $e\rho(\vec r)$ and an electric dipole moment $\vec d$ in an external electric field $\vec E_0$ having the following terms in its Hamiltonian:
+%
+\begin{align*}
+    \hat H=\sum\limits_{i}\left[
+        \frac{\vec p_i^2}{2m}-e\phi_0(\vec r_i)-e\vec r_i\cdot\vec E_0
+        \right]
+    +\phi_1
+    -\vec d\cdot\vec E_0,\\
+    \phi_0\equiv e\int\frac{\rho(\vec r')}{|\vec r_i-\vec r'|}\d^3\vec r',\quad
+    \phi_1\equiv\sum\limits_{i>k} \frac{e^2}{|\vec r_i-\vec r_k|}.
+\end{align*}
+%
+The sum over $i$ is taken over all the electrons in the atom, and contains their kinetic energy $\vec p_i^2/2m$, their energy in the electrostatic potential $\phi_0$ of the nucleus and in the external field. In addition, we include the electron--electron electrostatic interaction $\phi_1$, and the energy of the nuclear dipole $\vec d$ in the external field.
+
+Let $\ket n$ be an eigenstate of the atomic Hamiltonian $\hat H$ with energy $E_n$:
+%
+$$
+\hat H\ket n=E_n\ket n.
+$$
+%
+Then the commutator of an arbitrary operator $\hat O$ with $\hat H$ has a zero expectation value in that state:
+%
+\begin{align*}
+    \bra n[\hat H,\hat O]\ket n
+    &=\bra n\hat H\hat O\ket n-\bra n\hat O\hat H\ket n\\
+    &=E_n\bra n\hat O\ket n-\bra n\hat O\ket nE_n\\
+    &=0.
+\end{align*}
+
+Define the perturbation $V$ as the commutator of the total electron momentum with the atomic Hamiltonian, multiplied by $\vec d/ie\hbar Z$:
+%
+\begin{align*}
+    ie\hbar ZV&\equiv\vec d\cdot
+    \left[
+        \sum_i\vec p_i,\;\hat H
+        \right]\\
+    &=\vec d\cdot\left[\sum_i\vec p_i,\;\sum_j\big(
+    -e\phi_0(\vec r_j)-e\vec r_j\cdot\vec E_0
+    \big)\right],
+\end{align*}
+noting that the sum of momenta trivially commutes with the electron kinetic energy, the electron--electron interaction energy \todo{(why that one?)}, and the energy of the nuclear dipole moment in the external field. The canonical commutation relation $[\vec r_i,\vec p_j]=i\hbar\delta_{ij}$ allows us to transform the above into
+%
+\begin{align*}
+    i\hbar Z
+    V=-\vec d\cdot\sum_i\underbrace{\left[\vec p_i,\;\phi_0(\vec r_i)\right]}
+    _{-i\hbar\nabla_i\phi_0(\vec r_i)}
+    -\vec d\cdot\underbrace{\sum_i\left[\vec p_i,\;\vec r_i\right]}_{-i\hbar Z}\vec E_0,
+\end{align*}
+%
+where the fact that $[\vec r_i,\;[\vec r_i,\vec p_i]]=0$ allows taking the $\phi_0$ outside the commutator and differentiating it. Cancelling common terms, we are left with the expression
+%
+\begin{align*}
+    V=\vec d\cdot\vec E_0
+    -\frac{1}{Z}\sum_i\vec d\cdot\nabla_i\phi_0(\vec r_i).
+\end{align*}
+
+\todo{How did the above two terms end up with a different sign?}
+
+Since $V$ has been derived from a commutator of an operator with the Hamiltonian $\hat H$, it has a vanishing expectation value in any superposition of eigenstates of $\hat H$ as shown above and it does not change the energy levels to first order in perturbation theory. We are thus at liberty to add such a term to the Hamiltonian: it should not change the result of an atomic \EDM\ measurement, which looks for an energy shift linear in the external field.
+
+Adding $V$ to the Hamiltonian, we see that the energy $-\vec d\cdot\vec E_0$ of the nuclear dipole in the external field disappears. In addition, the electrons--nucleus electrostatic potential $\phi_0(\vec r_i)$ is modified to
+%
+\begin{equation}
+    \label{screened2}
+%\phi(\vec r_i)\equiv 
+e\int\frac{\rho(\vec r')}{|\vec r_i-\vec r'|}\d^3\vec r'
++\frac{1}{Z}(\vec d\cdot\nabla_i)
+\int\frac{\rho(\vec r')}{|\vec r_i-\vec r'|}\d^3\vec r',
+\end{equation}
+%
+which matches eqn~\ref{screened} if we drop the indices $i$.
+
+We have been allowed to add $V$ \emph{only} because to first order it does not change the energy levels. We now proceed to show that adding $V$ did, after all, change the energies---the dipole terms cancel, and Schiff moment appears. \todo{That sounds really shady: $V$ was added on the premise that it makes no difference, and yet we're now trying to prove that it does make a difference???}
+
+\paragraph{Multipole expansion}
+
+The dipole cancellation can be seen via the multipole expansion \cite[eqn~3.38]{jackson1998classical}
+%
+$$
+\frac{1}{|\vec r-\vec r'|}
+=\sum\limits_{\ell=0}^\infty
+\frac{r_<^\ell}{r^{\ell+1}_>}P_\ell(\cos\gamma),
+$$
+%
+$P_\ell$ being the Legendre polynomials of degree $\ell$, and $\gamma$ the angle between $\vec r$ and $\vec r'$. We use the notation $r_<,r_>$ to denote the smaller/greater of $r$ and $r'$.
+
+Following \cite[sect~II]{flambaum2002nuclear}, we can use this to expand the modified potential from eqn~\ref{screened2}. The first term becomes, taking just the $\ell=1$ term,
+%
+\begin{equation}
+    \label{T1l1}
+    e\int\rho(\vec r')\d^3\vec r'\left[
+        \frac{r'}{r^2}(r'<r)
+        +
+        \frac{r}{(r')^2}(r'>r)
+        \right]
+    P_1(\cos\gamma),
+\end{equation}
+%
+using Boolean comparison expression $(r'>r)$ that evaluates to 1 if the condition is satisfied, and to 0 otherwise.
+
+Similarly, the $l=0$ part of the second term in eqn~\ref{screened2} is
+%
+\begin{equation}
+    \label{T2l0}
+    \frac{1}{Z}(\vec d\cdot\nabla)\int\rho(\vec r')\d^3\vec r'\left[
+        \frac{1}{r}(r'<r)+\frac{1}{r'}(r'>r)
+        \right]P_1(\cos\gamma).
+\end{equation}
+%
+Noting that the nuclear \EDM\ and the nuclear charge are defined as
+%
+$$
+\vec d\equiv e\int\vec r'\rho(\vec r')\d^3\vec r,\quad
+Z=\int\rho(\vec r')\d^3\vec r',
+$$
+%
+the expression \ref{T2l0} becomes
+%
+$$
+\frac{1}{Z}
+\nabla\cdot
+\int\limits_0^\infty e\vec r'\rho(\vec r')\d^3\vec r'
+\int\limits_0^r\frac{1}{r}\rho(\vec r')\d^3\vec r',
+$$
+%
+noting that $\nabla(1/r')=0$ since $\nabla$ only acts on the non-primed coordinates. That also allows us to move the $\nabla$ into the first integral, and move the $1/r$ from the second integral to the first:
+%
+$$
+\frac{e}{Z}
+\int\limits_0^\infty
+\underbrace{\vec r'\cdot\nabla\left(\frac{1}{r}\right)}_{-r'/r^2\cos\gamma}
+\rho(\vec r')\d^3\vec r'
+\underbrace{\int\limits_0^r\rho(\vec r')\d^3\vec r'}
+_{\text{$Z$ when $r\to\infty$}}
+$$
+%
+In the limit $r\to\infty$, this exactly cancels the first term in eqn~\ref{T1l1}, thus screening all nuclear \EDM. \todo{Is that a correct conclusion? There is still the second term in eqn~\ref{T1l1}, why does that not need screening? Or is that precisely the origin of the Schiff moment?} The dipole defunct, we search for the next $P,T$-odd term in the multipole expansion. \todo{We just showed how the expression cancels itself out and screens nuclear \EDM, and now we proceed to show that there is, after all, some \EDM\ remaining???}
+
+\paragraph{Residual \EDM}
+
+The two terms that cancel in the limit $r\to\infty$ effectively have $\int_0^\infty=0$, and so we can change their limits of integration as $\int_0^r\to-\int_r^\infty$. The second term in eqn~\ref{T1l1} already has these limits, so we can put all three terms together into the expression
+%
+$$
+\phi^{(1)}(\vec r)\equiv
+e\vec r\cdot\int\limits_r^\infty\left(
+\frac{\ex{\vec r}}{Zr^3}
+-\frac{\vec r'}{r^3}
++\frac{\vec r'}{(r')^3}
+\right)\rho(\vec r')\d^3\vec r',
+$$
+%
+making use of the notation $\ex{\vec r}\equiv\int\vec r'\rho(\vec r')\d^3\vec r'$. Let's evaluate the matrix elements of this potential between s and p Dirac orbitals
+%
+$$
+W_{\text{sp}}\equiv
+\int\psi^*_\text{s}(\vec r)\phi^{(1)}(\vec r)\psi_\text{p}(\vec r)\d^3\vec r.
+$$
+%
+Split off the angular part of the integral:
+%
+\begin{align*}
+W_{\text{sp}}=
+    e\int\psi^*_\text{s}&(\vec r)\hat{\vec r}\psi_\text{p}(\vec r)\sin\theta\d\theta\d\phi
+\\
+&\times\int_0^\infty r\underbrace{(\psi^*_\text{s}\psi_\text{p})}_{\propto r}r^2\d r
+\int_r^\infty(\cdots)\rho(\vec r')\d^3\vec r',
+\end{align*}
+%
+where $\hat{\vec r}=\vec r/r$. In the nonrelativistic case, $\psi^*_\text{s}\psi_\text{p}\propto r$ as per \cite[appendix]{flambaum2002nuclear}, while in the radial part we can swap the order of integration $\vec r\leftrightarrow\vec r'$:
+%
+\begin{align*}
+    W_{\text{sp}}&\propto e
+    \int_0^\infty\rho(\vec r')\d^3\vec r'
+    \int_0^{r'}r^2\left(
+    \frac{\ex{\vec r}}{Zr^3}-\frac{\vec r'}{r^3}+\frac{\vec r'}{(r')^3}
+    \right)r^2\d r\\
+    &=e\int\rho(\vec r')\d^3\vec r'\left(
+    \frac{\ex{\vec r}(r')^2}{2Z}-\frac{\vec r'(r')^2}{2}+\frac{\vec r'(r')^5}{5(r')^3}
+    \right)\\
+    &\propto\frac{e}{10}\left[
+        \ex{r^2\vec r}-\frac{5}{3Z}\ex{r^2}\ex{\vec r}
+    \right]
+\end{align*}
+%
+The last line is exactly the expression for the Schiff moment stated in eqn~\ref{simpleSchiffMoment}. \todo{Where did I lose the $4\pi\nabla\delta^3(\vec r)$ factor? Did it go into the angular integral?}
 
 % Bibliography
 {
