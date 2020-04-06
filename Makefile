@@ -1,6 +1,9 @@
 quick: thesis.tex figs
 	pdflatex thesis
 
+xelatex: thesis.tex figs
+	xelatex thesis
+
 full: thesis.tex references.bib figs
 	pdflatex thesis
 	bibtex thesis

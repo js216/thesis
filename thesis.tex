@@ -1,12 +1,14 @@
-\documentclass{article}
+\documentclass[10pt]{article}
 
 % page format
 \usepackage[letterpaper, twocolumn, left=1.8cm, right=1.8cm, top=1.4cm, bottom=2.2cm]{geometry}
 \setlength{\columnsep}{1.85em}
 \DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 \usepackage{microtype}
-\linespread{1.1}
 \usepackage{multicol}   
+\linespread{1.05}
+\usepackage{newtxtext}
+\usepackage[]{newtxmath}
 
 % section title formatting
 \usepackage[explicit]{titlesec}
@@ -17,6 +19,7 @@
    {\thesection.}
    {1em}
    {\textls[50]{\MakeUppercase{#1}}}
+   %{{\addfontfeature{LetterSpace=20}\MakeUppercase{#1}}}
 \titleformat{\subsection}
    {\normalfont\small\bfseries}
    {\thesubsection}
@@ -44,6 +47,12 @@
     urlcolor={blue}}
 \newcommand\todo[1]{\textcolor{red}{#1}}
 
+% for tables
+\usepackage{booktabs,tabu}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{table}
+
 % for figures
 \usepackage{graphicx}
 \usepackage[abs]{overpic}
@@ -57,9 +66,10 @@
 \usetikzlibrary{positioning}
 
 % math
-\usepackage{amsmath, amssymb, amsthm, bm, nicefrac}
+\usepackage{amsmath, amssymb, bm, nicefrac}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 \renewcommand{\d}{\mathrm{d}}
+\newcommand{\dd}{\mathrm{d}\hspace*{-0.15em}\bar{}\hspace*{0.2em}}
 \newcommand{\ex}[1]{\langle #1\rangle}
 \newcommand{\bra}[1]{\langle#1|}
 \newcommand{\ket}[1]{|#1\rangle}
@@ -152,6 +162,9 @@
 \end{@twocolumnfalse}
 ]
 
+% has to be defined here for some reason
+\renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
+
 \newpage
 
 \twocolumn[  
@@ -240,6 +253,167 @@ However, it is claimed that the `amount' or the `strength' of \CPV\ in the \CKM\
 \end{equation}
 %
 where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix (see \cite[fig 12.1]{PDG16}). With quark masses from \cite[p40, ``Quark Summary Table'']{PDG16} and $A\approx3\cdot10^{-5}$ from \cite[p7]{kleinknecht2006unitarity}, we get $J\approx121\cdot 10^3\GeV^{12}$. The electroweak phase transition, occurring at temperature $T_\text{EW}\approx100\GeV$, was the latest point in the evolution of the universe when \BAU\ could have been generated \cite{fodor2000EW}. Comparing $J$ and $T_\text{EW}$, we get the desired dimensionless quantity $J/T_\text{EW}^{12}\approx10^{-20}$ to within factors of order unity and we see it is ten orders of magnitude smaller than the constant parametrizing the baryon asymmetry. Thus, new sources of \CPV\ are needed.
+
+\clearpage
+
+\paragraph{Schiff moment}
+
+Additional $T$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclear density and would violate $T$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction.
+
+However, according to the Schiff theorem, an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM\ \cite{schiff1963measurability}. Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $T$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
+
+In the following, we work out the shielding of a nuclear \EDM\ in an atom with a Hamiltonian $\hat H$. Extracting $T$-odd terms from the multipole expansion of $\hat H$, we show that for a point nucleus, these terms can be written as a commutator $[\hat H,\ldots]$ and thus have a vanishing expectation value and no corresponding linear energy shift. For a finite-size nucleus, this cannot be done and the terms reduce to an expression for the Schiff moment (\SMt). In particular, this simple model does not attempt to take into account the complexity of molecular structure.
+
+Consider an atom of proton number $Z$ in an external electric field $\vec E_0$, with electrons of momenta $\vec p_i$ at positions $\vec r_i$, and a nucleus with the charge distribution $\rho(\vec r)$. The atom's Hamiltonian includes the following interactions:
+%
+\begin{align*}
+    \hat H\;=\quad
+    &\sum_{i=1}^Z\frac{\vec p_i^2}{2m}
+        \tag{electron kinetic energy}\\
+    +\frac{1}{2}&\sum\limits_{i,j}\frac{e^2}{|\vec r_i-\vec r_k|}
+        \tag{electron--electron}\\
+    -Ze^2&\sum_i\int\frac{\rho(\vec r)\d^3\vec r'}{|\vec r_i-\vec r'|}
+        \tag{electron--nucleus}\\
+    +e&\sum_i\vec r_i\cdot\vec E_0
+        \tag{electrons in external field}\\
+    -Ze&\ex{\vec r}\cdot\vec E_0.
+        \tag{nuclear dipole in external field}
+\end{align*}
+%
+The nuclear charge is normalized to $\int\rho(\vec r)\d^3\vec r=1$. Almost all the integrals in this section are weighted by $\rho(\vec r)$, suggesting the use of the measure $\dd^3(\vec r)\equiv\rho(\vec r)\d^3(\vec r)$. Thus we have the dipole moment $\ex{\vec r}\equiv\int\vec r'\dd^3\vec r'$; later, we shall also make use of the third moment $\ex{r^2\vec r}\equiv\int (r')^2\vec r'\dd^3\vec r'$.
+
+The nuclear monopole does not appear in the Hamiltonian as it corresponds to a mere constant offset. Interacting with the external field, the nuclear charge distribution gives rise to the dipole term $-e\ex{\vec r}\cdot\vec E_0$, while higher moments of $\rho(\vec r)$ do not contribute when the external field $\vec E_0$ is uniform \todo{(how to prove that?)}. A further dipole-type term can be extracted from the Hamiltonian via the multipole expansion \cite[eqn~3.38]{jackson1998classical}
+%
+\begin{align*}
+    \frac{1}{|\vec r-\vec r'|}
+    =\sum\limits_{\ell=0}^\infty
+    \frac{r_<^\ell}{r^{\ell+1}_>}
+    P_\ell({\hat{\vec r}\cdot\hat{\vec r}'}),
+    \quad
+    \begin{matrix}
+        r_<\equiv\min(r,r')\\
+        r_>\equiv\max(r,r')\\
+    \end{matrix}
+\end{align*}
+%
+$P_\ell$ being the Legendre polynomials of degree $\ell$, and $\hat{\vec r}$ and $\hat{\vec r}'$ are the unit vectors $\vec r/r$ and $\vec r'/r'$. The lowest-order $T$-odd term in the Hamiltonian is the $\ell=1$ part of the electron--nucleus term, yielding
+%
+\begin{equation}
+    \label{l1dipole}
+    -Ze^2\sum_i\vec r_i\cdot\left[
+        \frac{1}{r_i^3}\int_0^{r_i}\vec r'\dd^3\vec r'
+        +\int_{r_i}^\infty\frac{\vec r'}{(r')^3}\dd^3\vec r'
+    \right].
+\end{equation}
+%
+The $\ell=3$ term, corresponding to an octupole moment tends to be small, vanishing altogether in spin-\nicefrac{1}{2} atoms, while the higher harmonics are always negligible. \cite{flambaum2002nuclear}
+
+Before writing the $T$-odd terms as a commutator with $\hat H$, consider that such an expression will cause no energy shift in the first order of perturbation theory. Let $\ket n$ be an eigenstate of the Hamiltonian $\hat H$ with energy $E_n$. Then the commutator of an arbitrary operator $\hat O$ with $\hat H$ has a zero expectation value in that state:
+%
+\begin{align*}
+    \bra n[\hat H,\hat O]\ket n
+    &=\bra n\hat H\hat O\ket n-\bra n\hat O\hat H\ket n\\
+    &=E_n\bra n\hat O\ket n-\bra n\hat O\ket nE_n
+    =0.
+\end{align*}
+
+We now proceed to show that in a point-like nucleus, the external-field dipole term $-e\ex{\vec r}\cdot\vec E_0$, plus the $T$-odd part of the electron--nucleus interaction from eqn~\ref{l1dipole}, is proportional to the commutator
+%
+\begin{align*}
+    \left[\textstyle\sum_i\vec p_i,\;\hat H\right]
+    =\sum_i\left[\vec p_i,\;\big(
+    -Ze^2\int\frac{\dd^3\vec r'}{|\vec r_i-\vec r'|}
+    +e\vec r_i\cdot\vec E_0
+    \big)\right],
+\end{align*}
+noting that the sum of momenta trivially commutes with the electron kinetic energy, the electron--electron interaction energy, and the energy of the nuclear dipole moment in the external field. The canonical commutation relation $[\vec r_i,\vec p_j]=i\hbar\delta_{ij}$ allows us to transform the above into
+%
+\begin{align*}
+    -Ze\ex{\vec r}\cdot\left(\vec E_0
+    -e{\textstyle\sum_i}\nabla_i
+    \int\frac{\dd^3\vec r'}{|\vec r_i-\vec r'|}
+    \right),
+\end{align*}
+%
+discarding common factors and pre-multiplying by $\ex{\vec r}$. The first term can be identified as the energy of the nuclear dipole in an external field, while the second one has to be expanded up to the $\ell=0$ multipole term (again, higher harmonics are either $T$-even or negligible):
+%
+$$
+Ze^2\sum_i\ex{\vec r}\cdot\nabla_i\left(
+    \frac{1}{r_i}
+    \int\limits_0^{r_i}\dd^3\vec r'
+    +\int\limits_{r_i}^\infty\frac{\dd^3\vec r'}{r'}
+\right).
+$$
+%
+The $\nabla_i$ acts on the $\vec r_i$ coordinates and not on the $\vec r'$, killing the second integrand. In addition, the contributions from $\nabla_i$ acting on the limits of the two integrals are equal and opposite. Noting that $\nabla_i(1/r_i)=-\vec r_i/r_i^3$, we obtain
+%
+\begin{equation}
+    \label{l0comm}
+-Ze^2\sum_i
+    \vec r_i\cdot\frac{\ex{\vec r}}{r_i^3}
+\int_0^{r_i}\dd^3\vec r'.
+\end{equation}
+%
+Compare the above to the first term in eqn~\ref{l1dipole}. In the limit of a point-like nucleus, the upper limit of integration does not matter, so long as it is greater than zero. Thus the integral evaluates to unity for any $r_i>0$, while the integral in the first term of eqn~\ref{l1dipole} gives $\ex{\vec r}$. The second term of eqn~\ref{l1dipole}, in the same limit, vanishes. This completes the proof of the Schiff theorem: the $T$-odd terms in the Hamiltonian can be expressed as a commutator $[\hat H,\ldots]$, and cause no first order energy shift.
+
+In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus and the $T$-odd terms in the Hamiltonian can give rise to a measurable electrostatic interaction. Such terms can no longer be subsumed into a commutator with a zero expectation value; instead, a residual interaction $V$ remains, equal to the difference of the $T$-odd terms in $\hat H$ from eqn~\ref{l1dipole} and the commutator expression (eqn~\ref{l0comm}). Ignoring $-Ze^2$ for brevity, $V$ can be written as
+%
+\begin{align*}
+    V\propto
+    \sum_i\vec r_i\cdot\bigg[
+        \frac{1}{r_i^3}\int\limits_0^{r_i}\vec r'\dd^3\vec r'
+    +\int\limits_{r_i}^\infty\frac{\vec r'}{(r')^3}\dd^3\vec r'
+    -\frac{\ex{\vec r}}{r_i^3}\int\limits_0^{r_i}\dd^3\vec r'
+\bigg].
+\end{align*}
+
+Let's evaluate the matrix elements $\bra{\psi_\text{s}}V\ket{\psi_\text{p}}$ between s and p wavefunctions, which replaces the sum $\sum_i$ over electron positions $\vec r_i$ by the integral $\int\psi^*_\text{s}\psi_\text{p}\d^3\vec R$. In the nonrelativistic case, we have $\psi^*_\text{s}\psi_\text{p}\propto R$. (For relativistic electrons, $\psi^*_\text{s}\psi_\text{p}$ can be expanded as a power series in $R$; see ref.~\cite{flambaum2002nuclear}.) Taking just the angular part of the integral, we have the matrix elements
+%
+\begin{align}
+    \label{radial}
+    \int\limits_0^\infty
+    %\psi^*_\text{s}\psi_\text{p}
+    R^4\d R
+    \bigg[
+        \frac{1}{R^3}{\int\limits_0^R
+        \left(\vec r'-\ex{\vec r}\right)\dd^3\vec r'}%_\text{0 when $R\to\infty$}
+        +\int\limits_{R}^\infty\frac{\vec r'}{(r')^3}\dd^3\vec r'
+    \bigg],
+\end{align}
+%
+where we have grouped together the two terms with the same limits of integration. Since these two terms cancel in the limit $R\to\infty$, we may equivalently write $\int_0^R\to-\int_R^\infty$. Now we can swap the order of integration, 
+%
+$$
+-\int\limits_0^\infty\left(\vec r'-\ex{\vec r}\right)\dd^3\vec r'
+\int\limits_0^{r'}R\d R
++\int\limits_0^\infty\frac{\vec r'}{(r')^3}\dd^3\vec r
+\int\limits_0^{r'}R^4\d R,
+$$
+%
+which integrates to an expression proportional to
+%
+\begin{equation}
+   \label{simpleSchiffMoment}
+   \vec S\equiv\frac{Ze}{10}
+   \left[
+      \ex{r^2\vec r} - \frac{5}{3}\ex{r^2}\ex{\vec r}
+   \right],
+\end{equation}
+%
+the usual expression for the Schiff moment \cite[eqn~29]{sushkov1984possibility}.
+
+It remains to consider, heuristically, the angular part of the integrand that we have left out of eqn~\ref{radial}, namely
+%
+$$
+%\int
+\frac{\psi^*_\text{s}\psi_\text{p}}{R}
+\frac{\vec R}{R}
+%\d^2\Omega
+\quad\to\quad
+-\nabla\delta^3(\vec R),
+$$
+%
+where the $R$'s in the denominator are the $R$'s that have been absorbed into the $R^4$ in eqn~\ref{radial}. Since the nucleus is much smaller than the atom, it may at the scale of electron wavefunctions effectively be considered point-like, hence the $\delta^3(\vec R)$. The $\nabla$ effects the division by $R$, and points along the direction of $\vec R/R$.
 
 \begin{figure}
    \centering
@@ -392,53 +566,32 @@ where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix (s
    \label{graddelta}
 \end{figure}
 
-\paragraph{Schiff moment}
 
-Additional $CP$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclean density $\rho$ as
-%
-\begin{equation}
-    \label{dipole}
-   \vec d\equiv e\int\vec r'\rho(\vec r')\d^3\vec r',
-\end{equation}
-%
-and would violate $CP$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction. Assuming $CPT$ to be a good symmetry, the $T$-violation then leads to the $CP$-violation.
-
-However, Schiff proved in 1963 that an \EDM\ of a nonrelativistic point nucleus would not be observable outside of the atom. More precisely, the interaction energy of nonrelativistic point charged electric dipoles in an arbitrary external electrostatic potential has no term linear in the \EDM; relativistic and second-order effects are extremely small \cite{schiff1963measurability}.  Physically, the system rearranges itself so as to screen the external field completely \cite[p33]{safronova2018search}. Thus, a $CP$-violating \EDM, if existent, would be very hard to detect experimentally without a mechanism to bypass Schiff's theorem.
-
-In heavy atoms, the limitation posed by Schiff's theorem is lifted by the finite size of the nucleus and there can be a measurable electrostatic interaction of nuclear $P,T$-odd nuclear moments with atomic or molecular electrons. The interaction can be presented as arising from a potential $\phi(\vec r)$ of the form \cite[eqn~1]{spevak1997enhanced}
-%
-\begin{equation}
-    \label{screened}
-    \phi(\vec r)=e
-    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r'
-    +\frac{1}{Z}(\vec d\cdot\nabla)
-    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r',
-\end{equation}
-%
-where $\rho(\vec r)$ is the nuclear charge density, $\int\rho(\vec r)\d^3\vec r=Z$, normalized to the nuclear charge $Z$. The first term is simply the electrostatic potential of a bare nucleus, while the second term---responsible for the screening---ensures that dipole effects vanish outside the nucleus. The leading-order Schiff moment operator can under certain assumptions be taken to be the vector $\vec S$ multiplying $-4\pi\nabla\delta^3(\vec r)$, but both the assumptions involved and the derivation itself are far from simple (see appendix and ref.~\cite{liu2007atomic}). A commonly reproduced form is \cite[eqn~29]{sushkov1984possibility}
-%
-\begin{equation}
-   \label{simpleSchiffMoment}
-   \vec S=\frac{e}{10}
-   \left[
-      \ex{r^2\vec r} - \frac{5}{3Z}\ex{r^2}\ex{\vec r}
-   \right],
-\end{equation}
-%
-where the averaging is weighted by the nuclear charge distribution, such that $\ex{\cdots}\equiv\int\rho(\vec r)\cdots\d^3\vec r$.
-
-To get an intuitive grasp on the expression $\nabla\delta^3(\vec r)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\propto\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a certain shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
+To get an intuitive grasp on the expression $\nabla\delta^3(\vec r)$, consider the definition of the delta function as the limit of Gaussian distributions: $\delta(r)\propto\lim_{a\to0}e^{-r^2/a^2}$ (Fig.~\ref{graddelta}a). Taking the derivative of the Gaussian, we get a shape that is negative for $r<0$, positive for $r>0$, zero at $r=0$ and also vanishing for $r\to\pm\infty$. That shape (Fig.~\ref{graddelta}b), stretched to infinity but keeping the area constant, is then representative of $\nabla\delta(\vec R)$.
 
 We may think of eqn~\ref{simpleSchiffMoment} as the potential due to a constant electric field along the direction of the nuclear spin $\hat I$ inside a nucleus of radius $R$. This potential is linear in the coordinate $r$, truncated outside of the nucleus (i.e., at $|r|>R$). In the limit of a small nucleus, this will have a similar shape (Fig.~\ref{graddelta}c) as the expression $\nabla\delta(\vec R)$ discussed in the preceding paragraph.
 
-We can estimate the magnitude of the Schiff moment caused by a single valence nucleon with a dipole moment $d_\text{n}$. Assume it moves in a uniform spherical core of radius $R\approx R_0A^{1/3}$, where $R_0\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}. Then the magnitude of the \SMt\ is
+It is possible to estimate the magnitude of the Schiff moment inside a nucleus with a dipole moment $d_\text{n}$ and a uniform spherical core of radius $R$. The \EDM\ includes additive contributions from both the nucleon \EDM s, arising from short-range interactions between quarks, and also from longer-range $P,T$-violating interactions between valence nucleons and the core. In fact, in some theory models, the latter contribution to the \SMt\ can be 10 to 100 times larger than that due to the nucleonic \EDM. \cite{sushkov1984possibility} We now consider `toy' models for each case:
+
+(1) Inside the uniform charge distribution---which does not contribute to the \SMt---there are in addition two point charges, separated by a distance $2R$ along the $z$ axis. The $T$-odd part of the nuclear charge can thus be written as
 %
-\begin{equation}
-    \label{schiff}
-   |\vec S|\propto d_\text{n}A^{2/3}R_0^2
-\end{equation}
+$$
+\rho(\vec r)=\frac{d_\text{n}}{2eR}\big[
+    \delta^3(\vec r+R\hat{\vec z})
+    -\delta^3(\vec r-R\hat{\vec z})
+\big],
+$$
 %
-to within factors of order unity \cite[eqn~8.76]{khriplovich2012cp}. The $A^{2/3}$ scaling indicates that heavier atoms are preferrable for \SMt\ experiments. Note, however, that a \SMt\ measurement in fact includes additive contributions from both the nucleon \EDM s, arising from short-range interactions between quarks, and also from longer-range $P,T$-violating interactions between valence nucleons and the core. In fact, in some theory models, the second contribution to the \SMt\ can be 10 to 100 times larger than that due to the nucleonic \EDM. \cite{sushkov1984possibility}
+the constant factors being chosen so that $e\ex{\vec r}=d_\text{n}\hat{\vec z}$. Evaluating the third moments in eqn~\ref{simpleSchiffMoment}, we readily see that the magnitude of the \SMt\ is $|\vec S|\propto d_\text{n}R^2$ to within factors of order unity.
+
+(2) Instead of the two separated point charges, we could model the nuclear \EDM\ as coming from a $\cos\theta$ charge distribution on a thin shell of radius $R$:
+%
+$$
+\rho(\vec r)=\frac{d_\text{n}}{4\pi eR^3/3}\delta(R-r)\cos\theta,
+$$
+which also integrates to $e\ex{\vec r}=d_\text{n}\hat{\vec z}$. The sum of the higher moments $\ex{r^2\vec r}$, again obtained by elementary integration, only differs from the previous case by a factor of order unity.
+
+In each case, we saw that $|\vec S|\propto R^2$. The nuclear radius scaling as $R\approx R_0A^{1/3}$, where $R_0\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, we conclude that heavier atoms---such as thallium---are preferrable for \SMt\ experiments.
 
 \paragraph{Molecular techniques}
 
@@ -446,22 +599,24 @@ For nuclei inside a molecule, the Schiff moment and other $P,T$-violating effect
 %
 \begin{equation}
    \label{interaction}
-   \H=-d\hat\sigma\cdot\hat\lambda,
+   \H=-\nu\hat\sigma\cdot\hat\lambda,
 \end{equation}
 %
-where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vector along the internuclear axis in the molecule (in TlF, we define this to point towards the F nucleus). The interaction strength $d$, also written in frequency units as $\nu\equiv d/h$, can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities. For example, \cite[eqn~26]{cho1991search} use a calculation from \cite{coveney1983parity} to obtain the Schiff moment $S$ from the interaction strength $\nu$:
+where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vector along the internuclear axis in the molecule (in TlF, we define this to point towards the F nucleus). The interaction strength $\nu$ can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities. One such expression relates the Schiff moment $S$ to the interaction strength $\nu$ (eqn~26 in ref.~\cite{cho1991search}, using a calculation from \cite{coveney1983parity}):
 %
 \begin{equation}
    S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 
-Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Alternatively, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
+Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
 
 Compared to atoms, molecules are polarized much more readily in laboratory fields, making them ideal for such an \EDM\ measurement. Thus Sandars suggested that a molecular-beam resonance experiment could be used to probe the existence of an electric dipole moment on the proton, so long as the molecule has a heavy atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
 
 We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
 
-To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ results compared to the levels in absence of the interaction. Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
+\clearpage
+
+To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or \cite{wilkening1984search} for a diagram.) Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
 
 \subparagraph{Separated oscillatory fields}
 The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Subjecting the two-state system to an oscillating field of form $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
@@ -475,11 +630,26 @@ P_{p,q}=
 \right\}.
 $$
 %
-We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and the full width at half maximum (\FWHM) is given by $\Delta\omega=4b$. For a resonant $\pi/2$ pulse of duration $t=\pi/2b$, the \FWHM\ will be $\Delta\omega=2\pi/t$, and the longer the precession period $t$, the more precisely we can determine the resonant frequency $\omega_0$.
+We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and the full width at half maximum (\FWHM) is given by $\Delta\omega=4b$. For a resonant $\pi/2$ pulse of duration $T=\pi/2b$, the \FWHM\ will be $\Delta\omega=2\pi/T$, and the longer the precession period $T$, the more precisely we can determine the resonant frequency $\omega_0$.
 
-In principle, an infinitely precise measurement could be obtained by simply extending the length $l$ of the precession region. In practice, however, this meets with the following problems: (1) the beam intensity decay to zero if the beamline is too long; (2) we may want to measure the precession in a region where the oscillating field cannot be applied; (3) it is difficult to maintain uniform externally applied fields over an extended length.
+In principle, an infinitely precise measurement could be obtained by simply extending the length $L$ of the precession region, thus prolonging the precession period $T=L/v$ for molecules of speed $v$. In practice, however, this meets with the following problems. (1) The beam intensity $N$ decays as $1/L^2$ in the limit where the interaction region is long compared to the distance from the source to the start of the interaction region. Indeed, the signal-to-noise ratio, being proportional to $\sqrt{N}/T$, is roughly independent of interaction length. (2) We may want to measure the precession in a region where the oscillating field cannot be applied. (3) It is difficult to maintain uniform externally applied fields over an extended length.
 
 It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
+
+\begin{table}
+    \small
+    %\makebox[\columnwidth][c]{%
+    \begin{tabu} to \columnwidth {@{}Xcccccc@{}}
+        \toprule
+        Species & Gas & $\Phi$ & $\Phi$/state & $B$ & $v$   & Ref\\
+                &     &      &            &            & (m/s) & \\\midrule
+        \textit{Thermal:}\\
+                &     &      &            &            &       & \cite{cho1991search} \\
+        \bottomrule
+    \end{tabu}%}
+    \caption{Key parameters of various beam sources: molecular species in the beam, the buffer gas (if applicable), flux $\Phi$ and flux per state, brightness $B$, velocity $v$.}
+    \label{sources}
+\end{table}
 
 \subparagraph{Beam sources}
 To form a molecular beam, traditionally a thermal molecular source has been used. For example, Schropp et al.\ \cite{schropp1987new} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$. Similarly, Hinds and Sandars \cite{hinds1980experiment} used a TlF-containing copper oven stabilized to a temperature of $340\pm1$\degC, forming a molecular beam from the vapor effusing from an array of channels. Hunter et al.\ used a ceramic chamber filled with TlF at 415--460\degC\ and passed the vapor through ceramic tubes and an aperture to collimate the beam.
@@ -628,9 +798,9 @@ More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryo
 
 \paragraph{The TlF molecule}
 
-TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large (as per eqn~\ref{schiff}); and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search} By contrast, TlF is not a suitable system for electron \EDM\ measurements due to the closed shells zero total electron spin. \cite{kozlov1995parity}
+TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large; and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search} By contrast, TlF is not a suitable system for electron \EDM\ measurements due to the closed shells zero total electron spin. \cite{kozlov1995parity}
 
-All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
+All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,\Omega,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
 \todo{Change of basis transformation between the two frames}
 
@@ -1038,7 +1208,7 @@ The user controls the devices through the \verb`ControlGUI`, which is a canvas f
 
 (3) The \verb`HDF_writer` stores the data collected by \verb`Device` objects to an file for future reference and analysis. The files are of Hierarchical Data Format (\HDF), version 5 format \cite{doecode_9801}, a portable, cross-platform format that provides \API s for commonly scientific computing languages. The format is extensible, open, and structured, allowing storage of data and its description in terms of arbitrary attributes, column names, and groups.
 
-(4) \verb`Config` classes serve to organize access to program/device/plot configuration. Thus, instead of having classes pass ad hoc pieces of information between each other, they set an appropriately-named attribute of the relevant \verb`Config` class. The latter in term only allows to set the attributes that have been declared previously. This enables the programmer to have a clear overview of what configuration parameters exist by simply inspecting the relevant \verb`Config` class.
+(4) \verb`Config` classes serve to organize access to program, device, or plot configuration. Thus, instead of having classes pass ad hoc pieces of information between each other, they set an appropriately-named attribute of the relevant \verb`Config` class. The latter in term only allows to set the attributes that have been declared previously. This enables the programmer to have a clear overview of what configuration parameters exist by simply inspecting the relevant \verb`Config` class.
 
 The program is thus generic enough to make it easy to add capabilities to control any number of new devices by simply (1) writing a device driver, and (2) a device config file. Drivers are classes inside the Python modules, such that instantiating the driver class is the abstract representation of opening a connection to a physical device. In addition, a driver class provides a \verb`ReadValue()` method that implements the particulars about how reading data works, and should return a list of values, consistent with the \verb`dtype` and \verb`shape` of the device as specified in the constructor. The driver must also provide a function \verb`GetWarnings()` that is be called at regular intervals to populate the list of \verb`warnings`. This function can check for the device parameters are within normal ranges, or simply do nothing if appropriate.
 
@@ -1158,201 +1328,6 @@ To be designed.
 \paragraph{Magnetic shielding}
 
 \section{Outlook}
-
-\appendix
-\section{Schiff moment}
-
-\todo{Does the fact that TlF is a molecule, not an atom, change the following derivation?}
-
-\paragraph{Shielding potential}
-
-Following appendix of ref.~\cite{spevak1997enhanced}, I find an expression that takes care of shielding nuclear \EDM\ effects as per the Schiff theorem by adding a term with zero expectation value to an atomic Hamiltonian.
-
-Consider an atom with electrons at positions $\vec r_i$ and momenta $\vec p_i$ and a nucleus with a charge distribution $e\rho(\vec r)$ and an electric dipole moment $\vec d$ in an external electric field $\vec E_0$ having the following terms in its Hamiltonian:
-%
-\begin{align*}
-    \hat H=\sum\limits_{i}\left[
-        \frac{\vec p_i^2}{2m}-e\phi_0(\vec r_i)-e\vec r_i\cdot\vec E_0
-        \right]
-    +\phi_1
-    -\vec d\cdot\vec E_0,\\
-    \phi_0\equiv e\int\frac{\rho(\vec r')}{|\vec r_i-\vec r'|}\d^3\vec r',\quad
-    \phi_1\equiv\sum\limits_{i>k} \frac{e^2}{|\vec r_i-\vec r_k|}.
-\end{align*}
-%
-The sum over $i$ is taken over all the electrons in the atom, and contains their kinetic energy $\vec p_i^2/2m$, their energy in the electrostatic potential $\phi_0$ of the nucleus and in the external field. In addition, we include the electron--electron electrostatic interaction $\phi_1$, and the energy of the nuclear dipole $\vec d$ in the external field.
-
-Let $\ket n$ be an eigenstate of the atomic Hamiltonian $\hat H$ with energy $E_n$:
-%
-$$
-\hat H\ket n=E_n\ket n.
-$$
-%
-Then the commutator of an arbitrary operator $\hat O$ with $\hat H$ has a zero expectation value in that state:
-%
-\begin{align*}
-    \bra n[\hat H,\hat O]\ket n
-    &=\bra n\hat H\hat O\ket n-\bra n\hat O\hat H\ket n\\
-    &=E_n\bra n\hat O\ket n-\bra n\hat O\ket nE_n\\
-    &=0.
-\end{align*}
-
-Define the perturbation $V$ as the commutator of the total electron momentum with the atomic Hamiltonian, multiplied by $\vec d/ie\hbar Z$:
-%
-\begin{align*}
-    ie\hbar ZV&\equiv\vec d\cdot
-    \left[
-        \sum_i\vec p_i,\;\hat H
-        \right]\\
-    &=\vec d\cdot\left[\sum_i\vec p_i,\;\sum_j\big(
-    -e\phi_0(\vec r_j)-e\vec r_j\cdot\vec E_0
-    \big)\right],
-\end{align*}
-noting that the sum of momenta trivially commutes with the electron kinetic energy, the electron--electron interaction energy \todo{(why that one?)}, and the energy of the nuclear dipole moment in the external field. The canonical commutation relation $[\vec r_i,\vec p_j]=i\hbar\delta_{ij}$ allows us to transform the above into
-%
-\begin{align*}
-    i\hbar Z
-    V=-\vec d\cdot\sum_i\underbrace{\left[\vec p_i,\;\phi_0(\vec r_i)\right]}
-    _{-i\hbar\nabla_i\phi_0(\vec r_i)}
-    -\vec d\cdot\underbrace{\sum_i\left[\vec p_i,\;\vec r_i\right]}_{-i\hbar Z}\vec E_0,
-\end{align*}
-%
-where the fact that $[\vec r_i,\;[\vec r_i,\vec p_i]]=0$ allows taking the $\phi_0$ outside the commutator and differentiating it. Cancelling common terms, we are left with the expression
-%
-\begin{align*}
-    V=\vec d\cdot\vec E_0
-    -\frac{1}{Z}\sum_i\vec d\cdot\nabla_i\phi_0(\vec r_i).
-\end{align*}
-
-\todo{How did the above two terms end up with a different sign?}
-
-Since $V$ has been derived from a commutator of an operator with the Hamiltonian $\hat H$, it has a vanishing expectation value in any superposition of eigenstates of $\hat H$ as shown above and it does not change the energy levels to first order in perturbation theory. We are thus at liberty to add such a term to the Hamiltonian: it should not change the result of an atomic \EDM\ measurement, which looks for an energy shift linear in the external field.
-
-Adding $V$ to the Hamiltonian, we see that the energy $-\vec d\cdot\vec E_0$ of the nuclear dipole in the external field disappears. In addition, the electrons--nucleus electrostatic potential $\phi_0(\vec r_i)$ is modified to
-%
-\begin{equation}
-    \label{screened2}
-%\phi(\vec r_i)\equiv 
-e\int\frac{\rho(\vec r')}{|\vec r_i-\vec r'|}\d^3\vec r'
-+\frac{1}{Z}(\vec d\cdot\nabla_i)
-\int\frac{\rho(\vec r')}{|\vec r_i-\vec r'|}\d^3\vec r',
-\end{equation}
-%
-which matches eqn~\ref{screened} if we drop the indices $i$.
-
-We have been allowed to add $V$ \emph{only} because to first order it does not change the energy levels. We now proceed to show that adding $V$ did, after all, change the energies---the dipole terms cancel, and Schiff moment appears. \todo{That sounds really shady: $V$ was added on the premise that it makes no difference, and yet we're now trying to prove that it does make a difference???}
-
-\paragraph{Multipole expansion}
-
-The dipole cancellation can be seen via the multipole expansion \cite[eqn~3.38]{jackson1998classical}
-%
-$$
-\frac{1}{|\vec r-\vec r'|}
-=\sum\limits_{\ell=0}^\infty
-\frac{r_<^\ell}{r^{\ell+1}_>}P_\ell(\cos\gamma),
-$$
-%
-$P_\ell$ being the Legendre polynomials of degree $\ell$, and $\gamma$ the angle between $\vec r$ and $\vec r'$. We use the notation $r_<,r_>$ to denote the smaller/greater of $r$ and $r'$.
-
-Following \cite[sect~II]{flambaum2002nuclear}, we can use this to expand the modified potential from eqn~\ref{screened2}. The first term becomes, taking just the $\ell=1$ term,
-%
-\begin{equation}
-    \label{T1l1}
-    e\int\rho(\vec r')\d^3\vec r'\left[
-        \frac{r'}{r^2}(r'<r)
-        +
-        \frac{r}{(r')^2}(r'>r)
-        \right]
-    P_1(\cos\gamma),
-\end{equation}
-%
-using Boolean comparison expression $(r'>r)$ that evaluates to 1 if the condition is satisfied, and to 0 otherwise.
-
-Similarly, the $l=0$ part of the second term in eqn~\ref{screened2} is
-%
-\begin{equation}
-    \label{T2l0}
-    \frac{1}{Z}(\vec d\cdot\nabla)\int\rho(\vec r')\d^3\vec r'\left[
-        \frac{1}{r}(r'<r)+\frac{1}{r'}(r'>r)
-        \right]P_1(\cos\gamma).
-\end{equation}
-%
-Noting that the nuclear \EDM\ and the nuclear charge are defined as
-%
-$$
-\vec d\equiv e\int\vec r'\rho(\vec r')\d^3\vec r,\quad
-Z=\int\rho(\vec r')\d^3\vec r',
-$$
-%
-the expression \ref{T2l0} becomes
-%
-$$
-\frac{1}{Z}
-\nabla\cdot
-\int\limits_0^\infty e\vec r'\rho(\vec r')\d^3\vec r'
-\int\limits_0^r\frac{1}{r}\rho(\vec r')\d^3\vec r',
-$$
-%
-noting that $\nabla(1/r')=0$ since $\nabla$ only acts on the non-primed coordinates. That also allows us to move the $\nabla$ into the first integral, and move the $1/r$ from the second integral to the first:
-%
-$$
-\frac{e}{Z}
-\int\limits_0^\infty
-\underbrace{\vec r'\cdot\nabla\left(\frac{1}{r}\right)}_{-r'/r^2\cos\gamma}
-\rho(\vec r')\d^3\vec r'
-\underbrace{\int\limits_0^r\rho(\vec r')\d^3\vec r'}
-_{\text{$Z$ when $r\to\infty$}}
-$$
-%
-In the limit $r\to\infty$, this exactly cancels the first term in eqn~\ref{T1l1}, thus screening all nuclear \EDM. \todo{Is that a correct conclusion? There is still the second term in eqn~\ref{T1l1}, why does that not need screening? Or is that precisely the origin of the Schiff moment?} The dipole defunct, we search for the next $P,T$-odd term in the multipole expansion. \todo{We just showed how the expression cancels itself out and screens nuclear \EDM, and now we proceed to show that there is, after all, some \EDM\ remaining???}
-
-\paragraph{Residual \EDM}
-
-The two terms that cancel in the limit $r\to\infty$ effectively have $\int_0^\infty=0$, and so we can change their limits of integration as $\int_0^r\to-\int_r^\infty$. The second term in eqn~\ref{T1l1} already has these limits, so we can put all three terms together into the expression
-%
-$$
-\phi^{(1)}(\vec r)\equiv
-e\vec r\cdot\int\limits_r^\infty\left(
-\frac{\ex{\vec r}}{Zr^3}
--\frac{\vec r'}{r^3}
-+\frac{\vec r'}{(r')^3}
-\right)\rho(\vec r')\d^3\vec r',
-$$
-%
-making use of the notation $\ex{\vec r}\equiv\int\vec r'\rho(\vec r')\d^3\vec r'$. Let's evaluate the matrix elements of this potential between s and p Dirac orbitals
-%
-$$
-W_{\text{sp}}\equiv
-\int\psi^*_\text{s}(\vec r)\phi^{(1)}(\vec r)\psi_\text{p}(\vec r)\d^3\vec r.
-$$
-%
-Split off the angular part of the integral:
-%
-\begin{align*}
-W_{\text{sp}}=
-    e\int\psi^*_\text{s}&(\vec r)\hat{\vec r}\psi_\text{p}(\vec r)\sin\theta\d\theta\d\phi
-\\
-&\times\int_0^\infty r\underbrace{(\psi^*_\text{s}\psi_\text{p})}_{\propto r}r^2\d r
-\int_r^\infty(\cdots)\rho(\vec r')\d^3\vec r',
-\end{align*}
-%
-where $\hat{\vec r}=\vec r/r$. In the nonrelativistic case, $\psi^*_\text{s}\psi_\text{p}\propto r$ as per \cite[appendix]{flambaum2002nuclear}, while in the radial part we can swap the order of integration $\vec r\leftrightarrow\vec r'$:
-%
-\begin{align*}
-    W_{\text{sp}}&\propto e
-    \int_0^\infty\rho(\vec r')\d^3\vec r'
-    \int_0^{r'}r^2\left(
-    \frac{\ex{\vec r}}{Zr^3}-\frac{\vec r'}{r^3}+\frac{\vec r'}{(r')^3}
-    \right)r^2\d r\\
-    &=e\int\rho(\vec r')\d^3\vec r'\left(
-    \frac{\ex{\vec r}(r')^2}{2Z}-\frac{\vec r'(r')^2}{2}+\frac{\vec r'(r')^5}{5(r')^3}
-    \right)\\
-    &\propto\frac{e}{10}\left[
-        \ex{r^2\vec r}-\frac{5}{3Z}\ex{r^2}\ex{\vec r}
-    \right]
-\end{align*}
-%
-The last line is exactly the expression for the Schiff moment stated in eqn~\ref{simpleSchiffMoment}. \todo{Where did I lose the $4\pi\nabla\delta^3(\vec r)$ factor? Did it go into the angular integral?}
 
 % Bibliography
 {
