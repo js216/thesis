@@ -78,7 +78,9 @@
 
 % units etc
 \newcommand{\GeV}{~\mathrm{GeV}}
+\newcommand{\eV}{~\mathrm{eV}}
 \newcommand{\kVcm}{~\mathrm{kV/cm}}
+\newcommand{\GVcm}{~\mathrm{GV/cm}}
 \newcommand{\Vcm}{~\mathrm{V/cm}}
 \newcommand{\cm}{~\mathrm{cm}}
 \newcommand{\Tl}{\mathrm{Tl}}
@@ -254,8 +256,6 @@ However, it is claimed that the `amount' or the `strength' of \CPV\ in the \CKM\
 %
 where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix (see \cite[fig 12.1]{PDG16}). With quark masses from \cite[p40, ``Quark Summary Table'']{PDG16} and $A\approx3\cdot10^{-5}$ from \cite[p7]{kleinknecht2006unitarity}, we get $J\approx121\cdot 10^3\GeV^{12}$. The electroweak phase transition, occurring at temperature $T_\text{EW}\approx100\GeV$, was the latest point in the evolution of the universe when \BAU\ could have been generated \cite{fodor2000EW}. Comparing $J$ and $T_\text{EW}$, we get the desired dimensionless quantity $J/T_\text{EW}^{12}\approx10^{-20}$ to within factors of order unity and we see it is ten orders of magnitude smaller than the constant parametrizing the baryon asymmetry. Thus, new sources of \CPV\ are needed.
 
-\clearpage
-
 \paragraph{Schiff moment}
 
 Additional $T$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclear density and would violate $T$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction.
@@ -400,7 +400,7 @@ which integrates to an expression proportional to
    \right],
 \end{equation}
 %
-the usual expression for the Schiff moment \cite[eqn~29]{sushkov1984possibility}.
+the usual expression for the Schiff moment \cite[eqn~29]{sushkov1984possibility} save for the additional factor of $Z$ reflecting the different normalization (to unity instead of $Z$) of the nuclear charge distribution $\rho(\vec r)$.
 
 It remains to consider, heuristically, the angular part of the integrand that we have left out of eqn~\ref{radial}, namely
 %
@@ -413,7 +413,7 @@ $$
 -\nabla\delta^3(\vec R),
 $$
 %
-where the $R$'s in the denominator are the $R$'s that have been absorbed into the $R^4$ in eqn~\ref{radial}. Since the nucleus is much smaller than the atom, it may at the scale of electron wavefunctions effectively be considered point-like, hence the $\delta^3(\vec R)$. The $\nabla$ effects the division by $R$, and points along the direction of $\vec R/R$.
+where the $R$'s in the denominator are the $R$'s that have been absorbed into the $R^4$ in eqn~\ref{radial}. Since the nucleus is much smaller than the atom, it may at the scale of electron wavefunctions effectively be considered point-like, hence the $\delta^3(\vec R)$. The $\nabla$ effects the division by $R$, and points along the direction of $\vec R/R$. \todo{Is that rigorous enough? Is there a way I can be more precise about the $-\nabla\delta^3(\vec R)$?}
 
 \begin{figure}
    \centering
@@ -589,11 +589,11 @@ the constant factors being chosen so that $e\ex{\vec r}=d_\text{n}\hat{\vec z}$.
 $$
 \rho(\vec r)=\frac{d_\text{n}}{4\pi eR^3/3}\delta(R-r)\cos\theta,
 $$
-which also integrates to $e\ex{\vec r}=d_\text{n}\hat{\vec z}$. The sum of the higher moments $\ex{r^2\vec r}$, again obtained by elementary integration, only differs from the previous case by a factor of order unity.
+which also integrates to $e\ex{\vec r}=d_\text{n}\hat{\vec z}$. The sum of the higher moments $\ex{r^2\vec r}$, again obtained by elementary integration, only differs from the previous case by a factor of order unity. \todo{Does the $\cos\theta$ shell have a uniform $E$ field inside it? Is that what polarizes atoms (see next section)?}
 
 In each case, we saw that $|\vec S|\propto R^2$. The nuclear radius scaling as $R\approx R_0A^{1/3}$, where $R_0\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, we conclude that heavier atoms---such as thallium---are preferrable for \SMt\ experiments.
 
-\paragraph{Molecular techniques}
+\paragraph{New physics in molecules}
 
 For nuclei inside a molecule, the Schiff moment and other $P,T$-violating effects give rise to an effective interaction of form
 %
@@ -608,17 +608,83 @@ where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vecto
    S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 
-Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
+Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results. We now present a simple model for polarization, starting with the atomic case, later generalized to molecules.
 
-Compared to atoms, molecules are polarized much more readily in laboratory fields, making them ideal for such an \EDM\ measurement. Thus Sandars suggested that a molecular-beam resonance experiment could be used to probe the existence of an electric dipole moment on the proton, so long as the molecule has a heavy atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
+\begin{figure}
+    \includegraphics[width=.45\columnwidth]{figs/polarize-a.png}
+    \hfill
+    \includegraphics[width=.45\columnwidth]{figs/polarize-b.png}
+    \caption{\part{a} Two-state atom model for polarization. \part{b} Distortion of atomic shape due to polarization. \todo{TODO: Re-draw this.}}
+    \label{polarize}
+\end{figure}
 
-We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
+\subparagraph{Polarization in atoms}
+%
+Consider a two-level atom with the states $\ket{\text{s}}$ and $\ket{\text{p}}$ of opposite parity (Fig.~\ref{polarize}a). The two states are separated in energy by $\Delta_\text{sp}$, and coupled by the dipole interaction $D_\text{sp}\mathcal{E}$, and an additional small coupling $\delta_T$ from new, $T$-violating physics. The Hamiltonian matrix is
+%
+\begin{equation}
+    \label{polarizetoy}
+H=\begin{pmatrix}
+    0 & x \\
+    x & \Delta_\text{sp}
+\end{pmatrix},
+\quad
+x\equiv D_\text{sp}\mathcal{E}+\delta_T.
+\end{equation}
+%
+Diagonalizing the Hamiltonian and expanding around small off-diagonal coupling $x$, we get the eigenvalues
+%
+$$
+E_\pm=\frac{1}{2}\left(
+\Delta_\text{sp}\pm\sqrt{4x^2+\Delta_\text{sp}^2}
+\right)
+=\begin{cases}
+    \Delta_\text{sp}+x^2/\Delta_\text{sp},&\text{for $E_+$} \\
+    \phantom{\Delta_\text{sp}}-x^2/\Delta_\text{sp},&\text{for $E_-$}
+\end{cases}
+$$
+%
 
-\clearpage
+We see that placing the atom in an external field does not cause a first order energy shift. What does happen instead is that the states `mix'. \todo{(This is not really mixing of states! Bad terminology, right?)} Expanding the eigenvectors $\ket{\psi_\pm}$ in the limit $x\ll\Delta_\text{sp}$ to first order, we obtain
+%
+$$
+\ket{\text{s}}-\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{p}}
+\quad\text{and}\quad
+\ket{\text{p}}+\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{s}},
+$$
+%
+whereas in the opposite limit ($x\gg\Delta_\text{sp}$), of course, the eigenstates are $2^{-1/2}(\ket{\text{s}}\pm\ket{\text{p}})$.
 
-To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or \cite{wilkening1984search} for a diagram.) Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
+Physically, the electron cloud gets repelled by the external field, and the nucleus attracted towards it; the change of shape matches what we expect from the combined wavefunction (Fig.~\ref{polarize}b). We say that the atom has become polarized. To describe the extent of the polarization, define
+%
+$$
+\mathcal{P}\equiv\frac{\text{induced dipole}}{\bra{\text{s}}\hat d\ket{\text{p}}}
+=\frac{\bra{\psi_\pm}\hat d\ket{\psi_\pm}}{D_\text{sp}}
+\xrightarrow{\text{small field}}
+2\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}
+,
+$$
+%
+noting that the dipole operator $\hat d$ only has non-zero matrix elements ($D_\text{sp}$) between states of opposite parity. This effect is linear for a small applied field, and saturates at high fields. For atoms, the saturation occurs at fields that are impossible to reach in the laboratory.
+
+The external field is not the only thing that can polarize an atom. In particular, both an electron \EDM\ and a nuclear Schiff moment can have the same result---indeed, anything that can couple the two opposite-parity states. We have seen already that \SMt\ increases with the size of the nucleus, thus we expect to see more polarization induced by new physics in atoms with a higher $Z$. Thinking of the \SMt\ as a constant $E$ field within the nuclear charge distribution, it intuitively makes sense that the symmetric s-wavefunction, spending time within the nucleus, gets distorted as in Fig.~\ref{polarize}b. \todo{Anything more quantitative about this? In particular, how to relate the Schiff moment $\vec S$ and the $\delta_T$ in the Hamiltonian in eqn~\ref{polarizetoy}?}
+
+Recall that the energy shift is quadratic in $x\equiv D_\text{sp}\mathcal{E}+\delta_T$. In the absence of new physics, the shift is thus quadratic in the external field. As soon as $\delta_T$ is non-zero, however, a shift appears that is linear in $\mathcal{E}$ for small fields, or, in general, proportional to the product $\mathcal{P}\delta_T$. We shall see in the following paragraphs that it is in molecules, not atoms, that the maximum possible shift can be obtained. Indeed, since the effect saturates at high fields, $\mathcal{E}$ does not even appear in the effective form of the new-physics interaction Hamiltonian in eqn~\ref{interaction}.
+
+\todo{Did I miss anything important from your slides?}
+
+\subparagraph{Molecules}
+%
+Compared to atoms, molecules are polarized much more readily in laboratory fields owing to their greatly reduced level separation (tens of GHz, or $10^{-4}\eV$, instead of eV-scale spacing), making them ideal for such an \EDM\ measurement. Thus Sandars suggested that a molecular-beam resonance experiment could be used to probe the existence of an electric dipole moment on the proton, so long as the molecule has a heavy atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
+
+We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment \todo{(Do you have a reference that calculates the 76~\%? Should I do this calculation?)} in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the effective internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
+
+It bears emphasizing that the internal field $E_\text{eff}\sim\GVcm$ is merely a way of relating the \SMt\ to an \EDM, and does not correspond to a physical electric field---such a field would tear the molecule apart. Instead, what we mean is that the magnitude of the level shift due to the Schiff moment in the enormous but fictitious internal field in the applied external field would equal the Stark shift $\vec d\cdot\vec E_\text{eff}$ of the molecular dipole in the actual applied external field. In fact, we prefer a different convention for the effective internal molecular electric field: the field in which the \EDM\ of an unshielded proton would give rise to the same energy shift as that due to the \SMt. \todo{Did I get that right?}
 
 \subparagraph{Separated oscillatory fields}
+%
+To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or \cite{wilkening1984search} for a diagram.) Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
+
 The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Subjecting the two-state system to an oscillating field of form $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
 %
 $$
@@ -652,6 +718,7 @@ It turns out that the oscillating field does not need to extend over the entire 
 \end{table}
 
 \subparagraph{Beam sources}
+%
 To form a molecular beam, traditionally a thermal molecular source has been used. For example, Schropp et al.\ \cite{schropp1987new} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$. Similarly, Hinds and Sandars \cite{hinds1980experiment} used a TlF-containing copper oven stabilized to a temperature of $340\pm1$\degC, forming a molecular beam from the vapor effusing from an array of channels. Hunter et al.\ used a ceramic chamber filled with TlF at 415--460\degC\ and passed the vapor through ceramic tubes and an aperture to collimate the beam.
 
 More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryogenic buffer gas source from that used by Barry, Shuman and DeMille \cite{barry2011bright} for strontium monofluoride. Instead of producing vapors by direct heating of a mass of solid TlF, the solid is kept at roughly 4~K and molecules are released by ablation with a pulsed 1064~nm laser. Once away from the solid, they are extracted from the cell by becoming entrained in the flow of cryogenic buffer gas, typically helium or neon. The resulting beam tends to be slower, colder compared with conventional methods of molecular beam production. See \cite{hutzler2012buffer} for a review of cryogenic buffer gas beam sources.
@@ -805,6 +872,7 @@ All lasers in this experiment address transitions between the $v=0$ vibrational 
 \todo{Change of basis transformation between the two frames}
 
 \subparagraph{Ground state}
+%
 The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
 %
 $$
@@ -840,6 +908,7 @@ Since molecular-beam experiments usually involve motion between regions with hig
 \todo{Explain the calculation of ground state Hamiltonian matrix elements.}
 
 \subparagraph{Excited state}
+%
 \todo{What is there to say about the structure of the excited state?}
 
 \todo{Calculation of relevant branching ratios}
@@ -907,11 +976,13 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 Molecules emerging from a cryogenic buffer gas beam source initially populate a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter rotational cooling region to accumulate population in a single hyperfine level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
 
 \subparagraph{Rotational cooling (Fig.~\ref{scheme})}
+%
 Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a \UV\ laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
 
 \todo{Branching ratio argument why $F1$ instead of $F2$? Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching? Frequency-switching of microwaves vs power broadening.}
 
 \subparagraph{State transfer 1}
+%
 The population that has been collected in the $J=0$, $F=0$ sublevel has to be moved to a state in the $J=2$ manifold, where the molecular beam can be collimated by the electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic rapid passage (\ARP): first $J=0\to1$, then $1\to2$. As the particles travel through a spatially-varying electric field, the separation between the hyperfine levels in the different $J$ states changes due to the DC Zeeman effect. In the same region, we place two microwaves beams corresponding to each pair of $J$ states, and offset them by approximately the \FWHM\ of each beam.  As the molecule traverses each beam, it is successively driven through the respective microwave resonances, making the population jump first to $J=1$, and then to $J=2$.
 
 To keep the state transfer adiabatic, the electric field (and the resulting level separation, and the detuning $\Delta\omega(t)$ between the microwaves and the state spacing) has to change slowly compared with the Rabi frequency of the microwaves $\Omega_{\mu\text{w}}$. For a Rabi frequency much greater than the detuning, ref.~\cite{malinovsky2001general} gives the adiabaticity condition as
@@ -927,6 +998,7 @@ In the Bloch sphere picture, the precession of the state vector around the Rabi 
 \todo{Explain ARP more quantitatively with Bloch equations.}
 
 \subparagraph{Electrostatic quadrupole lens}
+%
 Molecules leave the beam source spread over a wide solid angle, so the beam intensity decays roughly as the distance squared from the source. To couteract this effect, we intend to collimate the beam, or focus it on the detection region, some seven meters away from the source.
 
 It turns that that an appropriate field distribution can be used as an analogue to the optical lens \cite{cho1991tight}, the condition being that inside the lens, moleculex experience a restoring force proportional to the displacement $r$ of the molecule from the axis. For a quadrupole field, the magnitude of the field is $|E|=Vr/R^2$, where $V$ is the potential difference between oppositely-charged electrodes and $2R$ the distance between opposite electrodes. \cite{bennewitz1955fokussierung} Furthermore, since the $J=2$ state of thallium fluoride has a quadratic Stark effect at high fields ($\propto30\kVcm$), this results in the desired quadratic potential energy, or a linear restoring force. Ref.~\cite{berg1965determination} makes the optical analogy exact in terms of ray-transfer (or `ABCD') matrices, whereby the condition for focusing results in the standard expression for a thin lens of focal length $f$
@@ -952,9 +1024,11 @@ where $u$ is the component of velocity along the beam direction (making $\dot r_
 \todo{Which hyperfine state are we choosing for the lens state?}
 
 \subparagraph{State transfer 2}
+%
 A second state preparation region will take molecules out of the lens $J=2$ state and into the appropriate $J=1$ state required by the interaction region. Details will be decided upon based on experimental results from the first state preparation region.
 
 \subparagraph{Interaction region}
+%
 A high external electric field polarizes the molecules to achieve a large internal electric field, thus amplifying the sensitivity to tiny effects due to the Schiff moment. The measurement will be done using the method of separated oscillatory fields as explained above.
 
 We intend to use a pair of $J=1$, $m_J=\pm1$ states, where the molecular rotation leads to an internal magnetic field. By flipping the sign of $m_J$, the internal magnetic field can be reversed. The first \RF\ coil in the Ramsey sequence creates a superposition of thallium spin-up and spin-down states, and the phase accumulated during the interaction time is translated by the second pulse back into varying populations of the spin states. The data obtained with the two different fluorine spin directions can be used for systematic checks.
@@ -964,6 +1038,7 @@ If the \RF\ coils are in phase, or exactly out of phase, then zero phase accumul
 \todo{What will be our switching sequence?}
 
 \subparagraph{Projection and detection}
+%
 While the detection scheme has not yet been finalized, we expect we will be able to map the two spin states from the interaction region to two different rotational states using microwaves. Unlike some of the experiments discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to detect the amount of molecules in the final rotational states, but the pair of cycling transitions has not yet been chosen or optimized.
 
 Compared to hot-wire or absorption techniques, \LIF\ has the advantage of observing a signal against a dark background (modulo light scattered from the optics and vacuum chamber windows). \cite{tango1968spectroscopy} Furthermore, since the emitted light can be collected at different angles, we can obtain spatial information about the detection process. \cite{zare2012my} Since we are able to measure both spin-up and spin-down populations, we are to first order insensitive to changes in beam intensity and the resulting spurious systematics. The quantity of interest is the contrast, defined as the ratio of the difference and the sum of the two populations, which in principle cancels out the beam intensity. \todo{Are there other ways the intensity shift systematic can sneak in anyway?}
@@ -991,6 +1066,7 @@ $$
 The parameters chosen for reversals can include $E_\text{int}$, the electric field between the electrodes in the main interaction region, $M=\pm1$, which of the two sets of two hyperfine levels were chosen for the \NMR\ measurement, $E_\text{quad}$, the electric field in the electrostatic quadrupole lens, $P=\pm\pi/2$, the relative phase of the \NMR\ coils at the ends of the interaction region, $B_\text{ss}$ and $E_\text{ss}$, the magnetic and electric fields in the state-selection region, \todo{other things in the state-selection region that is yet to be designed, and what other things are we reversing?} The following paragraphs discuss the non-\EDM\ frequency shifts in the order of increasing number of simultaneously reversed fields.
 
 \subparagraph{Single reversal}
+%
 States with opposite values of $m_J$ have the same energy in the Stark effect, and, analogously, so do states no matter the polarity of the electric field. That is a consequence of time-reversal symmetry, since the direction of motion of electrons in the atom does not change the electric dipole moment, making time reversal a symmetry of the Stark effect. \cite{gottfried2013quantum} It can be shown that there exist pairs of states of opposite $m_J$ with identical matrix elements of the Stark operator $S_z$ (identical polarizabilities to first order). \cite{angel1968hyperfine} In terms of spherical harmonics, the $z$-component of the electric dipole operator is proportional to $Y_1^0$, as can be seen from the spherical multipole expansion \cite[eqn~4.1]{jackson1998classical},
 %
 \begin{equation}
@@ -1261,6 +1337,7 @@ Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton,
 See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of three systems working together to (1) provide a stable cesium reference line, (2) lock an \IR\ seed laser to the reference, and (3) to quadruple the \IR\ into a \UV\ beam that can be used to probe transitions in TlF, occuring around 271~nm. In order to provide separately-controllable laser frequencies, we have three \SHG\ systems connected to two transfer lock cavities (one of them currently under construction).
 
 \subparagraph{Cs lock}
+%
 The reference system is based on modulation transfer spectroscopy (\MTS), a pump--probe technique resulting in sub-Doppler resolution for laser locking. An \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier frequency) before it gets passed through a vapour cell. Modulation can appear on the counterpropagating probe beam, passed through the same vapour, through the interactions of the two beams with the atomic vapour. The interactions are an example of four-wave mixing where two pump beam frequency components combine with the probe beam, resulting in a sideband for the probe beam. \cite{mccarron2008modulation} In contrast, in frequency modulation spectroscopy (\FMS) only a single modulated beam is passed through the sample and onto a detector. If the modulation frequency is large compared with the spectral feature being probed, then the laser (or \EOM) can be tuned such that only one sideband interacts with the sample. In the absence of such an interaction, the \RF\ signal arising from the beating of one sideband with the carrier cancels that arising from the other sideband. When this balance is upset by phase or amplitude changes in one sideband, and a background-free signal results. \cite{bjorklund1980frequency}
 
 Following ref.~\cite{zi2017laser}, the beam sourced from the diode laser (DL pro 850, Toptica, Germany) is split off for transfer cavities with two polarizing beam splitters (with the two half-wave plates controlling the amount of light sent to each transfer cavity beam). The remaining beam is split by the acousto-optic modulator (\AOM) (AOMO 3080-122 830NM from Gooch \&\ Housego, UK) with 80~MHz center frequency, AR-coated for operation at 780--850~nm, into a pump and probe beam, the pump having about twice the power of the probe. (The \AOM\ also eliminates trouble from backreflection from the Cs cell, or photodiodes.) The pump beam is phase-modulated by the custom-built \EOM\ (Thorlabs Inc.) at 3~MHz before being led through the cesium quartz cell (Thorlabs GC19075-CS, diam.\ 19~mm, length 75~mm), magnetically shielded to the milligauss level in a 6~in-long, 2~in inner diam.\, three-layer concentric mu-metal shield (modified ZG-203 from Magnetic Shield Corporation, Bensenville, IL). 
@@ -1268,11 +1345,13 @@ Following ref.~\cite{zi2017laser}, the beam sourced from the diode laser (DL pro
 The \MTS\ signal is detected by the photodiode (we have not found it necessary to make use of the \FMS), and mixed with the \EOM\ driving frequency to obtain an error signal used inside the laser controller (Toptica DLC pro) to stabilize the laser diode current and the piezo-controlled cavity, and lock it to the $F=4\to5$ transition in the hyperfine structure of the cesium D$_2$ line, occuring at 852.35641~nm \cite{steck2003cesium}. However, as the Cs reference is only used to set the scale in the \FSR\ of the transfer cavity, the choice of the hyperfine level is not important---GHz differences cause differences negligible compared to the $\approx0.5$~MHz stability required for the \IR\ science lasers.
 
 \subparagraph{Transfer cavity}
+%
 The Fabry--P\'erot interferometer (Toptica FPI 100) with free spectral range (\FSR) 1~GHz is locked to the cesium reference (master) laser. Up to two slave lasers can be used in this scheme, one for each of the two orthogonal polarizations, while the master can be distinguished by its different wavelength and separated away with a dichroic mirror. The cavity length is modulated by slighly more than one \FSR\ to scan over the transmission peaks. The timing difference between the master and slave peaks is then fed to a \PID\ loop to lock the slave frequency.
 
 \todo{More details about the locking electronics once that's built and tested.}
 
 \subparagraph{Second harmonic generation}
+%
 The \IR\ beam at 1087~nm is generated by the Koheras Basik fiber laser seed and amplified to $\approx2$~W by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). A small amount of power is split off for the wavemeter (671A by Bristol Instruments, Rochester, NY), which allows for a measurement of the absolute laser frequency to within 50~MHz. The rest of the beam is modulated by an \EOM\ and passed through a bowtie-configuration cavity (built by K. Wenz at Columbia, NY) containing a ppKTP crystal that generates up to 1~W of green light at 543.5~nm. The green beam is coupled into a fiber and delivered to a second \SHG\ system (Toptica SHG pro) with a similar configuration. A BBO crystal is used for frequency doubling, resulting in $\approx70$~nm of \UV\ (271.7~nm).
 
 To counteract the cavity length changes due to temperature and pressure variations, one of the cavity mirrors is attached to a piezo actuator. Using the Pound--Drever-Hall technique (\PDH), the cavity photodiode signal is mixed with the \EOM\ driving frequency in order to extract a sensitive error signal that can be used to \PID-control the piezo actuator. \cite{drever1983laser} The \UV\ lock is done with a commercial analog setup (Toptica PDH 110, PID 100, and FALC 110), while for the green cavities we are transitioning to a home-built system, based on the Red Pitaya STEMlab \FPGA\ board.
