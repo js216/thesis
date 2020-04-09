@@ -258,19 +258,9 @@ However, it is claimed that the `amount' or the `strength' of \CPV\ in the \CKM\
 %
 where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix (see \cite[fig 12.1]{PDG16}). With quark masses from \cite[p40, ``Quark Summary Table'']{PDG16} and $A\approx3\cdot10^{-5}$ from \cite[p7]{kleinknecht2006unitarity}, we get $J\approx121\cdot 10^3\GeV^{12}$. The electroweak phase transition, occurring at temperature $T_\text{EW}\approx100\GeV$, was the latest point in the evolution of the universe when \BAU\ could have been generated \cite{fodor2000EW}. Comparing $J$ and $T_\text{EW}$, we get the desired dimensionless quantity $J/T_\text{EW}^{12}\approx10^{-20}$ to within factors of order unity and we see it is ten orders of magnitude smaller than the constant parametrizing the baryon asymmetry. Thus, new sources of \CPV\ are needed.
 
-\subsection{Schiff moment}
+\clearpage
 
-\todo{
-\noindent\begin{tabular}{|p{.07\columnwidth}p{.83\columnwidth}|}
-    \hline
-    &\textbf{Note on notation.}\\\hline
-    $\vec R,\vec R'$ & integration variable when integrating over the nuclear charge density $\rho(\vec R)$ and $\rho(\vec R')$;\\
-    $\vec r_i$ & position of $i$th electron;\\
-    $\vec r$   & integration variable when integrating over electronic wavefunctions $\psi_\text{s}$ and $\psi_\text{p}$;\\
-    $\ex{\vec R}$ & moment of nuclear charge density, defined as $\int\vec R'\d^3\vec R'$; note that I do \emph{not} want to write $\ex{\vec R'}$ for this since $\vec R'$ is a dummy variable and as such not defined outside the integral
-    \\\hline
-\end{tabular}\vspace{2ex}
-}
+\subsection{Schiff moment}
 
 Additional $T$-violating forces would likely give rise to a nuclear \EDM, whether through the \EDM\ of unpaired protons or neutrons, via \CPV\ interactions between valence nucleons and the core of the nucleus, or other mechanisms. \cite{safronova2018search} The \EDM\ $\vec d$ would result from a redistribution of nuclear charge density and would violate $T$, as follows. Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus, the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under time-reversal, the \EDM\ would stay the same but the spin would flip direction.
 
@@ -502,7 +492,19 @@ Let's evaluate the matrix elements $\bra{\psi_\text{s}}\delta H\ket{\psi_\text{p
         \big].
 \end{align*}
 %
-The product of wavefunctions can be separated into a product of angular and radial functions: $\psi^*_\text{s}\psi_\text{p}=U(\vec\Omega)\sum_{k=1}^\infty b_kr^k$. (This is of course only valid near the origin---in the vicinity of the nucleus.) In the nonrelativistic case, only $b_1$ is nonzero \cite{flambaum2002nuclear}. Separate the angular and radial integrals:
+The product of wavefunctions can be separated into a product of angular and radial functions: $\psi^*_\text{s}\psi_\text{p}=U(\vec\Omega)\sum_{k=1}^\infty b_kr^k$. (This is of course only valid near the origin---in the vicinity of the nucleus.) In the nonrelativistic case, only $b_1$ is nonzero \cite{flambaum2002nuclear}; indeed, the hydrogenic radial wavefunctions are a standard textbook result \cite[Tables 7.3 and 8.1]{binney2013physics}
+%
+\begin{equation}
+    \label{hydrogen}
+    \psi_\text{1s}(r)=
+       \frac{2e^{-r/a_Z}}{a_Z^{3/2}};\quad
+    \psi_{\text{2p}_z}(r)=
+       \frac{e^{-r/2a_Z}}{{\sqrt{3}}(2a_Z)^{3/2}}
+       \frac{r}{a_Z}
+       \cos\theta,
+\end{equation}
+%
+with the atomic radius $a_Z\equiv a_0/Z$. The corresponding angular functions are the spherical harmonics $Y_0^0$ and $Y_1^0$, respectively. So we have $b_1={Z^4}/{\sqrt6a_0^4}$ and $U(\vec\Omega)=(\sqrt3/4\pi)\cos\theta$. \todo{Really, a $Z^4$ scaling?} We can now separate the angular and radial integrals:
 %
 \begin{align}
     \label{factored}
@@ -581,7 +583,7 @@ It remains to consider the angular part of the integral in eqn~\ref{factored} an
 U(\vec\Omega)
 \d^2\vec\Omega
 %
-\quad\to\quad
+    \quad\xrightarrow{?}\quad
 %
 \int
 \vec S\cdot
@@ -776,16 +778,16 @@ For nuclei inside a molecule, the Schiff moment and other $P,T$-violating effect
 %
 \begin{equation}
    \label{interaction}
-   \H=-\nu\hat\sigma\cdot\hat\lambda,
+    \H=-\nu\hat{\vec I}\cdot\hat{\vec n},
 \end{equation}
 %
-where $\hbar\hat\sigma/2$ is the nuclear spin, and $\hat\lambda$ is a unit vector along the internuclear axis in the molecule (in TlF, we define this to point towards the F nucleus). The interaction strength $\nu$ can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities. One such expression relates the Schiff moment $S$ to the interaction strength $\nu$ (eqn~26 in ref.~\cite{cho1991search}, using a calculation from \cite{coveney1983parity}):
+where $\hbar\hat{\vec I}/2$ is the nuclear spin, and $\hat{\vec n}$ is a unit vector along the internuclear axis in the molecule (in TlF, we define this to point towards the F nucleus). Compared to the atomic case, in a diatomic molecule there is another inherent direction: along the internal electric field, pointing along the internuclear axis. The interaction strength $\nu$ can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities. One such expression relates the Schiff moment $S$ to the interaction strength $\nu$ (eqn~26 in ref.~\cite{cho1991search}, using a calculation from \cite{coveney1983parity}):
 %
 \begin{equation}
    S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 
-Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat\lambda$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results. We now present a simple model for polarization, starting with the atomic case, later generalized to molecules.
+Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat{\vec n}$ to zero. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results. \todo{How?} We now present a simple model for polarization, starting with the atomic case, later generalized to molecules.
 
 \begin{figure}
     \begin{tikzpicture}[yscale=2,xscale=1.2]
@@ -834,14 +836,15 @@ $$
 E_\pm=\frac{1}{2}\left(
 \Delta_\text{sp}\pm\sqrt{4x^2+\Delta_\text{sp}^2}
 \right)
-=\begin{cases}
+\approx\begin{cases}
     \Delta_\text{sp}+x^2/\Delta_\text{sp},&\text{for $E_+$} \\
-    \phantom{\Delta_\text{sp}}-x^2/\Delta_\text{sp},&\text{for $E_-$}
+    \phantom{\Delta_\text{sp}}-x^2/\Delta_\text{sp},&\text{for $E_-$.}
 \end{cases}
 $$
 %
+In the opposite limit ($x\gg\Delta_\text{sp}$), the energies are just $\pm x$.
 
-We see that placing the atom in an external field does not cause a first order energy shift. What does happen instead is that the states `mix'. \todo{(This is not really mixing of states! Bad terminology, right?)} Expanding the eigenvectors $\ket{\psi_\pm}$ in the limit $x\ll\Delta_\text{sp}$ to first order, we obtain
+We see that placing the atom in an external field does not cause a first order energy shift. What does happen instead is that the states mix. Expanding the eigenvectors $\ket{\psi_\pm}$ in the limit $x\ll\Delta_\text{sp}$ to first order, we obtain
 %
 $$
 \ket{\text{s}}-\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{p}}
@@ -863,17 +866,19 @@ $$
 %
 noting that the dipole operator $\hat d$ only has non-zero matrix elements ($D_\text{sp}$) between states of opposite parity. This effect is linear for a small applied field, and saturates at high fields. For atoms, the saturation occurs at fields that are impossible to reach in the laboratory.
 
-The external field is not the only thing that can polarize an atom. In particular, both an electron \EDM\ and a nuclear Schiff moment can have the same result---indeed, anything that can couple the two opposite-parity states. We have seen already that \SMt\ increases with the size of the nucleus, thus we expect to see more polarization induced by new physics in atoms with a higher $Z$. Thinking of the \SMt\ as a constant $E$ field within the nuclear charge distribution, it intuitively makes sense that the symmetric s-wavefunction, spending time within the nucleus, gets distorted as in Fig.~\ref{polarize}b. \todo{Anything more quantitative about this? In particular, how to relate the Schiff moment $\vec S$ and the $\delta_T$ in the Hamiltonian in eqn~\ref{polarizetoy}?}
+The external field is not the only thing that can polarize an atom. In particular, both an electron \EDM\ and a nuclear Schiff moment can have the same result---indeed, anything that can couple the two states of opposite parity with a real matrix element; for instance, weak interactions mix $\ket{\text{s}}$ and $\ket{\text p}$, but with pure imaginary matrix element.
+
+We have seen already that \SMt\ increases with the size of the nucleus, thus we expect to see more polarization induced by new physics in atoms with a higher $Z$. Thinking of the \SMt\ as a constant $E$ field within the nuclear charge distribution, it intuitively makes sense that the symmetric s-wavefunction, spending time within the nucleus, gets distorted as in Fig.~\ref{polarize}b. Indeed, in the previous section we have explicitly calculated the form of the matrix element $\bra{\psi_\text{s}}\delta H\ket{\psi_\text{p}}\sim\delta_T$ corresponding to the unscreened part of a $T$-odd nuclear charge distribution.
 
 Recall that the energy shift is quadratic in $x\equiv D_\text{sp}\mathcal{E}+\delta_T$. In the absence of new physics, the shift is thus quadratic in the external field. As soon as $\delta_T$ is non-zero, however, a shift appears that is linear in $\mathcal{E}$ for small fields, or, in general, proportional to the product $\mathcal{P}\delta_T$. We shall see in the following paragraphs that it is in molecules, not atoms, that the maximum possible shift can be obtained. Indeed, since the effect saturates at high fields, $\mathcal{E}$ does not even appear in the effective form of the new-physics interaction Hamiltonian in eqn~\ref{interaction}.
 
-\todo{Did I miss anything important from your slides?}
+\clearpage
 
 \paragraph{Molecules}
 
 Compared to atoms, molecules are polarized much more readily in laboratory fields owing to their greatly reduced level separation (tens of GHz, or $10^{-4}\eV$, instead of eV-scale spacing), making them ideal for such an \EDM\ measurement. Thus Sandars suggested that a molecular-beam resonance experiment could be used to probe the existence of an electric dipole moment on the proton, so long as the molecule has a heavy atom with an unpaired proton in the nucleus. \cite{sandars1967measurability}
 
-We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment \todo{(Do you have a reference that calculates the 76~\%? Should I do this calculation?)} in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the effective internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
+We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment \todo{(TODO: Do this calculation myself.)} in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the effective internal electric field can reach the order of $10^9$~V/cm, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
 
 It bears emphasizing that the internal field $E_\text{eff}\sim\GVcm$ is merely a way of relating the \SMt\ to an \EDM, and does not correspond to a physical electric field---such a field would tear the molecule apart. Instead, what we mean is that the magnitude of the level shift due to the Schiff moment in the enormous but fictitious internal field in the applied external field would equal the Stark shift $\vec d\cdot\vec E_\text{eff}$ of the molecular dipole in the actual applied external field. In fact, we prefer a different convention for the effective internal molecular electric field: the field in which the \EDM\ of an unshielded proton would give rise to the same energy shift as that due to the \SMt. \todo{Did I get that right?}
 
