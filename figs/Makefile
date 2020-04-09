@@ -1,4 +1,4 @@
-SUBDIRS = svg
+SUBDIRS = svg matplotlib
 
 .PHONY: clean subdirs $(SUBDIRS)
 
