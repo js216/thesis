@@ -1,6 +1,12 @@
 .PHONY: all clean
 
-all: polarize.pdf
+all: polarize.pdf polarizeTlF.pdf
+
+# additional dependencies
+
+polarizeTlF.pdf: P_arr.csv Ez_arr.csv
+
+# generic rules
 
 %.svg: %.py
 	python3 $<

@@ -5,6 +5,7 @@
 *.log
 *.blg
 *.ini
+*.toc
 
 thesis.pdf
 

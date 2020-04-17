@@ -1,14 +1,13 @@
-quick: thesis.tex figs
-	pdflatex thesis
+TeX = xelatex
 
-xelatex: thesis.tex figs
-	xelatex thesis
+quick: thesis.tex figs
+	$(TeX) thesis
 
 full: thesis.tex references.bib figs
-	pdflatex thesis
+	$(TeX) thesis
 	bibtex thesis
-	pdflatex thesis
-	pdflatex thesis
+	$(TeX) thesis
+	$(TeX) thesis
 
 clean:
 	rm -f *.aux *.bbl *.blg *.log *.out *.pdf

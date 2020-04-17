@@ -10,7 +10,7 @@ matplotlib.rcParams.update({'font.size': 2})
 # numerical parameters
 eta = 0.5
 lvl = 0.015
-scale = 3
+scale = 10
 N = 1/25
 xlim, ylim = 9,15
 aspect = 2
@@ -28,6 +28,7 @@ psi = (psi_s+eta*psi_p) / (1+eta**2)
 fig = plt.figure(figsize=(2,1))
 gs = gridspec.GridSpec(1, 3, wspace=0.01)
 lw=.7
+ypos=12
 al=1
 axx = []
 for i in range(3):
@@ -37,18 +38,18 @@ for i in range(3):
 
 axx[0].pcolormesh(x+.5,y,scale*psi_s, alpha=al, cmap='seismic',vmin=-1,vmax=1, rasterized=True)
 axx[0].contour(x, y, psi_s, levels=[-1,-lvl,lvl,1], colors="black", linewidths=lw)
-axx[0].text(0,6,"\$\ket{\\text{s}}\$", fontdict={'ha':'center'})
+axx[0].text(0,ypos,"\$\ket{\\text{s}}\$", fontdict={'ha':'center'})
 axx[0].scatter(0, 0, s=ds, c='black', marker='.')
 
 axx[1].pcolormesh(x+.5,y,scale*psi_p, alpha=al, cmap='seismic',vmin=-1,vmax=1, rasterized=True)
 axx[1].contour(x, y, psi_p, levels=[-1,-lvl,lvl,1], colors="black", linewidths=lw)
-axx[1].text(0,10,"\$\ket{\\text{p}}\$", fontdict={'ha':'center'})
-axx[1].text(0,-12,"(b)", fontdict={'ha':'center'})
+axx[1].text(0,ypos,"\$\ket{\\text{p}}\$", fontdict={'ha':'center'})
+axx[1].text(0,-13,"(b)", fontdict={'ha':'center'})
 axx[1].scatter(0, 0, s=ds, c='black', marker='.')
 
 axx[2].pcolormesh(x+.5,y,scale*psi, alpha=al, cmap='seismic',vmin=-1,vmax=1, rasterized=True)
 axx[2].contour(x, y, psi, levels=[-1,-lvl,lvl], colors="black", linewidths=lw)
-axx[2].text(0,8,"\$\ket{\\text{s}}+\eta\ket{\\text{p}}\$", fontdict={'ha':'center'})
+axx[2].text(0,ypos,"\$\ket{\\text{s}}+\eta\ket{\\text{p}}\$", fontdict={'ha':'center'})
 axx[2].scatter(0, 0, s=ds, c='black', marker='.')
 
 # save to file
