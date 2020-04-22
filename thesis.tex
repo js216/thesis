@@ -33,6 +33,8 @@
 \hyphenation{char-ges}
 \hyphenation{swit-ched}
 \hyphenation{smal-ler}
+\hyphenation{di-mers}
+\hyphenation{appro-xi-ma-te-ly}
 
 % times
 %\linespread{1.05}
@@ -83,7 +85,7 @@
     citecolor={black},
     urlcolor={blue}}
 \newcommand\todo[1]{\textcolor{red}{#1}}
-\newcommand\todoit[1]{\textcolor{blue}{\textit{TODO: #1}}}
+\newcommand\todoit[1]{\textcolor{red}{\textit{TODO: #1}}}
 \usepackage{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
 
@@ -180,6 +182,7 @@
 \newcommand{\DC}{\textsc{dc}}
 \newcommand{\RMS}{\textsc{rms}}
 \newcommand{\HV}{\textsc{hv}}
+\newcommand{\mfp}{m.f.p.}
 
 \begin{document}
 
@@ -771,7 +774,7 @@ The boundary term will vanish because $\psi_\text{p}(r)=0$ at the origin, and $\
 %\end{align}
 
 \noindent
-Ignore, for now, everything except \todo{(???)}
+\todo{The wavefunctions should give a factor of $Z$.} Ignore, for now, everything except \todo{(???)}
 %
 \begin{equation}
     \label{weird}
@@ -840,6 +843,7 @@ This is the usual expression for the Schiff moment \cite[eqn~29]{sushkov1984poss
 Restoring the other factors in eqn~\ref{weird}, we have, up to some constants \todo{(???)}
 %
 \begin{align}
+    \label{1stenergyshiftmatelem}
     \bra{\text{s}}\delta H\ket{\text{p}}
     =
     \int
@@ -1028,7 +1032,7 @@ the constant factors being chosen so that $e\ex{\vec R}=d_\text{N}\hat{\vec z}$.
 \]
 which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is $|\vec S|=Zd_\text{p}R_0^2/10$. We shall see in the next section that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
 
-In each case, we saw that $|\vec S|\propto R_0^2$. Since the nuclear radius scales as $R_0\approx R_\text{N}A^{1/3}$, where $R_\text{N}\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, we conclude that heavier atoms---such as thallium---are preferrable for \SMt\ experiments. \todo{The most interesting question is: how does the energy shift from the combined E-field and Schiff moment scale with Z? This includes not just the Schiff moment itself, but also the electronic matrix element.  If I recall, together this gives a scaling like $Z^2 A^{2/3}$.}
+In each case, we saw that $|\vec S|\propto R_0^2$. Furthermore, the matrix element (eqn~\ref{1stenergyshiftmatelem}) proportional to the first order energy shift has a $Z^2$ dependence. Since the nuclear radius scales as $R_0\approx R_\text{N}A^{1/3}$, where $R_\text{N}\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, the overall scaling is $Z^2 A^{2/3}$. We conclude that heavier atoms---such as thallium---are preferrable for \SMt\ experiments.
 
 \subsection{New physics in molecules}
 
@@ -1045,9 +1049,11 @@ where $\hbar\hat{\vec I}/2$ is the nuclear spin, and $\hat{\vec n}$ is a unit ve
    S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 %
-\todo{Crudely estimate the number assuming near-complete s-p mixing due to the intramolecular E-field, plus your expressions from the last section (corrected to be for valence electrons rather than 1s/2p).}
+\todoit{Crudely estimate the number assuming near-complete s-p mixing due to the intramolecular E-field, plus your expressions from the last section (corrected to be for valence electrons rather than 1s/2p).}
 
-Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat{\vec n}$ to zero, and the Schiff shift---proportional to the internal molecular field---vanishes. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results. \todo{Last section, when corrected, should give you an energy shift that is $\propto S$ AND $\propto E_0$.  You can evaluate that in the molecule-fixed frame, with $\hat{I}$ along or against $\hat{n}$.  Then, in the lab frame, $\hat{I}$ will remain fixed (along, say, the z-axis) but with no LAB-FRAME E-field, $\ex{n_z} = 0$.  The lab frame E-field along z will mix $J=0$ with $J=1$ (etc), and lead to a nonzero $\ex{n_z}$.}
+\todoit{Calculate the effective internal electric field, whether GV/cm, or something smaller.}
+
+Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat{\vec n}$ to zero, and the Schiff shift---proportional to the internal molecular field---vanishes. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
 
 \begin{figure}
     \def\svgwidth{\columnwidth}
@@ -1071,17 +1077,13 @@ The polarization of molecules is so effective that the first order model, entire
     =\ex{\cos\theta},
 \]
 %
-where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a calculation of $\mathcal{P}$ in some of the lowest-lying rotational states.
-
-We can estimate the strength of the laboratory field required to efficiently polarize the molecule by comparing the molecular rotational level spacing $2B_\text{rot}(J+1)$ with the dipole energy $d\cdot E$. Using the TlF values $d=4.2~\text{Debye}$ and $B_\text{rot}=6.7~\text{GHz}$, we can expect a 76~\%\ alignment \todoit{Do this calculation myself. See D. Cho's thesis, sect. 4.1.} in a field of about $25~\text{kV/cm}$ for the $J=1$ state, and the effective internal electric field can reach the order of $10^9$~V/cm \todo{(again, be careful to specifically define what you mean by an effective internal E-field)}, a factor of $10^5$ improvement over a typical laboratory field. \cite[sect~9.1]{khriplovich2012cp}
-
-It bears emphasizing that the internal field $E_\text{eff}\sim\GVcm$ is merely a way of relating the \SMt\ to an \EDM, and does not correspond to a physical electric field---such a field would tear the molecule apart \todo{(well....the Coulomb field inside the molecule is indeed this large)}. Instead, what we mean is that the magnitude of the level shift due to the Schiff moment in the enormous but fictitious internal field in the applied external field would equal the Stark shift $\vec d\cdot\vec E_\text{eff}$ of the molecular dipole in the actual applied external field. In fact, we prefer a different convention for the effective internal molecular electric field: the field in which the \EDM\ of an unshielded proton would give rise to the same energy shift as that due to the \SMt. \todo{Did I get that right?}
+where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a plot of $\mathcal{P}$ in some of the lowest-lying rotational states of TlF; observe how states that are lower in energy are easier to polarize. \todo{What's up with the negative polarization for some of the states?}
 
 \paragraph{Separated oscillatory fields}
 
 To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or \cite{wilkening1984search} for a diagram.) Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
 
-The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Subjecting the two-state system to an oscillating field of form $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
+The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Placing the two-state system in an oscillating field $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
 %
 \[
 P_{p,q}=
@@ -1098,180 +1100,63 @@ In principle, an infinitely precise measurement could be obtained by simply exte
 
 It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
 
-\todo{Write out the formula for the probability as a function of the phase delay, and show the fringes, and describe why a $\pi/2$ is preferred over in-phase separated oscillatory coils.}
-
-\begin{table}
-    \small
-    %\makebox[\columnwidth][c]{%
-    \begin{tabu} to \columnwidth {@{}Xcccccc@{}}
-        \toprule
-        Species & Gas & $\Phi$ & $\Phi$/state & $B$ & $v$   & Ref\\
-                &     &      &            &            & (m/s) & \\\midrule
-        \textit{Thermal:}\\
-                &     &      &            &            &       & \cite{cho1991search} \\
-        \bottomrule
-    \end{tabu}%}
-    \caption{Key parameters of various beam sources: molecular species in the beam, the buffer gas (if applicable), flux $\Phi$ and flux per state, brightness $B$, velocity $v$.}
-    \label{sources}
-\end{table}
-
 \paragraph{Beam sources}
 
-To form a molecular beam, traditionally a thermal molecular source has been used. For example, Schropp et al.\ \cite{schropp1987new} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$. Similarly, Hinds and Sandars \cite{hinds1980experiment} used a TlF-containing copper oven stabilized to a temperature of $340\pm1$\degC, forming a molecular beam from the vapor effusing from an array of channels. Hunter et al.\ used a ceramic chamber filled with TlF at 415--460\degC\ and passed the vapor through ceramic tubes and an aperture to collimate the beam.
+The earliest molecular beams of thallium fluoride were of a thermal design, where a mass of the solid salt is heated in a copper oven to raise the vapour pressure. Depending on the mean free path (\mfp) of the molecules in the oven, we can distinguish two main types of thermal sources. In \emph{effusive} sources, the \mfp\ is comparable with the linear dimension $d$ of the hole through which the molecules emerge from the beam source. The particles escape by chance, and the beam properties reflect the state of the molecules in the oven. By contrast, in \emph{jet sources}, the \mfp\ is much smaller than $d$. The beam properties no longer reflect those of the oven molecules; instead, the local thermal (electornic, rotational, and vibrational) is partly converted into the center-of-mass motion of the particles. These beams are thus faster but colder.
 
-More recently, Norrgard et al.\ \cite{norrgard2017hyperfine} have adapted a cryogenic buffer gas source from that used by Barry, Shuman and DeMille \cite{barry2011bright} for strontium monofluoride. Instead of producing vapors by direct heating of a mass of solid TlF, the solid is kept at roughly 4~K and molecules are released by ablation with a pulsed 1064~nm laser. Once away from the solid, they are extracted from the cell by becoming entrained in the flow of cryogenic buffer gas, typically helium or neon. \todo{A few words about differences between He and Ne sources, and mention that Norrgard used He, while we are using Ne, would make sense here.} The resulting beam tends to be slower, colder compared with conventional methods of molecular beam production. See \cite{hutzler2012buffer} for a review of cryogenic buffer gas beam sources.
+\todo{@Dave: I'm not sure it makes sense to have a table of beam sources, since I only present a couple beam sources and they each have a different set of interesting parameters. Unless there's lots of other beam sources that I should present?}
 
-\todo{Give quantitative details about beam sources [Hutlzer's thesis]}
+For example, Schropp et al.\ \cite{schropp1987new,schropp1988thesis} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$, out of a detected beam of $7.5\times10^9$ molecules/second. The beam velocity can be estimated as $v_\text{CM}=\sqrt{2kT/m}\approx230$~m/s, with a spread of order $v_\text{CM}\sqrt{\ln2}\approx190$~m/s.
 
+At the oven temperature of 380\degC, we expect approximately 25~\%\ of molecules to exist as a monomer, the rest being mostly dimers (TlF)$_2$. In addition to decreasing the useful signal, dimers were twice as effective at producing background counts with the detection technology used. However, by Le Chatelier's principle the equilibrium of the endothermic reaction $\text{(TlF)}_2\rightleftharpoons2\text{TlF}$ can be shifted towards the right by an increase in temperature or a decrese in pressure. Thus the oven consists of two stages: a lower, high-pressure section with the boiling salt, and an uppper, lower-pressure region, separated by a constriction. As a result, the monomer fraction may be as high as 50~\%\ in the two-chamber design.
 
-\begin{figure}
+As an example of a jet source, Cho et al. \cite{cho1990thesis,cho1991search} constructed a thermal source with an oven at 753~K that yielded $1.25\times10^{10}$ molecules per second, of which $2.7\times 10^{-3}$ were in the desired $J=1$ state for an estimated rotational temperature of $350\pm50$~K. The beam velocity is given as $344\pm20$~m/s, with a spread of ($150\pm12$)~m/s, giving a rotational temperature of $300\pm50$~K. As expected, the beam is both colder and faster than the effusive source from ref.~\cite{schropp1987new}. The higher pressure in a jet source might be expected to result in a lower monomer fraction despite the higher temperature. To counteract this, the authors led the beam from the oven through a 30~cm long nozzle, 20~K hotter than the oven. They calculate that due to the approx.\ 100 times smaller density of TlF in the nozzle compared to the oven, the monomer fraction is as high as 92\%.
 
-    % for axis breaks
-    \usetikzlibrary{decorations.markings}
-    \def\MarkLt{4pt}
-    \def\MarkSep{2pt}
-    \tikzset{
-      TwoMarks/.style={
-        postaction={decorate,
-          decoration={
-            markings,
-            mark=at position #1 with
-              {
-                  \begin{scope}[xslant=0.2]
-                  \draw[line width=\MarkSep,white,-] (0pt,-\MarkLt) -- (0pt,\MarkLt) ;
-                  \draw[-] (-0.5*\MarkSep,-\MarkLt) -- (-0.5*\MarkSep,\MarkLt) ;
-                  \draw[-] (0.5*\MarkSep,-\MarkLt) -- (0.5*\MarkSep,\MarkLt) ;
-                  \end{scope}
-              }
-           }
-        }
-      },
-      TwoMarks/.default={0.5},
-    }
+The recent trend is towards cryogenic buffer-cooled beam sources. A non-reactive buffer gas is flowed through a copper cell kept at a temperature $T_0$. The flow rate $F$ of the buffer gas controls the numbre density of the buffer gas in the cell. The species of interest is injected at a temperature much higher than $T_0$ and thermalizes through with the buffer gas, cooling its rotational and translational degrees of freedom to approximately $T_0$. Since the cell is at a cryogenic temperatures, all target molecules that collide with the walls stick to it, while others escape through an exit aperture in the cell; the ratio of the time scales of these two processes determines the extraction efficiency of the cell. Beam properties are largely determined by the collisions between the target particles and the buffer gas around the exit aperture. See \cite{hutzler2012buffer} for a review of cryogenic buffer gas beam sources.
 
-\begin{tikzpicture}[scale=5]
+Barry et al. \cite{barry2011bright} report on a cryogenic buffer-gas source for strontium monofluoride, yielding some $1.2\times10^{11}$ molecules/sr/pulse that are in the desired rovibronic state. At 140~m/s, the beam is significantly slower than a comparable thermal beam, while the rotational temperature is around 1~K. The cell (internal volume 15~cm$^3$) was kept at 3~K, and the flow of helium controlled at 5~sccm. The beam escapes from the cell through a 3~mm diameter hole in a 0.5~mm thick copper plate. The beam source design has been adapted by Norrgard et al.\ \cite{norrgard2017hyperfine} to produce a beam of thallium fluoride.
 
-   % length of energy level diagram lines
-   \def\len{.05}
-
-   % x-position and length and x-offset of the y-axis labels
-   \def\pos{-18}
-   \def\lenmark{.025}
-   \def\xoffset{.18}
-
-   % x coordinates for m = -2, ... 2
-   \def\xa{-4.5*\len}
-   \def\xb{-2.5*\len}
-   \def\xc{-0.5*\len}
-   \def\xd{+1.5*\len}
-   \def\xe{+3.5*\len}
-   \def\xf{-6.5*\len}
-   \def\xg{+5.5*\len}
-
-   % y offset for J = 1, 2
-   \def\yA{.6}
-   \def\yB{\yA+.7}
-
-   % axis
-   \draw[->,TwoMarks=0.2,TwoMarks=0.6] (\xf-\len-\xoffset, -.1)
-      -- (\xf-\len-\xoffset,\yB+.25) node[above] {$E$ [kHz]};
-
-   % J=0 labels
-   \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,-.08) -- (\xg+2*\len,.08) node [black,midway,anchor=west,xshift=25] {$J=0$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, -.003325) node[anchor=east,below,xshift=\pos]
-      {-3.325} -- (\xf-\len+0.5*\lenmark-\xoffset,-.003325) node[right,below,xshift=-\pos] {$F=1$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, .009975) node[anchor=east,above,xshift=\pos]
-      {9.975} -- (\xf-\len+0.5*\lenmark-\xoffset,.009975) node[right,above,xshift=-\pos] {$F=0$};
-
-   % J=0 lines
-   \draw (\xc, -0.003325) -- (\xc+\len, -0.003325);
-   \draw (\xb, -0.003325) -- (\xb+\len, -0.003325);
-   \draw (\xd, -0.003325) -- (\xd+\len, -0.003325);
-   \draw (\xc, 0.009975) -- (\xc+\len, 0.009975);
-
-   % J=1 labels
-   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,\yA-.2) -- (\xg+2*\len,\yA+.1) node [black,midway,anchor=west,xshift=25] {$J=1$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.143745) node[anchor=east,below,xshift=\pos] {-143.745} --
-      (\xf-\len+0.5*\lenmark-\xoffset,\yA-.143745) node[right,below,xshift=-\pos] {$F=0$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.121506) node[anchor=east,above,xshift=\pos] {-121.506} --
-      (\xf-\len+0.5*\lenmark-\xoffset,\yA-.121506) node[right,above,xshift=-\pos] {$F=1$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA+.054446) node[anchor=east,below,xshift=\pos] {54.446} --
-      (\xf-\len+0.5*\lenmark-\xoffset,\yA+.054446) node[right,below,xshift=-\pos] {$F=1$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA+.068985) node[anchor=east,above,xshift=\pos] {68.985} --
-      (\xf-\len+0.5*\lenmark-\xoffset,\yA+.068985) node[right,above,xshift=-\pos] {$F=2$};
-
-   % J=1 lines
-   \draw (\xc, \yA-.143745) -- (\xc+\len, \yA-.143745);
-   \draw (\xc, \yA-.121506) -- (\xc+\len, \yA-.121506);
-   \draw (\xb, \yA-.121506) -- (\xb+\len, \yA-.121506);
-   \draw (\xd, \yA-.121506) -- (\xd+\len, \yA-.121506);
-   \draw (\xc, \yA+.054446) -- (\xc+\len, \yA+.054446);
-   \draw (\xb, \yA+.054446) -- (\xb+\len, \yA+.054446);
-   \draw (\xd, \yA+.054446) -- (\xd+\len, \yA+.054446);
-   \draw (\xc, \yA+.068985) -- (\xc+\len, \yA+.068985);
-   \draw (\xb, \yA+.068985) -- (\xb+\len, \yA+.068985);
-   \draw (\xd, \yA+.068985) -- (\xd+\len, \yA+.068985);
-   \draw (\xa, \yA+.068985) -- (\xa+\len, \yA+.068985);
-   \draw (\xe, \yA+.068985) -- (\xe+\len, \yA+.068985);
-
-   % J=2 labels
-   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,\yB-.27) -- (\xg+2*\len,\yB+.18) node [black,midway,anchor=west,xshift=25] {$J=2$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.217455)
-   node[anchor=east,left,yshift=-5] {-217.455}
-      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.217455) node[right,below,xshift=-\pos] {$F=1$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.172936)
-   node[anchor=east,left,yshift=5] {-172.936}
-      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.172936) node[right,above,xshift=-\pos] {$F=2$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB+.105876)
-   node[anchor=east,left,yshift=-5] {105.876}
-      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB+.105876) node[right,below,xshift=-\pos] {$F=2$};
-   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB+.141095)
-   node[anchor=east,left,yshift=5] {141.095}
-      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB+.141095) node[right,above,xshift=-\pos] {$F=3$};
-
-   % J=2 lines
-   \draw (\xc, \yB-.217455) -- (\xc+\len, \yB-.217455);
-   \draw (\xb, \yB-.217455) -- (\xb+\len, \yB-.217455);
-   \draw (\xd, \yB-.217455) -- (\xd+\len, \yB-.217455);
-   \draw (\xc, \yB-.172936) -- (\xc+\len, \yB-.172936);
-   \draw (\xb, \yB-.172936) -- (\xb+\len, \yB-.172936);
-   \draw (\xd, \yB-.172936) -- (\xd+\len, \yB-.172936);
-   \draw (\xa, \yB-.172936) -- (\xa+\len, \yB-.172936);
-   \draw (\xe, \yB-.172936) -- (\xe+\len, \yB-.172936);
-   \draw (\xc, \yB+.105876) -- (\xc+\len, \yB+.105876);
-   \draw (\xb, \yB+.105876) -- (\xb+\len, \yB+.105876);
-   \draw (\xd, \yB+.105876) -- (\xd+\len, \yB+.105876);
-   \draw (\xa, \yB+.105876) -- (\xa+\len, \yB+.105876);
-   \draw (\xe, \yB+.105876) -- (\xe+\len, \yB+.105876);
-   \draw (\xc, \yB+.141095) -- (\xc+\len, \yB+.141095);
-   \draw (\xb, \yB+.141095) -- (\xb+\len, \yB+.141095);
-   \draw (\xd, \yB+.141095) -- (\xd+\len, \yB+.141095);
-   \draw (\xa, \yB+.141095) -- (\xa+\len, \yB+.141095);
-   \draw (\xe, \yB+.141095) -- (\xe+\len, \yB+.141095);
-   \draw (\xf, \yB+.141095) -- (\xf+\len, \yB+.141095);
-   \draw (\xg, \yB+.141095) -- (\xg+\len, \yB+.141095);
-
-\end{tikzpicture}
-
-\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. \todo{Need to indicate scale of energy gaps on plot; Maybe give approximate F1 labels too?}}
-\label{diagram}
-
-\end{figure}
+In \CENTREX, we use neon as the buffer gas. Compared to helium-based sources, neon allows the cell temperature to be higher ($\sim$20~K instead of $\sim$4~K) for a compable beam temperature after gas expansion. Furthermore, neon is efficiently cryopumped by cold surfaces found in the beam source unlike helium, for which a large-area adsorbent, such as activated charcoal, is necessary. \cite{hutzler2012buffer}
 
 \subsection{The TlF molecule}
 
 TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large; and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search} By contrast, TlF is not a suitable system for electron \EDM\ measurements due to the closed shells zero total electron spin. \cite{kozlov1995parity}
 
-All lasers in this experiment address transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns \todo{(reference?)}. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively \todo{need to say somewhere that both are 1/2.  Also that we will use 205Tl (70\% abundant) and 19F (100\% abundant)}. Thus a particular hyperfine level can be written in either the decoupled basis as $\ket{J,\Omega,m_J,I_1,m_1,I_2,m_2}$ or in the coupled basis as $\ket{J,\Omega,I_1,F_1,I_2,F,m_F}$, where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
+Thallium comes in two naturally occurring isotopes, 203 (29.52\% abundance) and 205 (70.48\%), while $^{19}$F is the only isotope of fluorine \cite{awic2015}. In \CENTREX, we are only making use of the more abundant isotope 205, and only the transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns \cite{norrgard2017hyperfine}. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively; both nuclei are spin-half. Thus a particular hyperfine level can be written in either the coupled or decoupled basis, as follows:
+%
+\begin{align*}
+    \ket{\psi_\text{coup.}} &= \ket{J,\Omega,I_1,F_1,I_2,F,m_F}
+    \\
+    \ket{\psi_\text{dec.}} &= \ket{J,\Omega,m_J,I_1,m_1,I_2,m_2},
+\end{align*}
+%
+where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
 
 \todo{Change of basis transformation between the two frames}
-
 \paragraph{Ground state}
 
-The structure of the ground state can be described by the effective Hamiltonian given in Table~1 of ref.\ \cite{wilkening1984search} \todo{worth writing it out here.} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
+The structure of the ground state can be described by the effective Hamiltonian given in ref.\ \cite{wilkening1984search}:
+%
+\begin{align*}
+    \mathcal{H_\text{TlF}}
+    &=h B\vec J^2 \tag{rotational}\\
+    &-\vec\mu_e\cdot\vec E \tag{Stark}\\
+    &-\frac{\mu_J}{J}(\vec J\cdot\vec B)
+        -\frac{\mu_1}{I_1}(\vec I_1\cdot\vec B)
+        -\frac{\mu_2}{I_2}(\vec I_2\cdot\vec B) \tag{Zeeman}\\
+    &+c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J) \tag{spin--rotation}\\
+    &+5c_3\left(
+            \frac{3(\vec I_1\cdot\vec J)(\vec I_2\cdot\vec J)
+                +3(\vec I_2\cdot\vec J)(\vec I_1\cdot\vec J)-2(\vec I_1\cdot\vec I_2)\vec J^2}
+            {(2J+3)(2J-1)}
+        \right)
+        \\
+        &\vspace{1cm}
+        +c_4(\vec I_1\cdot\vec I_2) \tag{spin--spin}
+\end{align*}
+%
+
+\todo{worth writing it out here.} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
 %
 \[
 T_{vJ}=\sum\limits_{lm}Y_{lm}(v+1/2)^l[J(J+1)]^m.
@@ -1332,6 +1217,146 @@ Using a standard relation from angular momentum algebra, the matrix element can 
 Evidently, the $\sgn(m_J)$ dependence is gone.
 
 \todo{Explain the calculation of ground state Hamiltonian matrix elements.}
+
+\begin{figure}
+
+    % for axis breaks
+    \usetikzlibrary{decorations.markings}
+    \def\MarkLt{4pt}
+    \def\MarkSep{2pt}
+    \tikzset{
+      TwoMarks/.style={
+        postaction={decorate,
+          decoration={
+            markings,
+            mark=at position #1 with
+              {
+                  \begin{scope}[xslant=0.2]
+                  \draw[line width=\MarkSep,white,-] (0pt,-\MarkLt) -- (0pt,\MarkLt) ;
+                  \draw[-] (-0.5*\MarkSep,-\MarkLt) -- (-0.5*\MarkSep,\MarkLt) ;
+                  \draw[-] (0.5*\MarkSep,-\MarkLt) -- (0.5*\MarkSep,\MarkLt) ;
+                  \end{scope}
+              }
+           }
+        }
+      },
+      TwoMarks/.default={0.5},
+    }
+
+\begin{tikzpicture}[scale=5]
+
+   % length of energy level diagram lines
+   \def\len{.05}
+
+   % x-position and length and x-offset of the y-axis labels
+   \def\pos{-18}
+   \def\lenmark{.025}
+   \def\xoffset{.18}
+
+   % x coordinates for m = -2, ... 2
+   \def\xa{-4.5*\len}
+   \def\xb{-2.5*\len}
+   \def\xc{-0.5*\len}
+   \def\xd{+1.5*\len}
+   \def\xe{+3.5*\len}
+   \def\xf{-6.5*\len}
+   \def\xg{+5.5*\len}
+
+   % y offset for J = 1, 2
+   \def\yA{.6}
+   \def\yB{\yA+.7}
+
+   % axis
+   \draw[->,TwoMarks=0.2,TwoMarks=0.6] (\xf-\len-\xoffset, -.1)
+      -- (\xf-\len-\xoffset,\yB+.25) node[above] {$E$ [kHz]};
+
+   % J=0 labels
+   \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,-.08) -- (\xg+2*\len,.08) node [black,midway,anchor=west,xshift=25] (nodeJ0) {$J=0$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, -.003325) node[anchor=east,below,xshift=\pos]
+      {-3.325} -- (\xf-\len+0.5*\lenmark-\xoffset,-.003325) node[right,below,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, .009975) node[anchor=east,above,xshift=\pos]
+      {9.975} -- (\xf-\len+0.5*\lenmark-\xoffset,.009975) node[right,above,xshift=-\pos] {$F=0$};
+
+   % J=0 lines
+   \draw (\xc, -0.003325) -- (\xc+\len, -0.003325);
+   \draw (\xb, -0.003325) -- (\xb+\len, -0.003325);
+   \draw (\xd, -0.003325) -- (\xd+\len, -0.003325);
+   \draw (\xc, 0.009975) -- (\xc+\len, 0.009975);
+
+   % J=1 labels
+   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,\yA-.2) -- (\xg+2*\len,\yA+.1) node [black,midway,anchor=west,xshift=25] (nodeJ1) {$J=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.143745) node[anchor=east,below,xshift=\pos] {-143.745} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA-.143745) node[right,below,xshift=-\pos] {$F=0$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.121506) node[anchor=east,above,xshift=\pos] {-121.506} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA-.121506) node[right,above,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA+.054446) node[anchor=east,below,xshift=\pos] {54.446} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA+.054446) node[right,below,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA+.068985) node[anchor=east,above,xshift=\pos] {68.985} --
+      (\xf-\len+0.5*\lenmark-\xoffset,\yA+.068985) node[right,above,xshift=-\pos] {$F=2$};
+
+   % J=1 lines
+   \draw (\xc, \yA-.143745) -- (\xc+\len, \yA-.143745);
+   \draw (\xc, \yA-.121506) -- (\xc+\len, \yA-.121506);
+   \draw (\xb, \yA-.121506) -- (\xb+\len, \yA-.121506);
+   \draw (\xd, \yA-.121506) -- (\xd+\len, \yA-.121506);
+   \draw (\xc, \yA+.054446) -- (\xc+\len, \yA+.054446);
+   \draw (\xb, \yA+.054446) -- (\xb+\len, \yA+.054446);
+   \draw (\xd, \yA+.054446) -- (\xd+\len, \yA+.054446);
+   \draw (\xc, \yA+.068985) -- (\xc+\len, \yA+.068985);
+   \draw (\xb, \yA+.068985) -- (\xb+\len, \yA+.068985);
+   \draw (\xd, \yA+.068985) -- (\xd+\len, \yA+.068985);
+   \draw (\xa, \yA+.068985) -- (\xa+\len, \yA+.068985);
+   \draw (\xe, \yA+.068985) -- (\xe+\len, \yA+.068985);
+
+   % J=2 labels
+   \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
+      (\xg+2*\len,\yB-.27) -- (\xg+2*\len,\yB+.18) node [black,midway,anchor=west,xshift=25] (nodeJ2) {$J=2$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.217455)
+   node[anchor=east,left,yshift=-5] {-217.455}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.217455) node[right,below,xshift=-\pos] {$F=1$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.172936)
+   node[anchor=east,left,yshift=5] {-172.936}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.172936) node[right,above,xshift=-\pos] {$F=2$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB+.105876)
+   node[anchor=east,left,yshift=-5] {105.876}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB+.105876) node[right,below,xshift=-\pos] {$F=2$};
+   \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB+.141095)
+   node[anchor=east,left,yshift=5] {141.095}
+      -- (\xf-\len+0.5*\lenmark-\xoffset,\yB+.141095) node[right,above,xshift=-\pos] {$F=3$};
+
+   % J=2 lines
+   \draw (\xc, \yB-.217455) -- (\xc+\len, \yB-.217455);
+   \draw (\xb, \yB-.217455) -- (\xb+\len, \yB-.217455);
+   \draw (\xd, \yB-.217455) -- (\xd+\len, \yB-.217455);
+   \draw (\xc, \yB-.172936) -- (\xc+\len, \yB-.172936);
+   \draw (\xb, \yB-.172936) -- (\xb+\len, \yB-.172936);
+   \draw (\xd, \yB-.172936) -- (\xd+\len, \yB-.172936);
+   \draw (\xa, \yB-.172936) -- (\xa+\len, \yB-.172936);
+   \draw (\xe, \yB-.172936) -- (\xe+\len, \yB-.172936);
+   \draw (\xc, \yB+.105876) -- (\xc+\len, \yB+.105876);
+   \draw (\xb, \yB+.105876) -- (\xb+\len, \yB+.105876);
+   \draw (\xd, \yB+.105876) -- (\xd+\len, \yB+.105876);
+   \draw (\xa, \yB+.105876) -- (\xa+\len, \yB+.105876);
+   \draw (\xe, \yB+.105876) -- (\xe+\len, \yB+.105876);
+   \draw (\xc, \yB+.141095) -- (\xc+\len, \yB+.141095);
+   \draw (\xb, \yB+.141095) -- (\xb+\len, \yB+.141095);
+   \draw (\xd, \yB+.141095) -- (\xd+\len, \yB+.141095);
+   \draw (\xa, \yB+.141095) -- (\xa+\len, \yB+.141095);
+   \draw (\xe, \yB+.141095) -- (\xe+\len, \yB+.141095);
+   \draw (\xf, \yB+.141095) -- (\xf+\len, \yB+.141095);
+   \draw (\xg, \yB+.141095) -- (\xg+\len, \yB+.141095);
+
+   % microwave energies
+   \draw[Latex-Latex] (nodeJ0) -- node[above,sloped,rotate=180] {13.4 GHz} (nodeJ1);
+   \draw[Latex-Latex] (nodeJ1) -- node[above,sloped] {26.8 GHz} (nodeJ2);
+
+\end{tikzpicture}
+\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. \todo{Maybe give approximate F1 labels too?}}
+\label{diagram}
+\end{figure}
+
 
 \paragraph{Excited state}
 
