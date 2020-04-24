@@ -1,10 +1,12 @@
 .PHONY: all clean
 
-all: polarize.pdf polarizeTlF.pdf
+all: polarize.pdf polarizeTlF.pdf SOF.pdf
 
 # additional dependencies
 
 polarizeTlF.pdf: P_arr.csv Ez_arr.csv
+
+SOF.pdf: SOF.csv
 
 # generic rules
 

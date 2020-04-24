@@ -183,6 +183,7 @@
 \newcommand{\RMS}{\textsc{rms}}
 \newcommand{\HV}{\textsc{hv}}
 \newcommand{\mfp}{m.f.p.}
+\newcommand{\SOF}{\textsc{sof}}
 
 \begin{document}
 
@@ -1077,38 +1078,120 @@ The polarization of molecules is so effective that the first order model, entire
     =\ex{\cos\theta},
 \]
 %
-where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a plot of $\mathcal{P}$ in some of the lowest-lying rotational states of TlF; observe how states that are lower in energy are easier to polarize. \todo{What's up with the negative polarization for some of the states?}
+where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a plot of $\mathcal{P}$ in some of the lowest-lying rotational states of TlF; observe how states that are lower in energy are easier to polarize. \todo{@Dave: What's up with the negative polarization for some of the states?}
 
 \paragraph{Separated oscillatory fields}
 
 To obtain an upper bound on $\nu$, a pair of states is chosen such that one of the states moves up in energy due to the interaction in eqn~\ref{interaction}, and the other one down by the same amount, increasing the level separation by $2\nu$. Upon reversal of externally applied fields, the directions of the level shifts change and a level separation of $-2\nu$ obtains compared to the levels in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or \cite{wilkening1984search} for a diagram.) Comparing the two perturbations of the level spacing, a $4\nu$ difference (together with its error bars) can be quoted as the main result of molecular-beam symmetry-violation experiments.
 
-The spacing between the levels in the preceding paragraph can be measured by a simple Rabi oscillation technique. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$. Placing the two-state system in an oscillating field $\hbar b e^{-i\omega t}$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
+The spacing between the levels paragraph can be measured by a technique based on Rabi oscillations. Consider two states, $\ket p$ and $\ket q$, separated by an energy $\hbar\omega_0$, and placed in an oscillating field $\hbar b e^{-i\omega\tau}$. Defining the detuning $\delta\equiv\omega_0-\omega$, the population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
 %
-\[
-P_{p,q}=
-\frac{(2b)^2}{(\omega_0-\omega)^2+(2b)^2}\sin^2
-\left\{
-\frac{t}{2}
-\sqrt{(\omega_0-\omega)^2+(2b)^2}
-\right\}.
-\]
+\begin{align*}
+    P_{p,q}=
+    \left(\frac{2b}{\Omega}\right)^2
+    \sin^2
+    \left(
+    \frac{\Omega\tau}{2}
+    \right),
+    \;\text{with}\;
+    \Omega=\sqrt{\delta^2+(2b)^2}.
+\end{align*}
 %
 We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and the full width at half maximum (\FWHM) is given by $\Delta\omega=4b$. For a resonant $\pi/2$ pulse of duration $T=\pi/2b$, the \FWHM\ will be $\Delta\omega=2\pi/T$, and the longer the precession period $T$, the more precisely we can determine the resonant frequency $\omega_0$.
 
-In principle, an infinitely precise measurement could be obtained by simply extending the length $L$ of the precession region, thus prolonging the precession period $T=L/v$ for molecules of speed $v$. In practice, however, this meets with the following problems. (1) The beam intensity $N$ decays as $1/L^2$ in the limit where the interaction region is long compared to the distance from the source to the start of the interaction region. Indeed, the signal-to-noise ratio, being proportional to $\sqrt{N}/T$, is roughly independent of interaction length. (2) We may want to measure the precession in a region where the oscillating field cannot be applied. (3) It is difficult to maintain uniform externally applied fields over an extended length.
+In principle, an infinitely precise measurement could be obtained by simply extending the length $l$ of the precession region, thus prolonging the precession period $\tau=l/v$ for molecules of speed $v$. In practice, however, this meets with the following problems. (1) The beam intensity $N$ decays as $1/l^2$ in the limit where the interaction region is long compared to the distance from the source to the start of the interaction region. Indeed, the signal-to-noise ratio, being proportional to $\sqrt{N}/\tau$, is roughly independent of interaction length. (2) We may want to measure the precession in a region where the oscillating field cannot be applied. (3) It is difficult to maintain uniform externally applied fields over an extended length.
 
-It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695}
+It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields (\SOF) are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695} The transition probability $\widetilde{P}_{p,q}$, here expressed in terms of the simple Rabi oscillation probability $P_{p,q}$, is \cite[cf.\ eqn~V.37]{ramsey1956molecular}
+%
+\[
+    \frac{\widetilde{P}_{p,q}}
+    {P_{p,q}}=4
+    %\sin^2\Theta\sin^2\frac{\Omega\tau}{2}
+    \left[
+        \cos\frac{T\overline{\delta}-\phi}{2}\cos\frac{\Omega\tau}{2}
+        -
+        \frac{\delta}{\Omega}
+        \sin\frac{T\overline{\delta}-\phi}{2}\sin\frac{\Omega\tau}{2}
+    \right]^2
+    ,
+\]
+%
+where $\overline{\delta}\equiv\overline{\omega}_0-\omega$ is the detuning of the oscillating field frequency $\omega$ from the hyperfine level separation $\hbar\overline{\omega}_0$, averaged over the length of the interaction region, and $\phi$ is the phase delay between the two oscillating coils. Now $T$ is the duration of the molecular flight through the field-free region, while $\tau$ is the duration of each of the oscillating-field regions.
+
+\todo{@Dave: Does it matter that the oscillating field is not turned on/off instantaneously as the molecule travels through a realistic coil?}
+
+Schropp \cite{schropp1988thesis} draws a parallel between the method of \SOF, where a frequency-domain interference pattern is caused by two coils that are separated in times, and Young's double-slit experiment, where the distance between two slits causes a spatial interference pattern. In either case, the linewidth is inversely proportional to the field-free separation, whether a spatial one (double slits) or a temporal one (\SOF).
+
+The above transition probabilities hold for the case of molecules subjected to the specified interactions for a fixed amount of time. However, in a realistic molecular beam there is a distribution of velocities $v$ and a corresponding distribution of times $\tau=l/v$ the perturbations act. In particular, we consider the normalized probability density function
+%
+\begin{equation}
+    \label{avgint}
+    f(v)=
+    \frac{2}{\alpha^4}
+    v^3
+    e^{-v^2/\alpha^2},
+    \quad
+    \alpha=\sqrt{\frac{2kT}{m}},
+\end{equation}
+%
+which is simply a Boltzmann distribution with an extra factor of $v$ to account for the fact that faster molecules preferentially escape from the cell. The parameter $\alpha$ is the most probable molecular velocity, as well as a measure of the spread of velocities. \todo{@Dave: Is this also an appropriate distribution for cryogenic buffer-gas beam sources (or jet sources), and not just for effusive sources?}
+
+The Rabi oscillation probability $P_{p,q}$ can thus be averaged over the chosen distribution of molecular speeds $f(v)$ as
+%
+\[
+    \ex{P_{p,q}}\equiv
+    \int P_{p,q}\,f(v)dv
+    .
+\]
+%
+The optimal choice of the oscillation strength $b$ is directly related to the length of the resonance region $l$ and the molecular velocity (or velocity spread) $\alpha$, making $\pi\alpha/2l$ a convenient choice of frequency units. Thus we put $b=\tilde b(\pi\alpha/2l)$, defining the dimensionless oscillation strength $\tilde b$, and analogously for $\tilde\delta$ and $\tilde\Omega$. The integral in eqn~\ref{avgint} can be expressed in terms of a Meijer $G$-function \cite[sect~5.3]{erdelyi1953higher} as
+%
+\[
+    \ex{P_{p,q}}=
+    \frac{2\tilde b^2}{\tilde\Omega^2}
+    -\frac{\pi^{5/2}\tilde b^2}{8}
+    G_{0,3}^{2,0}\left(
+        \frac{\pi^2\tilde\Omega^2}{16}
+        \bigg|
+        -1,1,-\frac{1}{2}
+    \right)
+\]
+%
+The $G$-function can be evaluated numerically; in particular, we find that $\ex{P_{p,q}}(\tilde\delta=0)$ is maximised for $\tilde b=1.200$.
+
+The distribution-averaged form of the \SOF\ probability $\widetilde{P}_{p,q}$ can also be found in terms of special functions, but is considerably more complicated. In addition to the length $l$ of the two oscillating coils, there is a further dependence on the free-precession length $L$, as well as the phase delay $\phi$ between the two coils. If the coils oscillate in phase ($\phi=0$), the peak of the transition probability is centered around the resonant frequency with no linear dependence on the detuning $\delta$. Thus \SOF\ experiments commonly take $\phi=\pm\pi/2$, where
+%
+\[
+    \ex{\widetilde{P}_{p,q}}
+    \approx
+    0.383
+    \pm(0.599+0.495L/l)\tilde\delta
+    +O(\tilde\delta^2);
+\]
+%
+the two choices of $\phi$ are depicted in Fig.~\ref{SOFprob}. The above numbers assume $\tilde b=0.600$, which is the optimal value of $\tilde b$ for separated oscillatory fields in the sense of maximum on-resonance transition probability (for $\phi=0$), or maximum slope of $\ex{\widetilde{P}_{p,q}}$ around the resonance (for $\phi=\pi/2$). We see that the slope is directly proportional to the length of the free-precession region, as expected.
+
+\todo{@Dave: Why bother with the $\pi/2$ phase when you can just add a frequency offset? Why does Ramsey emphasize the \FWHM\ of the resonance, instead of the the slope at $\delta=0$?}
+
+\begin{figure}
+    \def\svgwidth{\columnwidth}
+    \makebox[\columnwidth][c]{%
+        \footnotesize
+        \input{figs/matplotlib/SOF.pdf_tex}
+    }
+    \caption{Transition probability as a function of detuning $\delta$, averaged over the molecular speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$~\%\ narrower \FWHM\ for \SOF. \part{b} Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with the same $L=10l$.}
+    \label{SOFprob}
+\end{figure}
 
 \paragraph{Beam sources}
 
-The earliest molecular beams of thallium fluoride were of a thermal design, where a mass of the solid salt is heated in a copper oven to raise the vapour pressure. Depending on the mean free path (\mfp) of the molecules in the oven, we can distinguish two main types of thermal sources. In \emph{effusive} sources, the \mfp\ is comparable with the linear dimension $d$ of the hole through which the molecules emerge from the beam source. The particles escape by chance, and the beam properties reflect the state of the molecules in the oven. By contrast, in \emph{jet sources}, the \mfp\ is much smaller than $d$. The beam properties no longer reflect those of the oven molecules; instead, the local thermal (electornic, rotational, and vibrational) is partly converted into the center-of-mass motion of the particles. These beams are thus faster but colder.
+The earliest molecular beams of thallium fluoride were of a thermal design, where a mass of the solid salt is heated in a copper oven to raise the vapour pressure. Depending on the mean free path (\mfp) of the molecules in the oven, we can distinguish two main types of thermal sources. In \emph{effusive} sources, the \mfp\ is comparable with the linear dimension $d$ of the hole through which the molecules emerge from the beam source. The particles escape by chance, and the beam properties reflect the state of the molecules in the oven. By contrast, in \emph{jet sources}, the \mfp\ is much smaller than $d$. The beam properties no longer reflect those of the oven molecules; instead, the local thermal (electronic, rotational, and vibrational) is partly converted into the center-of-mass motion of the particles. These beams are thus faster but colder.
 
 \todo{@Dave: I'm not sure it makes sense to have a table of beam sources, since I only present a couple beam sources and they each have a different set of interesting parameters. Unless there's lots of other beam sources that I should present?}
 
 For example, Schropp et al.\ \cite{schropp1987new,schropp1988thesis} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$, out of a detected beam of $7.5\times10^9$ molecules/second. The beam velocity can be estimated as $v_\text{CM}=\sqrt{2kT/m}\approx230$~m/s, with a spread of order $v_\text{CM}\sqrt{\ln2}\approx190$~m/s.
 
-At the oven temperature of 380\degC, we expect approximately 25~\%\ of molecules to exist as a monomer, the rest being mostly dimers (TlF)$_2$. In addition to decreasing the useful signal, dimers were twice as effective at producing background counts with the detection technology used. However, by Le Chatelier's principle the equilibrium of the endothermic reaction $\text{(TlF)}_2\rightleftharpoons2\text{TlF}$ can be shifted towards the right by an increase in temperature or a decrese in pressure. Thus the oven consists of two stages: a lower, high-pressure section with the boiling salt, and an uppper, lower-pressure region, separated by a constriction. As a result, the monomer fraction may be as high as 50~\%\ in the two-chamber design.
+At the oven temperature of 380\degC, we expect approximately 25~\%\ of molecules to exist as a monomer, the rest being mostly dimers (TlF)$_2$. In addition to decreasing the useful signal, dimers were twice as effective at producing background counts with the detection technology used. However, by Le Chatelier's principle the equilibrium of the endothermic reaction $\text{(TlF)}_2\rightleftharpoons2\text{TlF}$ can be shifted towards the right by an increase in temperature or a decrease in pressure. Thus the oven consists of two stages: a lower, high-pressure section with the boiling salt, and an uppper, lower-pressure region, separated by a constriction. As a result, the monomer fraction may be as high as 50~\%\ in the two-chamber design.
 
 As an example of a jet source, Cho et al. \cite{cho1990thesis,cho1991search} constructed a thermal source with an oven at 753~K that yielded $1.25\times10^{10}$ molecules per second, of which $2.7\times 10^{-3}$ were in the desired $J=1$ state for an estimated rotational temperature of $350\pm50$~K. The beam velocity is given as $344\pm20$~m/s, with a spread of ($150\pm12$)~m/s, giving a rotational temperature of $300\pm50$~K. As expected, the beam is both colder and faster than the effusive source from ref.~\cite{schropp1987new}. The higher pressure in a jet source might be expected to result in a lower monomer fraction despite the higher temperature. To counteract this, the authors led the beam from the oven through a 30~cm long nozzle, 20~K hotter than the oven. They calculate that due to the approx.\ 100 times smaller density of TlF in the nozzle compared to the oven, the monomer fraction is as high as 92\%.
 
