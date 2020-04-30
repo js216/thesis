@@ -85,7 +85,7 @@
     citecolor={black},
     urlcolor={blue}}
 \newcommand\todo[1]{\textcolor{red}{#1}}
-\newcommand\todoit[1]{\textcolor{red}{\textit{TODO: #1}}}
+\newcommand\todoit[1]{\textcolor{purple}{\textit{TODO: #1}}}
 \usepackage{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH], \THEYEAR}
 
@@ -1078,7 +1078,7 @@ The polarization of molecules is so effective that the first order model, entire
     =\ex{\cos\theta},
 \]
 %
-where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a plot of $\mathcal{P}$ in some of the lowest-lying rotational states of TlF; observe how states that are lower in energy are easier to polarize. \todo{@Dave: What's up with the negative polarization for some of the states?}
+where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a plot of $\mathcal{P}$ in some of the lowest-lying rotational states of TlF; observe how states that are lower in energy are easier to polarize, while some of the higher-lying states can even be polarized against the direction of the applied field at some field magnitudes. Despite the fact that the $J=0$ states can be polarized better than the $J=1$, $m_J=\pm1$ ones, we prefer the latter due to their internal field, nearly exactly aligned with the applied field. The former states woud necessitate applying an external magnetic field, suffering from the motional magnetic field systematic (discussed in section \ref{section:systematics}).
 
 \paragraph{Separated oscillatory fields}
 
@@ -1116,13 +1116,21 @@ It turns out that the oscillating field does not need to extend over the entire 
     ,
 \]
 %
-where $\overline{\delta}\equiv\overline{\omega}_0-\omega$ is the detuning of the oscillating field frequency $\omega$ from the hyperfine level separation $\hbar\overline{\omega}_0$, averaged over the length of the interaction region, and $\phi$ is the phase delay between the two oscillating coils. Now $T$ is the duration of the molecular flight through the field-free region, while $\tau$ is the duration of each of the oscillating-field regions.
+where $\overline{\delta}\equiv\overline{\omega}_0-\omega$ is the detuning of the oscillating field frequency $\omega$ from the hyperfine level separation $\hbar\overline{\omega}_0$, averaged over the length of the interaction region, and $\phi$ is the phase delay between the two oscillating coils. Now $T$ is the duration of the molecular flight through the field-free region, while $\tau$ is the duration of each of the oscillating-field regions. Of course, as a molecule flies through the different regions, the oscillating field is not turned off or on instantaneously; nevertheless, the effect of the smooth turn-on if simply a modified strength of the oscillating field, for which we compensate by directly optimizing the field strength.
 
-\todo{@Dave: Does it matter that the oscillating field is not turned on/off instantaneously as the molecule travels through a realistic coil?}
+\begin{figure}
+    \def\svgwidth{\columnwidth}
+    \makebox[\columnwidth][c]{%
+        \footnotesize
+        \input{figs/matplotlib/SOF.pdf_tex}
+    }
+    \caption{Transition probability as a function of detuning $\delta$, averaged over the effusive-source speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$~\%\ narrower \FWHM\ for \SOF. \part{b} Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with the same $L=10l$.}
+    \label{SOFprob}
+\end{figure}
 
 Schropp \cite{schropp1988thesis} draws a parallel between the method of \SOF, where a frequency-domain interference pattern is caused by two coils that are separated in times, and Young's double-slit experiment, where the distance between two slits causes a spatial interference pattern. In either case, the linewidth is inversely proportional to the field-free separation, whether a spatial one (double slits) or a temporal one (\SOF).
 
-The above transition probabilities hold for the case of molecules subjected to the specified interactions for a fixed amount of time. However, in a realistic molecular beam there is a distribution of velocities $v$ and a corresponding distribution of times $\tau=l/v$ the perturbations act. In particular, we consider the normalized probability density function
+The above transition probabilities hold for the case of molecules subjected to the specified interactions for a fixed amount of time. However, in a realistic molecular beam there is a distribution of velocities $v$ and a corresponding distribution of times $\tau=l/v$ the perturbations act. We first consider the normalized probability density function corresponding to effusive beam sources, as used in the classic paper by Ramsey et al. \cite{wilkening1984search}:
 %
 \begin{equation}
     \label{avgint}
@@ -1134,15 +1142,16 @@ The above transition probabilities hold for the case of molecules subjected to t
     \alpha=\sqrt{\frac{2kT}{m}},
 \end{equation}
 %
-which is simply a Boltzmann distribution with an extra factor of $v$ to account for the fact that faster molecules preferentially escape from the cell. The parameter $\alpha$ is the most probable molecular velocity, as well as a measure of the spread of velocities. \todo{@Dave: Is this also an appropriate distribution for cryogenic buffer-gas beam sources (or jet sources), and not just for effusive sources?}
+which is simply a Boltzmann distribution with an extra factor of $v$ to account for the fact that faster molecules preferentially escape from the cell. The parameter $\alpha$ is the most probable molecular velocity, as well as a measure of the spread of velocities.
 
 The Rabi oscillation probability $P_{p,q}$ can thus be averaged over the chosen distribution of molecular speeds $f(v)$ as
 %
-\[
+\begin{equation}
+    \label{effusivef}
     \ex{P_{p,q}}\equiv
-    \int P_{p,q}\,f(v)dv
+    \int\limits_0^\infty P_{p,q}\,f(v)dv
     .
-\]
+\end{equation}
 %
 The optimal choice of the oscillation strength $b$ is directly related to the length of the resonance region $l$ and the molecular velocity (or velocity spread) $\alpha$, making $\pi\alpha/2l$ a convenient choice of frequency units. Thus we put $b=\tilde b(\pi\alpha/2l)$, defining the dimensionless oscillation strength $\tilde b$, and analogously for $\tilde\delta$ and $\tilde\Omega$. The integral in eqn~\ref{avgint} can be expressed in terms of a Meijer $G$-function \cite[sect~5.3]{erdelyi1953higher} as
 %
@@ -1171,16 +1180,37 @@ The distribution-averaged form of the \SOF\ probability $\widetilde{P}_{p,q}$ ca
 %
 the two choices of $\phi$ are depicted in Fig.~\ref{SOFprob}. The above numbers assume $\tilde b=0.600$, which is the optimal value of $\tilde b$ for separated oscillatory fields in the sense of maximum on-resonance transition probability (for $\phi=0$), or maximum slope of $\ex{\widetilde{P}_{p,q}}$ around the resonance (for $\phi=\pi/2$). We see that the slope is directly proportional to the length of the free-precession region, as expected.
 
-\todo{@Dave: Why bother with the $\pi/2$ phase when you can just add a frequency offset? Why does Ramsey emphasize the \FWHM\ of the resonance, instead of the the slope at $\delta=0$?}
+It will be noticed that there are high-slope regions in Fig.~\ref{SOFprob} for both $\phi=0$ and $\phi=\pm\pi/2$, however for $\phi=\pm\pi/2$, the maximum slope region appears at zero detuning. Due to a pulse-to-pulse variation in the beam properties, the exact width of the resonance (and thus the position of the highest-slope part of the $\phi=0$ curve) would change over time, whereas a zero detuning always occurs in the same place despite the beam parameters, and only the slope itself changes.
+
+For a cryogenic buffer-gas beam source, the appropriate averaging is to be taken over an offset-Gaussian distribution of molecular velocities:
+%
+\[
+    \ex{\widetilde P_{p,q}}_\text{BG}\equiv
+    \int\limits_{-\infty}^\infty P_{p,q}\,f_\text{BG}(v)dv
+    ,\quad
+    f_\text{BG}(v)=
+    \frac{e^{-(v-\overline v)^2/2\alpha^2}}{\sqrt{2\pi}\alpha}
+    ,
+\]
+%
+where $\overline v$ is the average (center of mass) velocity of the molecular beam, with a spread of velocities $\alpha$. The extended integration limits compared with eqn~\ref{effusivef} are not significant, since the $f_\text{BG}(v)$ for $v$ far away from $\overline v$. See Fig.~\ref{SOF2} for typical parameter values. Since the measurement is repeated for each sign of $\phi=\pm\pi/2$, we can define the signal $S_\text{\SOF}$ as
+%
+\[
+    S_\text{\SOF}=
+    \ex{\widetilde P_{p,q}}_\text{BG}(\phi=\pi/2)
+    -\ex{\widetilde P_{p,q}}_\text{BG}(\phi=-\pi/2),
+\]
+%
+as displayed in Fig.~\ref{SOF2}a. For the parameter values in that figure, the slope of $S_\text{\SOF}$ around zero detuning is approx.\ 0.094/Hz.
 
 \begin{figure}
     \def\svgwidth{\columnwidth}
-    \makebox[\columnwidth][c]{%
+    \parbox[c][4cm]{\columnwidth}{%
         \footnotesize
-        \input{figs/matplotlib/SOF.pdf_tex}
-    }
-    \caption{Transition probability as a function of detuning $\delta$, averaged over the molecular speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$~\%\ narrower \FWHM\ for \SOF. \part{b} Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with the same $L=10l$.}
-    \label{SOFprob}
+        \input{figs/matplotlib/SOF2.pdf_tex}
+        }
+    \caption{Buffer-gas \SOF\ signal as a function of detuning $\Delta f$ in linear units, averaged over a Gaussian speed distribution $\exp[{-(v-\overline v)^2/2\alpha^2}]$ with $\overline v=200$~m/s and $\alpha=10$~m/s, for a 3~m separation between the oscillatory coils, and field strength $b=9.975\,\pi\alpha/2l$. Observe the effect of the coil length: $l=1$~cm (thick gray) and $l=10$~cm (thin black). \part{a} Difference in the averaged probabilities between $\phi=\pi/2$ and $\phi=-\pi/2$. \part{b} Averaged transition probability for $\phi=0$ (detail).}
+    \label{SOF2}
 \end{figure}
 
 \paragraph{Beam sources}
@@ -1599,6 +1629,7 @@ In general, the statistical sensitivity of a molecular \EDM\ experiment depends 
 \todo{The 30x sensitivity improvement estimate over the state of the art.}
 
 \section{Systematics}
+\label{section:systematics}
 
 The experiment is expected to result in a null measurement of effects that are odd under $T$-reversal. A crucial part of the experimental design is to make sure there are no known effects that could mimic genuine $T$-odd interactions. During data taking, we plan to continually reverse a number of parameters that in principle should not affect the measured \NMR\ frequency $f$ if done perfectly, and measure the resulting shift
 %
@@ -1606,30 +1637,21 @@ The experiment is expected to result in a null measurement of effects that are o
 S_{A,B,\ldots}\equiv f(A,B,\ldots)-f(-A,-B,\ldots).
 \]
 %
-We note that in previous experiments \cite{cho1991search}, it was also important to consider the shifts in beam intensity corresponding to parameter reversals. In contrast, we are able to measure both spin-up and spin-down populations, making us insensitive to changes in beam intensity and the resulting systematics. By studying the ratio of the difference and the sum of the two populations, the overall beam intensity is cancelled out. \todo{Are there other important ways intensity shift systematics can sneak in anyway?}
+We note that in previous experiments \cite{cho1991search}, it was also important to consider the shifts in beam intensity corresponding to parameter reversals. In contrast, we are able to measure both spin-up and spin-down populations, making us insensitive to changes in beam intensity and the resulting systematics. By studying the ratio of the difference and the sum of the two populations, the overall beam intensity is in principle cancelled out unless the intensity change is different for the two \NMR\ states, or for the states they connect to in the state preparation regions around the main interaction region. We have not yet found that to be the case.
 
 The following paragraphs discuss the frequency shifts in the order of increasing number of simultaneously reversed fields. See Table~\ref{reversallist} for a list of parameters that we are considering including the the sequence of reversals.
 
 \subsection{Reversals of one parameter}
 
-The separation between hyperfine states in TlF is a function of the external electric field, but not of its sign. A non-reversing part of the field, always present at some level, can turn that into a systematic error:  the level spacing changes by order 1~mHz if the $\pm30\kVcm$ fields differ in magnitude by $0.1\Vcm$, as may be calculated numerically by diagonalizing the ground-state Hamiltonian in the presence of the two near-opposite fields. \todoit{Get more exact numbers and compare with Hinds. Also note eqn 2.48 in D. Cho's thesis.}
+The separation between hyperfine states in TlF is a function of the external electric field, but not of its sign. A non-reversing part of the field, always present at some level, can turn that into a systematic error:  the level spacing changes by order 1~mHz if the $\pm30\kVcm$ fields differ in magnitude by $0.1\Vcm$, as may be calculated numerically by diagonalizing the ground-state Hamiltonian in the presence of the two near-opposite fields. \todoit{Get more exact numbers and compare with Hinds. Also note eqn 2.48 in D. Cho's thesis. ``Thinking about whether different choices of states would elucidate what is going on would be very useful.''}
 
-The shift $S_\text{int}$ is thus a sensitive measure of how perfectly the interaction-region electric field is reversed. In addition to a \DC\ offset on the high-voltage electrode supply, or the finite charging time of the parallel-plate capacitor formed between the electrodes, such a shift can be due to accumulations of charges on non-conductive parts of the electrodes, their mounting structure, or the vacuum chamber itself. The charge accumulations are difficult to predict and will have to be verified experimentally from the energy shifts once the apparatus is built. In ref.~\cite{wilkening1984search}, they were able to compensate only partially for the charge accumulations by placing a variable \DC\ offset on the electrodes.
+The shift $S_\text{int}$ is thus a sensitive measure of how perfectly the interaction-region electric field is reversed. However, an measure independent of the \EDM\ signal is useful. The ACME II experiment characterized the electric field in the interaction region via microwave spectroscopy of a state susceptible to large Stark shifts; see \cite[sect~5.1]{lasner2019thesis} for details.
 
-The electrode charging time should be estimated once the setup is in place, and can also be extracted from the difference $\Delta S_\text{int}$ in the shifts $S_\text{int}$ where $E_\text{int}$ is switched from positive to negative, compared to the negative-to-positive shift:
-%
-\[
-\Delta S_\text{int}=
-\big|
-   f(E_\text{int}) - f(-E_\text{int})
-\big|
--
-\big|
-   f(-E_\text{int}) - f(E_\text{int})
-\big|.
-\]
-%
-It is also possible that the field reversals gradually change the field magnitude over time. That would be evident from plotting $S_\text{int}$ over time, unless another contrary effect were to conceal the gradual drift in $|E_\text{int}|$. Indeed, any other permutations of the switching sequence could cause systematic effects of their own, and will have to be investigated. \todo{Should we be concerned about that?}
+In addition to a \DC\ offset on the high-voltage electrode supply, or the finite charging time of the parallel-plate capacitor formed between the electrodes, the incomplete reversal of $E_\text{int}$ can be due to accumulations of charges on non-conductive parts of the electrodes, their mounting structure, or the vacuum chamber itself. The charge accumulations are difficult to predict and will have to be verified experimentally from the energy shifts once the apparatus is built. In ref.~\cite{wilkening1984search}, they were able to compensate only partially for the charge accumulations by placing a variable \DC\ offset on the electrodes.
+
+The electrode charging time should be estimated once the setup is in place, and can also be extracted from the difference $\Delta S_\text{int}$ in the shifts $S_\text{int}$ where $E_\text{int}$ is switched from positive to negative, compared to the negative-to-positive shift. This shift was in fact one of the larger effects in ref.~\cite{cho1991search}, but the authors chose to suppress it with further reversals instead of trying to locate and remove its cause.
+
+It is also possible that the field reversals gradually change the field magnitude over time. That would be evident from plotting $S_\text{int}$ over time, unless another contrary effect were to conceal the gradual drift in $|E_\text{int}|$. Indeed, any other permutations of the switching sequence could cause systematic effects of their own, and will have to be investigated.
 
 The polarity of the field in the quadrupole should not impact the operation of the lens since it works on the principle of a quadratic Stark effect. For reasons analogous to those in the preceding paragraph, however, it will be important to verify this experimentally. In addition, we can expect part of the quadrupole field to leak into other part of the apparatus, in particular the interaction region. A small fraction $\epsilon$ of the leaking reversing quadrupole field $\vec E_\text{quad}$ interacting with a constant precession field $\vec E_\text{int}$ would effectively modify the absolute magnitude of the latter:
 %
@@ -1641,31 +1663,35 @@ The polarity of the field in the quadrupole should not impact the operation of t
 \epsilon\ll1.
 \]
 
-In TlF, there is an internal magnetic field at the site of the thallium nucleus due to the rotational motion of the molecule \cite{cho1991search}. By flipping the sign of the projection $m_J$, this internal field can be reversed exactly. The reversal is not expected to result in a change of the hyperfine level separation unless the external fields change in magnitude, such as due to leaking electric or magnetic fields from the state-selection chamber. However, the residual magnetic field in the interaction region, coming from an imperfect demagnetization of the magnetic shields, would form a sum or difference with the internal molecular fields, such that the absolute magnitude of the magnetic field at the site of the thallium nucleus would change depending on the sign of $m_J$. The internal magnetic field is of order 50~G \cite{wilkening1984search}, \todo{(how to calculate that?)} while the residual external field is expected to be of order 10~$\mu$G; \todoit{estimate the frequency shift due to this effect.} In ref.~\cite{wilkening1984search}, they were able to greatly reduce the $S_m$ by adding large Helmholtz coils around the interaction region to cancel out the residual field. \todo{Indeed, how do we make sure the magnetic shields are not magnetized? It's difficult to stick a magnetometer inside the shield with the electrodes in place!}
+In TlF, there is an internal magnetic field at the site of the thallium nucleus due to the rotational motion of the molecule \cite{cho1991search}. By flipping the sign of the projection $m_J$, this internal field can be reversed exactly. The reversal is not expected to result in a change of the hyperfine level separation unless the external fields change in magnitude, such as due to leaking electric or magnetic fields from the state-selection chamber. However, the residual magnetic field in the interaction region, coming from an imperfect demagnetization of the magnetic shields, would form a sum or difference with the internal molecular fields, such that the absolute magnitude of the magnetic field at the site of the thallium nucleus would change depending on the sign of $m_J$.
 
-The relative phase of the separated oscillatory fields is switched between $\pm\pi/2$. In either case, if the two thallium spin projections acquired no relative phase delay during the molecular precession time, we expect to read out two equal populations. Indeed, ref.~\cite{wilkening1984search} found no significant effects on the \EDM\ shift arising from the nominally $\pm1^\circ$ phase accuracy between the two coils. \todo{So what could possibly go wrong here?}
+The internal magnetic field is of order 50~G \cite{wilkening1984search}, \todoit{Calculate it: it is the value of B such that the Zeeman shift ($g_I B \mu_N I_z  = g_I B \mu_N m_I$) is equal to the spin-rotation energy $c_3$ (or is it 2?) $I.J = c_3 m_I m_J$.} while the residual external field is expected to be of order 10~$\mu$G; \todoit{estimate the frequency shift due to this effect.} In ref.~\cite{wilkening1984search}, they were able to greatly reduce the $S_m$ by adding large Helmholtz coils around the interaction region to cancel out the residual field.
 
-The experiment should proceed identically regardless of fluorine spin projection. \todo{What could go wrong? Is there anything special we can learn from such a measurement?}
+While we will be careful to develop the procedure for demagnetizing the magnetic shields before they are installed, it can be challenging to verify the residual field once the vacuum chamber with the field plates is placed inside the shield. Instead, we have to use the TlF molecules themselves as magnetometers. For example, a superposition of the $^{19}$F spin up and down states would in principle give a pure magnetometer signal in contrast to the analogous $^{205}$Tl measurement, sensitive to the \EDM\ signal. A further test---averaged over all directions of $E_\text{int}$--- of the residual field can be extracted from the $^{205}$Tl signal while simultanously reversing the Helmholtz coil currents and/or the internal molecular magnetic field via $m_J$.
+
+The relative phase of the separated oscillatory fields is switched between $\pm\pi/2$. In either case, if the two thallium spin projections acquired no relative phase delay during the molecular precession time, we expect to read out two equal populations. Indeed, ref.~\cite{wilkening1984search} found no significant effects on the \EDM\ shift arising from the nominally $\pm1^\circ$ phase accuracy between the two coils. However, in \CENTREX\ we are aiming for a more precise measurements, and it is worthwhile estimating the allowed phase error. \todoit{Calculate the resulting signal dependence on beam velocity if the phase shift is not zero.} In addition, we can also switch the cables used to connect the coils to their sources---their different lengths will cause different phase shifts. \todoit{You might read the old Tl atom EDM papers and/or theses to see what phase shift errors were found to do there--it's so long ago now that I don't remember.  I have a copy of Chris Regan's thesis (last student on Tl atom EDM) somewhere if you can't find it.}
 
 \begin{table}
     \small
     %\makebox[\columnwidth][c]{%
     \begin{tabu} to \columnwidth {@{}llXl@{}}
         \toprule
-        Sym. & Param. & Description & Values \\
+        Symbol & Param. & Description & Values \\
         \midrule
         %\multicolumn{4}{@{}l}{\textit{Known to matter:}}\\
-            $S_\text{int}$   & $E_\text{int}$  & interaction-region electric field   & $\pm30\kVcm$ \\
-            $S_\text{quad}$  & $V_\text{quad}$ & quadrupole lens voltage             & $\pm30\kV$ \\
-            $S_{m}$          & $m_J$           & projection of molecular rotation    & $\pm1$ \\
-            $S_P$            & $P$             & relative phase of \NMR\ coils       & $\pm\pi/2$ \\
-            $S_\text{F}$     & $M_\text{F}$    & spin-projection of fluorine nucleus & $\pm1/2$ \vspace{1.5ex}\\
+            $S_\text{int}$   & $E_\text{int}$  & interaction-region electric field     & $\pm30\kVcm$ \\
+            $S_\text{quad}$  & $V_\text{quad}$ & quadrupole lens voltage               & $\pm30\kV$ \\
+            $S_{m}$          & $m_J$           & projection of molecular rotation      & $\pm1$ \\
+            $S_{P1,2}$       & $P_{1,2}$       & relative phase of coils 1 and 2 & $\pm\pi/2$ \\
+            $S_\text{F}$     & $M_\text{F}$    & spin-projection of fluorine nucleus   & $\pm1/2$ \vspace{1.5ex}\\
         \multicolumn{4}{@{}l}{\textit{Potentially present:}}\\
-            $S_{B\text{ss}}$ & $B_\text{ss}$   & state-selection magnetic field      & ? \\
-            $S_{E\text{ss}}$ & $E_\text{ss}$   & state-selection electric field      & ? \\
+            $S_{B\text{ss}}$ & $B_\text{ss}$   & state-selection magnetic field        & ? \\
+            $S_{E\text{ss}}$ & $E_\text{ss}$   & state-selection electric field        & ? \\
+            $S_{\text{p1}}$ &  $\ket{p1}$      & initially populated \NMR\ state       & ? \\
+            $S_{\text{d}}$ &   $\ket{d}$       & detection final state                 & ? \\
         \bottomrule
     \end{tabu}%}
-    \caption{Parameters that can be reversed to check for systematics. The symbol in the first column labels the shift corresponding to the reversal of the given parameter; see text for a definition of these shifts. Shifts listed as potentially present depend on as-of-yet unfinished apparatus. \todo{Am I missing anything?}}
+    \caption{Parameters that can be reversed to check for systematics. The symbol in the first column labels the shift corresponding to the reversal of the given parameter; see text for a definition of these shifts. Shifts listed as potentially present depend on as-of-yet unfinished apparatus. The high-voltage reversals ($S_\text{int}$ and $S_\text{quad}$) can be done either automatically via the \HV\ supplies, or manually by switching the leads.}
     \label{reversallist}
 \end{table}
 
@@ -1673,19 +1699,28 @@ The experiment should proceed identically regardless of fluorine spin projection
 
 If the state-selection region will feature a static magnetic field $B_\text{ss}$, used to select one of the $m_J=\pm1$ states, the shift $S_\text{ss}$ due to the interaction of the leaking state-selection field and the internal molecular will vanish when averaged over the $m_J$ modulation since $m_J$ determines the direction of the internal magnetic field. Consequently, it will be important to measure the shift $S_{\text{ss},m}$ when both $m_J$ and $B_\text{ss}$ are reversed simultaneously.
 
-A further shift under simultaneous reversal of $B_\text{ss}$ and $m_J$ is due to the so-called Millman effect \cite{millman1939determination}, due to the spatial curvature of the fields inducing the \NMR\ transition. The oscillating field can be decomposed into two rotating fields, and only one of them is actually inducing the transition, depending on the direction of the magnetic field \todo{(the internal molecular magnetic field?)}. In the frame of the molecule, the frequency of the oscillating field changes with the curvature of the fields, resulting in $B$-dependent change in the resonant frequency. \cite{wilkening1984search} For two separated coils, to first order the sptial curvature of the field is proportional to the geometrical angle between the coils, and inversely proportional to the time of flight $T$ of the molecules between the two coils, resulting in a frequency shift $\theta/2\pi T$. \cite[eqn~12]{cho1991search} The Millman effect could be distinguised from an ambient magnetic field by a beam velocity reversal (impractical in the \CENTREX\ setup), or by varying the beam velocity so as to change $T$.
+A further shift under simultaneous reversal of $B_\text{ss}$ and $m_J$ is due to the so-called Millman effect \cite{millman1939determination}, due to the spatial curvature of the fields inducing the \NMR\ transition. The oscillating field can be decomposed into two rotating fields, and only one of them is actually inducing the transition, depending on the direction of the magnetic field. In the frame of the molecule, the frequency of the oscillating field changes with the curvature of the fields, resulting in $B$-dependent change in the resonant frequency. \cite{wilkening1984search} For two separated coils, to first order the shift due to the spatial curvature of the field is proportional to the geometrical angle between the coils, and inversely proportional to the time of flight $T$ of the molecules between the two coils, resulting in a frequency shift $\theta/2\pi T$. \cite[eqn~12]{cho1991search}
 
-It is possible that the reversal of $E_\text{int}$ gives rise to a magnetic field, either due to the electronics effecting the reversal, or due to currents leaking between the field plates. In ref.~\cite{cho1991search}, they employed an additional field reversal by manually rewiring the electrode high voltage supply (motivated by the switching relay's frequent breakdowns \cite{cho1990thesis}), finding that the switching electronics does not noticably impact the \EDM\ measurement (at least, the electronics are no worse than the manual electrode polarity switching). To guard against the second type of induced magnetic field, they made sure that the leakage current remained below 2~nA at the operating voltage, an entirely negligible effect. In \CENTREX, it will also be important to verify that the \HV\ electronics, and the plate charging currents, do not incur significant systematics.
+The Millman effect could be distinguised from an ambient magnetic field by a beam velocity reversal (impractical in the \CENTREX\ setup), or by varying the beam velocity so as to change $T$. In a pulsed beam, the natural velocity spread means that the time of detection is strongly correlated with the velocity. By analyzing data separately for different velocity classes, we should be able to find the extent of the Millman effect. \todoit{Quantify this based on data we have about velocity distribution and temporal width of beam pulse, but I think the correlation will be very strong because our beam is so long.}
 
-A further magnetic field correlated with the electric field comes from a Lorentz transformation into the frame of molecules moving with a velocity $\vec v$ through a large electric field. The resulting motional magnetic field has the value $\vec B_\text{mot}\approx\vec E_\text{int}\times\vec v/c^2$. However, since the internal molecular magnetic field is nearly parallel to the applied electric field, $\vec B_\text{mot}$ does not give rise to an energy shift. The parallelism would be exact in absence of stray magnetic fields; \todo{how to estimate the angle between $E_\text{int}$ and the internal magnetic field in the presence of an external magnetic field?}
+It is possible that the reversal of $E_\text{int}$ gives rise to a magnetic field, either due to the electronics effecting the reversal, or due to currents leaking between the field plates. In ref.~\cite{cho1991search}, they employed an additional field reversal by manually rewiring the electrode high voltage supply (motivated by the switching relay's frequent breakdowns \cite{cho1990thesis}), finding that the switching electronics does not noticably impact the \EDM\ measurement (at least, the electronics are no worse than the manual electrode polarity switching). To guard against the second type of induced magnetic field, they made sure that the leakage current remained below 2~nA at the operating voltage, an entirely negligible effect. In \CENTREX, it will also be important to verify that the \HV\ electronics, and the plate charging currents, do not incur significant systematics. \todoit{Estimate how large a leakage/charging current is tolerable for us, and what would be needed (in terms of charging time and/or effective resistance) to keep things below that limit.}
 
-Any currents in the vicinity of the magnetic shield can also magnetize the magnetic shield itself, coupling together seemingly unrelated parameters. For that reason, the shields will have to be degaussed regularly.
+A further magnetic field correlated with the electric field comes from a Lorentz transformation into the frame of molecules moving with a velocity $\vec v$ through a large electric field. The resulting motional magnetic field has the value $\vec B_\text{mot}\approx\vec E_\text{int}\times\vec v/c^2$. However, since the internal molecular magnetic field is exactly parallel to the applied electric field, $\vec B_\text{mot}$ does not give rise to a first-order energy shift. The second-order shift, being quadratic in $E_\text{int}$, is not a dangerous systematic unless there is a significant residual magnetic field present in the interaction region. That field can sum with the motional field to a total field not exactly perpendicular to $E_\text{int}$, giving cross terms between the two fields that change sign with the applied electric field. \todoit{Give quantitative calculations of effect size vs. imperfection sizes: the issue is what is the total B-field and its direction relative to $E_\text{int}$. Then, use that to figure out how the energy difference between states of interest changes when you reverse $E_\text{lab}$.}
 
-\paragraph{Questions:}
+Any currents in the vicinity of the magnetic shield can also magnetize the magnetic shield itself, coupling together seemingly unrelated parameters. For example, currents for charging the high-voltage electrodes in the interaction region or the lens could do this, and cause a residual magnetic field that reverses with the applied electric fields. \todoit{It would be good to estimate crudely how large this effect could be, and how much of a problem it would be at that level.  If the answer is "a lot", then thinking of measures to reduce it will be important. The 199Hg EDM experiment (papers, theses) will likely give some useful information about what has been achieved, since the parameters (eg voltage, capacitance) are somewhat similar to ours.} For that reason, the shields will have to be degaussed regularly.
+
+\todoit{}
 
 \begin{itemize}
-    \item{What can I do about `Bloch-Siegert' shifts (AC Zeeman shifts from imperfections in the RF drive fields, in combination with various E-field imperfections)?}
-    \item{Re the analogous measurement with 19F (no new physics, all same systematics)---is there anything I can do about it now before taking data?}
+    \item{`Bloch-Siegert' shifts (AC Zeeman shifts from imperfections in the RF drive fields, in combination with various E-field imperfections): Bloch-Siegert is specifically the AC Zeeman shift caused by the counter-rotating term you ignore when you do the rotating wave approximation.  So, it induces shifts proportional to the RF drive power. You can determine their effect by changing the RF power--for example, drive a little above vs a little below the power needed for a pi/2 pulse.  The Ramsey signal changes only quadratically with the deviation from ideal power [I think...check!] while the BS shift [heh] is linear in power.  In an extreme case, we could in principle drive a 3pi/2 pulse instead of pi/2 to check on its effect.}
+    \item Re the analogous measurement with 19F (no new physics, all same systematics): First, see if you can find a scheme to populate and detect a pair of states like this.  Make a list of all the control parameters that would have to change (RF frequency of course, also microwave frequencies in state selectors...anything else?) The main point is to look for magnetic field effects, but generally speaking any estimate of systematics with 205Tl should be revisited here, to see which (if any) contribute at about the same level vs. quite different levels, e.g. $E_\text{dc}$ induced freq shift might be quite different here.
+    \item It would be a good idea to think about geometric phase effects also. Useful information in Tl atom theses/publications, also ACME (Amar Vutha thesis, maybe also Brendon O'Leary's?). I don't think this has been analyzed for TlF at all.
+    \item It would be a good idea to think about geometric phase effects also. Useful information in Tl atom theses/publications, also ACME (Amar Vutha thesis, maybe also Brendon O'Leary's?). I don't think this has been analyzed for TlF at all.
+    \item  Maybe some effect of oscillating RF E-field due to Maxwell $[curl E \propto dB/dt]$ ? Can it drive transitions or induce energy shifts like B-S shifts? Not sure about this one, but scratching out crude numbers would be useful.
+    \item For each effect that I have estimated in terms of the frequency shift it causes, calculate how much we need to suppress it to get an acceptable final accuracy. Compare this to how well has been done in other experiments.  If we need to do something many orders of magnitude better than others have done after trying hard, we are probably in trouble and need a better plan. Look through other literature (Tl atom EDM, 199Hg EDM, neutron EDM) to get a sense of what has been accomplished r.e. leakage currents, E-field reversibility, stray magnetic fields, etc.,
+    \item read some ACME theses (Brendon, Zack, Cris Panda) to get a sense of how we look for systematics there
+    \item Continue to think about ways we can pull relevant information out of data with the molecules.
+    \item Think about what controls we will need that we may not have been thinking about.  Obviously, ability to apply small $B_z$ field in interaction region.  Probably also small $B_y$ and $B_x$.  Almost certainly also small gradients e.g. $dB_z/dx$.  How many precision current supplies will we need? What about other things like RF generators--what is the best we can find r.e. phase shift accuracy? etc. 
 \end{itemize}
 
 \section{Simulations}
@@ -1938,7 +1973,7 @@ L_\text{max}=C-S-I-10\log(B),
 \]
 where $C$ is the desired signal level (dBm), $I$ is the undesired (interference) signal level (dBm), and $B$ is the bandwidth (in Hz) of the intermediate frequency. \todo{(I don't understand either of these parameters.  What is the physical origin of the undesired signal for us?  What is the "intermediate frequency"?)} Assuming the desired ($C$) and undesired ($I$) signals are both same strength, and the signal linewidth (from molecular fly-through time) is $B\approx10^3$~Hz, a 20~dB selectivity requires the phase noise to be smaller than $-50$~dBc/Hz. This requirement is satisfied by both signal sources described below.
 
-The \DDS\ source is AD9910 (Analog Devices Inc., Norwood, MA), outputting out to approx.\ $f_\text{\DDS}=400$~MHz. The signal is mixed with a fixed $f_0=1$~GHz wave generated by one of the outputs of the SynthHD Pro (WindFreak Technologies, Holiday, FL). A low pass filter removes the sum component $f_\text{\DDS}+f_0$ and passes the difference, to be mixed with a $\approx12.65$~GHz signal from the other SynthHD output. In the second stage, a high-pass filter has to be used, passing the sum of the frequencies, since the signal generator only goes up to 14~GHz. This also filters out a strong sub-harmonic in the high-frequency SynthHD output. (Two-stage mixing is required because of the difficulty in filtering out one of the 100~MHz sidebands from a signal exceding 10~GHz.) The resulting frequency-agile microwave signal is doubled or quadrupled if necessary, amplified, power-split with an SPTD switch, and recombined in an orthomode transducer before being led to the horn. The horns were custom engineered by Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam energy onto the molecular beam.
+The \DDS\ source is AD9910 (Analog Devices Inc., Norwood, MA), outputting out to approx.\ $f_\text{\DDS}=400$~MHz. The signal is mixed with a fixed $f_0=1$~GHz wave generated by one of the outputs of the SynthHD Pro (WindFreak Technologies, Holiday, FL). A low pass filter removes the sum component $f_\text{\DDS}+f_0$ and passes the difference, to be mixed with a $\approx12.65$~GHz signal from the other SynthHD output. In the second stage, a high-pass filter has to be used, passing the sum of the frequencies, since the signal generator only goes up to 14~GHz. This also filters out a strong sub-harmonic in the high-frequency SynthHD output. (Two-stage mixing is required because of the difficulty in filtering out one of the 100~MHz sidebands from a signal exceding 10~GHz.) The resulting frequency-agile microwave signal is doubled or quadrupled if necessary, amplified, power-split with an SPDT switch, and recombined in an orthomode transducer before being led to the horn. The horns were custom engineered by Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam energy onto the molecular beam.
 
 \subsection{State preparation 1}
 
