@@ -6,6 +6,16 @@
 \usepackage{multicol}   
 \setlength{\columnsep}{1.85em}
 
+% math
+\usepackage{amsmath, bm, nicefrac, mathtools}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\dd}{\mathrm{d}\hspace*{-0.15em}\bar{}\hspace*{0.2em}}
+\newcommand{\ex}[1]{\langle #1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\braket}[2]{\langle#1|#2\rangle}
+\DeclareMathOperator{\sgn}{sgn}
+
 % Minion Pro
 \linespread{1.09}
 \usepackage{mathspec}
@@ -108,17 +118,6 @@
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{positioning}
 \usetikzlibrary{calc}
-
-% math
-\usepackage{amsmath, bm, nicefrac}
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\renewcommand{\d}{\mathrm{d}}
-\newcommand{\dd}{\mathrm{d}\hspace*{-0.15em}\bar{}\hspace*{0.2em}}
-\newcommand{\ex}[1]{\langle #1\rangle}
-\newcommand{\bra}[1]{\langle#1|}
-\newcommand{\ket}[1]{|#1\rangle}
-\newcommand{\braket}[2]{\langle#1|#2\rangle}
-\DeclareMathOperator{\sgn}{sgn}
 
 % math-mode units
 \newcommand{\GeV}{~\mathrm{GeV}}
@@ -236,6 +235,7 @@
 
 % has to be defined here for some reason
 \renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
+\renewcommand{\d}{\mathrm{d}}
 
 \twocolumn[  
     \begin{@twocolumnfalse}
@@ -381,7 +381,21 @@ explicitly present in $\hat H$. Further parity-odd terms can be extracted from $
     \end{matrix}
 \end{align}
 %
-$P_\ell$ being the Legendre polynomials of degree $\ell$, and $\hat{\vec r}$ and $\hat{\vec R}$ are the unit vectors $\vec r/r$ and $\vec R/R$. For reasons stated in the preceding paragraph, we need only consider the $\ell=1$ part of the electron--nucleus term, yielding
+$P_\ell$ being the Legendre polynomials of degree $\ell$, and $\hat{\vec r}$ and $\hat{\vec R}$ are the unit vectors $\vec r/r$ and $\vec R/R$. For completenes, we give here also the spherical multipole expansion \cite[eqn~4.1]{jackson1998classical},
+%
+\begin{equation}
+    \label{sphericalMultipole}
+    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r'=
+    \sum\limits_{\ell=0}^\infty
+    \sum\limits_{m=-\ell}^\ell
+    \frac{4\pi}{2\ell+1}
+    q_{\ell m}
+    \frac{Y_{\ell m}(\theta,\phi)}{r^{\ell+1}},
+\end{equation}
+%
+where the multipole moment is $q_{\ell m}\equiv\int Y^*_{\ell m}(r')^\ell\rho(\vec r')\d^3\vec r'$.
+
+For reasons stated in a previous paragraph, we need only consider the $\ell=1$ part of the electron--nucleus term, yielding
 %
 \begin{equation}
     H_\text{e--n}^{\ell=1}\equiv
@@ -1209,7 +1223,7 @@ as displayed in Fig.~\ref{SOF2}a. For the parameter values in that figure, the s
         \footnotesize
         \input{figs/matplotlib/SOF2.pdf_tex}
         }
-    \caption{Buffer-gas \SOF\ signal as a function of detuning $\Delta f$ in linear units, averaged over a Gaussian speed distribution $\exp[{-(v-\overline v)^2/2\alpha^2}]$ with $\overline v=200$~m/s and $\alpha=10$~m/s, for a 3~m separation between the oscillatory coils, and field strength $b=9.975\,\pi\alpha/2l$. Observe the effect of the coil length: $l=1$~cm (thick gray) and $l=10$~cm (thin black). \part{a} Difference in the averaged probabilities between $\phi=\pi/2$ and $\phi=-\pi/2$. \part{b} Averaged transition probability for $\phi=0$ (detail).}
+    \caption{Buffer-gas \SOF\ signal as a function of detuning $\Delta f$ in linear units, averaged over a Gaussian speed distribution $\exp[{-(v-\overline v)^2/2\alpha^2}]$ with $\overline v=200$~m/s and $\alpha=10$~m/s, for a 3~m separation between the oscillatory coils, and field strength $b=9.975\,\pi\alpha/2l$. Observe the effect of the finite coil length: $l=1$~cm (thick gray) and $l=10$~cm (thin black). \part{a} Difference in the averaged probabilities between $\phi=\pi/2$ and $\phi=-\pi/2$. \part{b} Averaged transition probability for $\phi=0$ (detail).}
     \label{SOF2}
 \end{figure}
 
@@ -1235,101 +1249,129 @@ In \CENTREX, we use neon as the buffer gas. Compared to helium-based sources, ne
 
 TlF is a suitable system to look for $P$ and $T$ violating interactions for a number of reasons: a molecular beam of thallium fluoride can readily be obtained by following the lead of a number of previously published papers; the properties of the molecular states and transitions are available in the literature; the species is a polar diatomic molecule, enhancing the effective electric field acting at the site of the nuclei; the thallium nucleus being very heavy, the Schiff moment is correspondingly relatively large; and the nucleus contains an unpaired proton, making measurements potentially sensitive to proton \EDM\ effects. \cite{sandars1967measurability, wilkening1984search} By contrast, TlF is not a suitable system for electron \EDM\ measurements due to the closed shells zero total electron spin. \cite{kozlov1995parity}
 
-Thallium comes in two naturally occurring isotopes, 203 (29.52\% abundance) and 205 (70.48\%), while $^{19}$F is the only isotope of fluorine \cite{awic2015}. In \CENTREX, we are only making use of the more abundant isotope 205, and only the transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns \cite{norrgard2017hyperfine}. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively; both nuclei are spin-half. Thus a particular hyperfine level can be written in either the coupled or decoupled basis, as follows:
+Thallium comes in two naturally occurring isotopes, 203 (29.52\% abundance) and 205 (70.48\%), while $^{19}$F is the only isotope of fluorine \cite{awic2015}. In \CENTREX, we are only making use of the more abundant isotope 205, and only the transitions between the $v=0$ vibrational sublevels of the electronic states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one of the excited states with a lifetime of about 99~ns \cite{norrgard2017hyperfine}. The quantum numbers used to describe the states usually refer to a modified Hund's case (c) basis with the additional couplings $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and $\vec I_2$ refer to thallium and fluorine nuclear spins, respectively; both nuclei are spin-half.
+
+A particular rotational hyperfine level can be written in either the coupled or decoupled basis, as follows:
 %
 \begin{align*}
-    \ket{\psi_\text{coup.}} &= \ket{J,\Omega,I_1,F_1,I_2,F,m_F}
+    \ket{\psi_\text{coup.}} &=
+    \ket{J,\Omega,m_J,I_1,F_1,I_2,F,m_F}
     \\
-    \ket{\psi_\text{dec.}} &= \ket{J,\Omega,m_J,I_1,m_1,I_2,m_2},
+    \ket{\psi_\text{dec.}} &=
+    \ket{J,\Omega,m_J}
+    \ket{I_1,m_1}
+    \ket{I_2,m_2},
 \end{align*}
 %
-where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine}
+where $\Omega$ is the projection of J on the internuclear axis and $m_F$ is the projection of $F$ in the laboratory frame. \cite{norrgard2017hyperfine} The change of basis transformation between the two representations is simply a matter of applying the definition of the Clebsch-Gordan coefficients \cite[eqn~5.77]{brown2003rotational} twice to decouple $\vec F$, then $\vec F_1$, into the constituent spins $\vec J$, $\vec I_1$, and $\vec I_2$.
 
-\todo{Change of basis transformation between the two frames}
 \paragraph{Ground state}
 
 The structure of the ground state can be described by the effective Hamiltonian given in ref.\ \cite{wilkening1984search}:
 %
 \begin{align*}
-    \mathcal{H_\text{TlF}}
-    &=h B\vec J^2 \tag{rotational}\\
-    &-\vec\mu_e\cdot\vec E \tag{Stark}\\
-    &-\frac{\mu_J}{J}(\vec J\cdot\vec B)
-        -\frac{\mu_1}{I_1}(\vec I_1\cdot\vec B)
-        -\frac{\mu_2}{I_2}(\vec I_2\cdot\vec B) \tag{Zeeman}\\
-    &+c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J) \tag{spin--rotation}\\
-    &+5c_3\left(
+    \mathcal{H}_\text{TlF}&=\mathcal H_\text{rot}+\mathcal H_\text{S}+\mathcal H_\text{Z}+\mathcal H_\text{sr}+\mathcal H_\text{ss},\quad\text{where}\\
+    \mathcal H_\text{rot}&=h B\vec J^2\\
+    \mathcal H_\text{S}&=-\vec\mu_e\cdot\vec E\\
+    \mathcal H_\text{Z}&=-\frac{\mu_J}{J}(\vec J\cdot\vec B)-\frac{\mu_1}{I_1}(\vec I_1\cdot\vec B)-\frac{\mu_2}{I_2}(\vec I_2\cdot\vec B)\\
+    \mathcal H_\text{sr}&=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)\\
+    \mathcal H_\text{ss}&=5c_3\left(
             \frac{3(\vec I_1\cdot\vec J)(\vec I_2\cdot\vec J)
                 +3(\vec I_2\cdot\vec J)(\vec I_1\cdot\vec J)-2(\vec I_1\cdot\vec I_2)\vec J^2}
             {(2J+3)(2J-1)}
         \right)
         \\
-        &\vspace{1cm}
-        +c_4(\vec I_1\cdot\vec I_2) \tag{spin--spin}
+        &\mspace{40mu}+c_4(\vec I_1\cdot\vec I_2)
 \end{align*}
 %
-
-\todo{worth writing it out here.} and is illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB_e\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
+The energy levels found by diagonalizing this Hamiltonian are illustrated in Fig.~\ref{diagram} in the absence of electric and magnetic fields. The largest effect is the rotational energy $\H_\text{rot}=hB\vec J^2$ with the rotational constant of order $2B=13.4~\GHz$. More precisely, the rotational-vibrational energy levels of a diatomic molecule are given by the so-called Dunham expansion \cite{huber2013molecular}
 %
 \[
-T_{vJ}=\sum\limits_{lm}Y_{lm}(v+1/2)^l[J(J+1)]^m.
+    T_{vJ}={\textstyle\sum_{lm}}Y_{lm}(v+1/2)^l[J(J+1)]^m.
 \]
 %
-In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_e\equiv Y_{01}$ and the first term $\alpha_e\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.28958\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. %2*29.9792458*(0.223150163-0.001503850)
+In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_\text{e}\equiv Y_{01}$ and the first term $\alpha_\text{e}\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.28958\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. Note that the value $2B=13.37984\GHz$, given in Ramsey et al.\ \cite{wilkening1984search}, only takes into account $B_\text{e}$ and is thus not appropriate for driving microwave transitions. %2*29.9792458*(0.223150163-0.001503850)
 
-Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect is due to direct dipole--dipole coupling between the nuclear spins; Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give it in terms of the nuclear $g$-factors and the internuclear displacement vector $\vec R$ as
+Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect, the spin--spin interaction, is due to two distinct effects of magnitudes $c_3=0.070\kHz$ and $c_4=-13.30\kHz$. The $c_3$ term is due to a direct dipole--dipole coupling between the nuclear spins. In the Hamiltonian given above, the $c_3$ term is written in an effective form, valid for small (less than approx.\ $20\kVcm$) electric fields when $J$ is a good quantum number. At large $E$-field values, $J$ is no longer a good quantum number, and this approximation cannot be used. In its stead, Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give
 %
 \[
-\H_\text{ss}=\frac{g_1g_2\mu_N^2}{4\pi\epsilon_0c^2}
+\H_\text{ddd}=\frac{g_1g_2\mu_N^2}{4\pi\epsilon_0c^2}
 \left\{
     \frac{\vec I_1\cdot\vec I_2}{R^3}
     -\frac{3(\vec I_1\cdot\vec R)(\vec I_2\cdot\vec R)}{R^5}
 \right\},
 \]
 %
-while Ramsey \cite{wilkening1984search} gives an effective form, valid for small (less than approx.\ $20\kVcm$) electric fields when $J$ is a good quantum number. See ref.\ \cite{norrgard2017hyperfine} for corresponding details of the rotational and hyperfine Hamiltonian for the excited state $B^3\Pi_1$.
+where $g_{1,2}$ are the nuclear $g$-factors and $\vec R$ is the internuclear displacement vector. The interaction is proportional to a spherical rank-2 tensor $T^2(\vec I_1,\vec I_2)$ as per eqn~1.34 in ref.~\cite{brown2003rotational}.
 
-\todo{This section is not so clear.
-1. Definitely just write down the whole Hamiltonian 
-2. The direct dipole-dipole coupling (a rank 2 tensor in I1,I2) is distinct from the scalar coupling term $I1\cdot I2$--that is, different physical mechanisms cause them, and they have different magnitudes.  The mechanism for the scalar part (aka "J-coupling" term) is in the BKD book (and probably also somewhere in B\&C).  It would be good to explicitly write down the difference between the Hamiltonian in Ramsey \& the correct Hamiltonian, and explain why it only matters at large E-field values.}
+The $c_4$ term, also known as the scalar- or $J$-coupling term, arises through a mechanism involving the transmission of nuclear spin orientation through the interven-
+ing electrons \cite{brown2003rotational}. It is distinguished from the tensor interaction in that it does not depend on the angle between the nuclear directions and the internuclear axis $\vec R$. While molecular rotation averages the $c_3$ term to zero, the $c_4$ term survives \cite[sect.~7.7]{budker2004atomic}. In spherical tensor form, the interaction is proportional to $T^1(\vec I_1)\cdot T^1(\vec I_2)$.
 
-\todo{Read ch.\ 2 of Hutzler's thesis to learn more about molecular structure}
-
-Externally applied electric field causes Stark effect, $ \H_\text{S}=-d\vec E\cdot\hat{\vec n}$, while a magnetic field gives rise to the Zeeman effect, as follows:
-%
-\[
-\H_\text{Z}=-\frac{\mu_J}{J}(\vec J\cdot\vec B)
--\frac{\mu_1}{I_1}(\vec I_1\cdot\vec B)
--\frac{\mu_2}{I_2}(\vec I_2\cdot\vec B).
-\]
-
-Since the direction of motion of electrons in the atom does not change the electric dipole moment, time reversal is a symmetry of the Stark effect. \cite{gottfried2013quantum} It can be shown that there exist pairs of states of opposite $m_J$ with identical matrix elements of the Stark operator $S_z$ (identical polarizabilities to first order). \cite{angel1968hyperfine} In terms of spherical harmonics, the $z$-component of the electric dipole operator is proportional to $Y_1^0$, as can be seen from the spherical multipole expansion \cite[eqn~4.1]{jackson1998classical},
+For most of the terms in the effective Hamiltonian, the matrix elements are most readily calculated in the decoupled basis, where the operators $\vec J^2$, $J_z$, $I_{1z}$, $I_{2z}$ are diagonal. Most of the other operators can be written in terms of the appropriate ladder operators $J_\pm$ \cite[eqns~3.5.39--40]{sakurai2011modern}
 %
 \begin{equation}
-    \label{sphericalMultipole}
-    \int\frac{\rho(\vec r')}{|\vec r-\vec r'|}\d^3\vec r'=
-    \sum\limits_{\ell=0}^\infty
-    \sum\limits_{m=-\ell}^\ell
-    \frac{4\pi}{2\ell+1}
-    q_{\ell m}
-    \frac{Y_{\ell m}(\theta,\phi)}{r^{\ell+1}},
+    \label{ladder}
+    J_\pm\ket{J,m}=\sqrt{(J\mp m)(j\pm m+1)}\ket{J,m\pm1},
 \end{equation}
-where the multipole moment is $q_{\ell m}\equiv\int Y^*_{\ell m}(r')^\ell\rho(\vec r')\d^3\vec r'$. 
 %
-Using a standard relation from angular momentum algebra, the matrix element can be written and simplified as follows:
+and similarly for $I_{1\pm}$, $I_{2\pm}$ acting on the $\ket{I_1,m_1}$ and $\ket{I_2,m_2}$ subspaces. For instance, $J_x=(J_++J_-)/2$ and $J_y=(J_+-J_-)/2i$. The dot product of two angular momentum operators can be written in terms of the ladder operators as
 %
-\begin{align*}
-    \bra{J'&,m_J'}|Y_1^0\ket{J,m_J}\\
-    &\propto\braket{J',0,1,0}{J,0}\braket{J',m_J',1,0}{J,m_J}\\
-    &\propto\begin{cases}
-        \sqrt{(J-m_J)(J+m_J)},&\text{for $J'=J-1$}\\
-        \sqrt{(J-m_J+1)(J+m_J+1)},&\text{for $J'=J+1$}\\
-    \end{cases}
-\end{align*}
+\begin{equation}
+    \label{dotproductlabel}
+    \vec A\cdot\vec B=A_zB_z+\frac{1}{2}\left(
+    A_+B_-+A_-B_+
+    \right).
+\end{equation}
 %
-Evidently, the $\sgn(m_J)$ dependence is gone.
+Equations \ref{ladder} and \ref{dotproductlabel}, together with the fact the the basis states with dissimilar labels are orthogonal, allow us to find the matrix elements between arbitrary basis states for all terms in the Hamiltonian except for the Start effect, to which we turn now.
 
-\todo{Explain the calculation of ground state Hamiltonian matrix elements.}
+The Stark Hamiltonian can be expressed explicitly in the components of the molecular electric dipole moment and the lab-frame electric field:
+%
+\[
+    \mathcal H_\text{s}
+    =\mu_{e}\sqrt{\frac{2\pi}{3}}\begin{pmatrix}
+        Y_1^{-1}-Y_1^1\\
+        i(Y_1^{-1}+Y_1^1)\\
+    \sqrt2Y_1^0\end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+        E_x\\E_y\\E_z
+    \end{pmatrix},
+\]
+%
+with the matrix elements
+\begin{gather*}
+    \langle J',m_J'|Y_1^M||J,m_J\rangle
+    =\sqrt{\frac{3}{2\pi}}W_M,\quad\text{where}\\
+    W_M=(-1)^{M}
+    \sqrt{\frac{2 J' + 1}{2(2 J + 1)}}
+    \langle J' \, 0 \, 1 \, 0 | J \, 0 \rangle
+    \langle J' \, m_J' \, 1 \, -M | J \, m_J \rangle.
+\end{gather*}
+%
+For $M=0$, the expression is nonzero only for $m_J'=m_J$:
+%
+\[
+    W_0=
+    \begin{dcases*}
+        \sqrt{\frac{(J-m_J)(J+m_J)}{8J^2-2}}&\quad for $J'=J-1$\\
+        \sqrt{\frac{(J-m_J+1)(J+m_J+1)}{6+8J(J+2)}}&\quad for $J'=J+1$
+    \end{dcases*}
+\]
+%
+For $M=\pm1$, we need $m_J'=m_J\pm1$:
+%
+\[
+    W_{\pm1}=
+    \begin{dcases*}
+        -\frac{1}{2}
+        \sqrt{\frac{(J\mp m_J)(J-1\mp m_J)}{4J^2-1}}&\quad\text{for $J'=J-1$}\\
+        \frac{1}{2}
+        \sqrt{\frac{(J+1\pm m_J)(J+2\pm m_J)}{3+4J(J+2)}}&\quad\text{for $J'=J+1$}
+    \end{dcases*}
+\]
+
+Since the direction of motion of electrons in the atom does not change the electric dipole moment, time reversal is a symmetry of the Stark effect. \cite{gottfried2013quantum} It can be shown that there exist pairs of states of opposite $m_J$ with identical matrix elements of the Stark operator $S_z$ (identical polarizabilities to first order). \cite{angel1968hyperfine}  Considering the $M=0$ expression above, corresponding to the $z$-direction of the dipole moment, we see the $\sgn(m_J)$ dependence is gone.
 
 \begin{figure}
 
@@ -1383,9 +1425,12 @@ Evidently, the $\sgn(m_J)$ dependence is gone.
    \draw[->,TwoMarks=0.2,TwoMarks=0.6] (\xf-\len-\xoffset, -.1)
       -- (\xf-\len-\xoffset,\yB+.25) node[above] {$E$ [kHz]};
 
+   % brace position
+   \def\bracePos{\xg+3*\len}
+
    % J=0 labels
    \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,-.08) -- (\xg+2*\len,.08) node [black,midway,anchor=west,xshift=25] (nodeJ0) {$J=0$};
+      (\bracePos,-.08) -- node (midJ0) {} (\bracePos,.08) node [black,midway,anchor=west,xshift=25] (nodeJ0) {$J=0$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, -.003325) node[anchor=east,below,xshift=\pos]
       {-3.325} -- (\xf-\len+0.5*\lenmark-\xoffset,-.003325) node[right,below,xshift=-\pos] {$F=1$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, .009975) node[anchor=east,above,xshift=\pos]
@@ -1399,7 +1444,7 @@ Evidently, the $\sgn(m_J)$ dependence is gone.
 
    % J=1 labels
    \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,\yA-.2) -- (\xg+2*\len,\yA+.1) node [black,midway,anchor=west,xshift=25] (nodeJ1) {$J=1$};
+      (\bracePos,\yA-.2) -- node (midJ1) {} (\bracePos,\yA+.1) node [black,midway,anchor=west,xshift=25] (nodeJ1) {$J=1$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.143745) node[anchor=east,below,xshift=\pos] {-143.745} --
       (\xf-\len+0.5*\lenmark-\xoffset,\yA-.143745) node[right,below,xshift=-\pos] {$F=0$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, \yA-.121506) node[anchor=east,above,xshift=\pos] {-121.506} --
@@ -1425,7 +1470,7 @@ Evidently, the $\sgn(m_J)$ dependence is gone.
 
    % J=2 labels
    \draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=4pt},yshift=0pt]
-      (\xg+2*\len,\yB-.27) -- (\xg+2*\len,\yB+.18) node [black,midway,anchor=west,xshift=25] (nodeJ2) {$J=2$};
+      (\bracePos,\yB-.27) -- node (midJ2) {} (\bracePos,\yB+.18) node [black,midway,anchor=west,xshift=25] (nodeJ2) {$J=2$};
    \draw (\xf-\len-0.5*\lenmark-\xoffset, \yB-.217455)
    node[anchor=east,left,yshift=-5] {-217.455}
       -- (\xf-\len+0.5*\lenmark-\xoffset,\yB-.217455) node[right,below,xshift=-\pos] {$F=1$};
@@ -1465,29 +1510,32 @@ Evidently, the $\sgn(m_J)$ dependence is gone.
    \draw[Latex-Latex] (nodeJ0) -- node[above,sloped,rotate=180] {13.4 GHz} (nodeJ1);
    \draw[Latex-Latex] (nodeJ1) -- node[above,sloped] {26.8 GHz} (nodeJ2);
 
+   % approximate F1 labels
+   \def\FposX{-5}
+   \def\FposY{15}
+   \def\FposYY{22}
+   \node[xshift=\FposX] at (midJ0) {\nicefrac{1}{2}};
+   \node[xshift=\FposX,yshift=-\FposY] at (midJ1) {\nicefrac{1}{2}};
+   \node[xshift=\FposX, yshift=\FposY] at (midJ1) {\nicefrac{3}{2}};
+   \node[xshift=\FposX,yshift=-\FposYY] at (midJ2) {\nicefrac{3}{2}};
+   \node[xshift=\FposX, yshift=\FposYY] at (midJ2) {\nicefrac{5}{2}};
+   \node[xshift=\FposX, yshift=40] at (midJ2) {$F_1$};
+
 \end{tikzpicture}
-\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. \todo{Maybe give approximate F1 labels too?}}
+\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. The numbers left of the braces are approximate F1 labels.}
 \label{diagram}
 \end{figure}
 
 
 \paragraph{Excited state}
 
-\todo{--what are cycling transitions in general, and specifically in TlF?
---branching ratios and why they matter. 
---resolved hfs in excited state + unresolved hfs in ground state-->many dark states in transition
---overlaps of cycling transition frequencies can make it hard to detect one state vs the other.}
+While the nuclear magnetic resonance takes place entirely within the $X^1\Sigma^+$ ground state, the structure of the excited state $B^3\Pi_1$ is nevertheless important for the state preparation and readout. In particular, despite the limited ability to collect and detect photons from fluorescing molecules, our detection scheme could in principle detect $\approx100\;\%$ of the molecules through optical cycling, as follows. A laser excites the $X\to B$ transition, causing photons in the decay back down to $X$. If the molecule ended up in the same sublevel in $X$, the same laser can re-excite it back to $B$. \cite{hunter2012prospects}
 
-\todo{Calculation of relevant branching ratios}
-
-The existence of an optical cycling transition in TlF allows for near-unity detection efficiency despite a limited ability to collect and detect individual photons. \cite{hunter2012prospects} \todo{maybe say:
---optical cycling is useful
---not easy to find in molecules
---TlF has one [ref]} The large number of photons that can be scattered off a single molecule could also be used to slow or trap molecules, thus increasing the experimental sensitivity beyond that projected for the initial version of the \CENTREX\ experiment.
-
-\todo{What other details about TlF to describe? Perhaps more about dark states?}
+However, due to the large number of degrees of freedom in molecules, optical cycling can be difficult to achieve in molecules. It turns out that in TlF, there exists a sufficiently closed transition to allow $\sim100$ cycles before the molecule gets lost in inaccessible dark states. The number of dark states is potentially very large since the hyperfine structure of the ground state is unresolved. However, the branching ratios have been measured; see ref.~\cite{norrgard2017hyperfine}.
 
 \subsection{Previous experiments}
+
+\paragraph{TlF}
 
 The first $P,T$-violation experiment using a molecular beam of thallium fluoride was done in Oxford in 1969 \cite{harrison1969experimental}, the result being reported as $\nu=0.08\pm0.11\Hz$, or, in terms of proton \EDM, as $|d_\text{p}|=(7\pm9)\times10^{-21}e\cm$. They employed the triple resonance scheme: first, $J=1$ molecules were transferred from $m_J=0$ to $m_J=\pm1$. The second resonance which changed the Tl nuclear spin projection from $\pm1/2$ to $\mp1/2$ is not directly observable; however, after the molecules are transferred back to $m_J=0$, the amount of the non-observable spin flips can be estimated and related to the desired frequency shifts $4\nu$.
 
@@ -1497,10 +1545,15 @@ Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} 
 
 Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects $J=1$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$ sublevels in a combination of static and \RF\ electric fields, either $(m_J,m_\text{Tl},m_\text{F})=(-1,+\nicefrac{1}{2},-\nicefrac{1}{2})$ or $(+1,-\nicefrac{1}{2},+\nicefrac{1}{2})$. Then, separated oscillating magnetic fields in the presence of a strong electric field induce a nuclear spin flip in Tl, observed after a second state selector and quadrupole filter by measuring the ion current produced by a hot, oxygenated tungsten filament. The improved upper bound was due to a more intense and rotationally colder beam of TlF monomers, and due to an additional reversal, switching between the two hyperfine states as listed above.
 
-\todo{166Hg papers: \cite{romalis2001new} \cite{griffith2009improved} \cite{graner2016reduced}}
+\paragraph{Other systems}
 
-\todo{a)mention the atomic Tl beam electron EDM search (it shares some things in common with us)
-b) mention the neutron EDM and 199Hg EDM to at least give some points of comparison most relevant for us. The methods are so completely different that it would not make sense to describe in detail here.}
+While the thallium fluoride experiments search for proton \EDM or the Schiff moment, other   experiments look for electron or neutron \EDM s, or atomic \EDM s. There has been a string of experiments on atomic thallium. Already in the 1970s, an experiment reported $d_\text{Tl}=(1.3\pm2.4)\times10^{-21}e\cm$ looking for a shift between the $F=1$, $m_F=0,1$ sublevels of the $6^2P_{1/2}$ ground state of Tl in a uniform electric field of 50~kV/cm in the presence of a 1~G magnetic field parallel to the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported $d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and systematic uncertainties, respectively. \cite{commins1994improved} The experiment was subsequently significantly upgraded, improving the precision to $|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new}
+
+\todo{More details about the followgin experiments:}
+
+In a decades-long search for the \EDM\ of $^{199}$Hg, the result has been constrained to $|d_\text{Hg}|<7.4\times10^{-30}e\cm$. \cite{romalis2001new,griffith2009improved,graner2016reduced}
+
+A measurement on ultracold neutrons stored in a trap yielded $|d_\text{n}|<2.9\times10^{-26}e\cm$. \cite{baker2006improved}
 
 \begin{figure}
 \centering
@@ -1525,9 +1578,9 @@ b) mention the neutron EDM and 199Hg EDM to at least give some points of compari
     % spontaneous decay branching ratios
     \tikzset{snake it/.style={-{Latex[length=2mm,width=2mm]}, decorate, decoration={snake,amplitude=2pt,pre length=2pt,post length=3pt}}}
     \draw[snake it] (2,3.75) -- node[left,xshift=-1pt]{\footnotesize0.365} (0,.25);
-    \draw[snake it] (2.5,3.75) -- node[left,yshift=8pt,xshift=2pt]{\footnotesize0.855} (2,.75);
+    \draw[snake it,dashed] (2.5,3.75) -- node[left,yshift=8pt,xshift=2pt]{\footnotesize0.855} (2,.75);
     \draw[snake it] (2.75,3.75) -- node[left,xshift=3pt,yshift=-10pt]{\footnotesize0.635} (3.5,1.25);
-    \draw[snake it] (4,3.75) -- node[right,xshift=3pt]{\footnotesize0.145} (6,1.75);
+    \draw[snake it,dashed] (4,3.75) -- node[right,xshift=3pt]{\footnotesize0.145} (6,1.75);
 
     % microwaves
     \tikzset{biarrow/.style={{Latex[length=1.5mm,width=1.5mm]}-{Latex[length=1.5mm,width=1.5mm]}}}
@@ -1537,24 +1590,72 @@ b) mention the neutron EDM and 199Hg EDM to at least give some points of compari
 
 \end{tikzpicture}
 
-    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves of stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy lines indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \todo{We drive from J=2 (even parity) to the odd-parity Omega doublet level with $\tilde{J} = 1$. So, the excited state can only decay to J=0 and J=2, not 1 and 3. At some point, branching to J=0 hfs levels should be mentioned as well.}}
+    \caption{Proposed rotational cooling scheme. The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines). The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling.}
 \label{scheme}
 
 \end{figure}
 
 \subsection{Overview of the \CENTREX\ scheme}
 
-\todo{a diagram showing a VERY crude conceptual flow chart of the critical steps in the procedure, maybe indicating fields applied at each point and/or quantum state at each point, would be useful. A table of count rates, background and/or fringe contrast, and Ramsey linewidth (or, equivalently, interaction time) would be useful.}
+Emerging from a cryogenic buffer gas beam source, the molecules initially populate a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter a rotational cooling region to accumulate population in a single hyperfine/rotational level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. \todo{say something brief about necessary state transfers--where, why, and how} Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
 
-Molecules emerging from a cryogenic buffer gas beam source initially populate a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter a rotational cooling region to accumulate population in a single hyperfine/rotational level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Before a free flight thorough the interaction region, the molecules are prepared into the correct hyperfine state. \todo{say something brief about necessary state transfers--where, why, and how} Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
+\begin{figure*}
+    \centering\small
+    \tikzstyle{block} = [rectangle, draw, text width=4.5em, text centered, rounded corners, minimum height=3em]
+    \tikzstyle{quant} = [rectangle, text width=4.5em, text centered, rounded corners, minimum height=3em]
+    \tikzstyle{line} = [draw, -Latex]
+    \begin{tikzpicture}[node distance=6.25em and 1em, auto]
+        % place nodes
+        \node [block] (source)  {beam\\source};
+        \node [block, right of=source] (rotcoo)  {rotational\\cooling};
+        \node [block, right of=rotcoo] (SP1)     {state\\prep.\ 1};
+        \node [block, right of=SP1]    (lens)    {quadrupole\\lens};
+        \node [block, right of=lens]   (SP2)     {state\\prep.\ 2};
+        \node [block, right of=SP2]    (NMR)     {NMR};
+        \node [block, right of=NMR]    (SP3)     {projection};
+        \node [block, right of=SP3]    (readout) {readout};
 
-\todo{a schematic diagram for CeNTREX would be extremely useful for this section}
+        % connecting arrows
+        \path [line] (source) -- (rotcoo);
+        \path [line] (rotcoo) -- (SP1);
+        \path [line] (SP1)    -- (lens);
+        \path [line] (lens)   -- (SP2);
+        \path [line] (SP2)    -- (NMR);
+        \path [line] (NMR)    -- (SP3);
+        \path [line] (SP3)    -- (readout);
+
+        % quantum states
+        \def\quantpos{1ex}
+        \node [quant,above=\quantpos of source]  {};
+        \node [quant,above=\quantpos of rotcoo]  {$J=0$};
+        \node [quant,above=\quantpos of SP1]     {};
+        \node [quant,above=\quantpos of lens]    {$J=2$\\$m_J=0$};
+        \node [quant,above=\quantpos of SP2]     {};
+        \node [quant,above=\quantpos of NMR]     {$J=0$\\$m_J=\pm1$};
+        \node [quant,above=\quantpos of SP3]     {};
+        \node [quant,above=\quantpos of readout] {};
+
+        % fields
+        \node [quant,below=\quantpos of source]  {};
+        \node [quant,below=\quantpos of rotcoo]  {};
+        \node [quant,below=\quantpos of SP1]     {};
+        \node [quant,below=\quantpos of lens]    {$\pm30$~kV/cm};
+        \node [quant,below=\quantpos of SP2]     {};
+        \node [quant,below=\quantpos of NMR]     {$\pm30$~kV/cm\\$10\;\mu$G};
+        \node [quant,below=\quantpos of SP3]     {};
+        \node [quant,below=\quantpos of readout] {};
+    \end{tikzpicture}
+    \caption{Conceptual flow chart of the critical steps in \CENTREX, indicating the applied fields (below) and the quantum states (above).}
+    \label{conceptdiagram}
+\end{figure*}
 
 \paragraph{Rotational cooling (Fig.~\ref{scheme})}
 
 \todo{maybe start with simplified version first (no hfs), then explain complications due to hfs.}
 
 Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a \UV\ laser beam centered on the $P2$ $F1$ \todo{(jargon, need to explain)} line lifts the population from $J=2$ into the excited state $\widetilde{J}=1$. While the ground-state hyperfine splitting is smaller than the laser linewidth, the excited state hyperfine levels are well separated, allowing us to address the $\widetilde{F}=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be emptied into $\widetilde{J}=1$. The latter state in turn decays mostly into the lowest four rotation states \todo{(clarify this sentence)}, so that eventually the majority of the population is expected to accumulate in the $J=0$ state.
+
+\todo{Make a diagram for branching to J=0 hfs levels should be mentioned as well?}
 
 \todo{Branching ratio argument why $F1$ instead of $F2$? (Quick answer: branching to F=0 vs F=1 in J=0 is more favorable for F1 excited state) Microwaves to empty out the $J=0$, $F=1$ state. Dark states? Polarization switching? Frequency-switching of microwaves vs power broadening.}
 
@@ -1826,11 +1927,16 @@ The Kronecker deltas give the order of the atom--photon interaction. For instanc
 %
 i.e., the 0th order effect of the \AC\ field is a simple \AC\ Stark shift, where the \RMS\ \AC\ field has the same effect as a \DC\ field. This suggests that the mechanism through which the \AC\ field suppresses transitions is by limiting the effective minumum value of the \DC\ field, such that the system no longer passes through the avoided crossing.
 
-The higher order interactions---those due to $\delta_{n,m\pm1}$ and $\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian, effecting a tensor product with the corresponding Kronecker matrices. The effect on the spectrum is to replace the two states with an infinite set of pairs of states, each pair separated from the next by the energy $\hbar\omega$ of a single photon. Plotted as a function of the electric field, we note that in addition to the avoided crossings present in the `unperturbed' Hamiltonian, new crossings appear as a result of interactions with the virtual photons.
+The higher order interactions---due to the $\delta_{n,m\pm1}$ and $\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian, effecting a tensor product with the corresponding Kronecker matrices. The effect on the spectrum is to replace the two states with an infinite set of pairs of states, each pair separated from the next by the energy $\hbar\omega$ of a single photon. Plotted as a function of the electric field, we note that in addition to the avoided crossings present in the `unperturbed' Hamiltonian, new crossings appear as a result of interactions with the virtual photons.
 
 The new crossings typically appear at higher fields than the original ones and thus do not cause transitions unless the inverting \DC\ field is of sufficient magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet}b, the \DC\ field is assumed to traverse the inherent avoided crossing and not much further. However, in the flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$ get reversed in a characteristic time $T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced avoided crossings beyond the reach of these fields, the applied \AC\ field would need to have a frequency of order $900\GHz$. Alternatively, the \AC\ field could be confined to a region where the \DC\ field does not depart too far from zero.
 
 \subsection{\todo{Optical cycling}}
+
+\clearpage
+\section{Apparatus}
+
+As detailed in the section on the measurement scheme, \CENTREX\ follows the design of a conventional molecular beam experiment. Fig.~\ref{entire} displays an outline of the entire apparatus, Table~\ref{parametertable} contains key parameter values, and the following paragraphs give information about its construction.
 
 \begin{figure*}
     \begin{overpic}[width=\textwidth,unit=1mm]{figs/entire.pdf}
@@ -1862,15 +1968,51 @@ The new crossings typically appear at higher fields than the original ones and t
     \label{entire}
 \end{figure*}
 
-\section{Apparatus}
-
-As detailed in the section on the measurement scheme, \CENTREX\ follows the design of a conventional molecular beam experiment. Fig.~\ref{entire} displays an outline of the entire apparatus, and the following paragraphs give information about its construction.
-
 \subsection{Control software}
 
 The experimental parameters are monitored and controlled using a range of devices. Most of these have already been integrated into a central data acquisition (\DAQ) system. At present, the latter consists of a single highly configurable Python program running on all computers attached to the experiment, communicating with the devices connected to the computer and writing the obtained data to the local disk. In the future, we intend to set up a common data and backup server to deal with the greatly increased data generation rate once the entire apparatus is up and running.
 
-The program's code is divided between classes that make up the graphical user interface (\GUI), and control classes which make use of driver classes to communicate with physical instruments. In addition, all program configuration is contained in \verb`.ini` files in subdirectories of the so-called \verb`config` directory, allowing for simple modification and extension of the \DAQ\ system without changing the main program code. This configuration is loaded into the relevant \verb`Config` class (e.g.\ \verb`DeviceConfig`).  
+The program's code is divided between classes that make up the graphical user interface (\GUI), and control classes which make use of driver classes to communicate with physical instruments. In addition, all program configuration is contained in \verb`.ini` files in subdirectories of the so-called \verb`config` directory, allowing for simple modification and extension of the \DAQ\ system without changing the main program code. This configuration is loaded into the relevant \verb`Config` class.
+
+\begin{table}[t]
+    %\makebox[\columnwidth][c]{%
+    \begin{tabu} to \columnwidth {@{}rX[c]l@{}}
+        \toprule
+        Parameter & Value & Units \\
+        \midrule
+        \multicolumn{3}{@{}l}{\textit{Beam source:}}\\
+           total source intensity       & $10^{10}$ to $10^{12}$ & mol./s/sr/state  \\
+           flux after rot.\ cooling     & \todo{???}             & mol./sec         \\
+           beam diameter                & 2.5                    & cm               \\
+           average beam velocity        & $184\pm17$             & m/s              \\
+           beam velocity spread         & $16.1\pm0.8$           & m/s              \\
+           rotational temperature       & $6.5\pm0.2$            & K                \\
+           vibrational temperature      & 8                      & K                \\
+        \\\multicolumn{3}{@{}l}{\textit{Quadrupole lens:}}\\
+           quadrupole voltage           & $\pm30$                & kV               \\
+           bore diameter                & 1.75                   & in               \\
+           length                       & 60                     & cm               \\
+        \\\multicolumn{3}{@{}l}{\textit{Interaction region:}}\\
+           SOF coil frequency           &                        & kHz              \\
+           slope of SOF resonance       & 0.094                  & 1/Hz             \\
+           interaction region $E$ field & $\pm30$                & kV               \\
+           interaction region $B$ field & $<10$                  & $\mu$G           \\
+           SOF coil separation          & 3                      & m                \\
+           interaction time             & 16                     & ms               \\
+           resonance FWHM               & 33.2                   & Hz               \\
+           SOF coil width               & 10                     & cm               \\
+        \\\multicolumn{3}{@{}l}{\textit{Detection region:}}\\
+           detection efficiency         & 100~\%                 & ---              \\
+           source-detector distance     & $594\pm10$             & cm               \\
+           background count             & \todo{???}             & mol./sec         \\
+           detection area               & \todo{???}             & mm$^2$           \\
+           signal to noise ratio        & \todo{???}             & ---              \\
+           fringe contrast              & \todo{???}             & ---              \\
+           \bottomrule
+    \end{tabu}%}
+    \caption{Key parameters of the \CENTREX\ experiment.}
+    \label{parametertable}
+\end{table}
 
 The user controls the devices through the \verb`ControlGUI`, which is a canvas for control of recording and external devices. The information in device config files is automatically read and translated into usable controls that appear in the \GUI. Underneath the graphical interface, several classes implement the program's functionality:
 
@@ -1884,7 +2026,7 @@ The user controls the devices through the \verb`ControlGUI`, which is a canvas f
 
 The program is thus generic enough to make it easy to add capabilities to control any number of new devices by simply (1) writing a device driver, and (2) a device config file. Drivers are classes inside the Python modules, such that instantiating the driver class is the abstract representation of opening a connection to a physical device. In addition, a driver class provides a \verb`ReadValue()` method that implements the particulars about how reading data works, and should return a list of values, consistent with the \verb`dtype` and \verb`shape` of the device as specified in the constructor. The driver must also provide a function \verb`GetWarnings()` that is be called at regular intervals to populate the list of \verb`warnings`. This function can check for the device parameters are within normal ranges, or simply do nothing if appropriate.
 
-Upon starting, the program reads the main config file \verb`config/settings.ini` that defines general program settings; the values are read by the instance of \verb`ProgramConfig` class. Device configurations are read from \verb`.ini` files in the chosen directory. Thus choosing a different directory allows for a different set of devices or device configurations to be loaded. These files define the controls that to appear on the screen for each instance of a device, the driver commands called from these controls, and their default values.
+Upon starting, the program reads the main config file that defines general program settings; the values are read by the instance of \verb`ProgramConfig` class. Device configurations are read from \verb`.ini` files in the chosen directory. Thus choosing a different directory allows for a different set of devices or device configurations to be loaded. These files define the controls that to appear on the screen for each instance of a device, the driver commands called from these controls, and their default values.
 
 The device \verb`.ini` file should specify whether the device is a slow or a fast device.  A slow device is expected to return only a few values each time its \verb`ReadValue()` is called, and thus requires a single dataset to contain all the data. A fast device can return thousands or millions of datapoints each time it is polled, together with metadata that describes this particular set of values. Thus, the program creates a new dataset for each invocation of \verb`ReadValue()` of a fast device.
 
