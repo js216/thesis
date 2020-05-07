@@ -1,0 +1,19 @@
+\begin{tikzpicture}[yscale=2,xscale=1.2]
+    % figure part labels
+    \node (a) at (1.2,-.20) {(a)};
+    \node (b) at (1.2,-.37) {};
+
+    % state labels
+    \node (s) at (0,0) {$\ket{\text s}$};
+    \node (p) at (0,1) {$\ket{\text p}$};
+
+    % state lines
+    \draw (s) -- ++(2,0);
+    \draw (p) -- ++(2,0);
+
+    % arrows
+    \draw[latex-latex] ($(s)+(.4,0)$) -- node[left] {\footnotesize$\Delta_\text{sp}$} ($(p)+(.4,0)$);
+    \tikzset{biarrow/.style={{Latex[length=1.5mm,width=1.5mm]}-{Latex[length=1.5mm,width=1.5mm]}}}
+    \draw[biarrow] ($(s)+(.8,0)$) to[bend left] node[right]{\footnotesize$D_\text{sp}\mathcal{E}$} ($(p)+(.8,0)$);
+    \draw[biarrow] ($(s)+(1.8,0)$) to[bend right] node[left]{\footnotesize$\delta_T$} ($(p)+(1.8,0)$);
+\end{tikzpicture}

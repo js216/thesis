@@ -1,0 +1,77 @@
+\begin{tikzpicture}[scale=2.5]
+    % length of energy level diagram lines
+    \def\len{.05}
+
+    % x-position and length and x-offset of the y-axis labels
+    \def\pos{-18}
+    \def\lenmark{.025}
+    \def\xoffset{.18}
+
+    % x coordinates for m = -2, ... 2
+    \def\xa{-4.5*\len}
+    \def\xb{-2.5*\len}
+    \def\xc{-0.5*\len}
+    \def\xd{+1.5*\len}
+    \def\xe{+3.5*\len}
+    \def\xf{-6.5*\len}
+    \def\xg{+5.5*\len}
+
+    % excited state lines
+    \def\xexc{.8}
+    \def\yexc{.6}
+    \draw (\xexc+\xc, \yexc-0.003325) node (exc) {} -- (\xexc+\xc+\len, \yexc-0.003325);
+    \draw (\xexc+\xb, \yexc-0.003325) -- (\xexc+\xb+\len, \yexc-0.003325);
+    \draw (\xexc+\xd, \yexc-0.003325) -- (\xexc+\xd+\len, \yexc-0.003325) node (exc2) {};
+    \node[align=center] (Fp1) at (\xexc+\xc, \yexc-0.003325+0.1) {$F'=1$};
+
+    % J=2 lines
+    \def\yB{.2}
+    \draw (\xc, \yB-.217455) -- (\xc+\len, \yB-.217455);
+    \draw (\xb, \yB-.217455) -- (\xb+\len, \yB-.217455);
+    \draw (\xd, \yB-.217455) -- (\xd+\len, \yB-.217455);
+    \draw (\xc, \yB-.172936) -- (\xc+\len, \yB-.172936);
+    \draw (\xb, \yB-.172936) -- (\xb+\len, \yB-.172936);
+    \draw (\xd, \yB-.172936) -- (\xd+\len, \yB-.172936);
+    \draw (\xa, \yB-.172936) -- (\xa+\len, \yB-.172936);
+    \draw (\xe, \yB-.172936) -- (\xe+\len, \yB-.172936);
+    \draw (\xc, \yB+.105876) -- (\xc+\len, \yB+.105876);
+    \draw (\xb, \yB+.105876) -- (\xb+\len, \yB+.105876);
+    \draw (\xd, \yB+.105876) -- (\xd+\len, \yB+.105876);
+    \draw (\xa, \yB+.105876) -- (\xa+\len, \yB+.105876);
+    \draw (\xe, \yB+.105876) -- (\xe+\len, \yB+.105876);
+    \draw (\xc, \yB+.141095) -- (\xc+\len, \yB+.141095);
+    \draw (\xb, \yB+.141095) -- (\xb+\len, \yB+.141095);
+    \draw (\xd, \yB+.141095) -- (\xd+\len, \yB+.141095);
+    \draw (\xa, \yB+.141095) -- (\xa+\len, \yB+.141095);
+    \draw (\xe, \yB+.141095) -- (\xe+\len, \yB+.141095);
+    \draw (\xf, \yB+.141095) -- (\xf+\len, \yB+.141095);
+    \draw (\xg, \yB+.141095) -- (\xg+\len, \yB+.141095);
+    \node[align=center] (J2) at (\xd-0.5*\len,\yB+.141095+.1) {$J=2$};
+
+    % J=0 lines
+    \def\xgnda{.8}
+    \def\xgndb{1.3}
+    \draw (\xgnda+\xc, -0.003325) -- node (gnd1) {} (\xgnda+\xc+\len, -0.003325);
+    \draw (\xgnda+\xb, -0.003325) -- (\xgnda+\xb+\len, -0.003325);
+    \draw (\xgnda+\xd, -0.003325) -- (\xgnda+\xd+\len, -0.003325);
+    \draw (\xgndb+\xc, 0.009975)  -- node (gnd0) {} (\xgndb+\xc+\len, 0.009975);
+
+    % F and F' labels
+    \def\xF{7.5*\len}
+    \def\yF{.05}
+    \node (F3)  at (\xF,\yB+.141095+\yF) {3};
+    \node (F2a) at (\xF,\yB+.105876-\yF) {2};
+    \node (F2b) at (\xF,\yB-.172936+\yF) {2};
+    \node (F1)  at (\xF,\yB-.217455-\yF) {1};
+    \def\xFf{0.05}
+    \node[below=\xFf of gnd0] {$F=0$};
+    \node[below=\xFf of gnd1] {$F=1$};
+
+    % transitions
+   \draw [decorate,decoration={brace,amplitude=5pt,mirror,raise=5pt}] (\xF,\yB-.217455-2*\yF) -- (\xF,\yB+.105876) node [black,midway,anchor=west,xshift=5] (trans) {};
+   \draw[-{Latex[length=3mm,width=3mm]},line width=2pt,gray] (trans) -- node[above,black,sloped]{$F1$} (exc);
+   \tikzset{snake it/.style={-{Latex[length=2mm,width=2mm]}, decorate, decoration={snake,amplitude=1.5pt,pre length=1pt,post length=2pt}}}
+   \draw[snake it] (exc2) -- node[right,xshift=0pt]{\footnotesize\todo{???}} (gnd0);
+   \draw[snake it] (exc2) -- node[left,xshift=0pt]{\footnotesize\todo{???}} (gnd1);
+\end{tikzpicture}
+

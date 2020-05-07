@@ -1,4 +1,4 @@
-SUBDIRS = svg matplotlib
+SUBDIRS = svg matplotlib tikz
 
 .PHONY: clean subdirs $(SUBDIRS)
 

@@ -1,0 +1,44 @@
+\tikzstyle{block} = [rectangle, draw, text width=4.5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{quant} = [rectangle, text width=4.5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -Latex]
+\begin{tikzpicture}[node distance=6.25em and 1em, auto]
+    % place nodes
+    \node [block] (source)  {beam\\source};
+    \node [block, right of=source] (rotcoo)  {rotational\\cooling};
+    \node [block, right of=rotcoo] (SP1)     {state\\prep.\ 1};
+    \node [block, right of=SP1]    (lens)    {quadrupole\\lens};
+    \node [block, right of=lens]   (SP2)     {state\\prep.\ 2};
+    \node [block, right of=SP2]    (NMR)     {NMR};
+    \node [block, right of=NMR]    (SP3)     {projection};
+    \node [block, right of=SP3]    (readout) {readout};
+
+    % connecting arrows
+    \path [line] (source) -- (rotcoo);
+    \path [line] (rotcoo) -- (SP1);
+    \path [line] (SP1)    -- (lens);
+    \path [line] (lens)   -- (SP2);
+    \path [line] (SP2)    -- (NMR);
+    \path [line] (NMR)    -- (SP3);
+    \path [line] (SP3)    -- (readout);
+
+    % quantum states
+    \def\quantpos{1ex}
+    \node [quant,above=\quantpos of source]  {};
+    \node [quant,above=\quantpos of rotcoo]  {$J=0$\\$F=0$};
+    \node [quant,above=\quantpos of SP1]     {};
+    \node [quant,above=\quantpos of lens]    {$J=2$\\$m_J=0$};
+    \node [quant,above=\quantpos of SP2]     {};
+    \node [quant,above=\quantpos of NMR]     {$J=0$\\$m_J=\pm1$};
+    \node [quant,above=\quantpos of SP3]     {};
+    \node [quant,above=\quantpos of readout] {};
+
+    % fields
+    \node [quant,below=\quantpos of source]  {};
+    \node [quant,below=\quantpos of rotcoo]  {};
+    \node [quant,below=\quantpos of SP1]     {};
+    \node [quant,below=\quantpos of lens]    {$\pm30$~kV/cm};
+    \node [quant,below=\quantpos of SP2]     {};
+    \node [quant,below=\quantpos of NMR]     {$\pm30$~kV/cm\\$10\;\mu$G};
+    \node [quant,below=\quantpos of SP3]     {};
+    \node [quant,below=\quantpos of readout] {};
+\end{tikzpicture}

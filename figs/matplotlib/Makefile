@@ -13,10 +13,10 @@ SOF2.pdf: SOF2.csv
 # generic rules
 
 %.svg: %.py
-	python3 $<
+	python $<
 
 %.pdf: %.svg
-	inkscape -D -z --file=$< --export-pdf=$@ --export-latex
+	inkscape -D --export-filename=$@ --export-latex $<
 	sed -i 's/$@/figs\/matplotlib\/$@/g' $@_tex
 
 clean:
