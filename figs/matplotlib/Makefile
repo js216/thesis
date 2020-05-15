@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf
+all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf slope.pdf
 
 # additional dependencies
 
@@ -9,6 +9,8 @@ polarizeTlF.pdf: P_arr.csv Ez_arr.csv
 SOF.pdf: SOF.csv
 
 SOF2.pdf: SOF2.csv
+
+slope.pdf: slope.csv all_B_slopes.csv
 
 # generic rules
 

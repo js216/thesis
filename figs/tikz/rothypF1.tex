@@ -1,4 +1,4 @@
-\begin{tikzpicture}[scale=2.5]
+\begin{tikzpicture}[scale=4]
     % length of energy level diagram lines
     \def\len{.05}
 
@@ -22,7 +22,7 @@
     \draw (\xexc+\xc, \yexc-0.003325) node (exc) {} -- (\xexc+\xc+\len, \yexc-0.003325);
     \draw (\xexc+\xb, \yexc-0.003325) -- (\xexc+\xb+\len, \yexc-0.003325);
     \draw (\xexc+\xd, \yexc-0.003325) -- (\xexc+\xd+\len, \yexc-0.003325) node (exc2) {};
-    \node[align=center] (Fp1) at (\xexc+\xc, \yexc-0.003325+0.1) {$F'=1$};
+    \node[align=center] (Fp1) at (\xexc+\xc, \yexc-0.003325+0.1) {$\ket{J'=1,F_1'=3/2,F'=1}$};
 
     % J=2 lines
     \def\yB{.2}
@@ -47,6 +47,7 @@
     \draw (\xf, \yB+.141095) -- (\xf+\len, \yB+.141095);
     \draw (\xg, \yB+.141095) -- (\xg+\len, \yB+.141095);
     \node[align=center] (J2) at (\xd-0.5*\len,\yB+.141095+.1) {$J=2$};
+    \node[above=0.25 of J2] {\normalsize (b)};
 
     % J=0 lines
     \def\xgnda{.8}
@@ -58,12 +59,13 @@
 
     % F and F' labels
     \def\xF{7.5*\len}
-    \def\yF{.05}
+    \def\yF{.01}
     \node (F3)  at (\xF,\yB+.141095+\yF) {3};
     \node (F2a) at (\xF,\yB+.105876-\yF) {2};
     \node (F2b) at (\xF,\yB-.172936+\yF) {2};
     \node (F1)  at (\xF,\yB-.217455-\yF) {1};
-    \def\xFf{0.05}
+    \node[above=-0.03 of F3]   {$F$};
+    \def\xFf{0.10}
     \node[below=\xFf of gnd0] {$F=0$};
     \node[below=\xFf of gnd1] {$F=1$};
 

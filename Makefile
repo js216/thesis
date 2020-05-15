@@ -4,10 +4,10 @@ CHAPTERS = apparatus.tex introduction.tex outlook.tex preliminary.tex simulation
 
 .PHONY: full clean figs
 
-thesis.pdf: thesis.tex $(CHAPTERS) | figs
+thesis.pdf: thesis.tex $(CHAPTERS) figs
 	$(TeX) thesis
 
-full: thesis.tex references.bib $(CHAPTERS) | figs
+full: thesis.tex references.bib $(CHAPTERS) figs
 	$(TeX) thesis
 	bibtex thesis
 	$(TeX) thesis

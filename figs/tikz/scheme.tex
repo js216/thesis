@@ -18,7 +18,8 @@
 
     % spontaneous decay branching ratios
     \tikzset{snake it/.style={-{Latex[length=2mm,width=2mm]}, decorate, decoration={snake,amplitude=2pt,pre length=2pt,post length=3pt}}}
-    \draw[snake it] (2,3.75) -- node[left,xshift=-1pt]{\footnotesize0.335} (0,.25);
+    \draw[snake it] (2,3.75) -- node[left,xshift=-1pt] (num) {\footnotesize0.335} (0,.25);
+    \node[above=0.2 of num] {\normalsize (a)};
     \draw[snake it,dashed] (2.5,3.75) -- node[left,yshift=8pt,xshift=2pt]{\footnotesize0.860} (2,.75);
     \draw[snake it] (2.75,3.75) -- node[left,xshift=3pt,yshift=-10pt]{\footnotesize0.665} (3.5,1.25);
     \draw[snake it,dashed] (4,3.75) -- node[right,xshift=3pt]{\footnotesize0.140} (6,1.75);
