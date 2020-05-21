@@ -547,7 +547,17 @@ which integrates to
 %
 This is the usual expression for the Schiff moment \cite[eqn~29]{sushkov1984possibility} save for the additional factor of $Z$ reflecting the different normalization (to unity instead of $Z$) we have chosen for the nuclear charge distribution $\rho(\vec r)$.
 
-The angular part in eqn~\ref{separated} can be evaluated assuming a $\cos\theta$ dependence of $\psi_\text{p}$. A further $\cos\theta$ term results from $\hat{\vec r}\cdot\vec S$, assuming that $\vec S$ lies along the $z$-axis: \todo{\hfill Something's off here.}
+To evaluate the angular part in eqn~\ref{separated}, we first extract two factors of $\cos\theta$ from the two dot products in the integrand:
+%
+\begin{align*}
+    \hat{\vec r}\cdot\vec S&=S\cos\theta\\
+    \hat{\vec r}\cdot\nabla&=\frac{\partial}{\partial r}
+    =\cos\theta\frac{\partial}{\partial(r\cos\theta)}
+    =\cos\theta\frac{\partial}{\partial z}
+    =\cos\theta(\hat{\vec z}\cdot\nabla),
+\end{align*}
+%
+where $\vec S=S\hat{\vec z}$. Thus the equation becomes
 %
 \begin{align}
     \nonumber
@@ -575,9 +585,10 @@ Knowing the gradient $\nabla(\psi^*_\text{s}\psi_\text{p})$ of the electron prob
     S=\frac{\nu}{3.65\cdot10^6}\frac{e\fm^3}{\Hz},
 \end{equation}
 %
-using $Z=81$ for thallium. A more careful calculation gives $\nabla(\psi^*_\text{s}\psi_\text{p})\approx1016/a_0^4$ as per ref.~\cite{coveney1983parity}, so that
+using $Z=81$ for thallium. More precisely, $\nabla(\psi^*_\text{s}\psi_\text{p})\approx1016/a_0^4$ as per ref.~\cite{coveney1983parity}, so that, as in eqn~26 of ref.~\cite{cho1991search}, we have
 %
 \begin{equation}
+    \label{schiffnumbers}
     S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
 
@@ -618,9 +629,9 @@ the constant factors being chosen so that $e\ex{\vec R}=d_\text{N}\hat{\vec z}$.
 \[
 \rho(\vec R)=\frac{d_\text{p}}{4\pi eR_0^3/3}\delta(R_0-R)\cos\theta,
 \]
-which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is $|\vec S|=Zd_\text{p}R_0^2/10$. We shall see in the next section that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
+which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is $|\vec S|=Zd_\text{p}R_0^2/10$. We have seen that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
 
-In each case, we saw that $|\vec S|\propto R_0^2$. Furthermore, the matrix element (eqn~\ref{1stenergyshiftmatelem}) proportional to the first order energy shift has a $Z^2$ dependence. Since the nuclear radius scales as $R_0\approx R_\text{N}A^{1/3}$, where $R_\text{N}\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, the overall scaling is $Z^2 A^{2/3}$. We conclude that heavier atoms---such as thallium---are preferrable for \SMt\ experiments.
+In each case, we saw that $|\vec S|\propto R_0^2$. Furthermore, the matrix element (eqn~\ref{1stenergyshiftmatelem}) proportional to the first order energy shift has a $Z^2$ dependence. Since the nuclear radius scales as $R_0\approx R_\text{N}A^{1/3}$, where $R_\text{N}\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, the overall scaling is $Z^2 A^{2/3}$. We conclude that heavier atoms---such as thallium---are preferable for \SMt\ experiments.
 
 \subsection{New physics in molecules}
 
@@ -632,8 +643,6 @@ For nuclei inside a molecule, the Schiff moment and other $P,T$-violating effect
 \end{equation}
 %
 where $\hbar\hat{\vec I}/2$ is the nuclear spin, and $\hat{\vec n}$ is a unit vector along the internuclear axis in the molecule (in TlF, we define this to point towards the F nucleus). Compared to the atomic case, in a diatomic molecule there is another inherent direction: along the internal electric field, pointing along the internuclear axis. The interaction strength $\nu$ can then be interpreted in terms of a molecular \EDM, proton \EDM, Schiff moment, or other quantities.
-
-\todoit{Calculate the effective internal electric field, whether GV/cm, or something smaller.}
 
 Without an external electric field, the interaction of eqn~\ref{interaction} fails to produce any first order effects in any given rotational state. According to \cite{hinds1980experiment,wilkening1984search}, this is because the Tl nuclear spin is perpendicular to the internuclear axis in an unpolarized molecule. Stated more correctly, the rotation of the molecule averages $\hat{\vec n}$ to zero, and the Schiff shift---proportional to the internal molecular field---vanishes. \cite{cho1989tenfold, cho1991search} However, if we apply an external field, the molecule becomes polarized, which destroys the inversion symmetry and a nonzero expectation results.
 
@@ -661,6 +670,17 @@ The polarization of molecules is so effective that the first order model, entire
 \end{equation}
 %
 where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\cdots\ket\psi$. See Fig.~\ref{polarizeTlF} for a plot of $\mathcal{P}$ in some of the lowest-lying rotational states of TlF; observe how states that are lower in energy are easier to polarize, while some of the higher-lying states can even be polarized against the direction of the applied field at some field magnitudes. Despite the fact that the $J=0$ states can be polarized better than the $J=1$, $m_J=\pm1$ ones, we prefer the latter due to their internal field, nearly exactly aligned with the applied field. The former states woud necessitate applying an external magnetic field, suffering from the motional magnetic field systematic (discussed in section \ref{section:systematics}).
+
+As we have seen previously, a $T$-violating interaction such as the Schiff moment inside a fully polarized molecule gives rise to a first order energy shift $h\nu$ as in eqn~\ref{schiffnumbers}. We have also seen two simple models of how a dipole moment $d$ inside the nucleus results in a \SMt\ of magnitude $S=ZdR_0^2/10$. We may thus estimate the size of an effective internal molecular electric field $\mathcal E_\text{int}^\text{eff}$ via the definition
+%
+\[
+    \mathcal E_\text{int}^\text{eff}\equiv\frac{h\nu}{d}
+    =5.67\cdot10^5\frac{h\;\text{Hz}}{e\;\text{fm}^3}\frac{Z\,R_0^2}{10}
+    =9.5~\text{MV/cm}.
+\]
+%
+\todo{@Dave: Isn't this supposed to be of the order 10~kV/cm?}
+We emphasize that this is not the average field in the volume of the nucleus; that field must be zero to keep the nucleus from accelerating out of the molecule. Nor is $\mathcal E_\text{int}^\text{eff}$ to be taken as a proxy for the simple $\sim$~GV/cm field due to the nuclear charge at a distance of order $a_0$ from the nucleus.
 
 \paragraph{Separated oscillatory fields}
 
@@ -706,7 +726,7 @@ where $\overline{\delta}\equiv\overline{\omega}_0-\omega$ is the detuning of the
         \footnotesize
         \input{figs/matplotlib/SOF.pdf_tex}
     }
-    \caption{Transition probability as a function of detuning $\delta$, averaged over the effusive-source speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$~\%\ narrower \FWHM\ for \SOF. \part{b} Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with the same $L=10l$.}
+    \caption{Transition probability as a function of detuning $\delta$, averaged over the effusive-source speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$\%\ narrower \FWHM\ for \SOF. \part{b} Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with the same $L=10l$.}
     \label{SOFprob}
 \end{figure}
 
@@ -795,12 +815,6 @@ as displayed in Fig.~\ref{SOF2}a. For the parameter values in that figure, the s
     \label{SOF2}
 \end{figure}
 
-\paragraph{Adiabatic rapid passage}
-
-\todo{Explain ARP quantitatively with Bloch equations, or in some other way.}
-
-In the Bloch sphere picture, the precession of the state vector around the Rabi vector is fast. As the field is detuned through the resonance, the Rabi vector inverts, while the state vector adiabatically follows it, achieving a near-perfect state transfer. \todo{this paragraph is hard to follow without a picture to support it.}
-
 \paragraph{Beam sources}
 
 The earliest molecular beams of thallium fluoride were of a thermal design, where a mass of the solid salt is heated in a copper oven to raise the vapour pressure. Depending on the mean free path (\mfp) of the molecules in the oven, we can distinguish two main types of thermal sources. In \emph{effusive} sources, the \mfp\ is comparable with the linear dimension $d$ of the hole through which the molecules emerge from the beam source. The particles escape by chance, and the beam properties reflect the state of the molecules in the oven. By contrast, in \emph{jet sources}, the \mfp\ is much smaller than $d$. The beam properties no longer reflect those of the oven molecules; instead, the local thermal (electronic, rotational, and vibrational) is partly converted into the center-of-mass motion of the particles. These beams are thus faster but colder.
@@ -809,7 +823,7 @@ The earliest molecular beams of thallium fluoride were of a thermal design, wher
 
 For example, Schropp et al.\ \cite{schropp1987new,schropp1988thesis} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$, out of a detected beam of $7.5\times10^9$ molecules/second. The beam velocity can be estimated as $v_\text{CM}=\sqrt{2kT/m}\approx230$~m/s, with a spread of order $v_\text{CM}\sqrt{\ln2}\approx190$~m/s.
 
-At the oven temperature of 380\degC, we expect approximately 25~\%\ of molecules to exist as a monomer, the rest being mostly dimers (TlF)$_2$. In addition to decreasing the useful signal, dimers were twice as effective at producing background counts with the detection technology used. However, by Le Chatelier's principle the equilibrium of the endothermic reaction $\text{(TlF)}_2\rightleftharpoons2\text{TlF}$ can be shifted towards the right by an increase in temperature or a decrease in pressure. Thus the oven consists of two stages: a lower, high-pressure section with the boiling salt, and an uppper, lower-pressure region, separated by a constriction. As a result, the monomer fraction may be as high as 50~\%\ in the two-chamber design.
+At the oven temperature of 380\degC, we expect approximately 25\%\ of molecules to exist as a monomer, the rest being mostly dimers (TlF)$_2$. In addition to decreasing the useful signal, dimers were twice as effective at producing background counts with the detection technology used. However, by Le Chatelier's principle the equilibrium of the endothermic reaction $\text{(TlF)}_2\rightleftharpoons2\text{TlF}$ can be shifted towards the right by an increase in temperature or a decrease in pressure. Thus the oven consists of two stages: a lower, high-pressure section with the boiling salt, and an uppper, lower-pressure region, separated by a constriction. As a result, the monomer fraction may be as high as 50\%\ in the two-chamber design.
 
 As an example of a jet source, Cho et al. \cite{cho1990thesis,cho1991search} constructed a thermal source with an oven at 753~K that yielded $1.25\times10^{10}$ molecules per second, of which $2.7\times 10^{-3}$ were in the desired $J=1$ state for an estimated rotational temperature of $350\pm50$~K. The beam velocity is given as $344\pm20$~m/s, with a spread of ($150\pm12$)~m/s, giving a rotational temperature of $300\pm50$~K. As expected, the beam is both colder and faster than the effusive source from ref.~\cite{schropp1987new}. The higher pressure in a jet source might be expected to result in a lower monomer fraction despite the higher temperature. To counteract this, the authors led the beam from the oven through a 30~cm long nozzle, 20~K hotter than the oven. They calculate that due to the approx.\ 100 times smaller density of TlF in the nozzle compared to the oven, the monomer fraction is as high as 92\%.
 
@@ -884,6 +898,12 @@ At first glance, the more general form of the $c_3$ term does not change the eig
 The $c_4$ term, also known as the scalar- or $J$-coupling term, arises through a mechanism involving the transmission of nuclear spin orientation through the interven-
 ing electrons \cite{brown2003rotational}. It is distinguished from the tensor interaction in that it does not depend on the angle between the nuclear directions and the internuclear axis $\vec R$. While molecular rotation averages the $c_3$ term to zero, the $c_4$ term survives \cite[sect.~7.7]{budker2004atomic}. In spherical tensor form, the interaction is proportional to $T^1(\vec I_1)\cdot T^1(\vec I_2)$.
 
+\begin{figure}
+\input{figs/tikz/diagram.tex}
+\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. The numbers left of the braces are the $F_1$ labels.}
+\label{diagram}
+\end{figure}
+
 For most of the terms in the effective Hamiltonian, the matrix elements are most readily calculated in the decoupled basis, where the operators $\vec J^2$, $J_z$, $I_{1z}$, $I_{2z}$ are diagonal. Most of the other operators can be written in terms of the appropriate ladder operators $J_\pm$ \cite[eqns~3.5.39--40]{sakurai2011modern}
 %
 \begin{equation}
@@ -900,7 +920,7 @@ and similarly for $I_{1\pm}$, $I_{2\pm}$ acting on the $\ket{I_1,m_1}$ and $\ket
     \right).
 \end{equation}
 %
-Equations \ref{ladder} and \ref{dotproductlabel}, together with the fact the the basis states with dissimilar labels are orthogonal, allow us to find the matrix elements between arbitrary basis states for all terms in the Hamiltonian except for the Start effect, to which we turn now.
+Equations \ref{ladder} and \ref{dotproductlabel}, together with the fact the basis states with dissimilar labels are orthogonal, allow us to find the matrix elements between arbitrary basis states for all terms in the Hamiltonian except for the Start effect, to which we turn now.
 
 The Stark Hamiltonian can be expressed explicitly in the components of the molecular electric dipole moment and the lab-frame electric field:
 %
@@ -916,7 +936,7 @@ The Stark Hamiltonian can be expressed explicitly in the components of the molec
     \end{pmatrix},
 \]
 %
-with the matrix elements
+with the matrix elements written in terms of the Clebsch-Gordan coefficients $\braket{j_1m_1j_2m_2}{jm}$
 \begin{gather*}
     \langle J',m_J'|Y_1^M||J,m_J\rangle
     =\sqrt{\frac{3}{2\pi}}W_M,\quad\text{where}\\
@@ -959,36 +979,196 @@ We can make use of the expressions for the Stark effect matrix elements in two o
     \left(I_{i,1}W_{-1}-I_{i,-1}W_1\right).
 \]
 
-\begin{figure}
-\input{figs/tikz/diagram.tex}
-\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. The numbers left of the braces are the $F_1$ labels.}
-\label{diagram}
-\end{figure}
-
-
 \paragraph{Excited state}
 
-While the nuclear magnetic resonance occurs entirely within the $X^1\Sigma^+$ ground state, the structure of the excited state $B^3\Pi_1$ is nevertheless important for the state preparation and readout. In particular, despite the limited ability to collect and detect photons from fluorescing molecules, our detection scheme could in principle detect $\approx100\;\%$ of the molecules through optical cycling, as follows. A laser excites the $X\to B$ transition, causing photons in the decay back down to $X$. If the molecule ended up in the same sublevel in $X$, the same laser can re-excite it back to $B$. \cite{hunter2012prospects}
+While the nuclear magnetic resonance occurs entirely within the $X^1\Sigma^+$ ground state, the structure of the excited state $B^3\Pi_1$ is nevertheless important for the state preparation and readout, which we implement using $X\leftrightarrow B$ transitions. In the following, I will present $\Omega$-doubling in the excited state, transition nomenclature, and optical cycling.
 
-\todo{Calculation of branching ratios to show why we prefer the $F1$ cooling transition over $F2$.}
+States $\ket{J,\Omega,m_J,I_1,F_1,I_2,F,m_F}$ are not eigenstates of parity. The appropriate combinations of these states with a definite parity can be written as the $\Omega$-doublets
+%
+\begin{equation}
+    \label{doublets}
+    \ket{\Omega,\pm}
+    =
+    \frac{1}{\sqrt2}
+    \left[
+       \ket{\Omega}
+       \pm(-1)^{J+1}
+       \ket{-\Omega}
+    \right],
+\end{equation}
+%
+with all the other quantum numbers being implied. (Note that this is not necessary in the ground state, where $\Omega=0$.) Thus for each $J$, there is a pair of nearly degenerate states of opposite values of parity $\pm(-1)^{J+1}$, but the ordering of these states alternates with $J$. To avoid the alternation, integer-$J$ states with parity $-(-1)^{J+1}$ are conventionally designated $e$-states, and those with $(-1)^{J+1}$ are called $f$-states. \cite[sect.~6.9.4]{brown2003rotational}
 
-According to accepted terminology, the transition is said to belong to the $P$, $Q$, or $R$ branches if the the quantum number $J$ changes by $-1$, 0, or $+1$, respectively. \cite[sect.~10.2]{bransden1990physics} Furthermore, we shall append the $J$ number of the original state, and the $F$ of the target state. For instance, a $P2$ $F1$ line starts in a $J=2$ state, changes $J$ by $-1$, and ends up in a state with $F'=1$.
+According to accepted terminology, a transition is said to belong to the $P$, $Q$, or $R$ branches if the quantum number $J$ changes by $-1$, 0, or $+1$, respectively. \cite[sect.~10.2]{bransden1990physics} Furthermore, we append the $J$ number of the original state, and the $F$ of the target state. For instance, a $P2$ $F1$ line starts in a $J=2$ state, changes $J$ by $-1$, and ends up in a state with $F'=1$.
+
+Despite the limited ability to collect and detect photons from fluorescing molecules, our detection scheme could in principle detect $\approx100$\% of the molecules through optical cycling, as follows. A laser excites the $X\to B$ transition, causing photons in the decay back down to $X$. If the molecule ended up in the same sublevel in $X$, the same laser can re-excite it back to $B$. \cite{hunter2012prospects} \todo{Present the possible cycling schemes in TlF.}
 
 However, due to the large number of degrees of freedom in molecules, optical cycling can be difficult to achieve in molecules. It turns out that in TlF, there exists a sufficiently closed transition to allow $\sim100$ cycles before the molecule gets lost in inaccessible dark states. The number of dark states is potentially very large since the hyperfine structure (\hfs) of the ground state is unresolved.
 
-\begin{figure*}
-    \centering\small
-    \input{figs/tikz/conceptdiagram.tex}
-    \caption{Conceptual flow chart of the critical steps in \CENTREX, indicating the applied fields (below) and the quantum states (above).}
-    \label{conceptdiagram}
-\end{figure*}
+\paragraph{Branching ratios}
 
+The strength of the transitions between various hyperfine states is a function of the matrix elements of the dipole operator $\vec d$ between the states, which we now proceed to evaluate. Working in the basis $\ket{J,\Omega,m_J,I_1,F_1,I_2,F,m_F}$, with $I_1=I_2=\nicefrac{1}{2}$, use the Wigner-Eckart theorem \cite[eqn~5.172]{brown2003rotational}
+%
+\begin{equation}
+    \label{wignereckart}
+    \bra{j,m}\tens T_p^k(\vec A)\ket{j',m'}=(-1)^{j-m}
+    \ThreeJ{j}{k}{j'}{-m}{p}{m'}
+    \bra{j}|\tens T^k(\vec A)|\ket{j'}
+\end{equation}
+%
+to take the $m_F$ dependence out of the matrix element:
+%
+\begin{align}
+    \label{useWE1}
+    \bra{F,&m_F,\ldots}\tens T_p^1(\vec d)\ket{F',m_F',\ldots}
+    \\&=\nonumber
+    (-1)^{F-m_F}\ThreeJ{F}{1}{F'}{-m_F}{p}{m_F'}
+    \bra{F,\ldots}|\tens T^1(\vec d)|\ket{F',\ldots},
+\end{align}
+%
+Space and spin commute ($[\vec r,\vec I_1]=[\vec r,\vec I_2]=0$), whereas $[\vec r,\vec J]\ne0$. Thus, $\vec I_1,\vec I_2$ are `spectator' spins, i.e., the dipole operator $d_p$ acts only on a part of the coupled scheme. In this case, we can apply the `spectator theorem' \cite[eqn~5.174]{brown2003rotational}
+%
+\begin{equation}
+    \label{spectatortheorem}
+\begin{aligned}
+    \bra{j_1,j_2,&j}|\tens T^{k_1}(\vec A_1)|\ket{j_1',j_2',j'}
+    =
+    \delta_{j_2,j_2'}(-1)^{j'+j_1+k_1+j_2}\\
+    &\sqrt{(2j+1)(2j'+1)}
+    \SixJ{j_1'}{j'}{j_2}{j}{j_1}{k_1}
+    \bra{j_1}|\tens T^{k_1}(\vec A_1)|\ket{j_1'},
+\end{aligned}
+\end{equation}
+%
+so that $j_2$ drops out of the reduced matrix element. (Note: do not use eqn~136 in \cite{brown2003rotational} due to a typo in the $6j$-symbol.) We can use that to break up the $\vec F=\vec F_1+\vec I_2$ coupling:
+%
+\begin{align}
+    \label{useST1}
+    \bra{F&,F_1,I_2\ldots}|\tens T^1(\vec d)|\ket{F',F_1',I_2',\ldots}
+    =(-1)^{F'+F_1+1+\nicefrac{1}{2}}\\\nonumber
+    &\sqrt{(2F+1)(2F'+1)}
+    \SixJ{F_1'}{F'}{1/2}{F}{F_1}{1}
+    \bra{F_1,\ldots}|\tens T^1(\vec d)|\ket{F_1',\ldots}.
+\end{align}
+%
+We can repeat this procedure on $\vec F_1=\vec J+\vec I_1$, taking $\vec I_1$ to be the spectator spin:
+%
+\begin{align}
+    \label{useST2}
+    \bra{F_1&,J,I_1\ldots}|\tens T^1(\vec d)|\ket{F_1',J',I_1',\ldots}
+    =(-1)^{F_1'+J+1+\nicefrac{1}{2}}\\\nonumber
+    &\sqrt{(2F_1+1)(2F_1'+1)}
+    \SixJ{J'}{F_1'}{1/2}{F_1}{J}{1}
+    \bra{J,\ldots}|\tens T^1(\vec d)|\ket{J',\ldots}.
+\end{align}
+%
+In order to have an expression for the non-reduced matrix element, we can use Wigner-Eckart in reverse:
+%
+\begin{equation}
+    \label{reverseWE}
+\begin{aligned}
+    \bra{J,&\ldots}|\tens T^1(\vec d)|\ket{J',\ldots}
+    =
+    \frac{\bra{J,m_J,\ldots}\tens T_p^1(\vec d)\ket{J',m_J',\ldots}}
+         {(-1)^{J-m_J}\ThreeJ{J}{1}{J'}{-m_J}{p}{m_J'}}
+\end{aligned}
+\end{equation}
+
+Note that the dipole operator $\vec d=-e\vec r$ is defined in the molecule-fixed frame. To transform from the lab frame (indices $p$) to the molecule frame (indices $q$), we can use the relation \cite[eqn~5.182]{brown2003rotational}
+%
+\[
+    \tens T_p^k(\vec A)
+    =
+    \sum\limits_q\mathcal D_{pq}^{(k)}(\omega)^*
+    \tens T_q^k(\vec A),
+\]
+%
+where $\mathcal D_{pq}^{(k)}$ are the Wigner rotation matrices as a function of angular coordinates $\omega$. We can use this to rewrite the last matrix element above as follows:
+%
+\begin{align*}
+    \bra{J,m_J,&\ldots}\tens T_p^1(\vec d)\ket{J',m_J',\ldots}
+    \\=
+    &\bra{J,m_J,\ldots}\sum_q\mathcal D_{pq}^{(1)}\tens T_p^1(\vec d)\ket{J',m_J',\ldots}
+\end{align*}
+%
+The operator $\tens T_q^1(\vec d)$ acts in molecule-fixed frame, in which there is no molecular rotation, so it cannot act on the mechanical rotation part of the $J$ angular momentum. In does, however, act on the $\vec \Omega$ part, allowing us to split the above into
+%
+\begin{align*}
+    \sum_q
+    \bra{J,m_J,\Omega}\mathcal D_{pq}^{(1)}\ket{J',m_J',\Omega'}
+    \underbrace{
+        \bra{\Omega}\tens T^1_q(\vec d)\ket{\Omega'}
+    }_{\delta_{q,\Omega-\Omega'}\ex{\vec d}}.
+\end{align*}
+%
+The second factor, including the $\delta_{q,\Omega-\Omega'}$, in the expression is the same for all $X$--$B$ transitions. For the first one, we can use the formula \cite[eqn~5.184]{brown2003rotational}
+%
+\begin{align*}
+    \bra{J,\Omega,&m}\mathcal D_{pq}^{(k)}(\omega)^*\ket{J',\Omega',m'}
+    =
+    (-1)^{m-\Omega}\\
+    &\sqrt{(2J+1)(2J'+1)}
+    \ThreeJ{J}{k}{J'}{-m}{p}{m'}
+    \ThreeJ{J}{k}{J'}{-\Omega}{q}{\Omega'}
+\end{align*}
+%
+with $q$ set to $\Omega-\Omega'$:
+\begin{align}
+    \label{userotation}
+        \bra{J&,m_J,\Omega}\tens T_p^1(\vec d)\ket{J',m_J',\Omega'}
+        =\ex{\vec d}(-1)^{m_J-\Omega}\\\nonumber
+        &\sqrt{(2J+1)(2J'+1)}
+        \ThreeJ{J}{1}{J'}{-m_J}{p}{m_J'}
+        \ThreeJ{J}{1}{J'}{-\Omega}{\Omega-\Omega'}{\Omega'}.
+\end{align}
+
+Finally, it remains to collect together all the factors from equations \ref{useWE1}, \ref{useST1}--\ref{userotation}. Rearranged for readability, we have:
+%
+\begin{equation}
+    \label{finalME}
+\begin{aligned}
+    \bra{F,m_F,&\ldots}\tens T_p^1(\vec d)\ket{F',m_F',\ldots}=
+    \\&\ex{\vec d}
+    (-1)^{3+F-\Omega+F_1-m_F+F'+F_1'}
+    \big[{(2J+1)(2J'+1)}\\
+    &\mbox{}\hspace{5ex}{(2F_1+1)(2F_1'+1)}{(2F+1)(2F'+1)}\big]^{1/2}\\
+    &\SixJ{J'}{F_1'}{1/2}{F_1}{J}{1}
+    \SixJ{F_1'}{F'}{1/2}{F}{F_1}{1}\\
+    &\ThreeJ{J}{1}{J'}{-\Omega}{\Omega-\Omega'}{\Omega'}
+    \ThreeJ{F}{1}{F'}{-m_F}{p}{m_F'}.
+\end{aligned}
+\end{equation}
+%
+As mentioned above eqn~\ref{doublets}, the decoupled basis states are not parity eigenstates in the excited states. Thus, the appropriate matrix elements to use are the symmetrized combinations
+%
+\begin{equation}
+    \label{symmetrizedME}
+    \frac{1}{\sqrt2}
+    \big[
+        \bra{\Omega}\tens T_p^1(\vec d)\ket{\Omega'}
+        \pm(-1)^{J+1}
+        \bra{\Omega}\tens T_p^1(\vec d)\ket{-\Omega'}
+    \big],
+\end{equation}
+%
+emphasizing again that the doublets only occur in the excited state, where $\Omega\ne0$. Furthermore, in the excited state, energy eigenstates contain an admixture of multiple different $\ket{J,F_1,F}$ basis states as detailed in Table IV of ref.~\cite{norrgard2017hyperfine}; these must be taken into account for an accurate calculation of physical matrix elements.
+
+Appropriately normalized, eqns~\ref{finalME} and \ref{symmetrizedME} yield the branching ratios $b_\text{e$\to$g}$ from a given sublevel $\ket{\text{e}}$ in the excited state to a sublevel $\ket{\text{g}}$ in the ground state. The squared magnitude of the matrix element needs to be divided by the sum over all possible final (ground) states from the given initial (excited) state:
+%
+\begin{equation}
+    \label{branchingratios}
+    b_\text{e$\to$g}\equiv
+    \frac{\sum_p|\bra{\text{e}}\tens T_p^1(\vec d)\ket{\text{g}}|^2}
+         {\sum\limits_{\ket{\text{g}}}\sum_p|\bra{\text{e}}\tens T_p^1(\vec d)\ket{\text{g}}|^2},
+\end{equation}
+%
+explicitly writing out the sum over polarizations $p$. This allows us to immediately calculate branching ratios between pure-parity states given the quantum numbers of each state; see Appendix~B in ref.~\cite{wenz2021thesis} for explicit numbers.
 
 \subsection{Previous experiments}
 
 The first $P,T$-violation experiment using a molecular beam of thallium fluoride was done in Oxford in 1969 \cite{harrison1969experimental}, the result being reported as $\nu=0.08\pm0.11\Hz$, or, in terms of proton \EDM, as $|d_\text{p}|=(7\pm9)\times10^{-21}e\cm$. They employed the triple resonance scheme: first, $J=1$ molecules were transferred from $m_J=0$ to $m_J=\pm1$. The second resonance which changed the Tl nuclear spin projection from $\pm1/2$ to $\mp1/2$ is not directly observable; however, after the molecules are transferred back to $m_J=0$, the amount of the non-observable spin flips can be estimated and related to the desired frequency shifts $4\nu$.
 
-About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a similar experiment giving the null result of $\nu=11\pm42\mHz$ or $|d_\text{p}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$ and $T$ violating interactions in $^{205}$TlF, they tried to measure shifts of the resonant frequency which depends on the relative directions of externally applied parallel electric and magnetic fields. The experiment used a beam of TlF produced by vapors effusing from a hot oven through a state-selecting region that approximately transmits only molecules with $J=1$, $m_J=-1$, $m_\text{Tl}=+\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. In the interaction region, separated oscillating magnetic fields induce some molecules to flip the Tl spin to $m_\text{Tl}=-\nicefrac{1}{2}$. Finally, a second state selector transmits only the molecules without the spin flip, and the final beam intensity, as measured by a hotwire surface ionization detector, is a sensitive measure of the shift in the resonance given that the 10~m separation of the oscillating coils results in a 20~Hz linewidth. However, the experiment gave an accuracy comparable to the experiment in \cite{harrison1969experimental} because of an unexpectedly large reduction of the resonance signal and high background rate.
+About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a similar experiment giving the null result of $\nu=11\pm42\mHz$ or $|d_\text{p}|=(1.8\pm7)\times10^{-21}e\cm$. Looking for $P$ and $T$ violating interactions in $^{205}$TlF, they tried to measure shifts of the resonant frequency which depends on the relative directions of externally applied parallel electric and magnetic fields. The experiment used a beam of TlF produced by vapors effusing from a hot oven through a state-selecting region that approximately transmits only molecules with $J=1$, $m_J=-1$, $m_\text{Tl}=+\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. In the interaction region, separated oscillating magnetic fields induce some molecules to flip the Tl spin to $m_\text{Tl}=-\nicefrac{1}{2}$. Finally, a second state selector transmits only the molecules without the spin flip, and the final beam intensity, as measured by a hot-wire surface ionization detector, is a sensitive measure of the shift in the resonance given that the 10~m separation of the oscillating coils results in a 20~Hz linewidth. However, the experiment gave an accuracy comparable to the experiment in \cite{harrison1969experimental} because of an unexpectedly large reduction of the resonance signal and high background rate.
 
 Using a similar setup, Wilkening, Ramsey, and Larson \cite{wilkening1984search} reduced the error bars to $\nu=8\pm21\mHz$ or $|d_\text{p}|=(1.3\pm2.0)\times10^{-21}e\cm$. In their experiment, the thermal beam of TlF passes through an electrostatic quadrupole field that focuses the $J=1$, $m_J=0$ state, leaving the others unselected. Thereafter, a `subsidiary resonance' region transfers the molecules into the state $m_J=-1$, $m_\text{Tl}=-\nicefrac{1}{2}$, $m_\text{F}=-\nicefrac{1}{2}$. However, instead of using oscillating fields to do so, it relies on adiabatic transitions that conveniently happen to transfer population into the desired state. As was the case in the preceding experiment, the main interaction region causes the Tl nuclear spin to flip. Finally, second subsidiary resonance region transfers the flipped molecules to the $m_J=-1$ hyperfine state which is defocused by the second quadrupole, causing a change in the beam intensity measured by the hot-wire detector at the end of the beamline.
 
@@ -998,13 +1178,28 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 
 While the thallium fluoride experiments look for proton \EDM or the Schiff moment, other   experiments search for electron or neutron \EDM s, or atomic \EDM s. There has been a string of experiments on atomic thallium. Already in the 1970s, an experiment reported $d_\text{Tl}=(1.3\pm2.4)\times10^{-21}e\cm$ looking for a shift between the $F=1$, $m_F=0,1$ sublevels of the $6^2P_{1/2}$ ground state of Tl in a uniform electric field of 50~kV/cm in the presence of a 1~G magnetic field parallel to the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported $d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and systematic uncertainties, respectively. \cite{commins1994improved} The experiment was subsequently significantly upgraded, improving the precision to $|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new}
 
-A measurement on ultracold neutrons stored in a trap yielded $|d_\text{n}|<2.9\times10^{-26}e\cm$. Since the particle were kept in a trap, the 130~s precession time between the (temporally) separated oscillatory fields is significantly longer than is commonly found in beam-based measurements. \cite{baker2006improved}
+A measurement on ultracold neutrons stored in a trap gave the result $|d_\text{n}|<2.9\times10^{-26}e\cm$. Since the particle were kept in a trap, the 130~s precession time between the (temporally) separated oscillatory fields is significantly longer than is commonly found in beam-based measurements. \cite{baker2006improved}
 
 In a decades-long search for the \EDM\ of $^{199}$Hg, the Zeeman precession frequency of the nuclear spins in parallel electric and magnetic fields was measured. To reduce the frequency noise due to magnetic field fluctuations, two mercury cells are positioned next to each other but with opposite electric field direction, analogously to the electric field reversals typical of molecular-beam experiments. \cite{romalis2001new}. The result has been constrained to $|d_\text{Hg}|<7.4\times10^{-30}e\cm$, which can also be interpreted in terms of a neutron \EDM\ limit $|d_\text{n}|<1.6\times10^{-26}e\cm$, superseding ref.~\cite{pendlebury2015revised} as the best such limit. \cite{griffith2009improved,graner2016reduced}
+
+\begin{figure*}
+    \centering\small
+    \input{figs/tikz/conceptdiagram.tex}
+    \caption{Conceptual flow chart of the critical steps in \CENTREX, indicating the applied fields (below) and the quantum states (above).}
+    \label{conceptdiagram}
+\end{figure*}
 
 \subsection{Overview of the \CENTREX\ scheme}
 
 Referring to Fig.~\ref{conceptdiagram}, we follow the molecules emerging from a cryogenic buffer gas beam source, initially in a range of low-lying states with an approximate temperature of 8~K. In order to facilitate transfer to the `science' state used for the spin precession measurement, molecules first enter a rotational cooling region to accumulate population in a single hyperfine and rotational level. Then, to limit the spreading of the beam, the molecules get focused by an quadrupole electrostatic lens. Since the lens state is different from the interaction state, the molecules are prepared into the correct hyperfine state in a two-state adiabatic rapid passage machine. Afterwards, they fly through an interaction region with the standard Ramsey separated oscillatory field configuration to excite the \NMR\ resonance. Finally, we probe the resulting spin direction to determine the extent of the possible dependence of the spin precession frequency on the interaction region electric field direction.
+
+\paragraph{Rotational cooling (Fig.~\ref{scheme})}
+
+Assuming a simple Boltzmann distribution at 8~K, almost 90\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a \UV\ laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $J'=1$, from where it decays down to either $J=0$ or $J=2$. Since the $J=2$ molecules eventually get excited by the laser again, we expect the population to accumulate in $J=0$.
+
+The preceding description ignores the complications due to the hyperfine structure. Since the excited state hyperfine levels are well separated (unlike the unresolved \hfs of the electronic ground state), we can address the $F'=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be excited into $J'=1$, from where they fall down into $J=0$ states with $F=1,0$. A further set of microwaves, between $J=0$ and $J=1$, is used to remix the $F=1$ states, so as to concentrate the population only in the $F=0$ state. (If we were to use the $P2$ $F2$ transition instead, then it would be possible to excite all four $F$ sublevels of the $J=2$ state up into a $F'=2$ level. However, the branching ratio---calculated using eqn~\ref{branchingratios}---for decays to $F=0$ are vanishing from $F'=2$.)
+
+As stated, the $P2$ $F1$ does not excite the $F=3$ states, so these are trivially dark. But since there are only 3 sublevels in $F'=1$, compared to the 20 sublevels in the $J=2$ manifold, there is a total of 17 dark states. These may be destabilized by frequency-switching microwaves precisely tuned to the individual sublevels that cannot be resolved by the laser light; however the precise dark-state destabilization scheme has not yet been finalized.
 
 \begin{figure*}
     \centering
@@ -1019,17 +1214,9 @@ Referring to Fig.~\ref{conceptdiagram}, we follow the molecules emerging from a 
     \end{minipage}
     \hfill
     \mbox{}
-    \caption{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line that does couple to all $F$, has a vanishing branching ratio into $F=0$.}
+    \caption{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$.}
     \label{scheme}
 \end{figure*}
-
-\paragraph{Rotational cooling (Fig.~\ref{scheme})}
-
-Assuming a simple Boltzmann distribution at 8~K, almost 90~\%\ of the molecules have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then, a \UV\ laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$ into the excited state $J'=1$, from where it decays down to either $J=0$ or $J=2$. Since the $J=2$ molecules eventually get excited by the laser again, we expect the population to accumulate in $J=0$.
-
-The preceding description ignores the complications due to the hyperfine structure. Since the excited state hyperfine levels are well separated (unlike the unresolved \hfs of the electronic ground state), we can address the $F'=1$ level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$ sublevels (with $F=1,2,2$) can be excited into $J'=1$, from where they fall down into $J=0$ states with $F=1,0$. A further set of microwaves, between $J=0$ and $J=1$, is used to remix the $F=1$ states, so as to concentrate the population only in the $F=0$ state. (If we were to use the $P2$ $F2$ transition instead, then it would be possible to excite all four $F$ sublevels of the $J=2$ state. However, the branching ratios for decays to $F=0$ are not as favorable as for the $F1$ transition.)
-
-As stated, the $P2$ $F1$ does not excite the $F=3$ states, so these are trivially dark. But since there are only 3 sublevels in $F'=1$, compared to the 20 sublevels in the $J=2$ manifold, there is a total of 17 dark states. These may be destabilized by frequency-switching microwaves precisely tuned to the individual sublevels that cannot be resolved by the laser light; however the precise dark-state destabilization scheme has not yet been finalized.
 
 \paragraph{State transfer 1}
 
@@ -1042,35 +1229,6 @@ To keep the state transfer adiabatic, the electric field (and the resulting leve
 \]
 %
 The other requirement for \ARP\ is that the passage is \emph{rapid} compared to the spontaneous lifetime of the states involved in the transition, which here is effectively infinite. \cite{shore2009simple}
-
-\begin{table*}
-    %\small
-    \makebox[\textwidth][c]{%
-        \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}}  cc ccc cc ccc ccc@{}}
-        \toprule
-              & \multicolumn{5}{c}{State 1}                                       & \multicolumn{5}{c}{State 2} & $S_m$ & $f_0$ & $df_0/dE_z$ \\ \cmidrule(r{2.0ex}){2-6}\cmidrule(r{2.0ex}){7-11}
-            What flips?\hspace{1ex} & $l_\text{R}$ & $i$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$         & $l_\text{R}$ & $i$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & mHz/$\mu$G & kHz & mHz/(V/cm) \\
-        \midrule
-            \multirow{2}{*}{$m_\text{Tl}\;\Big\{$}             & e & 10 & $-$ & $-$ & $-$ & j & 7 & $-$ & $+$ & $-$ & \multirow{2}{*}{$-8.09$} & \multirow{4}{*}{119.517} & \multirow{4}{*}{$-31.50$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & k & 6 & $+$ & $-$ & $+$ \\
-            \multirow{2}{*}{$m_J, m_\text{F}\;\Big\{$}         & e & 10 & $-$ & $-$ & $-$ & k & 6 & $+$ & $-$ & $+$ & \multirow{2}{*}{$-4.99$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & j & 7 & $-$ & $+$ & $-$ \\\dashedrule
-
-            \multirow{2}{*}{$m_J\;\Big\{$}                     & f & 8  & $+$ & $+$ & $-$ & j & 7 & $-$ & $+$ & $-$ & \multirow{2}{*}{$-3.01$} & \multirow{4}{*}{108.924} & \multirow{4}{*}{$-3.57$} \\
-                                                               & g & 9  & $-$ & $-$ & $+$ & k & 6 & $+$ & $-$ & $+$ \\
-            \multirow{2}{*}{$m_\text{Tl}, m_\text{F}\;\Big\{$} & f & 8  & $+$ & $+$ & $-$ & k & 6 & $+$ & $-$ & $+$ & \multirow{2}{*}{$+0.09$} \\
-                                                               & g & 9  & $-$ & $-$ & $+$ & j & 7 & $-$ & $+$ & $-$ \\\dashedrule
-
-            \multirow{2}{*}{$m_\text{F}\;\Big\{$}              & e & 10 & $-$ & $-$ & $-$ & g & 9 & $-$ & $-$ & $+$ & \multirow{2}{*}{$-8.00$} & \multirow{4}{*}{10.593} & \multirow{4}{*}{$-27.93$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & f & 8 & $+$ & $+$ & $-$ \\
-            \multirow{2}{*}{$m_J, m_\text{Tl}\;\Big\{$}        & e & 10 & $-$ & $-$ & $-$ & f & 8 & $+$ & $+$ & $-$ & \multirow{2}{*}{$-5.07$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & g & 9 & $-$ & $-$ & $+$ \\
-        \bottomrule
-    \end{tabu}}
-    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic $J=1$ manifold that do not involve the states i and l. The quantum numbers given are that of the largest decoupled-basis component; states i and l have two such components with equal amplitude, making it hard to say what spin is flipped. The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}, while the indices $i$ refer to the ordering of eigenvalues at 30~kV/cm, starting with 0--3, the lowest four $J=0$ states. The quantity $S_m$ gives the energy difference between the neighbouring resonances, given per unit external (residual) magnetic field, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm.}
-    \label{statepairs}
-\end{table*}
-
 
 \paragraph{Electrostatic lens}
 
@@ -1108,21 +1266,83 @@ where $l$ is the length of the quadrupole lens, and $C$ is a constant encoding t
 
 A second state preparation region will take molecules out of the lens $J=2$ state and into the appropriate $J=1$ state required by the interaction region. Details will be decided upon based on experimental results from the first state preparation region.
 
+\begin{table*}
+    \small
+    \makebox[\textwidth][c]{%
+        \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} cc ccc cc ccc ccc ccc@{}}
+        \toprule
+              & \multicolumn{5}{c}{State 1} & \multicolumn{5}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S_m$ & $f_0$ & $df_0/dE_z$ \\
+                  \cmidrule(r{2.0ex}){2-6}\cmidrule(r{2.0ex}){7-11}\cmidrule(r{2.0ex}){12-13}
+            What flips?\hspace{1ex} & $l_\text{R}$ & $i$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $l_\text{R}$ & $i$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $x,y$ & $z$ & --- & mHz/$\mu$G & kHz & mHz/(V/cm) \\
+        \midrule
+            \multirow{2}{*}{$m_\text{Tl}\;\Big\{$}             & e & 10 & $-$ & $-$ & $-$ & j & 7 & $-$ & $+$ & $-$ & \multirow{2}{*}{1.33} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$-8.09$} & \multirow{4}{*}{119.517} & \multirow{4}{*}{$-31.50$} \\
+                                                               & h & 11 & $+$ & $+$ & $+$ & k & 6 & $+$ & $-$ & $+$ &                       &                       &                       & \\
+            \multirow{2}{*}{$m_J, m_\text{F}\;\Big\{$}         & e & 10 & $-$ & $-$ & $-$ & k & 6 & $+$ & $-$ & $+$ & \multirow{2}{*}{0.28} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$-4.99$} \\
+                                                               & h & 11 & $+$ & $+$ & $+$ & j & 7 & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
+                                                                                                                                                                                            
+            \multirow{2}{*}{$m_J\;\Big\{$}                     & f & 8  & $+$ & $+$ & $-$ & j & 7 & $-$ & $+$ & $-$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{$-3.01$} & \multirow{4}{*}{108.924} & \multirow{4}{*}{$-3.57$} \\
+                                                               & g & 9  & $-$ & $-$ & $+$ & k & 6 & $+$ & $-$ & $+$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_\text{Tl}, m_\text{F}\;\Big\{$} & f & 8  & $+$ & $+$ & $-$ & k & 6 & $+$ & $-$ & $+$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.09} & \multirow{2}{*}{0.99} & \multirow{2}{*}{$+0.09$} \\
+                                                               & g & 9  & $-$ & $-$ & $+$ & j & 7 & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
+                                                                                                                                                                                            
+            \multirow{2}{*}{$m_\text{F}\;\Big\{$}              & e & 10 & $-$ & $-$ & $-$ & g & 9 & $-$ & $-$ & $+$ & \multirow{2}{*}{1.88} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$-8.00$} & \multirow{4}{*}{10.593} & \multirow{4}{*}{$-27.93$} \\
+                                                               & h & 11 & $+$ & $+$ & $+$ & f & 8 & $+$ & $+$ & $-$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_J, m_\text{Tl}\;\Big\{$}        & e & 10 & $-$ & $-$ & $-$ & f & 8 & $+$ & $+$ & $-$ & \multirow{2}{*}{0.40} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$-5.07$} \\
+                                                               & h & 11 & $+$ & $+$ & $+$ & g & 9 & $-$ & $-$ & $+$ &                       &                       &                       \\
+        \bottomrule
+    \end{tabu}}
+    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic $J=1$ manifold that do not involve the states $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of the largest decoupled-basis component; states i and l have two such components with equal amplitude, making it hard to say what spin is flipped. The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}, while the indices $i$ refer to the ordering of eigenvalues at 30~kV/cm, starting with 0--3, the lowest four $J=0$ states. The column labelled `$S_\text{\SMt}$' gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity $S_m$ gives the energy difference between the neighbouring resonances, given per unit external (residual) magnetic field, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm.}
+    \label{statepairs}
+\end{table*}
+
 \paragraph{Interaction region}
 
 A high external electric field polarizes the molecules, thus enabling the linear energy shift due to the Schiff moment. The measurement will be done using the method of separated oscillatory fields as explained above.
 
 We intend to use a pair of $J=1$, $m_J=\pm1$ states, where the molecular rotation leads to an internal magnetic field. By flipping the sign of $m_J$, the internal magnetic field can be reversed. The first \RF\ coil in the Ramsey sequence creates a superposition of thallium spin-up and spin-down states, and the phase accumulated during the interaction time is translated by the second pulse back into varying populations of the spin states. The data obtained with the two different fluorine spin directions can be used for systematic checks.
 
-Refer to Table \ref{statepairs} for a list of all available pairs of states we can make use of. \todo{Why ignore the `superposition' states i and l?} For the \EDM\ measurement, of course, only the transitions that flip the Tl nuclear spin are suitable. Of these, one pair of transitions (ef/hg) has a much smaller resonant frequency; \todo{does that make the measurement less precise?} The other two pairs can both be used; the pair fk/gj is significantly less sensitive to the residual magnetic field in the interaction region, and to imperfections in the electric field reversals. However, that pair of transitions also flips the fluorine spin. \todo{Why would that be an issue?}
+Refer to Table \ref{statepairs} for a list of all available pairs of states we can make use of. For the \EDM\ measurement, of course, only the transitions that flip the Tl nuclear spin are suitable. We quantify the sensitivity $S_\text{\SMt}$ to the $T$-violating physics as the extent to which the transition between states $i$ and $f$ flips the thallium spin:
+%
+\begin{equation}
+    \label{ssmt}
+    S_\text{\SMt}\equiv
+    |\ex{I_{1,z}}_i
+    -
+    \ex{I_{1,z}}_f|
+\end{equation}
+%
+We can see that this quantity has a significant magnitude only for the three pairs of transitions that are labelled as flipping $m_\text{Tl}$. Of these, the first pair listed (ej/hk) is the one used in the papers by Ramsey et al.\ \cite{wilkening1984search} and Hinds et al.\ \cite{cho1991search} One pair of transitions (ef/hg) has a much smaller resonant frequency than the other two, but is otherwise comparable.
+
+The pair fk/gj with $\Delta m_J=0$ is significantly less sensitive to the residual magnetic field in the interaction region, and to imperfections in the electric field reversals, but requires the applied \RF\ magnetic field to be parallel with the electric field unlike all the other two transitions. That pair of transitions also flips the fluorine spin, but in the opposite sense to the change of $m_\text{Tl}$. The sensitivity to external fields is greatly reduced since the magnetic dipole moments of these nuclei are relatively well matched \cite{stone2005table}:
+%
+\begin{align*}
+    \mu(^{205}_{81}\text{Tl})&=+1.63821461(12)\mu_\text{N}\\
+    \mu(^{19}_{9}\text{F})&=+2.628868(8)\mu_\text{N}.
+\end{align*}
+%
+\todo{@Dave: They are not really all that well-matched! How do you then explain the cancellation of sensitivity to the external magnetic field? And why are these states less sensitive to $E$-reversal imperfections?}
+
+Of the three pairs of transitions that do not flip $m_\text{Tl}$, the pair fj/gk is exactly forbidden. The other two (ek/hj and eg/hf) are about as sensitive to field imperfections as the two pairs of $m_\text{Tl}$-flipping transitions ej/kh and ef/hg, but $\approx23$ times less sensitive to the $T$-violating physics. These states can thus be used for magnetometer/electrometer transitions in calibrating the experimental systematics.
+
+There are a further 13 possible transitions, not listed in Table \ref{statepairs}, involving the `superposition' states $\ket{\text{i}}$ and $\ket{\text{l}}$, given in \cite[Table~I]{cho1991search} with the following $\ket{m_J,m_1,m_2}$ eigenvectors:
+%
+\[
+    \ket{\text{i}},\ket{\text{l}}
+    =
+    \frac{1}{\sqrt2}
+    \big(
+    \,
+        \ket{+,-,-}\pm\ket{-,+,+}\
+    \big).
+\]
+%
+These states can be ignored, since only one ket of the pair flips the thallium spin when transitioning to a non-superposition state, and as such can be only half as sensitive to $T$-violating physics. On the other hand, the transition between $\ket{\text{i}}$ and $\ket{\text{l}}$ does not flip $m_\text{Tl}$ at all.
 
 \paragraph{Projection and detection}
 
-While the detection scheme has not yet been finalized, we expect we will be able to map the two spin states from the interaction region to two different rotational states using microwaves; \todo{details TBD}. Unlike some of the experiments discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to detect the number of molecules in the final rotational states, but the pair of cycling transitions has not yet been chosen or optimized.
+While the detection scheme has not yet been finalized, we expect we will be able to map the two spin states from the interaction region to two different rotational states using microwaves; details TBD. Unlike some of the experiments discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to detect the number of molecules in the final rotational states, but the pair of cycling transitions has not yet been chosen or optimized.
 
 Compared to hot-wire or absorption techniques, \LIF\ has the advantage of observing a signal against a dark background (modulo light scattered from the optics and vacuum chamber windows). \cite{tango1968spectroscopy} Furthermore, since the emitted light can be collected at different angles, we can obtain spatial information about the detection process. \cite{zare2012my}
-
-\todo{Present the cycling schemes we will attempt to use.}
 
 \subsection{Projected sensitivity}
 

@@ -10,13 +10,16 @@
 
 % math
 \usepackage{amsmath, bm, nicefrac, mathtools}
+\DeclareMathOperator{\sgn}{sgn}
 \renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\tens}[1]{\mathrm{#1}}
 \newcommand{\dd}{\mathrm{d}\hspace*{-0.15em}\bar{}\hspace*{0.2em}}
 \newcommand{\ex}[1]{\langle #1\rangle}
 \newcommand{\bra}[1]{\langle#1|}
 \newcommand{\ket}[1]{|#1\rangle}
 \newcommand{\braket}[2]{\langle#1|#2\rangle}
-\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\ThreeJ}[6]{\begin{pmatrix}#1&#2&#3\\#4&#5&#6\end{pmatrix}}
+\newcommand{\SixJ}[6]{\begin{Bmatrix}#1&#2&#3\\#4&#5&#6\end{Bmatrix}}
 
 % hyphenation
 \usepackage[english]{babel}
@@ -221,8 +224,9 @@
     \begin{center}
         \begin{minipage}{.5\textwidth}
             \centering
-            \vspace{3cm}
+            \vspace{1.5cm}
             \linespread{1.7}
+            \todo{@Dave: Do you agree with this structure?}
             \tableofcontents
         \end{minipage}
     \end{center}
@@ -234,6 +238,7 @@
 % has to be defined here for some reason
 \renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
 \renewcommand{\d}{\mathrm{d}}
+\renewcommand{\partial}{\text{∂}}
 
 \twocolumn[  
     \begin{@twocolumnfalse}

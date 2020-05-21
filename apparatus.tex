@@ -47,11 +47,13 @@ The program's code is divided between classes that make up the graphical user in
         \multicolumn{3}{@{}l}{\textit{Beam source:}}\\
            total source intensity       & $10^{10}$ to $10^{12}$ & mol./s/sr/state  \\
            flux after rot.\ cooling     & \todo{???}             & mol./sec         \\
-           beam diameter                & 2.5                    & cm               \\
            average beam velocity        & $184\pm17$             & m/s              \\
            beam velocity spread         & $16.1\pm0.8$           & m/s              \\
            rotational temperature       & $6.5\pm0.2$            & K                \\
            vibrational temperature      & 8                      & K                \\
+           beam diameter                & 2.5                    & cm               \\
+           nozzle diameter              & \nicefrac{1}{4}        & in               \\
+           nozzle to detector dist.     & 6.45                   & m                \\
         \\\multicolumn{3}{@{}l}{\textit{Quadrupole lens:}}\\
            quadrupole voltage           & $\pm30$                & kV               \\
            bore diameter                & 1.75                   & in               \\
@@ -98,8 +100,6 @@ The device \verb`.ini` file should specify whether the device is a slow or a fas
 
 The beam source works by ablation of a solid sample of TlF held at cryogenic temperatures in a thermally shielded vacuum chamber. The ablated particles are expelled from the ablation cell by a flow of cold neon buffer gas. The design has been adapted from the beam source used in ref.~\cite{barry2011bright} with significant modifications.
 
-\todo{Include a diagram of the beam source, and a table of dimensions like Table 2.1 in Donghyun Cho's thesis. Describe the apparatus pumping system.}
-
 The ablation cell is a 1.500~in high cuboid with top and bottom square faces with a 2.000~in side, machined out of \OFHC\ copper (Cu 101). The internal volume consists of two intersecting cylinders of diameter $d=1.150$~in and length $L=2.000$~in. According to a formula known to Archimedes \cite{moore1974symmetrical}, the volume common to the two cylinders is $\frac{2}{3}d^3$, making the internal cell volume for two cylinders to be $V=2L\pi\frac{d^2}{4}-\frac{2}{3}d^3\approx3.14\inches^3$. The actual internal volume is slightly larger than that due to the way windows are attached to the cell.
 
 Three of the four circular openings in the cell are closed with fused silica windows, while the forth is covered by a thin plate of \OFHC\ copper (0.050~in thickness) with a \nicefrac{1}{4}~in aperture as the molecular beam exit nozzle. Unlike similar beam sources, the exit aperture is \emph{not} followed by a conical collimator, since we found it interferes with the collision-mediated beam thermalization processes (an effect highly sensitive to the exact placement, shape, and dimensions of the collimator). In order to protect the window through which the ablation laser (Fig.~\ref{ablationLaser}) enters from the immediate ablation by-products, the window is offset by a 3~in-long `snorkel', a cylinder of outer diameter 1.250~in, and an hole with internal diam. of 0.9~in going through the entire length of the piece. The cylinder is terminated on one end in a way that allows attaching it to the cell, and on another by a fitting for the window.
@@ -135,6 +135,8 @@ In addition to providing thermal isolation, the shields also serve as cryopumps,
 Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
 
 \subsection{Pumping system}
+
+\todo{Describe the apparatus pumping system.}
 
 \subsection{Laser system}
 
@@ -179,7 +181,7 @@ L_\text{max}=C-S-I-10\log(B),
 \]
 where $C$ is the desired signal level (dBm), $I$ is the undesired (interference) signal level (dBm), and $B$ is the bandwidth (in Hz) of the intermediate frequency. \todo{(I don't understand either of these parameters.  What is the physical origin of the undesired signal for us?  What is the "intermediate frequency"?)} Assuming the desired ($C$) and undesired ($I$) signals are both same strength, and the signal linewidth (from molecular fly-through time) is $B\approx10^3$~Hz, a 20~dB selectivity requires the phase noise to be smaller than $-50$~dBc/Hz. This requirement is satisfied by both signal sources described below.
 
-The \DDS\ source is AD9910 (Analog Devices Inc., Norwood, MA), outputting out to approx.\ $f_\text{\DDS}=400$~MHz. The signal is mixed with a fixed $f_0=1$~GHz wave generated by one of the outputs of the SynthHD Pro (WindFreak Technologies, Holiday, FL). A low pass filter removes the sum component $f_\text{\DDS}+f_0$ and passes the difference, to be mixed with a $\approx12.65$~GHz signal from the other SynthHD output. In the second stage, a high-pass filter has to be used, passing the sum of the frequencies, since the signal generator only goes up to 14~GHz. This also filters out a strong sub-harmonic in the high-frequency SynthHD output. (Two-stage mixing is required because of the difficulty in filtering out one of the 100~MHz sidebands from a signal exceding 10~GHz.) The resulting frequency-agile microwave signal is doubled or quadrupled if necessary, amplified, power-split with an SPDT switch, and recombined in an orthomode transducer before being led to the horn. The horns were custom engineered by Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam energy onto the molecular beam.
+The \DDS\ source is AD9910 (Analog Devices Inc., Norwood, MA), outputting out to approx.\ $f_\text{\DDS}=400$~MHz. The signal is mixed with a fixed $f_0=1$~GHz wave generated by one of the outputs of the SynthHD Pro (WindFreak Technologies, Holiday, FL). A low pass filter removes the sum component $f_\text{\DDS}+f_0$ and passes the difference, to be mixed with a $12.65$~GHz signal from the other SynthHD output. In the second stage, a high-pass filter has to be used, passing the sum of the frequencies, since the signal generator only goes up to 14~GHz. This also filters out a strong sub-harmonic in the high-frequency SynthHD output. (Two-stage mixing is required because of the difficulty in filtering out one of the 100~MHz sidebands from a signal exceding 10~GHz.) The resulting frequency-agile microwave signal is doubled or quadrupled if necessary, amplified, power-split with an SPDT switch, and recombined in an orthomode transducer before being led to the horn. The horns were custom engineered by Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam energy onto the molecular beam.
 
 \subsection{State preparation 1}
 
