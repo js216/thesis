@@ -1001,9 +1001,9 @@ with all the other quantum numbers being implied. (Note that this is not necessa
 
 According to accepted terminology, a transition is said to belong to the $P$, $Q$, or $R$ branches if the quantum number $J$ changes by $-1$, 0, or $+1$, respectively. \cite[sect.~10.2]{bransden1990physics} Furthermore, we append the $J$ number of the original state, and the $F$ of the target state. For instance, a $P2$ $F1$ line starts in a $J=2$ state, changes $J$ by $-1$, and ends up in a state with $F'=1$.
 
-Despite the limited ability to collect and detect photons from fluorescing molecules, our detection scheme could in principle detect $\approx100$\% of the molecules through optical cycling, as follows. A laser excites the $X\to B$ transition, causing photons in the decay back down to $X$. If the molecule ended up in the same sublevel in $X$, the same laser can re-excite it back to $B$. \cite{hunter2012prospects} \todo{Present the possible cycling schemes in TlF.}
+Despite the limited ability to collect and detect photons from fluorescing molecules, our detection scheme could in principle detect $\approx100$\% of the molecules through optical cycling. A laser excites the $X\to B$ transition, causing photons in the decay back down to $X$. If the molecule ended up in the same sublevel in $X$, the same laser can re-excite it back to $B$. \cite{hunter2012prospects}
 
-However, due to the large number of degrees of freedom in molecules, optical cycling can be difficult to achieve in molecules. It turns out that in TlF, there exists a sufficiently closed transition to allow $\sim100$ cycles before the molecule gets lost in inaccessible dark states. The number of dark states is potentially very large since the hyperfine structure (\hfs) of the ground state is unresolved.
+However, due to the large number of degrees of freedom in molecules, optical cycling can be difficult to achieve in molecules. It turns out that in TlF, there exists sufficiently closed transitions to allow $\sim100$ cycles before the molecule gets lost in inaccessible dark states (see ref.~\cite{norrgard2017hyperfine} for some possible candidates). The number of dark states is potentially very large since the hyperfine structure (\hfs) of the ground state is unresolved.
 
 \paragraph{Branching ratios}
 
@@ -1040,7 +1040,7 @@ Space and spin commute ($[\vec r,\vec I_1]=[\vec r,\vec I_2]=0$), whereas $[\vec
 \end{aligned}
 \end{equation}
 %
-so that $j_2$ drops out of the reduced matrix element. (Note: do not use eqn~136 in \cite{brown2003rotational} due to a typo in the $6j$-symbol.) We can use that to break up the $\vec F=\vec F_1+\vec I_2$ coupling:
+so that $j_2$ drops out of the reduced matrix element. (Note: do not use eqn~5.136 in \cite{brown2003rotational} due to a typo in the $6j$-symbol.) We can use that to break up the $\vec F=\vec F_1+\vec I_2$ coupling:
 %
 \begin{align}
     \label{useST1}
@@ -1316,8 +1316,8 @@ We can see that this quantity has a significant magnitude only for the three pai
 The pair fk/gj with $\Delta m_J=0$ is significantly less sensitive to the residual magnetic field in the interaction region, and to imperfections in the electric field reversals, but requires the applied \RF\ magnetic field to be parallel with the electric field unlike all the other two transitions. That pair of transitions also flips the fluorine spin, but in the opposite sense to the change of $m_\text{Tl}$. The sensitivity to external fields is greatly reduced since the magnetic dipole moments of these nuclei are relatively well matched \cite{stone2005table}:
 %
 \begin{align*}
-    \mu(^{205}_{81}\text{Tl})&=+1.63821461(12)\mu_\text{N}\\
-    \mu(^{19}_{9}\text{F})&=+2.628868(8)\mu_\text{N}.
+    \mu(\ce{^{205}_{81}Tl})&=+1.63821461(12)\mu_\text{N}\\
+    \mu(\ce{^{19}_{9}F})&=+2.628868(8)\mu_\text{N}.
 \end{align*}
 %
 \todo{@Dave: They are not really all that well-matched! How do you then explain the cancellation of sensitivity to the external magnetic field? And why are these states less sensitive to $E$-reversal imperfections?}
@@ -1343,9 +1343,3 @@ These states can be ignored, since only one ket of the pair flips the thallium s
 While the detection scheme has not yet been finalized, we expect we will be able to map the two spin states from the interaction region to two different rotational states using microwaves; details TBD. Unlike some of the experiments discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to detect the number of molecules in the final rotational states, but the pair of cycling transitions has not yet been chosen or optimized.
 
 Compared to hot-wire or absorption techniques, \LIF\ has the advantage of observing a signal against a dark background (modulo light scattered from the optics and vacuum chamber windows). \cite{tango1968spectroscopy} Furthermore, since the emitted light can be collected at different angles, we can obtain spatial information about the detection process. \cite{zare2012my}
-
-\subsection{Projected sensitivity}
-
-In general, the statistical sensitivity of a molecular \EDM\ experiment depends on electric polarization $P$, coherence time $\tau$, detection rate $\dot N$, total measurement time $T$, and other factors encoding the intrinsic sensitivity of the system. For measurements of the Schiff moment in a nucleus with mass $A$ and atomic number $Z$, the sensitivity scales as $P\tau\sqrt{\dot N T}AZS_0$, where $S_0$ depends on the details of the nuclear structure. \cite{khriplovich2012cp}
-
-\todo{The 30x sensitivity improvement estimate over the state of the art.}
