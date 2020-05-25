@@ -591,6 +591,8 @@ using $Z=81$ for thallium. More precisely, $\nabla(\psi^*_\text{s}\psi_\text{p})
     \label{schiffnumbers}
     S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
 \end{equation}
+%
+Note, however, that there is a significant uncertainty about this number. For instance, a more recent calculation \cite[eqn~22]{dzuba2002electric} gives the number in the denumerator above as $1.98\cdot10^6$.
 
 \paragraph{Step 7: Interpretation}
 
@@ -616,20 +618,20 @@ It is possible to estimate the magnitude of the Schiff moment inside a nucleus w
 (1) Inside the uniform charge distribution---which does not contribute to the \SMt---there are in addition two point charges, separated by a distance $2R_0$ along the $z$ axis. The $T$-odd part of the nuclear charge can thus be written as
 %
 \[
-\rho(\vec R)=\frac{d_\text{N}}{2eR_0}\big[
+\rho(\vec R)=\frac{d_\text{N}}{2eZR_0}\big[
      \delta^3(\vec R-R_0\hat{\vec z})
     -\delta^3(\vec R+R_0\hat{\vec z})
 \big],
 \]
 %
-the constant factors being chosen so that $e\ex{\vec R}=d_\text{N}\hat{\vec z}$. Evaluating the third moments in eqn~\ref{simpleSchiffMoment}, we readily see that the magnitude of the \SMt\ is $|\vec S|=Zd_\text{N}R_0^2/10$.
+the constant factors being chosen so that $e\ex{\vec R}=d_\text{N}\hat{\vec z}$. Evaluating the third moments in eqn~\ref{simpleSchiffMoment}, we readily see that the magnitude of the \SMt\ is $|\vec S|=d_\text{N}R_0^2/10$.
 
 (2) Instead of the two separated point charges, suppose the nucleus consists of closed shells, plus a valence proton (or neutron) that carries a dipole moment $d_\text{p}$. Further suppose that the valence nucleon is distributed uniformly throughout the nucleus, so that the nucleus has uniformly distributed electric polarization. It is a standard result that the charge distribution of a uniformly polarized sphere is exactly a surface charge, with charge density
 %
 \[
-\rho(\vec R)=\frac{d_\text{p}}{4\pi eR_0^3/3}\delta(R_0-R)\cos\theta,
+\rho(\vec R)=\frac{d_\text{p}}{4\pi eZR_0^3/3}\delta(R_0-R)\cos\theta,
 \]
-which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is $|\vec S|=Zd_\text{p}R_0^2/10$. We have seen that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
+which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is $|\vec S|=d_\text{p}R_0^2/10$. We have seen that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
 
 In each case, we saw that $|\vec S|\propto R_0^2$. Furthermore, the matrix element (eqn~\ref{1stenergyshiftmatelem}) proportional to the first order energy shift has a $Z^2$ dependence. Since the nuclear radius scales as $R_0\approx R_\text{N}A^{1/3}$, where $R_\text{N}\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, the overall scaling is $Z^2 A^{2/3}$. We conclude that heavier atoms---such as thallium---are preferable for \SMt\ experiments.
 
@@ -673,14 +675,14 @@ where the expectation values $\ex{\cdots}$ are of course evaluated as $\bra\psi\
 
 As we have seen previously, a $T$-violating interaction such as the Schiff moment inside a fully polarized molecule gives rise to a first order energy shift $h\nu$ as in eqn~\ref{schiffnumbers}. We have also seen two simple models of how a dipole moment $d$ inside the nucleus results in a \SMt\ of magnitude $S=ZdR_0^2/10$. We may thus estimate the size of an effective internal molecular electric field $\mathcal E_\text{int}^\text{eff}$ via the definition
 %
-\[
+\begin{equation}
+    \label{effestimate}
     \mathcal E_\text{int}^\text{eff}\equiv\frac{h\nu}{d}
-    =5.67\cdot10^5\frac{h\;\text{Hz}}{e\;\text{fm}^3}\frac{Z\,R_0^2}{10}
-    =9.5~\text{MV/cm}.
-\]
+    =5.67\cdot10^5\frac{h\;\text{Hz}}{e\;\text{fm}^3}\frac{R_0^2}{10}
+    =117~\text{kV/cm}.
+\end{equation}
 %
-\todo{@Dave: Isn't this supposed to be of the order 10~kV/cm?}
-We emphasize that this is not the average field in the volume of the nucleus; that field must be zero to keep the nucleus from accelerating out of the molecule. Nor is $\mathcal E_\text{int}^\text{eff}$ to be taken as a proxy for the simple $\sim$~GV/cm field due to the nuclear charge at a distance of order $a_0$ from the nucleus.
+We emphasize that this is not the average field in the volume of the nucleus; that field must be zero to keep the nucleus from accelerating out of the molecule. Nor is $\mathcal E_\text{int}^\text{eff}$ to be taken as a proxy for the simple $\sim$~GV/cm field due to the nuclear charge at a distance of order $a_0$ from the nucleus. Furthermore, the numerical values in eqn~\ref{effestimate} obtain hugely different estimates in different papers, nearly three orders of magnitude (from 10~kV/cm to 10~MV/cm). Trying to estimate a generalized form of the \SMt, Flambaum and Ginges \cite{flambaum2002nuclear} found the ``analytical calculation hopeless [for] a nucleus with an external proton in state $s_{1/2}$, as is the case for $^{203,205}$Tl.''
 
 \paragraph{Separated oscillatory fields}
 

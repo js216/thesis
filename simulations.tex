@@ -1,5 +1,11 @@
 \section{Simulations}
 
+\subsection{Rotational cooling}
+
+\todoit{TBD.}
+
+\subsection{Non-adiabatic transitions}
+
 \begin{figure*}[b!]
     \makebox[\textwidth][c]{%
         \small
@@ -16,12 +22,6 @@
     \caption{AC level stabilization against non-adiabatic transitions when subjected to time-varying electric fields. $\epsilon^\text{\DC}_\text{i}=-\epsilon^\text{\DC}_\text{f}=20$, $\alpha=0.01$, $\beta=0.1$, $\delta=1$. \part{a} The transition-probability interference fringes as a function of field reversal time, with the time dependence of the field and the eigenenergies illustrated in the left plots. $T_0=8$, $\Delta T=2$. \part{b} Adding an \AC\ field results (magnitude shown in left plot, dashed line) in separated regions of high $P_\text{trans}$ against a transition-free background (right plot). $T_0=1$, $T_\text{fall}^\text{\,\DC}=196.6$, $\Delta T=200$, $T_\text{rise}^\text{\,\AC}=T_\text{fall}^\text{\,\AC}=1$.}
     \label{floquet}
 \end{figure*}
-
-\subsection{Rotational cooling}
-
-\todo{TBD}
-
-\subsection{Non-adiabatic transitions}
 
 Molecules travelling from the first state preparation region into the electrostatic lens experience fast changes in external electric field. Due to the large number of hyperfine levels involved, predicting level stability is a non-trivial task. As a consequence of the von Neumann--Wigner rule \cite{mead1979noncrossing}, levels of same symmetry will in general avoid crossing each other. Considering only a single such avoided crossing between a pair of states, we may model the situation using the two-level Hamiltonian
 %
@@ -79,7 +79,7 @@ where the matrix elements of the extended Hamiltonian $\widetilde{H}$ are given 
     &\text{(interaction)}
 \end{align*}
 %
-Here, the lower indices refer to a particular `photonic' mode, and the upper indices refer to the matrix elements of the original Hamiltonian.
+Here, the lower indices refer to a particular `photonic' mode, and the upper indices refer to the matrix elements of the original Hamiltonian. This way of separating the Hamiltonian into the atomic, radiation, and interaction operators resembles the `dressed state' picture for a two-level atom in a monochromatic field of radiation (cf.\ eqn~1.18 in ref.~\cite{metcalf2002laser}); the above Hamiltonian appears to provide a generalization beyond the two-state model, since $H_\text{AC}^{jk}(t)$ can be of any dimensionality.
 
 The interaction term in the above general expression can easily be found for the case of the two-level model in eqn~\ref{twostate}. When an electric field $\epsilon(t)\equiv\epsilon_\text{DC}+\epsilon_\text{AC}(t)$ is applied, the \AC\ part of the Hamiltonian is
 %
@@ -115,12 +115,21 @@ The Kronecker deltas give the order of the atom--photon interaction. For instanc
 %
 i.e., the 0th order effect of the \AC\ field is a simple \AC\ Stark shift, where the \RMS\ \AC\ field has the same effect as a \DC\ field. This suggests that the mechanism through which the \AC\ field suppresses transitions is by limiting the effective miniumum value of the \DC\ field, such that the system no longer passes through the avoided crossing.
 
-The higher order interactions---due to the $\delta_{n,m\pm1}$ and $\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian, effecting a tensor product with the corresponding Kronecker matrices. The effect on the spectrum is to replace the two states with an infinite set of pairs of states, each pair separated from the next by the energy $\hbar\omega$ of a single photon. Plotted as a function of the electric field, we note that in addition to the avoided crossings present in the `unperturbed' Hamiltonian, new crossings appear as a result of interactions with the virtual photons.
+The higher order interactions---due to the $\delta_{n,m\pm1}$ and $\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian, effecting a tensor product with the corresponding Kronecker matrices. The effect on the spectrum is to replace the two states with an infinite set of pairs of states, each pair separated from the next by the energy $\hbar\omega$ of a single photon (Fig~\ref{dressed}). Plotted as a function of the electric field, we note that in addition to the avoided crossings present in the `unperturbed' Hamiltonian, new crossings appear as a result of interactions with the virtual photons.
+
+\begin{figure}
+    \makebox[\columnwidth][c]{%
+        \footnotesize
+	\def\svgwidth{1.05\columnwidth}
+        \mbox{}\hspace{2ex}
+	\input{figs/matplotlib/dressed.pdf_tex}
+    }
+    \caption{Eigenstates of the $6\times6$ Hamiltonian $\widetilde{H}_{nm}^{jk}$, where $n,m$ are the indices of the original $2\times2$ atomic Hamiltonian, and $j,k$ here limited to the $\{-1,0,1\}$ part of the infinite Hilbert space. Without the \AC\ field, note that the spectrum resembles that of the atomic Hamiltonian (as in Fig.~\ref{floquet}), thrice replicated. As the \AC\ is turned stronger, the location of the avoided crossings moves around or disappears.}
+    \label{dressed}
+\end{figure}
 
 The new crossings typically appear at higher fields than the original ones and thus do not cause transitions unless the inverting \DC\ field is of sufficient magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet}b, the \DC\ field is assumed to traverse the inherent avoided crossing and not much further. However, in the flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$ get reversed in a characteristic time $T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced avoided crossings beyond the reach of these fields, the applied \AC\ field would need to have a frequency of order $900\GHz$. Alternatively, the \AC\ field could be confined to a region where the \DC\ field does not depart too far from zero.
 
-\todo{Relate this to the dressed-state picture, e.g. section 1.2.2 from Metcalf/Straten, Laser Cooling and Trapping (page 9)}
-
 \subsection{Optical cycling}
 
-\todo{TBD}
+\todoit{TBD.}

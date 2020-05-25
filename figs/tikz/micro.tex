@@ -1,0 +1,44 @@
+\usetikzlibrary{shapes.geometric}
+\tikzstyle{block} = [rectangle, draw, text width=3em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{cross} = [draw,circle,minimum width=1 cm,path picture={ 
+  \draw[black]
+  (path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+  }]
+\tikzstyle{amp} = [regular polygon, regular polygon sides=3, draw, text centered, shape border rotate=90]
+\tikzstyle{arr} = [draw, -Latex]
+\def\freqsize{\footnotesize}
+\def\dy{.3cm}
+\def\dyy{.8cm}
+\def\dyyy{1.3cm}
+\def\dx{0.7cm}
+\def\dxx{1.3cm}
+
+\begin{tikzpicture}
+    \linespread{.9}
+
+    % place nodes
+    \node [block, text width=4em] (siggen)  {Signal\\generator};
+    \node [cross, right = \dxx of siggen] (mix1)    {};
+    \node [block, right = \dx of mix1]    (LP)      {Low pass};
+    \node [cross, above = \dyy of LP]     (mix2)    {};
+    \node [block, right = \dxx of mix2]   (HP)      {High pass};
+    \node [block, below = \dy of siggen]  (agile)   {Freq.\\agile\\AWG};
+    \node [block, below = \dyyy of HP, text width=6.5em]      (mult)    {$\times1$, 2 or 4\\freq.\ multiplier};
+    \node [block, below = \dyyy of mult]   (SPDT)    {SPDT};
+    \node [block, left = \dx of SPDT, text width=4.5em]     (OMT)     {orthomode\\transducer};
+    \node [amp,   left = \dx of OMT]      (amp)     {amp};
+    \node [block, left = \dx of amp]      (horn)    {horn};
+
+    % connections
+    \draw [arr] (siggen) -- node [above] {\freqsize 1 GHz} (mix1);
+    \draw [arr] (siggen) |- node [above right] {\freqsize 12.65 GHz} (mix2);
+    \draw [arr] (agile) -| node [above left] {\freqsize 200--300 MHz} (mix1);
+    \draw [arr] (LP) -- node [right,text width=4.5em] {\freqsize 700 to\\800 MHz} (mix2);
+    \draw [arr] (mix1) -- (LP);
+    \draw [arr] (mix2) -- (HP);
+    \draw [arr] (HP) --  node[xshift=2.5em, text width=7.5em, text centered] {\freqsize 13.45 GHz\\to\\13.45 GHz} (mult);
+    \draw [arr] (mult) -- (SPDT);
+    \draw [arr] (SPDT) -- (OMT);
+    \draw [arr] (OMT) -- (amp);
+    \draw [arr] (amp) -- (horn);
+\end{tikzpicture}

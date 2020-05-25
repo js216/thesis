@@ -1,6 +1,6 @@
 .PHONY: all clean
 
-all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf slope.pdf Ptrans1.pdf Ptrans2.pdf
+all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf slope.pdf Ptrans1.pdf Ptrans2.pdf dressed.pdf
 
 # additional dependencies
 

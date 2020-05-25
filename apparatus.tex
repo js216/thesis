@@ -2,7 +2,7 @@
 
 As detailed in the section on the measurement scheme, \CENTREX\ follows the design of a conventional molecular beam experiment. Fig.~\ref{entire} displays an outline of the entire apparatus, Table~\ref{parametertable} contains key parameter values, and the following paragraphs give information about its construction.
 
-\begin{figure*}
+\begin{figure*}[b!]
     \begin{overpic}[width=\textwidth,unit=1mm]{figs/entire.pdf}
             \put(22,72){beam source}
             \put(28,68){gate valve}
@@ -120,9 +120,7 @@ The opening opposite the cell exit nozzle has a 0.375~in opening that allow opti
 
 The cell is screwed onto the cold stage of the PT815 cryocooler (made by Cryomech Inc., Syracuse, NY). The cell is shielded from ambient thermal radiation by a two-state heat shield. The outer shield, made of aluminum 1100, hangs from the top plate of the vacuum chamber on stainless threaded rods and consists of a frame with removable covering plates and is thermally connected to the `warm' stages (approx.\ 40~K) of both pulse-tube cryocoolers. The inner shield, hanging from the outer one on four \nicefrac{1}{4}~in stainless threaded rods, is made of \nicefrac{1}{4}~in thick Cu101 plates, and is connected to the cold stage of the colder PT415 cooler, which cools it to approx. 4--5~K. The 4~K shield has bare openings for optical and molecular access, while the optical ports in the 40~K shield are blocked with loosely attached windows to limit the buffer gas escaping into to rest of the apparatus. The cell--cryocooler thermal links are done via flexible copper braids to prevent damage from unmatched thermal expansion coefficients.
 
-For control of cell temperature, a number of 10--25~$\Omega$ resistors are attached directly to the cell and heated directly with standard laboratory power supply, or controlled in a \PID\ loop using the CTC100 cryogenic temperature controller (Stanford Research Systems, Sunnyvale, CA). The same controller receives temperature input from the silicon diode sensors (DT-670 from Lake Shore Cryotronics, Inc., Westerville, OH) located on the cell gas-input nozzle, cell top plate (target side), 4~K and 16~K pulse tube warm stages. The other eight sensors, recorded by the model 218 temperature monitor from Lake Shore Cryotronics, are located on the cell back snorkel, 4~K shield top plate, 40~K shield top plate, 4~K pulse tube cold head, cell top plate, 4~K shield bottom plate, 40~K shield bottom plate, and the 16~K pulse tube cold head. These eight sensors' wires are fed through the vacuum chamber using two 25-pin feedthroughs (Accu-Glass p.n.\ 100225), with corresponding vacuum-side PEEK female D-sub connectors (Accu-Glass p.n.\ 100460) for ease of disconnecting.
-
-In addition to providing thermal isolation, the shields also serve as cryopumps,  
+For control of cell temperature, a number of 10--25~$\Omega$ resistors are attached directly to the cell and heated directly with standard laboratory power supply, or controlled in a \PID\ loop using the CTC100 cryogenic temperature controller (Stanford Research Systems, Sunnyvale, CA). The same controller gets temperature input from the silicon diode sensors (DT-670 from Lake Shore Cryotronics, Inc., Westerville, OH) located on the cell gas-input nozzle, cell top plate (target side), 4~K and 16~K pulse tube warm stages. The other eight sensors, recorded by the model 218 temperature monitor from Lake Shore Cryotronics, are located on the cell back snorkel, 4~K shield top plate, 40~K shield top plate, 4~K pulse tube cold head, cell top plate, 4~K shield bottom plate, 40~K shield bottom plate, and the 16~K pulse tube cold head. These eight sensors' wires are fed through the vacuum chamber using two 25-pin feedthroughs (Accu-Glass p.n.\ 100225), with corresponding vacuum-side PEEK female D-sub connectors (Accu-Glass p.n.\ 100460) for ease of disconnecting.
 
 \begin{figure*}
     \centering
@@ -132,11 +130,11 @@ In addition to providing thermal isolation, the shields also serve as cryopumps,
     \label{lasers}
 \end{figure*}
 
-Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
+Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton, NJ). The anti-reflect coatings, done at 271~nm (excited-to-ground molecular transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford, PA). All removable mechanical connections are done by means of brass screws into threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All gas-line connections are done with \VCR\ fittings brazed onto the copper or stainless tubing. Where possible and desirable, metal-to-metal thermal conductivity has been enhanced either with indium foil, or vacuum-compatible grease (Apiezon N).
 
 \subsection{Pumping system}
 
-\todo{Describe the apparatus pumping system.}
+In addition to providing thermal isolation, the shields also serve as cryopumps, lowering the pressure from $\sim10^{-6}$~torr, as can be reached by turbomolecular pumps, to approx.\ $2\cdot10^{-8}$~torr. Pumping down from atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG, Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet from InstruTech LLC, Longmont, CO).
 
 \subsection{Laser system}
 
@@ -144,7 +142,9 @@ See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of thr
 
 \paragraph{Cs lock}
 
-The reference system is based on modulation transfer spectroscopy (\MTS), a pump--probe technique resulting in sub-Doppler resolution for laser locking. An \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier frequency) before it gets passed through a vapour cell. Modulation can appear on the counterpropagating probe beam, passed through the same vapour, through the interactions of the two beams with the atomic vapour. The interactions are an example of four-wave mixing where two pump beam frequency components combine with the probe beam, resulting in a sideband for the probe beam. \cite{mccarron2008modulation} In contrast, in frequency modulation spectroscopy (\FMS) only a single modulated beam is passed through the sample and onto a detector. If the modulation frequency is large compared with the spectral feature being probed, then the laser (or \EOM) can be tuned such that only one sideband interacts with the sample. In the absence of such an interaction, the \RF\ signal arising from the beating of one sideband with the carrier cancels that arising from the other sideband. \todo{why talk about FM if we don't use it?  would be better to give typical signals from MTS.  } When this balance is upset by phase or amplitude changes in one sideband, and a background-free signal results. \cite{bjorklund1980frequency}
+The reference system is based on modulation transfer spectroscopy (\MTS), a pump--probe technique resulting in sub-Doppler resolution for laser locking. An \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier frequency) before it gets passed through a vapour cell. Modulation can appear on the counterpropagating probe beam, passed through the same vapour, through the interactions of the two beams with the atomic vapour. The interactions are an example of four-wave mixing where two pump beam frequency components combine with the probe beam, resulting in a sideband for the probe beam. \cite{mccarron2008modulation}
+
+In contrast, in frequency modulation spectroscopy (\FMS) only a single modulated beam is passed through the sample and onto a detector. If the modulation frequency is large compared with the spectral feature being probed, then the laser (or \EOM) can be tuned such that only one sideband interacts with the sample. In the absence of such an interaction, the \RF\ signal arising from the beating of one sideband with the carrier cancels that arising from the other sideband. When this balance is upset by phase or amplitude changes in one sideband, and a background-free signal results. \cite{bjorklund1980frequency}
 
 Following ref.~\cite{zi2017laser}, the beam sourced from the diode laser (DL pro 850, Toptica, Germany) is split off for transfer cavities with two polarizing beam splitters (with the two half-wave plates controlling the amount of light sent to each transfer cavity beam). The remaining beam is split by the acousto-optic modulator (\AOM) (AOMO 3080-122 830NM from Gooch \&\ Housego, UK) with 80~MHz center frequency, AR-coated for operation at 780--850~nm, into a pump and probe beam, the pump having about twice the power of the probe. (The \AOM\ also eliminates trouble from backreflection from the Cs cell, or photodiodes.) The pump beam is phase-modulated by the custom-built \EOM\ (Thorlabs Inc.) at 3~MHz before being led through the cesium quartz cell (Thorlabs GC19075-CS, diam.\ 19~mm, length 75~mm), magnetically shielded to the milligauss level in a 6~in-long, 2~in inner diam.\, three-layer concentric mu-metal shield (modified ZG-203 from Magnetic Shield Corporation, Bensenville, IL). 
 
@@ -154,8 +154,6 @@ The \MTS\ signal is detected by the photodiode (we have not found it necessary t
 
 The Fabry--P\'erot interferometer (Toptica FPI 100) with free spectral range (\FSR) 1~GHz is locked to the cesium reference (master) laser. Up to two slave lasers can be used in this scheme, one for each of the two orthogonal polarizations, while the master can be distinguished by its different wavelength and separated away with a dichroic mirror. The cavity length is modulated by slighly more than one \FSR\ to scan over the transmission peaks. The timing difference between the master and slave peaks is then fed to a \PID\ loop to lock the slave frequency.
 
-\todo{More details about the locking electronics once that's built and tested.}
-
 \paragraph{Second harmonic generation}
 
 The \IR\ beam at 1087~nm is generated by the Koheras Basik fiber laser seed and amplified to $\approx2$~W by the Koheras Boostik Fiber Laser (both devices by NKT Photonics A/S, Denmark). A small amount of power is split off for the wavemeter (671A by Bristol Instruments, Rochester, NY), which allows for a measurement of the absolute laser frequency to within 50~MHz. The rest of the beam is modulated by an \EOM\ and passed through a bowtie-configuration cavity (built by K. Wenz at Columbia, NY) containing a ppKTP crystal that generates up to 1~W of green light at 543.5~nm. The green beam is coupled into a fiber and delivered to a second \SHG\ system (Toptica SHG pro) with a similar configuration. A BBO crystal is used for frequency doubling, resulting in $\approx70$~nm of \UV\ (271.7~nm).
@@ -163,8 +161,11 @@ The \IR\ beam at 1087~nm is generated by the Koheras Basik fiber laser seed and 
 To counteract the cavity length changes due to temperature and pressure variations, one of the cavity mirrors is attached to a piezo actuator. Using the Pound--Drever-Hall technique (\PDH), the cavity photodiode signal is mixed with the \EOM\ driving frequency in order to extract a sensitive error signal that can be used to \PID-control the piezo actuator. \cite{drever1983laser} The \UV\ lock is done with a commercial analog setup (Toptica PDH 110, PID 100, and FALC 110), while for the green cavities we are transitioning to a home-built system, based on the Red Pitaya STEMlab \FPGA\ board.
 
 \begin{figure}
-    \includegraphics[width=\columnwidth]{figs/micro.png}
-    \caption{The principle behing frequency-agile rotational cooling microwave generation. \todo{TODO: Make labels readable.}}
+    \makebox[\columnwidth][c]{%
+        \small
+        \input{figs/tikz/micro.tex}
+    }
+    \caption{The principle behing frequency-agile rotational cooling microwave generation. The frequencies are shown assuming the $\times1,2$ multipliers for a horn output of 13.4 and 26.8~GHz. For 40.1~GHz, the system is adjusted to generate approx.\ 10~GHz (pre-multiplier).}
     \label{micro}
 \end{figure}
 
@@ -174,12 +175,23 @@ We designed a custom aluminum vacuum chamber to allow access for the molecular b
 
 The microwave system (see Fig.~\ref{micro}) is designed to provide up to three microwave beams (at frequencies 13.4, 26.8, and 40.1~GHz, and power of order 0.1--1~W), each focused with a quasioptical lens built into the transmitting antenna so as to position the beam waist in the center of the vacuum chamber. In addition, the beams can be switched between either of the two orthogonal linear polarizations at 1--2~MHz. In order to be able to separately address the hyperfine levels in the molecular ground state, the frequency can be rapidly adjusted by means of direct digital synthesis (\DDS).
 
-The ability of an \RF\ system to resolve spectral features can be described in terms of phase noise, defined as the ratio (in decibels) of the noise in a 1~Hz bandwidth at a specified offset $f_m$, to the oscillator signal amplitude at frequency $f_O$. The maximum allowable phase noise $L_\text{max}$ (in dBc/Hz) can be estimated in terms of the desired selectivity $S/\text{dB}$ as \cite[eqn~13.50]{pozar2006microwave}
+The ability of an \RF\ system to resolve spectral features can be described in terms of phase noise, defined as the ratio (in decibels) of the noise in a 1~Hz bandwidth at a specified offset $f_m$, to the oscillator signal amplitude at frequency $f_0$. In a microwave communications context, a local oscillator at frequency $f_0$ is used to downconvert the desired signal $f_\text{D}$ to an intermediate frequency $f_\text{IF}$. We want to know what is the maximum allowable phase noise $L_\text{max}$ (in dBc/Hz) so that the downconversion of an adjacent undesired (interference) signal $f_\text{ID}$ is suppressed by a factor of $S$, called selectivity and expresssed in dB. The maximum phase noise is \cite[eqn~13.50]{pozar2006microwave}
 %
 \[
-L_\text{max}=C-S-I-10\log(B),
+    L_\text{max}=D-S-I-10\log(B),
 \]
-where $C$ is the desired signal level (dBm), $I$ is the undesired (interference) signal level (dBm), and $B$ is the bandwidth (in Hz) of the intermediate frequency. \todo{(I don't understand either of these parameters.  What is the physical origin of the undesired signal for us?  What is the "intermediate frequency"?)} Assuming the desired ($C$) and undesired ($I$) signals are both same strength, and the signal linewidth (from molecular fly-through time) is $B\approx10^3$~Hz, a 20~dB selectivity requires the phase noise to be smaller than $-50$~dBc/Hz. This requirement is satisfied by both signal sources described below.
+where $D$ is the desired signal level (dBm), $I$ is the undesired (interference) signal level (dBm), and $B$ is the bandwidth (in Hz) of the intermediate frequency.
+
+To translate this into the language of atomic physics, the goal is no longer to convert a signal down to IF, but rather to drive a transition at a specified detuning without exciting adjacent transitions. The previously defined variables acquire new meanings:
+%
+\begin{align*}
+    f_0 &=\text{applied \RF\ frequency}\\
+    f_\text{D} &=\text{desired transition frequency}\\
+    f_\text{I} &=\text{frequency of a nearby unwanted transition}\\
+    f_\text{IF} &=\text{detuning}
+\end{align*}
+%
+Assuming the desired ($D$) and undesired ($I$) signals are both same strength, and the signal linewidth (from molecular fly-through time) is $B\approx10^3$~Hz, a 20~dB selectivity requires the phase noise to be smaller than $-50$~dBc/Hz. This requirement is satisfied by both signal sources described below.
 
 The \DDS\ source is AD9910 (Analog Devices Inc., Norwood, MA), outputting out to approx.\ $f_\text{\DDS}=400$~MHz. The signal is mixed with a fixed $f_0=1$~GHz wave generated by one of the outputs of the SynthHD Pro (WindFreak Technologies, Holiday, FL). A low pass filter removes the sum component $f_\text{\DDS}+f_0$ and passes the difference, to be mixed with a $12.65$~GHz signal from the other SynthHD output. In the second stage, a high-pass filter has to be used, passing the sum of the frequencies, since the signal generator only goes up to 14~GHz. This also filters out a strong sub-harmonic in the high-frequency SynthHD output. (Two-stage mixing is required because of the difficulty in filtering out one of the 100~MHz sidebands from a signal exceding 10~GHz.) The resulting frequency-agile microwave signal is doubled or quadrupled if necessary, amplified, power-split with an SPDT switch, and recombined in an orthomode transducer before being led to the horn. The horns were custom engineered by Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam energy onto the molecular beam.
 
@@ -189,7 +201,7 @@ The design for the first state preparation region is currently under way.
 
 \subsection{Electrostatic lens}
 
-\todo{Get details from Oskari}
+\todoit{Constructed by Oskari Timgren. TBD.}
 
 \subsection{State preparation 2}
 
@@ -197,7 +209,7 @@ The second state preparation region has not yet been designed.
 
 \subsection{Interaction region}
 
-\todo{Get details from UMass}
+\todoit{Constructed at UMass. TBD.}
 
 \subsection{State projection and readout}
 
