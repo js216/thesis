@@ -57,10 +57,10 @@ numbers = [[10,7,11,6], [10,9,11,8], [10,8,11,9],    [10,6,11,7], [8,7,9,6], [8,
 colors  = ["black",     "black",     "black",        "black",     "black",   "black"]
 lw_list = 6*[1]
 ls_list = ["solid",    "solid",     "solid",       "solid",     "solid",  "solid"]
-labels  = ["\$m_\\text{Tl}\$",  "\$m_\\text{F}\$",     "\$m_J,m_\\text{Tl}\$", "\$m_J,m_\\text{F}\$", "\$m_J\$",   "\$m_\\text{Tl},m_\\text{F}\$"]
-angles  = [-40,         -40,         -30,            -30,         -10,       1]
-y_list  = [-68,         -64,         -50,            -47,         -18,       -5]
-x_list  = [7,           8.5,         7,              8.5,           8,         6]
+labels  = ["\$m_J,m_\\text{F}\$","\$m_\\text{F}\$",     "\$m_J,m_\\text{Tl}\$", "\$m_\\text{Tl}\$", "\$m_\\text{Tl},m_\\text{F}\$",   "\$m_J\$"]
+angles  = [-40,         -40,         -30,            -30,         -17,       1]
+y_list  = [-73,         -65,         -52,            -43,         -29,       -5]
+x_list  = [7,           8.5,         7,              8.5,           7,         6]
 x_list = 0.9*np.array(x_list)
 y_list = 1.3*np.array(y_list)
 

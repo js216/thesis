@@ -97,6 +97,7 @@ Upon starting, the program reads the main config file that defines general progr
 The device \verb`.ini` file should specify whether the device is a slow or a fast device.  A slow device is expected to return only a few values each time its \verb`ReadValue()` is called, and thus requires a single dataset to contain all the data. A fast device can return thousands or millions of datapoints each time it is polled, together with metadata that describes this particular set of values. Thus, the program creates a new dataset for each invocation of \verb`ReadValue()` of a fast device.
 
 \subsection{Beam source}
+\label{sect:beamsource}
 
 The beam source works by ablation of a solid sample of TlF held at cryogenic temperatures in a thermally shielded vacuum chamber. The ablated particles are expelled from the ablation cell by a flow of cold neon buffer gas. The design has been adapted from the beam source used in ref.~\cite{barry2011bright} with significant modifications.
 
@@ -170,6 +171,7 @@ To counteract the cavity length changes due to temperature and pressure variatio
 \end{figure}
 
 \subsection{Rotational cooling}
+\label{sect:rotcool}
 
 We designed a custom aluminum vacuum chamber to allow access for the molecular beam, \UV\ laser, and microwaves as required by the rotational cooling scheme.
 

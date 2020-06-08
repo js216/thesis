@@ -818,10 +818,9 @@ as displayed in Fig.~\ref{SOF2}a. For the parameter values in that figure, the s
 \end{figure}
 
 \paragraph{Beam sources}
+\label{sect:beamsources}
 
 The earliest molecular beams of thallium fluoride were of a thermal design, where a mass of the solid salt is heated in a copper oven to raise the vapour pressure. Depending on the mean free path (\mfp) of the molecules in the oven, we can distinguish two main types of thermal sources. In \emph{effusive} sources, the \mfp\ is comparable with the linear dimension $d$ of the hole through which the molecules emerge from the beam source. The particles escape by chance, and the beam properties reflect the state of the molecules in the oven. By contrast, in \emph{jet sources}, the \mfp\ is much smaller than $d$. The beam properties no longer reflect those of the oven molecules; instead, the local thermal (electronic, rotational, and vibrational) is partly converted into the center-of-mass motion of the particles. These beams are thus faster but colder.
-
-\todo{@Dave: I'm not sure it makes sense to have a table of beam sources, since I only present a couple beam sources and they each have a different set of interesting parameters. Unless there's lots of other beam sources that I should present?}
 
 For example, Schropp et al.\ \cite{schropp1987new,schropp1988thesis} report having a source at temperature 380\degC\ that yields a fraction $3\times10^{-4}$ of molecules in the desired state $J=1$, $m_J=0$, out of a detected beam of $7.5\times10^9$ molecules/second. The beam velocity can be estimated as $v_\text{CM}=\sqrt{2kT/m}\approx230$~m/s, with a spread of order $v_\text{CM}\sqrt{\ln2}\approx190$~m/s.
 
@@ -1271,29 +1270,29 @@ A second state preparation region will take molecules out of the lens $J=2$ stat
 \begin{table*}
     \small
     \makebox[\textwidth][c]{%
-        \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} cc ccc cc ccc ccc ccc@{}}
+        \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} ccc cc ccc ccc ccc@{}}
         \toprule
-              & \multicolumn{5}{c}{State 1} & \multicolumn{5}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S_m$ & $f_0$ & $df_0/dE_z$ \\
-                  \cmidrule(r{2.0ex}){2-6}\cmidrule(r{2.0ex}){7-11}\cmidrule(r{2.0ex}){12-13}
-            What flips?\hspace{1ex} & $l_\text{R}$ & $i$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $l_\text{R}$ & $i$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $x,y$ & $z$ & --- & mHz/$\mu$G & kHz & mHz/(V/cm) \\
+              & \multicolumn{4}{c}{State 1} & \multicolumn{4}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S^z_m$ & $f_0$ & $df_0/dE_z$ \\
+                  \cmidrule(r{2.0ex}){2-5}\cmidrule(r{2.0ex}){6-9}\cmidrule(r{2.0ex}){10-11}
+            What flips?\hspace{1ex} & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $x,y$ & $z$ & --- & mHz/$\mu$G & kHz & mHz/(V/cm) \\
         \midrule
-            \multirow{2}{*}{$m_\text{Tl}\;\Big\{$}             & e & 10 & $-$ & $-$ & $-$ & j & 7 & $-$ & $+$ & $-$ & \multirow{2}{*}{1.33} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$-8.09$} & \multirow{4}{*}{119.517} & \multirow{4}{*}{$-31.50$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & k & 6 & $+$ & $-$ & $+$ &                       &                       &                       & \\
-            \multirow{2}{*}{$m_J, m_\text{F}\;\Big\{$}         & e & 10 & $-$ & $-$ & $-$ & k & 6 & $+$ & $-$ & $+$ & \multirow{2}{*}{0.28} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$-4.99$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & j & 7 & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
-                                                                                                                                                                                            
-            \multirow{2}{*}{$m_J\;\Big\{$}                     & f & 8  & $+$ & $+$ & $-$ & j & 7 & $-$ & $+$ & $-$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{$-3.01$} & \multirow{4}{*}{108.924} & \multirow{4}{*}{$-3.57$} \\
-                                                               & g & 9  & $-$ & $-$ & $+$ & k & 6 & $+$ & $-$ & $+$ &                       &                       &                       \\
-            \multirow{2}{*}{$m_\text{Tl}, m_\text{F}\;\Big\{$} & f & 8  & $+$ & $+$ & $-$ & k & 6 & $+$ & $-$ & $+$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.09} & \multirow{2}{*}{0.99} & \multirow{2}{*}{$+0.09$} \\
-                                                               & g & 9  & $-$ & $-$ & $+$ & j & 7 & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
-                                                                                                                                                                                            
-            \multirow{2}{*}{$m_\text{F}\;\Big\{$}              & e & 10 & $-$ & $-$ & $-$ & g & 9 & $-$ & $-$ & $+$ & \multirow{2}{*}{1.88} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$-8.00$} & \multirow{4}{*}{10.593} & \multirow{4}{*}{$-27.93$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & f & 8 & $+$ & $+$ & $-$ &                       &                       &                       \\
-            \multirow{2}{*}{$m_J, m_\text{Tl}\;\Big\{$}        & e & 10 & $-$ & $-$ & $-$ & f & 8 & $+$ & $+$ & $-$ & \multirow{2}{*}{0.40} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$-5.07$} \\
-                                                               & h & 11 & $+$ & $+$ & $+$ & g & 9 & $-$ & $-$ & $+$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_\text{Tl}\;\Big\{$}             & e & $-$ & $-$ & $-$ & j & $-$ & $+$ & $-$ & \multirow{2}{*}{1.33} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$5.0$} & \multirow{4}{*}{119.517} & \multirow{4}{*}{$-31.50$} \\
+                                                               & h & $+$ & $+$ & $+$ & k & $+$ & $-$ & $+$ &                       &                       &                       & \\
+            \multirow{2}{*}{$m_J, m_\text{F}\;\Big\{$}         & e & $-$ & $-$ & $-$ & k & $+$ & $-$ & $+$ & \multirow{2}{*}{0.28} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$8.1$} \\
+                                                               & h & $+$ & $+$ & $+$ & j & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
+                                                                                                                                                                                   
+            \multirow{2}{*}{$m_J\;\Big\{$}                     & f & $+$ & $+$ & $-$ & j & $-$ & $+$ & $-$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{$0.1$} & \multirow{4}{*}{108.924} & \multirow{4}{*}{$-3.57$} \\
+                                                               & g & $-$ & $-$ & $+$ & k & $+$ & $-$ & $+$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_\text{Tl}, m_\text{F}\;\Big\{$} & f & $+$ & $+$ & $-$ & k & $+$ & $-$ & $+$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.09} & \multirow{2}{*}{0.99} & \multirow{2}{*}{$3.0$} \\
+                                                               & g & $-$ & $-$ & $+$ & j & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
+                                                                                                                                                                                   
+            \multirow{2}{*}{$m_\text{F}\;\Big\{$}              & e & $-$ & $-$ & $-$ & g & $-$ & $-$ & $+$ & \multirow{2}{*}{1.88} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$8.0$} & \multirow{4}{*}{10.593} & \multirow{4}{*}{$-27.93$} \\
+                                                               & h & $+$ & $+$ & $+$ & f & $+$ & $+$ & $-$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_J, m_\text{Tl}\;\Big\{$}        & e & $-$ & $-$ & $-$ & f & $+$ & $+$ & $-$ & \multirow{2}{*}{0.40} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$5.0$} \\
+                                                               & h & $+$ & $+$ & $+$ & g & $-$ & $-$ & $+$ &                       &                       &                       \\
         \bottomrule
     \end{tabu}}
-    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic $J=1$ manifold that do not involve the states $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of the largest decoupled-basis component; states i and l have two such components with equal amplitude, making it hard to say what spin is flipped. The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}, while the indices $i$ refer to the ordering of eigenvalues at 30~kV/cm, starting with 0--3, the lowest four $J=0$ states. The column labelled `$S_\text{\SMt}$' gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity $S_m$ gives the energy difference between the neighbouring resonances, given per unit external (residual) magnetic field, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm.}
+    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic $J=1$ manifold that do not involve the states $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of the largest decoupled-basis component; states i and l have two such components with equal amplitude, making it hard to say what spin is flipped. The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}. The column labelled $S_\text{\SMt}$ gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity $S^z_m$ gives the energy difference between the neighbouring resonances, given per unit external residual $B_z$, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm.}
     \label{statepairs}
 \end{table*}
 
@@ -1315,14 +1314,21 @@ Refer to Table \ref{statepairs} for a list of all available pairs of states we c
 %
 We can see that this quantity has a significant magnitude only for the three pairs of transitions that are labelled as flipping $m_\text{Tl}$. Of these, the first pair listed (ej/hk) is the one used in the papers by Ramsey et al.\ \cite{wilkening1984search} and Hinds et al.\ \cite{cho1991search} One pair of transitions (ef/hg) has a much smaller resonant frequency than the other two, but is otherwise comparable.
 
-The pair fk/gj with $\Delta m_J=0$ is significantly less sensitive to the residual magnetic field in the interaction region, and to imperfections in the electric field reversals, but requires the applied \RF\ magnetic field to be parallel with the electric field unlike all the other two transitions. That pair of transitions also flips the fluorine spin, but in the opposite sense to the change of $m_\text{Tl}$. The sensitivity to external fields is greatly reduced since the magnetic dipole moments of these nuclei are relatively well matched \cite{stone2005table}:
+The quantity $S_m^z$ quantifies the sensitivity to the residual magnetic field $B_z$ in the interaction region. For a pair of transitions $(i,j)$, where $i$'s relevant quantum numbers ($m_J,m_1,m_2$) are reversed compared to $j$, we define
+%
+\[
+    S_m^z\equiv
+    \frac{\d(f_i-f_j)}{\d B_z},
+\]
+%
+where $f_i,f_j$ are the resonant frequencies of the two transitions. In the absence of $B_z$, the quantity should vanish, since the direction of the internal molecular magnetic field $B_\text{mol}$ does not impact the eigenvalues of the Hamiltonian. However, with a residual field $B_z$ present, the two different signs of $B_\text{mol}$ form a sum and difference with $B_z$, resulting in two different magnitudes of the overall magnetic field, and thus a change in resonant frequencies $f_i$ and $f_j$.
+
+In Table \ref{statepairs}, we see that the pair of transitions least sensitive to $B_z$ is the one that only flips $m_J$ and leaves $m_1,m_2$ unchanged. The next most `resilient' pair is fk/gj; that pair of transitions flips both the thallium and the fluorine spins. The sensitivity to external fields is reduced since the magnetic dipole moments of these nuclei are relatively well matched \cite{stone2005table}:
 %
 \begin{align*}
     \mu(\ce{^{205}_{81}Tl})&=+1.63821461(12)\mu_\text{N}\\
     \mu(\ce{^{19}_{9}F})&=+2.628868(8)\mu_\text{N}.
 \end{align*}
-%
-\todo{@Dave: They are not really all that well-matched! How do you then explain the cancellation of sensitivity to the external magnetic field? And why are these states less sensitive to $E$-reversal imperfections?}
 
 Of the three pairs of transitions that do not flip $m_\text{Tl}$, the pair fj/gk is exactly forbidden. The other two (ek/hj and eg/hf) are about as sensitive to field imperfections as the two pairs of $m_\text{Tl}$-flipping transitions ej/kh and ef/hg, but $\approx23$ times less sensitive to the $T$-violating physics. These states can thus be used for magnetometer/electrometer transitions in calibrating the experimental systematics.
 

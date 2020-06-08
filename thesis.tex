@@ -220,28 +220,25 @@
 \end{@twocolumnfalse}
 ]
 
-\newpage
+\include{outlook}
+
+% has to be defined here for some reason
+\renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
+\renewcommand{\d}{\mathrm{d}}
+\renewcommand{\partial}{\text{∂}}
 
 \twocolumn[  
 \begin{@twocolumnfalse}
     \begin{center}
         \begin{minipage}{.5\textwidth}
             \centering
-            \vspace{1.5cm}
+            \vspace{2.5cm}
             \linespread{1.7}
-            \todo{@Dave: Do you agree with this structure?}
             \tableofcontents
         \end{minipage}
     \end{center}
 \end{@twocolumnfalse}
 ]
-
-\newpage
-
-% has to be defined here for some reason
-\renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
-\renewcommand{\d}{\mathrm{d}}
-\renewcommand{\partial}{\text{∂}}
 
 \twocolumn[  
     \begin{@twocolumnfalse}
@@ -281,6 +278,7 @@
     \end{@twocolumnfalse}
 ]
 
+
 \input{introduction}
 
 \include{systematics}
@@ -290,8 +288,6 @@
 \include{apparatus}
 
 \include{preliminary}
-
-\include{outlook}
 
 % Bibliography
 {
