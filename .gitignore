@@ -7,8 +7,6 @@
 *.ini
 *.toc
 
-thesis.pdf
-
 figs/svg/*.pdf
 figs/svg/*.pdf_tex
 figs/matplotlib/*.pdf
