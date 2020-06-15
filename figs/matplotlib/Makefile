@@ -1,8 +1,10 @@
 .PHONY: all clean
 
-all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf slope.pdf Ptrans1.pdf Ptrans2.pdf dressed.pdf
+all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf slope.pdf Ptrans1.pdf Ptrans2.pdf dressed.pdf Bmot.pdf
 
 # additional dependencies
+
+Bmot.pdf: Bmot_data.csv
 
 polarizeTlF.pdf: P_arr.csv Ez_arr.csv
 

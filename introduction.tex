@@ -1174,22 +1174,27 @@ About a decade later, Hinds and Sandars \cite{hinds1980experiment} reported a si
 \begin{table*}
     %\small
     \makebox[\textwidth][c]{%
-        \begin{tabu} to \textwidth {@{} ccccc r@{$\,\pm\,$}l@{$\,\cdot\;10$}l cc @{}}
+        \begin{tabu} to \textwidth {@{} cccc r@{$\,\pm\,$}l@{$\,\cdot\;10$}l cc @{}}
             \toprule
-            Species & Type          & $E_\text{int}$ & $B_\text{int}$ & $d_?$ & \multicolumn{3}{c}{$d$}               & Year & Ref. \\
-                    &               & [kV/cm]        & [gauss]        &       & \multicolumn{3}{c}{[$e\cm$]} & \\\midrule
-            TlF     & effusive beam & 80             & 26             & p     & 7    & 9    & $^{-21}$       & 1969 & \cite{harrison1969experimental} \\
-            TlF     & effusive beam & 26             & $<5\ee{-5}$    & p     & 1.8  & 7    & $^{-21}$       & 1980 & \cite{hinds1980experiment} \\
-            TlF     & effusive beam & 20.0           & $<2\ee{-3}$    & p     & 1.3  & 2.0  & $^{-21}$       & 1984 & \cite{wilkening1984search} \\
-            TlF     & jet source    & 29.5           & $<5\ee{-4}$    & p     & 3.7  & 6.3  & $^{-23}$       & 1991 & \cite{cho1991search} \\
-            Tl      & effusive beam & 50             & 1              & e     & 6    & 12   & $^{-24}$       & 1970 & \cite{gould1970search} \\
-            Tl      & effusive beam & 107            & 0.42           & e     & 1.8  & 1.2  & $^{-26}$       & 1994 & \cite{commins1994improved} \\
-            Tl      & effusive beam & 123            & 0.38           & e     & 6.9  & 7.4  & $^{-28}$       & 2002 & \cite{regan2002new} \\
-            n       & neutron trap  & 10             & 0.01           & n     & 0.2  & 2.2  & $^{-26}$       & 2006 & \cite{baker2006improved} \\
-            Hg      & vapour cell   & 6 \&\ 10       & 0.01           & n     & 4.8  & 9.3  & $^{-27}$       & 2016 & \cite{graner2016reduced} \\
+            Species & Type          & $E_\text{int}$ & $B_\text{int}$ & \multicolumn{3}{c}{$d$}               & Year & Ref. \\
+                    &               & [kV/cm]        & [gauss]        & \multicolumn{3}{c}{[$e\cm$]} & \\\midrule
+            \multicolumn{4}{@{}l}{\textit{Proton \EDM:}}\\
+            TlF     & effusive beam & 80             & 26             & 7      & 9    & $^{-21}$       & 1969 & \cite{harrison1969experimental} \\
+            TlF     & effusive beam & 26             & $<5\ee{-5}$    & 1.8    & 7    & $^{-21}$       & 1980 & \cite{hinds1980experiment} \\
+            TlF     & effusive beam & 20.0           & $<2\ee{-3}$    & 1.3    & 2.0  & $^{-21}$       & 1984 & \cite{wilkening1984search} \\
+            TlF     & jet source    & 29.5           & $<5\ee{-4}$    & 3.7    & 6.3  & $^{-23}$       & 1991 & \cite{cho1991search} \\
+            \\\multicolumn{4}{@{}l}{\textit{Electron \EDM:}}\\
+            Tl      & effusive beam & 50             & 1              & 6      & 12   & $^{-24}$       & 1970 & \cite{gould1970search} \\
+            Tl      & effusive beam & 107            & 0.42           & 1.8    & 1.2  & $^{-26}$       & 1994 & \cite{commins1994improved} \\
+            Tl      & effusive beam & 123            & 0.38           & 6.9    & 7.4  & $^{-28}$       & 2002 & \cite{regan2002new} \\
+            \\\multicolumn{4}{@{}l}{\textit{Neutron \EDM:}}\\
+            n       & neutron beam  & 71.6           & 250            & $-0.1$ & 2.4  & $^{-20}$       & 1957 & \cite{smith1957experimental} \\
+            n       & neutron beam  & 140            & 9              & $-3$   & 8    & $^{-23}$       & 1968 & \cite{dress1968upper} \\
+            n       & neutron trap  & 10             & 0.01           & 0.2    & 2.2  & $^{-26}$       & 2006 & \cite{baker2006improved} \\
+            Hg      & vapour cell   & 6 \&\ 10       & 0.01           & 4.8    & 9.3  & $^{-27}$       & 2016 & \cite{graner2016reduced} \\
             \bottomrule
         \end{tabu}}
-        \caption{Summary of results and experimental parameters of some of the previous \EDM-related experiments.}
+        \caption{Summary of results and experimental parameters of some of the previous \EDM-related experiments. \todo{Add more eEDM experiments.}}
         \label{previouswork}
 \end{table*}
 
@@ -1199,7 +1204,7 @@ Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper bo
 
 \paragraph{Other systems}
 
-While the thallium fluoride experiments look for proton \EDM or the Schiff moment, other   experiments search for electron or neutron \EDM s, or atomic \EDM s. There has been a string of experiments on atomic thallium. Already in the 1970s, an experiment reported $d_\text{Tl}=(1.3\pm2.4)\times10^{-21}e\cm$ looking for a shift between the $F=1$, $m_F=0,1$ sublevels of the $6^2P_{1/2}$ ground state of Tl in a uniform electric field of 50~kV/cm in the presence of a 1~G magnetic field parallel to the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported $d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and systematic uncertainties, respectively. \cite{commins1994improved} The experiment was subsequently significantly upgraded, improving the precision to $|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new}
+While the thallium fluoride experiments look for proton \EDM or the Schiff moment, other   experiments search for electron or neutron \EDM s, or atomic \EDM s. There has been a string of experiments on atomic thallium. Already in the 1970s, an experiment reported $d_\text{Tl}=(1.3\pm2.4)\times10^{-21}e\cm$ looking for a shift between the $F=1$, $m_F=0,1$ sublevels of the $6^2P_{1/2}$ ground state of Tl in a uniform electric field of 50~kV/cm in the presence of a 1~G magnetic field parallel to the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported $d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and systematic uncertainties, respectively. \cite{commins1994improved} The experiment was subsequently significantly upgraded, improving the precision to $|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new} \todo{Describe ACME.}
 
 A measurement on ultracold neutrons stored in a trap gave the result $|d_\text{n}|<2.9\times10^{-26}e\cm$. Since the particle were kept in a trap, the 130~s precession time between the (temporally) separated oscillatory fields is significantly longer than is commonly found in beam-based measurements. \cite{baker2006improved}
 
@@ -1291,6 +1296,36 @@ A second state preparation region will take molecules out of the lens $J=2$ stat
 
 \paragraph{Interaction region}
 
+\begin{table*}
+    \small
+    \makebox[\textwidth][c]{%
+        \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} ccc cc ccc ccc ccc@{}}
+        \toprule
+              & \multicolumn{4}{c}{State 1} & \multicolumn{4}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S^z_m$ & $f_0$ & $df_0/dE_z$ \\
+                  \cmidrule(r{2.0ex}){2-5}\cmidrule(r{2.0ex}){6-9}\cmidrule(r{2.0ex}){10-11}
+            What flips?\hspace{1ex} & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $x,y$ & $z$ & --- & mHz/$\mu$G & kHz & mHz/(V/cm) \\
+        \midrule
+            \multirow{2}{*}{$m_\text{Tl}\;\Big\{$}             & e & $-$ & $-$ & $-$ & j & $-$ & $+$ & $-$ & \multirow{2}{*}{1.33} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$5.0$} & \multirow{4}{*}{119.517} & \multirow{4}{*}{$31.50$} \\
+                                                               & h & $+$ & $+$ & $+$ & k & $+$ & $-$ & $+$ &                       &                       &                       & \\
+            \multirow{2}{*}{$m_J, m_\text{F}\;\Big\{$}         & e & $-$ & $-$ & $-$ & k & $+$ & $-$ & $+$ & \multirow{2}{*}{0.28} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$8.1$} \\
+                                                               & h & $+$ & $+$ & $+$ & j & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
+                                                                                                                                                                                   
+            \multirow{2}{*}{$m_J\;\Big\{$}                     & f & $+$ & $+$ & $-$ & j & $-$ & $+$ & $-$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{$0.1$} & \multirow{4}{*}{108.924} & \multirow{4}{*}{$3.57$} \\
+                                                               & g & $-$ & $-$ & $+$ & k & $+$ & $-$ & $+$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_\text{Tl}, m_\text{F}\;\Big\{$} & f & $+$ & $+$ & $-$ & k & $+$ & $-$ & $+$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.09} & \multirow{2}{*}{0.99} & \multirow{2}{*}{$3.0$} \\
+                                                               & g & $-$ & $-$ & $+$ & j & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
+                                                                                                                                                                                   
+            \multirow{2}{*}{$m_\text{F}\;\Big\{$}              & e & $-$ & $-$ & $-$ & g & $-$ & $-$ & $+$ & \multirow{2}{*}{1.88} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$8.0$} & \multirow{4}{*}{10.593} & \multirow{4}{*}{$27.93$} \\
+                                                               & h & $+$ & $+$ & $+$ & f & $+$ & $+$ & $-$ &                       &                       &                       \\
+            \multirow{2}{*}{$m_J, m_\text{Tl}\;\Big\{$}        & e & $-$ & $-$ & $-$ & f & $+$ & $+$ & $-$ & \multirow{2}{*}{0.40} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$5.0$} \\
+                                                               & h & $+$ & $+$ & $+$ & g & $-$ & $-$ & $+$ &                       &                       &                       \\
+        \bottomrule
+    \end{tabu}}
+    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic $J=1$ manifold that do not involve the states $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of the largest decoupled-basis component; states i and l have two such components with equal amplitude, making it hard to say what spin is flipped. The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}. The column labelled $S_\text{\SMt}$ gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity $S^z_m$ gives the energy difference between the neighbouring resonances, given per unit external residual $B_z$, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm. All quantities (except quantum numbers) are given without their sign.}
+    \label{statepairs}
+\end{table*}
+
+
 A high external electric field polarizes the molecules, thus enabling the linear energy shift due to the Schiff moment. The measurement will be done using the method of separated oscillatory fields as explained above.
 
 We intend to use a pair of $J=1$, $m_J=\pm1$ states, where the molecular rotation leads to an internal magnetic field. By flipping the sign of $m_J$, the internal magnetic field can be reversed. The first \RF\ coil in the Ramsey sequence creates a superposition of thallium spin-up and spin-down states, and the phase accumulated during the interaction time is translated by the second pulse back into varying populations of the spin states. The data obtained with the two different fluorine spin directions can be used for systematic checks.
@@ -1324,36 +1359,6 @@ In Table \ref{statepairs}, we see that the pair of transitions least sensitive t
 \end{align*}
 
 Of the three pairs of transitions that do not flip $m_\text{Tl}$, the pair fj/gk is exactly forbidden. The other two (ek/hj and eg/hf) are about as sensitive to field imperfections as the two pairs of $m_\text{Tl}$-flipping transitions ej/kh and ef/hg, but $\approx23$ times less sensitive to the $T$-violating physics. These states can thus be used for magnetometer/electrometer transitions in calibrating the experimental systematics.
-
-\begin{table*}
-    %\small
-    \makebox[\textwidth][c]{%
-        \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} ccc cc ccc ccc ccc@{}}
-        \toprule
-              & \multicolumn{4}{c}{State 1} & \multicolumn{4}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S^z_m$ & $f_0$ & $df_0/dE_z$ \\
-                  \cmidrule(r{2.0ex}){2-5}\cmidrule(r{2.0ex}){6-9}\cmidrule(r{2.0ex}){10-11}
-            What flips?\hspace{1ex} & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $x,y$ & $z$ & --- & mHz/$\mu$G & kHz & mHz/(V/cm) \\
-        \midrule
-            \multirow{2}{*}{$m_\text{Tl}\;\Big\{$}             & e & $-$ & $-$ & $-$ & j & $-$ & $+$ & $-$ & \multirow{2}{*}{1.33} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$5.0$} & \multirow{4}{*}{119.517} & \multirow{4}{*}{$-31.50$} \\
-                                                               & h & $+$ & $+$ & $+$ & k & $+$ & $-$ & $+$ &                       &                       &                       & \\
-            \multirow{2}{*}{$m_J, m_\text{F}\;\Big\{$}         & e & $-$ & $-$ & $-$ & k & $+$ & $-$ & $+$ & \multirow{2}{*}{0.28} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$8.1$} \\
-                                                               & h & $+$ & $+$ & $+$ & j & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
-                                                                                                                                                                                   
-            \multirow{2}{*}{$m_J\;\Big\{$}                     & f & $+$ & $+$ & $-$ & j & $-$ & $+$ & $-$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.00} & \multirow{2}{*}{$0.1$} & \multirow{4}{*}{108.924} & \multirow{4}{*}{$-3.57$} \\
-                                                               & g & $-$ & $-$ & $+$ & k & $+$ & $-$ & $+$ &                       &                       &                       \\
-            \multirow{2}{*}{$m_\text{Tl}, m_\text{F}\;\Big\{$} & f & $+$ & $+$ & $-$ & k & $+$ & $-$ & $+$ & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.09} & \multirow{2}{*}{0.99} & \multirow{2}{*}{$3.0$} \\
-                                                               & g & $-$ & $-$ & $+$ & j & $-$ & $+$ & $-$ &                       &                       &                       \\\dashedrule
-                                                                                                                                                                                   
-            \multirow{2}{*}{$m_\text{F}\;\Big\{$}              & e & $-$ & $-$ & $-$ & g & $-$ & $-$ & $+$ & \multirow{2}{*}{1.88} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.04} & \multirow{2}{*}{$8.0$} & \multirow{4}{*}{10.593} & \multirow{4}{*}{$-27.93$} \\
-                                                               & h & $+$ & $+$ & $+$ & f & $+$ & $+$ & $-$ &                       &                       &                       \\
-            \multirow{2}{*}{$m_J, m_\text{Tl}\;\Big\{$}        & e & $-$ & $-$ & $-$ & f & $+$ & $+$ & $-$ & \multirow{2}{*}{0.40} & \multirow{2}{*}{0.00} & \multirow{2}{*}{0.95} & \multirow{2}{*}{$5.0$} \\
-                                                               & h & $+$ & $+$ & $+$ & g & $-$ & $-$ & $+$ &                       &                       &                       \\
-        \bottomrule
-    \end{tabu}}
-    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic $J=1$ manifold that do not involve the states $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of the largest decoupled-basis component; states i and l have two such components with equal amplitude, making it hard to say what spin is flipped. The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}. The column labelled $S_\text{\SMt}$ gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity $S^z_m$ gives the energy difference between the neighbouring resonances, given per unit external residual $B_z$, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm.}
-    \label{statepairs}
-\end{table*}
-
 
 There are a further 13 possible transitions, not listed in Table \ref{statepairs}, involving the `superposition' states $\ket{\text{i}}$ and $\ket{\text{l}}$, given in \cite[Table~I]{cho1991search} with the following $\ket{m_J,m_1,m_2}$ eigenvectors:
 %

@@ -32,53 +32,54 @@ As detailed in the section on the measurement scheme, \CENTREX\ follows the desi
     \label{entire}
 \end{figure*}
 
-\subsection{Control software}
-
-The experimental parameters are monitored and controlled using a range of devices. Most of these have already been integrated into a central data acquisition (\DAQ) system. At present, the latter consists of a single highly configurable Python program running on all computers attached to the experiment, communicating with the devices connected to the computer and writing the obtained data to the local disk. In the future, we intend to set up a common data and backup server to deal with the greatly increased data generation rate once the entire apparatus is up and running.
-
-The program's code is divided between classes that make up the graphical user interface (\GUI), and control classes which make use of driver classes to communicate with physical instruments. In addition, all program configuration is contained in \verb`.ini` files in subdirectories of the so-called \verb`config` directory, allowing for simple modification and extension of the \DAQ\ system without changing the main program code. This configuration is loaded into the relevant \verb`Config` class.
-
-\begin{table}[t]
+\begin{table}[!htb]
     %\makebox[\columnwidth][c]{%
-    \begin{tabu} to \columnwidth {@{}rX[c]l@{}}
+    \begin{tabu} to \columnwidth {@{}rcX[c]l@{}}
         \toprule
-        Parameter & Value & Units \\
+        Parameter & Sym. & Value & Units \\
         \midrule
         \multicolumn{3}{@{}l}{\textit{Beam source:}}\\
-           total source intensity       & $10^{10}$ to $10^{12}$ & mol./s/sr/state  \\
-           average beam velocity        & $184\pm17$             & m/s              \\
-           beam velocity spread         & $16.1\pm0.8$           & m/s              \\
-           rotational temperature       & $6.5\pm0.2$            & K                \\
-           vibrational temperature      & 8                      & K                \\
-           beam diameter                & 2.5                    & cm               \\
-           nozzle diameter              & \nicefrac{1}{4}        & in               \\
-           nozzle to detector dist.     & 6.45                   & m                \\
+           total source intensity       & $I_0$             & $10^{10-12}$           & mol./s/sr/state  \\
+           average beam velocity        & $v_\text{CM}$     & $184\pm17$             & m/s              \\
+           beam velocity spread         & $\alpha$          & $16\pm1$           & m/s              \\
+           rotational temperature       & $T_\text{rot}$    & $6.5\pm0.2$            & K                \\
+           vibrational temperature      & $T_\text{vib}$    & 8                      & K                \\
+           pulse duration               & $\Delta t$        & \todo{???}             & ms               \\
+           beam diameter                & $d_\text{beam}$   & 2.5                    & cm               \\
+           nozzle diameter              & $d_\text{noz}$    & \nicefrac{1}{4}        & in               \\
+           nozzle to detector dist.     & $L_\text{nd}$     & 6.45                   & m                \\
         \\\multicolumn{3}{@{}l}{\textit{Quadrupole lens:}}\\
-           quadrupole voltage           & $\pm30$                & kV               \\
-           bore diameter                & 1.75                   & in               \\
-           length                       & 60                     & cm               \\
+           quadrupole voltage           & $V_\text{quad}$   & $\pm30$                & kV               \\
+           bore diameter                & $d_\text{quad}$   & 1.75                   & in               \\
+           length                       & $L_\text{quad}$   & 60                     & cm               \\
         \\\multicolumn{3}{@{}l}{\textit{Interaction region:}}\\
-           SOF coil frequency           &                        & kHz              \\
-           slope of SOF resonance       & 0.094                  & 1/Hz             \\
-           interaction region $E$ field & $\pm30$                & kV               \\
-           interaction region $B$ field & $<10$                  & $\mu$G           \\
-           SOF coil separation          & 3                      & m                \\
-           interaction time             & 16                     & ms               \\
-           resonance FWHM               & 33.2                   & Hz               \\
-           SOF coil width               & 10                     & cm               \\
+           SOF coil frequency           & $f_0$             &                        & kHz              \\
+           slope of SOF resonance       & $\d I/\d f$       & 0.094                  & 1/Hz             \\
+           interaction region $E$ field & $E_\text{int}$    & $\pm30$                & kV               \\
+           interaction region $B$ field & $B_\text{int}$    & $<10$                  & $\mu$G           \\
+           SOF coil separation          & $L_\text{SOF}$    & 3                      & m                \\
+           interaction time             & $T$               & 16                     & ms               \\
+           resonance FWHM               & $\Delta f$        & 33.2                   & Hz               \\
+           SOF coil width               & $d_\text{SOF}$    & 10                     & cm               \\
         \\\multicolumn{3}{@{}l}{\textit{Detection region:}}\\
-           detection efficiency         & 100~\%                 & ---              \\
-           detection rate               & $2\cdot10^9$           & mol./sec         \\
-           source-detector distance     & $594\pm10$             & cm               \\
-           background count             & \todo{???}             & mol./sec         \\
-           detection area               & \todo{???}             & mm$^2$           \\
-           signal to noise ratio        & \todo{???}             & ---              \\
-           fringe contrast              & \todo{???}             & ---              \\
+           detection efficiency         & $\eta_\text{det}$ & 100~\%                 & ---              \\
+           detection rate               & $I_\text{det}$    & $2\cdot10^9$           & mol./sec         \\
+           source-detector distance     & $L_\text{sd}$     & $594\pm10$             & cm               \\
+           background count             & $I_\text{b}$      & \todo{???}             & mol./sec         \\
+           detection area               & $A_\text{det}$    & \todo{???}             & mm$^2$           \\
+           signal to noise ratio        & SNR               & \todo{???}             & ---              \\
+           fringe contrast              & $C_\text{f}$      & \todo{???}             & ---              \\
            \bottomrule
     \end{tabu}%}
     \caption{Key parameters of the \CENTREX\ experiment.}
     \label{parametertable}
 \end{table}
+
+\subsection{Control software}
+
+The experimental parameters are monitored and controlled using a range of devices. Most of these have already been integrated into a central data acquisition (\DAQ) system. At present, the latter consists of a single highly configurable Python program running on all computers attached to the experiment, communicating with the devices connected to the computer and writing the obtained data to the local disk. In the future, we intend to set up a common data and backup server to deal with the greatly increased data generation rate once the entire apparatus is up and running.
+
+The program's code is divided between classes that make up the graphical user interface (\GUI), and control classes which make use of driver classes to communicate with physical instruments. In addition, all program configuration is contained in \verb`.ini` files in subdirectories of the so-called \verb`config` directory, allowing for simple modification and extension of the \DAQ\ system without changing the main program code. This configuration is loaded into the relevant \verb`Config` class.
 
 The user controls the devices through the \verb`ControlGUI`, which is a canvas for control of recording and external devices. The information in device config files is automatically read and translated into usable controls that appear in the \GUI. Underneath the graphical interface, several classes implement the program's functionality:
 
@@ -212,6 +213,8 @@ The second state preparation region has not yet been designed.
 \subsection{Interaction region}
 
 \todoit{Constructed at UMass. TBD.}
+
+The coil setup is currently being designed. For a thorough uncertainty analysis, the system will need the ability to apply small $B_z$ field in interaction region, as well as small $B_y$ and $B_x$ and small gradients, such as $\d B_z/\d x$.
 
 \subsection{State projection and readout}
 
