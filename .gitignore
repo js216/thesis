@@ -1,3 +1,5 @@
+*.lof
+*.lot
 *.out
 *.swp
 *.aux
