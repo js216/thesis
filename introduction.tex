@@ -631,7 +631,14 @@ the constant factors being chosen so that $e\ex{\vec R}=d_\text{N}\hat{\vec z}$.
 \[
 \rho(\vec R)=\frac{d_\text{p}}{4\pi eZR_0^3/3}\delta(R_0-R)\cos\theta,
 \]
-which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is $|\vec S|=d_\text{p}R_0^2/10$. We have seen that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
+which integrates to $e\ex{\vec R}=d_\text{p}\hat{\vec z}$, and the Schiff moment is
+%
+\begin{equation}
+    \label{protonSMT}
+    |\vec S|=d_\text{p}R_0^2/10.
+\end{equation}
+%
+We have seen that the effect of this electric field at the site of the nucleus would be to polarize the atom, and give rise to a potentially measurable energy shift.
 
 In each case, we saw that $|\vec S|\propto R_0^2$. Furthermore, the matrix element (eqn~\ref{1stenergyshiftmatelem}) proportional to the first order energy shift has a $Z^2$ dependence. Since the nuclear radius scales as $R_0\approx R_\text{N}A^{1/3}$, where $R_\text{N}\approx1.2\fm$ is the characteristic nuclear size \cite[eqn~3.8]{krane1987introductory}, the overall scaling is $Z^2 A^{2/3}$. We conclude that heavier atoms---such as thallium---are preferable for \SMt\ experiments.
 
@@ -705,7 +712,9 @@ We see the transfer is maximised for a resonant field, $\omega=\omega_0$, and th
 
 In principle, an infinitely precise measurement could be obtained by simply extending the length $l$ of the precession region, thus prolonging the precession period $\tau=l/v$ for molecules of speed $v$. In practice, however, this meets with the following problems. (1) The beam intensity $N$ decays as $1/l^2$ in the limit where the interaction region is long compared to the distance from the source to the start of the interaction region. Indeed, the signal-to-noise ratio, being proportional to $\sqrt{N}/\tau$, is roughly independent of interaction length. (2) We may want to measure the precession in a region where the oscillating field cannot be applied. (3) It is difficult to maintain uniform externally applied fields over an extended length.
 
-It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields (\SOF) are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695} The transition probability $\widetilde{P}_{p,q}$, here expressed in terms of the simple Rabi oscillation probability $P_{p,q}$, is \cite[cf.\ eqn~V.37]{ramsey1956molecular}
+It turns out that the oscillating field does not need to extend over the entire length of the precession region. In Ramsey's resonance scheme, separated oscillating fields (\SOF) are only applied in two small regions at the beginning and at the end of the interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the resonances are less broadened by the non-uniformity of the fixed field. \cite{PhysRev.78.695} One way to understand the latter point is to note that the oscillating field driving the transitions at each end will be tuned to the nominal resonant frequency determined by the level spacing in the region of the \RF\ coils. If, in the region between the two coils, the residual fields cause the level spacing to deviate from its nominal value, this should not affect the efficacy of the coils.
+
+The transition probability $\widetilde{P}_{p,q}$ for the \SOF\ scheme, here expressed in terms of the simple Rabi oscillation probability $P_{p,q}$, is \cite[cf.\ eqn~V.37]{ramsey1956molecular}
 %
 \[
     \frac{\widetilde{P}_{p,q}}
@@ -797,7 +806,7 @@ For a cryogenic buffer-gas beam source, the appropriate averaging is to be taken
     ,
 \]
 %
-where $\overline v$ is the average (center of mass) velocity of the molecular beam, with a spread of velocities $\alpha$. The extended integration limits compared with eqn~\ref{effusivef} are not significant, since the $f_\text{BG}(v)$ for $v$ far away from $\overline v$. See Fig.~\ref{SOF2} for typical parameter values. Since the measurement is repeated for each sign of $\phi=\pm\pi/2$, we can define the signal $S_\text{\SOF}$ as
+where $\overline v$ is the average (center of mass) velocity of the molecular beam, with a spread of velocities $\alpha$. The extended integration limits compared with eqn~\ref{effusivef} are not significant, since the $f_\text{BG}(v)\to0$ for $v$ far away from $\overline v$. See Fig.~\ref{SOF2} for typical parameter values. Since the measurement is repeated for each sign of $\phi=\pm\pi/2$, we can define the signal $S_\text{\SOF}$ as
 %
 \[
     S_\text{\SOF}=
@@ -879,7 +888,7 @@ The energy levels found by diagonalizing this Hamiltonian are illustrated in Fig
     T_{vJ}={\textstyle\sum_{lm}}Y_{lm}(v+1/2)^l[J(J+1)]^m.
 \]
 %
-In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_\text{e}\equiv Y_{01}$ and the first term $\alpha_\text{e}\equiv Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.28958\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. Note that the value $2B=13.37984\GHz$, given in Ramsey et al.\ \cite{wilkening1984search}, only takes into account $B_\text{e}$ and is thus not appropriate for driving microwave transitions. %2*29.9792458*(0.223150163-0.001503850)
+In practice, however, we find that the lowest few microwave rotational transitions are sufficiently well described using only the rotational constant in equilibrium position $B_\text{e}\equiv Y_{01}$ and the first term $\alpha_\text{e}\equiv-Y_{11}$ using NIST data \cite{afeefy2011nist}, yielding the effective constant $2B=13.33466\GHz$ for the isotope $^{205}\mathrm{Tl}^{19}\mathrm{F}$. Note that the value $2B=13.37984\GHz$, given in Ramsey et al.\ \cite{wilkening1984search}, only takes into account $B_\text{e}$ and is thus not appropriate for driving microwave transitions. %2*29.9792458*(0.223150163-0.001503850/2)
 
 Due to a coupling of molecular rotation to the nuclear spin magnetic moments, hyperfine levels are made non-degenerate by an interaction $\H_\text{sr}=c_1(\vec I_1\cdot\vec J)+c_2(\vec I_2\cdot\vec J)$, with $c_1\approx126\kHz$ and $c_2\approx18\kHz$. The next largest effect, the spin--spin interaction, is due to two distinct effects of magnitudes $c_3=0.070\kHz$ and $c_4=-13.30\kHz$. The $c_3$ term is due to a direct dipole--dipole coupling between the nuclear spins. In the Hamiltonian given above, the $c_3$ term is written in an effective form, valid for small (less than approx.\ $20\kVcm$) electric fields when $J$ is a good quantum number. At large $E$-field values, $J$ is no longer a good quantum number, and this approximation cannot be used. In its stead, Brown and Carrington \cite[eqn~4.17]{brown2003rotational} give
 %
@@ -1208,7 +1217,7 @@ While the thallium fluoride experiments look for proton \EDM or the Schiff momen
 
 A measurement on ultracold neutrons stored in a trap gave the result $|d_\text{n}|<2.9\times10^{-26}e\cm$. Since the particle were kept in a trap, the 130~s precession time between the (temporally) separated oscillatory fields is significantly longer than is commonly found in beam-based measurements. \cite{baker2006improved}
 
-In a decades-long search for the \EDM\ of $^{199}$Hg, the Zeeman precession frequency of the nuclear spins in parallel electric and magnetic fields was measured. To reduce the frequency noise due to magnetic field fluctuations, two mercury cells are positioned next to each other but with opposite electric field direction, analogously to the electric field reversals typical of molecular-beam experiments. \cite{romalis2001new}. The result has been constrained to $|d_\text{Hg}|<7.4\times10^{-30}e\cm$, which can also be interpreted in terms of a neutron \EDM\ limit $|d_\text{n}|<1.6\times10^{-26}e\cm$, superseding ref.~\cite{pendlebury2015revised} as the best such limit. \cite{griffith2009improved,graner2016reduced}
+In a decades-long search for the \EDM\ of $^{199}$Hg, the Zeeman precession frequency of the nuclear spins in parallel electric and magnetic fields was measured. To reduce the frequency noise due to magnetic field fluctuations, two mercury cells are positioned next to each other but with opposite electric field direction, analogously to the electric field reversals typical of molecular-beam experiments. \cite{romalis2001new}. The result has been constrained to $|d_\text{Hg}|<7.4\times10^{-30}e\cm$, which can also be interpreted in terms of a neutron \EDM\ limit $|d_\text{n}|<1.6\times10^{-26}e\cm$, superseding ref.~\cite{pendlebury2015revised} as the best such limit. The result can also be taken to limit the proton \EDM\ below $2.0\times10^{-25}\,e\cm$, a tighter limit than the old TlF experiments we able to provide. \cite{griffith2009improved,graner2016reduced}
 
 \begin{figure*}
     \centering\small
@@ -1254,7 +1263,7 @@ The other requirement for \ARP\ is that the passage is \emph{rapid} compared to 
     \end{minipage}
     \hfill
     \mbox{}
-    \caption{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$.}
+    \caption{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$. \todo{In your thesis you have a figure for rotational cooling with the percentages in each state below them; however I've checked the numbers and they don't match the description. In your thesis it says the percentages are the population in each rotational state assuming 8K, but if that's true J=0 should have around 5\%, not 31\%}}
     \label{scheme}
 \end{figure*}
 
@@ -1301,7 +1310,7 @@ A second state preparation region will take molecules out of the lens $J=2$ stat
     \makebox[\textwidth][c]{%
         \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} ccc cc ccc ccc ccc@{}}
         \toprule
-              & \multicolumn{4}{c}{State 1} & \multicolumn{4}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S^z_m$ & $f_0$ & $df_0/dE_z$ \\
+              & \multicolumn{4}{c}{State 1} & \multicolumn{4}{c}{State 2} & \multicolumn{2}{c}{$|\bra{\cdot}\mathcal{H}_\text{Z}\ket{\cdot}|$ [kHz/G]\hspace{1.5ex}\mbox{}} & $S_\text{\SMt}$ & $S^z_m$ & $f_0$ & $df_0/dE_z$ \\
                   \cmidrule(r{2.0ex}){2-5}\cmidrule(r{2.0ex}){6-9}\cmidrule(r{2.0ex}){10-11}
             What flips?\hspace{1ex} & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $l_\text{R}$ & $m_J$ & $m_\text{Tl}$ & $m_\text{F}$ & $x,y$ & $z$ & --- & mHz/$\mu$G & kHz & mHz/(V/cm) \\
         \midrule

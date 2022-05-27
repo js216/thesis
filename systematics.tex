@@ -5,7 +5,12 @@
 
 In general, the statistical sensitivity of a molecular \EDM\ experiment depends on electric polarization $P$, coherence time $\tau$, detection rate $\dot N$, total measurement time $T$, and other factors encoding the intrinsic sensitivity of the system. For measurements of the Schiff moment in a nucleus with mass $A$ and atomic number $Z$, the sensitivity scales as $P\tau\sqrt{\dot N T}AZS_0$, where $S_0$ depends on the details of the nuclear structure. \cite{khriplovich2012cp}
 
-\todo{Give more numerical details.}
+As a rough estimate, let us ignore most of the abovementioned details, and consider a pulse of duration $t_\text{p}$ with $N_\text{p}=t_\text{p}R_\text{det}$ molecules. The Poissonian fluctuations of the number of molecules is $\sqrt{N_\text{p}}$, resulting in the detection rate shot noise of $\delta S=\sqrt{N_\text{p}}/t_\text{p}$. The corresponding error in the frequency measurement is
+%
+\[
+    \delta f=\delta S/\frac{\d S}{\d f},
+\]
+with the approximate detection curve slope $\d S/\d f\approx R_\text{det}/\Delta f$. Plugging in the numbers from Table~\ref{parametertable}, we get a shot noise of approx.\ $5\mHz$. For 300 hours of data collected with a 50~Hz pulse rate, the final experimental sensitivity is expected to be of the order $\approx1\uHz$. The latter figure corresponds to (via eqn~\ref{schiffnumbers}) to a Schiff moment of the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a proton \EDM\ of $10^{-26}\,e\cm$.
 
 \subsection{Parameter reversals}
 
