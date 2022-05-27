@@ -1,12 +1,10 @@
 \documentclass[10pt]{article}
 
-%\includeonly{apparatus}
+\includeonly{magneticshield}
 
 % page layout
-%\usepackage[letterpaper, left=1.7in, right=1.7in, top=1in, bottom=1.5in]{geometry}
-\usepackage[letterpaper, twocolumn, left=1.8cm, right=1.8cm, top=1.4cm, bottom=2.2cm]{geometry}
-\usepackage{multicol}   
-\setlength{\columnsep}{1.85em}
+\usepackage[letterpaper, left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{setspace}
 
 % math
 \usepackage{amsmath, amssymb, bm, nicefrac, mathtools, mhchem}
@@ -36,42 +34,41 @@
 \hyphenation{appro-xi-ma-te-ly}
 \hyphenation{gau-ges}
 
-% Minion Pro
-\linespread{1.09}
-\usepackage{mathspec}
-\setmainfont{Minion Pro}
-\setmathfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
-\setmathrm{Minion Pro}
-\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
-\makeatletter
-\SetSymbolFont{Latin:m:n}{bold}{TU}{\zf@family}{bx}{n}
-\SetSymbolFont{Latin:m:it}{bold}{TU}{\zf@family}{bx}{it}
-\SetSymbolFont{operators}{bold}{TU}{\zf@family}{bx}{n}
-\SetSymbolFont{Greek:m:n}{bold}{TU}{\zf@family}{bx}{n}
-\SetSymbolFont{Greek:m:it}{bold}{TU}{\zf@family}{bx}{it}
-\SetSymbolFont{Digits:m:n}{bold}{TU}{\zf@family}{m}{n}
-\makeatother
-\newfontfamily\sectionfont{Minion Pro Bold}
-\newfontfamily\subsectionfont{Minion Pro Semibold}
+%% Minion Pro
+%\usepackage{mathspec}
+%\setmainfont{Minion Pro}
+%\setmathfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
+%\setmathrm{Minion Pro}
+%\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
+%\makeatletter
+%\SetSymbolFont{Latin:m:n}{bold}{TU}{\zf@family}{bx}{n}
+%\SetSymbolFont{Latin:m:it}{bold}{TU}{\zf@family}{bx}{it}
+%\SetSymbolFont{operators}{bold}{TU}{\zf@family}{bx}{n}
+%\SetSymbolFont{Greek:m:n}{bold}{TU}{\zf@family}{bx}{n}
+%\SetSymbolFont{Greek:m:it}{bold}{TU}{\zf@family}{bx}{it}
+%\SetSymbolFont{Digits:m:n}{bold}{TU}{\zf@family}{m}{n}
+%\makeatother
+%\newfontfamily\sectionfont{Minion Pro Bold}
+%\newfontfamily\subsectionfont{Minion Pro Semibold}
 
 % section title formatting
 \usepackage[explicit]{titlesec}
 \usepackage{bold-extra}
 \renewcommand{\thesection}{\Roman{section}} 
 \newcommand{\sectionbreak}{}
-\titleformat{\section}
-   {\sectionfont\filcenter}
-   {\thesection.}
-   {1em}
-   %{\textls[50]{\MakeUppercase{#1}}}
-   {{\addfontfeature{LetterSpace=15}\MakeUppercase{#1}}}
+%\titleformat{\section}
+%   {\sectionfont\filcenter}
+%   {\thesection.}
+%   {1em}
+%   %{\textls[50]{\MakeUppercase{#1}}}
+%   {{\addfontfeature{LetterSpace=15}\MakeUppercase{#1}}}
 \renewcommand\thesubsection{\Alph{subsection}}
-\titleformat{\subsection}
-   {\subsectionfont\filcenter}
-   {\thesubsection.}
-   {1em}
-   %{\textls[30]{#1}}
-   {{\addfontfeature{LetterSpace=5}{#1}}}
+%\titleformat{\subsection}
+%   {\subsectionfont\filcenter}
+%   {\thesubsection.}
+%   {1em}
+%   %{\textls[30]{#1}}
+%   {{\addfontfeature{LetterSpace=5}{#1}}}
 \titleformat{\subsubsection}
    {\normalfont\normalsize\bfseries}
    {\thesubsubsection}
@@ -87,7 +84,6 @@
 
 % for notes and bibliography
 \usepackage[numbers,square]{natbib}
-%\renewcommand*{\bibfont}{\raggedright}
 \usepackage{doi}
 \usepackage{xcolor,hyperref}
 \hypersetup{
@@ -99,6 +95,11 @@
 \newcommand\todoit[1]{\textcolor{purple}{\textit{TODO: #1}}}
 \usepackage{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH]  \THEYEAR}
+
+% has to be defined here (after including the doi package) for some reason
+\renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
+\renewcommand{\d}{\mathrm{d}}
+%\renewcommand{\partial}{\text{∂}}
 
 % for tables
 \usepackage{booktabs,tabu,multirow}
@@ -192,96 +193,9 @@
 
 \begin{document}
 
-\twocolumn[  
-\begin{@twocolumnfalse}
-    \begin{center}
-        \begin{minipage}{.8\textwidth}
-            \centering
-            \thispagestyle{empty}
-            \vspace{2cm}
+\include{titlepage}
 
-            \resizebox{3cm}{!}{\includegraphics{figs/GSAS}}
-
-            \vspace{1cm}
-            {\bf\Large Search for time-reversal-symmetry violation in thallium fluoride
-            using a cryogenic buffer-gas beam source}
-
-            \vspace{1.5ex}
-            {\large
-            A dissertation prospectus by Jakob Kastelic
-
-            Advisor: David DeMille
-
-            Yale University Physics Department
-
-            \monthyeardate\today}
-
-            \vspace{5cm}
-        \end{minipage}
-    \end{center}
-\end{@twocolumnfalse}
-]
-
-\include{outlook}
-
-% has to be defined here for some reason
-\renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
-\renewcommand{\d}{\mathrm{d}}
-\renewcommand{\partial}{\text{∂}}
-
-\twocolumn[  
-\begin{@twocolumnfalse}
-    \begin{center}
-        \begin{minipage}{.5\textwidth}
-            \centering
-            \vspace{2.5cm}
-            \linespread{1.7}
-            \tableofcontents
-        \end{minipage}
-    \end{center}
-\end{@twocolumnfalse}
-]
-
-\twocolumn[  
-    \begin{@twocolumnfalse}
-       \begin{center}
-          \begin{minipage}{.8\textwidth}
-             \centering
-             \vspace{4.5ex}
-
-             {\bf\large Search for time-reversal-symmetry violation in thallium fluoride
-             using a cryogenic buffer-gas beam source}
-
-             \vspace{1.5ex}
-             O. Grasdijk, O. Timgren, J. Kastelic, T. Wright, S. Lamoreaux, D. DeMille
-
-             {\it\small Department of Physics, Yale University, New Haven, Connecticut 06511}
-
-             \vspace{1.5ex}
-             K. Wenz, M. Aitken, T. Zelevinsky
-
-             {\it\small Department of Physics, Columbia University, New York, New York 10027}
-
-             \vspace{1.5ex}
-             T. Winick, D. Kawall
-
-             {\it\small Department of Physics, University of Massachusetts Amherst, Amherst, Massachusetts 01003}
-          \end{minipage}
-
-          \vspace{3ex}
-
-          \begin{minipage}{.75\textwidth}
-             \small
-             The \CENTREX\ experiment aims to provide a 30-fold increase in sensitivity over the best present upper bounds on the strength of time-violating fundamental interactions by measuring shifts in nuclear resonant frequencies in thallium fluoride. I describe the motivation for studying these time-violating interactions, and provide an overview of past work. I present the current measurement scheme for this experiment. Since the apparatus is still under construction, I present the components already built, give preliminary data collected to date, and estimate the timeline for completion of the experiment.
-          \end{minipage}
-
-          \vspace{3ex}
-       \end{center}
-    \end{@twocolumnfalse}
-]
-
-
-\input{introduction}
+\include{introduction}
 
 \include{systematics}
 
@@ -289,19 +203,10 @@
 
 \include{apparatus}
 
+\include{magneticshield}
+
 \include{preliminary}
 
-% Bibliography
-{
-   %\mbox{}
-   %\vspace{1cm}
-
-   %\centerline{\rule{9em}{1pt}}
-   %\vspace{.3cm}
-   %\renewcommand{\section}[2]{}
-   \small
-   \bibliographystyle{unsrtnat}
-   \bibliography{references}
-}
+\include{bibliography}
 
 \end{document}
