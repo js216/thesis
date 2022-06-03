@@ -17,6 +17,12 @@ exploration unfinished as they are not immediately required in order to proceed
 with the \CENTREX\ experiment. However, it may be a starting point for future
 work requiring higher performance.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/concentric.png}
+  \caption{Cross-sectional view of the magnetic shield.}
+  \label{concentric}
+\end{figure}
+
 \subsection{Design requirements}
 
 
@@ -37,21 +43,6 @@ employed to suspend the glass vacuum chamber of the interaction region centered
 inside the shim coils tube. The outermost tube is mounted on an 80/20 frame
 using a set of seven aluminum semi-circular plates.
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/concentric.png}
-  \caption{Cross-sectional view of the magnetic shield.}
-  \label{concentric}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/longitudinal.png}
-  \caption[Longitudinal cross-section of the magnetic shield]{Longitudinal
-  cross-section of the magnetic shield, showing the unequal lengths of the
-  layers.}
-  \label{longitudinal}
-\end{figure}
-
-
 \paragraph{Layers, spacers, mounting}
 
 The three metglas layers are all built in the same way. First, the plastic tube
@@ -65,25 +56,13 @@ the tube with approx.\ 1" of overlap. The pieces are secured to the PVC tube and
 to each other with a few short pieces of Kapton tape (McMaster p.n.\ 7648A63) so
 that they do not fall down during assembly.
 
-\begin{table*}
-  %\small
-  \makebox[\textwidth][c]{%
-    \begin{tabu} to \textwidth {ccc}
-      \toprule
-      Layer     & Length [in] & Weight [lbs] \\\midrule
-      \multicolumn{3}{@{}l}{\textit{Main layers:}}\\
-      20" duct   & 149     & 100 \\
-      18" duct   & 149     & 80 \\
-      16" sch.\ 40 & 134     & 180 \\
-      14" sch.\ 40 & 134     & 140 \\\\
-      \multicolumn{3}{@{}l}{\textit{Spacers:}}\\
-      3/8" sch.\ 40 & 120*    & 190 \\
-      1" sch.\ 40  & 120*    & 90 \\
-      \bottomrule
-    \end{tabu}}
-    \caption{The four layers of the magnetic shield.}
-    \label{shieldlayers}
-\end{table*}
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/longitudinal.png}
+  \caption[Longitudinal cross-section of the magnetic shield]{Longitudinal
+  cross-section of the magnetic shield, showing the unequal lengths of the
+  layers.}
+  \label{longitudinal}
+\end{figure}
 
 The prepared and cleaned tubes are put on a stand with wheels under them so they
 can be rotated, facilitating the circumferential wrapping of the metglas foil.
@@ -108,6 +87,26 @@ solenoidal coil with approx 1 turn per in spacing for rough cancellation of
 axial fields. (Given the metglas wrapping geometry, this solenoidal coil would
 not be effective for degaussing.) Finally, each tube is again wrapped in plastic
 wrap to secure the degaussing and (for 20" tube only) the solenoidal coil.
+
+\begin{table*}
+  %\small
+  \makebox[\textwidth][c]{%
+    \begin{tabu} to \textwidth {ccc}
+      \toprule
+      Layer     & Length [in] & Weight [lbs] \\\midrule
+      \multicolumn{3}{@{}l}{\textit{Main layers:}}\\
+      20" duct   & 149     & 100 \\
+      18" duct   & 149     & 80 \\
+      16" sch.\ 40 & 134     & 180 \\
+      14" sch.\ 40 & 134     & 140 \\\\
+      \multicolumn{3}{@{}l}{\textit{Spacers:}}\\
+      3/8" sch.\ 40 & 120*    & 190 \\
+      1" sch.\ 40  & 120*    & 90 \\
+      \bottomrule
+    \end{tabu}}
+    \caption{The four layers of the magnetic shield.}
+    \label{shieldlayers}
+\end{table*}
 
 The mu-metal layer does not, of course, require wrapping with metglas, only the
 degaussing coil and the outer plastic foil wrap. However, care must be taken to
@@ -228,18 +227,18 @@ cross-sections of the long tube and the carriage are.
 
 Rather than attempt to estimate the magnitudes of these effects individually, I
 estimate the precision/accuracy of the calibration from the calibration curve
-itself; see Fig.~\ref{offsetcal} for a typical example. It shows the two transverse
-components of the magnetic field ($B_x$ and $B_y$) as measured by the sensor in its
-normal orientation, as well as with the sensor inverted. The data is presented ae
-in the symmetrized form: tiormal+inverted)/21- which corresponds to the se11s or
-offset, and (normal-inverted)/2, which corresponds to the physical magnetic
-field plus any calibration imperfections. Given the tim scaleof the changes in
-the electronic offset is primarily driven by temperature changes, which are
-negligiblein the time it takes to do the calibration (around 2 min), we expect
-the curves showing the offset to be perectly flat within the noise of the
-measurement, but that is typically not the case. Therms deviations from the
-averagevalue I identify as the error in the offset calibration, cosisting of all
-the aforementi m ed fact rs.
+itself; see Fig.~\ref{offsetcal} for a typical example. It shows the two
+transverse components of the magnetic field ($B_x$ and $B_y$) as measured by the
+sensor in its normal orientation, as well as with the sensor inverted. The data
+is presented in the symmetrized form: $(\text{normal}+\text{inverted})/2$, which
+corresponds to the sensor offset, and $(\text{normal}-\text{inverted})/2$, which
+corresponds to the physical magnetic field plus any calibration imperfections.
+Given the time scale of the changes in the electronic offset is primarily driven
+by temperature changes, which are negligible in the time it takes to do the
+calibration (around two minutes), we expect the curves showing the offset to be
+perfectly flat within the noise of the measurement, but that is typically not
+the case. The \RMS\ deviations from the average value I identify as the error in
+the offset calibration, consisting of all the aforementioned factors.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/offset_calibration.png}
@@ -249,210 +248,228 @@ the aforementi m ed fact rs.
   \label{offsetcal}
 \end{figure}
 
-While one may take the(normal-inverted)/2 superposition s the best measurement
-of the physicL fields, doing so means that tne error is different at each
-location along the shield. Since we expect the offset to be essentially constant
-during the calibratino, I believe it w a better practice to estimate theoffset
-from the averagevalue .of the+ superposition, and then simply -subtra.ct this co
-stant value from all subsequelt measu.ramets. This way, the overall offset is
-subject to a +/- XX uG uncertainty (typ.), bu the shape of the field pattern is
-known much more precisely.The typical repeatability of a measurement is within
-M%, as i M a s nown in an ex8 rnple measurement i r1 Fig. UK.
+While one may take the $(\text{normal}-\text{inverted})/2$ superposition as the
+best measurement of the physical fields, doing so means that the error is
+different at each location along the shield. Since we expect the offset to be
+essentially constant during the measurement, I believe it a better practice to
+estimate the offset from the average value of the superposition, and then simply
+subtract this constant value from all subsequent measurements. This way, the
+overall offset is subject to an uncertainty, but the shape of the field pattern
+is known much more precisely.
 
-In addition to the ra dom errors i .duced oy the iJ,echa. 1.cal °""'., ,
-,..,..d.,(>.., J inatabil ty of th.e measuremen.t setup we have to pay Jte
-i"tr'onto the' sys tematic errors induced by thesignal chain from the sensor
-onwards. The sensor a,1d the preamp have a limited bandwidth; 3 kHz for the se
-sor, and a settable low-pass filter for the preamp ( between 0.1, 1, 10, 100,
-XL{ Hz). Thia must not be set too low in relation to the speed of the sensor
-motion. In practice, I use the lowest...reasonable LPP cutqff freq., verifying
-my choice by repeating the mea s ur eme flt with the nex t higher avai l ab1'e
-freaue,cy:.. If the two me a s ur eme nt are s uf f i c i e nt l y close to each
-oth er , I use the lower of the two f'reqs. use a similar process to decide upon
-the d1gital LPF inherent to theADC ( ADxx,xx.. used in a hoxoo­ bui ot ADC
-board)
+The typical repeatability of a measurement can be within $\pm1$~$\mu$G, as shown
+in the example measurement in Fig.~\ref{repeatability}. In addition to the
+random errors introduced by the mechanical instability of the measurement setup,
+we also have to pay attention to the systematic errors induced by the signal
+chain from the sensor onwards. The sensor and its preamplifier have a limited
+bandwidth; 3~kHz for the sensor, and a settable low-pass filter for the preamp.
+This must not be set too low in relation to the speed of the sensor motion. In
+practice, I use the lowest reasonable LPF cutoff frequency, verifying the choice
+by repeating the measurement with the next higher available frequency. If the
+two measurements are sufficiently close to each other, I use the lower of the
+two frequencies. I use a similar process to decide upon the digital LPF included
+with the \ADC.
 
 \paragraph{Dynamic field measurement}
 
-On the other hand, the atte uat i on of t he ex ter ,a l :(iel d s i s ,+-1;,Q
-11ot p e rf ec t . If an infinitely l a.rge He lm h ol z pa ir we r e to drive
-a perf ect l y unif orm..and s i usoidally varyi ng ma g n e t i c field in the
-region of space occupied by the magnetic shi el d , t h en a smaller sinusoidal
-var iat i on of t hef i el d inside the sni eld could be det ect ed that is of
-the same freque cy as the e.;Ct e r 11a l field. In practice, there are
-practical limits to the size of exter al coils. In one vre s i on of' t hemea s
-ur eme n t , I have attached a room-sized loop of wire to t he walls of the lab
-and dri ve11 them witha function generator while eo N pavsing the ma g ne t omet
-er re ding through a lock-in amplifier. Re pe a t i ng t h e mea s ur e me n t
-irn the a absence of any shielding gi ves the mag itude of t ne external field¥
-variation. Di v i d i ng t h i s by the mag itude measured with the sni el d in
-place gives the shieicting factor. SeeFig. XXX for seve al variations of this
-measurement for va ni ous s hi el d i g c onf i gur at i ons.. C
+The attenuation of the external fields is not perfect. If an infinitely large
+Helmholtz pair were to drive a perfectly uniform and sinusoidally
+varying magnetic field in the region of space occupied by the magnetic
+shield, then a smaller sinusoidal variation of the field inside the
+shield could be detected that is of the same frequency as the external
+field. In practice, there are practical limits to the size of exteral coils. In
+one version of the measurement, I have attached a room-sized loop of
+wire to the walls of the lab and drive them with a function generator while
+passing the magnetometer reading through a lock-in amplifier. Repeating the
+measurement in the absence of any shielding gives the magitude of the
+external field variation. Dividing this by the magnitude measured with
+the shield in place gives the shielding factor.
 
-Thedsadvatage of this method is that the magnetic shi el d has to be­ removed f
-to dete rmi ne the ex t e r na l ma g net i c field, since the shape of the
-exteral coils is difficult to easure preci sel y. To find theSF o the final
-shield, I have used smaller rectagular coils of well-known dime nsi ons cent e r
-e d around the mag ne t i c s hi el d ; the field they apply, while not uni f
-orm,, cau be calculated using a closect-f orm expression ( see eqn )(XX. in pa
-per YYY ). See Fig. XXX for details about EJ,e recta gular coilo-Z:: om <r t ry
-. The results of the meqsurements in this configuration are discussed
-insect:performance.
+The disadvantage of this method is that the magnetic shield has to be removed
+to determine the external magnetic field, since the shape of the
+external coils is difficult to measure precisely. To find the SF of the final
+shield, I have used smaller rectangular coils of well-known dimensions centered
+around the magnetic shield; the field they apply, while not uniform, can be
+calculated using a closed-form expression.
 
 \paragraph{Degaussing}
 
 Degaussing is a method of reducing the residual field inside a magnetic shield
-baaed on the following observet.ion:the field inside a hollow cyl1nder made of a
-ferromagnetic IDB.terial,when placed in a region of a given external field, can
-be greatly reduced by driving asinusoidal magnetic field with a gradually
-decreasing e ,velope.see.Fig. XA for an-example of the degaussj..ng.. g ometry,w
-a v.e :lorm, ard the result improvement in the shielding.
+based on the following observation: the field inside a hollow cylinder made of a
+ferromagnetic material, when placed in a region of a given external field, can
+be greatly reduced by driving a sinusoidal magnetic field with a gradually
+decreasing envelope.
 
-The hardware used...for degaussing in this experiment is as follow.s Each of bhe
-four shlelding ayers H has its own 12 - turn degaussingcoil. These are connected
-to a PCB with a set of relays that can connect each of them to the degaussing
-current, but only one at a t e. During degaussing,the outer ' ayer isalways
-cormectetl- first,followed by the secorx:l outennost layer ollowed by the
-innermost metglas layer, iollowed by the mu-metallayer. i3ce the residual field
-is primarily determined by the innemost layer, that one is degaussedlast lest it
-be magnetized by accident duri g the degaussing of the other layers. The relays
-PCB is in turn co nnected to an isolation transformer for the purpos,e of DC
-blocking We have considered alter nate forms of DC blocking, iuch as a capacitor
-e11-R-J., but the requ ired capacitance a± -aQ88":iei --a ae 1 was too high at
-the low frequetlcies typica.llyusedin degaussing ( down to 1 Hz). The
-transformer is driven by a power amplifier,Kepco BOP36-12M), which in turn is
-driven by a home-built DjC boa.rd. S ee Fig. XXX.. for a schema.tic of the
-degaussing wirig connections.
+The hardware used for degaussing in this experiment is as follows. Each of the
+four shielding layers has its own 12-turn degaussing coil. These are connected
+to a \PCB\ with a set of relays that can connect each of them to the degaussing
+current, but only one at a time. During degaussing, the outer layer is always
+connected first, followed by the second outermost layer, followed by the
+innermost metglas layer, followed by the mu-metal layer. Since the residual
+field is primarily determined by the innermost layer, that one is degaussed last
+lest it be magnetized by accident during the degaussing of the other layers. The
+relays \PCB\ is in turn connected to an isolation transformer for the purpose of
+DC blocking. We have considered alternate forms of DC blocking, such as a
+capacitor, but the required capacitance  was too high at the low frequencies
+typically used in degaussing (down to 1~Hz). The transformer is driven by a
+power amplifier (Kepco BOP36-12M), which in turn is driven by a home-built \DAC\
+board. \todo{figure of connections}
 
-A wide rage of degaussing waveforms have been used in the literature for
-exampee, li ar or polyllomial enveloves {ref. XU) or envelopes ' specifically
-optimized for a linear decrease in themagnetization{?) of the ferromagnetic
-material. In this experiment, I use a finite umber of a.a s inusoidaldegaussil18
-pulses. The puls s can Optionally be separated by and adjustable delay to probe
-tfie evolution of the residual field from pulse to pulse. Each subsequent pulse
-has its amplitude decreased by a constant factor comared.with the preceding
-pulse; thus our protocolw ia similar to, but identical, using an exponentially
-decreasing e velope multiplyig a sine wave as used in refai XXX and YYY, as well
-as the ACME ex eriment {ref. ZZZ) .Pig. XXX identifies the parameters of the
-dega­ ssing waveform graphically
+A wide rage of degaussing waveforms have been used in the literature; for
+example, linear or polynomial envelopes \todo{[REF]} or envelopes specifically
+optimized for a linear decrease in the magnetization of the ferromagnetic
+material \todo{[REF]}. In this experiment, I use a finite number of sinusoidal
+degaussing
+pulses. The pulses can optionally be separated by and adjustable delay to probe
+the evolution of the residual field from pulse to pulse. Each subsequent pulse
+has its amplitude decreased by a constant factor compared with the preceding
+pulse; thus our protocol is similar to, but not identical to, using an exponentially
+decreasing envelope multiplying a sine wave. \todo{fig: parameters of the
+degaussing waveform}
 
-Despite spedi1g aig,,ificant amounts of time o optimizi g the degaussing
-parameters, I am only able toe claim the following. tega.ussing freque(1Cy ha.s
-to be slow enough that the skin effect does not significantlyaffe ct the
-degaussi11g1; the initial amplitude has to be large enough to drive the shield i
-1to saturation; the -final amp. has to-b e-small enough that tne shieI -has
-recovered from saturation and is circlin-g near a point around the origi of the
-hysteresiscurve; the number of degaussing pulses has to be large e ou enough so
-that the decrease in amplitu is gradual.;'.l'.he exact values of the parameters
-metioned f n tae prece'1ing ta'tements need to be found experimnet lly for the
-shield geometry used; seJ-Fig. for the data correspondi to my
-optimizationattempts. The final jtalues of he degaussnig parameters used are
-also specified in:hat/ figure; these are not necessarily optimal, but the
-procedure works well enough for our purpose.
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/repeatability.png}
+  \caption{The repeatability of the measurement, shown as the difference between
+  two measurements, one taken immediately after the other.}
+  \label{repeatability}
+\end{figure}
 
-Exp1-.ora tion of these paramters is further comp ic ?.ted by he fact that there
-are four layers to deg,uss, ard degaussing one moy inadv erted ty m gnetize the
-others-. I have tried degaussing sevral or all layers in p:rallel, but have not
-found any s ignific nt improv mer:it and ti:ius h ve not further explored that
-method., However, while building the indivictual metglas layers, I have
-measured the magne izationof each layer before a nd after degaussing; see Fig.
-X.U for this data.
+Despite spending significant amounts of time on optimizing the degaussing
+parameters, I am only able to claim the following. The degaussing frequency
+must be slow enough that the skin effect does not significantly affect the
+degaussing; the initial amplitude has to be large enough to drive the shield
+into saturation; the final amplitude has to be small enough that the shield has
+recovered from saturation and is circling near a point around the origin of the
+hysteresis curve; the number of degaussing pulses has to be large enough so
+that the decrease in amplitude is gradual. The exact values of the parameters
+mentioned in the preceding statements need to be found experimentally for the
+shield geometry used; \todo{fig: degaussing optimization}.
 
-Given the 1'lportance of the long-tenn sta.bility of the mag ot . le field
-inside the shield, it is interest{ilg to explore how stable th degaussing
-process is, i.e., how much does the field change when degaussing., repeatedly,
-or MW- what happens when the field has driftedaway from the oeg,ussedvalue and
-the shieldis degeusae.d again. (Make a figure with the answer to this question.)
-The inter ctiofl of degaussing with the shimming coils is explored in
-the.followgi section.1
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/shimmed.png}
+  \caption{The magnetic field \part{a} immediately after shimming, and \part{b}
+  three weeks later.}
+  \label{shimmed}
+\end{figure}
 
-\paragraph{Shimming coils}
+Exploration of these parameters is further complicated by the fact that there
+are four layers to degauss and degaussing one may inadvertently magnetize the
+others. I have tried degaussing several or all layers in parallel, but have not
+found any significant improvement and thus have not further explored that
+method. However, while building the individual metglas layers, I have
+measured the magnetization of each layer before and after degaussing; \todo{fig:
+data on individual layers before/after degaussing}
 
-Once the shield has been degaussde as well as is possible, the rema.iic.g
-magnetic field has to be Ca.llcelled using the systern of shim coils. The
-accuracy of this depends on the measuremer t of the residual field,- as well as
-on the coils themselves. Duri1 shield characterization, we have access to the
-center of the shield, and can mea.s ure hte fields t within 1.:-2 uG. These can
-be shimmed away to withinX uGrms; the limit is set by the1umber of coil segments
-and their size.
+Given the importance of the long-term stability of the magnetic fields
+inside the shield, it is interesting to explore how stable the degaussing
+process is, i.e., how much does the field change when degaussing repeatedly,
+or what happens when the field has drifted away from the degaussed value and
+the shield is degaussed again. \todo{figure}
 
-The shimmmng process consists of t o steps. First, the individual fitld patterns
-generated by each of the 80 shim coils have to be measurceti. I do this by
-Jllowing a constant current thr@ugh thecoil under test, measuring t the magnetic
-field, then reversing the direction of the current ard re­ pec¢ing the
-measurement. By subtracting the .two measuremnets.,applyi1g smoothing (
-usingsavglofilterl(l., XX , ll)), andlf masking the parts of the curve where the
-coilfiela is expected o-4-- be egligible(see Fig. XXX.for an exampee of
-thecalibration curve). Once the calibration curves for all the coils are known,
-I, usea simple least-squares mi:1imization routine to determine the optimal
-currents to use .so as to mi i-. ze the magnitude of tne residual field insi'de
-the shield. While I could limit the opti ization routine to oly minimize the
-field along the f rtical axis, this being thecomponent we are most sensitiveto
-in themolecular beam experiment, I do, not anticipatea significant improvemnet
-in the fila-ielein shimmmng by doing so give.1 th8fl three sets of coils ( two
-pairs of transverse coils, ane set of axial) produce fieldsthat are mqstly- -
-rthogonal to,each other. The shimmed residual field is shown in Fig. XXX ion
-sect:performance.
+\paragraph{Shim coils}
+
+Once the shield has been degaussed as well as is possible, the remaining
+magnetic field has to be cancelled using the system of shim coils. The accuracy
+of this depends on the measurement of the residual field, as well as on the
+geometry of the coils themselves. During shield characterization, we have access
+to the center of the shield and can measure the fields to within 1--2~$\mu$G.
+Thus the limit is set by the number of coil segments and their size.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/threeweeks.png}
+  \caption{Average and \RMS\ magnetic field in the central 2.5~m of the shield
+  over the course of three weeks.}
+  \label{threeweeks}
+\end{figure}
+
+The shimming process consists of two steps. First, the individual field patterns
+generated by each of the 80 shim coils have to be measured. I do this by flowing
+a constant current through the coil under test, measuring the magnetic field,
+then reversing the direction of the current and repeating the measurement. By
+subtracting the two measurements, applying smoothing, and masking the parts of
+the curve where the coil field is expected to be negligible \todo{fig: example
+calibration curve}.  Once the calibration curves for all the coils are known, I
+use a simple least-squares minimization routine to determine the optimal
+currents to use so as to minimize the magnitude of the residual field inside the
+shield. While I could limit the optimization routine to only minimize the field
+along the vertical axis, this being the component we are most sensitive to in
+the molecular beam experiment, I do not anticipate a significant improvement in
+the shimming by doing so given that the three dimensions of the magnetic field
+accessed by the coils are orthogonal to each other.
 
 \subsection{Performance and limitations}
 
-The design requireme ts for the shieldspecified a 10 uG maximum averag e re
-du.a,l field. This ha een met/ t; see Fig. XXX for a ttypical measurement of the
-fields inside after shimming.
+The design requirements for the shield specified a 10~$\mu$G maximum average
+residual field. This has been met; see Fig.~\ref{shimmed} for a typical
+measurement of the fields inside after shimming.
 
--Of pa.rticuler i nterest is how the fields de ve l op after the shimming
-procedure. To this end, I have followed their evolution ovre the course of three
-weeks, finding that nei t he r the average nor the ma Va l ue of any of the two
-transverse compil e nt s d owe not exceed the specified 10 uG ( see Pi.g. Xll).
-Thedata in that plot has been obta,i e d by mea­ suring the fields evecy hour
-while keeping all the controllable para­ meters of the shield constat. Unf or t
-una t el y, at the time of the mea­ sureme t , I did not have avaiable the me a
-ri s to monitor the magnetic field ext erna l to the magnetic shield, or at a y
-other point insi.e the shield except on-axis.
+Of particular interest is how the fields develop after the shimming procedure.
+To this end, I have followed their evolution over the course of three weeks,
+finding that neither the average nor the \RMS\ value of any of the two
+transverse components do not exceed the specified 10~$\mu$G (see
+Fig~\ref{threeweeks}).  The data in that plot has been obtained by measuring the
+fields every hour while keeping all the controllable parameters of the shield
+constant.  Unfortunately, at the time of the measurement, I did not have
+available the means to monitor the magnetic field external to the magnetic
+shield, or at any other point inside the shield except on-axis.
 
-Sinc e <iegausaing is used to sig if i cant l y reduce the i nt er r1a l
-magnetic f i eld,, it is of interest to observe whether dega us s i ng could be
-used per i odi c til l y to restore the initial low ield coi1'di tions even
-after shimming the fields. Unfortunately, 'it appears that degaussing leaves the
-shield in a state of a small but signi f i ca t1t internal .:field-. Since the
-shield is stable eough, I believe better performa ce is obt tai ned by
-degaussing only at the beginning of mea s ur eme nt s , then shimming the
-shield, ad letting it stay hat way.
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/dynSF.png}
+  \caption{Dynamic shielding factor vs frequency and amplitude of the external
+  field perturbation.}
+  \label{dynSF}
+\end{figure}
+
+Since degaussing is used to significantly reduce the internal
+magnetic field, it is of interest to observe whether degaussing could be
+used to periodically restore the initial low-field conditions even
+after shimming the fields. Unfortunately, it appears that degaussing leaves the
+shield in a state of a small but significant internal field. Since the
+shield is stable enough, I believe better performance is obtained by
+degaussing only at the beginning of measurements, then shimming the
+shield, and letting it stay that way.
 
 It is true that just because the shield stayed in a low-field condition for
-three weeks once, it is not certain it will al wa-y s stay that way for as l
-ong-. In o:t;her words, it would beuseful t.o comeup with a model for predicting
-how l ong- t he shield ,st aya this way, or what the pr oba bi l i t y - i s
-that is has exceeded lO -uG. If we model ,t he average i nt er nal magne t i c
-field as a radom walk, t hen -we can associate a diff usi on c ons t a nt to
-this process and calculate- the probabilities. {Include the calculations for
-radom walk.) Of course, there is not physical reason why the growth in interal
-magnetic field should be a ra ndomw al ; it would be of interest to compare
-other possible stochastic models for this behaviour.
+three weeks once, it is not certain it will always stay that way for as long. In
+other words, it would be useful to find a model for predicting how long the
+shield stays this way, or what the probability is that is has exceeded
+10~$\mu$G. If we model the average internal magnetic field as a random walk,
+then we can associate a diffusion constant to this process and calculate the
+probabilities. \todo{Include the calculations for random walk.} Of course, there
+is not physical reason why the growth in internal magnetic field should be a
+random walk; it would be of interest to compare other possible stochastic models
+for this behaviour.
 
-In addi t i on to the aQ,ee e static inter ,a l field, it i,s also important to
-ensure the exter al mag net i c -f i el d noi se is suf f i c i ent l y a t t
-e-iua t ed inside. My measurements of the dynamic shielding fac-0tr placeit
-around 30, 00-0 at DC ( see F i g . XXL), which sh oul d . reduc-e the expected
-1mG varia­ tions in lab field well below the l evel at which they would impact
-the molecular-beam mea s ur eme nt s . The frequency depend ec e of the dyna mc
-SF shown i nt ha t figure shwo s an i ncr ea se i n shielding as f requency
-incre­ ases, which ma ke 1;; s e nse in light cf skin ef1'ect cons i der a t i
-ons . For mu­ metal of 1 mm thickess and mur = 50k, a frequency of XX Hz would
-cor­ respond to a ski n depth comparable to the i nner - l aye r t hi c k11 e e
-s . (The decrease in shi eldi11g once tne maximum is achieved is l i kel y not
-phys i c pl , a na reflects som limitation of my mea sur i n setup. I have, howe
-ver , been so far unable to find out shat causes this.)
+In addition to the static internal field, it is also important to
+ensure the exteral magnetic field noise is sufficiently attenuated inside. My
+measurements of the dynamic shielding factor place it
+around 30,000 at DC (see Fig.~\ref{dynSF}), which should reduce the expected
+1~mG variations in the lab field well below the level at which they would impact
+the molecular-beam measurements. The frequency dependence of the dynamic
+SF shown in that figure shows an increase in shielding as frequency
+increases, which makes sense in light of skin effect considerations. For
+mu­metal of 1~mm thickness and relative permeability of around 50,000, a
+frequency of \todo{XX Hz} would correspond to a skin depth comparable to the
+inner-layer thickness. (The decrease in shielding once the maximum
+is achieved is likely not physical and reflects some limitation of my
+measuring setup. I have, however, been so far unable to find out what causes
+this.)
 
-The spatial epena e nce of the dynamic SF is as shown in Fig. Xli. It w.-ill be
-noted that the pattern is asymmetric, as if one side of thee­ shield works
-better than theother. That i s al so unl i ke l y to be the c@se.
-ImageImageFuture work may establish whet h re from my todo 1 i st ) 
+The spatial dependence of the dynamic SF is as shown in Fig.~\ref{spatialSF}. It
+will be noted that the pattern is asymmetric, as if one side of the shield works
+better than the other. That is also unlikely to be the case.
+Further work may establish whether \todo{insert possible explanations from my
+to-do list.}
 
-
-While the dynamic shieldi follows the approximate theoretical model, the static
-shielding does not.b It is not clear why aegausaing achieves such good shieldi ,
-nor is it known wti,t limits it from working even better. It appears clear from
+While the dynamic shielding follows the approximate theoretical model, the static
+shielding does not. It is not clear why degaussing achieves such good shielding,
+nor is it known what limits it from working even better. It appears clear from
 a simple model that degaussing magnetizes the shield in such a way as to oppose
-the external magnetic fields, that being the configuration of lowest total e
-argy
+the external magnetic fields, that being the configuration of lowest total
+energy.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/spatialSF.png}
+  \caption{Spatial dependence of dynamic SF.}
+  \label{spatialSF}
+\end{figure}
