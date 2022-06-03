@@ -1,6 +1,6 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
-\includeonly{magneticshield}
+%\includeonly{magneticshield}
 
 % page layout
 \usepackage[letterpaper, left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
@@ -34,54 +34,6 @@
 \hyphenation{appro-xi-ma-te-ly}
 \hyphenation{gau-ges}
 
-%% Minion Pro
-%\usepackage{mathspec}
-%\setmainfont{Minion Pro}
-%\setmathfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Minion Pro}
-%\setmathrm{Minion Pro}
-%\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}
-%\makeatletter
-%\SetSymbolFont{Latin:m:n}{bold}{TU}{\zf@family}{bx}{n}
-%\SetSymbolFont{Latin:m:it}{bold}{TU}{\zf@family}{bx}{it}
-%\SetSymbolFont{operators}{bold}{TU}{\zf@family}{bx}{n}
-%\SetSymbolFont{Greek:m:n}{bold}{TU}{\zf@family}{bx}{n}
-%\SetSymbolFont{Greek:m:it}{bold}{TU}{\zf@family}{bx}{it}
-%\SetSymbolFont{Digits:m:n}{bold}{TU}{\zf@family}{m}{n}
-%\makeatother
-%\newfontfamily\sectionfont{Minion Pro Bold}
-%\newfontfamily\subsectionfont{Minion Pro Semibold}
-
-% section title formatting
-\usepackage[explicit]{titlesec}
-\usepackage{bold-extra}
-\renewcommand{\thesection}{\Roman{section}} 
-\newcommand{\sectionbreak}{}
-%\titleformat{\section}
-%   {\sectionfont\filcenter}
-%   {\thesection.}
-%   {1em}
-%   %{\textls[50]{\MakeUppercase{#1}}}
-%   {{\addfontfeature{LetterSpace=15}\MakeUppercase{#1}}}
-\renewcommand\thesubsection{\Alph{subsection}}
-%\titleformat{\subsection}
-%   {\subsectionfont\filcenter}
-%   {\thesubsection.}
-%   {1em}
-%   %{\textls[30]{#1}}
-%   {{\addfontfeature{LetterSpace=5}{#1}}}
-\titleformat{\subsubsection}
-   {\normalfont\normalsize\bfseries}
-   {\thesubsubsection}
-   {1em}
-   {#1}
-\titleformat{\paragraph}[runin]
-   {\normalfont\normalsize\bfseries}
-   {}
-   {2pt}
-   {#1}
-   {}
-\renewcommand{\subparagraph}[1]{\textit{#1.}}
-
 % for notes and bibliography
 \usepackage[numbers,square]{natbib}
 \usepackage{doi}
@@ -97,9 +49,7 @@
 \newdateformat{monthyeardate}{\monthname[\THEMONTH]  \THEYEAR}
 
 % has to be defined here (after including the doi package) for some reason
-\renewcommand{\hbar}{h\hspace*{-0.3em}\bar{}\hspace*{0.25em}}
 \renewcommand{\d}{\mathrm{d}}
-%\renewcommand{\partial}{\text{∂}}
 
 % for tables
 \usepackage{booktabs,tabu,multirow}
@@ -193,7 +143,11 @@
 
 \begin{document}
 
+\pagenumbering{roman}
 \include{titlepage}
+
+\pagenumbering{arabic}
+\doublespacing
 
 \include{introduction}
 
@@ -207,6 +161,7 @@
 
 \include{preliminary}
 
+\singlespacing
 \include{bibliography}
 
 \end{document}
