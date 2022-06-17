@@ -10,6 +10,7 @@ thesis.pdf: thesis.tex $(CHAPTERS) figs
 full: thesis.tex references.bib $(CHAPTERS) figs
 	$(TeX) thesis
 	bibtex thesis
+	makeglossaries thesis
 	$(TeX) thesis
 	$(TeX) thesis
 

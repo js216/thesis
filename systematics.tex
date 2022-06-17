@@ -3,14 +3,20 @@
 
 \subsection{Statistical sensitivity}
 
-In general, the statistical sensitivity of a molecular \EDM\ experiment depends on electric polarization $P$, coherence time $\tau$, detection rate $\dot N$, total measurement time $T$, and other factors encoding the intrinsic sensitivity of the system. For measurements of the Schiff moment in a nucleus with mass $A$ and atomic number $Z$, the sensitivity scales as $P\tau\sqrt{\dot N T}AZS_0$, where $S_0$ depends on the details of the nuclear structure. \cite{khriplovich2012cp}
+In general, the statistical sensitivity of a molecular \gls{EDM}\ experiment depends on electric polarization $P$, coherence time $\tau$, detection rate $\dot N$, total measurement time $T$, and other factors encoding the intrinsic sensitivity of the system. For measurements of the Schiff moment in a nucleus with mass $A$ and atomic number $Z$, the sensitivity scales as $P\tau\sqrt{\dot N T}AZS_0$, where $S_0$ depends on the details of the nuclear structure. \cite{khriplovich2012cp}
 
 As a rough estimate, let us ignore most of the abovementioned details, and consider a pulse of duration $t_\text{p}$ with $N_\text{p}=t_\text{p}R_\text{det}$ molecules. The Poissonian fluctuations of the number of molecules is $\sqrt{N_\text{p}}$, resulting in the detection rate shot noise of $\delta S=\sqrt{N_\text{p}}/t_\text{p}$. The corresponding error in the frequency measurement is
 %
 \[
     \delta f=\delta S/\frac{\d S}{\d f},
 \]
-with the approximate detection curve slope $\d S/\d f\approx R_\text{det}/\Delta f$. Plugging in the numbers from Table~\ref{parametertable}, we get a shot noise of approx.\ $5\mHz$. For 300 hours of data collected with a 50~Hz pulse rate, the final experimental sensitivity is expected to be of the order $\approx1\uHz$. The latter figure corresponds to (via eqn~\ref{schiffnumbers}) to a Schiff moment of the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a proton \EDM\ of $10^{-26}\,e\cm$.
+with the approximate detection curve slope $\d S/\d f\approx R_\text{det}/\Delta
+f$. Plugging in the numbers from Table~\ref{parametertable}, we get a shot noise
+of approx.\ $5\mHz$. For 300 hours of data collected with a 50~Hz pulse rate,
+the final experimental sensitivity is expected to be of the order
+$\approx1\uHz$. The latter figure corresponds to (via eqn~\ref{schiffnumbers})
+to a Schiff moment of the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT})
+to a proton \gls{EDM}\ of $10^{-26}\,e\cm$.
 
 \subsection{Parameter reversals}
 
@@ -37,7 +43,9 @@ The separation between hyperfine states in TlF is a function of the external ele
     \label{Cslope}
 \end{figure}
 
-The shift $S_\text{int}$ is thus a sensitive measure of how perfectly the interaction-region electric field is reversed. However, a measure independent of the \EDM\ signal is useful. The ACME II experiment characterized the electric field in the interaction region via microwave spectroscopy of a state susceptible to large Stark shifts; see \cite[sect~5.1]{lasner2019thesis} for details.
+The shift $S_\text{int}$ is thus a sensitive measure of how perfectly the
+interaction-region electric field is reversed. However, a measure independent of
+the \gls{EDM}\ signal is useful. The ACME II experiment characterized the electric field in the interaction region via microwave spectroscopy of a state susceptible to large Stark shifts; see \cite[sect~5.1]{lasner2019thesis} for details.
 
 In addition to a \DC\ offset on the high-voltage electrode supply, or the finite charging time of the parallel-plate capacitor formed between the electrodes, the incomplete reversal of $E_\text{int}$ can be due to accumulations of charges on non-conductive parts of the electrodes, their mounting structure, or the vacuum chamber itself. The charge accumulations are difficult to predict and will have to be verified experimentally from the energy shifts once the apparatus is built. In ref.~\cite{wilkening1984search}, they were able to compensate only partially for the charge accumulations by placing a variable \DC\ offset on the electrodes.
 
@@ -59,9 +67,21 @@ In TlF, there is an internal magnetic field at the site of the thallium nucleus 
 
 To estimate the magnitude of the internal magnetic field $B_\text{mol}$, compare the magnitude of the the Zeeman shift due to the Tl nucleus $-(\mu_1/I_1)(\vec I_1\cdot\vec B)$ to the strength of the Tl spin-rotation energy $c_1(\vec I_1\cdot\vec J)$. The two effects are equal in strength at $B_\text{mol}\approx50.8$~G. For an expected residual external field of $B_\text{ext}\approx10$~$\mu$G, we expect $S_m$ of order 80~mHz. In ref.~\cite{wilkening1984search}, they were able to reduce the $S_m$ greatly adding large Helmholtz coils around the interaction region to cancel out the residual field. Nonetheless, fluctuations of 10-100~mHz persisted.
 
-While we will be careful to develop the procedure for demagnetizing the magnetic shields before they are installed, it can be challenging to verify the residual field once the vacuum chamber with the field plates is placed inside the shield. Instead, we have to use the TlF molecules themselves as magnetometers. For example, a superposition of the $^{19}$F spin up and down states would in principle give a pure magnetometer signal in contrast to the analogous $^{205}$Tl measurement, sensitive to the \EDM\ signal. A further test---averaged over all directions of $E_\text{int}$--- of the residual field can be extracted from the $^{205}$Tl signal while simultanously reversing the Helmholtz coil currents and/or the internal molecular magnetic field via $m_J$.
+While we will be careful to develop the procedure for demagnetizing the magnetic
+shields before they are installed, it can be challenging to verify the residual
+field once the vacuum chamber with the field plates is placed inside the shield.
+Instead, we have to use the TlF molecules themselves as magnetometers. For
+example, a superposition of the $^{19}$F spin up and down states would in
+principle give a pure magnetometer signal in contrast to the analogous
+$^{205}$Tl measurement, sensitive to the \gls{EDM}\ signal. A further test---averaged over all directions of $E_\text{int}$--- of the residual field can be extracted from the $^{205}$Tl signal while simultanously reversing the Helmholtz coil currents and/or the internal molecular magnetic field via $m_J$.
 
-The relative phase $\phi$ of the separated oscillatory fields is switched between $\pm\pi/2$. In either case, if the two thallium spin projections acquired no relative phase delay during the molecular precession time, we expect to read out two equal populations. (In addition, we can also switch the cables used to connect the coils to their sources---their different lengths will cause different phase shifts.) Indeed, ref.~\cite{wilkening1984search} found no significant effects on the \EDM\ shift arising from the nominally $\pm1^\circ$ phase accuracy between the two coils. However, in \CENTREX\ we are aiming for a more precise measurements, and it is worthwhile estimating the allowed phase error.
+The relative phase $\phi$ of the separated oscillatory fields is switched
+between $\pm\pi/2$. In either case, if the two thallium spin projections
+acquired no relative phase delay during the molecular precession time, we expect
+to read out two equal populations. (In addition, we can also switch the cables
+used to connect the coils to their sources---their different lengths will cause
+different phase shifts.) Indeed, ref.~\cite{wilkening1984search} found no
+significant effects on the \gls{EDM}\ shift arising from the nominally $\pm1^\circ$ phase accuracy between the two coils. However, in \CENTREX\ we are aiming for a more precise measurements, and it is worthwhile estimating the allowed phase error.
 
 The phase error $\Delta\phi$ can either reverse with the phase reversal so that, overall, the coil phase difference is $\pm(\pi/2+\Delta\phi_\text{R})$, or it can stay constant (so that $\phi=\pm\pi/2+\Delta\phi_\text{NR}$). A small reversing error $\Delta\phi_\text{R}$ cancels out when taking the difference of the signals between the two signs of the phase, as was noted by Ramsey in ref.~\cite{ramsey1951phase}. The non-reversing part $\Delta\phi_\text{NR}$, however, does not, and changes the overall signal by about 2~\%\ per degree of $\Delta\phi_\text{NR}$. Given that the signal changes by 9.4~\%\ per Hz of NMR resonance frequency change, a one-degree non-reversing phase error causes a spurious 0.18~Hz frequency error. \todo{How can Ramsey report only $\lesssim0.5$~mHz change due to their their $\pm1^\circ$ phase error?}
 
@@ -111,9 +131,24 @@ The Millman effect could be distinguised from an ambient magnetic field by a bea
 %
 using the numbers from Table~\ref{parametertable}.
 
-It is possible that the reversal of $E_\text{int}$ gives rise to a magnetic field, either due to the electronics effecting the reversal, or due to currents leaking between the field plates. In ref.~\cite{cho1991search}, they employed an additional field reversal by manually rewiring the electrode high voltage supply (motivated by the switching relay's frequent breakdowns \cite{cho1990thesis}), finding that the switching electronics does not noticably impact the \EDM\ measurement (at least, the electronics are no worse than the manual electrode polarity switching). To guard against the second type of induced magnetic field, they made sure that the leakage current remained below 2~nA at the operating voltage, resulting in what they claim is an entirely negligible effect.
+It is possible that the reversal of $E_\text{int}$ gives rise to a magnetic
+field, either due to the electronics effecting the reversal, or due to currents
+leaking between the field plates. In ref.~\cite{cho1991search}, they employed an
+additional field reversal by manually rewiring the electrode high voltage supply
+(motivated by the switching relay's frequent breakdowns \cite{cho1990thesis}),
+finding that the switching electronics does not noticably impact the \gls{EDM}\ measurement (at least, the electronics are no worse than the manual electrode polarity switching). To guard against the second type of induced magnetic field, they made sure that the leakage current remained below 2~nA at the operating voltage, resulting in what they claim is an entirely negligible effect.
 
-In \CENTREX, it will also be important to verify that the \HV\ electronics, and the plate charging/leakage currents, do not incur significant systematics. While we are aiming for a sub-10~$\mu$G residual magnetic field, the condition on magnetic fields correlated with $E$-reversals is significantly more stringent as its contribution adds up---instead of averaging out---with the reversals, mimicking an \EDM-type effect. Our tolerance to these fields can be estimated by comparing the energy of a proton \EDM\ that we would like to be sensitive to ($d_\text{p}\sim10^{-25}e\cm$) in a typical effective field ($E_\text{eff}\sim30\kVcm$) with the Zeeman frequency shift ($\Delta f/B\sim5\mHz/\mu$G). With these numbers, a magnetic field greater than 150~pG would cause a Zeeman shift larger than the proton \EDM\ in the effective field---this is the field at a distance of one inch away from a long wire carrying 2~nA of current (which is a typical upper limit for leakage currents, and is also the charging current after $\approx16$ $RC$ time constants for $30\kVcm$ electrodes charged via 1~M$\Omega$ resistors).
+In \CENTREX, it will also be important to verify that the \HV\ electronics, and
+the plate charging/leakage currents, do not incur significant systematics. While
+we are aiming for a sub-10~$\mu$G residual magnetic field, the condition on
+magnetic fields correlated with $E$-reversals is significantly more stringent as
+its contribution adds up---instead of averaging out---with the reversals,
+mimicking an \gls{EDM}-type effect. Our tolerance to these fields can be
+estimated by comparing the energy of a proton \gls{EDM}\ that we would like to
+be sensitive to ($d_\text{p}\sim10^{-25}e\cm$) in a typical effective field
+($E_\text{eff}\sim30\kVcm$) with the Zeeman frequency shift ($\Delta
+f/B\sim5\mHz/\mu$G). With these numbers, a magnetic field greater than 150~pG
+would cause a Zeeman shift larger than the proton \gls{EDM}\ in the effective field---this is the field at a distance of one inch away from a long wire carrying 2~nA of current (which is a typical upper limit for leakage currents, and is also the charging current after $\approx16$ $RC$ time constants for $30\kVcm$ electrodes charged via 1~M$\Omega$ resistors).
 
 The extreme sensitivity to stray currents is somewhat ameliorated by the fact that the resulting magnetic fields are not necessarily parallel to the $30\kVcm$ electric field; the perpendicular components cause only a quadratic, $E$-even energy shift. In the atomic thallium experiments \cite{regan2001thesis} they note that the leakage current can be very asymmetric with respect to the direction of the electric field, and also erratic over time. The trouble can be mitigated to some extent by making the apparatus as symmetric as possible (using coaxial wiring for the electrodes, making connections in the center of the plates as far as possible, making sure the return currents flow symmetrically). This also underlines the importance of avoiding ferromagnetic materials around the interaction region that could retain memory of the direction and magnitude of the charging currents.
 

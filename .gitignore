@@ -8,6 +8,10 @@
 *.blg
 *.ini
 *.toc
+*.glo
+*.glg
+*.gls
+*.ist
 
 figs/svg/*.pdf
 figs/svg/*.pdf_tex

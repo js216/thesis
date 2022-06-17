@@ -6,20 +6,6 @@
 \usepackage[letterpaper, left=1.5in, right=1in, top=1in, bottom=1in]{geometry}
 \usepackage{setspace}
 
-% math
-\usepackage{amsmath, amssymb, bm, nicefrac, mathtools, mhchem}
-\DeclareMathOperator{\sgn}{sgn}
-\renewcommand{\vec}[1]{\mathbf{#1}}
-\newcommand{\tens}[1]{\mathrm{#1}}
-\newcommand{\dd}{\mathrm{d}\hspace*{-0.15em}\bar{}\hspace*{0.2em}}
-\newcommand{\ex}[1]{\langle #1\rangle}
-\newcommand{\bra}[1]{\langle#1|}
-\newcommand{\ket}[1]{|#1\rangle}
-\newcommand{\braket}[2]{\langle#1|#2\rangle}
-\newcommand{\ThreeJ}[6]{\begin{pmatrix}#1&#2&#3\\#4&#5&#6\end{pmatrix}}
-\newcommand{\SixJ}[6]{\begin{Bmatrix}#1&#2&#3\\#4&#5&#6\end{Bmatrix}}
-\newcommand{\ee}[1]{\cdot10^{#1}}
-
 % hyphenation
 \usepackage[english]{babel}
 \hyphenation{Ha-mil-to-nian}
@@ -48,7 +34,31 @@
 \usepackage{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH]  \THEYEAR}
 
-% has to be defined here (after including the doi package) for some reason
+% glossaries and acroynms
+\usepackage[smallcaps]{glossaries}
+\setacronymstyle{long-sc-short}
+\input{glossaries}
+\makeglossaries
+
+\newglossarystyle{long-initcapsdesc}{
+   \setglossarystyle{long}
+   \renewcommand{\glsnamefont}[1]{\MakeUppercase{##1}}
+}
+
+% math
+\usepackage{amsmath, amssymb, bm, nicefrac, mathtools, mhchem}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\sinc}{sinc}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\tens}[1]{\mathrm{#1}}
+\newcommand{\dd}{\mathrm{d}\hspace*{-0.15em}\bar{}\hspace*{0.2em}}
+\newcommand{\ex}[1]{\langle #1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\braket}[2]{\langle#1|#2\rangle}
+\newcommand{\ThreeJ}[6]{\begin{pmatrix}#1&#2&#3\\#4&#5&#6\end{pmatrix}}
+\newcommand{\SixJ}[6]{\begin{Bmatrix}#1&#2&#3\\#4&#5&#6\end{Bmatrix}}
+\newcommand{\ee}[1]{\cdot10^{#1}}
 \renewcommand{\d}{\mathrm{d}}
 
 % for tables
@@ -91,58 +101,11 @@
 \newcommand{\uHz}{~\mathrm{\mu Hz}}
 \newcommand{\s}{~\mathrm{s}}
 \newcommand{\inches}{~\mathrm{in}}
+\newcommand{\ms}{~\mathrm{m/s}}
+\newcommand{\uG}{~\mu\mathrm{G}}
 
 % text-mode units
 \newcommand{\degC}{\;$^{\circ}$C}
-
-% acronyms
-\newcommand{\CENTREX}{\textsc{centrex}}
-\newcommand{\CPV}{\textsc{cpv}}
-\newcommand{\BAU}{\textsc{bau}}
-\newcommand{\EDM}{\textsc{edm}}
-\newcommand{\SMt}{\textsc{sm}t}
-\newcommand{\QCD}{\textsc{qcd}}
-\newcommand{\CKM}{\textsc{ckm}}
-\renewcommand{\L}{\mathcal{L}}
-\renewcommand{\H}{\mathcal{H}}
-\newcommand{\FWHM}{\textsc{fwhm}}
-\newcommand{\RF}{\textsc{rf}}
-\newcommand{\ARP}{\textsc{arp}}
-\newcommand{\LIF}{\textsc{lif}}
-\newcommand{\TDSE}{\textsc{tdse}}
-\newcommand{\TISE}{\textsc{tise}}
-\newcommand{\DAQ}{\textsc{daq}}
-\newcommand{\GUI}{\textsc{gui}}
-\newcommand{\HDF}{\textsc{hdf}}
-\newcommand{\API}{\textsc{api}}
-\newcommand{\OFHC}{\textsc{ofhc}}
-\newcommand{\ID}{\textsc{id}}
-\newcommand{\OD}{\textsc{od}}
-\newcommand{\VCR}{\textsc{vcr}}
-\newcommand{\KF}{\textsc{kf}}
-\newcommand{\PID}{\textsc{pid}}
-\newcommand{\UV}{\textsc{uv}}
-\newcommand{\SHG}{\textsc{shg}}
-\newcommand{\IR}{\textsc{ir}}
-\newcommand{\EOM}{\textsc{eom}}
-\newcommand{\AOM}{\textsc{aom}}
-\newcommand{\FMS}{\textsc{fms}}
-\newcommand{\MTS}{\textsc{mts}}
-\newcommand{\FSR}{\textsc{fsr}}
-\newcommand{\PDH}{\textsc{pdh}}
-\newcommand{\FPGA}{\textsc{fpga}}
-\newcommand{\DDS}{\textsc{dds}}
-\newcommand{\NMR}{\textsc{nmr}}
-\newcommand{\AC}{\textsc{ac}}
-\newcommand{\DC}{\textsc{dc}}
-\newcommand{\RMS}{\textsc{rms}}
-\newcommand{\HV}{\textsc{hv}}
-\newcommand{\mfp}{m.f.p.}
-\newcommand{\hfs}{h.f.s.}
-\newcommand{\SOF}{\textsc{sof}}
-\newcommand{\DAC}{\textsc{dac}}
-\newcommand{\ADC}{\textsc{adc}}
-\newcommand{\PCB}{\textsc{pcb}}
 
 \begin{document}
 
@@ -161,8 +124,6 @@
 \include{apparatus}
 
 \include{magneticshield}
-
-\include{preliminary}
 
 \singlespacing
 \include{bibliography}
