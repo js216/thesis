@@ -62,9 +62,121 @@ less strictly constrained. The Zeeman shifts due to fields perpendicular to the
 electric field are quadratic and of the order of 0.7~mHz/mG$^2$. This means than
 dynamic shielding is not even required along these directions.
 
+In \CENTREX, we do not have any requirements on the size of field gradients
+beyond the constraints on the absolute magnitude of each component of the
+magnetic field between the oscillatory coils. \todo{Is that true?} Any fast
+changes in the field that average to zero, despite having potentially large
+gradients, are not expected to contribute significantly to the measurement
+
 \subsection{Theory and related work}
 
-\paragraph{Paramagnetic shielding}
+\paragraph{Magnetic shields in literature}
+
+While a large number of magnetic shields have been described, few are directly
+applicable to our experiment due to being too small (and not easily scalable),
+too large (such as the magnetic shielded rooms), or not good enough (with
+residual field of the order of several milligauss, or not even reported). I what
+follows I will describe a few of the shields that are comparable to our design.
+
+Wodey et al.\ \cite{wodey2020scalable} report building a 10~m-long two-layer
+permalloy magnetic shield with an octagonal cross-section and openings to
+accomodate a 22~cm vacuum chamber, weighting approx.\ 7500~kg. Constructed out
+of a large numberof discrete flat and angled permeable sheets, the design is
+scalable to an arbitrary length. The transverse shielding factor of 4,000 would
+be almost sufficient for our experiment and easy to augment with one or two
+additional outer metglas layers. The reported 40~$\mu$G residual field over the
+central 8~m, while impressive for a shield of this geometry, would nonetheless
+have to be shimmed with internal coils down to our desired 10~$\mu$G. The
+improved performance compared to the shield reported in this chapter comes with
+increased cost of materials and a considerably more complex mechanical assembly.
+
+Malkowski et al.\ \cite{malkowski2011technique} investigated different assembly
+methods for shields constructed from metglas wrapped on a non-magnetic
+cylinderical forms (cardboard tubes in their case, PVC pipes in \CENTREX). In
+one of the experiments reported in the paper, metglas strips are secured on the
+form with circular wrapping, whereby each strip is wrapped around the form
+circumferentially. There is no overlap between strips of a single layer;
+however, successive layers are offset by 1~in to cover the gaps between strips).
+(By comparison, our magnetic shield also includes overlaps between the strips of a
+single layer in order to eliminate all gaps.) While the techniques shown in this
+paper (circular metglas wrapping around tube forms, Kapton tape and plastic film
+to hold the assembly together, toroidal degaussing coils) have been a key
+inspiration behind our magnetic shield, the performance they demonstrate with
+their 0.08~mm thin single-layer shield is insufficient for our purposes.
+
+\paragraph{`Paramagnetic' shielding}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/beforeafter.png}
+   \caption{Magnetic fields along the central axis of a single layer cylindrical
+   magnetic shield, constructed as a 14"-diameter PVC tube wrapped with 12 turns
+   of 22~$\mu$m-thick metglas ($\mu\approx70,000$). Length of shielded region is
+   approx.\ 3.5~m. \part{a} Before degaussing.
+   \part{b} After degaussing.}
+  \label{beforeafter}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/numlayers.png}
+   \caption{Transverse (vertical) dynamic shielding at a low frequency (around
+   10~Hz). \part{a} Along the central axis of the shield, as a function of
+   position. \part{b} The average shielding factor in the central 1~m of the
+   shield fits the simple linear relationship assuming $\mu=67,300$, $2R=16$",
+   and each layer is 18~$\mu$m thick.}
+  \label{numlayers}
+\end{figure}
+
+Consider a long, hollow cylinder of radius $R$ and thickness $t$, made of a
+linear material with permeability $\mu$, placed in a region of initially uniform
+magnetic flux density $\vec B_0$. According the the usual formulae
+\cite[eqns~3.29--30]{khriplovich2012cp}, the flux density inside the shield will
+be attenuated by the shielding factors
+%
+\begin{equation}
+    \label{singlelayer}
+S_\text{T}=\frac{\mu t}{2R},
+\quad
+S_\text{L}\approx\frac{2\mu tR^{1/2}}{L^{3/2}},
+\end{equation}
+%
+referring to the transverse ($S_\text{T}$) and longitudinal ($S_\text{L}$)
+shielding, respectively. For an $n$-layer shield where each layer has a radius
+$R_i$, length $L_i$, and shielding factors $S_\text{T}^i$, $S_\text{L}^i$, the
+formulae can be generalized to \cite[eqns~3.32--33]{khriplovich2012cp}
+%
+\begin{equation}
+    \label{multiplelayers}
+S_\text{T}=
+S_\text{T}^n\prod_{i=1}^{n-1}S_\text{T}^i
+\left[1-\left(\frac{R_i}{R_{i+1}}\right)^2\right],
+\quad
+S_\text{L}=
+S_\text{L}^n\prod_{i=1}^{n-1}S_\text{L}^i
+\left(1-\frac{L_i}{L_{i+1}}\right).
+\end{equation}
+%
+One must merely keep in mind that formulae
+\ref{singlelayer}--\ref{multiplelayers} are intended to be used for a linear
+material. To a degree, that is true even of highly ferromagnetic materials when
+subject to small (`dynamic') excursions around a fixed (`static') magnetic
+field (see example in Fig.~\ref{numlayers}). Thus we define the dynamic
+shielding factors as the ratio of the fields outside the shield to those
+obtaining inside at a particular frequency different from \DC. Unless the
+frequency is large enough to involve skin effect considerations, I had found
+these formulae to match measurements to about 10~\%.
+
+This theory does not apply, however, to shielding static fields. For example,
+for a single-layer 14" diameter shield of length 3.5~m with $\mu=70,000$ and
+$t=0.2$~mm, we are led to expect $S_\text{T}\approx40$ and $S_\text{L}\approx2$.
+Thus a 400~mG lab magnetic field should be attenuated down to 10~mG (200~mG) if
+oriented perpendicular (parallel) to the shield. In practice (see example in
+Fig.~\ref{beforeafter}), however, we find residual fields much smaller than that
+(approx.\ 0.2~mG and 4~mG, resp.). We also find that adding additional layers
+does not significantly reduce the static fields internal to the shield as would
+be predicted by the formula above. As explained in the following section, I
+believe the reason is that in this situation, the shield does not behave as if
+it were made of a linear material; indeed, it is highly nonlinear due to
+ferromagnetic hysteresis.
 
 \paragraph{Degaussing}
 
@@ -164,10 +276,14 @@ may get pinned at material imperfections; degaussing helps with this issue by
 moving the domain walls to reach a more optimal configuration with respect to
 minimizing the total energy. Thus we may expect that the more of these
 imperfections, the less effective the degaussing; hence the importance of
-annealing magnetic shields and handling them carefully. On the other hand, given
-that magnetic field lines are closed loops, the field inside the shield that
-opposes an external field eventually loops around in such a way as to increase
-the total field outside. Thus even perfect degaussing is unlikely to result in a
+annealing magnetic shields and handling them carefully. (The innermost layer,
+being closest to the molecules that require shielding, is thereby the most
+sensitive to material imperfections. That is why we have decided to use a single
+piece mu-metal tube as the inner layer, while using the cheaper and easier to
+handle metglas foil for the outer layers.) On the other hand, given that
+magnetic field lines are closed loops, the field inside the shield that opposes
+an external field eventually loops around in such a way as to increase the total
+field outside. Thus even the best possible degaussing is unlikely to result in a
 zero magnetic field inside the shield.
 
 To illustrate, consider the Comsol simulation of a cylindrical shell with
@@ -176,12 +292,12 @@ solenoidal current placed in an area of a non-zero external magnetic field
 total magnetic energy, we obtain a situation that resembles the excellent
 shielding characteristic of degaussed shields, complete with the small non-zero
 field inside the shield. In this case, the current distribution was constrained
-to be a simple solenoid. One can nest concentric solenoids to model a
+to be a single solenoid. One can nest concentric solenoids to model a
 multi-layer shield and we find that in the minimum energy configuration, the
 inner layer has a zero current distribution, i.e., it does not participate in
 the shielding. This is consistent with the experimental observation that once a
-shield layer has attenuated most of the lab field, adding further layers does
-not improve the residual field.
+shield layer has attenuated most of the lab field, adding further layers around
+it does not improve the residual field.
 
 Further work may lift the solenoidal limitations of this toy model and consider
 the case of a general surface current distribution that minimizes energy.
@@ -211,7 +327,7 @@ decreases, the material is forced to spiral around a non-trivial set of minor
 loops with the intention of arriving at low $B$ values. By the time the external
 field stops changing, the material has come to a rest at a point on the last
 minor loop, at its intersection with the constitutive relation between $\vec B$
-and $\vec H$ (solid line in Fig.~\ref{degaussing_theory}b).
+and $\vec H$ (red solid line in Fig.~\ref{degaussing_theory}b).
 
 The constitutive relation can easily be found from classical magnetism
 \cite[sect.~5.11]{jackson1998classical}. Consider a ferromagnetic object
@@ -246,19 +362,163 @@ space-based atomic clock \cite{moric2014hysteresis}, to model shield degaussing
 \cite{sun2016dynamic}, or to investigate the theoretical limit of degaussing
 in magnetic shields \cite{sun2020limits}.
 
+\paragraph{Random walk}
+
+Another limit to shield performance is the gradual magnetization that occurs due
+to a combination of facotrs internal and external to the shield, such as changes
+in temperature and the lab magnetic fields, or mechanical stresses applied to
+the material. These changes are often of a stochastic nature, precluding
+prediction of the exact time-dependence of the fields in a way that would render
+them amenable to calibration. Instead, we can at least measure some
+probabilistic features of the shield.
+
+As a simple model, consider the case of random walk (Brown noise, Brownian
+motion; related to a Wiener process), in particular, continuous random walk
+$W(t)$ starting from the origin where the $dW$ increments are normally
+distributed (with variance $\propto t$) random variables. Such noise may be
+obtained by integrating white noise (with a flat spectrum, such as resistor
+Johnson noise with $\text{PSD}=4k_\text{B} T R$), or, expressed in the frequency
+domain, by applying a single-pole low-pass filter (attenuating higher
+frequencies proportionally more than the lower ones).
+%
+It is interesting to observe that as defined above, the process $W(t)$, while
+continuous everywhere, is differentiable nowhere. This can be readily seen by
+recalling that the standard deviation of $W(t)$ goes as $\sqrt{t}$, such that
+$\d W/dt\propto\lim_{t\to0}t^{-1/2}\to\infty$. Physically, the limit
+$\lim_{t\to0}$ corresponds to an infinite bandwidth. To avoid this, we
+implicitly assume some high-frequency cutoff.
+
+In this work, we are interested in the low-frequency behaviour of the noisy
+system. In particularly, we want to know what is the probability that the
+magnetic field $B(t)$ reaches some threshold value $B_T$ in a time $T$. For a
+random walk, the probability density function takes the form of a L\'evy
+distribution \cite{jacobs2010stochastic}
+
+\paragraph{Averaging and lock-in detection}
+
+Consider a physical signal $V(t)$ that we measure for a total time $T$ from
+$t=-T/2$ to $t=T/2$. The measured signal thus is
+%
+$$
+V_\text{meas}(t)=V(t)\cdot\Pi(t/T),
+$$
+%
+where $\Pi(t)$ is the rectangular function
+%
+$$
+\Pi(t)=\begin{cases}
+   0,&|t|>1/2\\
+   1/2,&|t|=1/2\\
+   1,&|t|<1/2.
+\end{cases}
+$$
+%
+The spectrum of the measured signal is given by the Fourier transform:
+%
+\begin{align*}
+   \widetilde{V}_\text{meas}(\omega)&=\mathcal{F}[V_\text{meas}(t)]\\
+   &=\mathcal{F}[V(t)\cdot\Pi(t/T)]\\
+   &=\mathcal{F}[V(t)]*\mathcal{F}[\Pi(t/T)]\\
+   &=\widetilde{V}(\omega)*\sinc(\omega T/2).
+\end{align*}
+%
+Thus the frequency-domain effect of measuring a signal for a time $T$ is a
+convolution of the signal's spectrum $\widetilde{V}(\omega)$ with the sinc
+function. \todo{frequency resolution and dynamic range vs window functions;
+1/f noise and how just increasing the window length doesn't reduce noise}
+
+\vspace{1cm}
+\noindent
+Now consider dividing the measurement into $N$ equal segments $V_k(t)$ of length
+$T_0=T/N$, where $k=1,\ldots,N$. These segments correspond to time-shifting the
+original signal $V(t)$, then truncating it to a length $T_0$:
+%
+\begin{align*}
+   V_k(t)&=\Pi(t/T_0)\cdot V(t-T/2+T_0(k-1/2)),\quad k=1,\dots,N\\
+   &=\Pi(t/T_0)\cdot V(t-\Delta t_k),\quad\text{where}\;
+   \Delta t_k=T/2-T_0(k-1/2).
+\end{align*}
+%
+If we average these $N$ segments together, we get the averaged signal
+%
+$$
+V_\text{avg}(t)=\frac{1}{N}\sum\limits_{k=1}^NV_k(t)
+=\frac{\Pi(t/T_0)}{N}\sum\limits_{k=1}^NV(t-\Delta t_k).
+$$
+%
+The spectrum of the averaged signal is
+%
+\begin{align*}
+   \widetilde{V}_\text{avg}(\omega)&=\mathcal{F}[V_\text{avg}(t)]\\
+   &=\mathcal{F}\left[\frac{\Pi(t/T_0)}{N}\sum\limits_{k=1}^NV(t-\Delta
+   t_k)\right]\\
+   &=\sinc(\omega T_0/2)
+   *\frac{1}{N}\sum\limits_{k=1}^N\mathcal{F}[V(t-\Delta t_k)].
+\end{align*}
+%
+We can rearrange the last line using the time shifting property of the Fourier
+transform,
+%
+$$
+\mathcal{F}[f(t-t_0)]=e^{-i\omega t_0}\mathcal{F}[f(t)],
+$$
+
+\noindent
+yielding the general form of a signal that has been averaged $N$ times:
+%
+\begin{align}
+   \label{sumincluded}
+   \widetilde{V}_\text{avg}(\omega)=
+   \left[\frac{1}{N}\sum\limits_{k=1}^Ne^{-i\omega\Delta t_k}
+   \widetilde{V}(\omega)\right]
+   *
+   \sinc(\omega T_0/2)
+   .
+\end{align}
+%
+It remains to examine the sum of complex exponentials in
+equation (\ref{sumincluded}). Disregarding the constant phase factor, the sum is
+plotted in Fig.~\ref{comb}. We see it takes the form of a frequency comb, the sharper the
+greater the number $N$ of averaged traces.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/comb.pdf}
+  \caption{The frequency comb arises when averaging different segments of a
+   measured signal. Before the segments can be averaged together, they have to
+   be time shifted so they overlap; the Fourier transform of time shifting gives
+   the exponentials that sum to form the frequency comb depicted here.}
+  \label{comb}
+\end{figure}
+
+We see from eqn~(\ref{sumincluded}) that in the frequency domain, averaging is a
+two-step procedure. First, the spectrum of the original signal is multiplied by
+the comb depicted in Fig.~\ref{comb}. If the desired signal occurs at the frequency
+corresponding to one of the comb's peaks (or its harmonics), then the effect of
+the comb is to bandpass-filter the signal and attenuate the noise away from the
+desired signal. As stated above, the greater the number $N$ of averages, the
+sharper the comb, i.e., the lower the bandwidth of the bandpass filter.
+
+The second step to the procedure is the convolution with $\sinc(\omega T_0/2)$.
+This gives the measured spectrum a linewidth essentially independent of the
+number of averages. Underneath the sinc, however, the noise will be attenuated
+through the action of the bandpass filter (or frequency comb) that derives its
+sharpness from the high number of averages.
+
 \subsection{Physical structure}
 
 The magnetic shield consists of four concentric cylindrical layers with open
 ends (See Figs.~\ref{concentric} and \ref{longitudinal}). Three of these are
-built by wrapping metglas foil around PVC pipes, while the fourth, innermost
-layer has been welded out of two sheets of mu-metal rolled into a tubular form,
-and annealed. The mu-metal tube, being 1~mm thick, is relatively fragile; in
-order to limit its motion, it is sandwiched between the hard plastic PVC tubes
-of the inner metglas layer and that of the shim coils. The inner two metglas
-layers are spaced apart using small-diameter PVC tubing; the same method is
-employed to suspend the glass vacuum chamber of the interaction region centered
-inside the shim coils tube. The outermost tube is mounted on an 80/20 frame
-using a set of seven aluminum semi-circular plates.
+built by wrapping metglas foil (FINEMET Wide Format Film, Hitachi Part #MS-FR
+470-100M-T0, containing 18~$\mu$m-thick FINEMET FT-3M metglas between protective
+layers of plastic) around PVC pipes, while the fourth, innermost layer has been
+welded out of two sheets of mu-metal rolled into a tubular form, and annealed.
+The mu-metal tube, being 1~mm thick, is relatively fragile; in order to limit
+its motion, it is sandwiched between the hard plastic PVC tubes of the inner
+metglas layer and that of the shim coils. The inner two metglas layers are
+spaced apart using small-diameter PVC tubing; the same method is employed to
+suspend the glass vacuum chamber of the interaction region centered inside the
+shim coils tube. The outermost tube is mounted on an 80/20 frame using a set of
+seven aluminum semi-circular plates.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/concentric.png}
@@ -266,7 +526,7 @@ using a set of seven aluminum semi-circular plates.
   \label{concentric}
 \end{figure}
 
-\paragraph{Layers, spacers, mounting}
+\paragraph{Layers and spacers}
 
 The three metglas layers are all built in the same way. First, the plastic tube
 (provided by the Harrison Machine \&\ Plastic Corp., Garrettsville, OH) is cut
@@ -335,12 +595,47 @@ wrap to secure the degaussing and (for 20" tube only) the solenoidal coil.
 The mu-metal layer does not, of course, require wrapping with metglas, only the
 degaussing coil and the outer plastic foil wrap. However, care must be taken to
 reinforce the insulation of the degaussing wire at the ends of the cylinder; the
-sharp edges can easily strip the magnet wire coating and short the turns of the
-wire to the conductive cylinder, which does not happen with the PVC tubes. I
-used heat shrink tubing to do this, but it required cutting the wire at each
-turn and at both ends, adding insulation, soldering the wires back together and
-heating the insulation to make it shrink and adhere. It would have been better
-to use a wire with more durable insulation instead.
+sharp edges of the cylinder can easily strip the magnet wire coating and short
+the turns of the wire to the conductive cylinder, which does not happen with the
+PVC tubes. I used heat shrink tubing to do this, but it required cutting the
+wire at each turn and at both ends, adding insulation, soldering the wires back
+together and heating the insulation to make it shrink and adhere. It would have
+been better to use a wire with more durable insulation instead.
+
+As shipped, the mu-metal tube had a visibly non-circular cross section at one
+end, potentially due to deformations that took place during shipping. This did
+not pose difficulties with the shield assembly, since the tolerances of the
+design allow for sufficient deviations from circularity, as well as because the
+mu-metal tube is flexible enough to accommodate small shape changes.
+Unfortunately, I do not have data to determine to what extent these deformations
+that inevitably take place during assembly cause magnetic domain wall pinning or
+other effects that may ultimately result in a larger than expected residual
+magnetic field.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/shimcoils.png}
+  \caption{Shim coil geometry.}
+  \label{shimcoils}
+\end{figure}
+
+At each end, the magnetic shield has a large circular opening matching the
+diameter of each layer. We have considered attaching custom-fabricated mu-metal
+endcaps to extend the innermost layer, as well as to reduce the diameter of the
+opening. However, this would pose difficulties since the caps would most likely
+have to be removed whenever the vacuum chamber is to be opened, such as during
+initial assembly or subsequent maintenance. Since the mu-metal cylinder is not
+perfectly circular in cross section, attaching the endcaps would involve bending
+the cylinder and the cap sufficiently for them to be of a matching cross
+section, or else designing endcaps large enough to accommodate the non-circular
+shape. The latter case would likely be a bad idea on account of poor magnetic
+contact between the main cylinder and the caps. In the end, seeing the shield
+performs according to our requirements even without any endcaps, we have decided
+to forgo them.
+
+After assembling all four layers into the completed shield, I measured the
+resistance of degaussing wires to ensure continuity. The measured value matches
+the expected one (as determined from coil length, gauge, and resistivity of
+copper) to within 5~\%.
 
 \paragraph{Shim coils}
 
@@ -354,12 +649,6 @@ the surface of the 14" PVC tube using neutral-cure RTV silicone sealant (Dow
 Dowsil 737) and wrapped in plastic foil for added protection. During the curing
 of the silicone, the wires are held in place by Kapton tape, which is removed
 after the silicone hardens.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/shimcoils.png}
-  \caption{Shim coil geometry.}
-  \label{shimcoils}
-\end{figure}
 
 The size of the tube makes it impractical to use standard milling machines.
 While the circular grooves can easily be cut using a hand saw, the axial ones
@@ -387,20 +676,45 @@ temporarily labelled by a numbered piece of Kapton tape at the end. For ease of
 connecting and disconnecting, these wires are attached to adapter boards that
 are permanently attached to the 80/20 support frame of the shield. The adaptor
 boards bundle four pairs of wires into one RJ45 jack to enable using standard
-patch cables for ease of connection.
+patch cables.
+
+The shim coils are driven by a home-build current source PCB
+(Fig.~\ref{current_source}) inspired by the current source shown in
+\cite[Fig.~5.69A]{horowitz2016art}. An Arduino microcontroller board controls
+two 8-channel \DAC\ (AD5676R) via a digital isolator (ADUM7441) to remove
+potential noise from the USB port. Each \DAC\ output is connected to the
+non-inverting terminal of a difference amplifier, directly controlling the
+voltage drop over a precision 100~$\Omega$ resistor. This implements a voltage
+to current converter, allowing for computer-controlled $\pm10$~mA adjustment to
+each of the 80 coils individually (using five of the PCBs).
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/current_source.png}
+  \caption{Current source for shim coils.}
+  \label{current_source}
+\end{figure}
 
 \paragraph{Support structure}
 
 The considerable total weight of the magnetic shield (780 lbs of plastic, plus
-metglas, mu-metal, and other materials) requires a sufficiently strong support
-structure. In our case, it is assembled from 80/20 rails (profile number 3030)
-and placed on eight caster wheels {McM p.n.\ 9813T71) so the setup can in
-principle be moved by one person. The support structure consists of three
-four-foot segments mounted together to form a rectangular box. Rails going
-across the top of the box hold aluminum plates (1/4" thick) with semi-circular
-cutouts. To keep the plates from damaging the delicate outer metglas layer, the
-sharp corners of the cutouts are protected with hard nylon tape.
+140 lbs of mu-metal, metglas, and other materials) requires a sufficiently strong support
+structure (see Fig.~\ref{support}). In our case, it is assembled from
+quad-profile 80/20 rails (profile number 3030, total weight of the structure
+approx.\ 300~lbs) and placed on eight caster wheels (McMaster p.n.\ 9813T71) so
+the setup can in principle be moved by one person.  The support structure
+consists of three four-foot segments mounted together to form a rectangular box.
+Rails going across the top of the box hold aluminum plates (1/4" thick) with
+semi-circular cutouts. To keep the plates from damaging the delicate outer
+metglas layer, the sharp corners of the cutouts are protected with hard nylon
+tape.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/support.png}
+  \caption{\part{a} Support structure during assembly of the shield layers. \part{b}
+  Detail of aluminum support plates, with nylon strips to distribute pressure
+   against the outer (metglas) layer.}
+  \label{support}
+\end{figure}
 
 \subsection{Operation and measurements}
 
@@ -417,6 +731,13 @@ the external magnetic field. Despite our best attempts at degaussing, these
 residual fields are typically of the order of 50--200~$\mu$G in the center of
 the shield.
 
+The other set of measurements consists of determining the response of the shield
+to external time-varying fields. Primarily, we are interested in the attenuation
+of external dynamic fields during the time when the external field is present.
+We are also interested in fields that remain \emph{after} the external field has
+been turned off; in other words, in the shield magnetization caused by an
+external field transient.
+
 \paragraph{Residual field measurement}
 
 During shield characterization, the primary measurement is of the field in the
@@ -432,7 +753,60 @@ a measuring range of 1~G and a typical electronic offset of several hundred
 microgauss. (The specified noise level of 0.1~$\mu$G/$\sqrt{\mathrm{Hz}}$ at 1
 Hz, integrated over the 3~kHz bandwidth of the sensor, is below the mechanical
 stability of the sensor translation setup with a typical repeatability of approx
-2~$\mu$G.)
+2~$\mu$G.) The magnetic signal is amplified by a signal conditioning unit
+(Bartington SCU-1), then read out by a home-build circuit board containing the
+\ADC\ (AD4115).
+
+The sensor is specified to have 100~nG/$\sqrt{\text{Hz}}$ of noise at 1~Hz. To
+verify this, I measured the noise spectrum while the sensor was located inside
+the shield. (Given the dynamic shielding factor and the magnetic noise level in
+the lab, the sensor noise is significantly larger than the true magnetic noise
+inside the shield.) The spectrum analyzer gives the power spectral density in
+units of dBm/Hz. We first convert this into linear units,
+$P_\text{mW/Hz}=(1\,\text{mW})\cdot10^{P_\text{dBm/Hz}/10}$. Then, we convert
+the power units into voltage units assuming a nominal 50~$\Omega$ impedance for
+the spectrum analyzer:
+$V_\mathrm{V/\sqrt{Hz}}=(P_\text{mW/Hz}/1000\cdot50\,\Omega)^{1/2}$. Finally, we
+need to convert the voltage into magnetic units as given by the specified
+sensitivity and gain of the sensor.
+
+If the spectrum is calculated manually from the voltage signal $V(t_i)$ sampled
+at discrete time points ($t_i$, $i=1,\dots,N$, with $t_{i+1}-t_i=\Delta t$)
+using a real-valued \gls{FFT}, then the correct way to interpret it
+as a power spectral density is given by
+%
+$$
+\text{PSD}=2\frac{\Delta t}{N}\left|\mathcal{F}\left[V(t)\right]\right|^2.
+$$
+%
+The `2' in front of the right-hand side of the expression is due to the fact
+that for a real-valued \gls{FFT}, the negative-frequency components are folded
+into the positive ones. (Here we ignore the DC component corresponding to the
+mean value of the recorded voltages.) The ratio $\Delta t/N$, with units of
+reciprocal frequency, allows the interpretation of the above as a spectral
+density. If any windowing function $w(t_n)$, $n=1,\dots,L$ is applied, the
+spectral density has to be multiplied by the \gls{ENBW}\ correction factor,
+%
+$$
+c_\text{w}=L\frac{\sum_n|w(t_n)|^2}{|\sum_n w(t_n)|^2}.
+$$
+%
+This expresses the fact the window function determines the bandwidth of each
+frequency bin. For a boxcar window, $c_\text{w}=1$, since it is the window with
+the narrowest frequency resolution (albeit at a cost of dynamic range).
+\todo{Find a reference for this.}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
+   \caption{Magnetometer sensor noise measured inside the magnetic shield.
+   \part{a} Lower frequency spectrum measured using the AD4115 board and 1000
+   preamp gain, without HPF, using 1kHz LPF cutoff, 100 averages, Hann window.
+   \part{b} Higher frequency spectrum measured using moku:lab spectrum
+   analyzer, using preamp gain of 100 and HPF cutoff of 0.01 Hz, with LPF at 10
+   kHz, averaging 100 times, flat-top window. \todo{Include Bx, Bz; put both
+   graphs on the same axes.}}
+  \label{sensornoise}
+\end{figure}
 
 The electronic offset of the sensor and its associated electronics is
 significant. It is specified as 50~$\mu$G, with a temperature coefficient of
@@ -494,49 +868,6 @@ two measurements are sufficiently close to each other, I use the lower of the
 two frequencies. I use a similar process to decide upon the digital LPF included
 with the \ADC.
 
-\paragraph{Dynamic field measurement}
-
-The attenuation of the external fields is not perfect. If an infinitely large
-Helmholtz pair were to drive a perfectly uniform and sinusoidally
-varying magnetic field in the region of space occupied by the magnetic
-shield, then a smaller sinusoidal variation of the field inside the
-shield could be detected that is of the same frequency as the external
-field. In practice, there are practical limits to the size of exteral coils. In
-one version of the measurement, I have attached a room-sized loop of
-wire to the walls of the lab and drive them with a function generator while
-passing the magnetometer reading through a lock-in amplifier. Repeating the
-measurement in the absence of any shielding gives the magitude of the
-external field variation. Dividing this by the magnitude measured with
-the shield in place gives the shielding factor.
-
-The disadvantage of this method is that the magnetic shield has to be removed
-to measure the external magnetic field, since the shape of the
-external coils is difficult to measure precisely. (Future work: build room-sized
-coils of known geometry to measure SF better.) To find the SF of the final
-shield, I have used smaller rectangular coils of well-known dimensions centered
-around the magnetic shield; the field they apply, while not uniform, can be
-calculated using a closed-form expression. This allows me to define an effective
-shielding factor as the ratio of the theoretically predicted field of the coils
-divided by the field measured inside the shield.
-
-I used the SR530 analog lock-in amplifiers to measure the internal field
-magnitude. In order to extend the measurement below the 0.5~Hz limit of this
-instrument, I have also tried to measure the fields inside with the ADC used in
-residual-field measurement, but without any further preamplification and
-filtering. However, I have not yet succeeded in reconciling these measurements
-with those done with the SR530. In particular, the software lock-in reported
-non-zero internal field at zero external excitation. In the future, I may verify
-why that is the case, and spend more time calibrating the software lock-in as
-compared to commercial instruments.
-
-To calibrate the externally applied field, I measured the current flowing
-through the rectangular coils by measuring the voltage drop over as series
-1~$\Omega$ resistor with an oscilloscope. At low amplitudes, this measurement
-is susceptible to noise picked up by the wiring because there is no filtering
-between the resistor and the oscilloscope. This could be improved by using a
-lock-in amplifier to calibrate the current versus function generator amplitude
-and frequency settings.
-
 \paragraph{Off-axis magnetometry}
 
 When the magnetic shield is in use, the central axis will not be accessible to
@@ -546,137 +877,64 @@ aluminum slide, but since they are fluxgate sensors, the dynamic field generated
 by the sensor may induce currents in the aluminum and cause spurious
 measurements. I may have to move the sensors into plastic slides instead.
 
-\paragraph{Averaging in frequency domain.}
-
-Consider a physical signal $V(t)$ that we measure for a total time $T$ from
-$t=-T/2$ to $t=T/2$. The measured signal thus is
-%
-$$
-V_\text{meas}(t)=V(t)\cdot\Pi(t/T),
-$$
-%
-where $\Pi(t)$ is the rectangular function
-%
-$$
-\Pi(t)=\begin{cases}
-   0,&|t|>1/2\\
-   1/2,&|t|=1/2\\
-   1,&|t|<1/2.
-\end{cases}
-$$
-%
-The spectrum of the measured signal is given by the Fourier transform:
-%
-\begin{align*}
-   \widetilde{V}_\text{meas}(\omega)&=\mathcal{F}[V_\text{meas}(t)]\\
-   &=\mathcal{F}[V(t)\cdot\Pi(t/T)]\\
-   &=\mathcal{F}[V(t)]*\mathcal{F}[\Pi(t/T)]\\
-   &=\widetilde{V}(\omega)*\sinc(\omega T/2).
-\end{align*}
-%
-Thus the frequency-domain effect of measuring a signal for a time $T$ is a
-convolution of the signal's spectrum $\widetilde{V}(\omega)$ with the sinc
-function. % TODO: frequency resolution and dynamic range vs window functions;
-%1/f noise and how just increasing the window length doesn't reduce noise
-
-\vspace{1cm}
-\noindent
-Now consider dividing the measurement into $N$ equal segments $V_k(t)$ of length
-$T_0=T/N$, where $k=1,\ldots,N$. These segments correspond to time-shifting the
-original signal $V(t)$, then truncating it to a length $T_0$:
-%
-\begin{align*}
-   V_k(t)&=\Pi(t/T_0)\cdot V(t-T/2+T_0(k-1/2)),\quad k=1,\dots,N\\
-   &=\Pi(t/T_0)\cdot V(t-\Delta t_k),\quad\text{where}\;
-   \Delta t_k=T/2-T_0(k-1/2).
-\end{align*}
-%
-If we average these $N$ segments together, we get the averaged signal
-%
-$$
-V_\text{avg}(t)=\frac{1}{N}\sum\limits_{k=1}^NV_k(t)
-=\frac{\Pi(t/T_0)}{N}\sum\limits_{k=1}^NV(t-\Delta t_k).
-$$
-%
-The spectrum of the averaged signal is
-%
-\begin{align*}
-   \widetilde{V}_\text{avg}(\omega)&=\mathcal{F}[V_\text{avg}(t)]\\
-   &=\mathcal{F}\left[\frac{\Pi(t/T_0)}{N}\sum\limits_{k=1}^NV(t-\Delta
-   t_k)\right]\\
-   &=\sinc(\omega T_0/2)
-   *\frac{1}{N}\sum\limits_{k=1}^N\mathcal{F}[V(t-\Delta t_k)].
-\end{align*}
-%
-We can rearrange the last line using the time shifting property of the Fourier
-transform,
-%
-$$
-\mathcal{F}[f(t-t_0)]=e^{-i\omega t_0}\mathcal{F}[f(t)],
-$$
-
-\noindent
-yielding the general form of a signal that has been averaged $N$ times:
-%
-\begin{align}
-   \label{sumincluded}
-   \widetilde{V}_\text{avg}(\omega)=
-   \left[\frac{1}{N}\sum\limits_{k=1}^Ne^{-i\omega\Delta t_k}
-   \widetilde{V}(\omega)\right]
-   *
-   \sinc(\omega T_0/2)
-   .
-\end{align}
-%
-It remains to examine the sum of complex exponentials in
-equation (\ref{sumincluded}). Disregarding the constant phase factor, the sum is
-plotted in Fig.~\ref{comb}. We see it takes the form of a frequency comb, the sharper the
-greater the number $N$ of averaged traces.
-
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/comb.pdf}
-  \caption{The frequency comb arises when averaging different segments of a
-   measured signal. Before the segments can be averaged together, they have to
-   be time shifted so they overlap; the Fourier transform of time shifting gives
-   the exponentials that sum to form the frequency comb depicted here.}
-  \label{comb}
+  \includegraphics[width=\textwidth]{figs/todo/impedance.png}
+  \caption{Real and imaginary parts of the impedance of the degaussing coils
+   wrapped around the innermost two layers of the shield.}
+  \label{impedance}
 \end{figure}
-
-
-\noindent
-We see from eqn~(\ref{sumincluded}) that in the frequency domain, averaging is a
-two-step procedure. First, the spectrum of the original signal is multiplied by
-the comb depicted in Fig.~\ref{comb}. If the desired signal occurs at the frequency
-corresponding to one of the comb's peaks (or its harmonics), then the effect of
-the comb is to bandpass-filter the signal and attenuate the noise away from the
-desired signal. As stated above, the greater the number $N$ of averages, the
-sharper the comb, i.e., the lower the bandwidth of the bandpass filter.
-
-The second step to the procedure is the convolution with $\sinc(\omega T_0/2)$.
-This gives the measured spectrum a linewidth essentially independent of the
-number of averages. Underneath the sinc, however, the noise will be attenuated
-through the action of the bandpass filter (or frequency comb) that derives its
-sharpness from the high number of averages.
-
 
 \paragraph{Degaussing}
 
 The hardware used for degaussing in this experiment is as follows. Each of the
 four shielding layers has its own 12-turn degaussing coil. These are connected
 to a \PCB\ with a set of relays that can connect each of them to the degaussing
-current, but only one at a time. During degaussing, the outer layer is always
-connected first, followed by the second outermost layer, followed by the
-innermost metglas layer, followed by the mu-metal layer. Since the residual
-field is primarily determined by the innermost layer, that one is degaussed last
-lest it be magnetized by accident during the degaussing of the other layers. The
-relays \PCB\ is in turn connected to an isolation transformer for the purpose of
-DC blocking. We have considered alternate forms of DC blocking, such as a
-capacitor, but the required capacitance was too high at the low frequencies
-typically used in degaussing (down to 1~Hz). The transformer is driven by a
-power amplifier (Kepco BOP36-12M), which in turn is driven by a home-built \DAC\
-board. \todo{figure of connections}
+current in parallel (although only one should be connected at a time). The
+circuit board includes a high-power precision 1~$\Omega$ resistor wired in
+series with the coils. Opamp followers at each side of the resistor enable a
+buffered readout of both the current flowing through the coils as well as the
+voltage drop; together, these may be used to calculate the impedance of the
+coils (Fig.~\ref{impedance}). The impedance should change as a function of
+degaussing current as the shield saturates, giving one way to find if the
+degaussing current is sufficient to saturate the shield.
 
-A wide rage of degaussing waveforms have been used in the literature; for
+The other way to ensure shield saturation is to directly observe the hysteresis
+loops during degaussing. In Fig.~\ref{hysteresis}, the abscissa gives the degaussing
+current used as a proxy for the applied field. Responding to the sinusoidal
+degaussing current, voltage gets induced in a single-turn pickup coil also
+wrapped around the shield. By Faraday's law, the magnetic flux density is
+proportional to the time integral of the induced voltage.
+
+During degaussing, the outer layer is always connected first, followed by the
+second outermost layer, followed by the innermost metglas layer, followed by the
+mu-metal layer. Since the residual field is primarily determined by the
+innermost layer, that one is degaussed last lest it be magnetized by accident
+during the degaussing of the other layers. The relays \PCB\ is in turn connected
+to an isolation transformer for the purpose of DC blocking. We have considered
+alternate forms of DC blocking, such as a capacitor, but the required
+capacitance was too high at the low frequencies typically used in degaussing
+(down to 1~Hz). The transformer is driven by a power amplifier (Kepco
+BOP36-12M), which in turn is driven by a home-built \DAC\ board. \todo{details
+about the DAC board; figure of connections}
+
+Depending on the orientation of the shield with respect to the room magnetic
+field, it can be advantageous to supply the solenoidal coil on the outermost
+layer with a constant electric current (Fig.~\ref{solenoid}). As a result, the
+region of the magnetic shield where the axial field is low is extended by tens
+of centimeters. Of course, if the direction of the shield or the room field were
+to change significantly, the optimal solenoid current has to be recalibrated.
+For small changes, I do not expect a large effect given that the solenoid mostly
+impacts the outermost layer.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/solenoid.png}
+  \caption{The axial component of the residual field after degaussing, with shim
+   coils on (solid line) and off (dashed line). \part{a} $B_z$-cancelling
+   solenoid turned off; \part{b} solenoid supplied with a constant current.}
+  \label{solenoid}
+\end{figure}
+
+A wide range of degaussing waveforms have been used in the literature; for
 example, linear or polynomial envelopes \todo{[REF]} or envelopes specifically
 optimized for a linear decrease in the magnetization of the ferromagnetic
 material \todo{[REF]}. In this experiment, I use a finite number of sinusoidal
@@ -703,12 +961,14 @@ recovered from saturation and is circling near a point around the origin of the
 hysteresis curve; the number of degaussing pulses has to be large enough so
 that the decrease in amplitude is gradual. The exact values of the parameters
 mentioned in the preceding statements need to be found experimentally for the
-shield geometry used; \todo{fig: degaussing optimization}.
+shield geometry used; \todo{fig: degaussing waveforms (current, pickup coil
+voltage) using the parameters I commonly use; specify numerical values for
+degaussing parameters}.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/shimmed.png}
-  \caption{The magnetic field \part{a} immediately after shimming, and \part{b}
-  three weeks later.}
+   \caption{The magnetic field \part{a} before shimming, \part{b} immediately
+   after shimming, and \part{c} three weeks later.}
   \label{shimmed}
 \end{figure}
 
@@ -777,6 +1037,168 @@ the molecular beam experiment, I do not anticipate a significant improvement in
 the shimming by doing so given that the three dimensions of the magnetic field
 accessed by the coils are orthogonal to each other.
 
+In practice, I found it is most effective to repeat the shimming procedure
+several times in a row, alternating with degaussing until the field converges to
+a more or less constant value. After the first shimming, the field is greatly
+reduced compared to the degaussed-only values, but is nonetheless not as low as
+would be expected from the least-squares calculation. Furthermore, following the
+initial shimming with degaussing is likely to increase the residual field. After
+several rounds of shimming, degaussing, and re-measuring, the field settles at
+the value predicted from least squares (to within measurement accuracy) and is
+only minimally affected by subsequent degaussing.
+
+\paragraph{Dynamic field measurement}
+
+The attenuation of the external fields is not perfect. If an infinitely large
+Helmholtz pair were to drive a perfectly uniform and sinusoidally
+varying magnetic field in the region of space occupied by the magnetic
+shield, then a smaller sinusoidal variation of the field inside the
+shield could be detected that is of the same frequency as the external
+field. In practice, there are practical limits to the size of exteral coils. In
+one version of the measurement, I have attached a room-sized loop of
+wire to the walls of the lab and drive them with a function generator while
+passing the magnetometer reading through a lock-in amplifier. Repeating the
+measurement in the absence of any shielding gives the magitude of the
+external field variation. Dividing this by the magnitude measured with
+the shield in place gives the shielding factor.
+
+The disadvantage of this method is that the magnetic shield has to be removed to
+measure the external magnetic field, since the shape of the external coils is
+difficult to measure precisely. (Future work: build room-sized coils of known
+geometry to measure SF better.) To find the SF of the final shield, I have used
+smaller rectangular coils of well-known dimensions centered around the magnetic
+shield; the field they apply, while not uniform, can be calculated using a
+closed-form expression. \cite[eqns~8--10]{hampton2020closed} This allows me to
+define an effective shielding factor as the ratio of the theoretically predicted
+field of the coils divided by the field measured inside the shield.
+
+The pair of rectangular coils lying in vertical planes (used to apply horizontal
+transverse field) have dimensions 26"~$\times$~144" and are spaced by 30". This
+means they apply a central field of approx.\ 525~mG/A. (The corresponding values
+for the horizontal pair of coils are 30"~$\times$~144", spaced by 26", with a
+central field of 620 mG/A.) Both coils are made using 50 turns of 22-gauge wire,
+giving a resistance of around 20~$\Omega$, allowing the use of a low-voltage
+power supply to cancel (some of) the Earth's magnetic field.
+
+I used the SR530 analog lock-in amplifiers to measure the internal field
+magnitude. In order to extend the measurement below the 0.5~Hz limit of this
+instrument, I have also tried to measure the fields inside with the ADC used in
+residual-field measurement, but without any further preamplification and
+filtering. However, I have not yet succeeded in reconciling these measurements
+with those done with the SR530. In particular, the software lock-in reported
+non-zero internal field at zero external excitation. In the future, I may verify
+why that is the case, and spend more time calibrating the software lock-in as
+compared to commercial instruments.
+
+To calibrate the externally applied field, I measured the current flowing
+through the rectangular coils by measuring the voltage drop over as series
+1~$\Omega$ resistor with an oscilloscope. At low amplitudes, this measurement
+is susceptible to noise picked up by the wiring because there is no filtering
+between the resistor and the oscilloscope. This could be improved by using a
+lock-in amplifier to calibrate the current versus function generator amplitude
+and frequency settings.
+
+\paragraph{Charging magnetization}
+
+Another form of time-varying magnetic field measurement is to study the effect a
+small current internal to the shield has on the residual field. Ultimately, the
+purpose of the shield is to surround the interaction region containing two
+high-voltage electrodes whose voltage reverses every 10--100 seconds. Estimating
+the electrode capacitance at 200~pF, a current of approx.\ 24~$\mu$A is required
+to charge them to $\pm30$~kV within a second. Were this current to magnetize the
+shield significantly, then our \gls{EDM}\ measurement would be compromised by a
+source of error that occurs in phase with the field reversals and cannot be
+removed by averaging over a large dataset. To estimate the magnitude of the
+problem, consider that the \NMR\ resonance has a 2.5~mHz/$\mu$G slope with
+respect to the magnetic field. To approach the shot-noise limited sensitivity of
+45~nHz with 300~h of data, the shield magnetization in phase with the electric
+field reversals has to be smaller than 30~pG.
+
+A field as small as 30~pG would be difficult to detect directly using the
+fluxgate magnetometers we use for shield characterization. The sensor is
+specified to have noise lower than 100~nG/$\sqrt{\text{Hz}}$ at 1~Hz. To achieve
+30~pG, the averaging time would have to be as long as five months---which would
+correspond to a measurement frequency of 80~nHz, at which the sensor noise
+density would be significantly larger due to $1/f$ noise.
+
+Rather than improving the measurement sensitivity, we can instead increase the
+signal size by increasing the electrode `charging' current we pass through the
+inside of the shield. At a more realistic integration time of a couple seconds,
+we should be able to detect fields as small as 100~nG, which is about
+3,000$\times$ larger than 30~pG. If, upon applying 72~mA (a current
+3,000$\times$ larger than the realistic electrode charging current of
+24~$\mu$A), we find no evidence of magnetizations at the 100~nG level, then it
+is likely that the 24~$\mu$A would not pose problematic shield magnetizations.
+Of course, the exact extrapolation to smaller field values is complicated by the
+severely nonlinear response of the ferromagnetic shield.
+
+In the test setup, rather than using high voltage electrodes, I used two wires
+separated by 2~cm (matching the electrode spacing) passing approximately through
+the center of the shield. The magnetic field a distance $R$ away from a wire
+carrying a current $I$ is given by $B=\mu_0 I/(2\pi R)$. Thus the field 4" away
+from the two parallel wires (2~cm separation, currents going opposite
+directions) is approx.\ 4~mG/A, or 100~nG at 24~$\mu$A.
+
+I used a set of relays to reverse the current passed through the cables. The
+measurement procedure is to repeat $N$ times the following sequence of steps:
+(1) Flow a current $I$ through the wires for a time $t_\text{charge}$; (2)
+Measure the magnetic field for a time $t_\text{meas}$, making sure to wait long
+enough for the low-pass filters to settle; (3) Reverse the current direction and
+repeat preceding steps. By averaging the difference of the fields that
+correspond to opposite directions of the charging current, we effect a lock-in
+detection (equivalent to a sharp bandpass filter), whereby we avoid the majority
+of $1/f$ noise that a simple long-time measurement would be susceptible to. See
+Fig.~\ref{charging} for an example of such a measurement.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/charging.png}
+   \caption{Effect of charging current on shield magnetization. \part{a}
+   Electric current during for each direction. It is not clear why the noise for
+   positive direction is much larger, but it is insignificant compared to the
+   current magnitude. \part{b} The `charging magnetization' is nonzero for the
+   vertical $B_y$ component of the field. \part{c} $B_y$ is higher than before
+   flowing the current in the positive direction. \part{d} $B_y$ is lower than
+   before flowign the current in the negative direction.}
+  \label{charging}
+\end{figure}
+
+The error bars in the legends of Fig.~\ref{charging} are calculated as the
+standard deviation of the data points divided by the square root of the number
+of the points. This matches the data for magnetometer noise shown in
+Fig.~\ref{sensornoise} as follows. The center frequency of the measurement, as
+given by the reciprocal of $t_\text{meas}$, is $f_0=0.15$~Hz. We can read from
+Fig.~\ref{sensornoise} that the sensor noise at that frequency is
+$\text{NSD}=170$~nG/$\sqrt{\text{Hz}}$. The bandwidth is the center frequency
+divided by the number of datapoints, in this case $\text{BW}=f_0/N=0.30$~mHz.
+The total integrated noise in the lock-in bandpass filter is thus
+$B_\text{rms}=2\cdot\text{NSD}\cdot\sqrt{BW}=5.9$~nG, as compared to the 6.0~nG
+shown in the legend of Fig.~\ref{charging}(b).
+
+The value $f_0=0.15$~Hz represents a compromise of two competing factors.
+Choosing a higher $f_0$ would reduce the amount of $1/f$ noise. On the other
+hand, a higher $f_0$ would mean measuring the field for a shorter amount of
+time, which would reduce the duty cycle of the measurement given the fixed
+$t_\text{charge}$ and the settling time of the sensor and ADC low-pass filters.
+At a lower $f_0$, of course, we would be susceptible to the significantly
+increased sensor noise.
+
+We can read from Fig.~\ref{charging}(b) that with 1~A of current, the shield's
+residual field changes by 114.7~nG. Repeating the measurement at 0.1~A, I
+obtained a field change of 14.5~nG. Extrapolating these values to 24~$\mu$A, we
+are led to expect a magnetization of 2--4~pG, well below the 30~pG requirements.
+Furthermore, the 24~$\mu$A corresponds to charging the electrodes within one
+second, whereas realistically they can be charged up to final voltage even
+slower if desired. The 30~pG constraint merely requires us to charge electrodes
+slower than within 50~ms assuming a constant charging rate.
+
+Note that the assumption of a constant rate will not hold if charging the
+capacitive electrodes via a resistor, in which case the initial current will be
+large, tending asymptotically to zero. The current-limiting resistor needs to be
+large enough that at no time the current can exceed the above bounds. This is
+true even if we attempt to implement a constant charging rate using a \DAC; in
+this case it is important to ensure the voltage does not suddenly jump when
+transitioning between nearby codes.
+
 \subsection{Performance and limitations}
 
 \paragraph{Residual field}
@@ -795,29 +1217,6 @@ constant. Unfortunately, at the time of the measurement, I did not have
 available the means to monitor the magnetic field external to the magnetic
 shield, or at any other point inside the shield except on-axis.
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/dynSF.png}
-  \caption{Dynamic shielding factor vs frequency and amplitude of the external
-  field perturbation.}
-  \label{dynSF}
-\end{figure}
-
-Since degaussing is used to significantly reduce the internal magnetic field, it
-is of interest to observe whether degaussing could be used to periodically
-restore the initial low-field conditions even after shimming the fields. To
-estimate the effect of periodic degaussing, I have alternated measuring the
-field and degaussing; see results in Fig.~\ref{continuously_degaussing}.
-Unfortunately, it appears that degaussing leaves the shield in a state of a
-small but significant internal field. Since the shield is stable enough, I
-believe better performance is obtained by degaussing only at the beginning of
-measurements, then shimming the shield, and letting it stay that way.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/continuously_degaussing.png}
-  \caption{Average internal magnetic field while degaussing every 200 seconds.}
-  \label{continuously_degaussing}
-\end{figure}
-
 It is true that just because the shield stayed in a low-field condition for
 three weeks once, it is not certain it will always stay that way for as long. In
 other words, it would be useful to find a model for predicting how long the
@@ -825,13 +1224,61 @@ shield stays this way, or what the probability is that is has exceeded
 10~$\mu$G. If we model the average internal magnetic field as a random walk,
 then we can associate a diffusion constant to this process and calculate the
 probabilities. \todo{Include the calculations for random walk.} Of course, there
-is not physical reason why the growth in internal magnetic field should be a
-random walk; it would be of interest to compare other possible stochastic models
-for this behaviour, e.g.\ using Allan deviation.
+is no obvious physical reason why the growth in internal magnetic field should
+be a random walk; it would be of interest to compare other possible stochastic
+models for this behaviour, e.g.\ using Allan deviation.
 
 It would also be interesting to measure the noise spectrum inside the shield to
 see if it is of a similar nature (i.e., maybe random walk) as the slow drifts in
-the residual field.
+the residual field. However, the noise density of the sensor (see
+Fig.~\ref{sensornoise}) I used for these measurements is too large to easily
+read out the spectrum inside the shield; in the future, we could attempt to
+measure it in some other way.
+
+Since degaussing is used to significantly reduce the internal magnetic field, it
+is of interest to observe whether degaussing could be used to periodically
+restore the initial low-field conditions even after shimming the fields. To
+estimate the effect of periodic degaussing, I have alternated measuring the
+field and degaussing; see results in Fig.~\ref{continuously_degaussing}.
+It is not entirely clear what is the effect of degaussing after the shield has
+been properly shimmed. In a variation of the preceding experiment, I have
+followed the evolution of the magnetic field with hourly measurements while
+degaussing the shield daily (i.e., every 24th measurement). The results
+(Fig.~\ref{longterm_degaussing}) do not obviously appear to either recommend or
+proscribe regular degaussing.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/continuously_degaussing.png}
+  \caption{Average internal magnetic field while degaussing every 200 seconds.}
+  \label{continuously_degaussing}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/longterm_degaussing.png}
+  \caption{Average internal magnetic field while degaussing every 24 hours.}
+  \label{longterm_degaussing}
+\end{figure}
+
+A comparison of Figs.~\ref{threeweeks} and \ref{longterm_degaussing} may appear
+to indicate that degaussing increases the variability of the residual field over
+time. However, we are unable to make a direct comparison between the two since
+in the former case, the lab temperature stayed constant (to within 0.5~K) over
+most of the three weeks shown in the plot. By contrast, in the latter case the
+laboratory steam system was under maintenance, causing regular temperature
+swings of several degrees. By way of estimating the temperature dependence of
+the average residual field, I have placed two electric space heaters on the two
+opposide sides of the shield, but with the airflow not directed towards the
+shield. Disconnecting the heaters after several hours, I was then able to track
+the room temperature and the magnetic field internal to the shield over several
+hours as the room cooled back down. Repeating this thermal cycle twice yields
+two separate field-vs-temperature curves, as in Fig.~\ref{t_dep}, on account of
+magnetic hysteresis.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/t_dep.png}
+  \caption{Temperature dependence of average field inside the magnetic shield.}
+  \label{t_dep}
+\end{figure}
 
 \paragraph{Dynamic shielding}
 
@@ -851,26 +1298,37 @@ measuring setup. I have, however, been so far unable to find out what causes
 this.)
 
 \begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/dynSF.png}
+  \caption{Dynamic shielding factor vs frequency and amplitude of the external
+  field perturbation.}
+  \label{dynSF}
+\end{figure}
+
+The spatial dependence of the dynamic SF is as shown in Fig.~\ref{spatialSF}. We
+see that the region where the SF is greater than the required 5,000 is almost
+three meters long, such that the sensitive part of the molecular beam will be
+entirely contained within the shielded region.
+
+\begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/spatialSF.png}
-  \caption{Spatial dependence of dynamic SF.}
+  \caption{Spatial dependence of dynamic field.}
   \label{spatialSF}
 \end{figure}
 
-The spatial dependence of the dynamic SF is as shown in Fig.~\ref{spatialSF}. It
-will be noted that the pattern is asymmetric, as if one side of the shield works
-better than the other. That is also unlikely to be the case. Further work may
-establish what causes this observation. One possibility is that in addition to
-attenuating the external excitation, the shield also changes the direction of
-the external field. By measuring only one component of the shielding, we are
-unable to distinguish between attenuation and change of direction; a
-three-dimensional measurement may clarify the situation. Another possibility is
-that the asymmetry is due to some relaxation (or low-pass filtering) in the
-measurement, such that reversing the direction of sensor motion may change the
-results. It could also be the case that despite my careful axis centering, the
-transverse position of the sensor changes along the length of the shield, such
-that the sensor is closer to the walls of the shield at one end. The fields are
-likely larger near the walls of the shield, but more work is needed to determine
-the transverse profile of the dynamic shielding factor.
+It will be noted that the spatial pattern of dynamic SF depicted is asymmetric,
+as if one side of the shield works better than the other. That is also unlikely
+to be the case. Further work may establish what causes this observation. One
+possibility is that in addition to attenuating the external excitation, the
+shield also changes the direction of the external field. By measuring only one
+component of the shielding, we are unable to distinguish between attenuation and
+change of direction; a three-dimensional measurement may clarify the situation.
+Another possibility is that the asymmetry is due to some relaxation (or low-pass
+filtering) in the measurement, such that reversing the direction of sensor
+motion may change the results. It could also be the case that despite my careful
+axis centering, the transverse position of the sensor changes along the length
+of the shield, such that the sensor is closer to the walls of the shield at one
+end. The fields are likely larger near the walls of the shield, but more work is
+needed to determine the transverse profile of the dynamic shielding factor.
 
 The dynamic SF measurements on the final shield were all done with the external
 excitation caused by the left-right pair of rectangular coils, corresponding to
