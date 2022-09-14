@@ -21,7 +21,7 @@
 \hyphenation{gau-ges}
 
 % for notes and bibliography
-\usepackage[numbers,square]{natbib}
+\usepackage[numbers,square,sort&compress]{natbib}
 \usepackage{doi}
 \usepackage{xcolor,hyperref}
 \hypersetup{
@@ -65,10 +65,16 @@
 \usepackage{booktabs,tabu,multirow}
 \usepackage{float}
 \floatstyle{plaintop}
-\restylefloat{table}
+\restylefloat{table,sidewaystable}
 \renewcommand{\thetable}{\Roman{table}}
 \newcommand{\dashedrule}{\tabucline[0.4pt black!50 off 2pt]{-}}
 \newcommand{\dottedrule}{\tabucline[0.2pt on 1pt]{-}}
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+\usepackage{pdflscape,rotating}
 
 % for figures
 \usepackage{graphicx}

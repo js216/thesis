@@ -70,40 +70,6 @@ gradients, are not expected to contribute significantly to the measurement
 
 \subsection{Theory and related work}
 
-\paragraph{Magnetic shields in literature}
-
-While a large number of magnetic shields have been described, few are directly
-applicable to our experiment due to being too small (and not easily scalable),
-too large (such as the magnetic shielded rooms), or not good enough (with
-residual field of the order of several milligauss, or not even reported). I what
-follows I will describe a few of the shields that are comparable to our design.
-
-Wodey et al.\ \cite{wodey2020scalable} report building a 10~m-long two-layer
-permalloy magnetic shield with an octagonal cross-section and openings to
-accomodate a 22~cm vacuum chamber, weighting approx.\ 7500~kg. Constructed out
-of a large numberof discrete flat and angled permeable sheets, the design is
-scalable to an arbitrary length. The transverse shielding factor of 4,000 would
-be almost sufficient for our experiment and easy to augment with one or two
-additional outer metglas layers. The reported 40~$\mu$G residual field over the
-central 8~m, while impressive for a shield of this geometry, would nonetheless
-have to be shimmed with internal coils down to our desired 10~$\mu$G. The
-improved performance compared to the shield reported in this chapter comes with
-increased cost of materials and a considerably more complex mechanical assembly.
-
-Malkowski et al.\ \cite{malkowski2011technique} investigated different assembly
-methods for shields constructed from metglas wrapped on a non-magnetic
-cylinderical forms (cardboard tubes in their case, PVC pipes in \CENTREX). In
-one of the experiments reported in the paper, metglas strips are secured on the
-form with circular wrapping, whereby each strip is wrapped around the form
-circumferentially. There is no overlap between strips of a single layer;
-however, successive layers are offset by 1~in to cover the gaps between strips).
-(By comparison, our magnetic shield also includes overlaps between the strips of a
-single layer in order to eliminate all gaps.) While the techniques shown in this
-paper (circular metglas wrapping around tube forms, Kapton tape and plastic film
-to hold the assembly together, toroidal degaussing coils) have been a key
-inspiration behind our magnetic shield, the performance they demonstrate with
-their 0.08~mm thin single-layer shield is insufficient for our purposes.
-
 \paragraph{`Paramagnetic' shielding}
 
 \begin{figure}
@@ -165,18 +131,20 @@ obtaining inside at a particular frequency different from \DC. Unless the
 frequency is large enough to involve skin effect considerations, I had found
 these formulae to match measurements to about 10~\%.
 
-This theory does not apply, however, to shielding static fields. For example,
-for a single-layer 14" diameter shield of length 3.5~m with $\mu=70,000$ and
-$t=0.2$~mm, we are led to expect $S_\text{T}\approx40$ and $S_\text{L}\approx2$.
-Thus a 400~mG lab magnetic field should be attenuated down to 10~mG (200~mG) if
-oriented perpendicular (parallel) to the shield. In practice (see example in
-Fig.~\ref{beforeafter}), however, we find residual fields much smaller than that
-(approx.\ 0.2~mG and 4~mG, resp.). We also find that adding additional layers
-does not significantly reduce the static fields internal to the shield as would
-be predicted by the formula above. As explained in the following section, I
-believe the reason is that in this situation, the shield does not behave as if
-it were made of a linear material; indeed, it is highly nonlinear due to
-ferromagnetic hysteresis.
+As pointed out \cite{dickerson2012high}, the dynamic and static shielding would
+be identical in case of a purely linear material. This does not apply, however,
+to shielding static fields with nonlinear materials such as mu-metal and
+metglas. For example, for a single-layer 14" diameter shield of length 3.5~m
+with $\mu=70,000$ and $t=0.2$~mm, we are led to expect $S_\text{T}\approx40$ and
+$S_\text{L}\approx2$.  Thus a 400~mG lab magnetic field should be attenuated
+down to 10~mG (200~mG) if oriented perpendicular (parallel) to the shield. In
+practice (see example in Fig.~\ref{beforeafter}), however, we find residual
+fields much smaller than that (approx.\ 0.2~mG and 4~mG, resp.). We also find
+that adding additional layers does not significantly reduce the static fields
+internal to the shield as would be predicted by the formula above. As explained
+in the following section, I believe the reason is that in this situation, the
+shield does not behave as if it were made of a linear material; indeed, it is
+highly nonlinear due to ferromagnetic hysteresis.
 
 \paragraph{Degaussing}
 
@@ -504,11 +472,122 @@ number of averages. Underneath the sinc, however, the noise will be attenuated
 through the action of the bandpass filter (or frequency comb) that derives its
 sharpness from the high number of averages.
 
+\paragraph{Magnetic shields in literature}
+
+%\newgeometry{margin=0cm}
+%\begin{landscape}
+\begin{sidewaystable}[p]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  %\makebox[\textwidth][c]{%
+     \begin{tabu} to \textwidth {rC{4cm}C{4cm}C{3cm}C{4cm}C{4cm}}
+      \toprule
+       & \CENTREX & \cite{wodey2020scalable} & \cite{malkowski2011technique} & \cite{dickerson2012high} & \cite{bitter1991large} \\\midrule
+      \multicolumn{6}{@{}l}{\textit{Construction:}}\\
+       overall length  & 3.8 m                                       & 10 m                                 & 1.8 m                & 8.7 m                        & 76.5 m\\
+       weight          & approx. 600 kg                              & 7500 kg                              & ?                    & ?                            & ?\\
+       shape           & cylinder                                    & octagonal prism                      & cylinder             & cylinder                     & cylinder\\
+       materials       & metglas on PVC, welded \&\ annealed mumetal & permalloy sheets on plywood          & metglas on cardboard & welded \&\ annealed mu-metal & mechanically joined mu-metal segments\\
+       layer thickness & 0.2 mm (metglas), 1 mm (mu-metal)           & 3 mm at ends, 8 mm in central region & 0.08 mm              & 1.27 mm                      & 1 mm\\
+       layer diameters & (37, 41, 46, 51) cm                         & (45, 75) cm                          & 60 cm                & (19, 28, 39) cm              & 110 cm\\
+       endcaps         & no                                          & yes, with 22 cm circular opening     & no                   & yes, >10 cm opening          & no\\
+       scalable design & no (mu-metal <= 10ft)                       & yes                                  & yes                  & no                           & yes\\\\
+      \multicolumn{6}{@{}l}{\textit{Performance:}}\\
+        size of shielded region & 2.25 m                          & 8 m                         & 0.8 m      & 8 m                                                                      & 75 m\\
+        avg.\ transverse field  & 25 uG, < 5 uG shimmed           & 15 uG                       & 6,000 uG   & 460 and 730 uG (rms)                                                     & ?\\
+        avg.\ axial field       & .100 uG, < 10 uG shimmed        & 5 uG                        & 140,000 uG & 420 uG (rms)                                                             & < 100 uG shimmed\\
+        long-term drift         & avg(By) < 5 uG over 3 wks       & ?                           & ?          & ?                                                                        & ?\\
+        transverse dynamic SF   & 32,500                          & 4000 @ 0.01 Hz              & ?          & ?                                                                        & ?\\
+        axial dynamic SF        & ?                               & 30 @ 0.01 Hz                & ?          & ~5 over central 4 m @ quasi-DC                                           & ?\\
+        coils for dyn.\ SF      & rect. coil pairs, (0.8 x 3.7) m & rect. coil pairs, (3 x 2) m & none       & 10" long solenoid wrapped around outermost layer at the center of shield & none\\\\
+      \multicolumn{6}{@{}l}{\textit{Degaussing:}}\\
+        sequence          & 20", 18", 16", mu-metal & inner, endcaps, outer, inner   & N/A   & ?      & N/A\\
+        coil turns        & 12 each layer           & 16 (inner), 8 (outer)          & ?     & ?      & 1 (toroidal), 1/m (solenoid)\\
+        frequency         & ?                       & 6 Hz                           & 60 Hz & 60 Hz? & 50 Hz, 0.5 Hz\\
+        initial amplitude & ?                       & 10 A                           & ?     & ?      & 230 A, 25 A\\
+        decrease          & ?                       & linearly over 100 s            & ?     & ?      & within several minutes\\
+        field change      & ?                       & 15 uG change between two scans & ?     & ?      & ?\\
+      \bottomrule
+    \end{tabu}%}
+    \caption{Representative magnetic shields from the literature.}
+    \label{oldshields}
+\end{sidewaystable}
+%\end{landscape}
+%\restoregeometry
+%\doublespacing
+
+While a large number of magnetic shields have been described, few are directly
+applicable to our experiment due to being too small (and not easily scalable),
+too large (such as the magnetic shielded rooms, as in \cite{altarev2015large}),
+or not good enough (with residual field of the order of several milligauss). In
+other cases \cite{sasada1988effective, sasada1996large, sasada1996performance,
+sasada2000design, nagashima2002high}, the papers do not present sufficient
+information to evaluate the shields' suitability to our work, most commonly by
+failing to report a spatial scan of the residual field. In what follows I will
+describe a few of the shields that are comparable to our design and thus
+potentially appropriate for molecular-beam experiments. See
+Table~\ref{oldshields} for an overview of these shields.
+
+Fierlinger et al.\ \cite{wodey2020scalable} report building a 10~m-long two-layer
+permalloy magnetic shield with an octagonal cross-section and openings to
+accomodate a 22~cm vacuum chamber, weighting approx.\ 7500~kg. Constructed out
+of a large numberof discrete flat and angled permeable sheets, the design is
+scalable to an arbitrary length. It is notable that the thickness of the shield
+varies from 3~mm at the ends to 8~mm in the central region in order to avoid
+saturation effects due to the increased density of magnetic flux lines captured
+by the material in the middle compared to the ends. The transverse shielding
+factor of 4,000 would be almost sufficient for our experiment and easy to
+augment with one or two additional outer metglas layers. The reported 40~$\mu$G
+residual field over the central 8~m, while impressive for a shield of this
+geometry, would nonetheless have to be shimmed with internal coils down to our
+desired 10~$\mu$G. The improved performance compared to the shield reported in
+this chapter comes with increased cost of materials and a considerably more
+complex mechanical assembly.
+
+Plaster et al.\ \cite{malkowski2011technique} investigated different assembly
+methods for shields constructed from metglas wrapped on a non-magnetic
+cylinderical forms (cardboard tubes in their case, PVC pipes in \CENTREX). In
+one of the experiments reported in the paper, metglas strips are secured on the
+form with circular wrapping, whereby each strip is wrapped around the form
+circumferentially. There is no overlap between strips of a single layer;
+however, successive layers are offset by 1~in to cover the gaps between strips).
+(By comparison, our magnetic shield also includes overlaps between the strips of a
+single layer in order to eliminate all gaps. The effect of these gaps is not
+evident at the level of sensitivity reported in the paper, but becomes visible
+when measuring lower magnetic fields.) While the techniques shown in this
+paper (circular metglas wrapping around tube forms, Kapton tape and plastic film
+to hold the assembly together, toroidal degaussing coils) have been a key
+inspiration behind our magnetic shield, the performance they demonstrate with
+their 0.08~mm thin single-layer shield is insufficient for our purposes and has
+to be improved via a multi-layer design to be suitable for precision
+measurements.
+
+In ref.\ \cite{dickerson2012high}, Kasevich et al.\ constructed an 8.7~m-long
+three-layer shield made entirely of mu-metal. Each layer consists of 14 segments
+of length 65~cm that have been welded together and then hydrogen annealed as one
+piece in an enormous annealing furnace. Despite the substantial effort and
+expense they must have incurred with the welding, annealing, transportation, and
+mounting structure (not discussed in the paper, but essential to avoid stressing
+the long and relatively thin mu-metal tubes), the overall shielding of the
+assembly is limited to approximately 0.5~mG$_\text{rms}$ transverse and axial
+residual field, largely due to poor shielding at the location of the welded
+joints. (The absolute offset of the magnetic field is reported to within `a few
+mG' with no reasons given for absence of sensor calibration.) The authors
+unfortunately do not attempt to corroborate the predicted transverse shielding
+factor of 400,000 to 3,000,000 with experimental dynamic SF measurements.  The
+disappointing performance receives no comment in the paper, but is most likely
+due to the small inner diameter of the shield (19~cm) compared to our work
+(37~cm) or the state of the art (45~cm) reported in \cite{wodey2020scalable}. It
+is not inconcievable that the residual field would be improved by
+removing the innermost layer. 
+
+
 \subsection{Physical structure}
 
 The magnetic shield consists of four concentric cylindrical layers with open
 ends (See Figs.~\ref{concentric} and \ref{longitudinal}). Three of these are
-built by wrapping metglas foil (FINEMET Wide Format Film, Hitachi Part #MS-FR
+built by wrapping metglas foil (FINEMET Wide Format Film, Hitachi Part MS-FR
 470-100M-T0, containing 18~$\mu$m-thick FINEMET FT-3M metglas between protective
 layers of plastic) around PVC pipes, while the fourth, innermost layer has been
 welded out of two sheets of mu-metal rolled into a tubular form, and annealed.
@@ -1206,6 +1285,15 @@ transitioning between nearby codes.
 The design requirements for the shield specified a 10~$\mu$G maximum average
 residual field. This has been met; see Fig.~\ref{shimmed} for a typical
 measurement of the fields inside after shimming.
+
+Unless otherwise noted, all measurements have been taken along the axis of
+symmetry of the cylindrical shield. It would be interesting to measure the
+residual fields as a function of the transverse position. This measurement would
+likely reveal stronger fields nearer the walls of the shield, providing support
+to the theory that the larger the inner diameter of a shield, the lower and more
+uniform the field along the axis of symmetry. Intuitively, this reasoning stems
+from the fact the the magnetic field on axis of a small current loop decreases
+as a third power of the distance away from the loop.
 
 Of particular interest is how the fields develop after the shimming procedure.
 To this end, I have followed their evolution over the course of three weeks,
