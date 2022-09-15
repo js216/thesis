@@ -37,14 +37,20 @@ corresponds to approx.\ 3~$\mu$Hz, which is $60\times$ above the anticipated
 statistical sensitivity of the experiment \cite[sect.~3.1]{grasdijk2021centrex}.
 However, due to $M$ modulation, the shift is further suppresed by an order of
 magnitude, such that the residual fields need only be a factor of $6\times$
-lower than the motional field; that is, the average \todo{(why average? why not
-rms, or something else entirely?)} residual fields of up to 10~$\mu$G are
-allowed.
+lower than the motional field; that is, the average residual fields of up to
+10~$\mu$G are allowed. Unlike other experiments, where the strictest limitation
+is on the field gradients, rms field variation, or peak field values, in
+\CENTREX we are most sensitive to average magnetic field, which approximately
+corresponds to the total phase accumulated by the nuclei as they fly through the
+interaction region. \todo{Is that correct?}
 
-The requirement on the other two components of the static residual field is much
-less strict, since it does not depend on the direction of the electric field and
-will get cancelled by averaging over the $E$ reversals. \todo{Still, how much
-can we tolerate?}
+The motional magnetic field, which reverses in sync with the electric field
+reversals, is problematic because it changes magnitude of the total magnetic
+field experienced by the molecules, and because this change cannot be removed by
+averaging over the $E$ reversals. The requirement on the other two components of
+the static residual field is much less strict, since it corresponds to a
+constant shift in the nuclear energy levels. \todo{Still, how much can we
+tolerate?}
 
 The condition for dynamic shielding is to suppress the high-frequency (i.e.,
 higher than the timescale of $E$-field reversals\todo{ --- though what's the
@@ -66,7 +72,7 @@ In \CENTREX, we do not have any requirements on the size of field gradients
 beyond the constraints on the absolute magnitude of each component of the
 magnetic field between the oscillatory coils. \todo{Is that true?} Any fast
 changes in the field that average to zero, despite having potentially large
-gradients, are not expected to contribute significantly to the measurement
+gradients, are not expected to contribute significantly to the measurement.
 
 \subsection{Theory and related work}
 
@@ -168,7 +174,8 @@ memory of the initial condition. The external magnetizing current is applied
 symmetrically around zero (necessitating some form of DC-blocking, such as a
 transformer or capacitive coupling), so when the amplitude is gradually
 decreased to zero, no net magnetization will remain (e.g.,
-\cite[sect.~3.4.2]{khriplovich2012cp}).
+\cite[sect.~3.4.2]{khriplovich2012cp}). The resulting demagnetized state is also
+a state of minimized internal energy. \cite{thiel2009demagnetization}
 
 Unfortunately, this explanation only applies for when a single grain of the
 material is degaussed in a region with no net external field---hardly applicable
@@ -392,8 +399,7 @@ The spectrum of the measured signal is given by the Fourier transform:
 %
 Thus the frequency-domain effect of measuring a signal for a time $T$ is a
 convolution of the signal's spectrum $\widetilde{V}(\omega)$ with the sinc
-function. \todo{frequency resolution and dynamic range vs window functions;
-1/f noise and how just increasing the window length doesn't reduce noise}
+function.
 
 \vspace{1cm}
 \noindent
@@ -871,19 +877,23 @@ c_\text{w}=L\frac{\sum_n|w(t_n)|^2}{|\sum_n w(t_n)|^2}.
 $$
 %
 This expresses the fact the window function determines the bandwidth of each
-frequency bin. For a boxcar window, $c_\text{w}=1$, since it is the window with
-the narrowest frequency resolution (albeit at a cost of dynamic range).
-\todo{Find a reference for this.}
+frequency bin. More precisely, it expresses the width of a rectangular window
+with the same peak power that accumulates the same noise power.
+\cite{harris1978use} For a boxcar window, $c_\text{w}=1$, since it is the window
+with the narrowest frequency resolution. This comes at the cost of a reduced
+dynamic range due to large sidelobes of the sinc function. Other window
+functions, such as Hann, Hamming, or Blackman come with significantly smaller
+sidelobes, but a wider main lobe. \cite{proakis2006digital,
+oppenheim2010discrete}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
    \caption{Magnetometer sensor noise measured inside the magnetic shield.
    \part{a} Lower frequency spectrum measured using the AD4115 board and 1000
    preamp gain, without HPF, using 1kHz LPF cutoff, 100 averages, Hann window.
-   \part{b} Higher frequency spectrum measured using moku:lab spectrum
+   \part{b} Higher frequency spectrum of $B_y$ measured using moku:lab spectrum
    analyzer, using preamp gain of 100 and HPF cutoff of 0.01 Hz, with LPF at 10
-   kHz, averaging 100 times, flat-top window. \todo{Include Bx, Bz; put both
-   graphs on the same axes.}}
+   kHz, averaging 100 times, flat-top window.}
   \label{sensornoise}
 \end{figure}
 
@@ -992,9 +1002,14 @@ during the degaussing of the other layers. The relays \PCB\ is in turn connected
 to an isolation transformer for the purpose of DC blocking. We have considered
 alternate forms of DC blocking, such as a capacitor, but the required
 capacitance was too high at the low frequencies typically used in degaussing
-(down to 1~Hz). The transformer is driven by a power amplifier (Kepco
-BOP36-12M), which in turn is driven by a home-built \DAC\ board. \todo{details
-about the DAC board; figure of connections}
+(down to 1~Hz).
+
+The transformer is driven by a power amplifier (Kepco BOP36-12M), which in turn
+is driven by a home-built \DAC\ board. The \DAC\ board provides a connection
+between a USB-controlled Teensy 4.0 microcontroller breakout board (PJRC,
+Sherwood, OR, USA) and the \DAC\ (AD5761BRUZ) via a digital isolator
+(ADUM7441ARQZ-RL7). The \DAC\ output is filtered by a 100~$\Omega$, 1~$\mu$F
+$RC$ filter and buffered by an opamp follower (AD8675ARZ-REEL7).
 
 Depending on the orientation of the shield with respect to the room magnetic
 field, it can be advantageous to supply the solenoidal coil on the outermost
@@ -1014,15 +1029,15 @@ impacts the outermost layer.
 \end{figure}
 
 A wide range of degaussing waveforms have been used in the literature; for
-example, linear or polynomial envelopes \todo{[REF]} or envelopes specifically
-optimized for a linear decrease in the magnetization of the ferromagnetic
-material \todo{[REF]}. In this experiment, I use a finite number of sinusoidal
-degaussing pulses. The pulses can optionally be separated by and adjustable
-delay to probe the evolution of the residual field from pulse to pulse. Each
-subsequent pulse has its amplitude decreased by a constant factor compared with
-the preceding pulse; thus our protocol is similar to, but not identical to,
-using an exponentially decreasing envelope multiplying a sine wave. \todo{fig:
-parameters of the degaussing waveform}
+example, linear or polynomial envelopes or envelopes specifically optimized for
+a linear decrease in the magnetization of the ferromagnetic material
+\cite{thiel2007proposal}. In this experiment, I use a finite number of
+sinusoidal degaussing pulses. The pulses can optionally be separated by and
+adjustable delay to probe the evolution of the residual field from pulse to
+pulse. Each subsequent pulse has its amplitude decreased by a constant factor
+compared with the preceding pulse; thus our protocol is similar to, but not
+identical to, using an exponentially decreasing envelope multiplying a sine
+wave.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/repeatability.png}
@@ -1040,9 +1055,7 @@ recovered from saturation and is circling near a point around the origin of the
 hysteresis curve; the number of degaussing pulses has to be large enough so
 that the decrease in amplitude is gradual. The exact values of the parameters
 mentioned in the preceding statements need to be found experimentally for the
-shield geometry used; \todo{fig: degaussing waveforms (current, pickup coil
-voltage) using the parameters I commonly use; specify numerical values for
-degaussing parameters}.
+shield geometry used. 
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/shimmed.png}
@@ -1055,15 +1068,11 @@ Exploration of these parameters is further complicated by the fact that there
 are four layers to degauss and degaussing one may inadvertently magnetize the
 others. I have tried degaussing several or all layers in parallel, but have not
 found any significant improvement and thus have not further explored that
-method. However, while building the individual metglas layers, I have
-measured the magnetization of each layer before and after degaussing; \todo{fig:
-data on individual layers before/after degaussing}
-
-A further difficulty with studying the degaussing process is the fact that it is
-not obvious how to put the magnetic shield in a known `non-degaussed' initial
-state. In an attempt to optimize the degaussing parameters, I have tried to use
-a single large-amplitude sinusoidal pulse to magnetize the shield, but it is not
-clear to what extent this was successful and reproducible.
+method. A further difficulty with studying the degaussing process is the fact
+that it is not obvious how to put the magnetic shield in a known `non-degaussed'
+initial state. In an attempt to optimize the degaussing parameters, I have tried
+to use a single large-amplitude sinusoidal pulse to magnetize the shield, but it
+is not clear to what extent this was successful and reproducible.
 
 While degaussing, one may observe the shapes of the hysteresis loops (see
 example in Fig.~\ref{hysteresis}) as a function of the degaussing amplitude.
@@ -1081,9 +1090,17 @@ this correlation, which may help optimize the degaussing procedure.
 
 Given the importance of the long-term stability of the magnetic fields
 inside the shield, it is interesting to explore how stable the degaussing
-process is, i.e., how much does the field change when degaussing repeatedly,
-or what happens when the field has drifted away from the degaussed value and
-the shield is degaussed again. \todo{figure}
+process is, i.e., how much does the field change when degaussing repeatedly. See
+Fig.~\ref{continuously_degaussing} for the measured evolution of average
+internal magnetic field. It is difficult to conclude whether degaussing
+consistently increases or decreases the average field; most likely the change is
+randomly distributed around zero mean.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/continuously_degaussing.png}
+  \caption{Average internal magnetic field while degaussing every 200 seconds.}
+  \label{continuously_degaussing}
+\end{figure}
 
 \paragraph{Shim coils}
 
@@ -1106,15 +1123,22 @@ generated by each of the 80 shim coils have to be measured. I do this by flowing
 a constant current through the coil under test, measuring the magnetic field,
 then reversing the direction of the current and repeating the measurement. By
 subtracting the two measurements, applying smoothing, and masking the parts of
-the curve where the coil field is expected to be negligible \todo{fig: example
-calibration curve}. Once the calibration curves for all the coils are known, I
-use a simple least-squares minimization routine to determine the optimal
-currents to use so as to minimize the magnitude of the residual field inside the
-shield. While I could limit the optimization routine to only minimize the field
-along the vertical axis, this being the component we are most sensitive to in
-the molecular beam experiment, I do not anticipate a significant improvement in
-the shimming by doing so given that the three dimensions of the magnetic field
-accessed by the coils are orthogonal to each other.
+the curve where the coil field is expected to be negligible (see
+Fig.~\ref{calibration} for an example calibration curve). Once the calibration
+curves for all the coils are known, I use a simple least-squares minimization
+routine to determine the optimal currents to use so as to minimize the magnitude
+of the residual field inside the shield. While I could limit the optimization
+routine to only minimize the field along the vertical axis, this being the
+component we are most sensitive to in the molecular beam experiment, I do not
+anticipate a significant improvement in the shimming by doing so given that the
+three dimensions of the magnetic field accessed by the coils are orthogonal to
+each other.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/calibration.png}
+  \caption{Calibration curve for the 8th vertical saddle coil pair.}
+  \label{calibration}
+\end{figure}
 
 In practice, I found it is most effective to repeat the shimming procedure
 several times in a row, alternating with degaussing until the field converges to
@@ -1311,10 +1335,10 @@ other words, it would be useful to find a model for predicting how long the
 shield stays this way, or what the probability is that is has exceeded
 10~$\mu$G. If we model the average internal magnetic field as a random walk,
 then we can associate a diffusion constant to this process and calculate the
-probabilities. \todo{Include the calculations for random walk.} Of course, there
-is no obvious physical reason why the growth in internal magnetic field should
-be a random walk; it would be of interest to compare other possible stochastic
-models for this behaviour, e.g.\ using Allan deviation.
+probabilities. Of course, there is no obvious physical reason why the growth in
+internal magnetic field should be a random walk; it would be of interest to
+compare other possible stochastic models for this behaviour, e.g.\ using Allan
+deviation.
 
 It would also be interesting to measure the noise spectrum inside the shield to
 see if it is of a similar nature (i.e., maybe random walk) as the slow drifts in
@@ -1326,20 +1350,10 @@ measure it in some other way.
 Since degaussing is used to significantly reduce the internal magnetic field, it
 is of interest to observe whether degaussing could be used to periodically
 restore the initial low-field conditions even after shimming the fields. To
-estimate the effect of periodic degaussing, I have alternated measuring the
-field and degaussing; see results in Fig.~\ref{continuously_degaussing}.
-It is not entirely clear what is the effect of degaussing after the shield has
-been properly shimmed. In a variation of the preceding experiment, I have
-followed the evolution of the magnetic field with hourly measurements while
-degaussing the shield daily (i.e., every 24th measurement). The results
-(Fig.~\ref{longterm_degaussing}) do not obviously appear to either recommend or
-proscribe regular degaussing.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/continuously_degaussing.png}
-  \caption{Average internal magnetic field while degaussing every 200 seconds.}
-  \label{continuously_degaussing}
-\end{figure}
+estimate the effect of periodic degaussing, I have followed the evolution of the
+magnetic field with hourly measurements while degaussing the shield daily (i.e.,
+every 24th measurement). The results (Fig.~\ref{longterm_degaussing}) do not
+obviously appear to either recommend or proscribe regular degaussing.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/longterm_degaussing.png}
@@ -1370,20 +1384,19 @@ magnetic hysteresis.
 
 \paragraph{Dynamic shielding}
 
-In addition to the static internal field, it is also important to
-ensure the exteral magnetic field noise is sufficiently attenuated inside. My
-measurements of the dynamic shielding factor place it
-around 30,000 at DC (see Fig.~\ref{dynSF}), which should reduce the expected
-1~mG variations in the lab field well below the level at which they would impact
-the molecular-beam measurements. The frequency dependence of the dynamic
-SF shown in that figure shows an increase in shielding as frequency
-increases, which makes sense in light of skin effect considerations. For
-mu­metal of 1~mm thickness and relative permeability of around 50,000, a
-frequency of \todo{XX Hz} would correspond to a skin depth comparable to the
-inner-layer thickness. (The decrease in shielding once the maximum
-is achieved is likely not physical and reflects some limitation of my
-measuring setup. I have, however, been so far unable to find out what causes
-this.)
+In addition to the static internal field, it is also important to ensure the
+exteral magnetic field noise is sufficiently attenuated inside. My measurements
+of the dynamic shielding factor place it around 30,000 at DC (see
+Fig.~\ref{dynSF}), which should reduce the expected 1~mG variations in the lab
+field well below the level at which they would impact the molecular-beam
+measurements. The frequency dependence of the dynamic SF shown in that figure
+shows an increase in shielding as frequency increases, which makes sense in
+light of skin effect considerations. For mu­metal of 1~mm thickness and relative
+permeability of around 50,000, a frequency of 6~Hz would correspond to a
+skin depth comparable to the inner-layer thickness. (The decrease in shielding
+once the maximum is achieved is likely not physical and reflects some limitation
+of my measuring setup. I have, however, been so far unable to find out what
+causes this.)
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/dynSF.png}
