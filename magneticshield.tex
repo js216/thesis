@@ -401,6 +401,16 @@ Thus the frequency-domain effect of measuring a signal for a time $T$ is a
 convolution of the signal's spectrum $\widetilde{V}(\omega)$ with the sinc
 function.
 
+\begin{figure}
+   \centering
+   \includegraphics[width=.75\textwidth]{figs/todo/comb.pdf}
+   \caption{The frequency comb arises when averaging different segments of a
+   measured signal. Before the segments can be averaged together, they have to
+   be time shifted so they overlap; the Fourier transform of time shifting gives
+   the exponentials that sum to form the frequency comb depicted here.}
+   \label{comb}
+\end{figure}
+
 \vspace{1cm}
 \noindent
 Now consider dividing the measurement into $N$ equal segments $V_k(t)$ of length
@@ -454,15 +464,6 @@ It remains to examine the sum of complex exponentials in
 equation (\ref{sumincluded}). Disregarding the constant phase factor, the sum is
 plotted in Fig.~\ref{comb}. We see it takes the form of a frequency comb, the sharper the
 greater the number $N$ of averaged traces.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/comb.pdf}
-  \caption{The frequency comb arises when averaging different segments of a
-   measured signal. Before the segments can be averaged together, they have to
-   be time shifted so they overlap; the Fourier transform of time shifting gives
-   the exponentials that sum to form the frequency comb depicted here.}
-  \label{comb}
-\end{figure}
 
 We see from eqn~(\ref{sumincluded}) that in the frequency domain, averaging is a
 two-step procedure. First, the spectrum of the original signal is multiplied by
@@ -912,6 +913,15 @@ shield changes during the time it takes to perform the calibration, how much
 the electronic offset itself changes in the same time, and how perfectly square the
 cross-sections of the long tube and the carriage are.
 
+\begin{figure}
+   \centering
+   \includegraphics[width=.75\textwidth]{figs/todo/offset_calibration.png}
+   \caption{Electronic offset of the magnetometer as a function of position along
+   the length of the center of the magnetic shield. Only the two transverse
+   dimensions are shown.}
+   \label{offsetcal}
+\end{figure}
+
 Rather than attempt to estimate the magnitudes of these effects individually, I
 estimate the precision/accuracy of the calibration from the calibration curve
 itself; see Fig.~\ref{offsetcal} for a typical example. It shows the two
@@ -926,14 +936,6 @@ calibration (around two minutes), we expect the curves showing the offset to be
 perfectly flat within the noise of the measurement, but that is typically not
 the case. The \RMS\ deviations from the average value I identify as the error in
 the offset calibration, consisting of all the aforementioned factors.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/offset_calibration.png}
-  \caption{Electronic offset of the magnetometer as a function of position along
-  the length of the center of the magnetic shield. Only the two transverse
-  dimensions are shown.}
-  \label{offsetcal}
-\end{figure}
 
 While one may take the $(\text{normal}-\text{inverted})/2$ superposition as the
 best measurement of the physical fields, doing so means that the error is
@@ -987,6 +989,14 @@ coils (Fig.~\ref{impedance}). The impedance should change as a function of
 degaussing current as the shield saturates, giving one way to find if the
 degaussing current is sufficient to saturate the shield.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/solenoid.png}
+  \caption{The axial component of the residual field after degaussing, with shim
+   coils on (solid line) and off (dashed line). \part{a} $B_z$-cancelling
+   solenoid turned off; \part{b} solenoid supplied with a constant current.}
+  \label{solenoid}
+\end{figure}
+
 The other way to ensure shield saturation is to directly observe the hysteresis
 loops during degaussing. In Fig.~\ref{hysteresis}, the abscissa gives the degaussing
 current used as a proxy for the applied field. Responding to the sinusoidal
@@ -1011,6 +1021,13 @@ Sherwood, OR, USA) and the \DAC\ (AD5761BRUZ) via a digital isolator
 (ADUM7441ARQZ-RL7). The \DAC\ output is filtered by a 100~$\Omega$, 1~$\mu$F
 $RC$ filter and buffered by an opamp follower (AD8675ARZ-REEL7).
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/repeatability.png}
+  \caption{The repeatability of the measurement, shown as the difference between
+  two measurements, one taken immediately after the other.}
+  \label{repeatability}
+\end{figure}
+
 Depending on the orientation of the shield with respect to the room magnetic
 field, it can be advantageous to supply the solenoidal coil on the outermost
 layer with a constant electric current (Fig.~\ref{solenoid}). As a result, the
@@ -1019,14 +1036,6 @@ of centimeters. Of course, if the direction of the shield or the room field were
 to change significantly, the optimal solenoid current has to be recalibrated.
 For small changes, I do not expect a large effect given that the solenoid mostly
 impacts the outermost layer.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/solenoid.png}
-  \caption{The axial component of the residual field after degaussing, with shim
-   coils on (solid line) and off (dashed line). \part{a} $B_z$-cancelling
-   solenoid turned off; \part{b} solenoid supplied with a constant current.}
-  \label{solenoid}
-\end{figure}
 
 A wide range of degaussing waveforms have been used in the literature; for
 example, linear or polynomial envelopes or envelopes specifically optimized for
@@ -1038,13 +1047,6 @@ pulse. Each subsequent pulse has its amplitude decreased by a constant factor
 compared with the preceding pulse; thus our protocol is similar to, but not
 identical to, using an exponentially decreasing envelope multiplying a sine
 wave.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/repeatability.png}
-  \caption{The repeatability of the measurement, shown as the difference between
-  two measurements, one taken immediately after the other.}
-  \label{repeatability}
-\end{figure}
 
 Despite spending significant amounts of time on optimizing the degaussing
 parameters, I am only able to claim the following. The degaussing frequency
@@ -1096,12 +1098,6 @@ internal magnetic field. It is difficult to conclude whether degaussing
 consistently increases or decreases the average field; most likely the change is
 randomly distributed around zero mean.
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/continuously_degaussing.png}
-  \caption{Average internal magnetic field while degaussing every 200 seconds.}
-  \label{continuously_degaussing}
-\end{figure}
-
 \paragraph{Shim coils}
 
 Once the shield has been degaussed as well as is possible, the remaining
@@ -1112,10 +1108,11 @@ to the center of the shield and can measure the fields to within 1--2~$\mu$G.
 Thus the limit is set by the number of coil segments and their size.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/threeweeks.png}
-  \caption{Average and \RMS\ magnetic field in the central 2.5~m of the shield
-  over the course of three weeks.}
-  \label{threeweeks}
+   \centering
+   \includegraphics[width=.75\textwidth]{figs/todo/threeweeks.png}
+   \caption{Average and \RMS\ magnetic field in the central 2.5~m of the shield
+   over the course of three weeks.}
+   \label{threeweeks}
 \end{figure}
 
 The shimming process consists of two steps. First, the individual field patterns
@@ -1135,9 +1132,9 @@ three dimensions of the magnetic field accessed by the coils are orthogonal to
 each other.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/calibration.png}
-  \caption{Calibration curve for the 8th vertical saddle coil pair.}
-  \label{calibration}
+  \includegraphics[width=\textwidth]{figs/todo/continuously_degaussing.png}
+  \caption{Average internal magnetic field while degaussing every 200 seconds.}
+  \label{continuously_degaussing}
 \end{figure}
 
 In practice, I found it is most effective to repeat the shimming procedure
@@ -1165,6 +1162,12 @@ measurement in the absence of any shielding gives the magitude of the
 external field variation. Dividing this by the magnitude measured with
 the shield in place gives the shielding factor.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/longterm_degaussing.png}
+  \caption{Average internal magnetic field while degaussing every 24 hours.}
+  \label{longterm_degaussing}
+\end{figure}
+
 The disadvantage of this method is that the magnetic shield has to be removed to
 measure the external magnetic field, since the shape of the external coils is
 difficult to measure precisely. (Future work: build room-sized coils of known
@@ -1182,6 +1185,12 @@ for the horizontal pair of coils are 30"~$\times$~144", spaced by 26", with a
 central field of 620 mG/A.) Both coils are made using 50 turns of 22-gauge wire,
 giving a resistance of around 20~$\Omega$, allowing the use of a low-voltage
 power supply to cancel (some of) the Earth's magnetic field.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/calibration.png}
+  \caption{Calibration curve for the 8th vertical saddle coil pair.}
+  \label{calibration}
+\end{figure}
 
 I used the SR530 analog lock-in amplifiers to measure the internal field
 magnitude. In order to extend the measurement below the 0.5~Hz limit of this
@@ -1224,6 +1233,18 @@ specified to have noise lower than 100~nG/$\sqrt{\text{Hz}}$ at 1~Hz. To achieve
 correspond to a measurement frequency of 80~nHz, at which the sensor noise
 density would be significantly larger due to $1/f$ noise.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/charging.png}
+   \caption{Effect of charging current on shield magnetization. \part{a}
+   Electric current during for each direction. It is not clear why the noise for
+   positive direction is much larger, but it is insignificant compared to the
+   current magnitude. \part{b} The `charging magnetization' is nonzero for the
+   vertical $B_y$ component of the field. \part{c} $B_y$ is higher than before
+   flowing the current in the positive direction. \part{d} $B_y$ is lower than
+   before flowign the current in the negative direction.}
+  \label{charging}
+\end{figure}
+
 Rather than improving the measurement sensitivity, we can instead increase the
 signal size by increasing the electrode `charging' current we pass through the
 inside of the shield. At a more realistic integration time of a couple seconds,
@@ -1252,18 +1273,6 @@ correspond to opposite directions of the charging current, we effect a lock-in
 detection (equivalent to a sharp bandpass filter), whereby we avoid the majority
 of $1/f$ noise that a simple long-time measurement would be susceptible to. See
 Fig.~\ref{charging} for an example of such a measurement.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/charging.png}
-   \caption{Effect of charging current on shield magnetization. \part{a}
-   Electric current during for each direction. It is not clear why the noise for
-   positive direction is much larger, but it is insignificant compared to the
-   current magnitude. \part{b} The `charging magnetization' is nonzero for the
-   vertical $B_y$ component of the field. \part{c} $B_y$ is higher than before
-   flowing the current in the positive direction. \part{d} $B_y$ is lower than
-   before flowign the current in the negative direction.}
-  \label{charging}
-\end{figure}
 
 The error bars in the legends of Fig.~\ref{charging} are calculated as the
 standard deviation of the data points divided by the square root of the number
@@ -1340,6 +1349,12 @@ internal magnetic field should be a random walk; it would be of interest to
 compare other possible stochastic models for this behaviour, e.g.\ using Allan
 deviation.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/t_dep.png}
+  \caption{Temperature dependence of average field inside the magnetic shield.}
+  \label{t_dep}
+\end{figure}
+
 It would also be interesting to measure the noise spectrum inside the shield to
 see if it is of a similar nature (i.e., maybe random walk) as the slow drifts in
 the residual field. However, the noise density of the sensor (see
@@ -1354,12 +1369,6 @@ estimate the effect of periodic degaussing, I have followed the evolution of the
 magnetic field with hourly measurements while degaussing the shield daily (i.e.,
 every 24th measurement). The results (Fig.~\ref{longterm_degaussing}) do not
 obviously appear to either recommend or proscribe regular degaussing.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/longterm_degaussing.png}
-  \caption{Average internal magnetic field while degaussing every 24 hours.}
-  \label{longterm_degaussing}
-\end{figure}
 
 A comparison of Figs.~\ref{threeweeks} and \ref{longterm_degaussing} may appear
 to indicate that degaussing increases the variability of the residual field over
@@ -1377,9 +1386,10 @@ two separate field-vs-temperature curves, as in Fig.~\ref{t_dep}, on account of
 magnetic hysteresis.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/t_dep.png}
-  \caption{Temperature dependence of average field inside the magnetic shield.}
-  \label{t_dep}
+  \includegraphics[width=\textwidth]{figs/todo/dynSF.png}
+  \caption{Dynamic shielding factor vs frequency and amplitude of the external
+  field perturbation.}
+  \label{dynSF}
 \end{figure}
 
 \paragraph{Dynamic shielding}
@@ -1397,13 +1407,6 @@ skin depth comparable to the inner-layer thickness. (The decrease in shielding
 once the maximum is achieved is likely not physical and reflects some limitation
 of my measuring setup. I have, however, been so far unable to find out what
 causes this.)
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/dynSF.png}
-  \caption{Dynamic shielding factor vs frequency and amplitude of the external
-  field perturbation.}
-  \label{dynSF}
-\end{figure}
 
 The spatial dependence of the dynamic SF is as shown in Fig.~\ref{spatialSF}. We
 see that the region where the SF is greater than the required 5,000 is almost
