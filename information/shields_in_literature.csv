@@ -1,0 +1,27 @@
+paper,CeNTREX (2022),wodey2020scalable (2020),malkowski2011technique (2011),dickerson2012high (2012),bitter1991large (1991)
+Construction:,,,,,
+overall length,3.8 m,10 m,1.8 m,8.7 m,76.5 m
+weight,approx. 600 kg,7500 kg,?,?,?
+shape,cylinder,octagonal prism,cylinder,cylinder,cylinder
+materials,"metglas on PVC, welded & annealed mumetal",permalloy sheets on plywood,metglas on cardboard,welded & annealed mu-metal,mechanically joined mu-metal segments
+layer thickness,"0.2 mm (metglas), 1 mm (mu-metal)","3 mm at ends, 8 mm in central region",0.08 mm,1.27 mm,1 mm
+layer diameters,"(37, 41, 46, 51) cm","(45, 75) cm (circumscribed)",60 cm,"(19, 28, 39) cm",110 cm
+endcaps,no,"yes, with 22 cm circular opening",no,"yes, >10 cm opening",no
+scalable design,no (mu-metal <= 10ft),yes,yes,no,y
+,,,,,
+Performance:,,,,,
+size of shielded region,2.25 m,8 m,0.8 m,8 m,75 m
+avg transverse field,"25 uG, < 5 uG shimmed",15 uG,"6,000 uG",460 and 730 uG (rms),?
+avg axial field,"100 uG, < 10 uG shimmed",5 uG,"140,000 uG",420 uG (rms),< 100 uG shimmed
+long-term drift,Δavg(By) < 5 uG over 3 wks,?,?,?,?
+transverse dynamic SF,"32,500",4000 @ 0.01 Hz,?,?,?
+axial dynamic SF,?,30 @ 0.01 Hz,?,~5 over central 4 m @ quasi-DC,?
+external perturbation for SF,"rect. coil pairs, (0.8 x 3.7) m","rect. coil pairs, (3 x 2) m",none,"10"" long solenoid wrapped around outermost layer at the center of shield",none
+,,,,,
+Degaussing:,,,,,
+sequence,"20"", 18"", 16"", mu-metal","inner, endcaps, outer, inner",N/A,?,N/A
+coil turns,12 each layer,"16 (inner), 8 (outer)",?,?,"1 (toroidal), 1/m (solenoid)"
+frequency,?,6 Hz,60 Hz,60 Hz?,"50 Hz, 0.5 Hz"
+initial amplitude,?,10 A,?,?,"230 A, 25 A"
+decrease,?,linearly over 100 s,?,?,within several minutes
+field change,?,15 uG change between two scans,?,?,?

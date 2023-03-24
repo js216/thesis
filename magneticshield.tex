@@ -18,61 +18,49 @@ with the \CENTREX\ experiment. However, it may be a starting point for future
 work requiring higher performance.
 
 \subsection{Design requirements}
+\label{shield:requirements}
 
-The allowed transverse residual field perpendicular to the interaction-region
-electric field $\vec E$ is limited by the motional magnetic field experienced by
-the molecules. As they fly through with a velocity $\vec v$, they experience the
-motional field $\vec B_\text{mot}=\vec v\times\vec E/c^2$ that changes direction
-when the electric field is reversed. Any residual field in the same direction
-will add to $\vec B_\text{mot}$, such that the magnitude of the total field will
-change with electric field reversals. Due to the Zeeman splitting between the
-spin up and down states, the change in magnetic field magnitude introduces a
-frequency shift.
+The effect of magnetic field imperfections has been discussed in detail in
+section \ref{systematics:magnetic}. In the following, I will summarize the
+requirements on the static residual field, the noise, the magnetic field that
+changes in phase with the electric field reversals, and on spatial magnetic
+field changes (`gradients').
 
-With our experimental configuration, $|\vec E|\approx30\kVcm$ and $|\vec
-v|\approx180\ms$, the magnitude of the motional field is $|\vec
-B_\text{mot}|\approx60\uG$. On the other hand, the Zeeman shift is approximately
-50~nHz/$\mu$G, so the maximum change in magnitude of the total magnetic field
-corresponds to approx.\ 3~$\mu$Hz, which is $60\times$ above the anticipated
-statistical sensitivity of the experiment \cite[sect.~3.1]{grasdijk2021centrex}.
-However, due to $M$ modulation, the shift is further suppresed by an order of
-magnitude, such that the residual fields need only be a factor of $6\times$
-lower than the motional field; that is, the average residual fields of up to
-10~$\mu$G are allowed. Unlike other experiments, where the strictest limitation
-is on the field gradients, rms field variation, or peak field values, in
-\CENTREX we are most sensitive to average magnetic field, which approximately
-corresponds to the total phase accumulated by the nuclei as they fly through the
-interaction region. \todo{Is that correct?}
+The static residual field, so called since it remains even after our best
+attempt at degaussing and shimming of the field, provides a limit on the
+vertical component of the field since it combines with the internal and motional
+magnetic fields and is not cancelled under electric field reversals. In order to
+suppress its effect below the level of the statistical sensitivity of our
+experiment, the $B_y$ component of the field has to be lower than 10~$\mu$G,
+averaged over the volume covered by the molecular beam between the two \RF\
+coils. We do not identify any constraints on the other two components of the
+residual field, but will confirm experimentally that they do not have a
+measurable effect on our results.
 
-The motional magnetic field, which reverses in sync with the electric field
-reversals, is problematic because it changes magnitude of the total magnetic
-field experienced by the molecules, and because this change cannot be removed by
-averaging over the $E$ reversals. The requirement on the other two components of
-the static residual field is much less strict, since it corresponds to a
-constant shift in the nuclear energy levels. \todo{Still, how much can we
-tolerate?}
+The noise primarily affects $B_x$, the component parallel to the electric field,
+and affects the other two components only quadratically. With our experimental
+parameters, the constraint on the dynamic shield is to suppress the lab magnetic
+noise to below approx.\ 50~pG, integrated over a 1~$\mu$Hz bandwidth around
+10~mHz in order to achieve the projected sensitivity of our experiment.
 
-The condition for dynamic shielding is to suppress the high-frequency (i.e.,
-higher than the timescale of $E$-field reversals\todo{ --- though what's the
-exact bandwidth over which it matters?}) lab magnetic noise enough so
-it does not Zeeman shift the measurements considerably more than shot noise
-limited sensitivity. Along the electric field, the slope of the resonance
-frequency with respect to the external $B$ field is $|\d f/\d
-B|\approx4.0\mHz/\mu\mathrm{G}$, while the shot-noise limited sensitivity is
-0.7~mHz. Thus an rms \todo{(rms or average or something else?)} internal field
-noise of 0.2~$\mu$G can be tolerated; if the lab noise is estimated as 1~mG,
-then the required transverse shielding factor is of the order of 5,000.
+A magnetic field that changes in phase with the electric field reversals is
+especially dangerous, since it is not removed by the effective bandpass
+filtering inherent to the lock-in technique. To estimate the magnitude of the
+problem, consider that the \NMR\ resonance has a 2.5~mHz/$\mu$G slope with
+respect to the magnetic field. To approach the shot-noise limited sensitivity of
+45~nHz with 300~h of data, the field in phase with the electric field reversals
+has to be smaller than 30~pG. A field of this type can arise from at least two
+sources: (1) from fields created by leakage currents between the two
+high-voltage electrodes; (2) from the magnetization of the shield caused by the
+current required to charge the electrodes to their operating voltage, and to
+reverse their polarity.
 
-The noise along the other transverse direction, and the axial noise, is still
-less strictly constrained. The Zeeman shifts due to fields perpendicular to the
-electric field are quadratic and of the order of 0.7~mHz/mG$^2$. This means than
-dynamic shielding is not even required along these directions.
-
-In \CENTREX, we do not have any requirements on the size of field gradients
-beyond the constraints on the absolute magnitude of each component of the
-magnetic field between the oscillatory coils. \todo{Is that true?} Any fast
-changes in the field that average to zero, despite having potentially large
-gradients, are not expected to contribute significantly to the measurement.
+Finally, the magnetic field gradients can cause systematics by either (1)
+mimicking the field caused by \RF\ coils, driving the transition between the two
+hyperfine states involved in the \NMR\ measurement, or (2) via geometric phase
+effects. We are yet to calculate the magnitude of these effects, but do not
+expect them to yield magnetic shield requirements stricter than those posed by
+the other effects as discussed above.
 
 \subsection{Theory and related work}
 
@@ -100,7 +88,7 @@ gradients, are not expected to contribute significantly to the measurement.
 
 Consider a long, hollow cylinder of radius $R$ and thickness $t$, made of a
 linear material with permeability $\mu$, placed in a region of initially uniform
-magnetic flux density $\vec B_0$. According the the usual formulae
+magnetic flux density $\vec B_0$. According to the usual formulae
 \cite[eqns~3.29--30]{khriplovich2012cp}, the flux density inside the shield will
 be attenuated by the shielding factors
 %
@@ -168,7 +156,7 @@ gradually decreasing envelope.
 
 A common explanation for the decrease in the internal magnetic field is as
 follows. The sinusoidal magnetic field drives the ferromagnetic material into
-saturation. Regardless of the inital magnetization of the material, it will move
+saturation. Regardless of the initial magnetization of the material, it will move
 around its hysteresis curve (see Fig.~\ref{degaussing_theory}a) and lose all
 memory of the initial condition. The external magnetizing current is applied
 symmetrically around zero (necessitating some form of DC-blocking, such as a
@@ -241,7 +229,7 @@ features of these factors.
 To find what happens to the magnetization of the shield during degaussing, we
 can begin by recalling that any system will likely arrive at the state of lowest
 energy it can reach, so long as it has enough activation energy to leave its
-current local minumum. Given that the magnetic flux density $B$ corresponds to a
+current local minimum. Given that the magnetic flux density $B$ corresponds to a
 magnetic energy density $u=B^2/2\mu_0$, it is reasonable to expect that the
 shield is striving to minimize the magnetic field inside it, though subject to
 two constraints.
@@ -340,7 +328,7 @@ in magnetic shields \cite{sun2020limits}.
 \paragraph{Random walk}
 
 Another limit to shield performance is the gradual magnetization that occurs due
-to a combination of facotrs internal and external to the shield, such as changes
+to a combination of factors internal and external to the shield, such as changes
 in temperature and the lab magnetic fields, or mechanical stresses applied to
 the material. These changes are often of a stochastic nature, precluding
 prediction of the exact time-dependence of the fields in a way that would render
@@ -368,116 +356,6 @@ system. In particularly, we want to know what is the probability that the
 magnetic field $B(t)$ reaches some threshold value $B_T$ in a time $T$. For a
 random walk, the probability density function takes the form of a L\'evy
 distribution \cite{jacobs2010stochastic}
-
-\paragraph{Averaging and lock-in detection}
-
-Consider a physical signal $V(t)$ that we measure for a total time $T$ from
-$t=-T/2$ to $t=T/2$. The measured signal thus is
-%
-$$
-V_\text{meas}(t)=V(t)\cdot\Pi(t/T),
-$$
-%
-where $\Pi(t)$ is the rectangular function
-%
-$$
-\Pi(t)=\begin{cases}
-   0,&|t|>1/2\\
-   1/2,&|t|=1/2\\
-   1,&|t|<1/2.
-\end{cases}
-$$
-%
-The spectrum of the measured signal is given by the Fourier transform:
-%
-\begin{align*}
-   \widetilde{V}_\text{meas}(\omega)&=\mathcal{F}[V_\text{meas}(t)]\\
-   &=\mathcal{F}[V(t)\cdot\Pi(t/T)]\\
-   &=\mathcal{F}[V(t)]*\mathcal{F}[\Pi(t/T)]\\
-   &=\widetilde{V}(\omega)*\sinc(\omega T/2).
-\end{align*}
-%
-Thus the frequency-domain effect of measuring a signal for a time $T$ is a
-convolution of the signal's spectrum $\widetilde{V}(\omega)$ with the sinc
-function.
-
-\begin{figure}
-   \centering
-   \includegraphics[width=.75\textwidth]{figs/todo/comb.pdf}
-   \caption{The frequency comb arises when averaging different segments of a
-   measured signal. Before the segments can be averaged together, they have to
-   be time shifted so they overlap; the Fourier transform of time shifting gives
-   the exponentials that sum to form the frequency comb depicted here.}
-   \label{comb}
-\end{figure}
-
-\vspace{1cm}
-\noindent
-Now consider dividing the measurement into $N$ equal segments $V_k(t)$ of length
-$T_0=T/N$, where $k=1,\ldots,N$. These segments correspond to time-shifting the
-original signal $V(t)$, then truncating it to a length $T_0$:
-%
-\begin{align*}
-   V_k(t)&=\Pi(t/T_0)\cdot V(t-T/2+T_0(k-1/2)),\quad k=1,\dots,N\\
-   &=\Pi(t/T_0)\cdot V(t-\Delta t_k),\quad\text{where}\;
-   \Delta t_k=T/2-T_0(k-1/2).
-\end{align*}
-%
-If we average these $N$ segments together, we get the averaged signal
-%
-$$
-V_\text{avg}(t)=\frac{1}{N}\sum\limits_{k=1}^NV_k(t)
-=\frac{\Pi(t/T_0)}{N}\sum\limits_{k=1}^NV(t-\Delta t_k).
-$$
-%
-The spectrum of the averaged signal is
-%
-\begin{align*}
-   \widetilde{V}_\text{avg}(\omega)&=\mathcal{F}[V_\text{avg}(t)]\\
-   &=\mathcal{F}\left[\frac{\Pi(t/T_0)}{N}\sum\limits_{k=1}^NV(t-\Delta
-   t_k)\right]\\
-   &=\sinc(\omega T_0/2)
-   *\frac{1}{N}\sum\limits_{k=1}^N\mathcal{F}[V(t-\Delta t_k)].
-\end{align*}
-%
-We can rearrange the last line using the time shifting property of the Fourier
-transform,
-%
-$$
-\mathcal{F}[f(t-t_0)]=e^{-i\omega t_0}\mathcal{F}[f(t)],
-$$
-
-\noindent
-yielding the general form of a signal that has been averaged $N$ times:
-%
-\begin{align}
-   \label{sumincluded}
-   \widetilde{V}_\text{avg}(\omega)=
-   \left[\frac{1}{N}\sum\limits_{k=1}^Ne^{-i\omega\Delta t_k}
-   \widetilde{V}(\omega)\right]
-   *
-   \sinc(\omega T_0/2)
-   .
-\end{align}
-%
-It remains to examine the sum of complex exponentials in
-equation (\ref{sumincluded}). Disregarding the constant phase factor, the sum is
-plotted in Fig.~\ref{comb}. We see it takes the form of a frequency comb, the sharper the
-greater the number $N$ of averaged traces.
-
-We see from eqn~(\ref{sumincluded}) that in the frequency domain, averaging is a
-two-step procedure. First, the spectrum of the original signal is multiplied by
-the comb depicted in Fig.~\ref{comb}. If the desired signal occurs at the frequency
-corresponding to one of the comb's peaks (or its harmonics), then the effect of
-the comb is to bandpass-filter the signal and attenuate the noise away from the
-desired signal. As stated above, the greater the number $N$ of averages, the
-sharper the comb, i.e., the lower the bandwidth of the bandpass filter.
-
-The second step to the procedure is the convolution with $\sinc(\omega T_0/2)$.
-This gives the measured spectrum a linewidth essentially independent of the
-number of averages. Underneath the sinc, however, the noise will be attenuated
-through the action of the bandpass filter (or frequency comb) that derives its
-sharpness from the high number of averages.
 
 \paragraph{Magnetic shields in literature}
 
@@ -538,8 +416,8 @@ Table~\ref{oldshields} for an overview of these shields.
 
 Fierlinger et al.\ \cite{wodey2020scalable} report building a 10~m-long two-layer
 permalloy magnetic shield with an octagonal cross-section and openings to
-accomodate a 22~cm vacuum chamber, weighting approx.\ 7500~kg. Constructed out
-of a large numberof discrete flat and angled permeable sheets, the design is
+accommodate a 22~cm vacuum chamber, weighting approx.\ 7500~kg. Constructed out
+of a large number of discrete flat and angled permeable sheets, the design is
 scalable to an arbitrary length. It is notable that the thickness of the shield
 varies from 3~mm at the ends to 8~mm in the central region in order to avoid
 saturation effects due to the increased density of magnetic flux lines captured
@@ -554,7 +432,7 @@ complex mechanical assembly.
 
 Plaster et al.\ \cite{malkowski2011technique} investigated different assembly
 methods for shields constructed from metglas wrapped on a non-magnetic
-cylinderical forms (cardboard tubes in their case, PVC pipes in \CENTREX). In
+cylindrical forms (cardboard tubes in their case, PVC pipes in \CENTREX). In
 one of the experiments reported in the paper, metglas strips are secured on the
 form with circular wrapping, whereby each strip is wrapped around the form
 circumferentially. There is no overlap between strips of a single layer;
@@ -586,7 +464,7 @@ factor of 400,000 to 3,000,000 with experimental dynamic SF measurements.  The
 disappointing performance receives no comment in the paper, but is most likely
 due to the small inner diameter of the shield (19~cm) compared to our work
 (37~cm) or the state of the art (45~cm) reported in \cite{wodey2020scalable}. It
-is not inconcievable that the residual field would be improved by
+is not inconceivable that the residual field would be improved by
 removing the innermost layer. 
 
 
@@ -1154,11 +1032,11 @@ Helmholtz pair were to drive a perfectly uniform and sinusoidally
 varying magnetic field in the region of space occupied by the magnetic
 shield, then a smaller sinusoidal variation of the field inside the
 shield could be detected that is of the same frequency as the external
-field. In practice, there are practical limits to the size of exteral coils. In
+field. In practice, there are practical limits to the size of external coils. In
 one version of the measurement, I have attached a room-sized loop of
 wire to the walls of the lab and drive them with a function generator while
 passing the magnetometer reading through a lock-in amplifier. Repeating the
-measurement in the absence of any shielding gives the magitude of the
+measurement in the absence of any shielding gives the magnitude of the
 external field variation. Dividing this by the magnitude measured with
 the shield in place gives the shielding factor.
 
@@ -1211,23 +1089,13 @@ lock-in amplifier to calibrate the current versus function generator amplitude
 and frequency settings.
 
 \paragraph{Charging magnetization}
+\label{shield:charging_magnetization}
 
-Another form of time-varying magnetic field measurement is to study the effect a
-small current internal to the shield has on the residual field. Ultimately, the
-purpose of the shield is to surround the interaction region containing two
-high-voltage electrodes whose voltage reverses every 10--100 seconds. Estimating
-the electrode capacitance at 200~pF, a current of approx.\ 24~$\mu$A is required
-to charge them to $\pm30$~kV within a second. Were this current to magnetize the
-shield significantly, then our \gls{EDM}\ measurement would be compromised by a
-source of error that occurs in phase with the field reversals and cannot be
-removed by averaging over a large dataset. To estimate the magnitude of the
-problem, consider that the \NMR\ resonance has a 2.5~mHz/$\mu$G slope with
-respect to the magnetic field. To approach the shot-noise limited sensitivity of
-45~nHz with 300~h of data, the shield magnetization in phase with the electric
-field reversals has to be smaller than 30~pG.
-
-A field as small as 30~pG would be difficult to detect directly using the
-fluxgate magnetometers we use for shield characterization. The sensor is
+As specified in the section about shield design requirements
+\ref{shield:requirements}, the shield may get magnetized due to high-voltage
+electrode charging current, but the effect needs to be constrained below
+approx.\ 30~pG. A field that small would be difficult to detect directly using
+the fluxgate magnetometers we use for shield characterization. The sensor is
 specified to have noise lower than 100~nG/$\sqrt{\text{Hz}}$ at 1~Hz. To achieve
 30~pG, the averaging time would have to be as long as five months---which would
 correspond to a measurement frequency of 80~nHz, at which the sensor noise
@@ -1325,7 +1193,7 @@ residual fields as a function of the transverse position. This measurement would
 likely reveal stronger fields nearer the walls of the shield, providing support
 to the theory that the larger the inner diameter of a shield, the lower and more
 uniform the field along the axis of symmetry. Intuitively, this reasoning stems
-from the fact the the magnetic field on axis of a small current loop decreases
+from the fact the magnetic field on axis of a small current loop decreases
 as a third power of the distance away from the loop.
 
 Of particular interest is how the fields develop after the shimming procedure.
@@ -1378,7 +1246,7 @@ most of the three weeks shown in the plot. By contrast, in the latter case the
 laboratory steam system was under maintenance, causing regular temperature
 swings of several degrees. By way of estimating the temperature dependence of
 the average residual field, I have placed two electric space heaters on the two
-opposide sides of the shield, but with the airflow not directed towards the
+opposite sides of the shield, but with the airflow not directed towards the
 shield. Disconnecting the heaters after several hours, I was then able to track
 the room temperature and the magnetic field internal to the shield over several
 hours as the room cooled back down. Repeating this thermal cycle twice yields
@@ -1395,13 +1263,13 @@ magnetic hysteresis.
 \paragraph{Dynamic shielding}
 
 In addition to the static internal field, it is also important to ensure the
-exteral magnetic field noise is sufficiently attenuated inside. My measurements
+external magnetic field noise is sufficiently attenuated inside. My measurements
 of the dynamic shielding factor place it around 30,000 at DC (see
 Fig.~\ref{dynSF}), which should reduce the expected 1~mG variations in the lab
 field well below the level at which they would impact the molecular-beam
 measurements. The frequency dependence of the dynamic SF shown in that figure
 shows an increase in shielding as frequency increases, which makes sense in
-light of skin effect considerations. For mu­metal of 1~mm thickness and relative
+light of skin effect considerations. For mu-metal of 1~mm thickness and relative
 permeability of around 50,000, a frequency of 6~Hz would correspond to a
 skin depth comparable to the inner-layer thickness. (The decrease in shielding
 once the maximum is achieved is likely not physical and reflects some limitation
