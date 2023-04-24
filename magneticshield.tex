@@ -41,7 +41,7 @@ field reversals, and on spatial magnetic field changes (`gradients').
       \toprule
        Requirement                       & Component(s) & Value \\\midrule
        Static residual field             & $B_y$        & 10~$\mu$G \\
-       Noise                             & $B_x$        & 50~pG \\
+       Noise spectral density            & $B_x$        & 50~nG/$\sqrt{\mathrm{Hz}}$ at 25~Hz \\
        Field in phase with $E$ reversals & $B_x$        & 30~pG \\
       \bottomrule
     \end{tabu}}
@@ -72,39 +72,15 @@ component parallel to the electric field, and affects the other two components
 only quadratically. With our experimental parameters, the constraint on the
 dynamic shield is to suppress the lab magnetic noise to below approx.\ 50~pG,
 integrated over a 1~$\mu$Hz bandwidth (approx.\ 300~h integration time) around
-10--100~mHz (the electric field reversal frequency) in order to achieve the
-projected sensitivity of our experiment. With the magnetic moments of order
-1~kHz/G, the 50~pG constraint corresponds to a noise of $\approx50$~nHz as
-required by the planned experimental sensitivity of \CENTREX.
+25~Hz in order to achieve the projected sensitivity of our experiment. With the
+magnetic moments of order 1~kHz/G, the 50~pG constraint corresponds to a noise
+of $\approx50$~nHz as required by the planned experimental sensitivity of
+\CENTREX.
 
 \subsection{Theory}
 
 \subsubsection{`Paramagnetic' shielding}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/beforeafter.png}
-   \caption{Magnetic fields along the central axis of a single layer cylindrical
-   magnetic shield, constructed as a 14"-diameter PVC tube wrapped with 12 turns
-   of 22~$\mu$m-thick metglas ($\mu\approx70,000$). Length of shielded region is
-   approx.\ 2.5~m. The dotted lines indicate the position of the overlaps
-   between the eight circumferential wraps of metglas; dashed lines represent
-   the end of the metglas segments; solid lines show end of
-   plastic tube. The center of the shielded region is the dotted line just right
-   of 200~cm.\part{a} Before degaussing (difficult to predict theoretically).
-   \part{b} After degaussing. Simple model (eqn.~\ref{singlelayer}) would
-   predict 0.2~mG and 4~mG for the transverse and longitudinal components.}
-  \label{beforeafter}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/numlayers.png}
-   \caption{Transverse (vertical) dynamic shielding at a low frequency (around
-   10~Hz). \part{a} Along the central axis of the shield, as a function of
-   position. \part{b} The average shielding factor in the central 1~m of the
-   shield fits the simple linear relationship assuming $\mu=67,300$, $2R=16$",
-   and each layer is 18~$\mu$m thick.}
-  \label{numlayers}
-\end{figure}
+\label{paramagnetic_shielding}
 
 Consider a long, hollow cylinder of radius $R$ and thickness $t$, made of a
 linear material with permeability $\mu$, placed in a region of initially uniform
@@ -143,6 +119,176 @@ field (see example in Fig.~\ref{numlayers}). Thus we define the dynamic
 shielding factors as the ratio of the fields outside the shield to those
 obtaining inside at a particular frequency different from \DC.
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/numlayers.png}
+   \caption{Transverse (vertical) dynamic shielding at a low frequency (around
+   10~Hz). \part{a} Along the central axis of the shield, as a function of
+   position. \part{b} The average shielding factor in the central 1~m of the
+   shield fits the simple linear relationship assuming $\mu=67,300$, $2R=16$",
+   and each layer is 18~$\mu$m thick.}
+  \label{numlayers}
+\end{figure}
+
+\paragraph{Spherical shell shield}
+
+Consider a spherical shell of inner and outer radii $a,b$ respectively, made of
+a material with relative permeability $\mu$. The shell is placed in a uniform
+external field $H_0$.
+%
+Introducing a magnetic scalar potential $\Phi_\text{M}$, where $\vec
+H=-\nabla\Phi_\text{M}$, the magnetic field everywhere can be computed from the
+expressions \cite[eqns~5.117--118]{jackson1998classical}
+%
+\begin{align*}
+   \Phi_\text{M}=
+    \begin{dcases*}
+       \delta_1r\cos\theta&\quad for $r<a$\\
+       \left(\beta_1+\frac{\gamma_1}{r^3}\right)r\cos\theta&\quad for $a<r<b$\\
+       \left(-H_0+\frac{\alpha_1}{r^3}\right)r\cos\theta&\quad for $r>b$,
+    \end{dcases*}
+\end{align*}
+%
+where the coefficients $\alpha_1,\beta_1,\gamma_1,\delta_1$ are given by
+\cite[eqn~5.120]{jackson1998classical}:
+%
+\begin{align}
+   \label{sphere_coeffs}
+   \begin{split}
+      \alpha_1A&=(2\mu+1)(\mu-1)(b_3-a_3)H_0\\
+      \beta_1 A&=-3(2\mu+1)H_0\\
+      \gamma_1A&=-3a^3(\mu-1)H_0\\
+      \delta_1A&=-9\mu H_0\\
+      A        &=(2\mu+1)(\mu+2)-2(a^3/b^3)(\mu-1)^2.
+   \end{split}
+\end{align}
+%
+We see that the field inside the cavity $r<a$ is uniform and has the
+magnitude $-\delta_1\propto\mu^{-1}$ for $\mu\gg1$ as expected for a magnetic shield.
+In the opposite limit of a small $\mu\ll1$, the field inside scales as
+$-\delta_1\propto\mu$.  In fact, the shielding is identical for materials with
+permeability $\mu$ as for $1/\mu$. Of course the shielding effect for most real
+materials with $\mu<1$ would be negligible since the permeability is very close
+to unity. However, the superdiamagnetism ($\mu=0$) of superconductors has been
+exploited for constructing magnetic shields
+\cite{claycomb1999superconducting,ohta1999neuromagnetic,al2021study}, although
+with the disadvantages of requiring cryogenic temperatures.  For a nonpermeable
+material, $\mu=1$, there is no shielding.
+
+Furthermore,
+we can calculate the magnetization of the shell, given that it is made of a
+linear material. We have, for $a<r<b$,
+%
+\begin{align}
+   \label{magnetization_in_sphere}
+   \vec M&=(\mu-1)\vec H\nonumber\\
+   &=-(\mu-1)\nabla\Phi_\text{M}\nonumber\\
+   &=(\mu-1)\left[-\beta_1\hat{\vec
+   z}+\frac{\gamma_1}{r^3}\left(2\cos\theta\;\hat{\vec
+   r}+\sin\theta\;\hat{\boldsymbol\theta}\right)\right].
+\end{align}
+%
+Evidently the magnetization (as well as the field inside the material of the
+shell) consists of a uniform term proportional to $\beta_1$, as well as a
+magnetic dipole term proportional to $\gamma_1$. Due to the overall factor of
+$\mu-1$, there is of course no magnetization for a nonpermeable shell; \emph{there is
+no shielding without magnetization.}
+
+It can be enlightening to think about the shield in terms of an equivalent
+current distribution. Given some distribution of magnetization $\vec M(\vec x)$
+at position $\vec x$ inside a volume $V$ bounded by a surface $S$, the
+corresponding magnetic vector potential is
+\cite[eqn~5.103]{jackson1998classical}
+%
+\begin{equation}
+   \label{potential_vs_magnetization}
+   \vec A(\vec x)=
+   \frac{\mu_0}{4\pi}
+   \int_V\frac{\nabla'\times\vec M(\vec x')}{|\vec x-\vec x'|}\d^3x'
+   +
+   \frac{\mu_0}{4\pi}
+   \oint_S\frac{\vec M(\vec x')\times\hat{\vec n}'}{|\vec x-\vec x'|}da',
+\end{equation}
+%
+where $\vec n$ is the normal to the surface $S$ at point $\vec x$. The first
+term is a volume current $\vec J=\nabla\times\vec M$, while the second is a
+surface current $\vec K=\vec M\times\hat{\vec n}$.
+
+In the case of the spherical shell, there is no volume current since
+$\nabla\times\vec H=0$ by Amp\`ere's law. The surface normal is $\hat{\vec
+n}=\pm\hat{\vec r}$ on the outer (inner) surface of the shell, so the surface
+current is
+%
+\begin{align*}
+   \vec K&=\pm(\mu-1)\left[-\beta_1\left(\hat{\vec z}\times\hat{\vec
+   r}\right)+\frac{\gamma_1}{r^3}\left(2\cos\theta\;\hat{\vec
+   r}+\sin\theta\;\hat{\boldsymbol\theta}\right)\times\hat{\vec r}\right]\\
+   &=\pm(\mu-1)\left[-\beta_1\sin\theta\;\hat{\boldsymbol\phi}-\frac{\gamma_1}{r^3}\sin\theta\;\hat{\boldsymbol\phi}\right]\\
+   &=\mp(\mu-1)\left[\beta_1+\frac{\gamma_1}{r^3}\right]\sin\theta\;\hat{\boldsymbol\phi},
+\end{align*}
+%
+where of course $r=a$ on the inner surface, and $r=b$ on the outer. The
+paramagnetic shell shield can thus be seen as two counter-rotating
+`$\sin\theta$' surface currents on the surfaces of the shell. Inserting the
+coefficients from \ref{sphere_coeffs}, we see that
+\begin{equation}
+   \label{sphere_currents}
+   \begin{split}
+      \vec
+      K_\text{inner}&=-\frac{9\mu}{A}(\mu-1)H_0\sin\theta\;\hat{\boldsymbol\phi}\\
+      \vec
+      K_\text{outer}&=\frac{3}{A}(\mu-1)\big[(2\mu+1)+(a^3/b^3)(\mu-1)\big]H_0\sin\theta\;\hat{\boldsymbol\phi},
+   \end{split}
+\end{equation}
+%
+with the same $A$ as in eqn~\ref{sphere_coeffs}. The internal field in the
+cavity is $H(r<a)=-\delta_1$, so
+%
+\begin{align*}
+   \vec K_\text{inner}=-(\mu-1)H(r<a)\sin\theta\;\hat{\boldsymbol\phi}
+\end{align*}
+%
+The field $\vec H(r<a)$ inside the cavity points in the same direction as the
+external uniform field $\vec H_0$, but is attenuated by the spherical shield.
+The `magnetization current' of its inner surface `rotates' around the sphere
+(i.e., flows in a circumferential matter) in the opposite sense to the field and
+thus causes the attenuation of the field. 
+
+In the limit of infinite permeability, the two currents become
+%
+\begin{align*}
+   \lim_{\mu\to\infty}\vec K_\text{inner}=-\frac{9/2}{1-a^3/b^3}H_0\sin\theta\;\hat{\boldsymbol\phi}
+   ;\quad
+   \lim_{\mu\to\infty}\vec K_\text{outer}=3\frac{1+a^3/(2b^3)}{1-a^3/b^3}H_0\sin\theta\;\hat{\boldsymbol\phi}.
+\end{align*}
+%
+The counter-rotating current on the external surface of the shell works
+\emph{against} the shielding since it increases the internal field, but its
+magnitude is smaller than that of the inner current so the shielding still
+works, i.e.\ $-\delta_1\propto\mu^{-1}$:
+%
+\begin{align}
+   \label{high_paramagnetic}
+   \lim_{\mu\to\infty}\frac{\vec K_\text{inner}}{\vec
+   K_\text{outer}}=-\frac{3}{2+a^3/b^3}
+   ;\quad
+   \lim_{\mu\to\infty}(-\delta_1)=\frac{9/2}{\mu(1-a^3/b^3)}H_0.
+\end{align}
+%
+In the limit of an infinitesimally thin shell ($a/b\to1$), the two currents are
+equal and opposite and the shielding effect disappears. Of course in that limit,
+there is no magnetized material, reinforcing the notion that there is no
+shielding without magnetization.
+
+In the superdiamagnetic limit ($\mu=0$), the shielding is perfect
+($-\delta_1=0$) and effected exclusively by the current on the outer surface:
+%
+\begin{align}
+   \label{superdiamagnetic_shell}
+   \lim_{\mu\to0}\vec K_\text{inner}=0;\quad
+   \lim_{\mu\to0}\vec K_\text{outer}=-\frac{3}{2}H_0\sin\theta\;\hat{\boldsymbol\phi}.
+\end{align}
+%
+
 \subsubsection{Static shielding better than expected}
 
 As pointed out in ref.~\cite{dickerson2012high}, the dynamic and static shielding would
@@ -152,9 +298,15 @@ metglas. For example, for a single-layer 14" diameter shield of length 3.5~m
 with $\mu=70,000$ and $t=0.2$~mm, we expect from eqn~\ref{singlelayer} that
 $S_\text{T}\approx40$ and $S_\text{L}\approx2$.  Thus a 400~mG lab magnetic
 field should be attenuated down to 10~mG (200~mG) if oriented perpendicular
-(parallel) to the shield. In practice (see example in Fig.~\ref{beforeafter}),
-however, we find residual fields much smaller than that (approx.\ 0.2~mG and
-4~mG, resp.) after degaussing the shield. We also find that adding additional
+(parallel) to the shield.
+
+In practice (see example in Fig.~\ref{beforeafter}), the field inside a shield
+can be greatly reduced by driving a sinusoidal magnetic field around it with a
+gradually decreasing envelope. After degaussing the shield, we find residual
+fields much smaller than expected (approx.\ 0.2~mG and 4~mG, resp.) from simple
+paramagnetic theory.
+
+We also find that adding additional
 layers does not significantly reduce the static fields internal to the shield as
 would be predicted by the formula above. As explained in the following, I
 believe the reason is that in this situation, the shield does not behave as if
@@ -162,16 +314,19 @@ it were made of a linear material; indeed, it is highly nonlinear due to
 ferromagnetic hysteresis. The memory of ferromagnetic materials is exploited
 during the process of degaussing, as follows.
 
-Degaussing is a method of reducing the residual field inside a magnetic shield
-based on the following observation: the field inside a hollow cylinder made of a
-ferromagnetic material, when placed in a region of a given external field, can
-be greatly reduced by driving a sinusoidal magnetic field around it with a
-gradually decreasing envelope.
-
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/degaussing_theory.png}
-   \caption{\part{a} Degaussing: naive picture. \part{b} Major vs minor loops.}
-  \label{degaussing_theory}
+  \includegraphics[width=\textwidth]{figs/todo/beforeafter.png}
+   \caption{Magnetic fields along the central axis of a single layer cylindrical
+   magnetic shield, constructed as a 14"-diameter PVC tube wrapped with 12 turns
+   of 22~$\mu$m-thick metglas ($\mu\approx70,000$). Length of shielded region is
+   approx.\ 2.5~m. The dotted lines indicate the position of the overlaps
+   between the eight circumferential wraps of metglas; dashed lines represent
+   the end of the metglas segments; solid lines show end of
+   plastic tube. The center of the shielded region is the dotted line just right
+   of 200~cm.\part{a} Before degaussing (difficult to predict theoretically).
+   \part{b} After degaussing. Simple model (eqn.~\ref{singlelayer}) would
+   predict 0.2~mG and 4~mG for the transverse and longitudinal components.}
+  \label{beforeafter}
 \end{figure}
 
 A common explanation for the decrease in the internal magnetic field is as
@@ -185,6 +340,12 @@ decreased to zero, no net magnetization will remain (e.g.,
 \cite[sect.~3.4.2]{khriplovich2012cp}). Ref.~\cite{thiel2009demagnetization}
 calls the resulting demagnetized state a state of minimized internal energy. 
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/degaussing_theory.png}
+   \caption{\part{a} Degaussing: naive picture. \part{b} Major vs minor loops.}
+  \label{degaussing_theory}
+\end{figure}
+
 Unfortunately, this explanation only applies for when a single grain of the
 material is degaussed in a region with no net external field---hardly applicable
 to magnetic shielding. In practice, the shield would be situated in a region
@@ -194,39 +355,11 @@ of the current, the magnetization would ideally settle on a value that as much
 as possible \emph{opposes} the stationary lab field. Rather than equating
 degaussing with a demagnetization process, it would be more appropriate to
 consider it a particular case of inducing a non-zero magnetization in the
-material; in fact, a perfectly demagnetized shield would be perfectly useless.
-Even `paramagnetic' shielding, discussed above, relies on the fact
-that the shield develops a certain non-zero magnetization when placed in an
-external magnetic field. There is no shielding without magnetization.
-
-It can be enlightening to think about the shield in terms of an equivalent
-current distribution. Given some distribution of magnetization $\vec M(\vec x)$
-at position $\vec x$ inside a volume $V$ bounded by a surface $S$, the
-corresponding magnetic vector potential is \cite[eqn~5.103]{jackson1998classical}
-%
-$$
-\vec A(\vec x)=
-\frac{\mu_0}{4\pi}
-\int_V\frac{\nabla'\times\vec M(\vec x')}{|\vec x-\vec x'|}\d^3x'
-+
-\frac{\mu_0}{4\pi}
-\oint_S\frac{\vec M(\vec x')\times\vec n'}{|\vec x-\vec x'|}da',
-$$
-%
-where $\vec n$ is the normal to the surface $S$ at point $\vec x$. Considering
-a layer of magnetic shielding as a very thin cylindrical shell, the first term
-has a negligible contribution assuming the magnetization does not possess a
-pathologically large curl. The second term is the `surface current' term if we
-identify $\vec K(\vec x)=\vec M\times\vec n$ as the surface current.
-
-As a simple example, for a cylindrical shell uniformly magnetized along its
-length, the surface current is perpendicular to the surface normal, as well as
-the axis of the cylinder; i.e., it is equivalent to two concentric solenoids.
-Given that a properly degaussed cylindrical shield opposes the lab field, it
-must therefore be magnetized in a direction opposite to the external field, or
-equivalently, possess a non-zero current distribution that in some way opposes
-and thus attenuates the lab field. (A demagnetized shield, having zero surface
-currents opposing the lab field, would obviously not work as a shield.)
+material; in fact, a perfectly demagnetized shield would be perfectly useless
+until it gets re-magnetized by an external field.  (Even `paramagnetic'
+shielding, discussed above, relies on the fact that the shield develops a
+certain non-zero magnetization when placed in an external magnetic field.) There
+is no shielding without magnetization.
 
 Any magnetic shield can be modelled as a suitably magnetized shell surrounding
 the region of interest for an experiment. Of course, we cannot in general expect
@@ -237,22 +370,6 @@ obtaining after degaussing is left as an exercise for future research, I can
 note that it is likely determined by a combination of geometric factors (e.g.,
 constraining the spatial current distribution to the surfaces of a cylindrical
 shell), and the details of the motion of hysteresis loops of a given material.
-In the following two sections, I will draw attention to some of the features of
-these factors.
-
-\subsubsection{Degaussing toy model}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/toymodel.png}
-   \caption{Toy model for a degaussed shield: \part{a} Cross-section through a
-   thick cylindrical shell (black rectangles) placed in a vertical 500~mG ambient field with a
-   solenoidal current distribution (not shown, but assumed to circulate inside
-   the shell, around the vertical black line that indicates the axis of
-   cylindrical symmetry). \part{b} Total magnetic energy (integrated over the
-   section of space shown in \part{a}) as a function
-   of the solenoidal current.}
-  \label{toymodel}
-\end{figure}
 
 To find what happens to the magnetization of the shield during degaussing, we
 can begin by recalling that any system will likely arrive at the state of lowest
@@ -281,6 +398,260 @@ degaussed shield, we need to look for the particular current distribution (or,
 equivalently, magnetization), that minimizes the total energy for a given shield
 geometry.
 
+In the following section, I consider some models of how ferromagnetic
+shields after degaussing may exhibit better shielding than that expected from a
+paramagnetic argument as in section \ref{paramagnetic_shielding}.
+
+\subsubsection{Degaussing toy models}
+
+\paragraph{Rotating sphere of charge}
+
+Consider a spherical shell of radius $R$ that carries a uniform surface charge
+density $\sigma$ and spins with an angular velocity
+$\boldsymbol\omega=\omega\hat{\vec z}$ around some axis $\hat{\vec z}$
+\cite[Ex.~5.11]{griffiths2013introduction}.  This is equivalent to a surface
+current distribution of the form $\vec
+K_0(\theta)=K_0\sin\theta\;\hat{\boldsymbol\phi},$ where $K_0=\sigma R\omega$.
+This is also equivalent to a stationary solid sphere of radius $R$ and a uniform
+magnetic polarization $\vec M$ inside \cite[sect~5.10]{jackson1998classical} if
+we make the identification $\vec M=\sigma R\boldsymbol\omega$. Of course, we
+expected the magnetization $\vec M$ and the surface current density $\vec K$ to
+have the same magnitude, since they are related by $\vec K=\vec M\times\hat{\vec
+n}$.
+
+The magnetic vector potential is given by
+\cite[eqn~5.69]{griffiths2013introduction}
+%
+\begin{equation}
+   \label{rotating_sphere_potential}
+   \vec A(r,\theta,\phi)=
+    \begin{dcases*}
+       \frac{\mu_0M}{3}r\sin\theta\;\hat{\boldsymbol\phi}&\quad for $r\leq R$\\
+       \frac{\mu_0R^3M}{3}\frac{\sin\theta}{r^2}\;\hat{\boldsymbol\phi}&\quad for
+       $r\geq R$,
+    \end{dcases*}
+\end{equation}
+%
+where $\hat{\boldsymbol\phi}$ is the unit vector in the azimuthal direction.
+Taking the curl of the potential, we find that the magnetic field inside the
+sphere is uniform \cite[eqn~5.70]{griffiths2013introduction}:
+%
+\begin{equation}
+   \label{rotating_sphere_field_inside}
+   \vec B_\text{in}^{R,M}=\nabla\times\vec A_\text{in}
+   =\frac{2\mu_0R\omega\sigma}{3}
+   (\cos\theta\;\hat{\vec r}-\sin\theta\;\hat{\boldsymbol\theta})
+   =\frac{2\mu_0}{3}\vec M,
+\end{equation}
+%
+while the field outside is that of a magnetic dipole:
+%
+\begin{align}
+   \label{rotating_sphere_field_outside}
+   \vec B_\text{out}^{R,M}(r,\theta)&=\nabla\times\vec A_\text{out}\nonumber\\&=
+   \frac{\mu_0R^3M}{3}\left[\frac{1}{r\sin\theta}\frac{\partial}{\partial\theta}\left(\frac{\sin^2\theta}{r^2}\right)\hat{\vec
+   r}-\frac{1}{r}\frac{\partial}{\partial
+   r}\frac{\sin\theta}{r}\hat{\boldsymbol\theta}\right]
+   \nonumber\\&=\frac{\mu_0R^3M}{3r^3}\left(2\cos\theta\;\hat{\vec
+   r}+\sin\theta\;\hat{\boldsymbol\theta}\right).
+\end{align}
+%
+This is the field of a dipole with a dipole moment \cite[eqn~5.107]{jackson1998classical}
+%
+\[
+   m
+   =\frac{4\pi R^3}{3}M
+   =\frac{4\pi R^3}{3}K_0
+   =\frac{4\pi R^3}{3}\vec \sigma R\omega.
+\]
+%
+Observe that at $r=R$, both $\vec B_\text{in}^{R,M}$ and $\vec
+B_\text{out}^{R,M}$ take the same magnitude, $|\vec B|=(2/3)\mu_0M$, but the
+directions of the two vectors are different. This is as it should be since the
+field lines of $\vec B$ are closed loops due to $\nabla\cdot\vec B=0$, but their
+direction changes suddenly as the field transitions from the uniform field
+inside the sphere to the dipole field outside.
+
+We can now use eqns~\ref{rotating_sphere_field_inside} and
+\ref{rotating_sphere_field_outside} to find the total magnetic energy density
+$u^2=B^2/2\mu_0$ when the sphere is placed in a region with a constant uniform
+field
+%
+\[
+   \vec B_0=B_0\hat{\vec z}=B_0(\cos\theta\;\hat{\vec
+   r}-\sin\theta\;\hat{\boldsymbol\theta}).
+\]
+%
+The magnetic energy density is proportional to:
+%
+\begin{align}
+   u_\text{in}&\propto(\vec B_0+\vec B_\text{in})^2
+   =B_0^2+2B_0M\frac{2\mu_0}{3}+M^2\left(\frac{2\mu_0}{3}\right)^2\nonumber\\
+   u_\text{out}&\propto(\vec B_0+\vec B_\text{out})^2
+   =B_0^2+2B_0M\frac{\mu_0R^3}{3r^3}f(\theta)+M^2\left(\frac{\mu_0R^3}{3r^3}\right)^2g(\theta),\nonumber
+\end{align}
+%
+with angular factors
+%
+\begin{align}
+   f(\theta)&=(\cos\theta\;\hat{\vec r}-\sin\theta\;\hat{\boldsymbol\theta})
+         \cdot(2\cos\theta\;\hat{\vec r}+\sin\theta\;\hat{\boldsymbol\theta})
+      =\frac{1+3\cos2\theta}{2}\nonumber\\
+   g(\theta)&=(2\cos\theta\;\hat{\vec r}+\sin\theta\;\hat{\boldsymbol\theta})^2
+      =\frac{5+3\cos2\theta}{2}.\nonumber
+\end{align}
+%
+The total energy inside the sphere is simply $U_\text{in}=(4/3)\pi
+R^3u_\text{in}$. The energy outside the sphere is found by integration:
+%
+\begin{align}
+   U_\text{out}=B_0^2&\int\d^3x\nonumber\\
+   &+2B_0M\frac{\mu_0R^3}{3}2\pi\int\limits_R^\infty\frac{r^2\d
+   r}{r^3}\underbrace{\int\limits_0^\pi f(\theta)\sin\theta\;\d\theta}_0\nonumber\\
+   &+M^2\left(\frac{\mu_0R^3}{3}\right)^22\pi\underbrace{\int\limits_R^\infty\frac{r^2\d
+   r}{r^6}\int\limits_0^\pi g(\theta)\sin\theta\;\d\theta}_{4/(3R^3)}\nonumber
+\end{align}
+%
+To minimize the total energy, consider the derivative
+%
+\begin{align}
+   \frac{\d}{\d M}(U_\text{in}+U_\text{out})
+   =\frac{4\pi R^3}{3}\left[2B_0\frac{2\mu_0}{3}+2M\left(\frac{2\mu_0}{3}\right)^2\right]
+   +2M\left(\frac{\mu_0R^3}{3}\right)^22\pi\frac{4}{3R^3}.\nonumber
+\end{align}
+%
+Set the derivative to zero and solve for $M$:
+%
+\begin{align}
+   \label{single_shell_optimum}
+   \frac{\d}{\d M}(U_\text{in}+U_\text{out})=0
+   \quad\to\quad
+   M=-\frac{B_0}{\mu_0}.
+\end{align}
+%
+With this value of $M$, the total field inside is (cf.\
+eqn~\ref{rotating_sphere_field_inside})
+%
+\begin{align}
+   B=B_0+\frac{2\mu_0}{3}M=\frac{1}{3}B_0.\nonumber
+\end{align}
+%
+Therefore a single shell with a `$\cos\theta$' surface current distribution,
+when the current is set to minimize the total magnetic energy, does not shield
+the ambient field very effectively. Of course, a realistic magnetic shield is a
+shell of nonzero thickness and as such consists of two concentric surfaces. In
+the following paragraph, we expand the model to include this observation.
+
+\paragraph{Two `$\cos\theta$' shells}
+
+Let there be two concentric spherical shells with radii $R1<R2$. As in the
+previous example, there are three equivalent physical pictures: (1) rotating
+shells with uniform surface electric charge densities $\sigma_i$; (2)
+solid spheres with uniform magnetic polarizations $M_i$; (3) spherical
+shells carrying surface current distributions of form
+$K_i\sin\theta\;\hat{\boldsymbol\phi}$, for $i=1,2$. For consistency with the
+one-shell case, we will proceed with using the $M_i$ symbols.
+
+We now consider the total (integrated) magnetic energy in three separate regions
+of space. Inside the smaller of the two shells, $r\leq R_1$, the magnetic field
+is uniform, giving the energy density
+%
+\[
+   U_\text{in2}\propto\frac{4\pi R_1^3}{3}\left(\vec B_0+\vec
+   B_\text{in}^{R_1,M_1}+\vec B_\text{in}^{R_2,M_2}\right)^2.
+\]
+%
+In the space between the two shells ($R_1<r<R_2$) we place a material
+with the relative permeability $\mu$, which changes the magnetic
+energy contained in that region. We need to integrate over the field internal to
+the larger sphere, and external to the smaller:
+%
+\[
+   U_\text{mid2}\propto
+   \frac{2\pi}{\mu}\int\limits_{R_1}^{R_2}\d r
+   \int\limits_0^\pi\d\theta
+   \left(\vec B_0+\vec B_\text{out}^{R_1,M_1}+\vec B_\text{in}^{R_2,M_2}\right)^2.
+\]
+%
+Finally, outside the two shells ($r>R_2$) we have
+%
+\[
+   U_\text{out2}\propto
+   2\pi\int\limits_{R_2}^\infty\d r
+   \int\limits_0^\pi\d\theta
+   \left(\vec B_0+\vec B_\text{out}^{R_1,M_1}+\vec B_\text{out}^{R_2,M_2}\right)^2.
+\]
+%
+We need to solve the following minimization problem:
+%
+\[
+   \frac{\d}{\d
+   M_i}\left(U_\text{in2}+U_\text{mid2}+U_\text{out2}\right)=0,\quad i=1,2;
+\]
+%
+using Mathematica, the solution is
+%
+\begin{align}
+   \label{magnetization_two_shells}
+\begin{split}
+   M_1&=-\frac{3(\mu-1)\mu}{(2\mu+1)(\mu+2)-2(R_1/R_2)^3(\mu-1)^2}\frac{B_0}{\mu_0}\\[10pt]
+   M_2&=\frac{3\left[(R_1/R_2)^3(\mu-1)^2-(2\mu+1)\right]}{(2\mu+1)(\mu+2)-2(R_1/R_2)^3(\mu-1)^2}\frac{B_0}{\mu_0},
+\end{split}
+\end{align}
+%
+and the internal magnetic field is \cite[cf.\ eqn~5.121]{jackson1998classical}
+%
+\begin{align}
+   \label{sphere_shielding}
+   B_\text{in2}=
+   B_0+\frac{2\mu_0}{3}M_1+\frac{2\mu_0}{3}M_2
+   =\frac{3\mu}{(2\mu+1)(\mu+2)-2(R_1/R_2)^3(\mu-1)^2}B_0,
+\end{align}
+%
+which is three times smaller than the field inside the spherical paramagnetic
+shield considerd in a previous section ($-\delta_1$ in eqn~\ref{sphere_coeffs}).
+
+For a nonpermeable material ($\mu=1$), the magnetizations in
+eqn~\ref{magnetization_two_shells} reduce to $M_1=0$ and $M_2=-B_0/\mu_0$. Thus
+the current on the inner shell is turned off, and the outer one reproduces the
+single-shell situation from eqn~\ref{single_shell_optimum}, where the internal
+field is $B_0/3$.
+
+In the limit of high permeability, the two magnetizations are
+%
+\begin{align}
+   \lim_{\mu\to\infty}M_1=-\frac{3/2}{1-(R_1/R_2)^3}\frac{B_0}{\mu_0};\quad
+   \lim_{\mu\to\infty}M_2=\frac{3/2}{(R_2/R_1)^3-1}\frac{B_0}{\mu_0}
+\end{align}
+%
+and the internal magnetic field in this limit is
+%
+\begin{align*}
+   \lim_{\mu\to\infty}B_\text{in2}=\frac{3/2}{\mu(1-R_1^3/R_2^3)}B_0.
+\end{align*}
+%
+Just as for the superdiamagnetic shell considered earlier in
+eqn~\ref{superdiamagnetic_shell}, the shielding is perfect ($B_\text{in2}=0$)
+and effected exclusively by the current on the outer surface when $\mu=0$:
+%
+\begin{align}
+   \lim_{\mu\to0}M_1=0;\quad
+   \lim_{\mu\to0}M_2=-\frac{3}{2\mu_0}B_0;\quad
+   \lim_{\mu\to0}B_\text{in2}=\frac{3\mu/2}{1-R_1^3/R_2^3}B_0.
+\end{align}
+%
+
+\paragraph{Longitudinal shielding}
+
+As a simple example, for a cylindrical shell uniformly magnetized along its
+length, the surface current is perpendicular to the surface normal, as well as
+the axis of the cylinder; i.e., it is equivalent to two concentric solenoids.
+Given that a properly degaussed cylindrical shield opposes the lab field, it
+must therefore be magnetized in a direction opposite to the external field, or
+equivalently, possess a non-zero current distribution that in some way opposes
+and thus attenuates the lab field. (A demagnetized shield, having zero surface
+currents opposing the lab field, would obviously not work as a shield.)
+
 To illustrate, consider the Comsol simulation of a cylindrical shell with
 solenoidal current placed in an area of a non-zero external magnetic field
 (Fig.~\ref{toymodel}). By setting the current to a value that minimizes the
@@ -305,8 +676,20 @@ does not significantly reduce the static residual field after degaussing.
 Further work may lift the solenoidal limitations of this toy model and consider
 the case of a general surface current distribution that minimizes energy.
 Together with some model of hysteresis behaviour (next section), including the
-limitatins posed by the maximum magnetization of a material, one could come
+limitations posed by the maximum magnetization of a material, one could come
 up with an explanation for the performance limits of degaussed magnetic shields.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/toymodel.png}
+   \caption{Toy model for a degaussed shield: \part{a} Cross-section through a
+   thick cylindrical shell (black rectangles) placed in a vertical 500~mG ambient field with a
+   solenoidal current distribution (not shown, but assumed to circulate inside
+   the shell, around the vertical black line that indicates the axis of
+   cylindrical symmetry). \part{b} Total magnetic energy (integrated over the
+   section of space shown in \part{a}) as a function
+   of the solenoidal current.}
+  \label{toymodel}
+\end{figure}
 
 \subsubsection{Hysteresis during degaussing}
 
@@ -851,23 +1234,11 @@ then read out by a home-build circuit board containing an \ADC\ (AD4115).
   \label{pulleys}
 \end{figure}
 
-
 The sensor is specified to have 100~nG/$\sqrt{\text{Hz}}$ of noise at 1~Hz. To
 verify this, I measured the noise spectrum while the sensor was located inside
-the shield. (Given the dynamic shielding factor and the magnetic noise level in
+the shield. Given the dynamic shielding factor and the magnetic noise level in
 the lab, the sensor noise is significantly larger than the true magnetic noise
-inside the shield.) The results are shown in Fig.~\ref{sensornoise}.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
-   \caption{Magnetometer sensor noise measured inside the magnetic shield.
-   \part{a} Lower frequency spectrum measured using the AD4115 board and 1000
-   preamp gain, without HPF, using 1kHz LPF cutoff, 100 averages, Hann window.
-   \part{b} Higher frequency spectrum of $B_y$ measured using moku:lab spectrum
-   analyzer, using preamp gain of 100 and HPF cutoff of 0.01 Hz, with LPF at 10
-   kHz, averaging 100 times, flat-top window.}
-  \label{sensornoise}
-\end{figure}
+inside the shield. The results are shown in Fig.~\ref{sensornoise}.
 
 The electronic offset of the sensor and its associated electronics is
 significant. It is specified as 50~$\mu$G, with a temperature coefficient of
@@ -1435,6 +1806,24 @@ unlikely to affect the dynamic shielding. However, neither of these claims have
 as yet been explicitly verified with the final version of the magnetic shield.
 
 \subsubsection{Magnetic noise}
+
+Instead of measuring the dynamic shielding as the attenuation of an externally
+applied sinusoidal excitation we can try to directly measure the spectrum of the
+magnetic noise inside the magnetic shield. However, to do so we would need
+either better magnetometers or more ambient magnetic field noise. Due to the
+excellent dynamic shielding as reported in the previous section
+($\mathrm{SF}>25,000$), the lab magnetic field noise (of the order of
+$10\uG/\sqrt{\mathrm{Hz}}$ at 1~Hz as per Fig.~\ref{sensornoise}) would be
+attenuated approx.\ two orders of magnitude below the noise floor of the sensor.
+This is well below the design requirement of 50~nG/$\sqrt{\mathrm{Hz}}$ at
+25~Hz as reported in Table~\ref{shieldrequirements}.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
+   \caption{Magnetometer sensor noise measured inside the magnetic shield.
+   }
+  \label{sensornoise}
+\end{figure}
 
 \subsection{Discussion}
 
