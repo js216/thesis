@@ -190,8 +190,8 @@ linear material. We have, for $a<r<b$,
 Evidently the magnetization (as well as the field inside the material of the
 shell) consists of a uniform term proportional to $\beta_1$, as well as a
 magnetic dipole term proportional to $\gamma_1$. Due to the overall factor of
-$\mu-1$, there is of course no magnetization for a nonpermeable shell; \emph{there is
-no shielding without magnetization.}
+$\mu-1$, there is of course no magnetization for a nonpermeable shell;
+moreover, \emph{there is no shielding without magnetization.}
 
 It can be enlightening to think about the shield in terms of an equivalent
 current distribution. Given some distribution of magnetization $\vec M(\vec x)$
@@ -338,11 +338,13 @@ symmetrically around zero (necessitating some form of DC-blocking, such as a
 transformer or capacitive coupling), so when the amplitude is gradually
 decreased to zero, no net magnetization will remain (e.g.,
 \cite[sect.~3.4.2]{khriplovich2012cp}). Ref.~\cite{thiel2009demagnetization}
-calls the resulting demagnetized state a state of minimized internal energy. 
+calls the resulting state of minimized internal energy a `demagnetized state'.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/degaussing_theory.png}
-   \caption{\part{a} Degaussing: naive picture. \part{b} Major vs minor loops.}
+   \caption{\part{a} Degaussing: naive picture. \part{b} Major vs minor loops.
+   The significance of the constitutive equation (red line) is explained in
+   section \ref{degaussing_hysteresis}.}
   \label{degaussing_theory}
 \end{figure}
 
@@ -355,21 +357,21 @@ of the current, the magnetization would ideally settle on a value that as much
 as possible \emph{opposes} the stationary lab field. Rather than equating
 degaussing with a demagnetization process, it would be more appropriate to
 consider it a particular case of inducing a non-zero magnetization in the
-material; in fact, a perfectly demagnetized shield would be perfectly useless
-until it gets re-magnetized by an external field.  (Even `paramagnetic'
-shielding, discussed above, relies on the fact that the shield develops a
-certain non-zero magnetization when placed in an external magnetic field.) There
-is no shielding without magnetization.
+material through the process of equilibration, of settling into a state of
+minimum magnetic energy. In fact, \emph{a perfectly demagnetized shield would be
+perfectly useless} until it gets re-magnetized by an external field. (Even
+`paramagnetic' shielding, discussed above, relies on the fact that the shield
+develops a certain non-zero magnetization when placed in an external magnetic
+field.) There is no shielding without magnetization.
 
 Any magnetic shield can be modelled as a suitably magnetized shell surrounding
 the region of interest for an experiment. Of course, we cannot in general expect
-uniform magnetization (i.e., perfectly solenoidal surface currents) to result
-from a degaussing procedure applied on a cylindrical shell, especially when
-shielding transverse fields. While the form of the current distribution
-obtaining after degaussing is left as an exercise for future research, I can
-note that it is likely determined by a combination of geometric factors (e.g.,
-constraining the spatial current distribution to the surfaces of a cylindrical
-shell), and the details of the motion of hysteresis loops of a given material.
+uniform magnetization to result from a degaussing procedure applied on a
+cylindrical shell, especially when shielding transverse fields. The form of the
+current distribution obtaining after degaussing is likely determined by a
+combination of geometric factors (e.g., constraining the spatial current
+distribution to the surfaces of a cylindrical shell), and the details of the
+motion of hysteresis loops of a given material.
 
 To find what happens to the magnetization of the shield during degaussing, we
 can begin by recalling that any system will likely arrive at the state of lowest
@@ -386,21 +388,23 @@ minimizing the total energy. Thus we may expect that the more of these
 imperfections, the less effective the degaussing; hence the importance of
 annealing magnetic shields and handling them carefully. (The innermost layer,
 being closest to the molecules that require shielding, is thereby the most
-sensitive to material imperfections.) On the other hand, given that
-magnetic field lines are closed loops, the field inside the shield that opposes
-an external field eventually loops around in such a way as to increase the total
-field outside. I see no reason to conclude that in the tradeoff between increased
-field outside and the decreased field inside (or the converse), the shield would
-settle at a zero magnetic field inside the shield. In other words, it is likely
-that a nonzero residual field has to remain inside the shield. To predict its
-magnitude, and thus the theoretical limit on the static performance of a
-degaussed shield, we need to look for the particular current distribution (or,
-equivalently, magnetization), that minimizes the total energy for a given shield
-geometry.
+sensitive to material imperfections.)
+
+On the other hand, given that magnetic field lines are closed loops, the field
+inside the shield that opposes an external field eventually loops around in such
+a way as to increase the total field energy outside. (This point will be
+illustrated in the following section.) I see no reason to conclude that in the
+tradeoff between increased field outside and the decreased field inside (or the
+other way around), the shield would settle at a zero magnetic field inside the
+shield. In other words, it is likely that some nonzero residual field has to
+remain inside the shield.  To predict its magnitude, and thus the theoretical
+limit on the static performance of a degaussed shield, we need to look for the
+particular current distribution (or, equivalently, magnetization), that
+minimizes the total energy for a given shield geometry.
 
 In the following section, I consider some models of how ferromagnetic
 shields after degaussing may exhibit better shielding than that expected from a
-paramagnetic argument as in section \ref{paramagnetic_shielding}.
+paramagnetic argument of section \ref{paramagnetic_shielding}.
 
 \subsubsection{Degaussing toy models}
 
@@ -512,6 +516,13 @@ R^3u_\text{in}$. The energy outside the sphere is found by integration:
    r}{r^6}\int\limits_0^\pi g(\theta)\sin\theta\;\d\theta}_{4/(3R^3)}\nonumber
 \end{align}
 %
+Note that while the internal energy can be lowered by choosing a correct value for $M$,
+the external energy always increases whenever $M$ is changed from zero. Thus the
+lowest-energy configuration is, as remarked at the end of the previous section,
+a tradeoff between decreased field (energy) inside and an increased field
+(energy) outside. I see no obvious reason why after equilibration, the internal
+field should entirely vanish rather than settling on a small but nonzero value.
+
 To minimize the total energy, consider the derivative
 %
 \begin{align}
@@ -566,12 +577,13 @@ with the relative permeability $\mu$, which changes the magnetic
 energy contained in that region. We need to integrate over the field internal to
 the larger sphere, and external to the smaller:
 %
-\[
+\begin{align}
+   \label{Uinternal}
    U_\text{mid2}\propto
    \frac{2\pi}{\mu}\int\limits_{R_1}^{R_2}\d r
    \int\limits_0^\pi\d\theta
    \left(\vec B_0+\vec B_\text{out}^{R_1,M_1}+\vec B_\text{in}^{R_2,M_2}\right)^2.
-\]
+\end{align}
 %
 Finally, outside the two shells ($r>R_2$) we have
 %
@@ -639,59 +651,19 @@ and effected exclusively by the current on the outer surface when $\mu=0$:
    \lim_{\mu\to0}M_2=-\frac{3}{2\mu_0}B_0;\quad
    \lim_{\mu\to0}B_\text{in2}=\frac{3\mu/2}{1-R_1^3/R_2^3}B_0.
 \end{align}
-%
 
-\paragraph{Longitudinal shielding}
-
-As a simple example, for a cylindrical shell uniformly magnetized along its
-length, the surface current is perpendicular to the surface normal, as well as
-the axis of the cylinder; i.e., it is equivalent to two concentric solenoids.
-Given that a properly degaussed cylindrical shield opposes the lab field, it
-must therefore be magnetized in a direction opposite to the external field, or
-equivalently, possess a non-zero current distribution that in some way opposes
-and thus attenuates the lab field. (A demagnetized shield, having zero surface
-currents opposing the lab field, would obviously not work as a shield.)
-
-To illustrate, consider the Comsol simulation of a cylindrical shell with
-solenoidal current placed in an area of a non-zero external magnetic field
-(Fig.~\ref{toymodel}). By setting the current to a value that minimizes the
-total magnetic energy (integrated over a region that includes the entire shell
-and enough of the surrounding space where the field is appreciably influenced by
-the shell), we obtain a situation that resembles the excellent
-shielding characteristic of a degaussed shield, complete with the small non-zero
-field inside the shield.
-
-In this case, the current distribution was constrained to be a single solenoid.
-One can nest concentric solenoids to model a multi-layer shield. Minimizing the
-total magnetic energy versus the solenoidal currents, we find that in the
-minimum energy configuration, the inner layer has a zero current distribution,
-i.e., it does not participate in the shielding. Intuitively, it makes sense that
-the greater the volume of the shielded region, the lower the total magnetic
-energy will be; thus it is only the outermost (and so largest) shield that is
-needed for the energy minimization. This is consistent with the experimental
-observation that once a shield layer has attenuated most of the lab field,
-assuming it is not saturated, adding further layers around it (or inside it)
-does not significantly reduce the static residual field after degaussing.
-
-Further work may lift the solenoidal limitations of this toy model and consider
-the case of a general surface current distribution that minimizes energy.
-Together with some model of hysteresis behaviour (next section), including the
-limitations posed by the maximum magnetization of a material, one could come
-up with an explanation for the performance limits of degaussed magnetic shields.
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/toymodel.png}
-   \caption{Toy model for a degaussed shield: \part{a} Cross-section through a
-   thick cylindrical shell (black rectangles) placed in a vertical 500~mG ambient field with a
-   solenoidal current distribution (not shown, but assumed to circulate inside
-   the shell, around the vertical black line that indicates the axis of
-   cylindrical symmetry). \part{b} Total magnetic energy (integrated over the
-   section of space shown in \part{a}) as a function
-   of the solenoidal current.}
-  \label{toymodel}
-\end{figure}
+The example presented in this section demonstrates a situation where minimizing
+the total magnetic energy in and around a magnetic shield yields a lower
+internal magnetic field (i.e., better shielding) than we would expect from
+simple `paramagnetic' theory involving linear materials. However, it must be
+admitted that this example is somewhat contrived, in that it we manually insert
+the factor $1/\mu$ into the expression \ref{Uinternal} for the energy density
+inside the shielding material, as would be the case of a shell made of a linear
+material, while ignoring how this linear material would affect the magnetic
+fields.
 
 \subsubsection{Hysteresis during degaussing}
+\label{degaussing_hysteresis}
 
 Referring to Fig.~\ref{degaussing_theory}b, we can qualitatively identify two
 distinct groups of hysteresis loops. Major loops are those where the material is
@@ -720,14 +692,14 @@ and $\vec H$ (red solid line in Fig.~\ref{degaussing_theory}b).
 The constitutive relation can easily be found from classical magnetism
 \cite[sect.~5.11]{jackson1998classical}. Consider a ferromagnetic object
 magnetized with a magnetization $M$, which results in a field $\vec
-B_\text{obj}$. The auxiliary field is
+B_\text{obj}$. The auxiliary field is \cite[eqn~5.81]{jackson1998classical}
 %
 $$
 \vec H_\text{obj}(\vec M)=\vec B_\text{obj}/\mu_0-\vec M.
 $$
 %
 If we apply a constant external field $\vec B_\text{ext}=\mu_0\vec
-H_\text{ext}$ throughout all space, the total field is
+H_\text{ext}$ throughout all space, the total field inside the object is
 %
 \begin{equation}
     \label{constitutive}
