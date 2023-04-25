@@ -1,0 +1,102 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figs/matplotlib/dressed.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{688.41658872bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.34985901)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figs/matplotlib/dressed.pdf}}%
+    \put(0.10207879,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−50\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figs/matplotlib/dressed.pdf}}%
+    \put(0.18776121,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figs/matplotlib/dressed.pdf}}%
+    \put(0.27344363,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}50\end{tabular}}}}%
+    \put(0.18776121,0.01559625){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\DC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figs/matplotlib/dressed.pdf}}%
+    \put(0.08334229,0.06729874){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figs/matplotlib/dressed.pdf}}%
+    \put(0.08334229,0.13087715){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figs/matplotlib/dressed.pdf}}%
+    \put(0.08334229,0.19445554){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figs/matplotlib/dressed.pdf}}%
+    \put(0.08334229,0.25803393){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0\end{tabular}}}}%
+    \put(0.02701512,0.19001803){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$E$ [$1/\delta$]\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figs/matplotlib/dressed.pdf}}%
+    \put(0.18776121,0.31953263){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\AC} = 0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figs/matplotlib/dressed.pdf}}%
+    \put(0.33391096,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−50\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figs/matplotlib/dressed.pdf}}%
+    \put(0.3951127,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figs/matplotlib/dressed.pdf}}%
+    \put(0.45631439,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}50\end{tabular}}}}%
+    \put(0.3951127,0.01559625){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\DC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figs/matplotlib/dressed.pdf}}%
+    \put(0.3951127,0.31953263){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\AC} = 20$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figs/matplotlib/dressed.pdf}}%
+    \put(0.54891262,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−50\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figs/matplotlib/dressed.pdf}}%
+    \put(0.60246414,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{figs/matplotlib/dressed.pdf}}%
+    \put(0.65601565,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}50\end{tabular}}}}%
+    \put(0.60246414,0.01559625){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\DC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{figs/matplotlib/dressed.pdf}}%
+    \put(0.60246414,0.31953263){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\AC} = 30$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{figs/matplotlib/dressed.pdf}}%
+    \put(0.7241332,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−100\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{figs/matplotlib/dressed.pdf}}%
+    \put(0.80981558,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{figs/matplotlib/dressed.pdf}}%
+    \put(0.89549804,0.04249447){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\end{tabular}}}}%
+    \put(0.80981558,0.01559625){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\DC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{figs/matplotlib/dressed.pdf}}%
+    \put(0.80981558,0.31953263){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{\AC} = 50$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

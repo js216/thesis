@@ -1,8 +1,8 @@
-TeX = xelatex
+TeX = pdflatex
 
-CHAPTERS = apparatus.tex introduction.tex outlook.tex preliminary.tex simulations.tex systematics.tex
+CHAPTERS = apparatus.tex HVcontrol.tex PMT.tex systematics.tex titlepage.tex bibliography.tex introduction.tex serrodyne.tex test_interaction.tex glossaries.tex magneticshield.tex simulations.tex thesis.tex
 
-.PHONY: full clean figs
+.PHONY: full figs
 
 thesis.pdf: thesis.tex $(CHAPTERS) figs
 	$(TeX) thesis

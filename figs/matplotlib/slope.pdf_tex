@@ -1,0 +1,117 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figs/matplotlib/slope.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{702.13381782bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.5139096)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figs/matplotlib/slope.pdf}}%
+    \put(0.09260407,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figs/matplotlib/slope.pdf}}%
+    \put(0.17368721,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}25\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figs/matplotlib/slope.pdf}}%
+    \put(0.25477035,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}50\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figs/matplotlib/slope.pdf}}%
+    \put(0.33585346,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}75\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figs/matplotlib/slope.pdf}}%
+    \put(0.41693663,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\end{tabular}}}}%
+    \put(0.25721505,0.11101347){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$E_z$ [kV/cm]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figs/matplotlib/slope.pdf}}%
+    \put(0.07330868,0.17134661){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figs/matplotlib/slope.pdf}}%
+    \put(0.07330868,0.22672648){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figs/matplotlib/slope.pdf}}%
+    \put(0.07330868,0.28210635){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figs/matplotlib/slope.pdf}}%
+    \put(0.07330868,0.33748622){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figs/matplotlib/slope.pdf}}%
+    \put(0.07330868,0.39286609){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}40\end{tabular}}}}%
+    \put(0.0318983,0.29935603){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\d f_0/\d E_z$ [mHz/(V/cm)]\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figs/matplotlib/slope.pdf}}%
+    \put(0.25721505,0.4368794){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(a) Slope vs $E_z$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figs/matplotlib/slope.pdf}}%
+    \put(0.28363276,0.39583465){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize ej/hk/ek/hj\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figs/matplotlib/slope.pdf}}%
+    \put(0.28363276,0.36126191){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize eg/hf/ef/hg\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figs/matplotlib/slope.pdf}}%
+    \put(0.28363276,0.32668918){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\footnotesize fj/gk/fk/gj\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{figs/matplotlib/slope.pdf}}%
+    \put(0.49615351,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{figs/matplotlib/slope.pdf}}%
+    \put(0.57521565,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{figs/matplotlib/slope.pdf}}%
+    \put(0.65427784,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{figs/matplotlib/slope.pdf}}%
+    \put(0.73334004,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}7.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{figs/matplotlib/slope.pdf}}%
+    \put(0.81240218,0.14309337){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10.0\end{tabular}}}}%
+    \put(0.65427784,0.11101347){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$B_z$ [$\mu$G]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{figs/matplotlib/slope.pdf}}%
+    \put(0.83818419,0.17609136){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−80\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{figs/matplotlib/slope.pdf}}%
+    \put(0.83818419,0.2330954){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−60\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{figs/matplotlib/slope.pdf}}%
+    \put(0.83818419,0.29009945){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−40\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{figs/matplotlib/slope.pdf}}%
+    \put(0.83818419,0.34710351){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{figs/matplotlib/slope.pdf}}%
+    \put(0.83818419,0.40410755){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.91361767,0.29935606){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta f_0$ [mHz]\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{figs/matplotlib/slope.pdf}}%
+    \put(0.69884381,0.14633183){\rotatebox{-40}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m_J,m_\text{F}$\end{tabular}}}}}%
+    \put(0.74153738,0.17597393){\rotatebox{-40}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m_\text{F}$\end{tabular}}}}}%
+    \put(0.69807662,0.22241118){\rotatebox{-30}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m_J,m_\text{Tl}$\end{tabular}}}}}%
+    \put(0.74077019,0.25575855){\rotatebox{-30}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m_\text{Tl}$\end{tabular}}}}}%
+    \put(0.69696105,0.30606904){\rotatebox{-17}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m_\text{Tl},m_\text{F}$\end{tabular}}}}}%
+    \put(0.66722998,0.39303178){\rotatebox{1}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$m_J$\end{tabular}}}}}%
+    \put(0.65427784,0.4368794){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(b) Sensitivity to $B_{ext}$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

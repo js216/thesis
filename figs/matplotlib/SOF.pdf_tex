@@ -1,0 +1,97 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figs/matplotlib/SOF.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{814.75873006bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.47803207)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figs/matplotlib/SOF.pdf}}%
+    \put(0.10803236,0.05271018){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figs/matplotlib/SOF.pdf}}%
+    \put(0.29481381,0.05271018){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figs/matplotlib/SOF.pdf}}%
+    \put(0.48159525,0.05271018){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figs/matplotlib/SOF.pdf}}%
+    \put(0.29481381,0.01572878){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\delta$ [$\pi\alpha/2l$]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figs/matplotlib/SOF.pdf}}%
+    \put(0.09944086,0.0738918){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figs/matplotlib/SOF.pdf}}%
+    \put(0.09944086,0.24400349){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figs/matplotlib/SOF.pdf}}%
+    \put(0.09944086,0.4141152){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}1.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figs/matplotlib/SOF.pdf}}%
+    \put(0.03401717,0.25659359){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ex{P_{p,q}}$\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figs/matplotlib/SOF.pdf}}%
+    \put(0.29481381,0.43897887){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(a)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figs/matplotlib/SOF.pdf}}%
+    \put(0.40630302,0.38232713){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\SOF\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figs/matplotlib/SOF.pdf}}%
+    \put(0.40630302,0.32404607){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Rabi\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figs/matplotlib/SOF.pdf}}%
+    \put(0.55630784,0.05271018){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figs/matplotlib/SOF.pdf}}%
+    \put(0.74308926,0.05271018){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figs/matplotlib/SOF.pdf}}%
+    \put(0.92987071,0.05271018){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{figs/matplotlib/SOF.pdf}}%
+    \put(0.74308926,0.01572878){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\delta$ [$\pi\alpha/2l$]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{figs/matplotlib/SOF.pdf}}%
+    \put(0.93846221,0.0738918){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{figs/matplotlib/SOF.pdf}}%
+    \put(0.93846221,0.24400349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{figs/matplotlib/SOF.pdf}}%
+    \put(0.93846221,0.4141152){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{figs/matplotlib/SOF.pdf}}%
+    \put(0.74308926,0.43897887){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(b)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{figs/matplotlib/SOF.pdf}}%
+    \put(0.77833817,0.38232713){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\phi=\pi/2$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

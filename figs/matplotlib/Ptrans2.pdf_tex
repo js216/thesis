@@ -1,0 +1,136 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figs/matplotlib/Ptrans2.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{432.83548823bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.60665297)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.14000393,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.24163868,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.34327345,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.44490822,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15\end{tabular}}}}%
+    \put(0.29245607,0.00271646){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}time [$1/\delta$]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.10008818){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.15103133){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.20197444){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.25291759){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.30386074){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.35480389){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.40574703){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.45669017){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.10858629,0.50763332){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}20\end{tabular}}}}%
+    \put(0.04578097,0.31263826){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}field [V/cm]\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.19590305,0.3758671){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$T_\text{rise}^\text{\,\AC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.38392735,0.37790482){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$T_\text{fall}^{\,\AC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.34327345,0.29508322){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{max}^\text{\AC}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.29245607,0.46008386){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta T$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.22410362,0.16185999){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}DC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.22410362,0.12794842){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}AC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.47901936,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.54889328,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.6187672,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.68864108,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}7.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.75851496,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}10.0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.82838885,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}12.5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.89826273,0.05476099){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15.0\end{tabular}}}}%
+    \put(0.68864108,0.00779827){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\epsilon_\text{max}^\text{\AC}$ [V/cm]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.91443516,0.07971091){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.91443516,0.16301865){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.91443516,0.24632636){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=30]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.91443516,0.32963407){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=31]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.91443516,0.41294179){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}40\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=32]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.91443516,0.4962495){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}50\end{tabular}}}}%
+    \put(0.99615544,0.29675776){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\omega$ [$\delta$]\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=33]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.56392611,0.55776531){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}20\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=34]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.64883287,0.55776531){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}40\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=35]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.73373958,0.55776531){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}60\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=36]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.8186463,0.55776531){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}80\end{tabular}}}}%
+    \put(0.89826273,0.55672153){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$P_\text{trans}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=37]{figs/matplotlib/Ptrans2.pdf}}%
+    \put(0.3493244,0.57394279){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(b) both AC and DC\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

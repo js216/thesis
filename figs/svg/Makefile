@@ -1,7 +1,7 @@
-.PHONY: all clean
+.PHONY: all
 
 %.pdf: %.svg
-	inkscape -D --export-filename=$@ --export-latex $<
+	inkscape -D --export-pdf=$@ --export-latex $<
 	sed -i 's/$@/figs\/svg\/$@/g' $@_tex
 
 all: lasers1.pdf lasers2.pdf

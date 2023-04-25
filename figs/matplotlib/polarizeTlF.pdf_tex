@@ -1,0 +1,115 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figs/matplotlib/polarizeTlF.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{842.09625723bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.46251342)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.12031118,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.22874188,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.33717258,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.44560331,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}45\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.30102902,0.01521817){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small $E$ [kV/cm]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.11199859,0.09782728){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−25\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.11199859,0.16366298){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.11199859,0.22949869){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}25\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.11199859,0.2953344){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}50\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.11199859,0.3611701){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}75\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.03291285,0.24826363){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small polarization [\%]\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.30102902,0.42472802){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small$J \leq 1$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.37231071,0.20167361){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(0,0)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.37231071,0.1558575){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1,\pm1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.37231071,0.11004143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(1,0)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.554034,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.66246474,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}15\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=18]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.77089543,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}30\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=19]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.87932613,0.05099902){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}45\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=20]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.73475182,0.01521817){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small $E$ [kV/cm]\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=21]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.92378226,0.09782728){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}−25\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=22]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.92378226,0.16366298){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=23]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.92378226,0.22949869){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}25\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=24]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.92378226,0.2953344){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}50\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=25]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.92378226,0.3611701){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}75\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=26]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.73475182,0.42472802){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\small$J = 2$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=27]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.62041596,0.37796618){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(2,\pm2)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=28]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.62041596,0.33215009){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(2,\pm1)$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=29]{figs/matplotlib/polarizeTlF.pdf}}%
+    \put(0.62041596,0.28633399){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(2,0)$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all
 
 all: polarize.pdf polarizeTlF.pdf SOF.pdf SOF2.pdf slope.pdf Ptrans1.pdf Ptrans2.pdf dressed.pdf Bmot.pdf
 
@@ -21,10 +21,10 @@ Ptrans2.pdf: Ptrans2.csv
 # generic rules
 
 %.svg: %.py
-	python $<
+	python3 $<
 
 %.pdf: %.svg
-	inkscape -D --export-filename=$@ --export-latex $<
+	inkscape -D --export-pdf=$@ --export-latex $<
 	sed -i 's/$@/figs\/matplotlib\/$@/g' $@_tex
 
 clean:

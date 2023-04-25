@@ -1,0 +1,60 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Motivation}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Schiff moment}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{New physics in molecules}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{The TlF molecule}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Previous experiments}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{Overview of the centrex scheme}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{Systematics}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{Statistical sensitivity}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.2}{Parameter reversals, averaging, lock-in detection}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{Electric field effects}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.4}{Magnetic field effects}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.5}{RF coils}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.6}{Detection region systematics}{section.2}% 14
+\BOOKMARK [1][-]{section.3}{Simulations}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Rotational cooling}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Non-adiabatic transitions}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Optical cycling}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{Apparatus}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Control software}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{Beam source}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.3}{Pumping system}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.4}{Laser system}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.5}{Rotational cooling}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.6}{State preparation 1}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.7}{Electrostatic lens}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.8}{State preparation 2}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.9}{Interaction region}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.10}{State projection and readout}{section.4}% 29
+\BOOKMARK [1][-]{section.5}{Magnetic field control}{}% 30
+\BOOKMARK [2][-]{subsection.5.1}{Design requirements}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.2}{Theory}{section.5}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.1}{`Paramagnetic' shielding}{subsection.5.2}% 33
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Static shielding better than expected}{subsection.5.2}% 34
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Degaussing toy models}{subsection.5.2}% 35
+\BOOKMARK [3][-]{subsubsection.5.2.4}{Hysteresis during degaussing}{subsection.5.2}% 36
+\BOOKMARK [3][-]{subsubsection.5.2.5}{Noise spectral density}{subsection.5.2}% 37
+\BOOKMARK [3][-]{subsubsection.5.2.6}{Random walk}{subsection.5.2}% 38
+\BOOKMARK [2][-]{subsection.5.3}{Magnetic shields in literature}{section.5}% 39
+\BOOKMARK [2][-]{subsection.5.4}{Physical structure}{section.5}% 40
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Layers and spacers}{subsection.5.4}% 41
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Shim coils}{subsection.5.4}% 42
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Support structure}{subsection.5.4}% 43
+\BOOKMARK [2][-]{subsection.5.5}{Operation and measurements}{section.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.5.1}{Residual field measurement}{subsection.5.5}% 45
+\BOOKMARK [3][-]{subsubsection.5.5.2}{Off-axis magnetometry}{subsection.5.5}% 46
+\BOOKMARK [3][-]{subsubsection.5.5.3}{Degaussing}{subsection.5.5}% 47
+\BOOKMARK [3][-]{subsubsection.5.5.4}{Shimming the residual field}{subsection.5.5}% 48
+\BOOKMARK [3][-]{subsubsection.5.5.5}{Dynamic field measurement}{subsection.5.5}% 49
+\BOOKMARK [3][-]{subsubsection.5.5.6}{Charging magnetization}{subsection.5.5}% 50
+\BOOKMARK [2][-]{subsection.5.6}{Performance and limitations}{section.5}% 51
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Residual field}{subsection.5.6}% 52
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Dynamic shielding}{subsection.5.6}% 53
+\BOOKMARK [3][-]{subsubsection.5.6.3}{Magnetic noise}{subsection.5.6}% 54
+\BOOKMARK [2][-]{subsection.5.7}{Discussion}{section.5}% 55
+\BOOKMARK [1][-]{section.6}{High voltage control}{}% 56
+\BOOKMARK [1][-]{section.7}{Test interaction region}{}% 57
+\BOOKMARK [1][-]{section.8}{Serrodyne laser cavity locking}{}% 58
+\BOOKMARK [1][-]{section.9}{PMT characterization}{}% 59
+\BOOKMARK [1][-]{section.9}{References}{}% 60
