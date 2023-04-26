@@ -61,22 +61,22 @@
 \contentsline {subsubsection}{\numberline {5.2.1}`Paramagnetic' shielding}{75}{subsubsection.5.2.1}% 
 \contentsline {paragraph}{Spherical shell shield}{76}{section*.54}% 
 \contentsline {subsubsection}{\numberline {5.2.2}Static shielding better than expected}{79}{subsubsection.5.2.2}% 
-\contentsline {subsubsection}{\numberline {5.2.3}Degaussing toy models}{82}{subsubsection.5.2.3}% 
-\contentsline {paragraph}{Rotating sphere of charge}{82}{section*.57}% 
+\contentsline {subsubsection}{\numberline {5.2.3}Degaussing toy models}{83}{subsubsection.5.2.3}% 
+\contentsline {paragraph}{Rotating sphere of charge}{83}{section*.57}% 
 \contentsline {paragraph}{Two `$\qopname \relax o{cos}\theta $' shells}{85}{section*.58}% 
 \contentsline {subsubsection}{\numberline {5.2.4}Hysteresis during degaussing}{87}{subsubsection.5.2.4}% 
-\contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{88}{subsubsection.5.2.5}% 
+\contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{89}{subsubsection.5.2.5}% 
 \contentsline {subsubsection}{\numberline {5.2.6}Random walk}{90}{subsubsection.5.2.6}% 
 \contentsline {subsection}{\numberline {5.3}Magnetic shields in literature}{91}{subsection.5.3}% 
 \contentsline {subsection}{\numberline {5.4}Physical structure}{94}{subsection.5.4}% 
 \contentsline {subsubsection}{\numberline {5.4.1}Layers and spacers}{94}{subsubsection.5.4.1}% 
 \contentsline {subsubsection}{\numberline {5.4.2}Shim coils}{99}{subsubsection.5.4.2}% 
-\contentsline {subsubsection}{\numberline {5.4.3}Support structure}{101}{subsubsection.5.4.3}% 
-\contentsline {subsection}{\numberline {5.5}Operation and measurements}{101}{subsection.5.5}% 
+\contentsline {subsubsection}{\numberline {5.4.3}Support structure}{100}{subsubsection.5.4.3}% 
+\contentsline {subsection}{\numberline {5.5}Operation and measurements}{102}{subsection.5.5}% 
 \contentsline {subsubsection}{\numberline {5.5.1}Residual field measurement}{102}{subsubsection.5.5.1}% 
-\contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{106}{subsubsection.5.5.2}% 
+\contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{105}{subsubsection.5.5.2}% 
 \contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{106}{subsubsection.5.5.3}% 
-\contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{111}{subsubsection.5.5.4}% 
+\contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{112}{subsubsection.5.5.4}% 
 \contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{113}{subsubsection.5.5.5}% 
 \contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{115}{subsubsection.5.5.6}% 
 \contentsline {subsection}{\numberline {5.6}Performance and limitations}{118}{subsection.5.6}% 

@@ -342,10 +342,19 @@ calls the resulting state of minimized internal energy a `demagnetized state'.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/degaussing_theory.png}
-   \caption{\part{a} Degaussing: naive picture. \part{b} Major vs minor loops.
-   The significance of the constitutive equation (red line) is explained in
-   section \ref{degaussing_hysteresis}.}
-  \label{degaussing_theory}
+    \caption{Magnetization curves, adapted from
+    \cite[Figs.~1.8--9]{bertotti1998hysteresis}. \part{a} Degaussing: naive
+    picture, an oscillating applied field $H_0$ with no offset decreases till
+    the material spirals into the origin of the $M$--$H$ or $B$--$H$ space
+    (demagnetization). All the \emph{minor loops} are centered around the
+    origin. \part{b} Degaussing means applying the oscillating field with
+    decaying amplitude in the presence of an offset (lab) field. As the
+    amplitude of the oscillations goes to zero, the material settles on a point
+    on the \emph{anhysteretic curve} (dashed line). Notice how the anhysteretic
+    curve is much steeper than the minor loops, implying a greater effective
+    permeability. See also Fig.~\ref{hysteresis} for curves measured on
+    metglas.}
+    \label{degaussing_theory}
 \end{figure}
 
 Unfortunately, this explanation only applies for when a single grain of the
@@ -665,7 +674,7 @@ fields.
 \subsubsection{Hysteresis during degaussing}
 \label{degaussing_hysteresis}
 
-Referring to Fig.~\ref{degaussing_theory}b, we can qualitatively identify two
+Referring to Fig.~\ref{degaussing_theory}, we can qualitatively identify two
 distinct groups of hysteresis loops. Major loops are those where the material is
 driven to saturation on both sides of the axes. These are thought to be unique
 for a given material and repeatable, since the material starts and ends each
@@ -1418,8 +1427,13 @@ the effectiveness of degaussing. Future work may be done establish the nature of
 this correlation, which may help optimize the degaussing procedure. 
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/hysteresis.png}
-  \caption{Hysteresis loops observed while degaussing the 16" metglas layer.}
+  \includegraphics[width=\textwidth]{figs/todo/metglas_loops.png}
+  \caption{Hysteresis loops observed while degaussing a metglas layer. The plots
+    are all on the same (arbitrary) scale in the $B$--$H$ plane. The $\mu$
+    values stated on the plots are the slopes of the red dashed lines passing
+    through the loops and approximate the permeability relevant for static
+    shielding of a degaussedshield (top two plots) and that for dynamic
+    shielding for perturbations of a certain amplitude (bottom two plots).}
   \label{hysteresis}
 \end{figure}
 

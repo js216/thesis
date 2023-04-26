@@ -1,4 +1,4 @@
-\begin{thebibliography}{120}
+\begin{thebibliography}{121}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -663,6 +663,12 @@ Florian Thiel.
 \newblock \emph{IEEE Transactions on magnetics}, 45\penalty0 (12):\penalty0
   5307--5314, 2009.
 \newblock \doi{10.1109/TMAG.2009.2022935}.
+
+\bibitem[Bertotti(1998)]{bertotti1998hysteresis}
+Giorgio Bertotti.
+\newblock \emph{Hysteresis in magnetism: for physicists, materials scientists,
+  and engineers}.
+\newblock Gulf Professional Publishing, 1998.
 
 \bibitem[Griffiths(2013)]{griffiths2013introduction}
 D~Griffiths.
