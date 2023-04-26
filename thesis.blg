@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesis.aux
 A level-1 auxiliary file: titlepage.aux
 A level-1 auxiliary file: introduction.aux
@@ -14,44 +14,44 @@ A level-1 auxiliary file: PMT.aux
 A level-1 auxiliary file: bibliography.aux
 The style file: unsrtnat.bst
 Database file #1: references.bib
-You've used 121 entries,
+You've used 123 entries,
             2481 wiz_defined-function locations,
-            1333 strings with 26789 characters,
-and the built_in function-call counts, 47515 in all, are:
-= -- 3900
-> -- 2674
-< -- 65
-+ -- 1037
-- -- 794
-* -- 4026
-:= -- 7862
-add.period$ -- 444
-call.type$ -- 121
-change.case$ -- 222
-chr.to.int$ -- 120
-cite$ -- 121
-duplicate$ -- 2255
-empty$ -- 4222
-format.name$ -- 966
-if$ -- 9871
+            1341 strings with 26967 characters,
+and the built_in function-call counts, 48335 in all, are:
+= -- 3978
+> -- 2704
+< -- 67
++ -- 1049
+- -- 802
+* -- 4092
+:= -- 7984
+add.period$ -- 450
+call.type$ -- 123
+change.case$ -- 226
+chr.to.int$ -- 122
+cite$ -- 123
+duplicate$ -- 2293
+empty$ -- 4302
+format.name$ -- 980
+if$ -- 10047
 int.to.chr$ -- 2
-int.to.str$ -- 122
-missing$ -- 131
-newline$ -- 694
-num.names$ -- 364
-pop$ -- 886
+int.to.str$ -- 124
+missing$ -- 133
+newline$ -- 704
+num.names$ -- 370
+pop$ -- 900
 preamble$ -- 1
-purify$ -- 121
+purify$ -- 123
 quote$ -- 0
-skip$ -- 1269
+skip$ -- 1293
 stack$ -- 0
-substring$ -- 2084
-swap$ -- 254
+substring$ -- 2150
+swap$ -- 258
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 784
+type$ -- 798
 warning$ -- 0
-while$ -- 376
+while$ -- 384
 width$ -- 0
-write$ -- 1724
+write$ -- 1750

@@ -1,91 +1,93 @@
-\babel@toc {english}{}
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Schiff moment}{3}{subsection.1.2}% 
-\contentsline {paragraph}{Step 1: Atomic Hamiltonian}{4}{section*.4}% 
-\contentsline {paragraph}{Step 2: Extract $T$-odd terms}{5}{section*.5}% 
-\contentsline {paragraph}{Step 3: Screening in point nucleus}{6}{section*.6}% 
-\contentsline {paragraph}{Step 4: Finite-size nucleus}{8}{section*.7}% 
-\contentsline {paragraph}{Step 5: Polarization in atoms}{10}{section*.8}% 
-\contentsline {paragraph}{Step 6: Matrix elements}{12}{section*.10}% 
-\contentsline {paragraph}{Step 7: Interpretation}{15}{section*.11}% 
-\contentsline {subsection}{\numberline {1.3}New physics in molecules}{17}{subsection.1.3}% 
-\contentsline {paragraph}{Polarization}{18}{section*.14}% 
-\contentsline {paragraph}{Separated oscillatory fields}{19}{section*.15}% 
-\contentsline {paragraph}{Beam sources}{23}{section*.18}% 
-\contentsline {subsection}{\numberline {1.4}The TlF molecule}{26}{subsection.1.4}% 
-\contentsline {paragraph}{Ground state}{27}{section*.19}% 
-\contentsline {paragraph}{Excited state}{31}{section*.21}% 
-\contentsline {paragraph}{Branching ratios}{32}{section*.22}% 
-\contentsline {subsection}{\numberline {1.5}Previous experiments}{35}{subsection.1.5}% 
-\contentsline {paragraph}{Other systems}{37}{section*.24}% 
-\contentsline {subsection}{\numberline {1.6}Overview of the \textsc {centrex}\ scheme}{38}{subsection.1.6}% 
-\contentsline {paragraph}{Rotational cooling (Fig.~\ref {scheme})}{38}{section*.26}% 
-\contentsline {paragraph}{State transfer 1}{39}{section*.27}% 
-\contentsline {paragraph}{Electrostatic lens}{40}{section*.29}% 
-\contentsline {paragraph}{State transfer 2}{41}{section*.30}% 
-\contentsline {paragraph}{Interaction region}{41}{table.caption.32}% 
-\contentsline {paragraph}{Projection and detection}{44}{section*.33}% 
-\contentsline {section}{\numberline {2}Systematics}{45}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Statistical sensitivity}{45}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Parameter reversals, averaging, lock-in detection}{45}{subsection.2.2}% 
-\contentsline {subsection}{\numberline {2.3}Electric field effects}{49}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Magnetic field effects}{50}{subsection.2.4}% 
-\contentsline {paragraph}{Residual field}{51}{section*.37}% 
-\contentsline {paragraph}{Noise}{52}{section*.38}% 
-\contentsline {paragraph}{Effects in phase with $E$ reversals}{52}{section*.39}% 
-\contentsline {paragraph}{Gradients}{53}{section*.40}% 
-\contentsline {subsection}{\numberline {2.5}RF coils}{54}{subsection.2.5}% 
-\contentsline {subsection}{\numberline {2.6}Detection region systematics}{55}{subsection.2.6}% 
-\contentsline {section}{\numberline {3}Simulations}{56}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Rotational cooling}{56}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Non-adiabatic transitions}{56}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Optical cycling}{60}{subsection.3.3}% 
-\contentsline {section}{\numberline {4}Apparatus}{61}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Control software}{61}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}Beam source}{64}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}Pumping system}{68}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}Laser system}{68}{subsection.4.4}% 
-\contentsline {paragraph}{Cs lock}{68}{section*.47}% 
-\contentsline {paragraph}{Transfer cavity}{69}{section*.48}% 
-\contentsline {paragraph}{Second harmonic generation}{70}{section*.49}% 
-\contentsline {subsection}{\numberline {4.5}Rotational cooling}{71}{subsection.4.5}% 
-\contentsline {subsection}{\numberline {4.6}State preparation 1}{72}{subsection.4.6}% 
-\contentsline {subsection}{\numberline {4.7}Electrostatic lens}{72}{subsection.4.7}% 
-\contentsline {subsection}{\numberline {4.8}State preparation 2}{73}{subsection.4.8}% 
-\contentsline {subsection}{\numberline {4.9}Interaction region}{73}{subsection.4.9}% 
-\contentsline {subsection}{\numberline {4.10}State projection and readout}{73}{subsection.4.10}% 
-\contentsline {section}{\numberline {5}Magnetic field control}{74}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Design requirements}{74}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Theory}{75}{subsection.5.2}% 
-\contentsline {subsubsection}{\numberline {5.2.1}`Paramagnetic' shielding}{75}{subsubsection.5.2.1}% 
-\contentsline {paragraph}{Spherical shell shield}{76}{section*.54}% 
-\contentsline {subsubsection}{\numberline {5.2.2}Static shielding better than expected}{79}{subsubsection.5.2.2}% 
-\contentsline {subsubsection}{\numberline {5.2.3}Degaussing toy models}{83}{subsubsection.5.2.3}% 
-\contentsline {paragraph}{Rotating sphere of charge}{83}{section*.57}% 
-\contentsline {paragraph}{Two `$\qopname \relax o{cos}\theta $' shells}{85}{section*.58}% 
-\contentsline {subsubsection}{\numberline {5.2.4}Hysteresis during degaussing}{87}{subsubsection.5.2.4}% 
-\contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{89}{subsubsection.5.2.5}% 
-\contentsline {subsubsection}{\numberline {5.2.6}Random walk}{90}{subsubsection.5.2.6}% 
-\contentsline {subsection}{\numberline {5.3}Magnetic shields in literature}{91}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}Physical structure}{94}{subsection.5.4}% 
-\contentsline {subsubsection}{\numberline {5.4.1}Layers and spacers}{94}{subsubsection.5.4.1}% 
-\contentsline {subsubsection}{\numberline {5.4.2}Shim coils}{99}{subsubsection.5.4.2}% 
-\contentsline {subsubsection}{\numberline {5.4.3}Support structure}{100}{subsubsection.5.4.3}% 
-\contentsline {subsection}{\numberline {5.5}Operation and measurements}{102}{subsection.5.5}% 
-\contentsline {subsubsection}{\numberline {5.5.1}Residual field measurement}{102}{subsubsection.5.5.1}% 
-\contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{105}{subsubsection.5.5.2}% 
-\contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{106}{subsubsection.5.5.3}% 
-\contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{112}{subsubsection.5.5.4}% 
-\contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{113}{subsubsection.5.5.5}% 
-\contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{115}{subsubsection.5.5.6}% 
-\contentsline {subsection}{\numberline {5.6}Performance and limitations}{118}{subsection.5.6}% 
-\contentsline {subsubsection}{\numberline {5.6.1}Residual field}{118}{subsubsection.5.6.1}% 
-\contentsline {subsubsection}{\numberline {5.6.2}Dynamic shielding}{120}{subsubsection.5.6.2}% 
-\contentsline {subsubsection}{\numberline {5.6.3}Magnetic noise}{122}{subsubsection.5.6.3}% 
-\contentsline {subsection}{\numberline {5.7}Discussion}{122}{subsection.5.7}% 
-\contentsline {section}{\numberline {6}High voltage control}{124}{section.6}% 
-\contentsline {section}{\numberline {7}Test interaction region}{125}{section.7}% 
-\contentsline {section}{\numberline {8}Serrodyne laser cavity locking}{126}{section.8}% 
-\contentsline {section}{\numberline {9}PMT characterization}{127}{section.9}% 
-\contentsline {section}{References}{128}{section.9}% 
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Schiff moment}{3}{subsection.1.2}%
+\contentsline {paragraph}{Step 1: Atomic Hamiltonian}{4}{section*.4}%
+\contentsline {paragraph}{Step 2: Extract $T$-odd terms}{5}{section*.5}%
+\contentsline {paragraph}{Step 3: Screening in point nucleus}{6}{section*.6}%
+\contentsline {paragraph}{Step 4: Finite-size nucleus}{8}{section*.7}%
+\contentsline {paragraph}{Step 5: Polarization in atoms}{10}{section*.8}%
+\contentsline {paragraph}{Step 6: Matrix elements}{12}{section*.10}%
+\contentsline {paragraph}{Step 7: Interpretation}{15}{section*.11}%
+\contentsline {subsection}{\numberline {1.3}New physics in molecules}{17}{subsection.1.3}%
+\contentsline {paragraph}{Polarization}{18}{section*.14}%
+\contentsline {paragraph}{Separated oscillatory fields}{19}{section*.15}%
+\contentsline {paragraph}{Beam sources}{23}{section*.18}%
+\contentsline {subsection}{\numberline {1.4}The TlF molecule}{26}{subsection.1.4}%
+\contentsline {paragraph}{Ground state}{27}{section*.19}%
+\contentsline {paragraph}{Excited state}{31}{section*.21}%
+\contentsline {paragraph}{Branching ratios}{32}{section*.22}%
+\contentsline {subsection}{\numberline {1.5}Previous experiments}{35}{subsection.1.5}%
+\contentsline {paragraph}{Other systems}{37}{section*.24}%
+\contentsline {subsection}{\numberline {1.6}Overview of the \textsc {centrex}\ scheme}{38}{subsection.1.6}%
+\contentsline {paragraph}{Rotational cooling (Fig.~\ref {scheme})}{38}{section*.26}%
+\contentsline {paragraph}{State transfer 1}{39}{section*.27}%
+\contentsline {paragraph}{Electrostatic lens}{40}{section*.29}%
+\contentsline {paragraph}{State transfer 2}{41}{section*.30}%
+\contentsline {paragraph}{Interaction region}{41}{table.caption.32}%
+\contentsline {paragraph}{Projection and detection}{44}{section*.33}%
+\contentsline {section}{\numberline {2}Systematics}{45}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Statistical sensitivity}{45}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Parameter reversals, averaging, lock-in detection}{45}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Electric field effects}{49}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Magnetic field effects}{50}{subsection.2.4}%
+\contentsline {paragraph}{Residual field}{51}{section*.37}%
+\contentsline {paragraph}{Noise}{52}{section*.38}%
+\contentsline {paragraph}{Effects in phase with $E$ reversals}{52}{section*.39}%
+\contentsline {paragraph}{Gradients}{53}{section*.40}%
+\contentsline {subsection}{\numberline {2.5}RF coils}{54}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Detection region systematics}{55}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Simulations}{56}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Rotational cooling}{56}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Non-adiabatic transitions}{56}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Optical cycling}{60}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Apparatus}{61}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Control software}{61}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Beam source}{64}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Pumping system}{68}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Laser system}{68}{subsection.4.4}%
+\contentsline {paragraph}{Cs lock}{68}{section*.47}%
+\contentsline {paragraph}{Transfer cavity}{69}{section*.48}%
+\contentsline {paragraph}{Second harmonic generation}{70}{section*.49}%
+\contentsline {subsection}{\numberline {4.5}Rotational cooling}{71}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}State preparation 1}{72}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Electrostatic lens}{72}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}State preparation 2}{73}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Interaction region}{73}{subsection.4.9}%
+\contentsline {subsection}{\numberline {4.10}State projection and readout}{73}{subsection.4.10}%
+\contentsline {section}{\numberline {5}Magnetic field control}{74}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Design requirements}{74}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Theory}{75}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}`Paramagnetic' shielding}{75}{subsubsection.5.2.1}%
+\contentsline {paragraph}{Spherical shell shield}{76}{section*.54}%
+\contentsline {subsubsection}{\numberline {5.2.2}Static shielding better than expected}{79}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Degaussing toy models}{83}{subsubsection.5.2.3}%
+\contentsline {paragraph}{Rotating sphere of charge}{83}{section*.57}%
+\contentsline {paragraph}{Two `$\cos \theta $' shells}{86}{section*.58}%
+\contentsline {subsubsection}{\numberline {5.2.4}Hysteresis during degaussing}{88}{subsubsection.5.2.4}%
+\contentsline {paragraph}{Weiss mean field theory}{88}{section*.59}%
+\contentsline {paragraph}{Jiles--Atherton model}{90}{section*.61}%
+\contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{90}{subsubsection.5.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.6}Random walk}{91}{subsubsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.3}Magnetic shields in literature}{92}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Physical structure}{95}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Layers and spacers}{97}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Shim coils}{100}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Support structure}{101}{subsubsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.5}Operation and measurements}{103}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Residual field measurement}{103}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{106}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{107}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{112}{subsubsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{114}{subsubsection.5.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{116}{subsubsection.5.5.6}%
+\contentsline {subsection}{\numberline {5.6}Performance and limitations}{119}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Residual field}{119}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Dynamic shielding}{121}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}Magnetic noise}{123}{subsubsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.7}Discussion}{124}{subsection.5.7}%
+\contentsline {section}{\numberline {6}High voltage control}{125}{section.6}%
+\contentsline {section}{\numberline {7}Test interaction region}{126}{section.7}%
+\contentsline {section}{\numberline {8}Serrodyne laser cavity locking}{127}{section.8}%
+\contentsline {section}{\numberline {9}PMT characterization}{128}{section.9}%
+\contentsline {section}{References}{129}{section.9}%

@@ -485,10 +485,30 @@ field lines of $\vec B$ are closed loops due to $\nabla\cdot\vec B=0$, but their
 direction changes suddenly as the field transitions from the uniform field
 inside the sphere to the dipole field outside.
 
-We can now use eqns~\ref{rotating_sphere_field_inside} and
-\ref{rotating_sphere_field_outside} to find the total magnetic energy density
-$u^2=B^2/2\mu_0$ when the sphere is placed in a region with a constant uniform
-field
+For a linear material, the total magnetic energy is
+\cite[eqn~5.148]{jackson1998classical}
+%
+\begin{align}
+   \label{linear_energy}
+   W=\frac{1}{2}\int\vec H\cdot\vec B\;\d^3x.
+\end{align}
+%
+We emphasize that this relation only holds for linear materials, including,
+trivially, vacuum, where $\vec B=\mu_0\vec H$. For a general magnetic medium,
+including ferromagnetic substances, the total work done per unit volume by a
+magnetic field is instead given by \cite[eqn~5.147]{jackson1998classical}
+%
+\begin{align}
+   \label{general_energy}
+   u=\int\vec H\cdot\vec\d\vec B,
+\end{align}
+%
+which we would need to integrate over all space to find the total energy. In the
+present example, we do not have any magnetic material present, so we can use
+eqn~\ref{linear_energy} together with the magnetic fields given in
+eqns~\ref{rotating_sphere_field_inside} and \ref{rotating_sphere_field_outside}
+to find the total magnetic energy density $u^2=B^2/2\mu_0$ when the sphere is
+placed in a region with a constant uniform field:
 %
 \[
    \vec B_0=B_0\hat{\vec z}=B_0(\cos\theta\;\hat{\vec
@@ -669,70 +689,101 @@ admitted that this example is somewhat contrived, in that it we manually insert
 the factor $1/\mu$ into the expression \ref{Uinternal} for the energy density
 inside the shielding material, as would be the case of a shell made of a linear
 material, while ignoring how this linear material would affect the magnetic
-fields.
+fields. In the following, we consider the behavior of a minimum energy state of
+real ferromagnetic materials.
 
 \subsubsection{Hysteresis during degaussing}
 \label{degaussing_hysteresis}
 
-Referring to Fig.~\ref{degaussing_theory}, we can qualitatively identify two
-distinct groups of hysteresis loops. Major loops are those where the material is
-driven to saturation on both sides of the axes. These are thought to be unique
-for a given material and repeatable, since the material starts and ends each
-time in the same configuration (having all domains oriented as much as possible
-in the same direction). On the other hand, minor loops are those where the
-amplitude of the external driving is too small to result in magnetic saturation
-\cite{barker1983magnetic}. Even under constant external excitation, these loops
-can drift around. Different loops can intersect or share sides, since the same
-$(\vec H,\vec B)$ point in the diagram can refer to different microscopic
-configurations; simply specifying $(\vec H,\vec B)$ does not necessarily
-determine how a material will respond to a perturbation in the applied field.
-\cite{o1994minor} The drift of minor hysteresis loops can reflect the growth of
-microscopic patterns of magnetic domains \cite{berger2010cumulative}.
+In general, finding the minimum-energy magnetization $\vec M$ of a ferromagnet
+placed in an external field $\vec B_0$ is a very challenging task. In this
+section, I will review theoretical expressions for a ferromagnet with and
+without domain wall pinning from the theories of Weiss and Jiles--Atherton,
+respectively. Afterwards, I relate the two situations to the behavior of a
+magnetic shield during and after degaussing, which will explain the mystery of
+the significantly better static than dynamic shielding.
 
-Using this terminology, we can provide a better description of what happens to
-the ferromagnetic material during degaussing. First, the large external field
-drives the material around the predictable major loops. As the amplitude
-decreases, the material is forced to spiral around a non-trivial set of minor
-loops with the intention of arriving at low $B$ values. By the time the external
-field stops changing, the material has come to a rest at a point on the last
-minor loop, at its intersection with the constitutive relation between $\vec B$
-and $\vec H$ (red solid line in Fig.~\ref{degaussing_theory}b).
+\paragraph{Weiss mean field theory}
 
-The constitutive relation can easily be found from classical magnetism
-\cite[sect.~5.11]{jackson1998classical}. Consider a ferromagnetic object
-magnetized with a magnetization $M$, which results in a field $\vec
-B_\text{obj}$. The auxiliary field is \cite[eqn~5.81]{jackson1998classical}
+Consider the energy of a magnetic domain, with magnetic moment per unit volume
+$\vec m$, coupling to the bulk magnetization $\vec M$, with the energy
 %
-$$
-\vec H_\text{obj}(\vec M)=\vec B_\text{obj}/\mu_0-\vec M.
-$$
+\[
+   E=-\mu_0\vec m\cdot(\vec H+\alpha\vec M),
+\]
 %
-If we apply a constant external field $\vec B_\text{ext}=\mu_0\vec
-H_\text{ext}$ throughout all space, the total field inside the object is
+where $\alpha$ is a parameter that represents interdomain coupling. Applying
+Maxwell--Boltzmann statistics at a temperature $T$ leads to the magnetization
+\cite[eqn~1]{jiles1983ferromagnetic}
 %
-\begin{equation}
-    \label{constitutive}
-   \begin{aligned}
-       \vec B_\text{tot} &= \vec B_\text{ext}+\vec B_\text{obj}(\vec M)\\
-       \vec H_\text{tot} &= \vec B_\text{ext}/\mu_0+\vec H_\text{obj}(\vec M)
-   \end{aligned}
-\end{equation}
+\begin{align}
+   \label{weiss}
+   \frac{M}{M_\text{s}}=\coth\frac{\mu_0(H+\alpha M)}{\kB
+   T/m}-\frac{\kB T/m}{\mu_0(H+\alpha M)},
+\end{align}
 %
-This is true generally, since magnetism is linear. Of course, the external field
-$\vec B_\text{ext}$ will in general affect $\vec M$ in some complicated way, but
-the above still holds. The system in eqn~\ref{constitutive} gives just one
-relation between $\vec B_\text{tot}$ and $\vec H_\text{tot}$. As mentioned, the
-other degree of freedom, determining the response of the magnetization to the
-external fields, is fixed by the final hysteresis loop, which is significantly
-more challenging to model \cite{mayergoyz2003mathematical}. Recent work used
-neural networks as universal approximators to predict hysteresis behavior
-\cite{serpico1998magnetic}; in particular, a recurrent network has been used to
-model time-dependent hysteresis effects \cite{grech2020dynamic}. Some of these
-models have been applied to predict the value of the magnetic field inside a
-three-layer mu-metal shield using a magnetometer placed outside the shield for a
-space-based atomic clock \cite{moric2014hysteresis}, to model shield degaussing
-\cite{sun2016dynamic}, or to investigate the theoretical limit of degaussing in
-magnetic shields \cite{sun2020limits}.
+where $M_\text{s}$ is the saturation magnetization of the material. Note that
+the right hand side of the above equation has the form of a Langevin function,
+$L(x)=\coth(x)-1/x$, so
+%
+\begin{align}
+   \label{weiss_langevin}
+   \frac{M}{M_S}=L\left(\frac{H+\alpha M}{a/\mu_0}\right).
+\end{align}
+%
+Here we introduce the third parameter of the theory, $a=\kB T/m$, which
+quantifies domain wall density in the material. With no interdomain coupling,
+$\alpha=0$ and the magnetization is directly given by $M(H)=L(\mu_0 H/a)$ as in
+the classical Langevin theory of paramagnetism. When $\alpha\ne0$, the equation
+\ref{weiss} has to be solved numerically. See Fig.~\ref{weiss_plot} for a few choices
+of the parameter $\alpha$. We see from the figure that the greater the
+interdomain coupling parameter, the steeper the plot in the linear regime around
+$H=0$.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=0.5\textwidth]{figs/mathematica/weiss.pdf}
+  \caption{Magnetization of an annealed ferromagnet as a function of the applied
+   field $H$, as found by solving eqn~\ref{weiss} for interdomain coupling
+   parameter $\alpha=0,1,3$.}
+  \label{weiss_plot}
+\end{figure}
+
+The modified Langevin expression \ref{weiss_langevin} gives only the global
+energy minimum state of a ferromagnet. We know that in a real material, the
+motion of domain walls is impeded by the presence of various defects, such as
+impurities or mechanical stresses. These `pinning sites' cause a decrease of the
+magnetic permeability of the material as the material gets stuck in metastable
+states above the global equilibrium, which is observed as hysteresis on a
+$M$--$H$ diagram. \cite{jiles1984theory} Nonetheless, the global equilibrium
+state can be reached when the material is either annealed, by a controlled
+heating and cooling of the material, or degaussed by a slowly decaying
+oscillaying external field. On a hysteresis diagram, such as
+\ref{degaussing_theory}b, the degaussing procedure will appear as a spiraling
+motion from the outermost hysteresis loop into a point on a curve given by
+eqn~\ref{weiss_langevin} and called the \emph{anhysteretic curve}.
+
+In other words, the state of the magnetization that is created by degaussing is
+qualitatively similar to that of a paramagnet with a very large effective
+anhysteretic permeability $\mu_\text{an}$, found from the slope of the
+anhysteretic curve at the field of interest. This number is rarely quoted by the
+manufacturers of magnetic shielding materials, but is easy to estimate in the
+lab (see Fig.~\ref{hysteresis}) or from supplied hysteresis curves, noting that
+the anhysteretic curve normally lies approximately in the middle of the major
+(saturated) hysteresis loops.
+
+When calculating the expected shielding of static fields following degaussing,
+we have to use $\mu_\text{an}$ to obtain a realistic estimate. However, we have
+to keep in mind that unlike a real paramagnet, the degaussed ferromagnet will
+not dynamically change its state of magnetization as dramatically as we might
+expect from the huge value of $\mu_\text{an}$. Instead, if we are interested in
+the attenuation of small dynamic perturbations to the magnetic field, we have to
+use the much smaller dynamic permeability $\mu=\d B/\d H$ from the slope of the
+$B(H)$ curves, which are minor loops on the hysteresis diagram. In the following
+paragraph, we will consider an extension of the theory that can predict the
+behavior of the hysteresis loops in a magnetic material with domain pinning.
+
+\paragraph{Jiles--Atherton model}
 
 \subsubsection{Noise spectral density}
 
@@ -1429,11 +1480,13 @@ this correlation, which may help optimize the degaussing procedure.
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/metglas_loops.png}
   \caption{Hysteresis loops observed while degaussing a metglas layer. The plots
-    are all on the same (arbitrary) scale in the $B$--$H$ plane. The $\mu$
-    values stated on the plots are the slopes of the red dashed lines passing
-    through the loops and approximate the permeability relevant for static
-    shielding of a degaussedshield (top two plots) and that for dynamic
-    shielding for perturbations of a certain amplitude (bottom two plots).}
+   are all on the same  scale in the $B$--$H$ plane. The $\mu$ values stated on
+   the plots are the slopes of the red dashed lines passing through the loops
+   and approximate the permeability relevant for static shielding of a degaussed
+   shield (top two plots) and that for dynamic shielding for perturbations of a
+   certain amplitude (bottom two plots). Note that the scale of $B,H,\mu$ and
+   offset is arbitrary but the same for all four plots. Compare with
+   Fig.~\ref{degaussing_theory}.}
   \label{hysteresis}
 \end{figure}
 
@@ -1806,8 +1859,9 @@ This is well below the design requirement of 50~nG/$\sqrt{\mathrm{Hz}}$ at
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
-   \caption{Magnetometer sensor noise measured inside the magnetic shield.
-   }
+   \caption{Magnetometer sensor noise measured inside and outside the magnetic
+   shield. The noise inside is smaller than the noise of the sensor; it should
+   be approx.\ four orders of magnitude smaller than the noise outside.}
   \label{sensornoise}
 \end{figure}
 
