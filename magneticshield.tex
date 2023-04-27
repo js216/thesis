@@ -332,7 +332,7 @@ during the process of degaussing, as follows.
 A common explanation for the decrease in the internal magnetic field is as
 follows. The sinusoidal magnetic field drives the ferromagnetic material into
 saturation. Regardless of the initial magnetization of the material, it will move
-around its hysteresis curve (see Fig.~\ref{degaussing_theory}a) and lose all
+around its hysteresis curve (see Fig.~\ref{degaussing_theory}) and lose all
 memory of the initial condition. The external magnetizing current is applied
 symmetrically around zero (necessitating some form of DC-blocking, such as a
 transformer or capacitive coupling), so when the amplitude is gradually
@@ -341,13 +341,13 @@ decreased to zero, no net magnetization will remain (e.g.,
 calls the resulting state of minimized internal energy a `demagnetized state'.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{figs/todo/degaussing_theory.png}
-    \caption{Magnetization curves, adapted from
-    \cite[Figs.~1.8--9]{bertotti1998hysteresis}. \part{a} Degaussing: naive
+  \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton.pdf}
+  \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton_offs.pdf}
+    \caption{Magnetization curves. \part{Left} Degaussing: naive
     picture, an oscillating applied field $H_0$ with no offset decreases till
     the material spirals into the origin of the $M$--$H$ or $B$--$H$ space
     (demagnetization). All the \emph{minor loops} are centered around the
-    origin. \part{b} Degaussing means applying the oscillating field with
+    origin. \part{Right} Degaussing means applying the oscillating field with
     decaying amplitude in the presence of an offset (lab) field. As the
     amplitude of the oscillations goes to zero, the material settles on a point
     on the \emph{anhysteretic curve} (dashed line). Notice how the anhysteretic
@@ -759,7 +759,7 @@ $M$--$H$ diagram. \cite{jiles1984theory} Nonetheless, the global equilibrium
 state can be reached when the material is either annealed, by a controlled
 heating and cooling of the material, or degaussed by a slowly decaying
 oscillaying external field. On a hysteresis diagram, such as
-\ref{degaussing_theory}b, the degaussing procedure will appear as a spiraling
+\ref{degaussing_theory}, the degaussing procedure will appear as a spiraling
 motion from the outermost hysteresis loop into a point on a curve given by
 eqn~\ref{weiss_langevin} and called the \emph{anhysteretic curve}.
 
