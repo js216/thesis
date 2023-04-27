@@ -1,4 +1,4 @@
-\begin{thebibliography}{123}
+\begin{thebibliography}{118}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,12 +21,6 @@ Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
   thallium fluoride.
 \newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
 \newblock \doi{10.1103/PhysRevA.29.425}.
-
-\bibitem[Bertotti(1998)]{bertotti1998hysteresis}
-Giorgio Bertotti.
-\newblock \emph{Hysteresis in magnetism: for physicists, materials scientists,
-  and engineers}.
-\newblock Gulf Professional Publishing, 1998.
 
 \bibitem[Landau(1957)]{landau1957conservation}
 Lev Landau.
@@ -687,72 +681,40 @@ David~C Jiles and David~L Atherton.
 \newblock \emph{Journal of applied physics}, 55\penalty0 (6):\penalty0
   2115--2120, 1984.
 
-\bibitem[Barker et~al.(1983)Barker, Schreiber, Huth, and
-  Everett]{barker1983magnetic}
-John~Adair Barker, DE~Schreiber, BG~Huth, and Douglas~Hugh Everett.
-\newblock Magnetic hysteresis and minor loops: Models and experiments.
-\newblock \emph{Proceedings of the Royal Society of London. A. Mathematical and
-  Physical Sciences}, 386\penalty0 (1791):\penalty0 251--261, 1983.
-\newblock \doi{10.1098/rspa.1983.0035}.
+\bibitem[Jiles and Atherton(1986)]{jiles1986theory}
+David~C Jiles and David~L Atherton.
+\newblock Theory of ferromagnetic hysteresis.
+\newblock \emph{Journal of magnetism and magnetic materials}, 61\penalty0
+  (1-2):\penalty0 48--60, 1986.
 
-\bibitem[O'Grady and Greaves(1994)]{o1994minor}
-K~O'Grady and SJ~Greaves.
-\newblock Minor hysteresis loop effects in magnetic materials.
-\newblock \emph{Journal of magnetism and magnetic materials}, 138\penalty0
-  (3):\penalty0 L233--L236, 1994.
+\bibitem[Carpenter(1991)]{carpenter1991differential}
+Kenneth~H Carpenter.
+\newblock A differential equation approach to minor loops in the jiles-atherton
+  hysteresis model.
+\newblock \emph{IEEE transactions on magnetics}, 27\penalty0 (6):\penalty0
+  4404--4406, 1991.
 
-\bibitem[Berger et~al.(2010)Berger, Mangin, McCord, Hellwig, and
-  Fullerton]{berger2010cumulative}
-A~Berger, S~Mangin, J~McCord, O~Hellwig, and EE~Fullerton.
-\newblock Cumulative minor loop growth in co/pt and co/pd multilayers.
-\newblock \emph{Physical Review B}, 82\penalty0 (10):\penalty0 104423, 2010.
-\newblock \doi{10.1103/PhysRevB.82.104423}.
+\bibitem[Bergqvist(1996)]{bergqvist1996simple}
+AJ~Bergqvist.
+\newblock A simple vector generalization of the jiles-atherton model of
+  hysteresis.
+\newblock \emph{IEEE Transactions on Magnetics}, 32\penalty0 (5):\penalty0
+  4213--4215, 1996.
 
-\bibitem[Mayergoyz(2003)]{mayergoyz2003mathematical}
-Isaak~D Mayergoyz.
-\newblock \emph{Mathematical models of hysteresis and their applications}.
-\newblock Academic press, 2003.
+\bibitem[Lewis et~al.(1996)Lewis, Gao, Jiles, and Welch]{lewis1996modeling}
+LH~Lewis, J~Gao, David~C Jiles, and DO~Welch.
+\newblock Modeling of permanent magnets: Interpretation of parameters obtained
+  from the jiles--atherton hysteresis model.
+\newblock \emph{Journal of applied physics}, 79\penalty0 (8):\penalty0
+  6470--6472, 1996.
 
-\bibitem[Serpico and Visone(1998)]{serpico1998magnetic}
-Claudio Serpico and Ciro Visone.
-\newblock Magnetic hysteresis modeling via feed-forward neural networks.
-\newblock \emph{IEEE Transactions on Magnetics}, 34\penalty0 (3):\penalty0
-  623--628, 1998.
-\newblock \doi{10.1109/20.668055}.
-
-\bibitem[Grech et~al.(2020)Grech, Buzio, Pentella, and
-  Sammut]{grech2020dynamic}
-Christian Grech, Marco Buzio, Mariano Pentella, and Nicholas Sammut.
-\newblock Dynamic ferromagnetic hysteresis modelling using a preisach-recurrent
-  neural network model.
-\newblock \emph{Materials}, 13\penalty0 (11):\penalty0 2561, 2020.
-\newblock \doi{10.3390/ma13112561}.
-
-\bibitem[Mori{\'c} et~al.(2014)Mori{\'c}, De~Graeve, Grosjean, and
-  Laurent]{moric2014hysteresis}
-Igor Mori{\'c}, Charles-Marie De~Graeve, Olivier Grosjean, and Philippe
-  Laurent.
-\newblock Hysteresis prediction inside magnetic shields and application.
-\newblock \emph{Review of Scientific Instruments}, 85\penalty0 (7):\penalty0
-  075117, 2014.
-\newblock \doi{10.1063/1.4890561}.
-
-\bibitem[Sun et~al.(2016)Sun, Reisner, Fierlinger, Schnabel, Stuiber, and
-  Li]{sun2016dynamic}
-Z~Sun, M~Reisner, P~Fierlinger, A~Schnabel, S~Stuiber, and L~Li.
-\newblock Dynamic modeling of the behavior of permalloy for magnetic shielding.
-\newblock \emph{Journal of Applied Physics}, 119\penalty0 (19):\penalty0
-  193902, 2016.
-\newblock \doi{10.1063/1.4949516}.
-
-\bibitem[Sun et~al.(2020)Sun, Fierlinger, Han, Li, Liu, Schnabel, Stuiber, and
-  Voigt]{sun2020limits}
-Zhiyin Sun, Peter Fierlinger, Jiecai Han, Liyi Li, Tianhao Liu, Allard
-  Schnabel, Stefan Stuiber, and Jens Voigt.
-\newblock Limits of low magnetic field environments in magnetic shields.
-\newblock \emph{IEEE Transactions on Industrial Electronics}, 68\penalty0
-  (6):\penalty0 5385--5395, 2020.
-\newblock \doi{10.1109/TIE.2020.2987267}.
+\bibitem[Sablik et~al.(1987)Sablik, Kwun, Burkhardt, and
+  Jiles]{sablik1987model}
+MJ~Sablik, H~Kwun, GL~Burkhardt, and DC~Jiles.
+\newblock Model for the effect of tensile and compressive stress on
+  ferromagnetic hysteresis.
+\newblock \emph{Journal of Applied physics}, 61\penalty0 (8):\penalty0
+  3799--3801, 1987.
 
 \bibitem[Harris(1978)]{harris1978use}
 Fredric~J Harris.

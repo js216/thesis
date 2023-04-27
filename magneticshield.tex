@@ -343,17 +343,19 @@ calls the resulting state of minimized internal energy a `demagnetized state'.
 \begin{figure}
   \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton.pdf}
   \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton_offs.pdf}
-    \caption{Magnetization curves. \part{Left} Degaussing: naive
-    picture, an oscillating applied field $H_0$ with no offset decreases till
-    the material spirals into the origin of the $M$--$H$ or $B$--$H$ space
-    (demagnetization). All the \emph{minor loops} are centered around the
-    origin. \part{Right} Degaussing means applying the oscillating field with
-    decaying amplitude in the presence of an offset (lab) field. As the
-    amplitude of the oscillations goes to zero, the material settles on a point
-    on the \emph{anhysteretic curve} (dashed line). Notice how the anhysteretic
-    curve is much steeper than the minor loops, implying a greater effective
-    permeability. See also Fig.~\ref{hysteresis} for curves measured on
-    metglas.}
+    \caption{Magnetization curves, found by numerically integrating
+    eqn~\ref{jiles_atherton_eqn} with the parameters given in the figure.
+    \part{Left} Degaussing: naive picture, an oscillating applied field $H_0$
+    with no offset decreases till the material spirals into the origin of the
+    $M$--$H$ or $B$--$H$ space (demagnetization). All the \emph{minor loops} are
+    centered around the origin. See end of section \ref{degaussing_hysteresis}
+    regarding the negative slope. \part{Right} Degaussing means applying the
+    oscillating field with decaying amplitude in the presence of an offset (lab)
+    field. As the amplitude of the oscillations goes to zero, the material
+    settles on a point on the \emph{anhysteretic curve} (dashed line). Notice
+    how the anhysteretic curve is much steeper than the minor loops, implying a
+    greater effective permeability. See also Fig.~\ref{hysteresis} for curves
+    measured on metglas.}
     \label{degaussing_theory}
 \end{figure}
 
@@ -784,6 +786,46 @@ paragraph, we will consider an extension of the theory that can predict the
 behavior of the hysteresis loops in a magnetic material with domain pinning.
 
 \paragraph{Jiles--Atherton model}
+
+Under small perturbations in the external field, the magnetic domains are not
+entirely free to align their magnetization axis with the applied field because
+they are impeded from doing so by the presence of pinning sites in the form of
+inclusions in the material and other inhomogeneities. By considering these
+pinning sites to be uniformly distributed throughout the material,
+\cite{jiles1986theory} were able to derive a differential equation describing
+the trajectories in the $M$--$H$ plane for a ferromagnet, as follows:
+%
+\begin{align}
+   \label{jiles_atherton_eqn}
+   \frac{\d M}{\d H}=\frac{1}{(1+c)}\frac{M_\text{an}-M}{\pm
+   k/\mu_0-\alpha(M_\text{an}-M)}+\frac{c}{(1+c)}\frac{\d M_\text{an}}{\d H}.
+\end{align}
+%
+Here we introduce two new parameters, $k$ and $c$, and note that the $\pm$ in
+the denominator is $+$ for $\d H/\d t>0$ and $-$ for $\d H/\d t<0$. I have
+plotted the solutions to this equation for a particular choice of parameters in
+Fig.~\ref{degaussing_theory}, with an initial condition of saturation
+magnetization at a negative $H$. The plots show the `spiraling' motion
+characteristic of a degaussing process; the integration of the differential
+equation proceeds on an interval $[H_\text{i},H_\text{f}]$, where $H_\text{f}$
+gets reduced by 20~\%\ each time $\d M/\d t$ gets reversed. (Of course the
+Jiles--Atherton theory is not time dependent, so this merely refers to the $\pm$
+sign in the denominator of eqn~\ref{jiles_atherton_eqn} above.)
+
+As seen in Fig.~\ref{degaussing_theory} and noted in its caption, equation
+\ref{jiles_atherton_eqn} can have minor loop solutions with negative slopes,
+which is unphysical. The original papers presenting the theory
+\cite{jiles1983ferromagnetic,jiles1984theory,jiles1986theory} do not discuss
+this feature at any great length, even as it its obvious from equation
+\ref{jiles_atherton_eqn} itself. We see that $\d M/\d H$ would be negative when
+$c$ is small enough and $k$ large enough such that  \cite{carpenter1991differential}
+
+Since the publication of this model in the 1980s, a lot of work focused on
+offering improvements and interpretation of the theory, such as a generalization
+to vector magnetization \cite{bergqvist1996simple}, relation of model parameters
+$M_\text{s},a,\alpha,k,c$ to physical attributes of real materials
+\cite{lewis1996modeling}, behavior of hysteresis under tensile and compressive
+stress on the material \cite{sablik1987model}
 
 \subsubsection{Noise spectral density}
 

@@ -67,27 +67,27 @@
 \contentsline {subsubsection}{\numberline {5.2.4}Hysteresis during degaussing}{88}{subsubsection.5.2.4}%
 \contentsline {paragraph}{Weiss mean field theory}{88}{section*.59}%
 \contentsline {paragraph}{Jiles--Atherton model}{90}{section*.61}%
-\contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{90}{subsubsection.5.2.5}%
-\contentsline {subsubsection}{\numberline {5.2.6}Random walk}{91}{subsubsection.5.2.6}%
-\contentsline {subsection}{\numberline {5.3}Magnetic shields in literature}{92}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Physical structure}{95}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Layers and spacers}{97}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Shim coils}{100}{subsubsection.5.4.2}%
-\contentsline {subsubsection}{\numberline {5.4.3}Support structure}{101}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{91}{subsubsection.5.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.6}Random walk}{92}{subsubsection.5.2.6}%
+\contentsline {subsection}{\numberline {5.3}Magnetic shields in literature}{93}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Physical structure}{96}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Layers and spacers}{96}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Shim coils}{101}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Support structure}{102}{subsubsection.5.4.3}%
 \contentsline {subsection}{\numberline {5.5}Operation and measurements}{103}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Residual field measurement}{103}{subsubsection.5.5.1}%
-\contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{106}{subsubsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{107}{subsubsection.5.5.3}%
-\contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{112}{subsubsection.5.5.4}%
-\contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{114}{subsubsection.5.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{116}{subsubsection.5.5.6}%
-\contentsline {subsection}{\numberline {5.6}Performance and limitations}{119}{subsection.5.6}%
-\contentsline {subsubsection}{\numberline {5.6.1}Residual field}{119}{subsubsection.5.6.1}%
-\contentsline {subsubsection}{\numberline {5.6.2}Dynamic shielding}{121}{subsubsection.5.6.2}%
-\contentsline {subsubsection}{\numberline {5.6.3}Magnetic noise}{123}{subsubsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.7}Discussion}{124}{subsection.5.7}%
-\contentsline {section}{\numberline {6}High voltage control}{125}{section.6}%
-\contentsline {section}{\numberline {7}Test interaction region}{126}{section.7}%
-\contentsline {section}{\numberline {8}Serrodyne laser cavity locking}{127}{section.8}%
-\contentsline {section}{\numberline {9}PMT characterization}{128}{section.9}%
-\contentsline {section}{References}{129}{section.9}%
+\contentsline {subsubsection}{\numberline {5.5.1}Residual field measurement}{104}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{107}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{108}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{113}{subsubsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{115}{subsubsection.5.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{117}{subsubsection.5.5.6}%
+\contentsline {subsection}{\numberline {5.6}Performance and limitations}{120}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Residual field}{120}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Dynamic shielding}{122}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.3}Magnetic noise}{124}{subsubsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.7}Discussion}{125}{subsection.5.7}%
+\contentsline {section}{\numberline {6}High voltage control}{126}{section.6}%
+\contentsline {section}{\numberline {7}Test interaction region}{127}{section.7}%
+\contentsline {section}{\numberline {8}Serrodyne laser cavity locking}{128}{section.8}%
+\contentsline {section}{\numberline {9}PMT characterization}{129}{section.9}%
+\contentsline {section}{References}{130}{section.9}%

@@ -14,44 +14,44 @@ A level-1 auxiliary file: PMT.aux
 A level-1 auxiliary file: bibliography.aux
 The style file: unsrtnat.bst
 Database file #1: references.bib
-You've used 123 entries,
+You've used 118 entries,
             2481 wiz_defined-function locations,
-            1341 strings with 26967 characters,
-and the built_in function-call counts, 48335 in all, are:
-= -- 3978
-> -- 2704
-< -- 67
-+ -- 1049
-- -- 802
-* -- 4092
-:= -- 7984
-add.period$ -- 450
-call.type$ -- 123
-change.case$ -- 226
-chr.to.int$ -- 122
-cite$ -- 123
-duplicate$ -- 2293
-empty$ -- 4302
-format.name$ -- 980
-if$ -- 10047
+            1306 strings with 25738 characters,
+and the built_in function-call counts, 46221 in all, are:
+= -- 3828
+> -- 2539
+< -- 66
++ -- 989
+- -- 752
+* -- 3895
+:= -- 7612
+add.period$ -- 428
+call.type$ -- 118
+change.case$ -- 218
+chr.to.int$ -- 117
+cite$ -- 118
+duplicate$ -- 2198
+empty$ -- 4136
+format.name$ -- 923
+if$ -- 9616
 int.to.chr$ -- 2
-int.to.str$ -- 124
-missing$ -- 133
-newline$ -- 704
-num.names$ -- 370
-pop$ -- 900
+int.to.str$ -- 119
+missing$ -- 126
+newline$ -- 672
+num.names$ -- 355
+pop$ -- 862
 preamble$ -- 1
-purify$ -- 123
+purify$ -- 118
 quote$ -- 0
-skip$ -- 1293
+skip$ -- 1243
 stack$ -- 0
-substring$ -- 2150
-swap$ -- 258
+substring$ -- 2105
+swap$ -- 248
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 798
+type$ -- 769
 warning$ -- 0
-while$ -- 384
+while$ -- 372
 width$ -- 0
-write$ -- 1750
+write$ -- 1673
