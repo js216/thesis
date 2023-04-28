@@ -1,26 +1,9 @@
-\begin{thebibliography}{118}
+\begin{thebibliography}{122}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Norrgard et~al.(2017)Norrgard, Edwards, McCarron, Steinecker, DeMille,
-  Alam, Peck, Wadia, and Hunter]{norrgard2017hyperfine}
-EB~Norrgard, ER~Edwards, DJ~McCarron, MH~Steinecker, D~DeMille, Shah~Saad Alam,
-  SK~Peck, NS~Wadia, and LR~Hunter.
-\newblock Hyperfine structure of the {$B^3\Pi_1$} state and predictions of
-  optical cycling behavior in the {$X\to B$} transition of {TlF}.
-\newblock \emph{Physical Review A}, 95\penalty0 (6):\penalty0 062506, 2017.
-\newblock \doi{10.1103/PhysRevA.95.062506}.
-
-\bibitem[Wilkening et~al.(1984)Wilkening, Ramsey, and
-  Larson]{wilkening1984search}
-Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
-\newblock Search for {$P$} and {$T$} violations in the hyperfine structure of
-  thallium fluoride.
-\newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
-\newblock \doi{10.1103/PhysRevA.29.425}.
 
 \bibitem[Landau(1957)]{landau1957conservation}
 Lev Landau.
@@ -234,6 +217,14 @@ Edward~A Hinds and PGH Sandars.
 \newblock \emph{Physical Review A}, 21\penalty0 (2):\penalty0 480, 1980.
 \newblock \doi{10.1103/PhysRevA.21.480}.
 
+\bibitem[Wilkening et~al.(1984)Wilkening, Ramsey, and
+  Larson]{wilkening1984search}
+Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
+\newblock Search for {$P$} and {$T$} violations in the hyperfine structure of
+  thallium fluoride.
+\newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
+\newblock \doi{10.1103/PhysRevA.29.425}.
+
 \bibitem[Cho et~al.(1989)Cho, Sangster, and Hinds]{cho1989tenfold}
 D~Cho, K~Sangster, and EA~Hinds.
 \newblock Tenfold improvement of limits on {$T$} violation in thallium
@@ -305,6 +296,15 @@ JF~Barry, ES~Shuman, and D~DeMille.
 \newblock \emph{Physical Chemistry Chemical Physics}, 13\penalty0
   (42):\penalty0 18936--18947, 2011.
 \newblock \doi{10.1039/C1CP20335E}.
+
+\bibitem[Norrgard et~al.(2017)Norrgard, Edwards, McCarron, Steinecker, DeMille,
+  Alam, Peck, Wadia, and Hunter]{norrgard2017hyperfine}
+EB~Norrgard, ER~Edwards, DJ~McCarron, MH~Steinecker, D~DeMille, Shah~Saad Alam,
+  SK~Peck, NS~Wadia, and LR~Hunter.
+\newblock Hyperfine structure of the {$B^3\Pi_1$} state and predictions of
+  optical cycling behavior in the {$X\to B$} transition of {TlF}.
+\newblock \emph{Physical Review A}, 95\penalty0 (6):\penalty0 062506, 2017.
+\newblock \doi{10.1103/PhysRevA.95.062506}.
 
 \bibitem[Kozlov and Labzowsky(1995)]{kozlov1995parity}
 Mikhail~G Kozlov and Leonti~N Labzowsky.
@@ -646,6 +646,11 @@ Md~Abdullah Al~Zaman, HMAR Maruf, MR~Islam, and Neelufar Panna.
 \newblock \emph{The Egyptian Journal of Remote Sensing and Space Science},
   24\penalty0 (2):\penalty0 203--210, 2021.
 
+\bibitem[Riley et~al.(2006)Riley, Hobson, and Bence]{riley2006mathematical}
+Ken~F Riley, Mike~P Hobson, and Stephen~J Bence.
+\newblock \emph{Mathematical methods for physics and engineering}.
+\newblock Cambridge University Press, 3 edition, 2006.
+
 \bibitem[Dickerson et~al.(2012)Dickerson, Hogan, Johnson, Kovachy, Sugarbaker,
   Chiow, and Kasevich]{dickerson2012high}
 Susannah Dickerson, Jason~M Hogan, David~MS Johnson, Tim Kovachy, Alex
@@ -715,6 +720,30 @@ MJ~Sablik, H~Kwun, GL~Burkhardt, and DC~Jiles.
   ferromagnetic hysteresis.
 \newblock \emph{Journal of Applied physics}, 61\penalty0 (8):\penalty0
   3799--3801, 1987.
+
+\bibitem[Lederer et~al.(1999)Lederer, Igarashi, Kost, and
+  Honma]{lederer1999parameter}
+Dieter Lederer, Hajime Igarashi, Arnulf Kost, and Toshihisa Honma.
+\newblock On the parameter identification and application of the jiles-atherton
+  hysteresis model for numerical modelling of measured characteristics.
+\newblock \emph{IEEE Transactions on magnetics}, 35\penalty0 (3):\penalty0
+  1211--1214, 1999.
+
+\bibitem[Leite et~al.(2004)Leite, Avila, Batistela, Carpes, Sadowski, Kuo-Peng,
+  and Bastos]{leite2004real}
+JV~Leite, Sergio~Luciano Avila, NJ~Batistela, Walter~P Carpes, Nelson Sadowski,
+  Patrick Kuo-Peng, and Joan Pedro~A Bastos.
+\newblock Real coded genetic algorithm for jiles-atherton model parameters
+  identification.
+\newblock \emph{IEEE Transactions on magnetics}, 40\penalty0 (2):\penalty0
+  888--891, 2004.
+
+\bibitem[Fulginei and Salvini(2005)]{fulginei2005softcomputing}
+F~Riganti Fulginei and Alessandro Salvini.
+\newblock Softcomputing for the identification of the jiles-atherton model
+  parameters.
+\newblock \emph{IEEE Transactions on Magnetics}, 41\penalty0 (3):\penalty0
+  1100--1108, 2005.
 
 \bibitem[Harris(1978)]{harris1978use}
 Fredric~J Harris.

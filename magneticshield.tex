@@ -113,11 +113,13 @@ S_\text{L}^n\prod_{i=1}^{n-1}S_\text{L}^i
 %
 One must merely keep in mind that formulae
 \ref{singlelayer}--\ref{multiplelayers} are intended to be used for a linear
-material. To a degree, that is true even of highly ferromagnetic materials when
-subject to small (`dynamic') excursions around a fixed (`static') magnetic
-field (see example in Fig.~\ref{numlayers}). Thus we define the dynamic
-shielding factors as the ratio of the fields outside the shield to those
-obtaining inside at a particular frequency different from \DC.
+material. To a degree, that is true even of highly ferromagnetic materials (see
+example in Fig.~\ref{numlayers}), as long as we are very careful about how we
+define the permeability $\mu$ (skip to section \ref{degaussing_hysteresis} for
+the relevant discussion). In particular, we need to distinguish the static
+shielding factor (attenuation of static fields following degaussing, see
+sect.~\ref{better_than_expected}) from the dynamic shielding factor (attenuation
+of small time-varying field perturbations).
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/numlayers.png}
@@ -129,6 +131,14 @@ obtaining inside at a particular frequency different from \DC.
   \label{numlayers}
 \end{figure}
 
+In the following, we will consider two idealized cases in more detail. Looking
+at the shielding inside a single highly permeable spherical shell, we will
+interpret the shielding effect in terms of `$\cos\theta$' surface current
+distributions which serve to oppose the lab magnetic field. Afterwards, we solve
+for the field distributions of an infinite-length cylindrical shell in order to
+derive the transverse shielding factor formula stated above in
+eqn~\ref{singlelayer}.
+
 \paragraph{Spherical shell shield}
 
 Consider a spherical shell of inner and outer radii $a,b$ respectively, made of
@@ -139,14 +149,15 @@ Introducing a magnetic scalar potential $\Phi_\text{M}$, where $\vec
 H=-\nabla\Phi_\text{M}$, the magnetic field everywhere can be computed from the
 expressions \cite[eqns~5.117--118]{jackson1998classical}
 %
-\begin{align*}
+\begin{align}
+   \label{spherical_potential}
    \Phi_\text{M}=
     \begin{dcases*}
        \delta_1r\cos\theta&\quad for $r<a$\\
        \left(\beta_1+\frac{\gamma_1}{r^3}\right)r\cos\theta&\quad for $a<r<b$\\
        \left(-H_0+\frac{\alpha_1}{r^3}\right)r\cos\theta&\quad for $r>b$,
     \end{dcases*}
-\end{align*}
+\end{align}
 %
 where the coefficients $\alpha_1,\beta_1,\gamma_1,\delta_1$ are given by
 \cite[eqn~5.120]{jackson1998classical}:
@@ -154,15 +165,15 @@ where the coefficients $\alpha_1,\beta_1,\gamma_1,\delta_1$ are given by
 \begin{align}
    \label{sphere_coeffs}
    \begin{split}
-      \alpha_1A&=(2\mu+1)(\mu-1)(b_3-a_3)H_0\\
-      \beta_1 A&=-3(2\mu+1)H_0\\
-      \gamma_1A&=-3a^3(\mu-1)H_0\\
-      \delta_1A&=-9\mu H_0\\
+      \alpha_1A/H_0&=(2\mu+1)(\mu-1)(b_3-a_3)\\
+      \beta_1 A/H_0&=-3(2\mu+1)\\
+      \gamma_1A/H_0&=-3a^3(\mu-1)\\
+      \delta_1A/H_0&=-9\mu\\
       A        &=(2\mu+1)(\mu+2)-2(a^3/b^3)(\mu-1)^2.
    \end{split}
 \end{align}
 %
-We see that the field inside the cavity $r<a$ is uniform and has the
+We see that the field $-\delta_1$ inside the cavity ($r<a$) is uniform and has the
 magnitude $-\delta_1\propto\mu^{-1}$ for $\mu\gg1$ as expected for a magnetic shield.
 In the opposite limit of a small $\mu\ll1$, the field inside scales as
 $-\delta_1\propto\mu$.  In fact, the shielding is identical for materials with
@@ -174,9 +185,8 @@ exploited for constructing magnetic shields
 with the disadvantages of requiring cryogenic temperatures.  For a nonpermeable
 material, $\mu=1$, there is no shielding.
 
-Furthermore,
-we can calculate the magnetization of the shell, given that it is made of a
-linear material. We have, for $a<r<b$,
+Furthermore, we can calculate the magnetization of the shell, given that it is
+made of a linear material. We have, for $a<r<b$,
 %
 \begin{align}
    \label{magnetization_in_sphere}
@@ -213,10 +223,13 @@ where $\vec n$ is the normal to the surface $S$ at point $\vec x$. The first
 term is a volume current $\vec J=\nabla\times\vec M$, while the second is a
 surface current $\vec K=\vec M\times\hat{\vec n}$.
 
-In the case of the spherical shell, there is no volume current since
-$\nabla\times\vec H=0$ by Amp\`ere's law. The surface normal is $\hat{\vec
-n}=\pm\hat{\vec r}$ on the outer (inner) surface of the shell, so the surface
-current is
+The volume current vanishes since the magnetization is proportional to $\vec
+H=-\nabla\Phi_\text{M}$ and $\nabla\times(\nabla f)=0$ for any $f$.
+Alternatively, by Amp\`ere's law we have $\nabla\times\vec
+M=(\mu-1)\nabla\times\vec H=0$ where there are no free currents.
+
+The normal vector is $\hat{\vec n}=\pm\hat{\vec r}$ on the outer (inner)
+surface, so the surface current is
 %
 \begin{align*}
    \vec K&=\pm(\mu-1)\left[-\beta_1\left(\hat{\vec z}\times\hat{\vec
@@ -289,7 +302,97 @@ In the superdiamagnetic limit ($\mu=0$), the shielding is perfect
 \end{align}
 %
 
+\paragraph{Cylindrical shell shield}
+
+Rather than a spherical shield, the geometry of our experiment can be better
+described by an infinite cylindrical shell of inner (outer) radius $a$ ($b$),
+placed in a uniform external field $\vec H_0=H_0\hat{\vec x}$, such that the
+field is perpendicular to the long axis of the cylinder $\hat{\vec z}$. The
+calculation of the resulting magnetization everywhere, and in particular the
+shielding inside the cylinder, is the subject of Jackson
+\cite{jackson1998classical} problem 5.14.
+
+As was the case with the spherical shell, again we can find the magnetic field
+$\vec H$ from a magnetic scalar potential via $\vec H=-\nabla\Phi_\text{M}$
+since $\nabla\times\vec H=0$ by Amp\`ere's law. Since
+$\nabla\cdot\vec H\propto\nabla\cdot\vec B=0$, this implies that the potential
+satisfies the Laplace equation, $\nabla^2\Phi_\text{M}=0$. This is a
+two-dimensional problem with the general solution
+\cite[eqn~21.31]{riley2006mathematical}
+%
+\[
+   \Phi_\text{M}=(C_0\ln r+D_0)+\sum_{n=1}^{\infty}(A_n\cos
+   n\theta+B_n\sin n\theta)(C_nr^n+D_nr^{-n}).
+\]
+%
+Since we are solving the Laplace's equation in a region containing the origin,
+we have to take $C_0=0$ \cite[sect~21.3.1]{riley2006mathematical}. Furthermore,
+the constant term $D_0$ will not contribute to $\vec H=-\nabla\Phi_\text{M}$
+and we can ignore it. By symmetry, there are no $\sin n\theta$ terms, and no $\cos
+n\theta$ for $n>1$. Inside the sphere, we cannot have $D_n$ terms since they would
+diverge at $r=0$, and outside we cannot have $C_n$ terms which diverge as
+$r\to\infty$. The following terms survive:
+%
+\begin{align}
+   \label{cylindrical_potential}
+   \Phi_\text{M}=
+    \begin{dcases*}
+       \delta_1r\cos\theta&\quad for $r<a$\\
+       (\beta_1+\gamma_1/r^2)r\cos\theta&\quad for $a<r<b$\\
+       (-H_0+\alpha_1/r^2)r\cos\theta&\quad for $r>b$.
+    \end{dcases*}
+\end{align}
+%
+The relevant boundary conditions are, as for the spherical case, that
+$H_\theta=-(1/r)\partial\Phi_\text{M}/\partial\theta$ and
+$B_r\propto\mu(r)H_r=-\mu(r)\partial\Phi_\text{M}/\partial r$ be continuous
+across the interfaces at $r=a,b$, noting that $\mu(r)=\mu_0$ outside the
+material, and $\mu\mu_0$ inside given the relative permeability $\mu$ of the
+shell. The boundary conditions give the system of equations
+%
+\begin{align}
+   \label{cyl_system}
+   \alpha_1-b^2\beta_1-\gamma_1&=b^2H_0\\
+   \alpha_1+\mu b^2\beta_1-\mu\gamma_1&=-b^2H_0\\
+   a^2\beta_1+\gamma_1-a^2\delta_1&=0\\
+   \mu a^2\beta_1-\mu\gamma_1-a^2\delta_1&=0,
+\end{align}
+%
+which should be compared to the system corresponding to the spherical shell
+given in \cite[eqn~5.120]{jackson1998classical}. The cylindrical potential in
+eqn~\ref{cylindrical_potential} only differs from the spherical case in
+eqn~\ref{spherical_potential} in that instead of a $r^{-3}$ dipole potential, we
+have $r^{-2}$. The system has the solution
+%
+\begin{align}
+   \label{cyl_coeffs}
+   \begin{split}
+      \alpha_1A/H_0&=-(a^2-b^2)(\mu^2-1)\\
+      \beta_1 A/H_0&=-2(\mu+1)\\
+      \gamma_1A/H_0&=-2b^2(\mu-1)\\
+      \delta_1A/H_0&=-4\mu\\
+      A        &=(\mu+1)^2-(a^2/b^2)(\mu-1)^2.
+   \end{split}
+\end{align}
+%
+The shielding factor (external field divided by the internal field) is therefore
+$\text{SF}=H_0/(-\delta_1)=A/(4\mu)$. In the limit of strong paramagnetic or
+diamagnetic permeability, we get the first-order expressions
+%
+\[
+   \lim_{\mu\to\infty}\text{SF}=\frac{\mu t}{2R}
+   ,\quad
+   \lim_{\mu\to0}\text{SF}=\frac{(1/\mu)t}{2R},
+\]
+%
+defining shield thickness $t=b-a$ and radius $R\approx a\approx b$. The
+$\mu\to\infty$ case corresponds to the expression given in
+eqn~\ref{singlelayer}, while the $\mu\to0$ case illustrates the curious fact
+that the same shielding obtains for $\mu$ as for $1/\mu$.
+
+
 \subsubsection{Static shielding better than expected}
+\label{better_than_expected}
 
 As pointed out in ref.~\cite{dickerson2012high}, the dynamic and static shielding would
 be identical in case of a purely linear material. This does not apply, however,
@@ -305,14 +408,6 @@ can be greatly reduced by driving a sinusoidal magnetic field around it with a
 gradually decreasing envelope. After degaussing the shield, we find residual
 fields much smaller than expected (approx.\ 0.2~mG and 4~mG, resp.) from simple
 paramagnetic theory.
-
-We also find that adding additional
-layers does not significantly reduce the static fields internal to the shield as
-would be predicted by the formula above. As explained in the following, I
-believe the reason is that in this situation, the shield does not behave as if
-it were made of a linear material; indeed, it is highly nonlinear due to
-ferromagnetic hysteresis. The memory of ferromagnetic materials is exploited
-during the process of degaussing, as follows.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/beforeafter.png}
@@ -814,18 +909,24 @@ sign in the denominator of eqn~\ref{jiles_atherton_eqn} above.)
 
 As seen in Fig.~\ref{degaussing_theory} and noted in its caption, equation
 \ref{jiles_atherton_eqn} can have minor loop solutions with negative slopes,
-which is unphysical. The original papers presenting the theory
+which is unphysical. We see that $\d M/\d H$ would change sign when
+the magnetization $M(H)$ crosses the anhysteretic magnetization $M_\text{an}(H)$ if
+$c$ is small enough and $k$ large enough. The original papers presenting the theory
 \cite{jiles1983ferromagnetic,jiles1984theory,jiles1986theory} do not discuss
-this feature at any great length, even as it its obvious from equation
-\ref{jiles_atherton_eqn} itself. We see that $\d M/\d H$ would be negative when
-$c$ is small enough and $k$ large enough such that  \cite{carpenter1991differential}
+this feature at any great length, except for noting that in the $c=0$ case, the
+rate of change of magnetization is proportional to the displacement from the
+anhysteretic. This rate of change, which is equal to the permeability of the
+material, can then therefore be zero or nonzero with
+either sign. See \cite{carpenter1991differential} for a discussion of ways
+around this issue.
 
-Since the publication of this model in the 1980s, a lot of work focused on
+Since the publication of the model in the 1980s, a lot of work has focused on
 offering improvements and interpretation of the theory, such as a generalization
 to vector magnetization \cite{bergqvist1996simple}, relation of model parameters
 $M_\text{s},a,\alpha,k,c$ to physical attributes of real materials
 \cite{lewis1996modeling}, behavior of hysteresis under tensile and compressive
-stress on the material \cite{sablik1987model}
+stress on the material \cite{sablik1987model}, and parameter identification
+\cite{lederer1999parameter,leite2004real,fulginei2005softcomputing}.
 
 \subsubsection{Noise spectral density}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.24)  27 APR 2023 18:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.3.24)  28 APR 2023 17:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1353,19 +1353,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [2] [3]
 [4] [5] [6] [7] [8] [9] (./figs/tikz/polarize.tex)
 (./figs/matplotlib/polarize.pdf_tex
-<figs/matplotlib/polarize.pdf, id=859, page=1, 137.7355pt x 73.27162pt>
+<figs/matplotlib/polarize.pdf, id=861, page=1, 137.7355pt x 73.27162pt>
 File: figs/matplotlib/polarize.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarize.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/polarize.pdf , page1 used on input lin
 e 56.
 (pdftex.def)             Requested size: 303.53267pt x 161.48982pt.
-<figs/matplotlib/polarize.pdf, id=860, page=2, 137.7355pt x 73.27162pt>
+<figs/matplotlib/polarize.pdf, id=862, page=2, 137.7355pt x 73.27162pt>
 File: figs/matplotlib/polarize.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarize.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/polarize.pdf , page2 used on input lin
 e 58.
 (pdftex.def)             Requested size: 303.53267pt x 161.48982pt.
-<figs/matplotlib/polarize.pdf, id=861, page=3, 137.7355pt x 73.27162pt>
+<figs/matplotlib/polarize.pdf, id=863, page=3, 137.7355pt x 73.27162pt>
 File: figs/matplotlib/polarize.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarize.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/polarize.pdf , page3 used on input lin
@@ -1386,175 +1386,175 @@ Missing character: There is no 1 in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no t in font nullfont!
 ) [15] [16] (./figs/matplotlib/polarizeTlF.pdf_tex
-<figs/matplotlib/polarizeTlF.pdf, id=999, page=1, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1001, page=1, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page1 used on input 
 line 56.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1000, page=2, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1002, page=2, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page2 used on input 
 line 58.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1001, page=3, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1003, page=3, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page3 used on input 
 line 60.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1002, page=4, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1004, page=4, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page4 used on input 
 line 62.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1003, page=5, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1005, page=5, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page5 used on input 
 line 64.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1004, page=6, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1006, page=6, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page6 used on input 
 line 66.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1005, page=7, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1007, page=7, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page7 used on input 
 line 68.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1006, page=8, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1008, page=8, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page8 used on input 
 line 70.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1007, page=9, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1009, page=9, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page9 used on input 
 line 72.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1008, page=10, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1010, page=10, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page10 used on input
  line 74.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1009, page=11, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1011, page=11, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page11 used on input
  line 76.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1010, page=12, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1012, page=12, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page12 used on input
  line 78.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1011, page=13, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1013, page=13, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page13 used on input
  line 80.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1012, page=14, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1014, page=14, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page14 used on input
  line 82.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1013, page=15, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1015, page=15, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page15 used on input
  line 84.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1014, page=16, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1016, page=16, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page16 used on input
  line 86.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1015, page=17, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1017, page=17, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page17 used on input
  line 88.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1016, page=18, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1018, page=18, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page18 used on input
  line 90.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1017, page=19, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1019, page=19, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page19 used on input
  line 92.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1018, page=20, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1020, page=20, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page20 used on input
  line 94.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1019, page=21, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1021, page=21, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 21>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page21 used on input
  line 96.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1020, page=22, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1022, page=22, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 22>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page22 used on input
  line 98.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1021, page=23, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1023, page=23, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 23>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page23 used on input
  line 100.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1022, page=24, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1024, page=24, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 24>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page24 used on input
  line 102.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1023, page=25, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1025, page=25, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 25>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page25 used on input
  line 104.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1024, page=26, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1026, page=26, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 26>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page26 used on input
  line 106.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1025, page=27, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1027, page=27, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 27>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page27 used on input
  line 108.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1026, page=28, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1028, page=28, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 28>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page28 used on input
  line 110.
 (pdftex.def)             Requested size: 433.62001pt x 200.55261pt.
-<figs/matplotlib/polarizeTlF.pdf, id=1027, page=29, 845.25412pt x 390.94136pt>
+<figs/matplotlib/polarizeTlF.pdf, id=1029, page=29, 845.25412pt x 390.94136pt>
 File: figs/matplotlib/polarizeTlF.pdf Graphic file (type pdf)
 <use figs/matplotlib/polarizeTlF.pdf, page 29>
 Package pdftex.def Info: figs/matplotlib/polarizeTlF.pdf , page29 used on input
@@ -1679,121 +1679,121 @@ LaTeX Warning: Reference `harrison1969experimental' on page 19 undefined on inp
 ut line 793.
 
 [19] [20] (./figs/matplotlib/SOF.pdf_tex
-<figs/matplotlib/SOF.pdf, id=1316, page=1, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1318, page=1, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page1 used on input line 56.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1317, page=2, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1319, page=2, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page2 used on input line 58.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1318, page=3, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1320, page=3, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page3 used on input line 60.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1319, page=4, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1321, page=4, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page4 used on input line 62.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1320, page=5, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1322, page=5, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page5 used on input line 64.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1321, page=6, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1323, page=6, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page6 used on input line 66.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1322, page=7, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1324, page=7, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page7 used on input line 68.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1323, page=8, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1325, page=8, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page8 used on input line 70.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1324, page=9, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1326, page=9, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page9 used on input line 72.
 
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1325, page=10, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1327, page=10, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page10 used on input line 74
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1326, page=11, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1328, page=11, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page11 used on input line 76
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1327, page=12, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1329, page=12, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page12 used on input line 78
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1328, page=13, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1330, page=13, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page13 used on input line 80
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1329, page=14, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1331, page=14, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page14 used on input line 82
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1330, page=15, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1332, page=15, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page15 used on input line 84
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1331, page=16, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1333, page=16, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page16 used on input line 86
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1332, page=17, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1334, page=17, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page17 used on input line 88
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1333, page=18, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1335, page=18, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page18 used on input line 90
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1334, page=19, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1336, page=19, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page19 used on input line 92
 .
 (pdftex.def)             Requested size: 433.62001pt x 207.2874pt.
-<figs/matplotlib/SOF.pdf, id=1335, page=20, 817.81407pt x 390.94136pt>
+<figs/matplotlib/SOF.pdf, id=1337, page=20, 817.81407pt x 390.94136pt>
 File: figs/matplotlib/SOF.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/SOF.pdf , page20 used on input line 94
@@ -1876,145 +1876,145 @@ ultiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex.exe (file ./figs/matplotlib/SOF.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
 >] [22] (./figs/matplotlib/SOF2.pdf_tex
-<figs/matplotlib/SOF2.pdf, id=1503, page=1, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1505, page=1, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page1 used on input line 56
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1504, page=2, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1506, page=2, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page2 used on input line 58
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1505, page=3, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1507, page=3, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page3 used on input line 60
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1506, page=4, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1508, page=4, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page4 used on input line 62
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1507, page=5, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1509, page=5, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page5 used on input line 64
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1508, page=6, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1510, page=6, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page6 used on input line 66
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1509, page=7, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1511, page=7, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page7 used on input line 68
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1510, page=8, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1512, page=8, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page8 used on input line 70
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1511, page=9, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1513, page=9, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page9 used on input line 72
 .
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1512, page=10, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1514, page=10, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page10 used on input line 7
 4.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1513, page=11, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1515, page=11, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page11 used on input line 7
 6.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1514, page=12, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1516, page=12, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page12 used on input line 7
 8.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1515, page=13, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1517, page=13, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page13 used on input line 8
 0.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1516, page=14, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1518, page=14, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page14 used on input line 8
 2.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1517, page=15, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1519, page=15, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page15 used on input line 8
 4.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1518, page=16, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1520, page=16, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page16 used on input line 8
 6.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1519, page=17, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1521, page=17, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page17 used on input line 8
 8.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1520, page=18, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1522, page=18, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page18 used on input line 9
 0.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1521, page=19, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1523, page=19, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page19 used on input line 9
 2.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1522, page=20, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1524, page=20, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page20 used on input line 9
 4.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1523, page=21, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1525, page=21, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 21>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page21 used on input line 9
 6.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1524, page=22, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1526, page=22, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 22>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page22 used on input line 9
 8.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1525, page=23, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1527, page=23, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 23>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page23 used on input line 1
 00.
 (pdftex.def)             Requested size: 433.62001pt x 260.84473pt.
-<figs/matplotlib/SOF2.pdf, id=1526, page=24, 871.5218pt x 524.26663pt>
+<figs/matplotlib/SOF2.pdf, id=1528, page=24, 871.5218pt x 524.26663pt>
 File: figs/matplotlib/SOF2.pdf Graphic file (type pdf)
 <use figs/matplotlib/SOF2.pdf, page 24>
 Package pdftex.def Info: figs/matplotlib/SOF2.pdf , page24 used on input line 1
@@ -2172,157 +2172,157 @@ Overfull \hbox (28.10934pt too wide) in paragraph at lines 78--79
 
 
 ] [46]
-<figs/todo/comb.pdf, id=2088, 433.62pt x 289.08pt>
+<figs/todo/comb.pdf, id=2090, 433.62pt x 289.08pt>
 File: figs/todo/comb.pdf Graphic file (type pdf)
 <use figs/todo/comb.pdf>
 Package pdftex.def Info: figs/todo/comb.pdf  used on input line 114.
 (pdftex.def)             Requested size: 325.215pt x 216.81828pt.
  [47 <./figs/todo/comb.pdf>] [48] (./figs/matplotlib/slope.pdf_tex
-<figs/matplotlib/slope.pdf, id=2135, page=1, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2137, page=1, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page1 used on input line 5
 6.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2136, page=2, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2138, page=2, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page2 used on input line 5
 8.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2137, page=3, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2139, page=3, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page3 used on input line 6
 0.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2138, page=4, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2140, page=4, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page4 used on input line 6
 2.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2139, page=5, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2141, page=5, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page5 used on input line 6
 4.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2140, page=6, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2142, page=6, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page6 used on input line 6
 7.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2141, page=7, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2143, page=7, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page7 used on input line 6
 9.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2142, page=8, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2144, page=8, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page8 used on input line 7
 1.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2143, page=9, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2145, page=9, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page9 used on input line 7
 3.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2144, page=10, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2146, page=10, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page10 used on input line 
 75.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2145, page=11, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2147, page=11, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page11 used on input line 
 78.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2146, page=12, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2148, page=12, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page12 used on input line 
 80.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2147, page=13, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2149, page=13, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page13 used on input line 
 82.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2148, page=14, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2150, page=14, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page14 used on input line 
 84.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2149, page=15, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2151, page=15, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page15 used on input line 
 86.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2150, page=16, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2152, page=16, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page16 used on input line 
 88.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2151, page=17, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2153, page=17, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page17 used on input line 
 90.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2152, page=18, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2154, page=18, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page18 used on input line 
 92.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2153, page=19, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2155, page=19, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page19 used on input line 
 94.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2154, page=20, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2156, page=20, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page20 used on input line 
 97.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2155, page=21, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2157, page=21, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 21>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page21 used on input line 
 99.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2156, page=22, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2158, page=22, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 22>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page22 used on input line 
 101.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2157, page=23, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2159, page=23, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 23>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page23 used on input line 
 103.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2158, page=24, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2160, page=24, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 24>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page24 used on input line 
 105.
 (pdftex.def)             Requested size: 463.97658pt x 238.44691pt.
-<figs/matplotlib/slope.pdf, id=2159, page=25, 704.76678pt x 362.18643pt>
+<figs/matplotlib/slope.pdf, id=2161, page=25, 704.76678pt x 362.18643pt>
 File: figs/matplotlib/slope.pdf Graphic file (type pdf)
 <use figs/matplotlib/slope.pdf, page 25>
 Package pdftex.def Info: figs/matplotlib/slope.pdf , page25 used on input line 
@@ -2429,356 +2429,356 @@ pdfTeX warning: pdflatex.exe (file ./figs/matplotlib/slope.pdf): PDF inclusion:
 
  (./simulations.tex
 (./figs/matplotlib/Ptrans1.pdf_tex
-<figs/matplotlib/Ptrans1.pdf, id=2328, page=1, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2330, page=1, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page1 used on input line
  56.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2329, page=2, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2331, page=2, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page2 used on input line
  58.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2330, page=3, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2332, page=3, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page3 used on input line
  60.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2331, page=4, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2333, page=4, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page4 used on input line
  63.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2332, page=5, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2334, page=5, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page5 used on input line
  65.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2333, page=6, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2335, page=6, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page6 used on input line
  67.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2334, page=7, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2336, page=7, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page7 used on input line
  69.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2335, page=8, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2337, page=8, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page8 used on input line
  71.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2336, page=9, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2338, page=9, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page9 used on input line
  73.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2337, page=10, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2339, page=10, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page10 used on input lin
 e 76.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2338, page=11, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2340, page=11, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page11 used on input lin
 e 78.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2339, page=12, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2341, page=12, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page12 used on input lin
 e 81.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2340, page=13, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2342, page=13, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page13 used on input lin
 e 83.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2341, page=14, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2343, page=14, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page14 used on input lin
 e 85.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2342, page=15, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2344, page=15, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page15 used on input lin
 e 87.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2343, page=16, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2345, page=16, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page16 used on input lin
 e 90.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2344, page=17, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2346, page=17, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page17 used on input lin
 e 92.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2345, page=18, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2347, page=18, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page18 used on input lin
 e 94.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2346, page=19, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2348, page=19, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page19 used on input lin
 e 96.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2347, page=20, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2349, page=20, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page20 used on input lin
 e 98.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2348, page=21, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2350, page=21, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 21>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page21 used on input lin
 e 100.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
-<figs/matplotlib/Ptrans1.pdf, id=2349, page=22, 395.7447pt x 252.79594pt>
+<figs/matplotlib/Ptrans1.pdf, id=2351, page=22, 395.7447pt x 252.79594pt>
 File: figs/matplotlib/Ptrans1.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans1.pdf, page 22>
 Package pdftex.def Info: figs/matplotlib/Ptrans1.pdf , page22 used on input lin
 e 103.
 (pdftex.def)             Requested size: 433.62001pt x 277.00403pt.
 ) (./figs/matplotlib/Ptrans2.pdf_tex
-<figs/matplotlib/Ptrans2.pdf, id=2350, page=1, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2352, page=1, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page1 used on input line
  56.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2351, page=2, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2353, page=2, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page2 used on input line
  58.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2352, page=3, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2354, page=3, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page3 used on input line
  60.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2353, page=4, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2355, page=4, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page4 used on input line
  62.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2354, page=5, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2356, page=5, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page5 used on input line
  65.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2355, page=6, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2357, page=6, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page6 used on input line
  67.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2356, page=7, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2358, page=7, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page7 used on input line
  69.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2357, page=8, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2359, page=8, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page8 used on input line
  71.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2358, page=9, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2360, page=9, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page9 used on input line
  73.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2359, page=10, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2361, page=10, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page10 used on input lin
 e 75.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2360, page=11, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2362, page=11, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page11 used on input lin
 e 77.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2361, page=12, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2363, page=12, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page12 used on input lin
 e 79.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2362, page=13, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2364, page=13, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page13 used on input lin
 e 81.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2363, page=14, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2365, page=14, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page14 used on input lin
 e 84.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2364, page=15, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2366, page=15, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page15 used on input lin
 e 86.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2365, page=16, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2367, page=16, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page16 used on input lin
 e 88.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2366, page=17, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2368, page=17, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page17 used on input lin
 e 90.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2367, page=18, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2369, page=18, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page18 used on input lin
 e 92.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2368, page=19, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2370, page=19, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page19 used on input lin
 e 94.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2369, page=20, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2371, page=20, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page20 used on input lin
 e 96.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2370, page=21, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2372, page=21, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 21>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page21 used on input lin
 e 98.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2371, page=22, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2373, page=22, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 22>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page22 used on input lin
 e 100.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2372, page=23, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2374, page=23, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 23>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page23 used on input lin
 e 102.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2373, page=24, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2375, page=24, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 24>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page24 used on input lin
 e 104.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2374, page=25, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2376, page=25, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 25>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page25 used on input lin
 e 106.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2375, page=26, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2377, page=26, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 26>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page26 used on input lin
 e 108.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2376, page=27, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2378, page=27, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 27>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page27 used on input lin
 e 111.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2377, page=28, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2379, page=28, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 28>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page28 used on input lin
 e 113.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2378, page=29, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2380, page=29, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 29>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page29 used on input lin
 e 115.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2379, page=30, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2381, page=30, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 30>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page30 used on input lin
 e 117.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2380, page=31, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2382, page=31, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 31>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page31 used on input lin
 e 119.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2381, page=32, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2383, page=32, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 32>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page32 used on input lin
 e 121.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2382, page=33, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2384, page=33, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 33>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page33 used on input lin
 e 124.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2383, page=34, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2385, page=34, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 34>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page34 used on input lin
 e 126.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2384, page=35, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2386, page=35, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 35>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page35 used on input lin
 e 128.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2385, page=36, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2387, page=36, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 36>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page36 used on input lin
 e 130.
 (pdftex.def)             Requested size: 433.62001pt x 263.06625pt.
-<figs/matplotlib/Ptrans2.pdf, id=2386, page=37, 434.45862pt x 263.56561pt>
+<figs/matplotlib/Ptrans2.pdf, id=2388, page=37, 434.45862pt x 263.56561pt>
 File: figs/matplotlib/Ptrans2.pdf Graphic file (type pdf)
 <use figs/matplotlib/Ptrans2.pdf, page 37>
 Package pdftex.def Info: figs/matplotlib/Ptrans2.pdf , page37 used on input lin
@@ -3029,121 +3029,121 @@ dinger
  []
 
 [58] [59] (./figs/matplotlib/dressed.pdf_tex
-<figs/matplotlib/dressed.pdf, id=2549, page=1, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2551, page=1, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 1>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page1 used on input line
  56.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2550, page=2, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2552, page=2, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 2>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page2 used on input line
  58.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2551, page=3, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2553, page=3, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 3>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page3 used on input line
  60.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2552, page=4, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2554, page=4, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 4>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page4 used on input line
  63.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2553, page=5, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2555, page=5, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 5>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page5 used on input line
  65.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2554, page=6, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2556, page=6, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 6>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page6 used on input line
  67.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2555, page=7, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2557, page=7, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 7>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page7 used on input line
  69.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2556, page=8, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2558, page=8, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 8>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page8 used on input line
  72.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2557, page=9, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2559, page=9, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 9>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page9 used on input line
  74.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2558, page=10, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2560, page=10, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 10>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page10 used on input lin
 e 76.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2559, page=11, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2561, page=11, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 11>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page11 used on input lin
 e 78.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2560, page=12, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2562, page=12, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 12>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page12 used on input lin
 e 81.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2561, page=13, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2563, page=13, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 13>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page13 used on input lin
 e 83.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2562, page=14, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2564, page=14, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 14>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page14 used on input lin
 e 85.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2563, page=15, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2565, page=15, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 15>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page15 used on input lin
 e 87.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2564, page=16, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2566, page=16, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 16>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page16 used on input lin
 e 90.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2565, page=17, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2567, page=17, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 17>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page17 used on input lin
 e 92.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2566, page=18, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2568, page=18, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 18>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page18 used on input lin
 e 94.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2567, page=19, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2569, page=19, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 19>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page19 used on input lin
 e 96.
 (pdftex.def)             Requested size: 455.30232pt x 159.29485pt.
-<figs/matplotlib/dressed.pdf, id=2568, page=20, 690.99812pt x 241.75194pt>
+<figs/matplotlib/dressed.pdf, id=2570, page=20, 690.99812pt x 241.75194pt>
 File: figs/matplotlib/dressed.pdf Graphic file (type pdf)
 <use figs/matplotlib/dressed.pdf, page 20>
 Package pdftex.def Info: figs/matplotlib/dressed.pdf , page20 used on input lin
@@ -3229,7 +3229,7 @@ n: multiple pdfs with page group included in a single page
 \openout2 = `apparatus.aux'.
 
  (./apparatus.tex
-<figs/entire.pdf, id=2737, 680.97748pt x 288.55812pt>
+<figs/entire.pdf, id=2739, 680.97748pt x 288.55812pt>
 File: figs/entire.pdf Graphic file (type pdf)
 <use figs/entire.pdf>
 Package pdftex.def Info: figs/entire.pdf  used on input line 6.
@@ -3240,59 +3240,59 @@ Package pdftex.def Info: figs/entire.pdf  used on input line 6.
 
  <./figs/entire.pdf>] [62] [63] [64]
 (./figs/svg/lasers1.pdf_tex
-<figs/svg/lasers1.pdf, id=2764, page=1, 283.69476pt x 128.5204pt>
+<figs/svg/lasers1.pdf, id=2766, page=1, 283.69476pt x 128.5204pt>
 File: figs/svg/lasers1.pdf Graphic file (type pdf)
 <use figs/svg/lasers1.pdf, page 1>
 Package pdftex.def Info: figs/svg/lasers1.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 433.62001pt x 196.44337pt.
 ) [65 <./figs/svg/lasers1.pdf>] [66]
 (./figs/svg/lasers2.pdf_tex
-<figs/svg/lasers2.pdf, id=2816, page=1, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2818, page=1, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 1>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2817, page=2, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2819, page=2, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 2>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page2 used on input line 67.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2818, page=3, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2820, page=3, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 3>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page3 used on input line 71.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2819, page=4, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2821, page=4, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 4>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page4 used on input line 78.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2820, page=5, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2822, page=5, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 5>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page5 used on input line 86.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2821, page=6, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2823, page=6, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 6>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page6 used on input line 93.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2822, page=7, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2824, page=7, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 7>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page7 used on input line 95.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2823, page=8, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2825, page=8, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 8>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page8 used on input line 101.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2824, page=9, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2826, page=9, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 9>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page9 used on input line 103.
 (pdftex.def)             Requested size: 433.62001pt x 221.47636pt.
-<figs/svg/lasers2.pdf, id=2825, page=10, 775.20383pt x 395.93854pt>
+<figs/svg/lasers2.pdf, id=2827, page=10, 775.20383pt x 395.93854pt>
 File: figs/svg/lasers2.pdf Graphic file (type pdf)
 <use figs/svg/lasers2.pdf, page 10>
 Package pdftex.def Info: figs/svg/lasers2.pdf , page10 used on input line 106.
@@ -3360,7 +3360,7 @@ Overfull \hbox (1.22224pt too wide) in paragraph at lines 28--28
 \openout2 = `magneticshield.aux'.
 
  (./magneticshield.tex
-<figs/todo/simple_diagram.png, id=3085, 868.74562pt x 212.29312pt>
+<figs/todo/simple_diagram.png, id=3087, 868.74562pt x 212.29312pt>
 File: figs/todo/simple_diagram.png Graphic file (type png)
 <use figs/todo/simple_diagram.png>
 Package pdftex.def Info: figs/todo/simple_diagram.png  used on input line 22.
@@ -3370,216 +3370,207 @@ Package pdftex.def Info: figs/todo/simple_diagram.png  used on input line 22.
 
 
  <./figs/todo/simple_diagram.png>] [75]
-<figs/todo/numlayers.png, id=3107, 950.80219pt x 427.5975pt>
+<figs/todo/numlayers.png, id=3111, 950.80219pt x 427.5975pt>
 File: figs/todo/numlayers.png Graphic file (type png)
 <use figs/todo/numlayers.png>
-Package pdftex.def Info: figs/todo/numlayers.png  used on input line 123.
+Package pdftex.def Info: figs/todo/numlayers.png  used on input line 125.
 (pdftex.def)             Requested size: 433.62001pt x 195.00735pt.
- [76 <./figs/todo/numlayers.png>] [77] [78] [79]
-<figs/todo/beforeafter.png, id=3146, 1020.81375pt x 338.01282pt>
+ [76 <./figs/todo/numlayers.png>] [77] [78] [79] [80]
+Overfull \hbox (5.15858pt too wide) in paragraph at lines 376--382
+\OT1/cmr/m/n/10.95 The shield-ing fac-tor (ex-ter-nal field di-vided by the in-
+ter-nal field) is there-fore $[] = \OML/cmm/m/it/10.95 H[]=\OT1/cmr/m/n/10.95 (
+\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 ^^N[]\OT1/cmr/m/n/10.95 ) =
+ []
+
+[81]
+<figs/todo/beforeafter.png, id=3176, 1020.81375pt x 338.01282pt>
 File: figs/todo/beforeafter.png Graphic file (type png)
 <use figs/todo/beforeafter.png>
-Package pdftex.def Info: figs/todo/beforeafter.png  used on input line 318.
+Package pdftex.def Info: figs/todo/beforeafter.png  used on input line 413.
 (pdftex.def)             Requested size: 433.62001pt x 143.58391pt.
-<figs/mathematica/jiles_atherton.pdf, id=3152, 260.975pt x 166.6225pt>
+<figs/mathematica/jiles_atherton.pdf, id=3182, 260.975pt x 166.6225pt>
 File: figs/mathematica/jiles_atherton.pdf Graphic file (type pdf)
 <use figs/mathematica/jiles_atherton.pdf>
 Package pdftex.def Info: figs/mathematica/jiles_atherton.pdf  used on input lin
-e 344.
+e 439.
 (pdftex.def)             Requested size: 216.81pt x 138.4263pt.
-<figs/mathematica/jiles_atherton_offs.pdf, id=3153, 260.975pt x 171.64125pt>
+<figs/mathematica/jiles_atherton_offs.pdf, id=3183, 260.975pt x 171.64125pt>
 File: figs/mathematica/jiles_atherton_offs.pdf Graphic file (type pdf)
 <use figs/mathematica/jiles_atherton_offs.pdf>
 Package pdftex.def Info: figs/mathematica/jiles_atherton_offs.pdf  used on inpu
-t line 345.
+t line 440.
 (pdftex.def)             Requested size: 216.81pt x 142.59575pt.
 
-Overfull \hbox (2.43332pt too wide) in paragraph at lines 344--357
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 439--453
 [][] [] 
  []
 
-[80 <./figs/todo/beforeafter.png>] [81 <./figs/mathematica/jiles_atherton.pdf> 
+[82 <./figs/todo/beforeafter.png>] [83 <./figs/mathematica/jiles_atherton.pdf> 
 <./figs/mathematica/jiles_atherton_offs.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figs/mathematica/jiles_atherton_offs.pdf):
  PDF inclusion: multiple pdfs with page group included in a single page
->] [82] [83] [84] [85] [86] [87] [88]
-<figs/mathematica/weiss.pdf, id=3289, 361.35pt x 244.915pt>
+>] [84] [85] [86] [87] [88] [89] [90]
+<figs/mathematica/weiss.pdf, id=3320, 361.35pt x 244.915pt>
 File: figs/mathematica/weiss.pdf Graphic file (type pdf)
 <use figs/mathematica/weiss.pdf>
-Package pdftex.def Info: figs/mathematica/weiss.pdf  used on input line 746.
+Package pdftex.def Info: figs/mathematica/weiss.pdf  used on input line 842.
 (pdftex.def)             Requested size: 216.81pt x 146.95012pt.
- [89 <./figs/mathematica/weiss.pdf>]
-
-Package natbib Warning: Citation `carpenter1991differential' on page 90 undefin
-ed on input line 814.
-
-
-Package natbib Warning: Citation `bergqvist1996simple' on page 90 undefined on 
-input line 818.
-
-
-Package natbib Warning: Citation `lewis1996modeling' on page 90 undefined on in
-put line 820.
-
-
-Package natbib Warning: Citation `sablik1987model' on page 90 undefined on inpu
-t line 821.
-
-[90] [91] [92]
-Overfull \hbox (61.92255pt too wide) in paragraph at lines 928--959
+ [91 <./figs/mathematica/weiss.pdf>]
+[92] [93] [94]
+Overfull \hbox (61.92255pt too wide) in paragraph at lines 1036--1067
  [][] 
  []
 
-[93] [94] [95]
-<figs/todo/concentric.png, id=3404, 721.94719pt x 612.78937pt>
+[95] [96] [97]
+<figs/todo/concentric.png, id=3454, 721.94719pt x 612.78937pt>
 File: figs/todo/concentric.png Graphic file (type png)
 <use figs/todo/concentric.png>
-Package pdftex.def Info: figs/todo/concentric.png  used on input line 1052.
+Package pdftex.def Info: figs/todo/concentric.png  used on input line 1160.
 (pdftex.def)             Requested size: 433.62001pt x 368.05983pt.
-<figs/todo/longitudinal.png, id=3406, 810.77907pt x 610.53094pt>
+ [98] [99 <./figs/todo/concentric.png>]
+<figs/todo/longitudinal.png, id=3465, 810.77907pt x 610.53094pt>
 File: figs/todo/longitudinal.png Graphic file (type png)
 <use figs/todo/longitudinal.png>
-Package pdftex.def Info: figs/todo/longitudinal.png  used on input line 1074.
+Package pdftex.def Info: figs/todo/longitudinal.png  used on input line 1182.
 (pdftex.def)             Requested size: 433.62001pt x 326.533pt.
- [96] [97 <./figs/todo/concentric.png>] [98 <./figs/todo/longitudinal.png>] [99
-]
-<figs/todo/shimcoils.png, id=3424, 1041.8925pt x 475.7775pt>
+ [100 <./figs/todo/longitudinal.png>] [101]
+<figs/todo/shimcoils.png, id=3474, 1041.8925pt x 475.7775pt>
 File: figs/todo/shimcoils.png Graphic file (type png)
 <use figs/todo/shimcoils.png>
-Package pdftex.def Info: figs/todo/shimcoils.png  used on input line 1150.
+Package pdftex.def Info: figs/todo/shimcoils.png  used on input line 1258.
 (pdftex.def)             Requested size: 433.62001pt x 198.01024pt.
- [100 <./figs/todo/shimcoils.png>]
-<figs/todo/grooves.png, id=3431, 968.11688pt x 454.69875pt>
+ [102 <./figs/todo/shimcoils.png>]
+<figs/todo/grooves.png, id=3481, 968.11688pt x 454.69875pt>
 File: figs/todo/grooves.png Graphic file (type png)
 <use figs/todo/grooves.png>
-Package pdftex.def Info: figs/todo/grooves.png  used on input line 1198.
+Package pdftex.def Info: figs/todo/grooves.png  used on input line 1306.
 (pdftex.def)             Requested size: 433.62001pt x 203.66202pt.
- [101 <./figs/todo/grooves.png>]
-<figs/todo/current_source.png, id=3438, 1502.61375pt x 480.29437pt>
+ [103]
+<figs/todo/current_source.png, id=3489, 1502.61375pt x 480.29437pt>
 File: figs/todo/current_source.png Graphic file (type png)
 <use figs/todo/current_source.png>
-Package pdftex.def Info: figs/todo/current_source.png  used on input line 1227.
+Package pdftex.def Info: figs/todo/current_source.png  used on input line 1335.
 
 (pdftex.def)             Requested size: 433.62001pt x 138.60022pt.
- [102 <./figs/todo/current_source.png>]
-<figs/todo/support.png, id=3446, 890.5772pt x 420.82219pt>
+ [104 <./figs/todo/grooves.png>]
+<figs/todo/support.png, id=3497, 890.5772pt x 420.82219pt>
 File: figs/todo/support.png Graphic file (type png)
 <use figs/todo/support.png>
-Package pdftex.def Info: figs/todo/support.png  used on input line 1247.
+Package pdftex.def Info: figs/todo/support.png  used on input line 1355.
 (pdftex.def)             Requested size: 433.62001pt x 204.89474pt.
- [103 <./figs/todo/support.png>]
-<figs/todo/pulleys.jpg, id=3452, 961.5925pt x 721.69624pt>
+ [105 <./figs/todo/current_source.png> <./figs/todo/support.png>]
+<figs/todo/pulleys.jpg, id=3504, 961.5925pt x 721.69624pt>
 File: figs/todo/pulleys.jpg Graphic file (type jpg)
 <use figs/todo/pulleys.jpg>
-Package pdftex.def Info: figs/todo/pulleys.jpg  used on input line 1297.
+Package pdftex.def Info: figs/todo/pulleys.jpg  used on input line 1405.
 (pdftex.def)             Requested size: 433.62001pt x 325.44307pt.
 
-[104] [105 <./figs/todo/pulleys.jpg>]
-<figs/todo/offset_calibration.png, id=3463, 638.385pt x 596.2275pt>
+[106] [107 <./figs/todo/pulleys.jpg>]
+<figs/todo/offset_calibration.png, id=3514, 638.385pt x 596.2275pt>
 File: figs/todo/offset_calibration.png Graphic file (type png)
 <use figs/todo/offset_calibration.png>
 Package pdftex.def Info: figs/todo/offset_calibration.png  used on input line 1
-327.
+435.
 (pdftex.def)             Requested size: 325.215pt x 303.73538pt.
- [106 <./figs/todo/offset_calibration.png>] [107]
-<figs/todo/impedance.png, id=3475, 973.38657pt x 402.75468pt>
+ [108 <./figs/todo/offset_calibration.png>] [109]
+<figs/todo/impedance.png, id=3526, 973.38657pt x 402.75468pt>
 File: figs/todo/impedance.png Graphic file (type png)
 <use figs/todo/impedance.png>
-Package pdftex.def Info: figs/todo/impedance.png  used on input line 1389.
+Package pdftex.def Info: figs/todo/impedance.png  used on input line 1497.
 (pdftex.def)             Requested size: 433.62001pt x 179.41885pt.
-<figs/todo/degaussing_system.png, id=3478, 691.08188pt x 247.67531pt>
+<figs/todo/degaussing_system.png, id=3529, 691.08188pt x 247.67531pt>
 File: figs/todo/degaussing_system.png Graphic file (type png)
 <use figs/todo/degaussing_system.png>
-Package pdftex.def Info: figs/todo/degaussing_system.png  used on input line 14
-11.
+Package pdftex.def Info: figs/todo/degaussing_system.png  used on input line 15
+19.
 (pdftex.def)             Requested size: 433.62001pt x 155.40514pt.
-<figs/todo/solenoid.png, id=3479, 781.41937pt x 303.38344pt>
+<figs/todo/solenoid.png, id=3530, 781.41937pt x 303.38344pt>
 File: figs/todo/solenoid.png Graphic file (type png)
 <use figs/todo/solenoid.png>
-Package pdftex.def Info: figs/todo/solenoid.png  used on input line 1419.
+Package pdftex.def Info: figs/todo/solenoid.png  used on input line 1527.
 (pdftex.def)             Requested size: 433.62001pt x 168.35202pt.
- [108 <./figs/todo/impedance.png>] [109 <./figs/todo/degaussing_system.png> <./
+ [110 <./figs/todo/impedance.png>] [111 <./figs/todo/degaussing_system.png> <./
 figs/todo/solenoid.png>]
-<figs/todo/repeatability.png, id=3491, 1076.52188pt x 377.91188pt>
+<figs/todo/repeatability.png, id=3542, 1076.52188pt x 377.91188pt>
 File: figs/todo/repeatability.png Graphic file (type png)
 <use figs/todo/repeatability.png>
-Package pdftex.def Info: figs/todo/repeatability.png  used on input line 1451.
+Package pdftex.def Info: figs/todo/repeatability.png  used on input line 1559.
 (pdftex.def)             Requested size: 433.62001pt x 152.2231pt.
- [110 <./figs/todo/repeatability.png>]
-<figs/todo/shimmed.png, id=3500, 529.22719pt x 566.86781pt>
+ [112 <./figs/todo/repeatability.png>]
+<figs/todo/shimmed.png, id=3550, 529.22719pt x 566.86781pt>
 File: figs/todo/shimmed.png Graphic file (type png)
 <use figs/todo/shimmed.png>
-Package pdftex.def Info: figs/todo/shimmed.png  used on input line 1491.
+Package pdftex.def Info: figs/todo/shimmed.png  used on input line 1599.
 (pdftex.def)             Requested size: 433.62001pt x 464.46268pt.
-<figs/todo/metglas_loops.png, id=3502, 725.71124pt x 489.32813pt>
+<figs/todo/metglas_loops.png, id=3552, 725.71124pt x 489.32813pt>
 File: figs/todo/metglas_loops.png Graphic file (type png)
 <use figs/todo/metglas_loops.png>
-Package pdftex.def Info: figs/todo/metglas_loops.png  used on input line 1516.
+Package pdftex.def Info: figs/todo/metglas_loops.png  used on input line 1624.
 (pdftex.def)             Requested size: 433.62001pt x 292.38208pt.
- [111]
-[112 <./figs/todo/shimmed.png>] [113 <./figs/todo/metglas_loops.png>]
-<figs/todo/threeweeks.png, id=3521, 533.74406pt x 469.00218pt>
+ [113]
+[114 <./figs/todo/shimmed.png>] [115 <./figs/todo/metglas_loops.png>]
+<figs/todo/threeweeks.png, id=3571, 533.74406pt x 469.00218pt>
 File: figs/todo/threeweeks.png Graphic file (type png)
 <use figs/todo/threeweeks.png>
-Package pdftex.def Info: figs/todo/threeweeks.png  used on input line 1548.
+Package pdftex.def Info: figs/todo/threeweeks.png  used on input line 1656.
 (pdftex.def)             Requested size: 325.215pt x 285.77603pt.
- [114 <./figs/todo/threeweeks.png>]
-<figs/todo/continuously_degaussing.png, id=3527, 531.48563pt x 248.42813pt>
+ [116 <./figs/todo/threeweeks.png>]
+<figs/todo/continuously_degaussing.png, id=3578, 531.48563pt x 248.42813pt>
 File: figs/todo/continuously_degaussing.png Graphic file (type png)
 <use figs/todo/continuously_degaussing.png>
 Package pdftex.def Info: figs/todo/continuously_degaussing.png  used on input l
-ine 1571.
+ine 1679.
 (pdftex.def)             Requested size: 433.62001pt x 202.68889pt.
- [115 <./figs/todo/continuously_degaussing.png>]
-<figs/todo/longterm_degaussing.png, id=3533, 556.32843pt x 220.57407pt>
+ [117 <./figs/todo/continuously_degaussing.png>]
+<figs/todo/longterm_degaussing.png, id=3584, 556.32843pt x 220.57407pt>
 File: figs/todo/longterm_degaussing.png Graphic file (type png)
 <use figs/todo/longterm_degaussing.png>
 Package pdftex.def Info: figs/todo/longterm_degaussing.png  used on input line 
-1602.
+1710.
 (pdftex.def)             Requested size: 433.62001pt x 171.9259pt.
-<figs/todo/calibration.png, id=3535, 653.44125pt x 207.02344pt>
+<figs/todo/calibration.png, id=3586, 653.44125pt x 207.02344pt>
 File: figs/todo/calibration.png Graphic file (type png)
 <use figs/todo/calibration.png>
-Package pdftex.def Info: figs/todo/calibration.png  used on input line 1626.
+Package pdftex.def Info: figs/todo/calibration.png  used on input line 1734.
 (pdftex.def)             Requested size: 433.62001pt x 137.37822pt.
 
-[116 <./figs/todo/longterm_degaussing.png>]
-<figs/todo/charging.png, id=3545, 596.2275pt x 450.9347pt>
+[118 <./figs/todo/longterm_degaussing.png>]
+<figs/todo/charging.png, id=3595, 596.2275pt x 450.9347pt>
 File: figs/todo/charging.png Graphic file (type png)
 <use figs/todo/charging.png>
-Package pdftex.def Info: figs/todo/charging.png  used on input line 1664.
+Package pdftex.def Info: figs/todo/charging.png  used on input line 1772.
 (pdftex.def)             Requested size: 433.62001pt x 327.95482pt.
- [117 <./figs/todo/calibration.png>] [118 <./figs/todo/charging.png>] [119] [12
-0]
-<figs/todo/t_dep.png, id=3571, 618.81187pt x 220.57407pt>
+ [119 <./figs/todo/calibration.png>] [120 <./figs/todo/charging.png>] [121] [12
+2]
+<figs/todo/t_dep.png, id=3623, 618.81187pt x 220.57407pt>
 File: figs/todo/t_dep.png Graphic file (type png)
 <use figs/todo/t_dep.png>
-Package pdftex.def Info: figs/todo/t_dep.png  used on input line 1782.
+Package pdftex.def Info: figs/todo/t_dep.png  used on input line 1890.
 (pdftex.def)             Requested size: 433.62001pt x 154.56906pt.
- [121 <./figs/todo/t_dep.png>]
-<figs/todo/dynSF.png, id=3581, 969.6225pt x 327.47343pt>
+ [123 <./figs/todo/t_dep.png>]
+<figs/todo/dynSF.png, id=3633, 969.6225pt x 327.47343pt>
 File: figs/todo/dynSF.png Graphic file (type png)
 <use figs/todo/dynSF.png>
-Package pdftex.def Info: figs/todo/dynSF.png  used on input line 1820.
+Package pdftex.def Info: figs/todo/dynSF.png  used on input line 1928.
 (pdftex.def)             Requested size: 433.62001pt x 146.44727pt.
 
-[122]
-<figs/todo/spatialSF.png, id=3589, 983.92593pt x 408.77719pt>
+[124]
+<figs/todo/spatialSF.png, id=3640, 983.92593pt x 408.77719pt>
 File: figs/todo/spatialSF.png Graphic file (type png)
 <use figs/todo/spatialSF.png>
-Package pdftex.def Info: figs/todo/spatialSF.png  used on input line 1848.
+Package pdftex.def Info: figs/todo/spatialSF.png  used on input line 1956.
 (pdftex.def)             Requested size: 433.62001pt x 180.14943pt.
- [123 <./figs/todo/dynSF.png> <./figs/todo/spatialSF.png>]
-<figs/todo/sensornoise.png, id=3596, 749.04843pt x 271.76532pt>
+ [125 <./figs/todo/dynSF.png> <./figs/todo/spatialSF.png>]
+<figs/todo/sensornoise.png, id=3647, 749.04843pt x 271.76532pt>
 File: figs/todo/sensornoise.png Graphic file (type png)
 <use figs/todo/sensornoise.png>
-Package pdftex.def Info: figs/todo/sensornoise.png  used on input line 1896.
+Package pdftex.def Info: figs/todo/sensornoise.png  used on input line 2004.
 (pdftex.def)             Requested size: 433.62001pt x 157.32541pt.
-) [124] [125 <./figs/todo/sensornoise.png>]
+) [126] [127 <./figs/todo/sensornoise.png>]
 \openout2 = `HVcontrol.aux'.
 
- (./HVcontrol.tex) [126
+ (./HVcontrol.tex) [128
 
 
 
@@ -3587,21 +3578,21 @@ Package pdftex.def Info: figs/todo/sensornoise.png  used on input line 1896.
 \openout2 = `test_interaction.aux'.
 
  (./test_interaction.tex)
-[127
+[129
 
 
 
 ]
 \openout2 = `serrodyne.aux'.
 
- (./serrodyne.tex) [128
+ (./serrodyne.tex) [130
 
 
 
 ]
 \openout2 = `PMT.aux'.
 
- (./PMT.tex) [129
+ (./PMT.tex) [131
 
 
 
@@ -3610,23 +3601,23 @@ Package pdftex.def Info: figs/todo/sensornoise.png  used on input line 1896.
 
  (./bibliography.tex
 (./thesis.bbl
-Underfull \hbox (badness 1590) in paragraph at lines 40--44
+Underfull \hbox (badness 1590) in paragraph at lines 23--27
 []\OT1/cmr/m/n/10 James H Chris-ten-son, Jeremiah W Cronin, Val L Fitch, and Re
 n^^Se Turlay.  Ev-i-
  []
 
-[130
+[132
 
 
 
 
-] [131]
-Underfull \hbox (badness 1117) in paragraph at lines 303--308
+] [133]
+Underfull \hbox (badness 1117) in paragraph at lines 294--299
 []\OT1/cmr/m/n/10 JF Barry, ES Shu-man, and D De-Mille.  A bright, slow cryo-ge
 nic mo-le-cu-lar beam
  []
 
-[132]
+[134]
 Underfull \hbox (badness 1028) in paragraph at lines 404--409
 \OT1/cmr/m/n/10 on the elec-tron elec-tric dipole mo-ment.  \OT1/cmr/m/it/10 Ph
 ys-i-cal re-view let-ters\OT1/cmr/m/n/10 , 88(7):071805, 2002.
@@ -3644,16 +3635,13 @@ Underfull \hbox (badness 2790) in paragraph at lines 417--421
  Phys-i-cal Re-view\OT1/cmr/m/n/10 , 170(5):1200, 1968.
  []
 
-[133]
+[135]
 Underfull \hbox (badness 1838) in paragraph at lines 544--549
 []\OT1/cmr/m/n/10 S Mill-man.  On the de-ter-mi-na-tion of the signs of nu-clea
 r mag-netic mo-ments by
  []
 
-[134] [135])) [136]
-
-Package natbib Warning: There were undefined citations.
-
+[136] [137] [138])) [139]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -3668,17 +3656,14 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D3A6D93DA01880E92DF53BD4A4968153;9593.
  ) 
 Here is how much of TeX's memory you used:
- 48247 strings out of 476025
- 1086052 string characters out of 5794009
+ 48295 strings out of 476025
+ 1087120 string characters out of 5794009
  1908382 words of memory out of 5000000
- 67248 multiletter control sequences out of 15000+600000
+ 67277 multiletter control sequences out of 15000+600000
  532031 words of font info for 103 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  99i,22n,117p,2262b,2091s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -3738,10 +3723,10 @@ xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/202
 ist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/font
 s/type1/public/cm-super/sfrm1095.pfb>
-Output written on thesis.pdf (147 pages, 8819005 bytes).
+Output written on thesis.pdf (150 pages, 8828149 bytes).
 PDF statistics:
- 3981 PDF objects out of 4296 (max. 8388607)
- 3041 compressed objects within 31 object streams
- 490 named destinations out of 1000 (max. 500000)
+ 4040 PDF objects out of 4296 (max. 8388607)
+ 3096 compressed objects within 31 object streams
+ 509 named destinations out of 1000 (max. 500000)
  1603 words of extra memory for PDF output out of 10000 (max. 10000000)
 
