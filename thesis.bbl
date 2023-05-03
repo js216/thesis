@@ -5,6 +5,23 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Norrgard et~al.(2017)Norrgard, Edwards, McCarron, Steinecker, DeMille,
+  Alam, Peck, Wadia, and Hunter]{norrgard2017hyperfine}
+EB~Norrgard, ER~Edwards, DJ~McCarron, MH~Steinecker, D~DeMille, Shah~Saad Alam,
+  SK~Peck, NS~Wadia, and LR~Hunter.
+\newblock Hyperfine structure of the {$B^3\Pi_1$} state and predictions of
+  optical cycling behavior in the {$X\to B$} transition of {TlF}.
+\newblock \emph{Physical Review A}, 95\penalty0 (6):\penalty0 062506, 2017.
+\newblock \doi{10.1103/PhysRevA.95.062506}.
+
+\bibitem[Wilkening et~al.(1984)Wilkening, Ramsey, and
+  Larson]{wilkening1984search}
+Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
+\newblock Search for {$P$} and {$T$} violations in the hyperfine structure of
+  thallium fluoride.
+\newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
+\newblock \doi{10.1103/PhysRevA.29.425}.
+
 \bibitem[Landau(1957)]{landau1957conservation}
 Lev Landau.
 \newblock On the conservation laws for weak interactions.
@@ -217,14 +234,6 @@ Edward~A Hinds and PGH Sandars.
 \newblock \emph{Physical Review A}, 21\penalty0 (2):\penalty0 480, 1980.
 \newblock \doi{10.1103/PhysRevA.21.480}.
 
-\bibitem[Wilkening et~al.(1984)Wilkening, Ramsey, and
-  Larson]{wilkening1984search}
-Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
-\newblock Search for {$P$} and {$T$} violations in the hyperfine structure of
-  thallium fluoride.
-\newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
-\newblock \doi{10.1103/PhysRevA.29.425}.
-
 \bibitem[Cho et~al.(1989)Cho, Sangster, and Hinds]{cho1989tenfold}
 D~Cho, K~Sangster, and EA~Hinds.
 \newblock Tenfold improvement of limits on {$T$} violation in thallium
@@ -296,15 +305,6 @@ JF~Barry, ES~Shuman, and D~DeMille.
 \newblock \emph{Physical Chemistry Chemical Physics}, 13\penalty0
   (42):\penalty0 18936--18947, 2011.
 \newblock \doi{10.1039/C1CP20335E}.
-
-\bibitem[Norrgard et~al.(2017)Norrgard, Edwards, McCarron, Steinecker, DeMille,
-  Alam, Peck, Wadia, and Hunter]{norrgard2017hyperfine}
-EB~Norrgard, ER~Edwards, DJ~McCarron, MH~Steinecker, D~DeMille, Shah~Saad Alam,
-  SK~Peck, NS~Wadia, and LR~Hunter.
-\newblock Hyperfine structure of the {$B^3\Pi_1$} state and predictions of
-  optical cycling behavior in the {$X\to B$} transition of {TlF}.
-\newblock \emph{Physical Review A}, 95\penalty0 (6):\penalty0 062506, 2017.
-\newblock \doi{10.1103/PhysRevA.95.062506}.
 
 \bibitem[Kozlov and Labzowsky(1995)]{kozlov1995parity}
 Mikhail~G Kozlov and Leonti~N Labzowsky.
@@ -630,6 +630,7 @@ JR~Claycomb and JH~Miller~Jr.
 \newblock Superconducting magnetic shields for squid applications.
 \newblock \emph{Review of Scientific Instruments}, 70\penalty0 (12):\penalty0
   4562--4568, 1999.
+\newblock \doi{10.1063/1.1150113}.
 
 \bibitem[Ohta et~al.(1999)Ohta, Aono, Matsui, Uchikawa, Kobayashi, Tanabe,
   Takeuchi, Narasaki, Tsunematsu, Koyabu, et~al.]{ohta1999neuromagnetic}
@@ -638,6 +639,7 @@ H~Ohta, M~Aono, T~Matsui, Y~Uchikawa, K~Kobayashi, K~Tanabe, S~Takeuchi,
 \newblock Neuromagnetic squid measurement in a superconducting magnetic shield.
 \newblock \emph{IEEE transactions on applied superconductivity}, 9\penalty0
   (2):\penalty0 4073--4076, 1999.
+\newblock \doi{10.1109/77.783921}.
 
 \bibitem[Al~Zaman et~al.(2021)Al~Zaman, Maruf, Islam, and Panna]{al2021study}
 Md~Abdullah Al~Zaman, HMAR Maruf, MR~Islam, and Neelufar Panna.
@@ -645,6 +647,7 @@ Md~Abdullah Al~Zaman, HMAR Maruf, MR~Islam, and Neelufar Panna.
   space voyages.
 \newblock \emph{The Egyptian Journal of Remote Sensing and Space Science},
   24\penalty0 (2):\penalty0 203--210, 2021.
+\newblock \doi{10.1016/j.ejrs.2021.01.001}.
 
 \bibitem[Riley et~al.(2006)Riley, Hobson, and Bence]{riley2006mathematical}
 Ken~F Riley, Mike~P Hobson, and Stephen~J Bence.
@@ -679,18 +682,21 @@ DADC Jiles and D~Atherton.
 \newblock Ferromagnetic hysteresis.
 \newblock \emph{IEEE Transactions on magnetics}, 19\penalty0 (5):\penalty0
   2183--2185, 1983.
+\newblock \doi{10.1109/TMAG.1983.1062594}.
 
 \bibitem[Jiles and Atherton(1984)]{jiles1984theory}
 David~C Jiles and David~L Atherton.
 \newblock Theory of ferromagnetic hysteresis.
 \newblock \emph{Journal of applied physics}, 55\penalty0 (6):\penalty0
   2115--2120, 1984.
+\newblock \doi{10.1063/1.333582}.
 
 \bibitem[Jiles and Atherton(1986)]{jiles1986theory}
 David~C Jiles and David~L Atherton.
 \newblock Theory of ferromagnetic hysteresis.
 \newblock \emph{Journal of magnetism and magnetic materials}, 61\penalty0
   (1-2):\penalty0 48--60, 1986.
+\newblock \doi{10.1016/0304-8853(86)90066-1}.
 
 \bibitem[Carpenter(1991)]{carpenter1991differential}
 Kenneth~H Carpenter.
@@ -698,6 +704,7 @@ Kenneth~H Carpenter.
   hysteresis model.
 \newblock \emph{IEEE transactions on magnetics}, 27\penalty0 (6):\penalty0
   4404--4406, 1991.
+\newblock \doi{10.1109/20.278655}.
 
 \bibitem[Bergqvist(1996)]{bergqvist1996simple}
 AJ~Bergqvist.
@@ -705,6 +712,7 @@ AJ~Bergqvist.
   hysteresis.
 \newblock \emph{IEEE Transactions on Magnetics}, 32\penalty0 (5):\penalty0
   4213--4215, 1996.
+\newblock \doi{10.1109/20.539337}.
 
 \bibitem[Lewis et~al.(1996)Lewis, Gao, Jiles, and Welch]{lewis1996modeling}
 LH~Lewis, J~Gao, David~C Jiles, and DO~Welch.
@@ -712,6 +720,7 @@ LH~Lewis, J~Gao, David~C Jiles, and DO~Welch.
   from the jiles--atherton hysteresis model.
 \newblock \emph{Journal of applied physics}, 79\penalty0 (8):\penalty0
   6470--6472, 1996.
+\newblock \doi{doi.org/10.1063/1.361975}.
 
 \bibitem[Sablik et~al.(1987)Sablik, Kwun, Burkhardt, and
   Jiles]{sablik1987model}
@@ -720,6 +729,7 @@ MJ~Sablik, H~Kwun, GL~Burkhardt, and DC~Jiles.
   ferromagnetic hysteresis.
 \newblock \emph{Journal of Applied physics}, 61\penalty0 (8):\penalty0
   3799--3801, 1987.
+\newblock \doi{10.1063/1.338650}.
 
 \bibitem[Lederer et~al.(1999)Lederer, Igarashi, Kost, and
   Honma]{lederer1999parameter}
@@ -728,6 +738,7 @@ Dieter Lederer, Hajime Igarashi, Arnulf Kost, and Toshihisa Honma.
   hysteresis model for numerical modelling of measured characteristics.
 \newblock \emph{IEEE Transactions on magnetics}, 35\penalty0 (3):\penalty0
   1211--1214, 1999.
+\newblock \doi{10.1109/20.767167}.
 
 \bibitem[Leite et~al.(2004)Leite, Avila, Batistela, Carpes, Sadowski, Kuo-Peng,
   and Bastos]{leite2004real}
@@ -737,6 +748,7 @@ JV~Leite, Sergio~Luciano Avila, NJ~Batistela, Walter~P Carpes, Nelson Sadowski,
   identification.
 \newblock \emph{IEEE Transactions on magnetics}, 40\penalty0 (2):\penalty0
   888--891, 2004.
+\newblock \doi{10.1109/TMAG.2004.825319}.
 
 \bibitem[Fulginei and Salvini(2005)]{fulginei2005softcomputing}
 F~Riganti Fulginei and Alessandro Salvini.
@@ -744,6 +756,7 @@ F~Riganti Fulginei and Alessandro Salvini.
   parameters.
 \newblock \emph{IEEE Transactions on Magnetics}, 41\penalty0 (3):\penalty0
   1100--1108, 2005.
+\newblock \doi{10.1109/TMAG.2004.843345}.
 
 \bibitem[Harris(1978)]{harris1978use}
 Fredric~J Harris.

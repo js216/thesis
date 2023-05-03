@@ -16,16 +16,16 @@ The style file: unsrtnat.bst
 Database file #1: references.bib
 You've used 122 entries,
             2481 wiz_defined-function locations,
-            1324 strings with 26502 characters,
-and the built_in function-call counts, 47930 in all, are:
-= -- 3965
+            1337 strings with 26770 characters,
+and the built_in function-call counts, 48112 in all, are:
+= -- 4004
 > -- 2647
 < -- 67
 + -- 1029
 - -- 784
-* -- 4049
-:= -- 7890
-add.period$ -- 440
+* -- 4075
+:= -- 7929
+add.period$ -- 453
 call.type$ -- 122
 change.case$ -- 226
 chr.to.int$ -- 121
@@ -33,13 +33,13 @@ cite$ -- 122
 duplicate$ -- 2274
 empty$ -- 4284
 format.name$ -- 961
-if$ -- 9969
+if$ -- 10008
 int.to.chr$ -- 2
 int.to.str$ -- 123
 missing$ -- 131
-newline$ -- 692
+newline$ -- 705
 num.names$ -- 367
-pop$ -- 894
+pop$ -- 881
 preamble$ -- 1
 purify$ -- 122
 quote$ -- 0
@@ -54,4 +54,4 @@ type$ -- 794
 warning$ -- 0
 while$ -- 386
 width$ -- 0
-write$ -- 1725
+write$ -- 1751
