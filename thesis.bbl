@@ -1,4 +1,4 @@
-\begin{thebibliography}{122}
+\begin{thebibliography}{123}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -870,6 +870,15 @@ Kenji Nagashima, Ichiro Sasada, and Kunihisa Tashiro.
 Paul Horowitz and Winfield Hill.
 \newblock \emph{The Art of Electronics}.
 \newblock Cambridge University Press, 3 edition, 2016.
+
+\bibitem[Pollok et~al.(2023)Pollok, Olden-J{\o}rgensen, J{\o}rgensen, and
+  Bj{\o}rk]{pollok2023magnetic}
+Stefan Pollok, Nataniel Olden-J{\o}rgensen, Peter~Stanley J{\o}rgensen, and
+  Rasmus Bj{\o}rk.
+\newblock Magnetic field prediction using generative adversarial networks.
+\newblock \emph{Journal of Magnetism and Magnetic Materials}, 571:\penalty0
+  170556, 2023.
+\newblock \doi{10.1016/j.jmmm.2023.170556}.
 
 \bibitem[Thiel et~al.(2007)Thiel, Schnabel, Knappe-Gruneberg, Stollfuss, and
   Burghoff]{thiel2007proposal}

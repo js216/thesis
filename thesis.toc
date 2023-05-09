@@ -59,15 +59,15 @@
 \contentsline {subsection}{\numberline {5.1}Design requirements}{74}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Theory}{75}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}`Paramagnetic' shielding}{75}{subsubsection.5.2.1}%
-\contentsline {paragraph}{Spherical shell shield}{77}{section*.54}%
-\contentsline {paragraph}{Cylindrical shell shield}{80}{section*.55}%
+\contentsline {paragraph}{Spherical shell shield}{77}{section*.53}%
+\contentsline {paragraph}{Cylindrical shell shield}{80}{section*.54}%
 \contentsline {subsubsection}{\numberline {5.2.2}Static shielding better than expected}{81}{subsubsection.5.2.2}%
 \contentsline {subsubsection}{\numberline {5.2.3}Degaussing toy models}{84}{subsubsection.5.2.3}%
-\contentsline {paragraph}{Rotating sphere of charge}{84}{section*.58}%
-\contentsline {paragraph}{Two `$\cos \theta $' shells}{88}{section*.59}%
+\contentsline {paragraph}{Rotating sphere of charge}{84}{section*.57}%
+\contentsline {paragraph}{Two `$\cos \theta $' shells}{88}{section*.58}%
 \contentsline {subsubsection}{\numberline {5.2.4}Hysteresis during degaussing}{90}{subsubsection.5.2.4}%
-\contentsline {paragraph}{Weiss mean field theory}{90}{section*.60}%
-\contentsline {paragraph}{Jiles--Atherton model}{92}{section*.62}%
+\contentsline {paragraph}{Weiss mean field theory}{90}{section*.59}%
+\contentsline {paragraph}{Jiles--Atherton model}{92}{section*.61}%
 \contentsline {subsubsection}{\numberline {5.2.5}Noise spectral density}{93}{subsubsection.5.2.5}%
 \contentsline {subsubsection}{\numberline {5.2.6}Random walk}{94}{subsubsection.5.2.6}%
 \contentsline {subsection}{\numberline {5.3}Magnetic shields in literature}{95}{subsection.5.3}%
@@ -78,17 +78,27 @@
 \contentsline {subsection}{\numberline {5.5}Operation and measurements}{106}{subsection.5.5}%
 \contentsline {subsubsection}{\numberline {5.5.1}Residual field measurement}{107}{subsubsection.5.5.1}%
 \contentsline {subsubsection}{\numberline {5.5.2}Off-axis magnetometry}{111}{subsubsection.5.5.2}%
-\contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{111}{subsubsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.3}Degaussing}{112}{subsubsection.5.5.3}%
 \contentsline {subsubsection}{\numberline {5.5.4}Shimming the residual field}{117}{subsubsection.5.5.4}%
-\contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{118}{subsubsection.5.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{120}{subsubsection.5.5.6}%
-\contentsline {subsection}{\numberline {5.6}Performance and limitations}{123}{subsection.5.6}%
-\contentsline {subsubsection}{\numberline {5.6.1}Residual field}{123}{subsubsection.5.6.1}%
-\contentsline {subsubsection}{\numberline {5.6.2}Dynamic shielding}{126}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.5.5}Dynamic field measurement}{119}{subsubsection.5.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.6}Charging magnetization}{121}{subsubsection.5.5.6}%
+\contentsline {subsection}{\numberline {5.6}Performance and limitations}{124}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Residual field}{124}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Dynamic shielding}{127}{subsubsection.5.6.2}%
 \contentsline {subsubsection}{\numberline {5.6.3}Magnetic noise}{129}{subsubsection.5.6.3}%
-\contentsline {subsection}{\numberline {5.7}Discussion}{129}{subsection.5.7}%
-\contentsline {section}{\numberline {6}High voltage control}{130}{section.6}%
-\contentsline {section}{\numberline {7}Test interaction region}{131}{section.7}%
-\contentsline {section}{\numberline {8}Serrodyne laser cavity locking}{132}{section.8}%
-\contentsline {section}{\numberline {9}PMT characterization}{133}{section.9}%
-\contentsline {section}{References}{134}{section.9}%
+\contentsline {subsection}{\numberline {5.7}Discussion}{130}{subsection.5.7}%
+\contentsline {section}{\numberline {6}High voltage control}{132}{section.6}%
+\contentsline {section}{\numberline {7}Test interaction region}{133}{section.7}%
+\contentsline {section}{\numberline {8}Electrostatic lens}{134}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{135}{section.9}%
+\contentsline {section}{\numberline {A}TlF ground state Hamiltonian}{136}{appendix.A}%
+\contentsline {section}{\numberline {B}Circuits}{137}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}LaserPIDpower}{137}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}digital isolator for laser}{137}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Shim coils: current source, relays}{137}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}Degaussing: DAC, relays}{137}{subsection.B.4}%
+\contentsline {subsection}{\numberline {B.5}DecaPSU: to ADC, to BNC, filter, preamp}{137}{subsection.B.5}%
+\contentsline {subsection}{\numberline {B.6}Multi ADC}{137}{subsection.B.6}%
+\contentsline {subsection}{\numberline {B.7}HV control}{137}{subsection.B.7}%
+\contentsline {section}{\numberline {C}PMT characterization}{138}{appendix.C}%
+\contentsline {section}{References}{139}{appendix.C}%

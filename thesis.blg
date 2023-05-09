@@ -9,49 +9,52 @@ A level-1 auxiliary file: apparatus.aux
 A level-1 auxiliary file: magneticshield.aux
 A level-1 auxiliary file: HVcontrol.aux
 A level-1 auxiliary file: test_interaction.aux
-A level-1 auxiliary file: serrodyne.aux
+A level-1 auxiliary file: lens.aux
+A level-1 auxiliary file: conclusion.aux
+A level-1 auxiliary file: hamiltonian.aux
+A level-1 auxiliary file: Circuits.aux
 A level-1 auxiliary file: PMT.aux
 A level-1 auxiliary file: bibliography.aux
 The style file: unsrtnat.bst
 Database file #1: references.bib
-You've used 122 entries,
+You've used 123 entries,
             2481 wiz_defined-function locations,
-            1337 strings with 26770 characters,
-and the built_in function-call counts, 48112 in all, are:
-= -- 4004
-> -- 2647
+            1348 strings with 27069 characters,
+and the built_in function-call counts, 48537 in all, are:
+= -- 4038
+> -- 2674
 < -- 67
-+ -- 1029
-- -- 784
-* -- 4075
-:= -- 7929
-add.period$ -- 453
-call.type$ -- 122
-change.case$ -- 226
-chr.to.int$ -- 121
-cite$ -- 122
-duplicate$ -- 2274
-empty$ -- 4284
-format.name$ -- 961
-if$ -- 10008
++ -- 1039
+- -- 792
+* -- 4113
+:= -- 8001
+add.period$ -- 457
+call.type$ -- 123
+change.case$ -- 228
+chr.to.int$ -- 122
+cite$ -- 123
+duplicate$ -- 2293
+empty$ -- 4320
+format.name$ -- 970
+if$ -- 10096
 int.to.chr$ -- 2
-int.to.str$ -- 123
-missing$ -- 131
-newline$ -- 705
-num.names$ -- 367
-pop$ -- 881
+int.to.str$ -- 124
+missing$ -- 132
+newline$ -- 711
+num.names$ -- 370
+pop$ -- 887
 preamble$ -- 1
-purify$ -- 122
+purify$ -- 123
 quote$ -- 0
-skip$ -- 1284
+skip$ -- 1294
 stack$ -- 0
-substring$ -- 2200
-swap$ -- 256
+substring$ -- 2220
+swap$ -- 258
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 794
+type$ -- 801
 warning$ -- 0
-while$ -- 386
+while$ -- 389
 width$ -- 0
-write$ -- 1751
+write$ -- 1766

@@ -30,24 +30,22 @@ work requiring higher performance.
 
 The effect of magnetic field imperfections has been discussed in detail in
 section \ref{systematics:magnetic}. In the following, I will summarize the
-requirements (listed in Table~\ref{shieldrequirements}) on the static residual
-field, the noise, the magnetic field that changes in phase with the electric
-field reversals, and on spatial magnetic field changes (`gradients').
+requirements on the static residual field and the magnetic noise.
 
-\begin{table*}
-  %\small
-  \makebox[\textwidth][c]{%
-    \begin{tabu} to \textwidth {ccc}
-      \toprule
-       Requirement                       & Component(s) & Value \\\midrule
-       Static residual field             & $B_y$        & 10~$\mu$G \\
-       Noise spectral density            & $B_x$        & 50~nG/$\sqrt{\mathrm{Hz}}$ at 25~Hz \\
-       Field in phase with $E$ reversals & $B_x$        & 30~pG \\
-      \bottomrule
-    \end{tabu}}
-    \caption{Design requirements for the magnetic shield.}
-    \label{shieldrequirements}
-\end{table*}
+%\begin{table*}
+%  %\small
+%  \makebox[\textwidth][c]{%
+%    \begin{tabu} to \textwidth {ccc}
+%      \toprule
+%       Requirement                       & Component(s) & Value \\\midrule
+%       Static residual field             & $B_y$        & 10~$\mu$G \\
+%       Noise spectral density            & $B_x$        & 50~pG/$\sqrt{\mathrm{Hz}}$ at 25~Hz \\
+%       Field in phase with $E$ reversals & $B_x$        & 30~pG \\
+%      \bottomrule
+%    \end{tabu}}
+%    \caption{Design requirements for the magnetic shield.}
+%    \label{shieldrequirements}
+%\end{table*}
 
 The static residual field, so called since it remains even after our best
 attempt at degaussing and shimming of the field, provides a limit on the
@@ -78,6 +76,15 @@ of $\approx50$~nHz as required by the planned experimental sensitivity of
 \CENTREX.
 
 \subsection{Theory}
+
+In this section, I will explain the factors that determine the ability of a
+magnetic shield to attenuate external magnetic fields. We first consider a
+simple model of the shield as a paramagnetic cylinder placed in an external
+field and derive an expression for the field inside. Then, we expand the model
+to consider what happens to the shield during the `degaussing' or equilibration
+procedure (sect.~\ref{better_than_expected}). The last two subsections discuss a
+way of thinking about the slow field changes that happen in the shield over
+longer periods of time.
 
 \subsubsection{`Paramagnetic' shielding}
 \label{paramagnetic_shielding}
@@ -1489,12 +1496,18 @@ with the \ADC.
 \subsubsection{Off-axis magnetometry}
 
 When the magnetic shield is in use, the central axis will not be accessible to
-magnetic sensors. To control the magnetic field, we plan on using a set of four
-magnetometers distributed around the vacuum chamber. These are currently in an
-aluminum slide, but since they are fluxgate sensors, the dynamic field generated
-by the sensor may induce currents in the aluminum and cause spurious
-measurements. I may have to move the sensors into plastic slides instead.
-Fig.~\ref{on_off_axis}
+magnetic sensors. To control the magnetic field, we planned on using a set of
+four magnetometers distributed around the vacuum chamber. The sensors are in
+rectangular aluminum enclosures inside square fiberglass tubes sliding along the
+length of the magnetic shield. In principle, the idea was to use the information
+about the off-axis magnetic field to deduce the on-axis field, but in practice
+the correlation was hard to establish. Fig.~\ref{on_off_axis} shows the (lack of
+a) correlation between the on-axis and off-axis sensors, when the two sensors
+are located at a fixed point inside the shield, one approximately on top of the
+other. The data is low-pass filtered by convolution with a window function to
+reveal long-term trends. We see that at different times, the slope of the curve
+can be anything from zero to $\pm\infty$, reflecting the obvious fact the the
+magnetic field at two different points in space is not correlated.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/offaxis.png}
@@ -1503,6 +1516,32 @@ Fig.~\ref{on_off_axis}
    directly underneath the on-axis sensor. Before plotting, the data is
    convoluted with a window function of the length stated in the figure.}
   \label{on_off_axis}
+\end{figure}
+
+It would have been necessary to measure the off-axis field at several points
+along the shield, as shown in an example measurement in Fig.~\ref{onoff}.
+However, this approach may require greater positioning accuracy than that
+achievable from the current system of ropes and pulleys. Assume a $1~\mu$G
+change in the off-axis fields corresponds to a $1~\mu$G change in the on-axis
+field. Consider that the gradient in the off-axis fields (lower plot in
+Fig.~\ref{onoff}) can be as high as approx.\ $60~\mu$G/cm, so the sensor would
+have to be positioned within 0.1~mm for $1~\mu$G precision.
+Fraction-of-millimeter precision is not impossible to achieve, but would require
+improving the sensor motion mechanism, such as by using a timing belt, or a
+rigid rack driven by pinion gears. More importantly, future work would have to
+establish the data analysis method to deduce the on-axis fields from off-axis
+fields, perhaps by finding the linear combination of off-axis fields at various
+locations that best corresponds to the on-axis field at a given location. See
+ref.\ \cite{pollok2023magnetic} for an innovative approach using generative
+adversarial networks to predict magnetic field in a region of space using field
+measurements around (but of course not inside) that region.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/onoff.png}
+   \caption{Field on-axis (upper plot) and off-axis (lower plot) scanned along
+   the length of the magnetic shield. The off-axis sensor is located
+   directly underneath the on-axis sensor.}
+  \label{onoff}
 \end{figure}
 
 \subsubsection{Degaussing}
@@ -2042,9 +2081,33 @@ This is well below the design requirement of 50~nG/$\sqrt{\mathrm{Hz}}$ at
 
 \subsection{Discussion}
 
-While the dynamic shielding follows the approximate theoretical model, the static
-shielding does not. It is not clear why degaussing achieves such good shielding,
-nor is it known what limits it from working even better. It appears clear from
-a simple model that degaussing magnetizes the shield in such a way as to oppose
-the external magnetic fields, that being the configuration of lowest total
-energy.
+I have build a four-layer cylindrical magnetic shield combining the ease of
+handling of metglas for the outer three layers with the superior residual field
+characteristics of mu-metal for the inner layer. The dynamic shielding in excess
+of $10^4$ is sufficient to reduce the magnetic noise to a level well below the
+requirements of the \CENTREX\ experiment. The static residual field can be
+controlled using shim coils to the level needed for the experiment.
+
+I have explained the mechanism that causes the static shielding to be much
+better than the dynamic shielding, but it is still not entirely understood what
+determines the pattern of the residual field. It is likely something to do with
+magnetic domains that refuse to move during degaussing, since they are pinned on
+inhomogeneities caused by internal mechanical stresses or inclusions of
+impurities in the material. The former can be reduced to a large degree by
+annealing (heating the material to a high temperature in a controlled
+enviroment), while the latter are determined by the time the alloy is prepared
+at the factory. After the annealing, the mu-metal needs to be subjected to a
+minimum of external stresses to prevent work-hardening of the material.
+
+In the current design some amount of mechanical deformation of the sensitive
+mu-metal layer is inevitable since the layer carries the weight of everything
+contained inside it (shim coils, vacuum chamber, electrodes, etc.). This is less
+than ideal since it can cause a gradual reversal of the annealing over time,
+inducing a component of the magnetization that is not amenable to degaussing.
+
+The magnetic shielding system would also be greatly improved if there was a
+repeatable method to estimate on-axis magnetic field from sensors located around
+the central axis of the shield. This would allow shimming away the residual
+fields without requiring access to the central shielded region, where the vacuum
+chamber of the molecular beam experiment is located, making it difficult to
+place magnetic sensors there.
