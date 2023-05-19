@@ -7,25 +7,16 @@ molecules---an entirely separate project and wholly irrelevant for \CENTREX.
 \subsection{Isotope sources}
 
 The longest-lived isotope, francium-223, can be obtained from the decay chain of
-actinium-227 as shown in Fig.~\ref{Ac227}. In the following, we consider two
-possible approaches to obtain a beam of francium, either an ion beam, or a
-neutral atom beam. See also comparison in Table~\ref{ion_vs_neutral}.
-\paragraph{Ion beam}
+actinium-227 as shown in Fig.~\ref{Ac227}. Alternatively, we can use Ac-225 that
+decays into Fr-221. The key difference is that All of Ac-225 is converted into
+Fr-221, whereas only 1.4~\%\ of Ac-227 is converted into Fr-223. Thus we need 72
+times the activity of acinium to get the same flux of francium.
 
-Following Guckert et al.\ \cite{guckert1998magneto},
+In the following, we consider adapting two possible approaches from literature
+to obtain a beam of francium, either an ion beam, or a neutral atom beam. See
+also comparison in Table~\ref{ion_vs_neutral}.
 
-\paragraph{Neutral atom beam}
-
-\subsection{Safety considerations}
-
-\begin{figure}
-   \centering
-  \includegraphics[width=\textwidth]{figs/todo/Ac227.png}
-   \caption[Decay chain of actinium-227.]{Decay chain of actinium-227. Adapted from \cite{keller2000radionuclides}.}
-  \label{Ac227}
-\end{figure}
-
-\begin{table*}
+\begin{table*}[b]
   %\small
   \makebox[\textwidth][c]{%
     \begin{tabu} to \textwidth {rcc}
@@ -45,3 +36,262 @@ Following Guckert et al.\ \cite{guckert1998magneto},
     \label{ion_vs_neutral}
 \end{table*}
 
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/Ac227.png}
+   \caption[Decay chain of actinium-227.]{Decay chain of actinium-227. Adapted from \cite{keller2000radionuclides}.}
+  \label{Ac227}
+\end{figure}
+
+\paragraph{Ion beam}
+
+Guckert et al.\ \cite{guckert1998magneto} report on using an ion-beam source of
+rubidium to load a magneto-optical trap. The rubidium-82 is obtained from a
+sample of the relatively long-lived strontium-82 (half life = 25 days) in the
+form of strontium carbonate. The strontium sample, a mixture of Sr-82 and Sr-85,
+is loaded into a tantalum crucible and heated to a temperature where ionization
+efficiency is high for rubidium but low for the strontium parent. The ions are
+accelerated to 20~keV and passed through a high-resolution mass separator
+\cite{guckert1997coupling} to isolate Rb-82 ions. Finally, the ions enter the
+trapping cell and are implanted into an yttrium catcher foil. An inductive
+heater heats the foil to release the implanted rubidium as a vapor inside the
+cell.
+
+In principle, the same approach could be used for francium by loading the
+long-lived Ac-227 sample (half life = 22 years) into a crucible, heating to the
+correct temperature to preferrentially ionize the Fr-233 decay product,
+implanted into a catcher foil, and heated to release into a vapor cell.
+
+For both the Ac-225 and Ac-227 decay chains, large amounts of long-lived
+isotopes are present in the oven:
+
+\begin{itemize}
+   \item Ra-225 and Ac-225
+   \item Ra-223 and Th-227
+\end{itemize}
+
+At a temperature needed to diffuse enough Fr, nearly 100\%\ of the long-lived
+isotopes would also survive the diffusion time. How can we keep the Ra, Ac, Th
+from escaping the beam source? We can use the different ionization probability
+of different elements as a function of temperature to select only the isotope we
+are interested in. According to the Languimur Saha equation
+\cite{dinneen1996orthotropic}, the ratio of ions to atoms evaporated from a
+surface of work function $\Phi$ at a temperature $T$, where the atoms have an
+ionization potential $I$, is given by
+%
+\[
+   \frac{n_+}{n_0}=\frac{\omega_+}{\omega_0}\exp\left[\frac{\varepsilon(\Phi-I)}{k_\text{B}T}\right],
+\]
+%
+where $\omega_+/\omega_-$ is equal to 1/2 for alkali atoms and $\varepsilon$ is
+the charge on the electron. The ionization probabilities for Fr, Ac, Ra, Th are
+plotted in Fig.~\ref{ionization} for three different materials the isotopes
+could be evaporating from (platinum, titanium, tantalum).
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/ionization.png}
+   \caption{Selective ionization of radioisotopes vs work function of the
+   material they are evaporating from.}
+  \label{ionization}
+\end{figure}
+
+\paragraph{Neutral atom beam}
+
+A different approach was used by Gould et al.
+\cite{dinneen1996orthotropic,lu1997efficient} to obtain a neutral beam of
+Fr-221. A nickel foil disk containing Ra-225, which decays to Ac-225 and then to
+Fr-221, was mounted inside the beam source oven. In the alpha decay of actinium
+to francium, the daughter nucleus is accelerated with enough kinetic
+energy towards the platinum-coated walls of the oven to cause the francium
+atoms to be buried to a depth of about 400~\AA\ in the platinum coating. As the
+oven is heated to about 950\degC, the Fr diffuses out of the platinum (work
+function = 5.65~eV). The Fr is emitted as positive ions which are attracted to a
+negatively charged neutralizer made of a low-work function material (yttrium,
+3.4~eV), from which the ions reevaporate as neutral atoms. They can either leave
+the oven through a small aperture opposite the neutralizer, or they strike the
+platinum walls, get ionized, and repeat the process. The atoms that manage to
+escape through the aperture form a highly directional beam.
+
+During the radioactive decay, the daughter nucleus is emitted with a significant
+kinetic energy and gets buried inside the platinum walls. To estimate how deep
+it gets buried, consider that the enthalpy of atomization for platinum is
+5.7~eV/atom. Thus 5.9~MeV of energy would be enough to atomize about $10^6$
+atoms. A sphere of that many atoms would have the approximate radius
+$r=1\;\text{\AA}\cdot(10^3)^{1/3}=100\;\text{\AA}$
+\cite{sigmund2014particle,bohr1948penetration,gaite2017penetration}.
+
+We can calculate the kinetic energy of the francium daughter nucleus from simple
+momentum conservation. For a decay of a stationary actinium nucleus into an
+alpha particle and a francium nucleus, the momentum conservation gives
+%
+\[
+   p_\alpha+p_\text{Fr}=0.
+\]
+%
+The speeds are low enough that the kinetic energy is simply $T=\frac{1}{2}mv^2$
+with momentum $p=mv=\sqrt{2mT}$, so
+%
+\[
+   T_\alpha=(1+m_\text{Fr}/m_\alpha)T_\text{Fr}.
+\]
+%
+Total energy is $T=T_\alpha+T_\text{Fr}$, so the kinetic energy of francium is
+%
+\[
+   T_\text{Fr}=\frac{T}{1+m_\text{Fr}/m_\alpha}.
+\]
+%
+In the decay of Ac-225 into Fr-221, there is 5.9~MeV of total energy, of which
+Fr-221 gets 105.5~keV. In the decay of Ac-227 into Fr-223, there is 5.0~MeV of
+total energy, of which Fr-223 gets 88.9~keV. A simple simulation of francium
+penetration into a platinum target using the SRIM software
+\cite{ziegler2010srim} shows that the nuclei would be embedded to a depth of
+about 100~\AA\ (see Fig.~\ref{SRIM}).
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/SRIM.png}
+   \caption{Simulation of francium penetration into platinum.}
+  \label{SRIM}
+\end{figure}
+
+After the nucleus has been embedded into the platinum wall, it can diffuse out
+of it again. Experimentally it is found that at 950\degC, approx.\ 25\%\ of
+Fr-221 escapes from the platinum walls \cite{dinneen1996orthotropic}. Since the
+lifetime of Fr-221 is $T_{1/2}=4.8$~min, we can calculate that the relevant
+diffusion time is
+%
+\[
+   t_\text{Pt}=-t_{1/2}\log_2(0.25)=9.6~\text{min}.
+\]
+%
+We can use this time to calculate the diffusion constant. In a solid, the
+diffusion probability is \cite{mehrer2007diffusion}
+%
+\[
+   C(x,t)=\frac{M}{\sqrt{\pi Dt}}\exp\left(-\frac{x^2}{4Dt}\right),
+\]
+%
+with $M$ some constant. The characteristic diffusion length is
+%
+\[
+   2\sqrt{Dt}=400~\text{\AA},
+\]
+%
+allowing us to deduce the diffusion constant at 950\degC:
+%
+\[
+   D_\text{Fr--Pt}=6.9\cdot10^{-15}~\text{cm}^2/\text{s}.
+\]
+%
+We can compare this to the self-diffusion coefficient of platinum
+\cite{cattaneo1962self} at the same temperature:
+%
+\begin{align*}
+   D_\text{Pt--Pt}&=0.22\exp(-2.89~\text{eV}/k_\text{B}T)~\text{cm}^2/\text{s}\\
+   &=2.8\cdot10^{-13}~\text{cm}^2/\text{s}.
+\end{align*}
+
+The diffusion coefficient itself often obeys the Arrhenius relation
+\cite{mehrer2007diffusion}
+%
+\[
+   D=D^0\exp\left(-\frac{\Delta H}{k_\text{B}T}\right),
+\]
+%
+where the pre-exponential factor $D^0$ is of order 1~cm$^2$/s, and $\Delta H$ is
+the activation enthalpy of diffusion. Setting $D^0 = 1~\text{cm}^2/\text{s}$, we
+can estimate the activation enthalpy:
+%
+\[
+   \Delta H_\text{Fr--Pt}=3.4~\text{eV}.
+\]
+
+We can use the above numbers to estimate what fraction of francium would survive
+the time it takes for the atoms to diffuse out of the platinum walls. Noting the
+similar decay energies of Fr-221 and Fr-223, we assume that after hitting the
+walls, both get buried to the same depth in the wall. Assume also they have the
+same diffusion coefficient. However, Fr-223 ($t_{1/2}=22.0$~min) lives longer
+than Fr-221 ($t_{1/2}=4.8$~min). The predicted survival rates are plotted in
+Fig.~\ref{survival}.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=.6\textwidth]{figs/todo/survival.png}
+   \caption{Estimated survival probability for Fr-221 vs Fr-223 as a function of
+   oven temperature.}
+  \label{survival}
+\end{figure}
+
+\subsection{Safety considerations}
+
+If we would like $10^7$/s Fr-223 atoms emitted from the oven at approx.\ 25\%\
+extraction efficiency, then we need an actinium source with activity
+%
+\[
+   \frac{10^7\text{s}}{25\%\cdot1.38\%}=2.7~\text{GBq}=73~\text{mCi},
+\]
+%
+noting the 1.38\%\ branching ratio from actinium-227 to francium-223. In the
+decay, a number of gamma rays at different energies are emitted, giving rise to
+a different absorbed dose of radiation for each species in the decay chain. In
+the literature, this is summarized as the so-called gamma-ray dose constant
+$\Gamma$, defined as
+%
+\[
+   \Gamma=\frac{\text{dose @ 1 m away from a point source}}{\text{source
+   activity}}.
+\]
+%
+$\Gamma$ is normally given in mSv/h for a 1~MBq source. We may use the published
+$\Gamma$ values \cite{unger1982specific,peplow2020specific} to deduce the
+dose-equivalent rates at 1~m distance away from an Ac-227 source of activity
+$A=73~\text{mCi}$ for a number of decay products. These rates are shown in
+Table~\ref{radioactivity}.
+
+\begin{table*}
+   %\small
+   \makebox[\textwidth][c]{%
+      \begin{tabu} to \textwidth {ccccc}
+         \toprule
+         Nuclide              & $A\cdot\Gamma$ (1981) & $A\cdot\Gamma$ (2020) & $\mu$  & $x$ \\
+                              & [mSv/yr]              & [mSv/yr]              & [1/cm] & [cm] \\\midrule
+         Fr-223               & 2114                  & 198                   & 67.566 & 0.13 \\
+         Ra-223               & 2080                  & 472                   & 10.794 & 0.79 \\
+         Ac-227               & 56                    & 4.1                   & 690.1  & 0.01 \\
+         Th-227               & 2710                  & 479                   & 14.730 & 0.58 \\
+         \bottomrule
+      \end{tabu}}
+      \caption{Unshielded dose rates for various nuclides in the decay chain of
+      Ac-227. The 1981 and 2020 values refer to \cite{unger1982specific} and
+      \cite{peplow2020specific}, resp., reflecting an updated calculation of the
+      gamma-ray dose constants. The attenuation coefficients $\mu$ taken from
+      \cite{unger1982specific}.}
+      \label{radioactivity}
+\end{table*}
+
+In order to reduce the radiation below background levels, e.g.\ to 0.5~mSv/yr,
+we need a shielding factor of about 5000:
+%
+\[
+   \text{SF}=\exp(-\mu x)=5000,
+\]
+%
+where $\mu$ is the linear attenuation coefficient for a given material, and $x$
+is the material thickness. Table~\ref{radioactivity} also shows these
+coefficients lead shielding against the gamma rays from the listed nuclides.
+Starting from a single-isotope source, the dose rate of course continuously
+changes over time as the parents decay into daughter nuclides;
+Fig.~\ref{lead_shield} shows the expected dose rates as a function of time and
+thickness of lead shielding.
+
+\begin{figure}[b]
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/lead_shield.png}
+   \caption{The dose rate changes over the lifetime of the decay products of the
+   Ac-227 and Ac-225 decay chains, for a selection of different lead shield
+   thicknesses, starting from a 10~mCi source. Note the different time units for
+   Ac-227 vs Ac-225 (years vs days).}
+  \label{lead_shield}
+\end{figure}

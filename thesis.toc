@@ -92,21 +92,33 @@
 \contentsline {section}{\numberline {8}Electrostatic Lens}{134}{section.8}%
 \contentsline {section}{\numberline {9}Conclusion}{135}{section.9}%
 \contentsline {section}{\numberline {A}TlF Ground State Hamiltonian}{136}{appendix.A}%
-\contentsline {section}{\numberline {B}Circuits}{137}{appendix.B}%
-\contentsline {subsection}{\numberline {B.1}LaserPIDpower}{137}{subsection.B.1}%
-\contentsline {subsection}{\numberline {B.2}digital isolator for laser}{137}{subsection.B.2}%
-\contentsline {subsection}{\numberline {B.3}Shim coils: current source, relays}{137}{subsection.B.3}%
-\contentsline {subsection}{\numberline {B.4}Degaussing: DAC, relays}{137}{subsection.B.4}%
-\contentsline {subsection}{\numberline {B.5}DecaPSU: to ADC, to BNC, filter, preamp}{137}{subsection.B.5}%
-\contentsline {subsection}{\numberline {B.6}Multi ADC}{137}{subsection.B.6}%
-\contentsline {subsection}{\numberline {B.7}HV control}{137}{subsection.B.7}%
-\contentsline {section}{\numberline {C}PMT Characterization}{138}{appendix.C}%
-\contentsline {subsection}{\numberline {C.1}Measurement apparatus}{138}{subsection.C.1}%
-\contentsline {subsection}{\numberline {C.2}Calibration procedure}{138}{subsection.C.2}%
-\contentsline {subsection}{\numberline {C.3}Results}{142}{subsection.C.3}%
-\contentsline {section}{\numberline {D}Producing Francium}{145}{appendix.D}%
-\contentsline {subsection}{\numberline {D.1}Isotope sources}{145}{subsection.D.1}%
-\contentsline {paragraph}{Ion beam}{145}{section*.98}%
-\contentsline {paragraph}{Neutral atom beam}{145}{section*.99}%
-\contentsline {subsection}{\numberline {D.2}Safety considerations}{145}{subsection.D.2}%
-\contentsline {section}{References}{147}{table.caption.101}%
+\contentsline {paragraph}{Representing the states}{136}{section*.90}%
+\contentsline {paragraph}{Operators in Python}{139}{section*.91}%
+\contentsline {paragraph}{Composition of operators}{141}{section*.92}%
+\contentsline {paragraph}{Rotational term}{141}{section*.93}%
+\contentsline {paragraph}{Terms with ang. momentum dot products}{141}{section*.94}%
+\contentsline {paragraph}{Zeeman Hamiltonian}{142}{section*.95}%
+\contentsline {paragraph}{Stark Hamiltonian}{143}{section*.96}%
+\contentsline {paragraph}{An alternative $c_3$ term}{146}{section*.97}%
+\contentsline {paragraph}{Finding the matrix elements}{146}{section*.98}%
+\contentsline {paragraph}{Find the energies}{147}{section*.99}%
+\contentsline {paragraph}{Polarization}{148}{section*.100}%
+\contentsline {section}{\numberline {B}Circuits}{150}{appendix.B}%
+\contentsline {subsection}{\numberline {B.1}LaserPIDpower}{150}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.2}digital isolator for laser}{150}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.3}Shim coils: current source, relays}{150}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.4}Degaussing: DAC, relays}{150}{subsection.B.4}%
+\contentsline {subsection}{\numberline {B.5}DecaPSU: to ADC, to BNC, filter, preamp}{150}{subsection.B.5}%
+\contentsline {subsection}{\numberline {B.6}Multi ADC}{150}{subsection.B.6}%
+\contentsline {subsection}{\numberline {B.7}HV control}{150}{subsection.B.7}%
+\contentsline {section}{\numberline {C}PMT Characterization}{151}{appendix.C}%
+\contentsline {subsection}{\numberline {C.1}Measurement apparatus}{151}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.2}Calibration procedure}{151}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.3}Results}{155}{subsection.C.3}%
+\contentsline {section}{\numberline {D}Microwave Absorbers}{158}{appendix.D}%
+\contentsline {section}{\numberline {E}Producing Francium}{159}{appendix.E}%
+\contentsline {subsection}{\numberline {E.1}Isotope sources}{159}{subsection.E.1}%
+\contentsline {paragraph}{Ion beam}{159}{section*.111}%
+\contentsline {paragraph}{Neutral atom beam}{161}{section*.113}%
+\contentsline {subsection}{\numberline {E.2}Safety considerations}{164}{subsection.E.2}%
+\contentsline {section}{References}{166}{figure.caption.117}%

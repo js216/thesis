@@ -14,48 +14,51 @@ A level-1 auxiliary file: conclusion.aux
 A level-1 auxiliary file: hamiltonian.aux
 A level-1 auxiliary file: Circuits.aux
 A level-1 auxiliary file: PMT.aux
+A level-1 auxiliary file: absorbers.aux
 A level-1 auxiliary file: francium.aux
 A level-1 auxiliary file: bibliography.aux
 The style file: unsrtnat.bst
 Database file #1: references.bib
-You've used 127 entries,
+Warning--empty journal in unger1982specific
+You've used 136 entries,
             2481 wiz_defined-function locations,
-            1372 strings with 27907 characters,
-and the built_in function-call counts, 50288 in all, are:
-= -- 4165
-> -- 2812
-< -- 67
-+ -- 1089
-- -- 834
-* -- 4281
-:= -- 8306
-add.period$ -- 472
-call.type$ -- 127
-change.case$ -- 236
-chr.to.int$ -- 126
-cite$ -- 127
-duplicate$ -- 2368
-empty$ -- 4456
-format.name$ -- 1016
-if$ -- 10449
+            1431 strings with 29470 characters,
+and the built_in function-call counts, 53619 in all, are:
+= -- 4459
+> -- 2955
+< -- 75
++ -- 1149
+- -- 876
+* -- 4537
+:= -- 8842
+add.period$ -- 506
+call.type$ -- 136
+change.case$ -- 253
+chr.to.int$ -- 135
+cite$ -- 137
+duplicate$ -- 2541
+empty$ -- 4774
+format.name$ -- 1069
+if$ -- 11152
 int.to.chr$ -- 2
-int.to.str$ -- 128
-missing$ -- 136
-newline$ -- 734
-num.names$ -- 382
-pop$ -- 914
+int.to.str$ -- 137
+missing$ -- 146
+newline$ -- 785
+num.names$ -- 409
+pop$ -- 984
 preamble$ -- 1
-purify$ -- 127
+purify$ -- 136
 quote$ -- 0
-skip$ -- 1334
+skip$ -- 1431
 stack$ -- 0
-substring$ -- 2277
-swap$ -- 266
-text.length$ -- 3
+substring$ -- 2432
+swap$ -- 285
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 829
-warning$ -- 0
-while$ -- 401
+type$ -- 889
+warning$ -- 1
+while$ -- 429
 width$ -- 0
-write$ -- 1823
+write$ -- 1951
+(There was 1 warning)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{127}
+\begin{thebibliography}{136}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,19 @@ Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
   thallium fluoride.
 \newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
 \newblock \doi{10.1103/PhysRevA.29.425}.
+
+\bibitem[Unger and Trubey(1982)]{unger1982specific}
+Laurie~M Unger and DK~Trubey.
+\newblock Specific gamma-ray dose constants for nuclides important to dosimetry
+  and radiological assessment.
+\newblock 1982.
+\newblock \doi{doi.org/10.2172/5158466}.
+
+\bibitem[Peplow(2020)]{peplow2020specific}
+Douglas~E Peplow.
+\newblock Specific gamma-ray dose constants with current emission data.
+\newblock \emph{Health Physics}, 118\penalty0 (4):\penalty0 402--416, 2020.
+\newblock \doi{10.1097/HP.0000000000001136}.
 
 \bibitem[Landau(1957)]{landau1957conservation}
 Lev Landau.
@@ -807,7 +820,7 @@ S~Malkowski, R~Adhikari, B~Hona, C~Mattie, D~Woods, H~Yan, and B~Plaster.
   Lippert, Meienburg, Werner, Gobrecht, et~al.]{bitter1991large}
 T~Bitter, F~Eisert, P~El-Muzeini, M~Kessler, U~Kinkel, E~Klemt, W~Lippert,
   W~Meienburg, R~Werner, K~Gobrecht, et~al.
-\newblock A large volume magnetic shielding system for the ill
+\newblock A large volume magnetic shielding system for the {ILL}
   neutron-antineutron oscillation experiment.
 \newblock \emph{Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment},
@@ -818,7 +831,7 @@ T~Bitter, F~Eisert, P~El-Muzeini, M~Kessler, U~Kinkel, E~Klemt, W~Lippert,
   Fierlinger, Kuchler, Lins, Marino, Niessen, et~al.]{altarev2015large}
 I~Altarev, M~Bales, DH~Beck, T~Chupp, K~Fierlinger, P~Fierlinger, F~Kuchler,
   T~Lins, MG~Marino, B~Niessen, et~al.
-\newblock A large-scale magnetic shield with 106 damping at millihertz
+\newblock A large-scale magnetic shield with $10^6$ damping at millihertz
   frequencies.
 \newblock \emph{Journal of Applied Physics}, 117\penalty0 (18):\penalty0
   183903, 2015.
@@ -904,12 +917,6 @@ R~Guckert, X~Zhao, SG~Crane, A~Hime, WA~Taylor, D~Tupa, DJ~Vieira, and
 \newblock \emph{Physical Review A}, 58\penalty0 (3):\penalty0 R1637, 1998.
 \newblock \doi{10.1103/PhysRevA.58.R1637}.
 
-\bibitem[Keller et~al.(2000)Keller, Wolf, and Shani]{keller2000radionuclides}
-Cornelius Keller, Walter Wolf, and Jashovam Shani.
-\newblock Radionuclides, 2. {R}adioactive elements and artificial
-  radionuclides.
-\newblock \emph{Ullmann's Encyclopedia of Industrial Chemistry}, 2000.
-
 \bibitem[Dinneen et~al.(1996)Dinneen, Ghiorso, and
   Gould]{dinneen1996orthotropic}
 Timothy Dinneen, Albert Ghiorso, and Harvey Gould.
@@ -925,5 +932,61 @@ Z-T Lu, KL~Corwin, KR~Vogel, CE~Wieman, TP~Dinneen, J~Maddi, and Harvey Gould.
   {M}agneto-optical {T}rap.
 \newblock \emph{Physical review letters}, 79\penalty0 (6):\penalty0 994, 1997.
 \newblock \doi{10.1103/PhysRevLett.79.994}.
+
+\bibitem[Keller et~al.(2000)Keller, Wolf, and Shani]{keller2000radionuclides}
+Cornelius Keller, Walter Wolf, and Jashovam Shani.
+\newblock Radionuclides, 2. {R}adioactive elements and artificial
+  radionuclides.
+\newblock \emph{Ullmann's Encyclopedia of Industrial Chemistry}, 2000.
+
+\bibitem[Guckert et~al.(1997)Guckert, Chamberlin, Preston, Sandberg, Tupa,
+  Vieira, Wollnik, and Zhao]{guckert1997coupling}
+R~Guckert, EP~Chamberlin, DW~Preston, VD~Sandberg, D~Tupa, DJ~Vieira,
+  H~Wollnik, and XX~Zhao.
+\newblock Coupling an optical trap to a mass separator.
+\newblock \emph{Nuclear Instruments and Methods in Physics Research Section B:
+  Beam Interactions with Materials and Atoms}, 126\penalty0 (1-4):\penalty0
+  383--385, 1997.
+\newblock \doi{10.1016/S0168-583X(97)01065-3}.
+
+\bibitem[Sigmund(2014)]{sigmund2014particle}
+Peter Sigmund.
+\newblock Particle penetration and radiation effects volume 2.
+\newblock In \emph{Springer series in solid-state sciences}, volume 179.
+  Springer, 2014.
+
+\bibitem[Bohr(1948)]{bohr1948penetration}
+N~Bohr.
+\newblock Penetration of atomic particles through matter danske vidensk.
+\newblock \emph{Selsk. Mat.-fys. Medd}, 18\penalty0 (8), 1948.
+
+\bibitem[Gaite(2017)]{gaite2017penetration}
+Jose Gaite.
+\newblock Penetration of fast projectiles into resistant media: from
+  macroscopic to subatomic projectiles.
+\newblock \emph{Annals of Physics}, 384:\penalty0 235--253, 2017.
+\newblock \doi{10.1016/j.aop.2017.06.021}.
+
+\bibitem[Ziegler et~al.(2010)Ziegler, Ziegler, and Biersack]{ziegler2010srim}
+James~F Ziegler, Matthias~D Ziegler, and Jochen~P Biersack.
+\newblock Srim--the stopping and range of ions in matter (2010).
+\newblock \emph{Nuclear Instruments and Methods in Physics Research Section B:
+  Beam Interactions with Materials and Atoms}, 268\penalty0 (11-12):\penalty0
+  1818--1823, 2010.
+\newblock \doi{10.1016/j.nimb.2010.02.091}.
+
+\bibitem[Mehrer(2007)]{mehrer2007diffusion}
+Helmut Mehrer.
+\newblock \emph{Diffusion in solids: fundamentals, methods, materials,
+  diffusion-controlled processes}, volume 155.
+\newblock Springer Science \& Business Media, 2007.
+
+\bibitem[Cattaneo et~al.(1962)Cattaneo, Germagnoli, and
+  Grasso]{cattaneo1962self}
+F~Cattaneo, E~Germagnoli, and F~Grasso.
+\newblock Self-diffusion in platinum.
+\newblock \emph{Philosophical Magazine}, 7\penalty0 (80):\penalty0 1373--1383,
+  1962.
+\newblock \doi{10.1080/14786436208213170}.
 
 \end{thebibliography}
