@@ -1,4 +1,4 @@
-\begin{thebibliography}{136}
+\begin{thebibliography}{145}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -21,6 +21,11 @@ Dean~A Wilkening, Norman~F Ramsey, and Daniel~J Larson.
   thallium fluoride.
 \newblock \emph{Physical Review A}, 29\penalty0 (2):\penalty0 425, 1984.
 \newblock \doi{10.1103/PhysRevA.29.425}.
+
+\bibitem[Pozar(2006)]{pozar2006microwave}
+David~M Pozar.
+\newblock \emph{Microwave Engineering 3e}.
+\newblock Wiley, 2006.
 
 \bibitem[Unger and Trubey(1982)]{unger1982specific}
 Laurie~M Unger and DK~Trubey.
@@ -633,11 +638,6 @@ RWP Drever, John~L Hall, FV~Kowalski, J~Hough, GM~Ford, AJ~Munley, and H~Ward.
 \newblock \emph{Applied Physics B}, 31\penalty0 (2):\penalty0 97--105, 1983.
 \newblock \doi{10.1007/BF00702605}.
 
-\bibitem[Pozar(2006)]{pozar2006microwave}
-David~M Pozar.
-\newblock \emph{Microwave Engineering 3e}.
-\newblock Wiley, 2006.
-
 \bibitem[Claycomb and Miller~Jr(1999)]{claycomb1999superconducting}
 JR~Claycomb and JH~Miller~Jr.
 \newblock Superconducting magnetic shields for squid applications.
@@ -908,6 +908,68 @@ S~Hampton, RA~Lane, RM~Hedlof, RE~Phillips, and Carlos~A Ordonez.
   circular finite-length solenoids and current loops.
 \newblock \emph{AIP Advances}, 10\penalty0 (6):\penalty0 065320, 2020.
 \newblock \doi{10.1063/5.0010982}.
+
+\bibitem[Goldsmith et~al.(1998)]{goldsmith1998quasioptical}
+Paul~F Goldsmith et~al.
+\newblock \emph{Quasioptical systems}.
+\newblock Chapman \& Hall New York, NY, USA, 1998.
+
+\bibitem[Carli and Iorio-Fili(1981)]{carli1981absorption}
+B~Carli and D~Iorio-Fili.
+\newblock Absorption of composite bolometers.
+\newblock \emph{JOSA}, 71\penalty0 (8):\penalty0 1020--1025, 1981.
+\newblock \doi{10.1364/JOSA.71.001020}.
+
+\bibitem[Shen et~al.(2012)Shen, Yang, Zang, Gu, Han, Zhang, and
+  Jun~Cui]{shen2012triple}
+Xiaopeng Shen, Yan Yang, Yuanzhang Zang, Jianqiang Gu, Jiaguang Han, Weili
+  Zhang, and Tie Jun~Cui.
+\newblock Triple-band terahertz metamaterial absorber: Design, experiment, and
+  physical interpretation.
+\newblock \emph{Applied Physics Letters}, 101\penalty0 (15):\penalty0 154102,
+  2012.
+\newblock \doi{10.1063/1.4757879}.
+
+\bibitem[Yu et~al.(2019)Yu, Besteiro, Huang, Wu, Fu, Tan, Jagadish,
+  Wiederrecht, Govorov, and Wang]{yu2019broadband}
+Peng Yu, Lucas~V Besteiro, Yongjun Huang, Jiang Wu, Lan Fu, Hark~H Tan,
+  Chennupati Jagadish, Gary~P Wiederrecht, Alexander~O Govorov, and Zhiming
+  Wang.
+\newblock Broadband metamaterial absorbers.
+\newblock \emph{Advanced Optical Materials}, 7\penalty0 (3):\penalty0 1800995,
+  2019.
+\newblock \doi{10.1002/adom.201800995}.
+
+\bibitem[Wang et~al.(2013)Wang, Liu, Hu, Kong, Cheng, and Chen]{wang2013multi}
+Guo-Dong Wang, Ming-Hai Liu, Xi-Wei Hu, Ling-Hua Kong, Li-Li Cheng, and
+  Zhao-Quan Chen.
+\newblock Multi-band microwave metamaterial absorber based on coplanar
+  jerusalem crosses.
+\newblock \emph{Chinese Physics B}, 23\penalty0 (1):\penalty0 017802, 2013.
+\newblock \doi{10.1088/1674-1056/23/1/017802}.
+
+\bibitem[Li et~al.(2010)Li, Yang, Hou, Tian, and Hou]{li2010perfect}
+Minhua Li, He-Lin Yang, Xi-Wen Hou, Yan Tian, and Dong-Yun Hou.
+\newblock Perfect metamaterial absorber with dual bands.
+\newblock \emph{Progress In Electromagnetics Research}, 108:\penalty0 37--49,
+  2010.
+\newblock \doi{10.2528/PIER10071409}.
+
+\bibitem[Chen(2012)]{chen2012interference}
+Hou-Tong Chen.
+\newblock Interference theory of metamaterial perfect absorbers.
+\newblock \emph{Optics express}, 20\penalty0 (7):\penalty0 7165--7172, 2012.
+\newblock \doi{10.1364/OE.20.007165}.
+
+\bibitem[Milligan(2005)]{milligan2005modern}
+Thomas~A Milligan.
+\newblock \emph{Modern antenna design}.
+\newblock John Wiley \& Sons, 2005.
+
+\bibitem[Skolnik(2008)]{skolnik2008radar}
+Merrill~I Skolnik.
+\newblock \emph{Radar handbook}.
+\newblock McGraw-Hill Education, 2008.
 
 \bibitem[Guckert et~al.(1998)Guckert, Zhao, Crane, Hime, Taylor, Tupa, Vieira,
   and Wollnik]{guckert1998magneto}

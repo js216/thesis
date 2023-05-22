@@ -116,9 +116,18 @@
 \contentsline {subsection}{\numberline {C.2}Calibration procedure}{151}{subsection.C.2}%
 \contentsline {subsection}{\numberline {C.3}Results}{155}{subsection.C.3}%
 \contentsline {section}{\numberline {D}Microwave Absorbers}{158}{appendix.D}%
-\contentsline {section}{\numberline {E}Producing Francium}{159}{appendix.E}%
-\contentsline {subsection}{\numberline {E.1}Isotope sources}{159}{subsection.E.1}%
-\contentsline {paragraph}{Ion beam}{159}{section*.111}%
-\contentsline {paragraph}{Neutral atom beam}{161}{section*.113}%
-\contentsline {subsection}{\numberline {E.2}Safety considerations}{164}{subsection.E.2}%
-\contentsline {section}{References}{166}{figure.caption.117}%
+\contentsline {subsection}{\numberline {D.1}Simple absorbers}{158}{subsection.D.1}%
+\contentsline {paragraph}{Thin-film absorber}{158}{figure.caption.110}%
+\contentsline {paragraph}{Two thin films between a substrate}{159}{section*.111}%
+\contentsline {subsection}{\numberline {D.2}Metamaterial absorbers}{161}{subsection.D.2}%
+\contentsline {paragraph}{Fabry--P\'erot theory}{161}{section*.114}%
+\contentsline {paragraph}{Microstrip resonators}{163}{section*.115}%
+\contentsline {paragraph}{Phased antenna arrays}{164}{section*.117}%
+\contentsline {paragraph}{Design process}{165}{section*.119}%
+\contentsline {subsection}{\numberline {D.3}Expected effectiveness}{166}{subsection.D.3}%
+\contentsline {section}{\numberline {E}Producing Francium}{169}{appendix.E}%
+\contentsline {subsection}{\numberline {E.1}Isotope sources}{169}{subsection.E.1}%
+\contentsline {paragraph}{Ion beam}{169}{section*.125}%
+\contentsline {paragraph}{Neutral atom beam}{171}{section*.127}%
+\contentsline {subsection}{\numberline {E.2}Safety considerations}{174}{subsection.E.2}%
+\contentsline {section}{References}{176}{figure.caption.131}%

@@ -20,45 +20,45 @@ A level-1 auxiliary file: bibliography.aux
 The style file: unsrtnat.bst
 Database file #1: references.bib
 Warning--empty journal in unger1982specific
-You've used 136 entries,
+You've used 145 entries,
             2481 wiz_defined-function locations,
-            1431 strings with 29470 characters,
-and the built_in function-call counts, 53619 in all, are:
-= -- 4459
-> -- 2955
-< -- 75
-+ -- 1149
-- -- 876
-* -- 4537
-:= -- 8842
-add.period$ -- 506
-call.type$ -- 136
-change.case$ -- 253
-chr.to.int$ -- 135
-cite$ -- 137
-duplicate$ -- 2541
-empty$ -- 4774
-format.name$ -- 1069
-if$ -- 11152
+            1485 strings with 31011 characters,
+and the built_in function-call counts, 57277 in all, are:
+= -- 4743
+> -- 3186
+< -- 80
++ -- 1237
+- -- 946
+* -- 4847
+:= -- 9457
+add.period$ -- 539
+call.type$ -- 145
+change.case$ -- 268
+chr.to.int$ -- 144
+cite$ -- 146
+duplicate$ -- 2712
+empty$ -- 5091
+format.name$ -- 1151
+if$ -- 11907
 int.to.chr$ -- 2
-int.to.str$ -- 137
-missing$ -- 146
-newline$ -- 785
-num.names$ -- 409
-pop$ -- 984
+int.to.str$ -- 146
+missing$ -- 158
+newline$ -- 836
+num.names$ -- 436
+pop$ -- 1056
 preamble$ -- 1
-purify$ -- 136
+purify$ -- 145
 quote$ -- 0
-skip$ -- 1431
+skip$ -- 1525
 stack$ -- 0
-substring$ -- 2432
-swap$ -- 285
+substring$ -- 2588
+swap$ -- 303
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 889
+type$ -- 943
 warning$ -- 1
-while$ -- 429
+while$ -- 456
 width$ -- 0
-write$ -- 1951
+write$ -- 2077
 (There was 1 warning)
