@@ -38,6 +38,13 @@ that can be amplified and connected to an AOM. The PID loop modulates the
 amplitude of the RF in an attempt to stabilize the laser power as represented by
 a stable photodiode input signal.
 
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/schematics/laserPIDpower.pdf}
+   \caption{LaserPIDpower v2.3 schematic.}
+  \label{laserPIDpower_schem}
+\end{figure}
+
 The signal path consists of the following. An instrumentation amplifier (U3,
 INA849) reads the photodiode voltage, inverts it (since the PD is connected to
 the inverting input of the amplifier), and amplifies it with the gain set by a
@@ -47,13 +54,6 @@ into the reference input of the instrumentation amplifier. The output of the
 inamp is therefore the difference between the setpoint and the photodiode
 voltage, i.e., the error voltage for the control. A buffered error voltage is
 available from the BNC connector J\_ERROR1.
-
-\begin{figure}
-   \centering
-  \includegraphics[width=\textwidth]{figs/schematics/laserPIDpower.pdf}
-   \caption{LaserPIDpower v2.3 schematic.}
-  \label{laserPIDpower_schem}
-\end{figure}
 
 The control loop consists of a simple integrator (U5A, ADA4898-2YRDZ). (While we
 call this a PID controller, in practice we only use the `I' part.) The
