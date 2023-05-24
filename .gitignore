@@ -1,1 +1,8 @@
 *.swp
+*.toc
+*.lot
+*.log
+*.aux
+*.glo
+*.ist
+*.lof
