@@ -6,3 +6,12 @@
 *.glo
 *.ist
 *.lof
+*.maf
+*.bbl
+*.blg
+*.glg
+*.gls
+*.mtc
+*.mtc0
+*.out
+*.stc*
