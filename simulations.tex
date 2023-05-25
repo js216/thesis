@@ -1,30 +1,15 @@
 \section{Simulations}
 
-\subsection{Rotational cooling}
-
-\todoit{TBD.}
-
 \subsection{Non-adiabatic transitions}
 \label{sect:nonadiabatic}
 
-\begin{figure*}[b!]
-    \makebox[\textwidth][c]{%
-        \small
-        \begin{minipage}[c]{\columnwidth}
-            \def\svgwidth{\columnwidth}
-            \input{figs/matplotlib/Ptrans1.pdf_tex}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[c]{\columnwidth}
-            \def\svgwidth{\columnwidth}
-            \input{figs/matplotlib/Ptrans2.pdf_tex}
-        \end{minipage}
-    }
-    \caption{AC level stabilization against non-adiabatic transitions when subjected to time-varying electric fields. $\epsilon^\text{\DC}_\text{i}=-\epsilon^\text{\DC}_\text{f}=20$, $\alpha=0.01$, $\beta=0.1$, $\delta=1$. \part{a} The transition-probability interference fringes as a function of field reversal time, with the time dependence of the field and the eigenenergies illustrated in the left plots. $T_0=8$, $\Delta T=2$. \part{b} Adding an \AC\ field results (magnitude shown in left plot, dashed line) in separated regions of high $P_\text{trans}$ against a transition-free background (right plot). $T_0=1$, $T_\text{fall}^\text{\,\DC}=196.6$, $\Delta T=200$, $T_\text{rise}^\text{\,\AC}=T_\text{fall}^\text{\,\AC}=1$.}
-    \label{floquet}
-\end{figure*}
-
-Molecules travelling from the first state preparation region into the electrostatic lens experience fast changes in external electric field. Due to the large number of hyperfine levels involved, predicting level stability is a non-trivial task. As a consequence of the von Neumann--Wigner rule \cite{mead1979noncrossing}, levels of same symmetry will in general avoid crossing each other. Considering only a single such avoided crossing between a pair of states, we may model the situation using the two-level Hamiltonian
+Molecules travelling from the first state preparation region into the
+electrostatic lens experience fast changes in external electric field. Due to
+the large number of hyperfine levels involved, predicting level stability is a
+non-trivial task. As a consequence of the von Neumann--Wigner rule
+\cite{mead1979noncrossing}, levels of same symmetry will in general avoid
+crossing each other. Considering only a single such avoided crossing between a
+pair of states, we may model the situation using the two-level Hamiltonian
 %
 \begin{align}
     \label{twostate}
@@ -34,41 +19,100 @@ Molecules travelling from the first state preparation region into the electrosta
     \end{pmatrix},
 \end{align}
 %
-where $\delta\propto2\pi\times100\kHz$ is the field-free level separation, $\alpha\epsilon^2$ is the level shift due to a quadratic Stark effect; thus $\alpha$ sets the field $\epsilon$ at which the Stark effect cancels $\delta$ (typically, tens or hundreds of V/cm). Finally, $\beta$ is the level coupling that gives rise to the avoided crossing.
+where $\delta\propto2\pi\times100\kHz$ is the field-free level separation,
+$\alpha\epsilon^2$ is the level shift due to a quadratic Stark effect; thus
+$\alpha$ sets the field $\epsilon$ at which the Stark effect cancels $\delta$
+(typically, tens or hundreds of V/cm). Finally, $\beta$ is the level coupling
+that gives rise to the avoided crossing.
 
-The Hamiltonian $H$ may be diagonalized exactly to give the eigenenergies $E_\pm$ and states $\psi_\pm$. To investigate the effect of subjecting the molecule to a time-varying electric field $\epsilon(t)$, we can assume that at $t=0$ the system starts in the state $\psi_+$. After solving the time-dependent Schr\"odinger equation (\TDSE) $id\psi/dt=H\psi$ for the final state $\psi_\text{f}$, we can evaluate the probability $P_\text{trans}=|\braket{\psi_\text{f}}{\psi_-}|^2$ the system has transitioned to the other field-free eigenstate.
+The Hamiltonian $H$ may be diagonalized exactly to give the eigenenergies
+$E_\pm$ and states $\psi_\pm$. To investigate the effect of subjecting the
+molecule to a time-varying electric field $\epsilon(t)$, we can assume that at
+$t=0$ the system starts in the state $\psi_+$. After solving the time-dependent
+Schr\"odinger equation (\TDSE) $id\psi/dt=H\psi$ for the final state
+$\psi_\text{f}$, we can evaluate the probability
+$P_\text{trans}=|\braket{\psi_\text{f}}{\psi_-}|^2$ the system has transitioned
+to the other field-free eigenstate.
 
-If the electric field is chosen such that the system is taken through the avoided crossing in a time $T_\text{fall}$, then the transition probability $P_\text{trans}(T_\text{fall})$ approaches zero in both limits $T_\text{fall}\to0$ and $T_\text{fall}\to\infty$ (see Fig.~\ref{floquet}a). For intermediate times, the system exhibits a pattern of interference fringes, with $P_\text{trans}$ very sensitive to the exact timing of the electric field changes.
+If the electric field is chosen such that the system is taken through the
+avoided crossing in a time $T_\text{fall}$, then the transition probability
+$P_\text{trans}(T_\text{fall})$ approaches zero in both limits
+$T_\text{fall}\to0$ and $T_\text{fall}\to\infty$ (see Fig.~\ref{floquet1}). For
+intermediate times, the system exhibits a pattern of interference fringes, with
+$P_\text{trans}$ very sensitive to the exact timing of the electric field
+changes.
 
-The idea of the preceding paragraph finds application in the problem of molecular motion through regions of spatially-varying electric of magnetic fields. For instance, in \CENTREX\ we prepare molecules in the particular hyperfine state that is expected to be focused best by the hyperfine lens. However, the molecular beam has a range of velocities, such that different molecules will experience a different rate of change of the external fields, with some non-adiabatically transferred to a state other than the lens state, preventing and defeating the focusing otherwise expected of the lens.
+The idea of the preceding paragraph finds application in the problem of
+molecular motion through regions of spatially-varying electric of magnetic
+fields. For instance, in \CENTREX\ we prepare molecules in the particular
+hyperfine state that is expected to be focused best by the hyperfine lens.
+However, the molecular beam has a range of velocities, such that different
+molecules will experience a different rate of change of the external fields,
+with some non-adiabatically transferred to a state other than the lens state,
+preventing and defeating the focusing otherwise expected of the lens.
 
-Adding to the above a rapidly-oscillating \AC\ electric field can under certain conditions suppress the transitions otherwise expected in the absence of the \AC\ field. A plot of $P_\text{trans}$ with respect to the parameters of the \AC\ field (Fig.~\ref{floquet}b) shows separated regions of high $P_\text{trans}$ against a transition-free background. Furthermore, one of the regions does not show dependence on the frequency $\omega$ of the oscillating field, while the other regions show what appears to be polynomial dependence on $\omega$.
+\begin{figure}
+    \makebox[\textwidth][c]{%
+        \small
+        \begin{minipage}[c]{\textwidth}
+            \def\svgwidth{\textwidth}
+            \input{figs/matplotlib/Ptrans1.pdf_tex}
+        \end{minipage}
+    }
+    \caption{AC level stabilization against non-adiabatic transitions when
+    subjected to time-varying electric fields.
+    $\epsilon^\text{\DC}_\text{i}=-\epsilon^\text{\DC}_\text{f}=20$,
+    $\alpha=0.01$, $\beta=0.1$, $\delta=1$. The transition-probability
+    interference fringes as a function of field reversal time, with the time
+    dependence of the field and the eigenenergies illustrated in the left plots.
+    $T_0=8$, $\Delta T=2$.}
+    \label{floquet1}
+\end{figure}
 
-The above results can be qualitatively be interpreted in terms of Floquet theory for `stationary' states of periodically driven systems \cite[ch.~5]{dittrich1998quantum}. It can be proven that the \TDSE\ of such a system has solutions of form \cite[sect.~II.A]{shirley1965solution}
+Adding to the above a rapidly-oscillating \AC\ electric field can under certain
+conditions suppress the transitions otherwise expected in the absence of the
+\AC\ field. A plot of $P_\text{trans}$ with respect to the parameters of the
+\AC\ field (Fig.~\ref{floquet2}) shows separated regions of high
+$P_\text{trans}$ against a transition-free background. Furthermore, one of the
+regions does not show dependence on the frequency $\omega$ of the oscillating
+field, while the other regions show what appears to be polynomial dependence on
+$\omega$.
+
+The above results can be qualitatively be interpreted in terms of Floquet theory
+for `stationary' states of periodically driven systems
+\cite[ch.~5]{dittrich1998quantum}. It can be proven that the \TDSE\ of such a
+system has solutions of form \cite[sect.~II.A]{shirley1965solution}
 %
 \[
 \exp(-i\epsilon_\alpha t\hbar)\Phi_\alpha(x,t),
 \]
 %
-introducing the periodic Floquet modes $\Phi_\alpha(x,t)$ which satisfy a `time-independent' Schr\"odinger equation (\TISE) in the extended Hilbert space $L_2[0,T]\otimes H$
+introducing the periodic Floquet modes $\Phi_\alpha(x,t)$ which satisfy a
+`time-independent' Schr\"odinger equation (\TISE) in the extended Hilbert space
+$L_2[0,T]\otimes H$
 %
 \[
 \underbrace{\left[H(t)-i\hbar\frac{\partial}{\partial t}\right]}_{\widetilde{H}}\Phi_\alpha(t)=\epsilon_\alpha\Phi_\alpha(t),
 \]
 %
-To obtain the matrix elements of the Hamiltonian thus modified, we expand the Floquet modes in a basis $\{\ket{k}\}$ of $H$, and also in terms of $n$th order plane waves $e^{in\omega t}$:
+To obtain the matrix elements of the Hamiltonian thus modified, we expand the
+Floquet modes in a basis $\{\ket{k}\}$ of $H$, and also in terms of $n$th order
+plane waves $e^{in\omega t}$:
 %
 \[
 \Phi_\alpha(t)=\sum\limits_k\sum\limits_{n=-\infty}^\infty c_\alpha^{kn}e^{in\omega t}\ket{k}.
 \]
 %
-Insert into the \TISE, pre-multiply by $\bra{j}e^{-im\omega t}$, and time-average over one cycle to obtain
+Insert into the \TISE, pre-multiply by $\bra{j}e^{-im\omega t}$, and
+time-average over one cycle to obtain
 %
 \[
 \sum\limits_{kn}\bra{j}\widetilde{H}\ket{k}c_\alpha^{kn}=\epsilon_\alpha c_\alpha^{jm},
 \]
 %
-where the matrix elements of the extended Hamiltonian $\widetilde{H}$ are given in terms of the original Hamiltonian split into constant and time-varying parts $H(t)\equiv H_\text{DC}+H_\text{AC}(t)$:
+where the matrix elements of the extended Hamiltonian $\widetilde{H}$ are given
+in terms of the original Hamiltonian split into constant and time-varying parts
+$H(t)\equiv H_\text{DC}+H_\text{AC}(t)$:
 %
 \begin{align*}
     \label{floqMatElems}
@@ -80,9 +124,34 @@ where the matrix elements of the extended Hamiltonian $\widetilde{H}$ are given 
     &\text{(interaction)}
 \end{align*}
 %
-Here, the lower indices refer to a particular `photonic' mode, and the upper indices refer to the matrix elements of the original Hamiltonian. This way of separating the Hamiltonian into the atomic, radiation, and interaction operators resembles the `dressed state' picture for a two-level atom in a monochromatic field of radiation (cf.\ eqn~1.18 in ref.~\cite{metcalf2002laser}); the above Hamiltonian appears to provide a generalization beyond the two-state model, since $H_\text{AC}^{jk}(t)$ can be of any dimensionality.
+Here, the lower indices refer to a particular `photonic' mode, and the upper
+indices refer to the matrix elements of the original Hamiltonian. This way of
+separating the Hamiltonian into the atomic, radiation, and interaction operators
+resembles the `dressed state' picture for a two-level atom in a monochromatic
+field of radiation (cf.\ eqn~1.18 in ref.~\cite{metcalf2002laser}); the above
+Hamiltonian appears to provide a generalization beyond the two-state model,
+since $H_\text{AC}^{jk}(t)$ can be of any dimensionality.
 
-The interaction term in the above general expression can easily be found for the case of the two-level model in eqn~\ref{twostate}. When an electric field $\epsilon(t)\equiv\epsilon_\text{DC}+\epsilon_\text{AC}(t)$ is applied, the \AC\ part of the Hamiltonian is
+\begin{figure}
+    \makebox[\textwidth][c]{%
+        \small
+        \begin{minipage}[c]{\textwidth}
+            \def\svgwidth{\textwidth}
+            \input{figs/matplotlib/Ptrans2.pdf_tex}
+        \end{minipage}
+    }
+    \caption{Adding an \AC\ field results (magnitude shown in left plot, dashed
+    line) in separated regions of high $P_\text{trans}$ against a
+    transition-free background (right plot). $T_0=1$,
+    $T_\text{fall}^\text{\,\DC}=196.6$, $\Delta T=200$,
+    $T_\text{rise}^\text{\,\AC}=T_\text{fall}^\text{\,\AC}=1$.}
+    \label{floquet2}
+\end{figure}
+
+The interaction term in the above general expression can easily be found for the
+case of the two-level model in eqn~\ref{twostate}. When an electric field
+$\epsilon(t)\equiv\epsilon_\text{DC}+\epsilon_\text{AC}(t)$ is applied, the \AC\
+part of the Hamiltonian is
 %
 \[
 H_\text{AC}=-\begin{pmatrix}\alpha&0\\0&0\end{pmatrix}
@@ -105,7 +174,9 @@ which may be time averaged to find the \AC\ matrix elements
     \biggr].
 \end{align*}
 %
-The Kronecker deltas give the order of the atom--photon interaction. For instance, the 0th order term proportional to $\delta_{n,m}$ modifies the Hamiltonian to the effective form
+The Kronecker deltas give the order of the atom--photon interaction. For
+instance, the 0th order term proportional to $\delta_{n,m}$ modifies the
+Hamiltonian to the effective form
 %
 \begin{align*}
     H_\text{eff}=\begin{pmatrix}
@@ -114,9 +185,21 @@ The Kronecker deltas give the order of the atom--photon interaction. For instanc
     \end{pmatrix};
 \end{align*}
 %
-i.e., the 0th order effect of the \AC\ field is a simple \AC\ Stark shift, where the \RMS\ \AC\ field has the same effect as a \DC\ field. This suggests that the mechanism through which the \AC\ field suppresses transitions is by limiting the effective miniumum value of the \DC\ field, such that the system no longer passes through the avoided crossing.
+i.e., the 0th order effect of the \AC\ field is a simple \AC\ Stark shift, where
+the \RMS\ \AC\ field has the same effect as a \DC\ field. This suggests that the
+mechanism through which the \AC\ field suppresses transitions is by limiting the
+effective miniumum value of the \DC\ field, such that the system no longer
+passes through the avoided crossing.
 
-The higher order interactions---due to the $\delta_{n,m\pm1}$ and $\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian, effecting a tensor product with the corresponding Kronecker matrices. The effect on the spectrum is to replace the two states with an infinite set of pairs of states, each pair separated from the next by the energy $\hbar\omega$ of a single photon (Fig~\ref{dressed}). Plotted as a function of the electric field, we note that in addition to the avoided crossings present in the `unperturbed' Hamiltonian, new crossings appear as a result of interactions with the virtual photons.
+The higher order interactions---due to the $\delta_{n,m\pm1}$ and
+$\delta_{n,\pm2}$ terms---expand the Hilbert space of the two-state Hamiltonian,
+effecting a tensor product with the corresponding Kronecker matrices. The effect
+on the spectrum is to replace the two states with an infinite set of pairs of
+states, each pair separated from the next by the energy $\hbar\omega$ of a
+single photon (Fig~\ref{dressed}). Plotted as a function of the electric field,
+we note that in addition to the avoided crossings present in the `unperturbed'
+Hamiltonian, new crossings appear as a result of interactions with the virtual
+photons.
 
 \begin{figure}
     \makebox[\columnwidth][c]{%
@@ -125,12 +208,332 @@ The higher order interactions---due to the $\delta_{n,m\pm1}$ and $\delta_{n,\pm
         \mbox{}\hspace{2ex}
 	\input{figs/matplotlib/dressed.pdf_tex}
     }
-    \caption{Eigenstates of the $6\times6$ Hamiltonian $\widetilde{H}_{nm}^{jk}$, where $n,m$ are the indices of the original $2\times2$ atomic Hamiltonian, and $j,k$ here limited to the $\{-1,0,1\}$ part of the infinite Hilbert space. Without the \AC\ field, note that the spectrum resembles that of the atomic Hamiltonian (as in Fig.~\ref{floquet}), thrice replicated. As the \AC\ is turned stronger, the location of the avoided crossings moves around or disappears.}
+    \caption{Eigenstates of the $6\times6$ Hamiltonian
+    $\widetilde{H}_{nm}^{jk}$, where $n,m$ are the indices of the original
+    $2\times2$ atomic Hamiltonian, and $j,k$ here limited to the $\{-1,0,1\}$
+    part of the infinite Hilbert space. Without the \AC\ field, note that the
+    spectrum resembles that of the atomic Hamiltonian (as in
+    Fig.~\ref{floquet2}), thrice replicated. As the \AC\ is turned stronger, the
+    location of the avoided crossings moves around or disappears.}
     \label{dressed}
 \end{figure}
 
-The new crossings typically appear at higher fields than the original ones and thus do not cause transitions unless the inverting \DC\ field is of sufficient magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet}b, the \DC\ field is assumed to traverse the inherent avoided crossing and not much further. However, in the flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$ get reversed in a characteristic time $T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced avoided crossings beyond the reach of these fields, the applied \AC\ field would need to have a frequency of order $900\GHz$. Alternatively, the \AC\ field could be confined to a region where the \DC\ field does not depart too far from zero.
+The new crossings typically appear at higher fields than the original ones and
+thus do not cause transitions unless the inverting \DC\ field is of sufficient
+magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet2}, the
+\DC\ field is assumed to traverse the inherent avoided crossing and not much
+further. However, in the flight of molecules towards the electrostatic lens,
+fields of order $30~\kVcm$ get reversed in a characteristic time
+$T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced
+avoided crossings beyond the reach of these fields, the applied \AC\ field would
+need to have a frequency of order $900\GHz$. Alternatively, the \AC\ field could
+be confined to a region where the \DC\ field does not depart too far from zero.
 
-\subsection{Optical cycling}
+\subsection{Quantum Zeno Effect}
 
-\todoit{TBD.}
+In order to obtain the best systematics possible, the \CENTREX\ experiment
+relies on the high molecular detection efficiency achievable using laser-induced
+fluorescence, which allows a large number of photons to be scattered from a
+single molecule. In turn, this means we can approach unity detection efficiency
+for molecules even though the experimental apparatus is only able to detect a
+fraction of the photons emitted by the molecules.
+
+The theoretical exploration of the detection process is very complicated on
+account of the large number of molecular quantum states. In this section, I
+explore a toy model that exhibits two features of the full-scale system: the
+existence of `dark states' that are not accessible to laser detection, and the
+possibility of non-monotonous dependence on detection efficiency versus the
+laser power, i.e.\ more laser power is not necessarily better.
+
+We start by considering the quantum Zeno paradox in a two-level system.
+Expanding to a three-level system, we are able to connect the physics to
+features relevant for the detection process. Finally, I discuss potential ways
+to increase the number of photons scattered in the detection.
+
+\paragraph{Two-level system}
+
+Consider a two level system (Fig.~\ref{level_systems}, left) where a laser with
+Rabi frequency $\Omega$ and detuning $\Delta$ couples states $\ket1$ and
+$\ket2$. Let the system be initially in state $\ket1$. The solution is a
+superposition $\ket\Psi=b_1\ket1+b_2\ket2$, where
+%
+\[
+   |b_2(t)|^2=\frac{|\Omega|^2}{|\Omega|^2+|\Delta|^2}
+   \sin^2\left(\Omega't\right),\quad
+   \Omega'=\frac{\sqrt{|\Omega|^2+\Delta^2}}{2}.
+\]
+
+\begin{figure}
+   \centering
+  \includegraphics[width=.3\textwidth]{figs/todo/twolevel.png}
+  \hfill
+  \includegraphics[width=.49\textwidth]{figs/todo/threelevel.png}
+   \caption{Two and three level systems.}
+  \label{level_systems}
+\end{figure}
+
+Now consider a measurement done a short time $\delta t$ after the laser is
+turned on. The probability of collapsing $\ket\Psi$ to $\ket1$ is
+%
+\begin{align}
+   \label{cosP1}
+   P_1=|b_1(t)|^2\propto\cos^2(\Omega'\delta t).
+\end{align}
+%
+As $\Omega'\delta t\to0$, the probability tends to $P_1\to1$. Suppose that over
+a time $T$, equal to the length of a $\pi$ pulse, we apply $n$ equally spaced
+measurement pulses. Then \cite{itano1990quantum}
+%
+\[
+   P_2(T)=\frac12\left[1-\cos^n(\pi/n)\right],
+\]
+%
+which tends to 0 as $n\to\infty$. Thus we can suppress the normal evolution
+(Rabi oscillation) of the two-level system merely by executing frequent
+measurements. This effect has been called the quantum Zeno effect. Note that
+this argument fails for pure exponential decay instead of the cosine or
+quadratic time dependence seen in eqn~\ref{cosP1}.
+
+\paragraph{Three-level system}
+
+Now consider adding a third level $\ket3$, making a three-level system
+(Fig.~\ref{level_systems}, right) from the two-level system considered
+previously. The third level is unstable and decays with a rate $\Gamma$ back to
+$\ket1$. To distinguish the Rabi rate that connects $\ket1$ to $\ket2$ from the
+one coupling to $\ket3$, call them $\Omega_\text{RF},\Omega_\text{laser}$,
+respectively.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=.49\textwidth]{figs/todo/rabi.png}
+  \includegraphics[width=.49\textwidth]{figs/todo/zeno1.png}
+   \caption{Rabi oscillation and its suppression with readout pulses.}
+  \label{rabi_sup}
+\end{figure}
+
+When the coupling to the third state is turned off ($\Omega_\text{laser}=0$),
+the system behaves as a two-level system and executes Rabi oscillations
+(Fig.~\ref{rabi_sup}, left). If on the other hand we periodically turn the
+$\Omega_\text{laser}$ on in the form of short $\pi$ pulses (Fig.~\ref{rabi_sup},
+right), executing `measurements', then we see that the evolution of $\ket1$ into
+$\ket2$ is significantly slowed down.
+
+In the case illustrated in Fig.~\ref{rabi_sup}, we have applied only four
+measurement pulses. By making the measurements more frequent while keeping the
+total evolution time the same (Fig.~\ref{strobed_vs_cont}, left), we can almost
+arbitrarily suppress to evolution of $\ket1$ into $\ket2$, in accordance with
+the Zeno effect. However, there is no need for the measurement laser to be
+pulsed. Instead, it can be turned on with a constant power the entire time and
+this achieves the same effect, suppressing the evolution from $\ket1$ to
+$\ket2$ in relation to the laser power $\Omega_\text{laser}$. The equivalence
+(or at least similarity) between the pulsed and continuous observation is
+explored further in ref.~\cite{schulman1998continuous}.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=.4\textwidth]{figs/todo/strobed.png}
+  \hfill
+  \includegraphics[width=.49\textwidth]{figs/todo/cont.png}
+   \caption[Transition probability from $\ket1$ to $\ket2$.]{Transition
+   probability from $\ket1$ to $\ket2$. Same parameters as in the previous
+   figure. \part{Left} Probability vs number of measurement pulses when these
+   are discrete laser pulses. \part{Right} Probability vs laser power, with the
+   measurement laser always on.}
+  \label{strobed_vs_cont}
+\end{figure}
+
+Now look at the same situation from a different basis using the
+transformation
+%
+\[
+   U=\frac{1}{\sqrt2}
+   \begin{pmatrix}
+      1 &  1 & 0 \\
+      1 & -1 & 0 \\
+      0 &  0 & \sqrt2
+   \end{pmatrix};
+\]
+%
+in other words, we form the superpositions $\ket1\pm\ket2$ between the two
+`ground' states, while keeping the excited state $\ket3$ same as before. Now let
+the laser couple to the ground states $\ket1$ and $\ket2$ equally, with equal
+decay rates from $\ket3$ to either of the ground states
+(Fig.~\ref{bright_dark}, right). We find that the positive superposition $\ket1+\ket2$
+is `bright' with respect to the laser, meaning the laser is able to pump the
+population from it to the excited state, while the negative superposition is
+`dark'. The quantum Zeno effect operates as before (Fig.~\ref{bright_dark}).
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/bright_dark.png}
+   \caption{Quantum Zeno effect shown in the transformed basis of bright and
+   dark states.}
+  \label{bright_dark}
+\end{figure}
+
+Finally, we can look at the total number of photons scattered by the three-level
+system subject to a constant laser excitation. After the ground states are
+promoted to the unstable excited state, the latter decays, emitting photons
+which may in principle be detected in an experiment (`laser-induced
+fluorescence). Naturally, when the laser is turned off or is too weak, there is
+a zero or very small probability of moving population into the excited state,
+thus the number of photons emitted will be correspondingly small. However, an
+initially surprising effect happens when the `detection laser' is too strong:
+the number of photons emitted decreases with the increase in laser power
+(Fig.~\ref{lslif})!
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/lslif.png}
+   \caption{Laser-induced fluorescence is suppressed when the `detection laser'
+   has too much power, just as when it has too little.}
+  \label{lslif}
+\end{figure}
+
+Of course, this ``laser-suppressed laser-induced fluorescence'' paradox is
+merely an example of the quantum Zeno effect. A very strong detection laser
+suppresses the evolution of the dark state into the bright state, thus reducing
+the amount of population that can be moved to the excited state, resulting in a
+lower number of photons detected by the experiment. This has been noted by
+Menskii \cite{menskii1998decoherence} in another context, saying that ``a too
+accurate measurement of the quantum system is not advantageous, and this is a
+manifestation of the paradoxical nature of quantum mechanics''.
+
+Thus an `accurate measurement of the quantum system' involves a trade-off
+between two contradictory requirements: (1) Quickly scattering photons from
+bright states; (2) Having dark states evolve as fast as they can. Scattering
+photons slows down the dark state evolution, while letting them evolve freely
+requires scattering few photons.
+
+\paragraph{Four-level system}
+
+We saw in the case of the three-level system considered above that driving a
+laser to an excited state effectively suppresses the evolution between bright
+and dark states. In the quantum Zeno effect picture, the laser is constantly
+interrogating the system whether the dark state has evolved into a bright state
+yet, and that causes the dark state to never evolve. This suggests the following
+question: would it be possible to add another level to the system and drive a
+transition between it and the dark state with a very strong laser to
+Zeno-inhibit the decays into the dark state (Fig.~\ref{4level_zeno}, left)?
+
+The `measurement' implemented by the additional laser (Rabi frequency
+$\Omega_\text{Zeno}$) would be repeatedly asking the question: has $\ket3$
+decayed into $\ket{\text{dark}}$. It would not be asking any questions about
+decays into $\ket{\text{bright}}$, so decays into that state would be
+unaffected. In principle this could be done if we could find an auxiliary level
+that we could couple to very strongly. However, there is a problem.
+
+We noted above that the quantum Zeno effect relies on a $\cos^2(\omega t)$
+probability of not decaying yet, whereas if the non-decay probability is
+exponential, the argument does not work:
+%
+\[
+   \lim_{T\to\infty}\lim_{n\to\infty}\cos\left(\frac{T}{n}\right)^{2n}=1
+   ,\quad
+   \lim_{T\to\infty}\lim_{n\to\infty}\exp\left(-\frac{T}{n}\right)^{2n}=0.
+\]
+%
+In atoms the spontaneous decay of an excited state is indeed
+quadratic initially, but only for $\sim10^{-16}$~s \cite{plenio1996inhibition}.
+The laser would need $\Omega_\text{Zeno}\sim10^9\;\Gamma$, or about
+100~MW!
+
+\begin{figure}
+   \centering
+  \includegraphics[width=.49\textwidth]{figs/todo/4level.png}
+  \includegraphics[width=.49\textwidth]{figs/todo/expdecay.png}
+   \caption[Four-level system to suppress dark states.]{Four-level system to
+   suppress dark states. \part{Left} Level diagram. \part{Right} For extremely
+   short times, excited state decay is quadratic, then turns into the usual
+   exponential decay. Figure from \cite{pascazio2014all}.}
+  \label{4level_zeno}
+\end{figure}
+
+\paragraph{Generalized Zeno effect}
+
+In literature we find the terms anti-Zeno or inverse Zeno effect
+\cite{panov2002inverse}, which refer to the situation where Zeno effect on one
+transition is used to stop the Zeno effect on another transition. For example,
+as discussed above, in the three-level system (\ref{level_systems}, right)
+interrogating the $\ket1\leftrightarrow\ket3$ transition with a strong enough
+laser suppresses the evolution $\ket1\leftrightarrow\ket2$. If we were to add
+another level, $\ket4$, and drive an even stronger transition
+$\ket3\leftrightarrow\ket4$, then the evolution to the state $\ket3$ would be
+frozen out by Zeno effect (see Fig.~\ref{antiZeno}). In turn, this would resume
+the Rabi oscillation $\ket1\leftrightarrow\ket2$.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/antiZeno.png}
+   \caption{Anti-Zeno effect: suppression of suppression of Rabi oscillations.}
+  \label{antiZeno}
+\end{figure}
+
+Unfortunately the anti-Zeno effect is not a simple way to undo the problems with
+slow dark state evolution. If we were to apply this technique in our detection
+scheme, we would need an additional laser to some other state whose only effect
+would be to freeze out the main detection laser! This would indeed restore a
+faster dark state evolution, but at the cost of turning off the laser-induced
+fluorescence. Nonetheless, the concept of the Zeno effect admits of a slight
+generalization which, as we shall see, has a widespread application in atomic
+physics.
+
+The fact that a continuously observed system never decays is merely
+%
+\begin{quote}
+   a special case of a more general property of continuous measurements.
+   [\ldots] Namely, if one checks by continuous observations if a given quantum
+   system evolves from some initial state, to some other final state, along a
+   specific trajectory in Hilbert space, the result is always positive, whether
+   or not the system would have done so on its own accord
+   \cite{aharonov1980meaning}
+\end{quote}
+%
+In other words, continuously projecting state $\ket{\psi(t)}$ onto $\ket1$, we
+find that $\ket{\psi(t)}=\ket1$ at all times (assuming it initially started out
+in $\ket1$). Generally, continuously projecting the state onto some arbitrary
+$\ket{\phi(t)}$, we find that $\ket{\psi(t)}=\ket{\phi(t)}$ at all times. This
+fact was noted as early as 1932 by John von Neumann
+\cite[p.~195]{von2018mathematical} and comes by many names, such as dominated
+time evolution, dynamical QZE, quantum Zeno dynamics, quantum Zeno subspaces,
+generalized QZE.
+
+With frequent enough measurements, or intense enough detection lasers in case of
+continuous observation, we can make sure that the quantum state stays in (or
+close to) a given state. If we slowly change the measurement basis, we can thus
+manipulate the quantum state almost arbitrarily.
+
+Consider again a three-level system that starts out initially in $\ket 1$, but
+now have drive two independent lasers between the two ground states and the
+excited state (Fig.~\ref{genZ}, left). The measurement basis is determined by
+what states the laser couples to. Initially, we turn on $\Omega_2$, so that the
+laser is interrogating whether there is any population in $\ket2$. As required
+by Zeno, we will find there none. Then slowly turn down $\Omega_2$ while turning
+up $\Omega_1$, which will force the evolution of $\ket1$ into $\ket2$. This
+technique is known as stimulated Raman adiabatic passage (STIRAP)
+\cite{gaubatz1990population}.
+
+The fact that the laser $\Omega_2$ is turned on
+before $\Omega_1$, despite a zero initial population in $\ket2$, is normally
+referred to as a ``counterintuitive sequence'', but when understood in terms of
+the generalized Zeno effect, it is merely a continuously changing measurement
+basis, interrogating whether the state we are projecting to is still empty.
+The initial condition is that $\ket2$ is empty at first, and the desired outcome
+is that $\ket1$ is empty afterwards, which is why $\Omega_2$ precedes $\Omega_1$.
+
+\begin{figure}[b]
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/genZ.png}
+   \caption{STIRAP as an example of the generalized Zeno effect.}
+  \label{genZ}
+\end{figure}
+
+\paragraph{Conclusion}
+
+We have seen in this section that strong pulsed or continuous laser to
+short-lived excited state suppresses dark-state evolution. The reason this
+happens can be derived from basic quantum mechanics. With ``frozen'' dark
+states, molecules scatter fewer photons than we can expect based on branching
+ratios alone, therefore there exists an optimal detection laser power.
+Furthermore, by adiabatically changing measurement basis, it is possible to
+force evolution (e.g.\ STIRAP).
