@@ -169,8 +169,223 @@ noise.
 
 \paragraph{Bandwidth}
 
+According to Shannon's theorem, a digital system with a sampling frequency of
+$f_\text{s}$ can represent a bandwidth of $f_\text{s}/2$ or less:
+%
+\begin{quote}
+   \textsc{Theorem} 1: \emph{If a function $f(t)$ contains no frequencies higher
+   than $W\,\text{cps}$, it is completely determined by giving its ordinates at
+   a series of points spaced $1/2W$ seconds apart.}
+   \cite{shannon1949communication}
+\end{quote}
+%
+It is tempting to imagine that this means that the output of a DAC contains no
+energy at frequencies higher than $f_\text{s}/2$, or, conversely, that any ADC
+will act as a perfect low-pass filter rejecting noise above $f_\text{s}/2$. This
+is of course impossible, since filters with perfectly sharp cutoff do not
+exist---they would violate causality.
 
+To illustrate the last point, imagine an ideal low-pass filter with the
+frequency response
+%
+\begin{align*}
+   H(\omega)=
+    \begin{dcases*}
+       C&\quad for $\omega<\omega_\text{c}$\\
+       0&\quad otherwise.
+    \end{dcases*}
+\end{align*}
+%
+The impulse response is found by taking the inverse Fourier transform
+%
+\[
+   h(t)=\frac{1}{2\pi}\int\limits_{-\infty}^{\infty}H(\omega)\d\omega=e^{-i\omega_\text{c}t/2}\frac{\sin(\omega_\text{c}t/2)}{\pi
+   t},
+\]
+%
+where $-\infty<t<\infty$. Thus even though the impulse function $\delta(t)$
+occurs at $t=0$, the filter begins to output infinitely far before the impulse
+occurs. \cite[sect~5.4.1]{proakis2006digital}
+
+Often, converters do not include any kind of filter, let alone an ideal filter.
+Instead, a DAC might output several higher harmonics of the expected output
+signal, while an ADC would fold high-frequency noise into the Nyquist band. In
+both cases, an anti-aliasing filter is required between the converter and the
+analog world. In practice, this is most often a low-pass filter, but it could
+also be a bandpass filter, allowing converter operation far above its sampling
+frequency. In any case, the bandwidth of the converter is limited to half the
+sampling rate, while the bandwidth of the anti-aliasing filter needs to be even
+smaller since no real filter can have an infinitely sharp transition between the
+passband and the stopband.
 
 \paragraph{Noise}
 
+Introducing anything in the signal chain is likely to increase the noise level
+and digital converters are no different. In addition to the noise due to the
+required associated analog circuitry, digitization is accompanied by
+quantization error reflecting the difference between the real-valued analog
+signal and the closest number in the finite set of quantized values.
 
+The nature of the quantization noise depends on the input signal. For example,
+if the input signal is a very small sinusoid centered exactly between two
+quantized values, the digital output will periodically and predictably jump
+between the two values. On the other hand, if the input signal is out of range
+of the quantizer (overload condition), than the error can be unbounded.
+
+In many situations we can assume that the quantization noise is random,
+uncorrelated, and uniformly distributed between $-\Delta/2$ and $\Delta/2$,
+where $\Delta$ is the step size, determined by the number of bits and the range
+of the converter. In that case (which does not hold in general!), the
+signal-to-quantization-noise becomes \cite[sect~6.3.3]{proakis2006digital}
+%
+\[
+   \text{SQNR}=6.02b+16.81-20\log\frac{R}{\sigma_x}\;\text{dB},
+\]
+%
+where $R$ is the range of the converter and $\sigma_x$ is the standard deviation
+of the input signal.
+
+There are other ways to model the quantization noise that obtain somewhat
+different expressions for SQNR, but the key points are that the more bits, the
+less quantization noise, and that the signal size should be as close as possible
+to the range of the quantizer, but not so close that the signal is likely to go
+out of range.
+
+\subsection{Laser test setups}
+
+In this section, I will present the iteration of test setups leading up to a
+working system stabilizing the power of a UV laser. First, I discuss some
+aspects of RF generation and use with the AOM. Then, I present a sequence of
+boards using digital and later analog PID control of the laser power.
+
+\paragraph{RF power calibration}
+
+In initial testing the RF signal needed to control the AOM was generated using
+an AD9910 evaluation board, or the SynthHD Pro signal generator, and amplified
+using the Mini-Circuits ZHL-5W-1+ amplifier. The AOM (IntraAction Corp.,
+model number ASM-853B45, serial number 452049) has a resonant frequency around
+80~MHz and we need to apply approx.\ 2~W, or 33~dBm of RF power to observe a
+significant amount of light in the first order.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/RF_power.png}
+   \caption{The effect of RF power on the amount of light detected by the
+   photodiode.}
+  \label{RF_power}
+\end{figure}
+
+The AOM and RF signal path was tested using a HeNe laser (Fig.~\ref{RF_power}).
+Evidently the signal generator has enough output power to nearly extinguish the
+light that makes it through the aperture. This is more range than is needed for
+power stabilization.
+
+\paragraph{Digital control systems}
+
+The first iteration of the control circuit combined a high-speed ADC,
+microcontroller, and DDS RF signal generator on three separate boards that
+connected together with header pins (Fig.~\ref{digital_PID}). This was tested
+using a HeNe laser in the setup shown in Fig.~\ref{inloop}.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/digital_PID.png}
+   \caption{PCB for digital PID control.}
+  \label{digital_PID}
+\end{figure}
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/inloop.png}
+   \caption{Test setup for the microcontroller-based PID loop circuit. The two
+   photodiodes define the meaning of in-loop and out-of-loop noise spectra.}
+  \label{inloop}
+\end{figure}
+
+The main loop of the microcontroller ran the following code:
+%
+\begin{lstlisting}[language=C++]
+void loop()
+{
+  // calculate error
+  const int error = analogRead(inputPin) - setpoint;
+  accumulator += error;
+
+  // calculate output
+  int dds_out = Kp*error + Ki*accumulator;
+
+  // check output is positive; else make it zero
+  if (dds_out < 0)
+    dds_out = 0;
+
+  // write to parallel port
+  write_parallel(dds_out, 16);
+}
+\end{lstlisting}
+%
+Each iteration, it reads the analog input voltage and subtracts the setpoint to
+obtain the error voltage. Then the error voltage is added to the accumulator,
+which implements an integral of the error. The output is calculated as a sum of
+the error (proportional control) and the accumulator (integral control).
+
+The noise spectrum of the light following the AOM was measured on a photodiode
+and is shown in Fig.~\ref{digital_BW}. Note that setpoint 3000 is only about
+5\%\ of the full scale of 65,535, so we are effectively only using 12 bits.
+When the setpoint is increase to 34,900, this improves the signal to noise ratio
+by approx.\ 18~dB. The improvement is visible as the significantly lower noise
+floor at the higher setpoint. Nevertheless, the system achieves hardly any noise
+suppression of the HeNe. After considering how much delay can be expected from
+each element in the signal chain, it was found that the performance is limited
+by the anti-aliasing filter built-in to the ADC and set to
+$f_\text{3~dB}=15$~kHz.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=.7\textwidth]{figs/todo/digital_BW.png}
+   \caption{Noise spectrum measured on the out-of-loop photodiode for unlocked
+   laser, and locked at two different setpoints.}
+  \label{digital_BW}
+\end{figure}
+
+\paragraph{Analog control systems}
+
+Inspired by the analog circuit presented in ref.\ \cite{tricot2018power}, I
+built a circuit similar to it (Fig.~\ref{analog_PID}). Using it to stabilize a
+UV laser, the noise suppression is shown in Fig.~\ref{analog_BW}.
+
+\begin{figure}[b]
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/analog_PID.png}
+   \caption[Analog PID circuit.]{\part{Left} Simplified circuit diagram from
+   ref.\ \cite{tricot2018power}. \part{Right} PCB of my implementation.}
+  \label{analog_PID}
+\end{figure}
+
+\begin{figure}[b]
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/analog_BW.png}
+   \caption{Spectrum of locked vs unlocked UV laser, using the analog PID
+   circuit.}
+  \label{analog_BW}
+\end{figure}
+
+Ultimately, the limitation to the performance was found to be the time it takes
+for the signal to propagate from the transducer to and through the laser beam in
+the AOM. This is limited by the speed of sound in the AOM medium, which in this
+case is $v=5.95~\text{mm}/\mu\text{s}$. For a 20~mm AOM aperture, this
+corresponds to a delay of $\d t\approx3\;\mu$s, which limits the bandwidth to
+$\text{BW}\approx0.35/\d t\approx100$~kHz. The laser beam can be
+focused down to a smaller spot size and placed as close as possible to the RF
+transducer without clipping the beam. In this way, we were able to achieve an
+additional order of magnitude in the control bandwidth (Fig.~\ref{best_BW}).
+Ultimately, the circuit was modified to the form presented in
+appendix~\ref{app:laser_power}, which integrates several ease of use
+improvements.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/todo/best_VW.png}
+   \caption{Noise spectrum when making sure the laser is as close as possible to
+   the AOM transducer.}
+  \label{best_BW}
+\end{figure}
