@@ -1,6 +1,6 @@
 TeX = pdflatex
 
-CHAPTERS = absorbers.tex apparatus.tex bibliography.tex circuits.tex conclusion.tex francium.tex glossaries.tex hamiltonian.tex HVcontrol.tex introduction.tex laser_power.tex lens.tex magneticshield.tex PMT.tex simulations.tex systematics.tex target_making.tex test_interaction.tex thesis.tex titlepage.tex
+CHAPTERS = absorbers.tex apparatus.tex bibliography.tex circuits.tex conclusion.tex francium.tex glossaries.tex hamiltonian.tex HVcontrol.tex introduction.tex laser_power.tex lens.tex magneticshield.tex PMT.tex simulations.tex systematics.tex test_interaction.tex thesis.tex titlepage.tex
 
 .PHONY: full figs
 

@@ -1,4 +1,4 @@
-\section{Laser power control}
+\section{Laser Power Control}
 
 This section discusses the concepts behind laser power stabilization, as well as
 the performance of the system tested using the laser power control PCB. See
@@ -204,8 +204,8 @@ The impulse response is found by taking the inverse Fourier transform
 \]
 %
 where $-\infty<t<\infty$. Thus even though the impulse function $\delta(t)$
-occurs at $t=0$, the filter begins to output infinitely far before the impulse
-occurs. \cite[sect~5.4.1]{proakis2006digital}
+occurs at $t=0$, the filter begins to output already at $t<0$; indeed,
+infinitely far before the impulse occurs. \cite[sect~5.4.1]{proakis2006digital}
 
 Often, converters do not include any kind of filter, let alone an ideal filter.
 Instead, a DAC might output several higher harmonics of the expected output
