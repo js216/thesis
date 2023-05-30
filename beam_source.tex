@@ -1,17 +1,191 @@
 \section{Beam Source}
 
-\subsection{Electronic connections}
+\subsection{Physical structure}
+
+\subsubsection{Cell assembly}
+
+The cell assembly is rigidly attached to the tapped holes on the cold head of
+the PT815 pulse tube cryocooler using six equally spaced (BCD = 3.40")
+M$5\times0.8$ brass screws. During design, I was careful not to exceed 5~kg
+suspended from the cold head as recommended by the pulse tube manufacturer; the
+estimated cell assembly weight is approx.\ 3~kg.
+
+\paragraph{Neon supply}
+
+\subsubsection{Heat shields}
+
+\paragraph{4~K shield}
+
+The 4~K shield is a box made out of six 1/4"-thick oxygen-free high
+conductivity copper (OFHC) plates with cutouts for the pulse tube head to reach
+the cell, as well as for the molecular and laser beams to enter or exit the
+shield. The box is suspended from the top plate of the 40~K shield using
+stainless 1/4-20 threaded rods, secured with brass nuts.
+
+\paragraph{40~K shield}
+
+The 40~K shield is also a box, however the assembly consists of two sets of
+parts: the internal structure (visible in Fig.~\ref{40K_internal}, left) and the
+cover plates (Fig.~\ref{40K_internal}, right).
+
+\begin{figure}
+    \centering
+    \includegraphics[height=.35\textwidth]{figs/todo/40K_internal.png}
+    \hfill
+    \includegraphics[height=.35\textwidth]{figs/todo/40K_closed.png}
+    \caption[40~K shield.]{40~K shield. \part{Left} Internal structure of the
+    40~K shield. \part{Right} Vacuum chamber with cover plates removed, showing
+    the closed 40~K shield inside.}
+    \label{40K_internal}
+\end{figure}
+
+Due to the large size of the 40~K shield, it is made out of 1100-alloy aluminum
+despite roughly an order of magnitude worse thermal conductivity compared to
+OFHC copper \cite[Fig.~6.13]{ekin2006experimental}; the conductivity is not
+crucial. Originally, the plates were 1/4" thick, but were later changed for
+0.09" thick plates (waterjet from stock, McMaster p.n.\ 88685K94) to speed up
+the amount of time needed to reach cryogenic temperatures.
+
+The 40~K box is suspended from the top plate of the vacuum chamber using 3/8"
+stainless threaded rods, secured with brass nuts and Belleville washers. We have
+considered using a thin-walled threaded tube for these standoffs to decrease
+thermal conductivity, however the solid threaded rods in practice do not pose
+any problems and the heat shield can easily reach the desired temperature.
+
+\paragraph{Flexible heat links}
+
+Due to different thermal expansion coefficients of different metals, the parts
+of the beam source will end up at slightly different relative positions when
+operating at the cryogenic temperature. To prevent the potential stress on the
+delicate pulse tubes, we attach them with flexible heat links. The heat links
+are the only thing attached to the `warm stage' of the pulse tubes and they are
+well below the weight limit of 10~kg per pulse tube warm stage.
+
+We have two pulse tubes in our beam source. The lower-temperature PT415 is
+connected with a flexible link to the 4~K shield, while PT815 attaches directly
+to the cell assembly (hidden within the 4~K shield). The 40~K `warm' stages of
+both pulse tubes are connected with flexible links to the top plate of the 40~K
+shield (Fig.~\ref{40K_heatlinks}).
+
+\begin{figure}
+    \centering
+    \includegraphics[height=.34\textwidth]{figs/todo/heatlink.png}
+    \hfill
+    \includegraphics[height=.34\textwidth]{figs/todo/heatlink_attached.png}
+    \caption[Flexible heat links for the 40~K shield.]{Flexible heat links for
+    the 40~K shield. \part{Left} Before attaching to the cryostat. One of the
+    links is cut into half for ease of assembly. \part{Right} Screwed into the
+    40~K top plate as well as the `warm stage' of the pulse tubes.}
+    \label{40K_heatlinks}
+\end{figure}
+
+The flat end pieces of the heat links were cut with a waterjet from 1/4" thick
+101-alloy copper plates (McMaster p.n.\ 3350K215), while the smaller ends were
+cut out of a 1/2" plate (McMaster p.n.\ 3350K223). After machining, I cleaned
+the parts in 2\%\ Citranox solution and deionized water (20 minutes of
+ultrasonic cleaning in each of the two liquids).
+
+Each heat link piece includes five stranded C10100-alloy copper cables (Cooner
+Wire, p.n.\ NER 7710836 B-OFE) welded by the Harvard machine shop (courtesy of
+Benjamin Augenbraun from John Doyle's group).  Due to the high thermal
+conductivity of the copper cables, brazing is impossible as the braze would wick
+up the braid, solidify there, and render the heat link inflexible. The copper
+braid could also be clamped, but welded is a more reliable way to achieve a high
+thermal conductivity. After the welding, I cleaned the heat links by submerging
+them in an ultrasonic bath of a Citranox solution for three hours at 80\degC,
+then changed the water (by then completely green) for another hour of Citranox,
+rinse in tap water, ultrasonically clean in tap water, and in acetone, and in DI
+water.
+
+\subsubsection{Vacuum chamber}
+
+The vacuum chamber has been fabricated by Atlas Technologies out of 6061-alloy
+aluminum. The chamber consists of a welded box and a set of six cover plates
+(Fig.~\ref{beam_source_vacuum}). For ease of mounting the chamber onto a stand,
+as well as attaching various components to the chamber (e.g., optics), the
+bottom of the welded part has `wings' that extend outwards perpendicular to the
+beam direction, with two rows of 1/4-20 tapped holes, spaced by 2", on each
+wing. The entire beam source can be lifted using the four 3/8-16 eye bolts that
+pass through the top cover plate (Fig.~\ref{top_plate}) into four corresponding
+tapped holes inside the main chamber body.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/beam_source_vacuum.png}
+    \caption{Beam source vacuum chamber.}
+    \label{beam_source_vacuum}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/top_plate.png}
+    \caption{Beam source vacuum chamber top plate.}
+    \label{top_plate}
+\end{figure}
+
+The cover plates are sealed onto the welded structure using round O-rings (1/4"
+fractional diameter, 0.275" actual cross-section diameter) seated into
+dovetailed grooves.
+
+\subsubsection{Electronic connections}
 
 There are two groups of electronic connections to the beam source, namely
 heaters and temperature sensors. The heaters are all connected to a single DB-9
-feedthrough, while the 12 thermometers are read out via the 4-wire technique and
-are thus spread between two DB-25 and two DB-9 feedthroughs. The connections are
-detailed in Appendix~\ref{beam_source_electronics}.
+feedthrough, as follows:\\
+
+\begin{tabular}{rl}
+1--2 & two 10~$\Omega$ cell bottom heaters connected in series (CTC100 output
+    1)\\
+3--4 & four 50~$\Omega$ 16K cell top plate heaters (CTC100 output 2)\\
+6--7 & disconnected (formerly snorkels)\\
+8--9 & five 4~K shield 10~$\Omega$ heaters, in series
+\end{tabular}\\
+
+The original design used polyimide film insulated flexible heaters, namely a
+$3"\times3"$ square heater between the cell top plate and the plate attached to
+the pulse tube, and a 2" round heater clamped on the bottom side of the cell.
+During first use, these heaters overheated and burned out, presumably because of
+insufficiently homogeneous thermal contact. These have been replaced by
+standard high-power (i.e., 50--250~W) resistors in the TO-220 package. Since all
+these heaters are cooled to cryogenic temperatures, we have experienced no
+vacuum issues due to their outgassing despite not following any special cleaning
+or testing precautions.
+
+The 12 thermometers are read out via the 4-wire technique and are thus spread
+between two DB-25 and two DB-9 feedthroughs. The ($I-,V-,V+,I+$) pin numbers for
+each of the four connectors are as follows:\\
+
+\begin{tabular}{rl}
+   DB-25 & 1: back snorkel ($15,16,4,3$), 2: 4~K shield top plate ($18,19,7,6$) \\
+         & 3: 40~K shield top plate ($21,22,9,10$), 4: 4~K PT ($24,25,13,12$) \\
+   DB-25 & 5: cell top plate ($15,16,4,3$), 6: 4~K shield bottom plate ($18,19,7,6$) \\
+         & 7: 40~K shield bottom plate ($21,22,9,10$), 8: 16~K PT ($24,25,13,12$) \\
+   DB-9  & 9: input nozzle ($1,2,3,4$), 10: cell top plate target side ($6,7,8,9$) \\
+   DB-9  & 11: 4~K PT warm stage ($1,2,3,4$), 12: 16~K PT warm stage ($6,7,8,9$)
+\end{tabular}\\
+
+All thermometers are silicon-diode sensors (Lake Shore Cryotronics, Inc., p.n.\
+DT-670, CU package). All sensors are `Band A1', meaning $\pm0.25$~K tolerance in
+the range 2~K to 100~K, except for the two sensors on the 40~K shield, which are
+`Band C', i.e.\ $\pm1$~K in the same range. Sensors 1--8 are read out using the
+Lake Shore Model 218 Temperature Monitor, while sensors 9--12 are read using the
+SRS CTC100 Cryogenic temperature controller. The latter allows for PID control
+of the cell temperature via the cell heaters.
 
 The wires are crimped into the female gold socket pins (Accu-Glass p.n.\ 100181)
 that go into the vacuum-side PEEK 25-pin female D-sub connector (Accu-Glass
 p.n.\ 100460) that connects onto the double 25-pin D-sub feedthrough (Accu-Glass
 p.n.\ 100225, 25D2-450, 4.5” CF flange).
+
+\subsection{Thermal analysis}
+
+\subsubsection{Standoffs}
+
+\subsubsection{Cell assembly}
+
+\subsubsection{Shields}
+
+\subsection{Performance}
 
 \subsection{Target making}
 
@@ -154,7 +328,7 @@ thermocouple wires (Omega HH-J-24, max.\ temp.\ 704\degC) attach to a copper
 target holder cover using brass 4-40 screws. Both the new target holders and the
 cover, with thermocouple wires attached, can be seen in Fig.~\ref{setup2}.
 
-\begin{figure}
+\begin{figure}[b]
     \centering
     \includegraphics[height=.3\textwidth]{figs/todo/new_holder.png}
     \includegraphics[height=.3\textwidth]{figs/todo/new_chamber.png}
@@ -268,7 +442,6 @@ in temperature above the melting point, as in the old target-making procedure.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figs/todo/n1.png}
-    %\includegraphics[width=\textwidth]{figs/todo/n2.png}
     \includegraphics[width=\textwidth]{figs/todo/n3.png}
     \includegraphics[width=\textwidth]{figs/todo/n4.png}
     \caption{Temperature and heater power profile and the resulting targets.}
@@ -327,14 +500,16 @@ reached by true liquefaction.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{figs/todo/l1.png}
-    \includegraphics[width=\textwidth]{figs/todo/l2.png}
+    \includegraphics[width=.95\textwidth]{figs/todo/l1.png}
+    \includegraphics[width=.95\textwidth]{figs/todo/l2.png}
     \caption{Failed attempts to produce targets using the upgraded heater
     (Fig.~\ref{last_oven}).}
     \label{last_targets}
 \end{figure}
 
-\subsection{Temperature feed-forward}
+\subsection{Future improvements}
+
+\subsubsection{Temperature feed-forward}
 
 \textit{Work reported in this subsection done together with Luke Robert Verchick
 Molbak.}
@@ -415,4 +590,138 @@ temperature oscillations.
     compressor, while the lower trace is the Arduino output after filtering the
     original signal and syncing that signal to the Arduino.}
     \label{compressor_signal}
+\end{figure}
+
+\subsubsection{Continuous beam source}
+
+The beam source as described above is ablated using a pulsed laser, therefore
+the beam source itself is pulsed. However, laser ablation is not the only method
+to load the cell of a cryogenic beam source with the species of interest. Other
+demonstrated methods include cell loading from a molecular beam, cryogenic
+discharge \cite{doyle1995buffer}, direct gas flow, and capillary fill. In the
+latter method, a thin hot tube is inserted into the cell (Fig.~\ref{capillary}).
+Despite the lack of direct thermal contact between the capillary and the cell,
+this method is limited to molecules that vaporize at a low enough temperature
+such that the cell and the buffer gas inside it are not subject to more
+heating (through radiation and gas conduction) than can be offset by the cooling
+of the cell.
+
+\begin{figure}
+   \centering
+    \includegraphics[width=.4\textwidth]{figs/todo/capillary.png}
+    \caption{Continuous beam source: capillary fill.}
+    \label{capillary}
+\end{figure}
+
+A fundamental limit is posed by the heat load delivered by the species of
+interest itself, assuming no additional heat load from the capillary. In the
+case, we can estimate that an unacceptable amount of heating results if
+\cite[eqn~4.2]{patterson2010thesis}
+%
+\[
+   {\phi_\text{A}}>{\phi_\text{B}}\frac{T_\text{B}}{T_\text{A}},
+\]
+%
+where the subscripts A and B refer to the species and the buffer gas,
+respectively. For a typical neon flux of $\phi_\text{B}\approx40$~sccm at a
+temperature $T_\text{B}\approx10$~K, the flux of hot TlF
+($\phi_\text{A}\approx600$~K) would be limited to
+$\phi_\text{A}\approx0.7$~sccm, or approx.\ $3\cdot10^{17}$ molecules per
+second.
+
+Let us estimate the expected flow rate through a capillary, assuming laminar
+flow. According to Poiseuille's formula, the mass flow rate for a fluid of
+dynamic viscosity $\mu$ through a pipe of radius $R$ and length $l$ at a
+pressure drop of $\Delta p$ is \cite[eqn~17.10]{landau2013fluid}
+%
+\[
+   Q=\frac{\pi\Delta p}{8\mu l}R^4.
+\]
+%
+The dynamic viscosity is approximately $\mu\sim m\bar{v}N\lambda$
+\cite[eqn~8.11]{pitaevskii2012physical}, where
+$m=223.4\;\text{u}=2.71\cdot10^{25}$~kg is the mass of a TlF molecule
+\cite{linstrom2001nist}, $\bar{v}\sim\sqrt{\kB T/m}$ is the average molecular
+velocity, $N$ is the number of molecules per unit volume, and $\lambda$ is the
+mean free path. At the temperature $T\approx600$~K, TlF oven pressure of
+$\Delta p\approx1$~torr, and assuming a mean free path of $\lambda\sim1$~mm, we
+would get a flow of approx.\ $10^{18}$ molecules per second through a $R=1/16$"
+pipe of length $l=1$".
+
+The radiative heat load from the tip of the hot capillary can be estimated to be
+$\sigma T^4A=\sigma(600~\text{K})^4(3~\text{mm})^2\approx0.07~\text{W}$, which
+can easily be removed by the cryocoolers. Potentially more problematic is the
+heat $P_\text{Ne}$ imparted to the neon buffer gas:
+%
+\[
+   P_\text{Ne}\sim
+   \underbrace{(\pi\cdot3~\text{mm})^2}_\text{aperture area}
+   \cdot
+   \underbrace{\sqrt{\frac{\kB(19~\text{K})}{m_\text{Ne}}}}_\text{neon velocity}
+   \cdot
+   \underbrace{\frac{10^{16}}{(25~\text{mm})^3}}_\text{neon density}
+   \cdot
+   \underbrace{\kB(600~\text{k})}_{\substack{\text{energy imparted}\\\text{to neon on
+   collision}}}
+   \sim1~\text{mW},
+\]
+%
+because it causes a buffer-gas temperature increase of
+%
+\[
+   \Delta
+   T_\text{Ne}\sim\frac{1~\text{mW}}{40~\text{sccm}\frac32\kB}=2.7~\text{K}.
+\]
+
+In the above calculation, we have assumed that there is approx.\ 1~torr of
+pressure in the oven where TlF is converted into its gaseous form. In general,
+the vapor (or sublimation) pressure, i.e.\ the pressure when the rate of
+sublimation equals the rate of deposition of its vapor phase, is temperature
+dependent. In thallium fluoride, this pressure is given by
+\cite{keneshea1965thermodynamics}
+%
+\[
+   \log\frac{p}{1~\text{torr}}=\left[-\frac{5450~\text{K}}{T}+7.841\right]\pm0.016.
+\]
+%
+Some useful pressures are: $p(616~\text{K})\approx0.1~\text{torr}$ and
+$p(695~\text{K})\approx1~\text{torr}$.
+
+To go beyond the back-of-the-envelope estimates considered so far, it would be
+useful to do simulations of the beam properties as it emerges from a buffer gas
+cell. In order to know what kind of simulations would be appropriate, we can
+consider the Knudsen number $\text{Kn}=\lambda/L$, where $L$ is a typical length
+scale of the capillary or the cell. Given the molecular densities expected, we
+operate around $0.1<\text{Kn}<10$, which is in the transition regime between
+continuous and free molecular flow. \cite{shen2018multiparameter}
+
+In this regime, Direct simulation Monte Carlo (DSMC) is an efficient method to
+simulate flows. \cite{oran1998direct,birdmolecular} The method begins by
+selecting a large number ($10^6$ to $10^{11}$) of ``statistically representative
+particles'', each representing a number of physical particles. We also select a
+time step that is less than the mean collision time and split the geometry into
+a mesh of cells (smaller than the mean free path). The main algorithm loop
+proceeds as follows:
+%
+\begin{enumerate}
+   \item Move the particles given their positions and velocities.
+   \item Simulate collisions between molecules and walls.
+   \item Simulate collisions between randomly selected pairs of molecules within each cell.
+\end{enumerate}
+%
+There is a number of DSMC codes available. The qualitative simulation of the
+beam emerging from a 2D axisymmetric model of a cell shown in Fig.~\ref{DS2V}
+was created using DS2V \cite{bird2005ds2v}. Further work could use DS2V, or a
+number of other similar codes, such as SPARTA \cite{plimpton2019direct}, to
+quantitatively evaluate the beam properties as a function of the injected TlF
+gas flow rate, temperature, buffer gas flow rate and temperature, size and
+thickness of the cell exit hole, the effect of a shaped nozzle, etc.
+
+\begin{figure}
+   \centering
+    \includegraphics[width=.6\textwidth]{figs/todo/DS2V.png}
+    \caption[DS2V simulation of a buffer gas cell.]{DS2V simulation of a buffer
+    gas cell (qualitative depiction). Color shows velocity component along the
+    beam direction (red is faster than blue).}
+    \label{DS2V}
 \end{figure}
