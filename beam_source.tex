@@ -4,11 +4,19 @@
 
 \subsubsection{Cell assembly}
 
-The cell assembly is rigidly attached to the tapped holes on the cold head of
+The cell assembly (Fig.~\ref{cell_assembly}) is rigidly attached to the tapped holes on the cold head of
 the PT815 pulse tube cryocooler using six equally spaced (BCD = 3.40")
 M$5\times0.8$ brass screws. During design, I was careful not to exceed 5~kg
 suspended from the cold head as recommended by the pulse tube manufacturer; the
 estimated cell assembly weight is approx.\ 3~kg.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/cell_assembly.png}
+    \caption[Cell assembly]{Cell assembly. Note that the Conical Collimator, as
+    well as the Back Snorkel, have been removed from the beam source.}
+    \label{cell_assembly}
+\end{figure}
 
 \paragraph{Neon supply}
 
@@ -97,6 +105,10 @@ then changed the water (by then completely green) for another hour of Citranox,
 rinse in tap water, ultrasonically clean in tap water, and in acetone, and in DI
 water.
 
+The solid ends of the heat links are attached to the pulse tubes or the beam
+source using screws, with indium ribbon placed in between to improve thermal
+contact.
+
 \subsubsection{Vacuum chamber}
 
 The vacuum chamber has been fabricated by Atlas Technologies out of 6061-alloy
@@ -156,12 +168,12 @@ between two DB-25 and two DB-9 feedthroughs. The ($I-,V-,V+,I+$) pin numbers for
 each of the four connectors are as follows:\\
 
 \begin{tabular}{rl}
-   DB-25 & 1: back snorkel ($15,16,4,3$), 2: 4~K shield top plate ($18,19,7,6$) \\
-         & 3: 40~K shield top plate ($21,22,9,10$), 4: 4~K PT ($24,25,13,12$) \\
-   DB-25 & 5: cell top plate ($15,16,4,3$), 6: 4~K shield bottom plate ($18,19,7,6$) \\
-         & 7: 40~K shield bottom plate ($21,22,9,10$), 8: 16~K PT ($24,25,13,12$) \\
-   DB-9  & 9: input nozzle ($1,2,3,4$), 10: cell top plate target side ($6,7,8,9$) \\
-   DB-9  & 11: 4~K PT warm stage ($1,2,3,4$), 12: 16~K PT warm stage ($6,7,8,9$)
+   DB-25 & \textbf{(1)} back snorkel ($15,16,4,3$), \textbf{(2)} 4~K shield top plate ($18,19,7,6$) \\
+         & \textbf{(3)} 40~K shield top plate ($21,22,9,10$), \textbf{(4)} 4~K PT ($24,25,13,12$) \\
+   DB-25 & \textbf{(5)} cell top plate ($15,16,4,3$), \textbf{(6)} 4~K shield bottom plate ($18,19,7,6$) \\
+         & \textbf{(7)} 40~K shield bottom plate ($21,22,9,10$), \textbf{(8)} 16~K PT ($24,25,13,12$) \\
+   DB-9  & \textbf{(9)} input nozzle ($1,2,3,4$), \textbf{(10)} cell top plate target side ($6,7,8,9$) \\
+   DB-9  & \textbf{(11)} 4~K PT warm stage ($1,2,3,4$), \textbf{(12)} 16~K PT warm stage ($6,7,8,9$)
 \end{tabular}\\
 
 All thermometers are silicon-diode sensors (Lake Shore Cryotronics, Inc., p.n.\
@@ -179,11 +191,358 @@ p.n.\ 100225, 25D2-450, 4.5” CF flange).
 
 \subsection{Thermal analysis}
 
+Careful thermal design is essential to ensure satisfactory operation of any
+cryostat, however the requirements for a neon-based beam source are less
+difficult than for a helium-based one due to the ease of cryopumping neon
+compared to helium. In this section, I will attempt to estimate the heat flows
+between the different components of the beam source; see
+Fig.~\ref{beam_source_thermal_analysis} for a summary.
+
 \subsubsection{Standoffs}
+
+\paragraph{(1) Conduction 300~K $\rightarrow$ 40~K}
+
+Thermal conduction is limited by the solid/solid interface between the standoff
+tube (in actual implementation, threaded rod) and the 300~K/40~K walls. The
+standoffs support the weight of the 40~K shield (approx.\ 15~kg), which in turn
+supports the 4~K shield ($\sim6.7$ kg), i.e.\ a total weight of about 22~kg.
+Data for copper--SS and aluminum--SS doesn't seem to be available. An
+order-of-magnitude estimate from \cite[Fig.~2.7]{ekin2006experimental} would
+give the interface thermal conductivity of 0.05~W/K as a Cu--Cu upper limit, so
+realistically it's probably an order of magnitude less.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/thermal.png}
+    \caption[Beam source thermal analysis overview.]{Beam source thermal
+    analysis overview. The numbers in brackets correspond to section headers
+    describing the calculation of the relevant heat flow.}
+    \label{beam_source_thermal_analysis}
+\end{figure}
+
+Heat flow through the tube is \cite[eqn~2.2]{ekin2006experimental}
+%
+\[
+   \dot Q=(A/L)\bar\lambda\Delta T=C\Delta T,
+\]
+where $C=A\bar\lambda/L$ is the thermal conductivity. For a tube with 3/8"
+OD, 3/32" wall thickness, the cross section area is
+%
+\[
+   A=\pi\left(\frac{3/8}{2}\;\text{in}\right)^2-\pi\left(\frac{3/8-2\cdot3/32}{2}\;\text{in}\right)^2.
+\]
+%
+The conduction integral $\bar\lambda$ for stainless steel
+\cite[Appendix~2.1]{ekin2006experimental} is
+%
+\[
+   \bar\lambda=\frac{(3.09-0.0824)10^3\;\text{W/m}}{(300-40)\;\text{K}}.
+\]
+%
+Thus for an 8" tube, the thermal conductivity is
+%
+\[
+   C_1=A\bar\lambda/L=0.002\;\text{W/K}.
+\]
+%
+If, instead, the standoff is a solid threaded rod, then
+%
+\[
+   A'=\pi\left(\frac{3/8}{2}\;\text{in}\right)^2;
+   \quad
+   C_1'=A'\bar\lambda/L=0.003\;\text{W/K},
+\]
+%
+The tube and the solid rod are similar since their cross section areas are only
+about 33\%\ different.  In both cases, the heat flow is relatively small (under
+a watt flowing from the vacuum chamber top plate to the 40~K shield top plate
+via the standoffs) and further limited by the solid--solid interface between
+the standoff what it is attached to at each end.
+
+\paragraph{(2) Conduction 40~K $\rightarrow$ 4~K}
+
+At 4~K, the interface thermal conductivity is about an order of magnitude less
+than at 40~K or 300~K, and this standoff supports about three times less weight. The
+threaded rod has different dimensions: 1/4" OD, and approx 7.75" length. The
+cross sectional area is
+%
+\[
+   A=\pi\left(\frac{1/4}{2}\;\text{in}\right)^2.
+\]
+%
+Also the conduction integral is different
+%
+\[
+   \bar\lambda=\frac{(0.0824)10^3\;\text{W/m}}{(40-4)\;\text{K}},
+\]
+%
+so the thermal conductivity is
+%
+\[
+   C_\text{rod}=A\bar\lambda/L=0.0015\;\text{W/K}.
+\]
+%
+Again, the actual heat flow is likely to be further limited by the interface
+conductivity since ``thermal conduction at the boundary between two metal
+surfaces is surprisingly low at cryogenic temperatures''
+\cite[sect~2.6]{ekin2006experimental}. This is negligible compared with the heat
+flow required when initially cooling down the shield from room temperature.
 
 \subsubsection{Cell assembly}
 
+\paragraph{(3) Conduction cell $\rightarrow$ PT815}
+
+The cell temperature
+is about 16~K, while the pulse tube's two temperatures are a function of heat
+load. For example, at 10~W heat load to the cell, the cold head is at approx 9~K
+according to the PT815 datasheet.
+From \cite[Fig.~2.7]{ekin2006experimental},
+the Cu--Cu heat conductivity at 50~kgf is about 0.03~W/K. 
+Assuming each of the six M5 screws applies about 500~kgf of force, the
+temperature drop over the cell--pulse tube join will be
+%
+\[
+   \Delta
+   T\frac{10\;\text{W}}{0.02\;\text{W/K}}\frac{50\;\text{kgf}}{6\times500\;\text{kgf}}=8~\text{K}.
+\]
+%
+In practice, the joint conductance was improved using pure indium foil assuming
+the screws are tight enough so that the indium flows in the interface.
+
+\paragraph{(4) Radiation 300~K $\rightarrow$ cell}
+
+The radiation from the 300~K walls enters through the holes in the 40~K and 4~K
+shields. The net heat exchange between two surfaces of area $A$ and temperatures
+$T_1<T_2$ is given by \cite[eqn~2.9]{ekin2006experimental}
+%
+\[
+   \dot Q=\sigma E A(T_2^4-T_1^4),
+\]
+%
+where $\sigma=5.67\cdot10^{-8}\;\text{W/m}^2\text{K}^4$ is the
+Stefan--Boltzmann constant. For diffuse reflection between two parallel plates,
+the emissivity factor $E$ is \cite[Table~2.2]{ekin2006experimental}
+%
+\[
+   E=\frac{E_\text{Cu}E_\text{SS}}{E_\text{SS}+E_\text{Cu}-E_\text{Cu}E_\text{SS}}=0.02,
+\]
+%
+taking $E_\text{Cu}=0.02$ and $E_\text{SS}=0.07$
+\cite[Appendix~2.2]{ekin2006experimental}. Estimating the area of the cell
+assembly at $A=3\pi(2\;\text{in})^2$, the heat flow between the 300~K wall
+and the 16~K cell is $\dot Q=0.2~W$. This is much less than the expected
+ablation laser power of 1--10~W.
+
+\paragraph{(10) Laser and (11) heater}
+
+Laser should provide up to about 10~W, and the heater up to about 50~W.
+
+\paragraph{Internal heat flow}
+
+So far we have treated the cell assembly as a single homogeneous block. In order
+to be able to do so, we must ensure excellent thermal contact between the
+component parts of the assembly. Refer to Fig.~\ref{cell_assembly} for the names
+of the assembly components.
+
+Let us estimate the force obtained from the brass fasteners used to join the
+copper parts in the cell assembly. Given the yield strength of brass of
+19,600~psi, the proof strength (the amount of load a fastener must withstand
+without permanently deforming) \cite[p.~1428]{oberg2008machinery} is
+%
+\[
+   S_\text{p}=0.85\times19,600~\text{psi}.
+\]
+%
+The tensile stress area of \#4 and 1/4" bolts is 0.006~in$^2$ and 0.031~in$^2$,
+respectively \cite[p.~1750]{oberg2008machinery}. The recommended preload for the
+two bolt types is 90~lbf and 460~lbf, resp.\ (90\%\ of proof strength $\times$
+tensile stress area).
+
+Next we estimate the increase in bolt force due to differential thermal
+expansion. We use brass screws in copper parts. Thermal contraction between
+293~K and 16~K for brass is approximately 0.38\%, and for copper 0.32\%. The
+difference in length between a brass screw and the surrounding copper thus is
+0.06\%. We can take this to be a value of the strain. The modulus of elasticity of
+copper or brass is around 100~GPa. The stress on the bolts is then
+%
+\[
+   \sigma=100\;\text{GPa}\cdot0.06\%=8700\;\text{psi}.
+\]
+%
+This is 1/2 of the proof strength of brass as calculated in the previous
+section. Taking the same tensile stress area as in the previous paragraph, the
+forces on \#4 and 1/4" bolts are 52~lbf and 270~lbf, resp. In sum, the preload +
+thermal contraction force are 142~lbf and 734~lbf, resp. This is still less than
+the safe maximum loads on bolts within a safety factor of at least two.
+
+A low temperature interface between two metals has a thermal conductance that
+scales with the total force clamping the two metals together. Thus increasing
+the contact area is only helpful if it is accompanied with a corresponding
+increase in the force joining the two areas, i.e. by using thicker bolts or a
+greater number of them. On the other hand, if the interface is filled with
+indium and clamped with a pressure greater than the yield strength of indium
+(approx.\ 145~psi), then the joint thermal conductance scales with the area
+rather than the applied force. \cite[sec~2.6.3]{ekin2006experimental}
+
+A similar, albeit an order of magnitude less effective way to accomplish the
+same is to use a vacuum compatible grease, such as Apiezon-N, in the thermal
+interface. \cite[Fig.~10]{dillon2017thermal}. It is important to keep in mind
+that at higher contact pressures, grease can in fact reduce the conductivity,
+depending on the metals joined, the pressure, and contact area. Much like indium
+foil, grease converts the force dependence of the conductivity into an area
+dependence, so it has to be decided whether we have more force or more area, so
+to speak.
+
+At 16~K, conductivity of 10~$\mu$m of grease is 0.1~W/K per cm$^2$, while a
+pressed Cu--Cu contact has 0.01~W/K at 50~kgf
+\cite[Fig.~2.7]{ekin2006experimental}. It is seen from Table~\ref{grease_or_not}
+that in almost all cases, greasing the parts increases thermal conductivity
+significantly, although the window holders should remain ungreased for optical
+reasons.
+
+\begin{table*}
+  %\small
+  \makebox[\textwidth][c]{%
+    \begin{tabu} to \textwidth {ccccccc}
+      \toprule
+       parts joined	                   & $A$ [in$^2$] & $N$ & $F$ [lbf] & $c_1$ [W/K] & $c_2$ [W/K]\\\midrule
+       Snorkel --- Cell	                   & 0.89	  & 4	& 720       & 0.07	& 0.57\\
+       Back Snorkel --- Target Holder      & 1.69	  & 4	& 720       & 0.07	& 1.09\\
+       Target Holder --- Cell              & 1.43	  & 4	& 720       & 0.07	& 0.92\\
+       Thin Snorkel --- Input Nozzle       & 0.80	  & 2	& 360       & 0.03	& 0.52\\
+       Input Nozzle --- Cell               & 1.90	  & 4	& 720       & 0.07	& 1.23\\
+       Input \&\ Output Nozzles --- Cell   & 1.90	  & 4	& 720       & 0.07	& 1.23\\
+       Window Holder --- Snorkels	   & 1.30	  & 4	& 720       & 0.07	& 0.84\\
+       Thin Window Holder --- Thin Snorkel & 0.29	  & 4	& 720	    & 0.07	& 0.19\\
+      \bottomrule
+    \end{tabu}}
+    \caption[Thermal joints in the components of the cell assembly.]{Thermal
+    joints in the components of the cell assembly. $A$ is the common surface
+    area, $N$ is the number of \#4-40 fasteners used, $F$ is the force assuming
+    a safety factor of 2, $c_1$ is the thermal conductance of a copper--copper
+    joint at 16~K, $c_2$ is the same for a greased joint using Apiezon-N.}
+    \label{grease_or_not}
+\end{table*}
+
 \subsubsection{Shields}
+
+\paragraph{(5) Radiation 300~K $\rightarrow$ 40~K}
+
+The outer surface area of the 40~K box is approximately
+%
+\[
+   A=(2\cdot144.6+4\cdot109.2+187.9+158.6)\;\text{in}^2=0.7\;\text{m}^2.
+\]
+%
+The emissivity factor between polished aluminum ($E_\text{Al}=0.03$) and copper
+($E_\text{Cu}=0.02$) is roughly
+%
+\[
+   E=\frac{E_\text{Cu}E_\text{Al}}{E_\text{Al}+E_\text{Cu}-E_\text{Cu}E_\text{Al}}=0.01.
+\]
+%
+The heat flow is then
+%
+\[
+   \dot Q=\sigma EA(300^4-40^4)\;\text{K}^4=3.8\;\text{W},
+\]
+%
+which is significant and expected. That is the reason the 40~K shield is used in
+the first place, to prevent this heat load from reaching the 4~K shield and
+heating it up to a temperature at which is cannot act as an effective cryopump.
+
+\paragraph{(6) Radiation 40~K $\rightarrow$ 4~K}
+
+The outer surface area of the 4~K box is approximately
+%
+\[
+   A=(2\cdot32.2+2\cdot16.4+36.7+49.5)\;\text{in}^2=0.1\;\text{m}^2.
+\]
+%
+The heat flow then is
+%
+\[
+   \dot Q=\sigma E_\text{Cu}A(40^4-4^4)\;\text{K}^4=0.0003\;\text{W},
+\]
+%
+which, as expected, is negligible.
+
+\subsubsection{Copper braids}
+
+\paragraph{(7) and (9) Copper braid 40~K $\rightarrow$ PT415 and PT815}
+
+The braid is made from OFHC copper, welded to brackets of the same alloy.  There
+is some 5~W of heat flowing into the 40~K shield. In addition, the 40~K shield
+has a certain heat capacity determined by its mass ($m=15~\text{kg}$) and heat
+capacity of aluminum ($c_\text{Al}=910\;\text{J/kg}\cdot\text{K}$). If we want
+to cool down the shield in 10 hours, we need the heat flow
+%
+\[
+   \dot
+   Q=\frac{mc_\text{Al}(300\;\text{K}-40\;\text{K})}{10\;\text{h}}=98\;\text{W}.
+\]
+%
+The $\sim5$~W of radiative heat flow is negligible compared with the 100~W of
+cooling power we want.
+
+It seems that the two pulse tubes can easily achieve the $\sim100$~W of cooling
+if connected with a good enough thermal link. Estimating the link using the data
+for ETP copper \cite[Appendix 2.1]{ekin2006experimental}, the conduction
+integral $\bar\lambda_\text{braid}$ between 300~K and 40~K is
+%
+\[
+   \bar\lambda_\text{braid}=\frac{(162-40.6)10^3\;\text{W/m}}{(300-40)\;\text{K}}.
+\]
+%
+Note, however, that the ``high thermal conductivity of nearly pure metals is
+variable and strongly depends on their impurity content''. The braid is about an
+inch long, with the area (multiplied by two since there are two pulse tubes) of
+$A_\text{braid}=2\cdot4.5\cdot0.1\;\text{in}^2=0.0006\;\text{m}^2$, so the
+thermal conductivity at the 300~K $\rightarrow$ 40;K temperature difference is
+%
+\[
+   C_2=A_\text{braid}\bar\lambda_\text{braid}/L_\text{braid}=10.7\;\text{W/K}.
+\]
+
+In addition, there are two interfaces to consider, namely at each solder joint.
+We may estimate the conductivity to be of order 30~W/K
+\cite[Fig.~2.8]{ekin2006experimental}, which is unlikely to be a bottleneck.
+
+As the temperature falls down to 50~K, the braid conductivity increases to
+%
+\[
+   \bar\lambda_\text{braid}=\frac{(50.8-40.6)10^3\;\text{W/m}}{(50-40)\;\text{K}};
+   \quad
+   C_2=A_\text{braid}\bar\lambda_\text{braid}/L_\text{braid}=23.3\;\text{W/K}.
+\]
+
+\paragraph{(8) Copper braid 4~K $\rightarrow$ PT415}
+
+The lower-temperature pulse tube PT415 can pump at most 1.5~W at the cold
+stage at cryogenic temperatures. Due to successful radiative shielding, there is
+little heat load on the 4~K shield. With $m=6.7$~kg of copper
+($c_\text{Cu}=390\;\text{J/kg}\cdot\text{K}$) and a 1.5~W cooling power, it will
+take a long time to cool down the 4K shield:
+%
+\[
+   t_\text{4~K}=\frac{mc_\text{Cu}(300\;\text{K}-4\;\text{K})}{1.5\;\text{W}}=6.0\;\text{days}
+\]
+%
+In practice, the shield cools down much faster than that; likely, the cooling
+power of the cold head is significantly higher than 1.5~W at higher
+temperatures.
+
+The braid ($L_\text{braid}=2.6\;\text{in}$,
+$A_\text{braid}=2\cdot4.5\cdot0.1\;\text{in}^2$) has the 300~K $\rightarrow$ 4~K thermal conductivity
+%
+\[
+   \bar\lambda_\text{braid}=\frac{162\cdot10^3\;\text{W/m}}{(300-4)\;\text{K}};
+   \quad
+   C_2=A_\text{braid}\bar\lambda_\text{braid}/L_\text{braid}=4.9\;\text{W/K}.
+\]
+%
+The 300~K $\rightarrow$ 4~K heat flow (assuming a similar solder-joint
+conductivity) is thus more than enough.
 
 \subsection{Performance}
 
@@ -207,7 +566,7 @@ TFT2KY00003), and on the other with a VCR feedthrough (0.5", male). The nipple
 is mounted above an optical breadboard with a custom metal holder. The VCR
 feedthrough connects to four turns of a coiled stainless tube with female 0.5"
 VCR connections brazed onto each end of the tube, connected to a metal bellows
-using a VCR to KF40 adapter.  The VCR connectors are brazed onto the stainless
+using a VCR to KF40 adapter. The VCR connectors are brazed onto the stainless
 tube with any suitable brazing alloy, even if it contains zinc, which is not UHV
 compatible. The connections are made with standard VCR gaskets.
 
