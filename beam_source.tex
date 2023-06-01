@@ -4,21 +4,93 @@
 
 \subsubsection{Cell assembly}
 
-The cell assembly (Fig.~\ref{cell_assembly}) is rigidly attached to the tapped holes on the cold head of
-the PT815 pulse tube cryocooler using six equally spaced (BCD = 3.40")
-M$5\times0.8$ brass screws. During design, I was careful not to exceed 5~kg
-suspended from the cold head as recommended by the pulse tube manufacturer; the
-estimated cell assembly weight is approx.\ 3~kg.
+The cell assembly (Fig.~\ref{cell_assembly}) is rigidly attached to the tapped
+holes on the cold head of the PT815 pulse tube cryocooler using six equally
+spaced (BCD = 3.40") M$5\times0.8$ brass screws. During design, I was careful
+not to exceed 5~kg suspended from the cold head as recommended by the pulse tube
+manufacturer; the estimated cell assembly weight is approx.\ 3~kg.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figs/todo/cell_assembly.png}
     \caption[Cell assembly]{Cell assembly. Note that the Conical Collimator, as
-    well as the Back Snorkel, have been removed from the beam source.}
+    well as the Back Snorkel, have been removed from the beam source. The neon
+    line attaches to the Input Nozzle (seen in the left figure, immediately to
+    the right of the Thin Snorkel, but not labeled).}
     \label{cell_assembly}
 \end{figure}
 
-\paragraph{Neon supply}
+\paragraph{Target Holder}
+
+The Target Holder contains a cylindrical solid block of TlF (diameter approx.
+1"), that is laser ablated to form a molecular beam. The initial design
+(Fig.~\ref{setup2}, left, and Fig.~\ref{failed_targets}) incorporated a 1/4"
+through hole to enable laser absorption measurements close to the center of the
+cell. The hole was sealed with a laser window, offset using the Back Snorkel.
+The later design (Fig.~\ref{making_good_target}) of the Target Holder eliminates
+the through hole (beam absorption measurements can also be done immediately
+outside the cell) and deepens the TlF-containing volume to 0.425" in order to
+increase the lifespan of a target.
+
+\paragraph{Snorkel}
+
+The ablation laser enters the cell through a window that is not directly
+attached to the cell, but is offset through use of the Snorkel, a copper tube
+approx 3--4" in length. As visible in Fig.~\ref{cell_assembly}, the original
+design for the Snorkel tube contained an array of seven 1/4" holes going
+through the length of the tube in an attempt to minimize the amount of ablated
+material that gets deposited on the window. We have later replaced this with a
+design that has just a single, larger, hole with no negative effects while
+improving the laser access to the target.
+
+\paragraph{Neon line}
+
+(Follow this description with aid of Fig.~\ref{neon_line}). Neon enters the
+vacuum chamber through a 1/8" VCR to KF40 feedthrough on the top plate of the
+vacuum chamber. On the vacuum side, the gas enters a 3~ft length of smooth-bore
+304 stainless steel tubing (McMaster p.n.\ 89895K711, 1/8" OD, 0.02" wall
+thickness) which has been coiled on a lathe, with VCR connector brazed to each
+end using an oxyacetylene torch. The stainless tube connects, and thermally
+isolates, the room-temperature vacuum chamber to 1/8" copper `heat exchange
+bobbin' that is bolted onto the top plate of the 40~K shield. The gas then
+proceeds into another identical segment of coiled stainless tube before being
+passed into a copper tube that takes it through the 4~K shield's top plate into
+the cell input nozzle.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/neon_line.png}
+    \caption[Neon line.]{Steps in the assembly of the neon line, from left to
+    right: gas enters a feedthrough which is thermally insulated by means of the
+    stainless coil. The neon thermalizes on the 40~K copper heat exchange
+    bobbin, from which is passes through another stainless coil before being
+    attached to a copper line that pierces the 4~K shield to plate to enter the cell.}
+    \label{neon_line}
+\end{figure}
+
+The heat exchange bobbin is composed of copper tubing (McMaster p.n.\ 8965K22,
+101 alloy, 0.032" wall thickness) that has been wound around an OFHC copper rod
+(0.75" diameter, 2" long, with a clearance thru hole for a 1/4" threaded rod,
+machined on a lathe from McMaster p.n.\ 8965K72 stock) and brazed (using Sn96
+Ag4 solder and Nokorode 14000 Regular Paste Flux) for good thermal contact. The
+copper rod needs to be machined slowly with a lot of oil since copper tends to
+break \&\ eat drill bits. The rod is ultrasonically cleaned in acetone, 2\%\
+Citranox solution, DI water (20~min each) before brazing. After the brazing,
+clean excess flux off with a cloth soaked in acetone, then remove the oxide with
+a wire brush (using a compressed-air-powered drill to spin the brush), the clean
+ultrasonically: acetone 45~min, Citranox 20~min, DI water 20~min, acetone
+20~min, DI water 20~min. Finally, braze 1/8" VCR connections (glands: Swagelok
+SS-2-VCR-3) onto the coils, female (Swagelok SS-2-VCR-1) on the input and male
+(Swagelok SS-2-VCR-4) on the output. The glands For brazing the VCR connections,
+I used an oxyacetylene torch and Silver Braze 56 alloy from Prince \&\ Izant
+Company (Cleveland, OH), in the form of 0.062” diameter wire.
+
+The neon enters the cell through the Input Nozzle, which is a 1/4" thick OFHC
+copper plate that forms one of the six sides of the cell, directly opposite the
+side from which the molecular beam emerges. The neon-carrying copper tube is
+brazed into the Input Nozzle through one side (same side of the beam source as
+the ablation laser). In the middle of the plate, the neon turns 90 degrees and
+exits the Input Nozzle into the cell volume through a central 0.375" hole.
 
 \subsubsection{Heat shields}
 
@@ -30,11 +102,20 @@ the cell, as well as for the molecular and laser beams to enter or exit the
 shield. The box is suspended from the top plate of the 40~K shield using
 stainless 1/4-20 threaded rods, secured with brass nuts.
 
+\begin{figure}
+    \centering
+    \includegraphics[height=.7\textwidth]{figs/todo/4K_shield.png}
+    \caption[4~K shield.]{4~K shield, opened to reveal the cell assembly (with
+    the Target Holder removed) inside.}
+    \label{4K_shield}
+\end{figure}
+
 \paragraph{40~K shield}
 
 The 40~K shield is also a box, however the assembly consists of two sets of
-parts: the internal structure (visible in Fig.~\ref{40K_internal}, left) and the
-cover plates (Fig.~\ref{40K_internal}, right).
+parts: the internal structure (visible in Fig.~\ref{40K_internal}, left, as well
+as in Fig.~\ref{beam_source_assembly_internal}) and the cover plates
+(Fig.~\ref{40K_internal}, right).
 
 \begin{figure}
     \centering
@@ -58,7 +139,14 @@ The 40~K box is suspended from the top plate of the vacuum chamber using 3/8"
 stainless threaded rods, secured with brass nuts and Belleville washers. We have
 considered using a thin-walled threaded tube for these standoffs to decrease
 thermal conductivity, however the solid threaded rods in practice do not pose
-any problems and the heat shield can easily reach the desired temperature.
+any problems and the heat shield can easily reach the desired temperature. The
+side of the threaded rod that attaches to the vacuum chamber needs to have a
+slit, roughly an inch in length, cut across the threads in order to avoid a
+virtual leak from the air trapped inside the tapped hole in the vacuum chamber
+top plate.
+
+The windows on the side plates are standard 1", 5~mm thick UV fused silica
+windows, coated by Thin Film Labs for AR at 271~nm and 1064~nm.
 
 \paragraph{Flexible heat links}
 
@@ -112,14 +200,15 @@ contact.
 \subsubsection{Vacuum chamber}
 
 The vacuum chamber has been fabricated by Atlas Technologies out of 6061-alloy
-aluminum. The chamber consists of a welded box and a set of six cover plates
-(Fig.~\ref{beam_source_vacuum}). For ease of mounting the chamber onto a stand,
-as well as attaching various components to the chamber (e.g., optics), the
-bottom of the welded part has `wings' that extend outwards perpendicular to the
-beam direction, with two rows of 1/4-20 tapped holes, spaced by 2", on each
-wing. The entire beam source can be lifted using the four 3/8-16 eye bolts that
-pass through the top cover plate (Fig.~\ref{top_plate}) into four corresponding
-tapped holes inside the main chamber body.
+aluminum. The chamber consists of a main body that is welded out of separate
+plates, and a set of six cover plates (Fig.~\ref{beam_source_vacuum}) with
+handles. For ease of mounting the chamber onto a stand, as well as attaching
+various components to the chamber (e.g., optics), the bottom of the welded part
+has `wings' that extend outwards perpendicular to the beam direction, with two
+rows of 1/4-20 tapped holes, spaced by 2", on each wing. The entire beam source
+can be lifted using the four 3/8-16 eye bolts that pass through the top cover
+plate (Fig.~\ref{top_plate}) into four corresponding tapped holes inside the
+main chamber body.
 
 \begin{figure}
     \centering
@@ -137,7 +226,16 @@ tapped holes inside the main chamber body.
 
 The cover plates are sealed onto the welded structure using round O-rings (1/4"
 fractional diameter, 0.275" actual cross-section diameter) seated into
-dovetailed grooves.
+dovetailed grooves that are nominally 0.233" wide and deep. Measurements
+revealed that the grooves are slightly deeper (0.235" to 0.243, on average
+0.237"). The cross sectional area of the groove is 0.075~in$^2$, such that the
+O-rings fill 79\%\ of the groove, which is on the low side of the 74--102\%\
+recommended groove filling ratios \cite[p.~323]{o2005user} and may contribute to
+the vacuum leaks experienced before greasing the O-rings with Apiezon-N.
+
+The top plate (Fig.~\ref{top_plate}) looks almost symmetric but is not
+(unfortunately). Assembling it in an orientation other than the correct one will
+make the assembly impossible and will have to be reversed.
 
 \subsubsection{Electronic connections}
 
@@ -188,6 +286,122 @@ The wires are crimped into the female gold socket pins (Accu-Glass p.n.\ 100181)
 that go into the vacuum-side PEEK 25-pin female D-sub connector (Accu-Glass
 p.n.\ 100460) that connects onto the double 25-pin D-sub feedthrough (Accu-Glass
 p.n.\ 100225, 25D2-450, 4.5” CF flange).
+
+\subsection{Assembly, disassembly, and transport}
+
+The beam source was initially assembled between June and August of 2018 at Yale.
+In December of 2021, we disassembled it and shipped it to Argonne, where it was
+reassembled between June and August of 2022. The assembly procedure is depicted
+in Appendix~\ref{source_assembly_appendix}.
+
+During the initial assembly, a number of problems was noted with the vacuum
+chamber. Due to manufacturing delays, the main welded body of the chamber was
+shipped to us significantly later than the top plate, therefore the manufacturer
+was unable to verify the vacuum of the chamber. The problems were as follows:
+(1) The weld joints on the main chamber body interfered with the closing of the
+side plates. To correct that, I machined approx.\ 0.1" off the plates.
+(Following the machining, I cleaned the plates using Kimwipes and acetone, IPA,
+and acetone again.) (2) The top plate was leaking, since the eye bolts screwed
+into the tapped holes on the top plates were long enough to contact the main
+body of the chamber and lift up the four corners of the top plate, causing a
+leak. Inserting a few washers under the eye bolts fixed the issue. (3) The
+O-rings on the large plate face seals were problematic despite being correctly
+sized. The problem was `fixed' by thoroughly greasing the O-rings on all six
+flanges using an appropriate amount of Apiezon-N, and by attaching the four side
+plates of the chamber using four screws only, and finger tight (after pulling
+the vacuum, finger-tighten the screws again). Using more screws, and tightening
+them with tools may end up deforming the plates in a way that causes leaks.
+
+\subsubsection{Cleaning}
+
+The beam source parts as machined are likely to be heavily contaminated with
+machining oils and need to be cleaned before use in a vacuum chamber. After
+removing macroscopic deposits of dirt and grease using any kind of detergent
+and tap water, I have generally followed the following cleaning procedure:
+
+\begin{itemize}
+   \item Measure out an precise (using measuring cylinders and beakers) 2\%\
+      solution of Citranox, and pour it over the parts laid out in a stainless
+      steel container. Clean ultrasonically for 20~min. (Result in
+      Fig.~\ref{cleaning}, left.)
+   \item Prepare a large beaker filled with DI water. Taking the parts out one
+      by one from the Citranox solution, rinse them by pouring DI water over
+      them, then immediately throw into the beaker of DI water.
+   \item When all parts are in the beaker with DI water, clean the
+      Citranox-containing tub, fill it with DI water, and place the parts into
+      the water. Clean ultrasonically for 10 minutes. Note that DI water can
+      cause discoloration of unpassivated surfaces after a Citranox treatment,
+      as seen in the slightly yellower appearance (Fig.~\ref{cleaning}, right).
+   \item Remove items to an acetone-filled beaker, remove DI water from the
+      stainless steel container, fill it with acetone, and transfer the parts
+      back. Before acetone ultrasonic cleaning:
+   \item Remove parts to a beaker filled with DI water, remove acetone from the
+      ultrasonic bath, fill it with DI water, return parts to the bath, and
+      clean for 20 minutes.
+   \item Transfer the parts to a beaker filled with DI water, take them out one
+      by one, blow them dry with argon (or nitrogen, if available), and wrap
+      them in UHV aluminum foil.
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=.3\textwidth]{figs/todo/citranox.png}
+    \includegraphics[height=.3\textwidth]{figs/todo/DI.png}
+    \caption[Cleaning of parts for vacuum use.]{Cleaning of parts for vacuum
+    use. \part{Left} After ultrasonic cleaning in a 2\%\ Citranox solution.
+    \part{Right} After ultrasonic cleaning in DI water.}
+    \label{cleaning}
+\end{figure}
+
+The larger parts (radiation shield plates) were also cleaned ultrasonically (in
+the larger ultrasonic bath in the Gibbs machine shop at Yale). For these parts,
+the ultrasonic cleaning was done only using the Citranox solution, followed by
+DI water, due to flammability concerns around using such large amounts of
+acetone in a machine shop. After the ultrasonic cleaning, the plates acquired a
+corroded appearance as seen in Fig.~\ref{corrosion}. In an attempt to restore
+the polished appearance of the aluminum 40~K shield plates, I have done the
+following:
+
+\begin{itemize}
+    \item Sand edges with 320 grit
+    \item Buff edges with black emery
+    \item Sand flat faces with 320, 400, 600, 1000, 2000 grit
+    \item Buff flat faces with brown tripoli, white rouge, red rouge
+    \item Roughly clean plates with acetone and paper towels
+    \item Buff without compound (to remove the remaining compound)
+\end{itemize}
+
+The wet sanding was done using WD-40 to reduce the amount of dust released and
+to extend the life of the sandpaper. The polished plates were cleaned using
+acetone and Kimwipes rather than subject them to ultrasonic cleaning again that
+would probably return the corroded appearance. In retrospect, both the
+ultrasonic cleaning, and the sanding/polishing of the shield plates was an
+enormous waste of time and better results would have likely been obtained by
+leaving the plates in their original condition and merely thoroughly cleaning
+them with a detergent and acetone.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/todo/corrosion.png}
+    \includegraphics[width=0.49\textwidth]{figs/todo/sanded.png}
+    \caption[Corrosion on 40~K shield plates.]{The mechanical corrosion on both
+    sides of some of the 40~K plates due to ultrasonic cleaning. \part{Left}
+    Right after ultrasonic cleaning. \part{Right} After sanding.}
+    \label{corrosion}
+\end{figure}
+
+Whenever new brass screws are used, they need to be cleaned as well, as follows:
+
+\begin{itemize}
+   \item 20 min ultrasonic cleaning in 2\%\ Citranox at room temperature
+   \item Rinse with tap water until no more foam forms
+   \item 20 min ultrasonic cleaning in tap water at room temperature
+   \item Dry outside on a Kimwipe for 20 min
+   \item 20 min ultrasonic cleaning in acetone
+   \item Leave to dry.
+\end{itemize}
+
+For steel/stainless Belleville washers: skip Citranox.
 
 \subsection{Thermal analysis}
 
@@ -546,6 +760,14 @@ conductivity) is thus more than enough.
 
 \subsection{Performance}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=.49\textwidth]{figs/todo/BS_temp.png}
+    \caption{Temperatures of the beam source sensors while cooling down from
+    room temperature.}
+    \label{BS_temp}
+\end{figure}
+
 \subsection{Target making}
 
 The thallium fluoride used \CENTREX\ experiment needs to be inserted into the
@@ -867,6 +1089,45 @@ reached by true liquefaction.
 \end{figure}
 
 \subsection{Future improvements}
+
+\subsubsection{Ion filter}
+
+Laser ablation is likely to produce charged ions in addition to neutral TlF
+monomers and dimers, and other products. The ions may pose a problem when they
+approach high-voltage electrodes on the lens or interaction region, where they
+could get accelerated to high energies and cause electrode damage or X-ray
+emission, and it may be a good idea to filter them out beforehand. The ion
+filter to do that would consist of two electrodes somewhere near the exit
+aperture of the beam source, either just inside or just outside the source.
+
+Suppose we need a filter that is capable of removing singly-charged ions that
+are at most as heavy as (TlF)$_4$:
+%
+\[
+   m=4\cdot(204.38+19.00)\;\text{amu}.
+\]
+%
+When such an ion is placed in an electric field $E$, it gets an acceleration
+%
+\[
+   a=E\frac{q}{m},
+\]
+%
+where $q=1.6\cdot10^{-19}$~C. Suppose we need to move the ions a distance
+$d=15$~cm perpendicularly to the molecular beam. Given that the beam is approx.\
+1~in wide, this should be more than enough to steer charged ions out of the
+beam. The time it takes for the ion to move this distance as a function of the
+applied field, is
+%
+\[
+   t=\sqrt{2\frac{d}{a}}.
+\]
+%
+Assume the ions move at speed $v=200$~m/s. In time $t$, they thus move a
+distance of 4--10~mm along the beam direction when the filter is operating at
+10--100~V/cm. Thus, a modest voltage applied to the ion filter is enough the
+remove most of them out of them beam before then can reach the high-field
+region.
 
 \subsubsection{Temperature feed-forward}
 

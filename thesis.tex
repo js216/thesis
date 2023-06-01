@@ -34,6 +34,9 @@
 \usepackage{datetime}
 \newdateformat{monthyeardate}{\monthname[\THEMONTH]  \THEYEAR}
 
+% for custom enumerations
+\usepackage{enumitem}
+
 % glossaries and acroynms
 \usepackage{glossaries}
 \setacronymstyle{long-sc-short}
@@ -174,6 +177,7 @@
 
 \appendix
 \include{hamiltonian}
+\include{source_assembly}
 \include{circuits}
 \include{laser_power}
 \include{PMT}
