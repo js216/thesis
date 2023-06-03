@@ -1,14 +1,62 @@
 \section{Beam Source}
 
+The beamline of the \CENTREX\ experiment begins with a cryogenic buffer gas beam
+source of thallium fluoride, containing the two natural isotopes
+$^{203}$Tl$^{19}$F, 29.5\%, and $^{205}$Tl$^{19}$F, 70.5\%\
+\cite{kondev2021nubase2020}. This chapter introduces the idea of a cryogenic
+beam source with a short literature review, describes the structure of our beam
+source and what it is made of, how it is put together and taken apart, how well
+it works, how to make the targets for it, and some potential improvements for
+the future.
+
+\subsection{A short history}
+
+The \CENTREX\ beam source design described in the following section is an
+evolution of a prior TlF beam source described in the thesis of Eustace Edwards
+\cite{edwards2023thesis}.  In turn, that source evolved from a design applied
+for SrF molecules described by J.\ Barry et al.\ \cite{barry2011bright}. Our
+design also draws from the beam source used by the ACME collaboration as
+described by Elizabeth P.\ West \cite{west2017thesis}. See also the
+comprehensive review by N.\ Hutzler et al.\ \cite{hutzler2012buffer}.
+
 \subsection{Physical structure}
+
+The heart of the beam source (Fig.~\ref{full_BS}) is the Cell, a compact
+cryogenic copper cuboid containing a cavity that serves as the locus for the
+thermalization of an ablated species of interest (TlF) with the cold buffer gas
+(neon). Most of the rest of the apparatus serves to keep the cell cold and in
+vacuum. Almost uniquely in the world of cryogenic beam sources, this is
+accomplished by means of two rather than one pulse tubes: one to cool the cell
+assembly, and the other to keep the 4~K shield, which surrounds the cell
+assembly, at a temperature low enough to serve as a cryopump. The cold parts are
+contained in an aluminum box kept at 40~K that protects them from thermal
+radiation from the room-temperature vacuum chamber. In the following
+subsections, we shall explore the parts of the beam source from the cell
+outwards and conclude with a few notes about how the machine is assembled, as
+well as disassembled for transport.
 
 \subsubsection{Cell assembly}
 
 The cell assembly (Fig.~\ref{cell_assembly}) is rigidly attached to the tapped
-holes on the cold head of the PT815 pulse tube cryocooler using six equally
-spaced (BCD = 3.40") M$5\times0.8$ brass screws. During design, I was careful
-not to exceed 5~kg suspended from the cold head as recommended by the pulse tube
-manufacturer; the estimated cell assembly weight is approx.\ 3~kg.
+holes on the cold head of the Cryomech PT815 pulse tube cryocooler using six
+equally spaced (BCD = 3.40") M$5\times0.8$ brass screws. During design, one must
+make sure not to exceed 5~kg suspended from the cold head as recommended by the
+pulse tube manufacturer; the cell assembly weight is approx.\ 3~kg.
+
+\begin{figure}
+    \centering
+    \includegraphics[height=.65\textwidth]{figs/todo/full.png}
+    \hfill
+    \includegraphics[height=.65\textwidth]{figs/todo/BS_photo.jpg}
+    \caption[Beam source.]{Beam source (beam direction towards the left).
+    \part{Left} SolidWorks drawing with some of the vacuum chamber and 40~K
+    shield side plates removed to show a view of the interior. \part{Right}
+    Photo of the beam source on its stand when cryogenic and under high vacuum
+    ($9\cdot10^{-9}$~torr). To the left of the source we see the Rotational
+    Cooling chamber (under the turbo), the State Preparation A chamber (covered
+    in black cloth), and part of the testing detection chamber.}
+    \label{full_BS}
+\end{figure}
 
 \begin{figure}
     \centering
@@ -20,17 +68,39 @@ manufacturer; the estimated cell assembly weight is approx.\ 3~kg.
     \label{cell_assembly}
 \end{figure}
 
-\paragraph{Target Holder}
+The entire cell assembly is made out of oxygen-free high conductivity copper
+(OFHC) copper to maximize thermal homogeneity, speed of thermalization during
+cooldown, and avoid hot spots from the heat delivered by the ablation laser. All
+tapped holes in the copper parts are \#4-40 and provided with stainless
+Heli-Coil inserts to guard against galling and seizing of screws in a part of
+the apparatus that would be very time-consuming to replace.
 
-The Target Holder contains a cylindrical solid block of TlF (diameter approx.
-1"), that is laser ablated to form a molecular beam. The initial design
-(Fig.~\ref{setup2}, left, and Fig.~\ref{failed_targets}) incorporated a 1/4"
-through hole to enable laser absorption measurements close to the center of the
-cell. The hole was sealed with a laser window, offset using the Back Snorkel.
-The later design (Fig.~\ref{making_good_target}) of the Target Holder eliminates
-the through hole (beam absorption measurements can also be done immediately
-outside the cell) and deepens the TlF-containing volume to 0.425" in order to
-increase the lifespan of a target.
+\paragraph{Cell}
+
+The Cell (Figs.~\ref{beam_source_assembly_7C}---\ref{beam_source_assembly_7E})
+is a rectangular cuboid, $2"\times2"$ footprint and 1.5" tall, with the inner
+volume formed by two intersecting cylinders of diameter $d=1.15"$ and length
+$L=2"$. The volume is therefore
+%
+\[
+   V_\text{cell}=2\cdot\pi\left(\frac{\phi}{2}\right)^2L-\frac23d^3=3.14\;\text{in}^3,
+\]
+%
+noting the `strangely simple' formula $2d^3/3$ for the volume common to two
+intersecting cylinders, supposedly already known to Archimedes \cite{moore1974symmetrical}.
+
+The cell has a number of tapped holes on all six sides. On the four vertical
+faces, this allows us to attach the Snorkel, Target Holder, Input Nozzle for the
+neon line, and the Nozzle that forms the exit aperture for the molecular beam.
+The 13 tapped holes on the top face are used to hang the cell from the Top Plate
+(Figs.~\ref{beam_source_assembly_7C} and \ref{beam_source_assembly_7D}), which,
+in turn, is suspended from the Permanent Plate (Figs.~\ref{cell_assembly},
+\ref{beam_source_assembly_7B}, and \ref{beam_source_assembly_7D}), so called
+because it is `permanently' attached to the PT815 pulse tube. The bottom face is
+used to clamp or screw on additional cell heaters; initially, flat polyimide
+heaters were used and clamped to the bottom using a flat copper plate, 1/4"
+thick, but this heater burned out immediately and was replaced with two
+high-power resistors in the TO-220 package.
 
 \paragraph{Snorkel}
 
@@ -43,6 +113,30 @@ material that gets deposited on the window. We have later replaced this with a
 design that has just a single, larger, hole with no negative effects while
 improving the laser access to the target.
 
+The window is clamped to the snorkel using the Snorkel Window Holder as can be
+seen in Figs.~\ref{cell_assembly}, \ref{beam_source_assembly_7F}, and
+\ref{beam_source_assembly_7G}. The window holder is a
+$1.5"\times1.5"\times0.276"$ copper block with a circular recessed space to
+contain the window. The window is sealed against the snorkel using a ring of
+thin indium wire in order to make the cell assembly airtight (except for the
+beam output hole, of course). A similar snorkel and window mount is used for the
+windows at the back of the Input Nozzle, allowing optical access down the
+beamline, as well as the window that used to be on the Target Holder.
+
+\paragraph{Target Holder}
+
+The Target Holder contains a cylindrical solid block of TlF (diameter approx.\
+1"), that is laser ablated to form a molecular beam. The initial design of the
+holder (Fig.~\ref{setup2}, left, and Fig.~\ref{failed_targets}) incorporated a
+1/4" through hole to enable laser absorption measurements close to the center of
+the cell. The hole was sealed with a laser window, offset using the Back Snorkel
+(3" long). The later design (Fig.~\ref{making_good_target}) of the Target Holder
+eliminates the through hole (beam absorption measurements can also be done
+immediately outside the cell) and deepens the TlF-containing volume to 0.425" in
+order to increase the lifespan of a target. See section~\ref{target_making}
+for an explanation of how we filled the Target Holder with solid thallium
+fluoride.
+
 \paragraph{Neon line}
 
 (Follow this description with aid of Fig.~\ref{neon_line}). Neon enters the
@@ -54,8 +148,8 @@ end using an oxyacetylene torch. The stainless tube connects, and thermally
 isolates, the room-temperature vacuum chamber to 1/8" copper `heat exchange
 bobbin' that is bolted onto the top plate of the 40~K shield. The gas then
 proceeds into another identical segment of coiled stainless tube before being
-passed into a copper tube that takes it through the 4~K shield's top plate into
-the cell input nozzle.
+passed into a copper tube that takes it through the 1/2" hole in the 4~K
+shield's top plate into the cell input nozzle.
 
 \begin{figure}
     \centering
@@ -90,17 +184,61 @@ copper plate that forms one of the six sides of the cell, directly opposite the
 side from which the molecular beam emerges. The neon-carrying copper tube is
 brazed into the Input Nozzle through one side (same side of the beam source as
 the ablation laser). In the middle of the plate, the neon turns 90 degrees and
-exits the Input Nozzle into the cell volume through a central 0.375" hole.
+exits the Input Nozzle into the cell volume through a central 0.375" hole. In
+order to enable optical access down the beamline, there is a 1/2" window
+opposite the hole the neon comes out of, offset using the Thin Snorkel, 2.5"
+long (see Figs.~\ref{cell_assembly}, \ref{beam_source_assembly_7F}, and
+\ref{beam_source_assembly_7H}).
+
+Outside the beam source, the neon line begins at the gas bottle (Airgas p.n.\
+NEUHP80A1800LT) and enters the pressure-reducing regulator (Concoa
+4124301-27-580) through a flow reducing orifice (McMaster p.n.\ 2822T15,
+diameter = 0.1", $C_v=0.0025$) to limit the flow to 6~scfm of neon at 4,000~psi.
+After the regulator, the gas is transported through 1/4" copper tubing with
+brazed VCR connections into the mass flow controller (MKS Instruments
+1179C00212CR1AV) calibrated for a maximum flow of 100~sccm of neon. The flow
+controller is itself controlled by means of an analog voltage which is output
+from a National Instruments USB-6008 multifunction DAQ device.
+
+\paragraph{Nozzle and Conical Collimator}
+
+The molecular beam emerges through a 1/4" aperture in the Nozzle, which is a
+thin copper plate (1/16"). Despite the appearance of sophisticated nozzles in
+cryogenic buffer gas beam source literature,
+\cite{xiao2019shaped,takahashi2021simulation} we have found no need to use
+anything more than just a thin plate with a circular aperture.
+
+Fig.~\ref{cell_assembly} shows a Conical Collimator mounted in front of the cell
+aperture; this part has been found to negatively affect the beam properties and
+has been removed. The `collimator' was of the form of a truncated cone; the truncated
+part has an opening with a diameter of 0.232" and was located a distance of
+0.325" away from the cell aperture. The cone was 0.75" long and terminates on a
+plate (1.5" wide, 2" tall) as seen in Fig.~\ref{cell_assembly}. The base of the
+cone has a diameter of 1.125". The inner volume of the cone, facing away from
+the cell, was also shaped like a truncated cone, of same length and
+truncated-face diameter, but with a base diameter of 0.808".
 
 \subsubsection{Heat shields}
 
 \paragraph{4~K shield}
 
-The 4~K shield is a box made out of six 1/4"-thick oxygen-free high
-conductivity copper (OFHC) plates with cutouts for the pulse tube head to reach
+The 4~K shield is a box (outer dimensions: $6.875"\times9.750"\times3.5"$) made
+out of six 1/4"-thick OFHC plates with cutouts for the pulse tube head to reach
 the cell, as well as for the molecular and laser beams to enter or exit the
-shield. The box is suspended from the top plate of the 40~K shield using
-stainless 1/4-20 threaded rods, secured with brass nuts.
+shield. None of the openings on the 4~K shield are covered by windows, since the
+box is not meant to be airtight. The plates are screwed onto each other with a
+large number of \#4-40 brass bolts in order to maximize the clamping force and
+therefore the thermal conductivity at cryogenic temperatures. The box is
+suspended from the top plate of the 40~K shield using stainless 1/4-20 threaded
+rods, secured with brass nuts. The cooling is provided by a single Cryomech
+PT415 pulse tube, which is thermally connected to the back plate of the 4~K
+shield using flexible heat links (see end of this section), for which the back
+plate provides four 1/4-20 tapped holes with Heli-Coil inserts.
+
+The beam exits through a 1" opening in the front plate of the 4~K box. There is
+a matching 1" hole in the back plate to allow for optical access down the
+beamline. The two side plates are identical and both have a large cutout for
+ablation and/or absorption laser access.
 
 \begin{figure}
     \centering
@@ -109,6 +247,7 @@ stainless 1/4-20 threaded rods, secured with brass nuts.
     the Target Holder removed) inside.}
     \label{4K_shield}
 \end{figure}
+
 
 \paragraph{40~K shield}
 
@@ -135,6 +274,10 @@ crucial. Originally, the plates were 1/4" thick, but were later changed for
 0.09" thick plates (waterjet from stock, McMaster p.n.\ 88685K94) to speed up
 the amount of time needed to reach cryogenic temperatures.
 
+The windows on the side plates and the back plate are standard 1", 5~mm thick UV
+fused silica windows, coated by Thin Film Labs for AR at 271~nm and 1064~nm. The
+front plate has a 1" aperture, allowing the molecular beam to exit.
+
 The 40~K box is suspended from the top plate of the vacuum chamber using 3/8"
 stainless threaded rods, secured with brass nuts and Belleville washers. We have
 considered using a thin-walled threaded tube for these standoffs to decrease
@@ -143,10 +286,9 @@ any problems and the heat shield can easily reach the desired temperature. The
 side of the threaded rod that attaches to the vacuum chamber needs to have a
 slit, roughly an inch in length, cut across the threads in order to avoid a
 virtual leak from the air trapped inside the tapped hole in the vacuum chamber
-top plate.
-
-The windows on the side plates are standard 1", 5~mm thick UV fused silica
-windows, coated by Thin Film Labs for AR at 271~nm and 1064~nm.
+top plate. The cooling is provided by the `warm' stages of the two pulse tubes.
+The thermal connection to the top plate of the 40~K shield is done using
+flexible heat links (see next paragraph).
 
 \paragraph{Flexible heat links}
 
@@ -205,10 +347,14 @@ plates, and a set of six cover plates (Fig.~\ref{beam_source_vacuum}) with
 handles. For ease of mounting the chamber onto a stand, as well as attaching
 various components to the chamber (e.g., optics), the bottom of the welded part
 has `wings' that extend outwards perpendicular to the beam direction, with two
-rows of 1/4-20 tapped holes, spaced by 2", on each wing. The entire beam source
-can be lifted using the four 3/8-16 eye bolts that pass through the top cover
-plate (Fig.~\ref{top_plate}) into four corresponding tapped holes inside the
-main chamber body.
+rows of 1/4-20 tapped holes, spaced by 2", on each wing.]
+
+The entire beam source can be lifted using the four 3/8-16 eye bolts that pass
+through the top cover plate (Fig.~\ref{top_plate}) into four corresponding
+tapped holes inside the main chamber body.  The top plate (Fig.~\ref{top_plate})
+looks almost symmetric but is not (unfortunately). Assembling it in an
+orientation other than the correct one will make the assembly impossible and
+will have to be reversed.
 
 \begin{figure}
     \centering
@@ -233,9 +379,8 @@ O-rings fill 79\%\ of the groove, which is on the low side of the 74--102\%\
 recommended groove filling ratios \cite[p.~323]{o2005user} and may contribute to
 the vacuum leaks experienced before greasing the O-rings with Apiezon-N.
 
-The top plate (Fig.~\ref{top_plate}) looks almost symmetric but is not
-(unfortunately). Assembling it in an orientation other than the correct one will
-make the assembly impossible and will have to be reversed.
+The pressure is read out using the InstruTech `Hornet' ionization gauge module
+(p.n.\ IGM402YDD) with a separate convection gauge (CVG101GD).
 
 \subsubsection{Electronic connections}
 
@@ -259,11 +404,18 @@ insufficiently homogeneous thermal contact. These have been replaced by
 standard high-power (i.e., 50--250~W) resistors in the TO-220 package. Since all
 these heaters are cooled to cryogenic temperatures, we have experienced no
 vacuum issues due to their outgassing despite not following any special cleaning
-or testing precautions.
+or testing precautions. The cell heaters are connected to the SRS CTC100
+Cryogenic temperature controller (output 1 = cell bottom = pins 1--2; output 2 =
+cell top = pins 3--4). The 4~K shield heaters are powered by a
+remote-controllable power supply (Agilent 6645A).
 
 The 12 thermometers are read out via the 4-wire technique and are thus spread
-between two DB-25 and two DB-9 feedthroughs. The ($I-,V-,V+,I+$) pin numbers for
-each of the four connectors are as follows:\\
+between two DB-25 (Accu-Glass p.n.\ 100225, 25D2-450, 4.5" CF flange) and two
+DB-9 (Accu-Glass p.n.\ 100201, 9D-K40, KF40 flange) feedthroughs. The wires are
+crimped into the female gold socket pins (Accu-Glass p.n.\ 100181) that go into
+the vacuum-side PEEK 25-pin (Accu-Glass p.n.\ 100460) or 9-pin (Accu-Glass p.n.\
+100440) female D-sub connector. The ($I-,V-,V+,I+$) pin numbers for each of the
+four connectors are as follows:\\
 
 \begin{tabular}{rl}
    DB-25 & \textbf{(1)} back snorkel ($15,16,4,3$), \textbf{(2)} 4~K shield top plate ($18,19,7,6$) \\
@@ -277,22 +429,24 @@ each of the four connectors are as follows:\\
 All thermometers are silicon-diode sensors (Lake Shore Cryotronics, Inc., p.n.\
 DT-670, CU package). All sensors are `Band A1', meaning $\pm0.25$~K tolerance in
 the range 2~K to 100~K, except for the two sensors on the 40~K shield, which are
-`Band C', i.e.\ $\pm1$~K in the same range. Sensors 1--8 are read out using the
-Lake Shore Model 218 Temperature Monitor, while sensors 9--12 are read using the
-SRS CTC100 Cryogenic temperature controller. The latter allows for PID control
-of the cell temperature via the cell heaters.
+`Band C', i.e.\ $\pm1$~K in the same range. Sensors 1--8 on the 25-pin
+connectors are read out using the Lake Shore Model 218 Temperature Monitor,
+while sensors 9--12, on the 9-pin connectors, are read using the CTC100
+temperature controller. The latter allows for PID control of the cell
+temperature via the cell heaters.
 
-The wires are crimped into the female gold socket pins (Accu-Glass p.n.\ 100181)
-that go into the vacuum-side PEEK 25-pin female D-sub connector (Accu-Glass
-p.n.\ 100460) that connects onto the double 25-pin D-sub feedthrough (Accu-Glass
-p.n.\ 100225, 25D2-450, 4.5” CF flange).
+All electronic devices (mass flow controller, heater power supply, thermometer
+readout, temperature controller, pressure gauge) are connected to the data
+acquisition software running on a single beam source control computer.
 
-\subsection{Assembly, disassembly, and transport}
+\subsubsection{Assembly, disassembly, and transport}
 
 The beam source was initially assembled between June and August of 2018 at Yale.
 In December of 2021, we disassembled it and shipped it to Argonne, where it was
 reassembled between June and August of 2022. The assembly procedure is depicted
 in Appendix~\ref{source_assembly_appendix}.
+
+\paragraph{Assembly}
 
 During the initial assembly, a number of problems was noted with the vacuum
 chamber. Due to manufacturing delays, the main welded body of the chamber was
@@ -312,7 +466,7 @@ plates of the chamber using four screws only, and finger tight (after pulling
 the vacuum, finger-tighten the screws again). Using more screws, and tightening
 them with tools may end up deforming the plates in a way that causes leaks.
 
-\subsubsection{Cleaning}
+\paragraph{Cleaning}
 
 The beam source parts as machined are likely to be heavily contaminated with
 machining oils and need to be cleaned before use in a vacuum chamber. After
@@ -402,6 +556,35 @@ Whenever new brass screws are used, they need to be cleaned as well, as follows:
 \end{itemize}
 
 For steel/stainless Belleville washers: skip Citranox.
+
+\paragraph{Transport}
+
+When moving the beam source from Yale to Argonne, we considered implementing the
+method used to transport the earlier version of the beam source from Yale to
+Amherst. For that move, Delrin or Teflon plastic plates with threaded holes were
+attached to the shields. The threads were used for nylon screws, which were
+``adjusted (to reasonably good precision) to fill the space between the 4~K
+shield and the 30~K shield, and between the 30~K shield and chamber wall'' (E.\
+B.\ Norrgard, personal communication June 11, 2021). In that beam source design,
+the pulse tube (there is only one) is directly attached to the 4~K shield, so
+fixing the 4~K shield fixes the pulse tube and keeps it from being
+catastrophically deformed in shipping.
+
+For the \CENTREX\ beam source (two pulse tubes), the amount of work to construct
+the necessary internal and external supports, together with the risk of
+nonetheless deforming the pulse tubes, led me to decide against this approach.
+Instead, the beam source was completely disassembled by following the assembly
+instructions (Appendix~\ref{source_assembly_appendix}) in reverse. Care was
+taken in removing the inner parts, especially the cell assembly components and
+4~K shield plates, to contain the TlF contamination as much as possible. Before
+shipping, all of the parts were thoroughly wiped with water and Kimwipes (which
+were discarded as hazardous waste), then wrapped in UHV aluminum foil and placed
+in plastic bags, which could then be packaged for standard shipping. The pulse
+tubes were placed in their original crates, which greatly reduced the risk of
+damage during transit. The vacuum chamber was also wiped with wet wipes and
+crated for shipping. The target holder (Fig.~\ref{ablated_target}) and the
+supply of raw TlF powder were the only parts requiring shipping as hazardous
+materials.
 
 \subsection{Thermal analysis}
 
@@ -760,15 +943,23 @@ conductivity) is thus more than enough.
 
 \subsection{Performance}
 
+\subsubsection{Thermal}
+
 \begin{figure}
     \centering
-    \includegraphics[width=.49\textwidth]{figs/todo/BS_temp.png}
+    \includegraphics[width=.8\textwidth]{figs/todo/BS_temp.png}
     \caption{Temperatures of the beam source sensors while cooling down from
     room temperature.}
     \label{BS_temp}
 \end{figure}
 
+\subsubsection{Molecular beam characterization}
+
+\textit{Work reported in this subsection done almost entirely by Oskari Timgren
+and Olivier Grasdijk as reported in \cite{timgren2023thesis}.}
+
 \subsection{Target making}
+\label{target_making}
 
 The thallium fluoride used \CENTREX\ experiment needs to be inserted into the
 beam source in the form of a solid block inside a copper target holder. Since it
@@ -909,7 +1100,7 @@ thermocouple wires (Omega HH-J-24, max.\ temp.\ 704\degC) attach to a copper
 target holder cover using brass 4-40 screws. Both the new target holders and the
 cover, with thermocouple wires attached, can be seen in Fig.~\ref{setup2}.
 
-\begin{figure}[b]
+\begin{figure}
     \centering
     \includegraphics[height=.3\textwidth]{figs/todo/new_holder.png}
     \includegraphics[height=.3\textwidth]{figs/todo/new_chamber.png}
@@ -1025,7 +1216,9 @@ in temperature above the melting point, as in the old target-making procedure.
     \includegraphics[width=\textwidth]{figs/todo/n1.png}
     \includegraphics[width=\textwidth]{figs/todo/n3.png}
     \includegraphics[width=\textwidth]{figs/todo/n4.png}
-    \caption{Temperature and heater power profile and the resulting targets.}
+    \caption{Temperature and heater power profile and the resulting targets. The
+    10-digit number above the plot is the initial Unix time, e.g.\ 1602784744 is
+    15 Oct 2020, 13:59:04.}
   \label{making_good_target}
 \end{figure}
 
@@ -1035,7 +1228,18 @@ In principle, keeping the target so close to the melting point for such a long
 time should have resulted in a large loss of TlF from the target. Instead, I was
 surprised to obtain a very solid-looking target where the TlF has a glassy,
 amorphous-looking surface of a dark gray color. This target has stood up well
-over a long period of ablation in the cryogenic beam source.
+over a long period of ablation in the cryogenic beam source
+(Fig.~\ref{ablated_target}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\textwidth]{figs/todo/ablated_target.png}
+    \caption[The target after laser ablation.]{The target from the last row of
+    Fig.~\ref{making_good_target}, removed from the beam source after months of
+    laser ablation before disassembling the beam source and shipping it to
+    Argonne.}
+  \label{ablated_target}
+\end{figure}
 
 Since producing the successful target, I have upgraded the target making system
 once more (Fig.~\ref{last_oven}) in an attempt to make it even easier to use.
