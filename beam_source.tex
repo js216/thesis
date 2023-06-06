@@ -1,9 +1,11 @@
 \section{Beam Source}
 
-The beamline of the \CENTREX\ experiment begins with a cryogenic buffer gas beam
-source of thallium fluoride, containing the two natural isotopes
+The beamline of the \CENTREX\ experiment begins with a cryogenic neon buffer gas
+beam source of thallium fluoride, containing the two natural isotopes
 $^{203}$Tl$^{19}$F, 29.5\%, and $^{205}$Tl$^{19}$F, 70.5\%\
-\cite{kondev2021nubase2020}. This chapter introduces the idea of a cryogenic
+\cite{kondev2021nubase2020}, of which only the latter is used by \CENTREX.
+
+This chapter introduces the idea of a cryogenic
 beam source with a short literature review, describes the structure of our beam
 source and what it is made of, how it is put together and taken apart, how well
 it works, how to make the targets for it, and some potential improvements for
@@ -13,11 +15,34 @@ the future.
 
 The \CENTREX\ beam source design described in the following section is an
 evolution of a prior TlF beam source described in the thesis of Eustace Edwards
-\cite{edwards2023thesis}.  In turn, that source evolved from a design applied
+\cite{edwards2023thesis}. In turn, that source evolved from a design applied
 for SrF molecules described by J.\ Barry et al.\ \cite{barry2011bright}. Our
 design also draws from the beam source used by the ACME collaboration as
 described by Elizabeth P.\ West \cite{west2017thesis}. See also the
 comprehensive review by N.\ Hutzler et al.\ \cite{hutzler2012buffer}.
+
+The Edwards \cite{edwards2023thesis} helium beam source is built around a single
+pulse tube cryocooler (Cryomech PT415). The warm stage is rigidly attached to
+the 40~K shield, which is an aluminum box (1100 alloy, 1/4" thick plates) that
+contains the rest of the cryogenic assembly. From the cold stage of the pulse
+tube, the 4~K shield is suspended---a box made of polished alloy-101 copper
+plates (top plate 1/4" thick, the rest 1/16"). Indium sheets are used to improve
+the thermal contact between the pulse tube stages and the two shields. Also
+within the 4~K shields are copper plates covered in activated charcoal (attached
+using thermally conductive epoxy), onto which helium gets adsorbed, improving
+the cryopumping of the highly volatile gas. (This would be less of an issue if
+using neon as the buffer gas on account of its lower vapor pressure.)
+
+The cell assembly is contained in the 4~K shield and thermally connected to its
+top plate using 12 \#4-40 brass screws. The cell's inner volume consists of two
+intersecting cylinders, 1.25" long and 1" in diameter. The ablation laser enters
+the cell through a window offset by a short snorkel (3/8" diameter, 1" long) in
+order to reduce the amount of TlF that sticks to the window. Opposite the laser
+window, the target holder is a small rectangular box (Fig.~\ref{oldsetup},
+right) mounted at 45\deg\ to the laser direction. The cell assembly allows for a
+laser beam passing through for absorption measurements. The helium buffer gas
+enters the cell through a 3/8" diam.\ opening opposite the molecular beam exit
+hole, which is 3~mm in diameter in a plate 0.02" thick.
 
 \subsection{Physical structure}
 
@@ -560,15 +585,16 @@ For steel/stainless Belleville washers: skip Citranox.
 \paragraph{Transport}
 
 When moving the beam source from Yale to Argonne, we considered implementing the
-method used to transport the earlier version of the beam source from Yale to
-Amherst. For that move, Delrin or Teflon plastic plates with threaded holes were
-attached to the shields. The threads were used for nylon screws, which were
-``adjusted (to reasonably good precision) to fill the space between the 4~K
-shield and the 30~K shield, and between the 30~K shield and chamber wall'' (E.\
-B.\ Norrgard, personal communication June 11, 2021). In that beam source design,
-the pulse tube (there is only one) is directly attached to the 4~K shield, so
-fixing the 4~K shield fixes the pulse tube and keeps it from being
-catastrophically deformed in shipping.
+method used to transport the earlier version (by E.\ Edwards,
+\cite{edwards2023thesis}) of the beam source from Yale to Amherst. For that
+move, Delrin or Teflon plastic plates with threaded holes were attached to the
+shields. The threads were used for nylon screws, which were ``adjusted (to
+reasonably good precision) to fill the space between the 4~K shield and the 30~K
+shield, and between the 30~K shield and chamber wall'' (E.\ B.\ Norrgard,
+personal communication June 11, 2021). In that beam source design, the pulse
+tube (there is only one) is directly attached to the 4~K shield, so fixing the
+4~K shield fixes the pulse tube and keeps it from being catastrophically
+deformed in shipping.
 
 For the \CENTREX\ beam source (two pulse tubes), the amount of work to construct
 the necessary internal and external supports, together with the risk of
@@ -943,7 +969,17 @@ conductivity) is thus more than enough.
 
 \subsection{Performance}
 
-\subsubsection{Thermal}
+\subsubsection{Cryostat}
+
+The cryostat performs as expected. The shields reach their target temperature
+within six or so hours (see Fig.~\ref{BS_temp}). The cell is cooled to approx.\
+10~K and needs to be heated by the cell heaters to the operating temperature
+above 16~K. This leaves more than enough cooling power in case the ablation
+laser power needs to be increased for any reason in the future.
+
+The pressure measured at the top plate of the beam source vacuum chamber at room
+temperature is of the order of a microtorr and much lower, below 10~nanotorr, at
+cryogenic temperatures.
 
 \begin{figure}
     \centering
@@ -955,8 +991,163 @@ conductivity) is thus more than enough.
 
 \subsubsection{Molecular beam characterization}
 
-\textit{Work reported in this subsection done almost entirely by Oskari Timgren
-and Olivier Grasdijk as reported in \cite{timgren2023thesis}.}
+\textit{Measurements reported in this subsection were carried out almost
+entirely by Oskari Timgren and Olivier Grasdijk as reported in the former's
+thesis \cite{timgren2023thesis}.}
+
+The molecular beam coming out of the beam source was probed using \gls{LIF}
+spectroscopy \cite{schultz1972laser} and absorption spectroscopy in order to
+determine the key beam properties: longitudinal velocity and its spread, the
+spread in transverse velocity, and beam temperature. In the following, I will
+provide a very short overview of the technique and the apparatus used for these
+measurements, then present the measurements results.
+
+\paragraph{Light-induced fluorescence}
+
+The laser is used to drive population from the $X^1\Sigma^+$ ground state to the
+$B^3\Pi_1$ excited state. The excited state decays with a lifetime of
+$\tau\approx99$~ns \cite{norrgard2017hyperfine}, emitting photons in the process
+(fluorescence). These are detected by \gls{PMT} detectors; care is taken to
+minimize the amount of laser light that is directly detected by the \glspl{PMT}.
+The laser frequency is scanned for several 100~MHz around the expected resonant
+frequency to obtain the exact resonance position and width.
+
+The molecular beam is produced in the beam source by ablating the solid target
+using an Nd:YAG laser (Litron Nano LG 130-50, pulse energy of $\approx30$~mJ,
+pulse duration $\approx5$~ns, repetition rate 10~Hz) and characterized in a
+separate `testing' vacuum chamber rigidly attached to it. The testing chamber is
+octagonal to allow for at least three beams, all in the same plane, intersecting
+in the chamber: the molecular beam, a laser beam perpendicular to it, and a
+laser beam at 45\deg. The laser beams are obtained by doubling a 1087~nm IR
+laser (NKT photonics Koheras Basik, amplified by NKT Boostik) using a home-built
+doubling cavity into 543~nm green light, and doubling that again to 272~nm using
+a Toptica SHG Pro system. Above and below the plane of the beams, we attach a
+turbomolecular pump (Pfeiffer HiPace 700) and the \gls{PMT} (Hamamatsu R375 in a
+E1435-02 socket) together with a lightpipe used to detected the fluorescence
+signals. The \gls{PMT} signal is amplified (SRS SR445), low-pass filtered
+(Thorlabs EF120), and digitized (National Instruments PXIe-5171R).
+
+\paragraph{Absorption spectroscopy}
+
+The laser is used to drive the same transition as above, but this time we
+measure the power that remains in the laser beam after it interacts with the
+molecules. Without molecules present, the detected laser power should match the
+laser power sent into the apparatus, but when molecules are present, they
+scatter the light out of the beam, reducing the power detected.
+
+The absorption is probed directly outside the cryogenic cell of the beam source,
+approx.\ 1.5~cm away from the exit aperture. The absorption signal is detected
+using an amplified photodiode (Thorlabs PDA25K2), low-pass filtered, and
+digitized. Half of the laser power is split off before entering the beam source
+and detected on another photodiode; this way, we can obtain a normalized
+absorption fraction to account for variations in laser power that are not due to
+molecules.
+
+\paragraph{Longitudinal velocity}
+
+There are several ways to measure the longitudinal velocity of an atomic or
+molecular beam. For example, Otto Stern \cite{stern1920direkte} used a small
+thermal beam source to deposit silver atoms at a particular position $P$ on the
+wall of the cylindrical shell in which the beam source was contained.
+Afterwards, the cylinder (and the beam source within) was rotated at a constant
+speed, which gave rise to a silver deposit at a displaced point $P'$ on the
+cylinder wall. By measuring the separation between $P$ and $P'$, the velocity of
+the atoms could be determined. See \cite[sect~II.3.4]{ramsey1956molecular}
+for a discussion of several other classic beam velocity measurements.
+
+In our experiment, the absorption spectroscopy beam is located about 0.5~m
+before the \gls{LIF} beam and the peak of the absorption signal occurs approx.\
+3~ms before the \gls{LIF} signal, which means a longitudinal velocity of about
+150--200~m/s. However, we have not attempted to measure the forward velocity
+more precisely using this method.
+
+Instead, we measure the beam velocity using non-relativistic Doppler effect by
+measuring the shift $\Delta f\approx480.2$~MHz in the resonant frequency of the
+transition (wavelength $\lambda\approx272$~nm) when the laser is perpendicular
+to the molecular beam ($\theta_1=90$\deg) to when the laser is at 45\deg\ to the
+molecules ($\theta_2=45$\deg). The mean forward velocity then is
+\cite[eqn~5.17]{timgren2023thesis}
+%
+\[
+    \ex{v_z}=\frac{\lambda\;\Delta
+    f}{\cos\theta_2-\cos\theta_1}=(184\pm17)\;\text{m/s}.
+\]
+%
+The uncertainty calculation is explained in
+\cite[sect~5.3.1]{timgren2023thesis}; most of the 9\%\ comes from a $\pm3$\deg\
+uncertainty of the laser's 45\deg\ path through the vacuum chamber.
+
+\paragraph{Longitudinal velocity spread}
+
+For both the perpendicular and the 45\deg\ laser beams, the transition is
+broadened by the Doppler effect combined with the distribution of molecular
+velocities. The linewidths are $\text{FWHM}_{90}=66.5$~MHz and
+$\text{FWHM}_{45}=99.8$~MHz \cite[Table~5.1]{timgren2023thesis}, or, in terms of
+$\sigma=\text{FWHM}/(2\sqrt{2\ln2})$, we have $\sigma_{90}=28.2$~MHz and
+$\sigma_{45}=42.4$~MHz. Note that this is large compared to the natural
+linewidth $(2\pi\tau)^{-1}\approx1.6$~MHz, allowing us to approximate the
+overall lineshape as a Gaussian rather than a Voigt profile.
+
+The spread in forward velocities is \cite[eqn~5.27]{timgren2023thesis}
+%
+\begin{equation}
+    \label{sigma_v_z}
+    \sigma_{v_z}=\lambda\sqrt{2\sigma_{45}^2-\sigma_{90}^2}=14.4\;\text{m/s},
+\end{equation}
+%
+although this number is given as $\sigma_{v_z}=(16.1\pm0.8)$~m/s in
+\cite[eqn~5.34]{timgren2023thesis}.
+
+\paragraph{Transverse velocity spread}
+
+We assume a zero mean transverse velocity `based on the symmetry of the beam
+source' \cite[p.~114]{timgren2023thesis}. From the width of the \gls{LIF}
+transition when the laser is perpendicular to the molecular beam, we can obtain
+the spread in the transverse velocities \cite[eqn~5.24]{timgren2023thesis}
+%
+\[
+    \sigma_{v_\text{t}}
+    =\lambda\;\sigma_{90}
+    =7.7\;\text{m/s}.
+\]
+%
+However, this result gives the transverse velocity profile of a beam after
+passing the several apertures between the cold cell and the \gls{LIF} chamber,
+each of which serves to reduce the transverse velocity spread. In order to
+measure the spread before the apertures affect it, we used absorption
+spectroscopy inside the beam source itself. The FWHM of the absorption trace was
+found to be $(350\pm30$~MHz, which corresponds to a transverse velocity spread
+of $95\pm8$~m/s given the 272~nm laser beam \cite[sect~5.3.2]{timgren2023thesis}.
+
+\paragraph{Beam temperature}
+
+The beam temperature, ignoring the effect of power broadening, can be estimated
+from the spread in longitudinal velocities as \cite[eqn~5.35]{timgren2023thesis}
+%
+\[
+    T=\frac{m_\text{TlF}\sigma^2_{v_z}}{\kB}=(7.0\pm0.7)\;\text{K},
+\]
+%
+where $m_\text{TlF}=3.7\cdot10^{-25}$~kg is the mass of a TlF molecule, and
+$\kB$ is the Boltzmann constant. (Using the $\sigma_{v_z}$ from
+eqn~\ref{sigma_v_z} above, we get $T=5.6$~K instead.)
+
+Another way to measure the temperature is to measure the population in several
+of the lowest-lying rotational states of the TlF molecule where the majority of
+the beam population is to be found given the cryogenic temperatures. (We find
+that approx.\ 93\% of the population has $J\leq7$.) For a thermal distribution,
+the probability of occupying the state $J$ at a temperature $T$ is, up to overall
+normalization \cite[eqn~5.42],
+%
+\[
+    p(J)\propto g(J)\exp\left(-\frac{BJ(J+1)}{\kB T}\right),
+    \quad
+    g(J)=4(2J+1),
+\]
+%
+where $B=6.689$~GHz is the rotational constant of the TlF molecule. Fitting the
+measured populations to this formula, we obtain a rotational temperature
+$T=6.5\pm0.2$~K \cite[5.4]{timgren2023thesis}.
 
 \subsection{Target making}
 \label{target_making}

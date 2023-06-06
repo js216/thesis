@@ -6,6 +6,7 @@ CHAPTERS = absorbers.tex apparatus.tex bibliography.tex circuits.tex conclusion.
 
 thesis.pdf: thesis.tex $(CHAPTERS) figs
 	$(TeX) thesis
+	bibtex thesis
 
 full: thesis.tex references.bib $(CHAPTERS) figs
 	$(TeX) thesis
