@@ -44,6 +44,46 @@ laser beam passing through for absorption measurements. The helium buffer gas
 enters the cell through a 3/8" diam.\ opening opposite the molecular beam exit
 hole, which is 3~mm in diameter in a plate 0.02" thick.
 
+The ACME beam source described by West \cite[sect~5.1]{west2017thesis} makes use
+of two pulse tubes, a PT415 cool the cryopumping 4~K shield and a model PT810
+for the 16~K cell assembly. Special effort was made to locate the cell as close
+as possible (12~cm) to the exit flange of the vacuum chamber in order to reduce
+the beam length and thus increase the molecular flux through the increased solid
+angle. A layer of superinsulation (Lake Shore p.n.\ INRC-2-10) is used ``on the
+outside of the 50~K and 4~K shields, pinned on the corners of the plates by
+screws, which is clean and easy''. (N.\ Hutzler, personal communication, June 19,
+2018)
+
+The buffer gas is neon instead of helium. Since the 4~K shield is well below the
+freezing point of neon (around 25~K), the cryopumping is highly effective
+without the use of charcoal adsorbing plates. Having two pulse tubes prohibits
+rigid mechanical connections between the shields and pulse tubes due to
+potential issues with differential thermal expansions; the shields are now
+thermally linked using flexible heat links, whereas the cell assembly retains
+its rigid connection to the cold head of a pulse tube.
+
+The cell windows are recessed using snorkels with baffles and steel wall lining
+the inner walls in an attempt to reduce the amount of ablated material that
+ricochets off the snorkel walls and sticks to the windows. There are
+chevron-shaped baffle vents on the high-temperature shield to further reduce the
+gas load coming out of the beam source.
+
+There is a `conical collimator' at the exit aperture of the 4~K shield to
+deflect as much of the neon back into the 4~K box for cryopumping rather than
+emit it together with the molecular beam. The author emphasizes the need to
+place the collimator ``far enough from the source that collisions within the
+beam are frozen out [\ldots]; otherwise, it may disrupt the hydrodynamic
+processes near the cell exit and change the final beam properties''.
+\cite[p.~109]{west2017thesis} In their source, collimator (6~mm aperture) is
+located 2.5~cm away from the 5~mm cell exit aperture. (The \CENTREX\ collimator
+used to be a mere 0.8~cm away from the cell exit plate.)
+
+The \CENTREX\ beam source, described in the next section, adapts the earlier TlF
+beam source design by making use of many of the innovations introduced by the
+ACME beam source. Some, like the collimator have been tried and rejected (likely
+because of incorrect positioning); others, like the superinsulation or baffles,
+have not been tried at all.
+
 \subsection{Physical structure}
 
 The heart of the beam source (Fig.~\ref{full_BS}) is the Cell, a compact
@@ -136,7 +176,9 @@ design for the Snorkel tube contained an array of seven 1/4" holes going
 through the length of the tube in an attempt to minimize the amount of ablated
 material that gets deposited on the window. We have later replaced this with a
 design that has just a single, larger, hole with no negative effects while
-improving the laser access to the target.
+improving the laser access to the target. In fact, there is a belief that the
+TlF that gets deposited in a thin film on the window makes for a better beam
+pulse until the ablation gets rid of it in short order.
 
 The window is clamped to the snorkel using the Snorkel Window Holder as can be
 seen in Figs.~\ref{cell_assembly}, \ref{beam_source_assembly_7F}, and
@@ -244,6 +286,11 @@ the cell, was also shaped like a truncated cone, of same length and
 truncated-face diameter, but with a base diameter of 0.808".
 
 \subsubsection{Heat shields}
+
+There are two nested heat shields: the outer 40~K box shields the inner parts
+from the thermal radiation from the room-temperature vacuum chamber, while the
+4~K shield primarily serves as a cryopump. We do not use, and have never tried
+using, any superinsulation in the beam source.
 
 \paragraph{4~K shield}
 
@@ -591,7 +638,7 @@ move, Delrin or Teflon plastic plates with threaded holes were attached to the
 shields. The threads were used for nylon screws, which were ``adjusted (to
 reasonably good precision) to fill the space between the 4~K shield and the 30~K
 shield, and between the 30~K shield and chamber wall'' (E.\ B.\ Norrgard,
-personal communication June 11, 2021). In that beam source design, the pulse
+personal communication, June 11, 2021). In that beam source design, the pulse
 tube (there is only one) is directly attached to the 4~K shield, so fixing the
 4~K shield fixes the pulse tube and keeps it from being catastrophically
 deformed in shipping.
@@ -979,7 +1026,9 @@ laser power needs to be increased for any reason in the future.
 
 The pressure measured at the top plate of the beam source vacuum chamber at room
 temperature is of the order of a microtorr and much lower, below 10~nanotorr, at
-cryogenic temperatures.
+cryogenic temperatures, when the neon buffer gas is not flowing into the source.
+During normal operation (neon flow rate approx.\ 40~sccm), the cryogenic
+pressure at the top plate increases to about a microtorr.
 
 \begin{figure}
     \centering
