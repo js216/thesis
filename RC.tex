@@ -5,7 +5,7 @@
 In this section, we work out an estimate of the microwave power needed to drive
 rotational cooling transitions.
 
-\paragraph{Matrix elements}
+\subsubsection{Matrix elements}
 
 In a simplified model of a diatomic polar molecule
 \cite[sect~7.6]{budker2004atomic}, consisting of a rigid rotor, the eigenstates
@@ -64,7 +64,7 @@ Thus, the Rabi frequency is approximately
     \Omega\approx0.4\frac{dE_0}{2\hbar}.
 \]
 
-\paragraph{Fly-through time, or excited state lifetime}
+\subsubsection{Fly-through time, or excited state lifetime}
 
 Assuming (as an order of magnitude estimate) the rotational cooling region is
 about 10~cm long, the flythrough time is
@@ -73,7 +73,7 @@ about 10~cm long, the flythrough time is
     t_0=\frac{0.02\;\text{m}}{200\;\text{m/s}}=0.1\;\text{ms}.
 \]
 
-\paragraph{Microwave power}
+\subsubsection{Microwave power}
 
 Rearranging $\Omega\gg1/t_0$, the microwave electric field must be much greater
 than
@@ -95,15 +95,13 @@ This corresponds to a minimum intensity
 Given a waist size $w\approx5~\text{cm}$, the microwave power required will have
 to be much greater than $P_\text{min}=\pi w_0^2I_\text{min}=0.05~\text{mW}$.
 
-\subsection{Vacuum chamber}
-
-\subsubsection{AR windows}
+\subsection{AR windows}
 
 The windows of the vacuum chamber were designed to reflect as little of the
 microwaves as possible while still being strong enough to withstand the
 atmospheric pressure.
 
-\paragraph{Pressure window thickness}
+\subsubsection{Pressure window thickness}
 
 The thickness of a circular window of radius $R$ required to withstand a certain
 pressure $p$ is given by \cite[eqn~4.190]{moore2009building}
@@ -119,7 +117,7 @@ whose value can be taken as 0.75 for a clamped edge and 1.125 for a free edge.
 Thus, for example, to withstand atmospheric pressure (14.7~psi), a clamped fused
 silica window of radius 5~cm would have to have a thickness of at least 8~mm.
 
-\paragraph{Dielectric loss}
+\subsubsection{Dielectric loss}
 
 The fraction of power transmitted through a window is subject to dielectric loss
 in the window. As it propagates a distance $z$ into the window, the power
@@ -137,7 +135,7 @@ thick window, it would be about 0.2\%\ to 0.6\%\ at our frequencies.  Since this
 is merely radiation lost as heat (as opposed to microwaves), a 1\% power loss is
 tolerable and can be ignored in what follows.
 
-\paragraph{Coherence length}
+\subsubsection{Coherence length}
 
 For light passing through a glass window, we normally cannot observe thin film
 interference, since the coherence length or sunlight ($\approx0.6\;\mu$m) is
@@ -148,7 +146,7 @@ much greater in the microwave range. For example, a source with a 1~MHz frequenc
 uncertainty would have a vacuum coherence length of
 $L=c/1\;\text{MHz}=300~\text{m}$.
 
-\paragraph{Thin film reflectance at normal incidence}
+\subsubsection{Thin film reflectance at normal incidence}
 
 The phase change for planar wavefronts at normal incidence across a window of
 thickness $d$ and refractive index $n$ will be $\delta=2\pi nd/\lambda_0$, where
@@ -189,7 +187,7 @@ the reflectivity will stay below 5\%.
     \label{AR_win_p1}
 \end{figure}
 
-\paragraph{Half-wave windows}
+\subsubsection{Half-wave windows}
 
 Due to the periodicity of the reflection coefficient, we only need a single
 window thicknesses to cover our three microwave frequencies (13.4 GHz, 26.8 GHz,
@@ -210,7 +208,7 @@ not clear how close to 3.8 the relative permittivity actually is; it would be
 interesting to measure the reflectivity of several windows in the thickness
 range of, say, 5\%\ around the predicted optimal thickness of 11.50~mm.
 
-\paragraph{Residual reflectivity}
+\subsubsection{Residual reflectivity}
 
 The lower bound for reflectivity is realistically set by how precisely the
 window thickness can be controlled. It can be kept below 1\%\ if the window
@@ -250,7 +248,7 @@ Fig.~\ref{AR_win_p4}.
     \label{AR_win_p4}
 \end{figure}
 
-\paragraph{Oblique incidence}
+\subsubsection{Oblique incidence}
 
 For waves incident on the windows at an oblique angle $\theta$, equations
 \ref{win_admittance} and \ref{win_refl} still hold, except that now the phase
@@ -315,7 +313,7 @@ we would predict a high reflectivity, the Gaussian is exponentially suppressed.
 Thus, the actual power reflected from the edges of the windows due to the beam
 curvature is negligible.
 
-\subsubsection{Clipping}
+\subsection{Clipping}
 
 Ideally, perfectly Gaussian beams would be used with infinite windows. In
 practice, the vacuum chamber geometry requires the windows to be a finite size.
@@ -355,7 +353,7 @@ bellows to obtain the same flexibility.
     \label{RCch}
 \end{figure}
 
-\subsubsection{Beam-blocking mesh}
+\subsection{Beam-blocking mesh}
 
 The microwaves in the rotational cooling region interfere with other
 experimental regions further down the beamline and need to be blocked from
@@ -406,6 +404,3 @@ value ($\mu_0\approx4\pi\cdot10^{-7}$~H/m).
     wire mesh.}
     \label{wires}
 \end{figure}
-
-\subsection{Microwave system}
-
