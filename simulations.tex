@@ -537,3 +537,91 @@ states, molecules scatter fewer photons than we can expect based on branching
 ratios alone, therefore there exists an optimal detection laser power.
 Furthermore, by adiabatically changing measurement basis, it is possible to
 force evolution (e.g.\ STIRAP).
+
+\subsection{Polarization switching in rotational cooling}
+
+Consider a model where a laser drives transitions between the electronic ground
+and excited states (Fig.~\ref{tm1}). The excited state has $J'=1$ and has a
+lifetime of about 100~ns. In the ground state, only decays/transitions to $J=0$
+and $J=2$ are allowed. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/tm1.png}
+    \caption{Toy model for rotational cooling with polarization switching.}
+    \label{tm1}
+\end{figure}
+
+The branching ratios can be found from the electric dipole matrix elements
+\cite[eqn~2.57]{hutzler2014thesis}
+%
+\[
+    |\bra{J,M,\Omega}\vec D\cdot\boldsymbol{\mathcal{E}}\ket{J',M',\Omega'}|^2
+    =
+    (2J+1)(2J'+1)
+    \begin{pmatrix} J&1&J' \\ -\Omega&\Omega-\Omega'&\Omega' \end{pmatrix}^2
+        \begin{pmatrix} J&1&J' \\ -M&M-M'&M' \end{pmatrix}^2.
+\]
+%
+The branching ratios to $J=0$ and $J=2$ are then
+%
+\[
+    b_0\propto
+    \sum_{M=0}^{M=0}
+    \sum_{M'=-1}^{M'=1}
+    |\bra{0,M,0}\vec D\cdot\boldsymbol{\mathcal{E}}\ket{1,M',1}|^2
+    ;\quad
+    b_2\propto
+    \sum_{M=-2}^{M=2}
+    \sum_{M'=-1}^{M'=1}
+    |\bra{2,M,0}\vec D\cdot\boldsymbol{\mathcal{E}}\ket{1,M',1}|^2.
+\]
+%
+The normalization is simply the sum $b_0+b_2$, such that we have the branching
+ratios
+%
+\[
+    \frac{b_0}{b_0+b_2}=\frac13
+    ;\quad
+    \frac{b_2}{b_0+b_2}=\frac23.
+\]
+
+The system in Fig.~\ref{tm1} was entered into the Mathematica
+\verb|AtomicDensityMatrix| package (by Simon Rochester) to solve for the density
+matrix as a function of time (Fig.~\ref{switching}). We make use of polarization
+switching since each laser polarization can only reach three of the five $J=2$
+states. We see that eventually, all of the population is transferred to the
+$J=0$ state, achieving rotational cooling.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/mathematica/switching.pdf}
+    \caption[Population vs time with polarization switching.]{Population vs time
+    with polarization switching. $\Omega$ is the laser Rabi frequency, $\Delta$
+    is the splitting between the $J=0,2$ states, and $\delta$ is the laser
+    detuning. The square-wave signal, whose magnitude is arbitrary, shows the
+    sign of the laser polarization, $\sigma^{\pm}$. Time and frequency in units
+    of $\Gamma$, the natural width of the transition.}
+    \label{switching}
+\end{figure}
+
+If we change the switching time (Fig.~\ref{switching_time}, left), the
+rotational cooling efficiency changes. In particular, if the switching is done
+very quickly, the procedure does not work well. On the other hand, switching too
+slowly means that the molecules can pass through the entire rotational cooling
+region without experiencing any polarization switches. The optimal speed has to
+be in between.
+
+We can also tune the laser power, in which case we find a saturation behavior,
+such that increasing the laser power further neither improves nor harms the
+cooling efficiency.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/mathematica/RC_sw_time.pdf}
+    \caption[Final population vs switching time and laser power.]{Final
+    population as a function of \part{Left} Switching time at $\Omega=0.9$, and
+    \part{Right} Laser power for switching time = 25. Time and frequency in
+    units of $\Gamma$, the natural width of the transition.}
+    \label{switching_time}
+\end{figure}
