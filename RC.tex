@@ -153,11 +153,12 @@ $L=c/1\;\text{MHz}=300~\text{m}$.
 The phase change for planar wavefronts at normal incidence across a window of
 thickness $d$ and refractive index $n$ will be $\delta=2\pi nd/\lambda_0$, where
 $\lambda_0$ is the vacuum wavelength. The admittance of the window is given by
-\cite[eqn~2.92]{macleod2017thin}
+\cite[eqn~2.93]{macleod2017thin}
 %
-\[
+\begin{equation}
+    \label{win_admittance}
     Y=\frac{y_0\cos\delta+iy_1\sin\delta}{\cos\delta+i(y_0/y_1)\sin\delta},
-\]
+\end{equation}
 %
 where $y_0$ is the admittance of free space, while for an ideal dielectric
 window, its admittance will be $y_1=\sqrt{\epsilon_1/\mu_1}$. Since for
@@ -167,9 +168,10 @@ $y_1\approx\sqrt{3.8}y_0$.
 
 The corresponding power reflectivity is \cite[eqn~2.91]{macleod2017thin}
 %
-\[
+\begin{equation}
+    \label{win_refl}
     R=\Big|\frac{y_0-Y}{y_0+Y}\Big|^2
-\]
+\end{equation}
 %
 A 5~mm thick fused silica window would thus have the reflectivity shown in
 Fig.~\ref{AR_win_p1}. We see that unless the window thickness is matched to the
@@ -198,17 +200,28 @@ assemblies, at wavelengths at which they are truly half-wave. Thus ``half-wave
 layers are sometimes referred to as absentee layers''
 \cite[sect~2.9]{macleod2017thin}.
 
+As explained above, the window has to be at least 8~mm thick to withstand the
+atmospheric and other forces. That is why an integer multiple of the thickness
+has to be chosen, such as $2\times5.747~\text{mm}=11.494~\text{mm}$.
+Unfortunately, the windows used in \CENTREX\ to date (Jun 2023) were ordered as
+$(11.762\pm0.12)$~mm thick owing to a confusion in calculating the wavelength
+in vacuum vs in the material ($\sqrt{3.8}\approx1.95\approx2$). Besides, it is
+not clear how close to 3.8 the relative permittivity actually is; it would be
+interesting to measure the reflectivity of several windows in the thickness
+range of, say, 5\%\ around the predicted optimal thickness of 11.50~mm.
+
 \paragraph{Residual reflectivity}
 
 The lower bound for reflectivity is realistically set by how precisely the
 window thickness can be controlled. It can be kept below 1\%\ if the window
-thickness can be within about $\pm2$~mil, as seen in Fig.~\ref{AR_win_p2}
+thickness can be within about $\pm2~\text{mil}=0.05~\text{mm}$, as seen in
+Fig.~\ref{AR_win_p2}.
 
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p2.pdf}
-    \caption{Residual microwave reflectivity when the window is not of the
-    optimal thickness.}
+    \caption{Residual microwave reflectivity when the window ($t=11.494$~mm) is
+    not of the optimal thickness.}
     \label{AR_win_p2}
 \end{figure}
 
@@ -222,7 +235,7 @@ exact optical thickness of the window (Fig.~\ref{AR_win_p3}).
     \centering
     \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p3.pdf}
     \caption{Residual microwave reflectivity versus refractive index
-    variations.}
+    variations, for window thickness $t=11.494$~mm.}
     \label{AR_win_p3}
 \end{figure}
 
@@ -232,13 +245,167 @@ Fig.~\ref{AR_win_p4}.
 \begin{figure}
     \centering
     \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p4.pdf}
-    \caption{Residual reflectivity versus microwave frequency variations.}
+    \caption{Residual reflectivity versus microwave frequency variations, for
+    window thickness $t=11.494$~mm.}
     \label{AR_win_p4}
 \end{figure}
 
+\paragraph{Oblique incidence}
+
+For waves incident on the windows at an oblique angle $\theta$, equations
+\ref{win_admittance} and \ref{win_refl} still hold, except that now the phase
+change for waves going cross the window is modified to $\delta=2\pi
+nd\cos\theta/\lambda_0$. The reflectivity as a function of angle is shown in
+Fig.~\ref{AR_win_p5}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p5.pdf}
+    \caption[Residual reflectivity versus angle of incidence.]{Residual
+    reflectivity versus angle of incidence. The legend shows the three window
+    thicknesses.}
+    \label{AR_win_p5}
+\end{figure}
+
+While the microwaves are launched at normal incidence to the window given the
+relative orientation of the horns and windows, the oblique incidence effect can
+be significant when the waves get reflected from metallic objects, such as the
+vacuum chamber, or if the wavefronts themselves are curved. We will now estimate
+the effect due to curvature, while the chamber reflections are considered in the
+next section.
+
+For a Gaussian beam of waist $w_0$ at a distance $z$ away from the waist, we
+have the beam radius of curvature and width
+\cite[eqn~2.21]{goldsmith1998quasioptical}:
+%
+\begin{align}
+    \label{radius_width}
+    R=z+\frac{1}{z}\left(\frac{\pi w_0^2}{\lambda}\right)^2
+    ;\quad
+    w=w_0\sqrt{1+\left(\frac{cz}{\pi w_0^2f}\right)^2}
+\end{align}
+%
+The beam intensity at a transverse position $r$ is
+\cite[eqn~2.25]{goldsmith1998quasioptical}:
+%
+\begin{align}
+    \label{Gaussian_intensity}
+    I&=I_0\left(\frac{w_0}{w}\right)^2\exp\left(-\frac{2r^2}{w^2}\right).
+\end{align}
+%
+The angle of incidence $\theta$ and the transverse position $r$ are related via
+the radius of curvature $R$ as $r=R\cos(\pi/2-\theta)$. Thus we can plot the
+beam intensity as a function of the angle of incidence on the same plot as
+reflectivity vs angle (Fig~\ref{AR_win_p6}). The beam intensity decreases with
+increasing distance from the beam axis (and hence, with angle of incidence). At
+the same time, the reflectivity increases. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p6.pdf}
+    \caption[Residual reflectivity due to wavefront curvature.]{Residual
+    reflectivity due to wavefront curvature.}
+    \label{AR_win_p6}
+\end{figure}
+
+The outer parts of the beam will be reflected much more than the beam
+centre. However, the beam intensity near the outer parts of the window is
+greatly reduced since most of the beam power is near the centre. At angles where
+we would predict a high reflectivity, the Gaussian is exponentially suppressed.
+Thus, the actual power reflected from the edges of the windows due to the beam
+curvature is negligible.
+
 \subsubsection{Clipping}
 
-\subsubsection{Wavefront curvature}
+Ideally, perfectly Gaussian beams would be used with infinite windows. In
+practice, the vacuum chamber geometry requires the windows to be a finite size.
+Inevitably, a fraction of the power of the beam would get clipped at the edges
+of the windows. In this section, we calculate the diameters of the windows
+needed to lose an acceptable amount of the beam power.
+
+According to eqn~\ref{Gaussian_intensity}, the beam intensity decays
+exponentially as $\exp(-2r^2/w^2)$ with the transverse position $r$ away from
+the beam axis. If we want the intensity at the edge of the windows to be 0.25\%\
+of the intensity at the center of the beam, then the window diameter $D$ needs
+to be
+%
+\[
+    D>2w\sqrt{-\frac{\ln0.0025}{2}}\approx3.5\;w,
+\]
+%
+where the beam width is given in eqn~\ref{radius_width}. The vacuum chamber as
+built (Fig.~\ref{RCch}) has three pairs of identical microwave windows. The two
+holes for 13.4~GHz microwaves have a diameters of 8.150" and are separated by
+14.58", while the other two pairs (for 26.8 and 40.1~GHz) both have a 5.450"
+diameter and are separated by 16.13". The chamber also has a pair of 2" holes
+for a laser, as well as the connection for the molecular beam, perpendicular to
+all the laser and microwave beams.
+
+The vacuum connection is an ISO200 F-style flange on one side, and a custom
+``Input Nipple'' on the other (3/4" long nipple, 2.87" ID, flange 5.8" OD and
+1/4" thick).  The custom flange was originally intended to be used as a part of
+a sliding vacuum seal to allow for beamline alignment while being very compact
+in size.  The sliding seal never got designed or made, and instead we use
+bellows to obtain the same flexibility.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/RCch.png}
+    \caption{RC chamber}
+    \label{RCch}
+\end{figure}
+
+\subsubsection{Beam-blocking mesh}
+
+The microwaves in the rotational cooling region interfere with other
+experimental regions further down the beamline and need to be blocked from
+entering those regions without blocking the molecular beam. This can be
+accomplished using a metallic mesh.
+
+We model the mesh as two perpendicular array of parallel wires, since ``the
+behavior of the two-dimensional grid can be calculated purely from that of its
+constituent one-dimensional inductive grid''
+\cite[p.~242]{goldsmith1998quasioptical}.
+
+Consider infinite-length wires of radius $a$, permeability $\mu_1$, and
+conductivity $\sigma=1/\rho$, arranged in an array with spacing $d$. The
+reflection coefficient for radiation of frequency $\omega=2\pi f$ and wavelength
+$\lambda=c/f$ at normal incidence is \cite[eqns~24--25]{wait1955reflection}
+%
+\[
+    R=\frac{-1}{1+2Z_\text{g}/Z_0},
+    \quad
+    Z_\text{g}=iZ_0\frac{d}{\lambda}
+    \left[\ln\frac{d}{2\pi a}+F(d/\lambda,0)\right]
+    +Z_\text{i}d,
+\]
+%
+where $Z_0\approx376.7~\Omega$ is the impedance of free space and
+\cite[eqn~17 and 22]{wait1955reflection},
+%
+\begin{align*}
+    Z_\text{i}\approx
+    \sqrt{\frac{\mu_1\omega}{2\sigma}}
+    \left(\frac{1+i}{2\pi a}\right)
+    ,\quad
+    F\left(\frac{d}{\lambda},0\right)=
+    \sum_{m=1}^\infty\Big(\frac1{\sqrt{m^2-(d/\lambda)^2}} - \frac1m\Big)
+    .
+\end{align*}
+%
+The transmission $T\approx1-|R|^2$ of 13.4~GHz microwaves through a grid is
+shown in Fig.~\ref{wires}. The resistivity of the austenitic (non-magnetic) 304
+stainless steel is $\rho=72~\mu\Omega\cdot\text{cm}$
+\cite[p.~12-234]{haynes2016crc}, while the permeability is close to the vacuum
+value ($\mu_0\approx4\pi\cdot10^{-7}$~H/m).
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/mathematica/wires.pdf}
+    \caption{Transmission of 13.4~GHz microwaves at normal incidence through a
+    wire mesh.}
+    \label{wires}
+\end{figure}
 
 \subsection{Microwave system}
 
