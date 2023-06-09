@@ -187,7 +187,6 @@ number of averages. Underneath the sinc, however, the noise will be attenuated
 through the action of the bandpass filter (or frequency comb) that derives its
 sharpness from the high number of averages.
 
-
 \subsection{Electric field effects}
 
 The separation between hyperfine states in TlF is a function of the external
@@ -263,6 +262,110 @@ latter:
 \quad
 \epsilon\ll1.
 \]
+
+The high voltage electronics has several possible effects on the measurement
+systematics. For example, the current that flows to charge the electrodes to the
+high voltage creates a magnetic field that can end up magnetizing the magnetic
+shield even after the current has stopped flowing. This is a particularly
+`scary' systematic since it occurs in phase with the electric field reversals
+and can mimic an \gls{EDM}. Other effects include the noise on the high voltage
+supply and leakage currents; we discuss these and others in the following.
+
+\subsubsection{Charging magnetization}
+
+The interaction region electrodes are two parallel plates that form a capacitor
+of approximate capacitance of several hundred picofarads. As the voltage on the
+electrodes is increase from zero to $\pm30$~kV, the charging current $I=CdV/dt$
+flows to supply the electric charge. This current is associated with a magnetic
+field which in turn induces a permanent magnetization in the magnetic shield
+that remains after the current has stopped flowing.
+
+In the section on magnetic field, we have estimated that the magnetic field
+inside the magnetic shield changes by approx.\ 10~nG when a current of 0.1~A
+flows through the inside of the shield. Assuming the electrodes have a
+capacitance of 200~pF and are linearly charged to a potential difference of
+60~kV in a second, this implies a current of 12~$\mu$A. Extrapolating, this
+would mean a charging magnetization of 1.2~pG, which is acceptable.
+
+However, if the electrodes are not charged up to the final voltage using a
+constant current, the instantaneous current could be much higher. For example,
+if the electrodes are simply connected to a low-impedance source of high voltage,
+the initial surge of current would be much higher than calculated above, then
+slowing down exponentially as it approaches the final voltage. Alternatively, if
+the voltage is controlled by a DAC, the steps between the discrete values could
+be an occasion of very fast voltage rise, accompanied by a large charging
+current and resulting magnetization.
+
+The charging current poses a limitation on the electric field reversal
+frequency, since it limits the speed at which the electrodes can be charged up
+to final voltage. The currents will need to be measured experimentally to ensure
+they are within the limits set by the shield charging magnetization.
+
+\subsubsection{HV noise}
+
+The \gls{NMR} resonance responds to electric fields via the first-order Stark
+effect with a slope of approx.\ 30~mHz/(V/cm). If we want the electric field
+noise to result in an effect much smaller than 45~nHz (the expected statistical
+sensitivity of the experiment), then the field noise needs to be limited to far
+below 1.5~$\mu$V/cm. At the scale of 30~kV/cm, this is 50 parts per trillion, a
+fantastically strict noise requirement (34 bits of accuracy, or 10.5 digits, or
+206~dB).
+
+However, we need to keep in mind that due to the lock-in technique inherent to
+the \CENTREX\ experiment, we only care about the noise in a very narrow
+bandwidth, limited by the total amount of data to be collected (about 300 hours,
+corresponding to a bandwidth of order 1~$\mu$Hz), around the electric field
+reversal frequency (to be determined, but expected to be between 5~mHz and
+0.1~Hz). This implies a noise spectral density of 1.5~mV/$\sqrt{\text{Hz}}$.
+
+Other experimental reversals may help suppress the noise even further by
+shifting the central frequency from the field reversal frequency to a higher
+frequency linked to the other reversals. This simplifies the HV electronics
+design since the supply can be low-pass filtered using a simple $RC$ filter; the
+lower the frequency, the harder it becomes to suppress noise.
+
+\subsubsection{Reversal reproducibility}
+
+After each field reversal, voltage has to settle at the same value it had before
+the reversal.
+
+\subsubsection{HV relays magnetization}
+
+The electric field is to be reversed using a pair of high-voltage relays that
+are pneumatically actuated to reduce the amount of magnetic fields that are
+correlated with the field reversals. Assuming a slope of 2.5~mHz/$\mu$G of the
+\gls{NMR} resonance with respect to magnetic fields, the field due to the relay
+switching needs to be much lower than 18~pG to achieve the sensitivity of 45~nHz
+as mentioned above.
+
+The pneumatic actuation system itself will rely on solenoid valves, which,
+however, can be located in a shielded enclosure and located far away from the
+sensitive main interaction region.
+
+\subsubsection{Leakage currents}
+\label{systematics:leakage_current}
+
+Regardless of the care taken in constructing the apparatus, a small amount of
+current will flow between the two electrodes, as well as between the electrodes
+and the grounded vacuum chamber. For example, there could be a surface current
+on the surface of the ceramic standoffs from the electrode to the inner wall of
+the vacuum chamber, or a flow through the imperfect vacuum in case any of the
+residual gasses get ionized.
+
+The leakage current $I$ causes a magnetic field of the order of $B=\mu_0I/(2\pi
+R)$ a distance $R$ away from the current, and also needs to be limited to
+$\ll18$~pG. Assume the molecules are located a centimeter away from this
+current; then the current needs to be limited to below 90~pA. In order to
+protect against a leakage current systematic, a picoammeter will be built,
+tested, and inserted in the electric path supplying the electrodes with the high
+voltage.
+
+\subsubsection{Accumulated charges}
+
+Charges can accumulate in the interior of the vacuum chamber, and on all
+non-conductive surfaces. Therefore we need to coat the interior of the glass
+tube with a conductive coating, and ground it, to ensure a stable electric
+field.
 
 \subsection{Magnetic field effects}
 \label{systematics:magnetic}
