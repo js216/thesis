@@ -117,10 +117,34 @@ Besides the voltage divider and voltmeter limitations discussed above, this
 method is particularly sensitive to thermoelectric voltages that can develop at
 all the low-voltage interfaces: between the resistor and the connector, between
 the connector and the cable (on both sides of the cable), between the connector
-and the voltmeter. As explained previously, these voltages (of order 5~$\mu$V/K)
-are significant at the scale of the low voltages measured.
+and the voltmeter. As explained previously, these voltages (of order 3~$\mu$V/K)
+are significant at the scale of the low voltages measured: $3~\mu\text{V/K}/3~\text{V}=1~\text{ppm/K}$.
 
-The problems associated with the thermocouple voltages can be avoided 
+The problems associated with the thermocouple voltages can be avoided by using
+the `ammeter' technique illustrated in Fig.~\ref{ammeter}. Only the upper half
+of the resistive divider (Fig.~\ref{resistor_box}) is used, with the large
+resistor to `convert' the high voltage into a low current. The current is then
+led into a current-measuring device, from whose measurement we can then
+calculate the high voltage. While the problems with the resistor's temperature
+coefficient remain, the thermocouple voltages become negligible. For example,
+adding a (temperature-dependent) voltage of 3~$\mu$V/K in the connectorized
+interface between the resistor and the ammeter is an effect of size
+$3~\mu\text{V/K}/30~\text{kV}=0.1~\text{ppb/K}$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/resistor_box.png}
+    \caption{Potted, connectorized 10~G$\Omega$ resistor for measuring high
+    voltage as a low current.}
+    \label{resistor_box}
+\end{figure}
+
+The `ammeter' in Fig.~\ref{ammeter} could be a stand-alone ammeter, such as a
+digital multimeter. For example, the Keysight 3458A comes with a 1~pA resolution
+in the 10~$\mu$A range, or 0.1~ppm, with a temperature coefficient of 10~ppm/K.
+Better performance can be obtained by attaching a resistor with a low
+temperature coefficient directly to the multimeter; values as high as
+100~k$\Omega$ can be obtained with sub-ppm/K tempco.
 
 \begin{figure}
     \centering
@@ -128,10 +152,255 @@ The problems associated with the thermocouple voltages can be avoided
     \caption[The `ammeter' voltage measurement scheme.]{The `ammeter' voltage
     measurement scheme. \part{Left} Using two ammeters to monitor each polarity.
     \part{Right} Using a 1~M$\Omega$ single resistor to measure the entire
-    voltage span.}
+    voltage span. The amplifier is an instrumentation amplifier.}
     \label{ammeter}
 \end{figure}
 
-\subsection{Voltage control}
+Ultimately, the most important thing is to keep the magnitude of the electric
+field constant. This magnitude is obtained as the vector sum of the electric
+fields due to each electrode and is proportional to the difference of the
+positive and the negative voltages. Therefore, measuring both of the power
+supplies independently is not necessary; it is enough measure the total voltage
+drop between the positive and the negative supply. Thus in addition to the two
+high-resistance resistors, one for each supply, all that is needed is a single
+low-resistance resistance to measure the total voltage drop (Fig.~\ref{ammeter},
+right). This single resistor can be measured using a digital multimeter, or, as
+shown in the figure, using an instrumentation amplifier to subtract a constant
+reference voltage from the measured resistor voltage.
 
-\subsubsection{Lens HV control box}
+Since all electronic components have a temperature coefficient, it is important
+to be aware of the relative magnitude of these effects and either control the
+temperatures or verify that the thermal drifts are not a problem in the sense of
+causing large systematic errors in the \gls{EDM} measurement. When handling low
+voltages, one must watch out for parasitic voltage sources (thermocouples,
+contact potentials, rectified RF interference), and when using low currents, be
+mindful of potential leakage currents through high (but not infinite) impedance
+current paths (connector, cable insulation, temperature and humidity dependent
+surface contamination).
+
+\subsection{Voltage control for lens}
+
+As mentioned above, the electrostatic lens requires a source of high voltage
+where the voltage stability is not a critical concern. Instead, what is needed
+is just a way to control the high voltage using the same DAQ system that
+controls most of the rest of the \CENTREX\ experiment. This is done using a
+commercial high-voltage module (Spellman TOF3000) with a home-built PCB to
+supply the analog control voltage and to read out the current from the
+high-resistance resistor (the electronics box is shown in Fig.~\ref{HV_pic},
+right).
+
+\subsection{HV relays}
+
+To switch the polarity of the electric field in the main interaction region, we
+use a set of two SPDT relays (schematic of the connection in
+Fig.~\ref{standard}). The relays are by Ross Engineering (p.n.\
+E60-DTP-80-2U-40-P/BD) and are pneumatically actuated (Fig.~\ref{HV_relays}).
+The pneumatic system is in turn controlled using solenoid valves (McMaster p.n.\
+4639K933). This allows us to place the solenoids far away from the interaction
+region, since they cause a magnetic field that changes in phase with the
+electric field reversals.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/HV_relays.png}
+    \caption{HV relays are pneumatically actuated, with solenoid valves
+    controlling the pneumatics.}
+    \label{HV_relays}
+\end{figure}
+
+The solenoids will have to be shielded; Fig.~\ref{solenoid_valve} shows the
+crude way I used to estimate the how much magnetic field the solenoids `emit'.
+The solenoid was placed in a 6" diameter cardboard tube that was wrapped
+circumferentially with two layers of metglas foil of the same type as used in
+the interaction region magnetic shield (FINEMET Wide Format Film, Hitachi Part
+MS-FR 470-100M-T0, containing 18~$\mu$m-thick FINEMET FT-3M metglas between
+protective layers of plastic). The solenoid was oriented with its axis
+perpendicular to the axis of the cardboard tube with a magnetic sensor located
+approximately along the axis of the solenoid. As a function of the distance $d$
+between the solenoid and the magnetometer, I measured the difference in the
+magnetic field with the solenoid energized and disconnected; the result is
+plotted in Fig.~\ref{solenoid_valve} as the negative reciprocal third power,
+$B^{-1/3}$, since that is the approximate functional dependence for how the
+strength of a magnetic dipole falls away with distance.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/solenoid_valve.png}
+    \caption[Measuring magnetic field due to the solenoid valve.]{Measuring
+    magnetic field due to the solenoid valve. \part{Left} How the field was
+    measured. \part{Right} Measurement results.}
+    \label{solenoid_valve}
+\end{figure}
+
+I repeated the measurement with the solenoid unshielded, as well as located
+inside a carbon steel pipe (McMaster p.n.\ 7750K122, alloy A53, class A). The
+slope of $B^{-1/3}$ versus distance $d$ is
+%
+\[
+    \frac{\d B^{-1/3}}{\d d}
+    ~[\text{G}^{-1/3}/\text{m}]
+    =
+    \begin{dcases*}
+         8.9&\quad unshielded\\
+        11.9&\quad in steel pipe\\
+        37.2&\quad in metglas tube;
+    \end{dcases*}
+\]
+%
+Thus the field attenuation for the steel pipe is $(11.9/8.9)^3=2.4$ and for the
+metglas tube, $(37.2/8.9)^3=73.0$. This is to be compared to the expected
+transverse shielding factor for a permeable cylinder (eqn~\ref{singlelayer}), 
+$S_\text{T}=\mu t/2R$. For the metglas tube ($\mu\approx70,000$,
+$t=0.2$~mm, $2R=6$"), we expect $S_\text{T}\approx91.8$. Conversely, for the
+steel pipe ($t=0.28$", $2R=6.6$", $S_\text{T}=2.4$) we can calculate
+$\mu=2RS_\text{T}/t\approx57$.
+
+The strength of the shielded magnetic field is to be compared to the sensitivity
+of the experiment to magnetic fields. The slope of the \gls{NMR} resonance to
+$B$ fields is of the order of $\d f_0/\d B\sim2.5$~mHz/$\mu$G. We would like the
+systematic due to the solenoid magnetic field to be below the desired
+experimental sensitivity of $\sim45$~nHz, so the solenoid field has to be below
+$B_\text{max}=30$~pG. As a function of the solenoid shield shielding factor SF,
+this occurs at a distance
+%
+\[
+    d_\text{min}=
+    (\text{SF}\cdot B_\text{max})^{-1/3}/
+    \frac{\d B^{-1/3}}{\d d}
+    =
+    \frac{360~\text{m}}{\text{SF}^{-1/3}}.
+\]
+%
+For example, if we want to locate the solenoids a distance $d_\text{min}=15$~m
+away from the interaction region, then we need a shielding factor of
+$\text{SF}=(360~\text{m}/d_\text{min})^3=13,800$. That is a relatively high
+shielding factor at a significant distance away from the solenoids. It would be
+worthwhile considering whether there are other experimental reversals that relax
+the shielding requirement.
+
+\subsection{Insulation leakage currents}
+
+The simultaneous availability of a high voltage source and a nanoammeter
+presents the opportunity for measuring high impedances. For example,
+Fig.~\ref{cable_leakage} shows the direct measurement of the leakage current
+across the silicone insulation of a 30~cm segment of a cable rated up to 30~kV.
+The cable was wrapped in aluminum foil, which was grounded via the nanoammeter.
+The cable was `terminated' in a blob of RTV silicone (Dow Dowsil 737). We expect
+to see an initial surge in current as the cable charges up to the set voltage.
+The capacitance $C$ per unit length $L$ of thus-constructed coaxial cable with
+inner (outer) radius $a\approx1$~mm ($b\approx5$~mm) is
+\cite[Problem~2.43]{griffiths2013introduction}
+%
+\[
+    C/L=\frac{2\pi\epsilon}{\ln(b/a)}=100~\text{pF/m},
+\]
+%
+assuming $\epsilon=3\epsilon_0$. If the cable charges to 25~kV in a millisecond,
+we expect a current surge of $I=C\;\d V/\d t=1~mA$, followed by a constant
+leakage current given by the cable's insulation resistance. In practice, we see
+a slow relaxation of the current over a time scale of minutes to hours, which is
+likely due to dielectric absorption \cite[1x.3.10]{horowitz2020art} and can be
+modelled as a combination of several series $RC$ time constants
+(Fig.~\ref{cable_leakage}, right). Eventually, the leakage current settles down
+to approx.\ 1~nA over the $L=30$~cm cable segment, implying an insulation
+resistance of $R=V/(IL)=8~\text{T}\Omega\cdot\text{m}$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/cable_leakage.png}
+    \caption[Measurement of cable insulation leakage current.]{Measurement of
+    cable insulation leakage current. \part{Left} Photo of experimental setup.
+    \part{Right} Schematic model of dielectric absorption; measured current as a
+    function of time. The number inside the plot gives the average and standard
+    deviation of the current in the second half of the plot (i.e., $t>10$~min).
+    The orange line is data smoothed with a Hann window, 71 data points long,
+    and the black line is the exponential fit
+    $I~[\text{nA}]=1.91e^{-t/0.55}-t/87.5+1.24$ for $t$ in minutes.}
+    \label{cable_leakage}
+\end{figure}
+
+Similarly, we can measure the insulation resistance of the potted resistor. In
+principle, the resistance should be high enough to result in a leakage current
+unmeasurable using the technique used here: the resistivity of the potting
+compound, of the order $10^{15}~\Omega\cdot\text{cm}$, should mean $\sim30$~pA
+currents. In practice (Fig.~\ref{potted_leakage}), we again measure currents of
+the order of nanoamperes which relax slowly over the course of tens of minutes.
+This emphasizes the need to ground the resistor box, or else the leakage current
+would charge it to tens of kilovolts within seconds.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/potted_leakage.png}
+    \caption[Measurement of leakage current through the potting compound of the
+    10~G$\Omega$ resistor.]{Measurement of leakage current through the potting
+    compound of the 10~G$\Omega$ resistor. \part{Left} Test setup; measured
+    current vs time. \part{Right} Schematic of resistor connections. Note that
+    the aluminum box of the resistor is connected to the nA meter, whereas the
+    HV out connection is left floating. The `$\mu$A out' connection goes to the
+    control circuit to measure the voltage.}
+    \label{potted_leakage}
+\end{figure}
+
+The leakage currents considered in this section may or may not be a problem for
+the precision control of the high voltage electrodes, but it serves as a
+reminded to not assume there is no leakage current just because a circuit is
+insulated with a thick layer of silicone rubber, such as in a cable or potting
+compound.
+
+\subsection{Picoammeter}
+
+To monitor leakage currents in the high voltage connections of the interaction
+region electrodes, we intend to employ a `floating' picoammeter similar to the
+one described in ref.\ \cite{sauer2008robust}. Following the simplified
+schematic in Fig.~\ref{picoammeter}, the device works by measuring the current
+developed across a large sense resistor. A biasing circuit, consisting of the
+$33.2:133.2$ resistive divider and the opamp follower, sets the lower terminal
+of the sense resistor approx.\ 1.25~V above the PCB common. The upper terminal
+is connected to the non-inverting input of a voltage-to-frequency converter,
+whose output is transmitted to a frequency counter via an optical fiber and is
+proportional to the voltage across the resistor, and in turn, to the current
+flowing through the device.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/picoammeter.png}
+    \caption[Simplified schematic of the picoammeter.]{Simplified schematic of
+    the picoammeter, inspired by \cite{sauer2008robust}. Note that the right
+    amplifier symbol is a voltage-to-frequency converter. The $RC$ outside the
+    dashed rectangle are the parasitics between the PCB and the enclosure.}
+    \label{picoammeter}
+\end{figure}
+
+With a large enough sense resistor, we can in principle be sensitive to very
+small currents. For example, a 1~pA current flowing through a 1~G$\Omega$
+resistor means a voltage drop of 1~mV. In practice, the accuracy will be
+degraded by any parasitic leakage currents, which are often temperature
+dependent. These include the input bias of the voltage-to-frequency converter or
+potential contamination of the surface of the PCB. Furthermore, as drawn, the
+circuit has two independent 1.25~V references: a resistive divider connected to
+the $+5$~V rail, which is as stable as the voltage regulator powering the entire
+circuit, and a separate 1.25~V reference built into the voltage-to-frequency
+converter. These two will very likely have a large difference in their voltage
+temperature coefficients, resulting in a drift of the offset frequency over time
+and temperature.
+
+A potentially more severe problem with this circuit is that the HV common $V_0$,
+i.e.\ the ground point of the PCB, is not well defined with respect to the
+ground point the HV power supplies, and vacuum chambers, are connected to. It is
+possible that $V_0$ will charge to some random voltage through various parasitic
+impedances. This is problematic since the opamp follower's output is connected
+directly to the sensitive (high-impedance) trace $V_2$, which is in turn
+connected to the electrodes. The electrode voltage is thus 1.25~V above $V_0$,
+which itself is not well defined. In a sense, this ammeter determines, rather
+than measures the current. It would be preferable if both terminals of the sense
+resistor were connected to high-impedance inputs of a precision instrumentation
+amplifier, for example AD8221 with input bias/offset current temperature
+coefficient of 1~pA/\deg C. An example implementation is suggested in
+Fig.~\ref{modern_pA}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/modern_pA.png}
+    \caption{A different approach to designing a picoammeter.}
+    \label{modern_pA}
+\end{figure}
