@@ -21,10 +21,11 @@ to a BNC connector (Molex 0731315003) for the signal output, and a SHV connector
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/PMT.png}
-   \caption{\gls{PMT} characterization apparatus. \part{Left} Contained inside
-   an aluminum tube. \part{Right} Inner assembly, including the \gls{PMT} under
-   test, but excluding the optics (\gls{LED} light source, filters, diffusor plates).}
-  \label{PMT_testing_setup}
+    \caption[\gls{PMT} characterization apparatus.]{\gls{PMT} characterization
+    apparatus. \part{Left} Contained inside an aluminum tube. \part{Right} Inner
+    assembly, including the \gls{PMT} under test, but excluding the optics
+    (\gls{LED} light source, filters, diffusor plates).}
+    \label{PMT_testing_setup}
 \end{figure}
 
 The aluminum tube is closed on both ends with 1/8" thick aluminum plates. The
@@ -42,8 +43,9 @@ shielding.
 \begin{figure}
    \centering
   \includegraphics[width=.6\textwidth]{figs/todo/bottom_assy.png}
-   \caption{Bottom part of the test apparatus assembly, containing the light
-   source (\gls{LED}, not shown) and filtering optics (contained within the lens tube).}
+    \caption[Bottom part of \gls{PMT} testing apparatus.]{Bottom part of the
+    test apparatus assembly, containing the light source (\gls{LED}, not shown)
+    and filtering optics (contained within the lens tube).}
   \label{bottom_assy}
 \end{figure}
 
@@ -71,11 +73,12 @@ source (Fig.~\ref{diffusors}, right), which is preferable over the rectangular
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/diffusors.png}
-   \caption{The view down the outer aluminum tube towards the light source.
-   \part{Left} When the three diffuser plates are stacked on top of each other,
-   the square shape of the \gls{LED} can be seen. \part{Right} When the three diffuser
-   plates are stacked with approx.\ 1/2" space between them, the source appears
-   approximately Gaussian.}
+    \caption[Diffuser plates to increase \gls{LED} uniformity.]{The view down
+    the outer aluminum tube towards the light source.  \part{Left} When the
+    three diffuser plates are stacked on top of each other, the square shape of
+    the \gls{LED} can be seen. \part{Right} When the three diffuser plates are
+    stacked with approx.\ 1/2" space between them, the source appears
+    approximately Gaussian.}
   \label{diffusors}
 \end{figure}
 
@@ -137,13 +140,14 @@ exhibits saturation effects.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/SB4715.png}
-   \caption{Example measurement results for one \gls{PMT}. The two plots show the same
-   data (2D scan of \gls{PMT} output vs cathode voltage and \gls{LED} power), just
-   transposed and plotted in different units. \part{Left} Gain curves as a
-   function of cathode voltage, for \gls{LED} power ranging from 0.4 to 10.7 nW.
-   \part{Right} Anode current as a function of \gls{LED} power, with cathode voltage
-   ranging from $-500$~V (least negative current) to $-1250$~V (most negative
-   current).}
+    \caption[Example measurement results for one \gls{PMT}.]{Example measurement
+    results for one \gls{PMT}. The two plots show the same data (2D scan of
+    \gls{PMT} output vs cathode voltage and \gls{LED} power), just transposed
+    and plotted in different units. \part{Left} Gain curves as a function of
+    cathode voltage, for \gls{LED} power ranging from 0.4 to 10.7 nW.
+    \part{Right} Anode current as a function of \gls{LED} power, with cathode
+    voltage ranging from $-500$~V (least negative current) to $-1250$~V (most
+    negative current).}
   \label{SB4715}
 \end{figure}
 
@@ -180,10 +184,11 @@ are also reported in Table~\ref{PMT_test_results}.
 \begin{figure}
    \centering
   \includegraphics[width=.6\textwidth]{figs/todo/PMT_res.png}
-   \caption{Fit residuals when fitting measured data to
-   eqn~\ref{anode_current_vs_voltage} for a particular \gls{PMT} unit. We
-   exclude data points where the anode current is too small (data too noisy) or
-   too large (indicating detector nonlinearity as it saturates).}
+    \caption[Fit residuals for \gls{PMT} data.]{Fit residuals when fitting
+    measured data to eqn~\ref{anode_current_vs_voltage} for a particular
+    \gls{PMT} unit. We exclude data points where the anode current is too small
+    (data too noisy) or too large (indicating detector nonlinearity as it
+    saturates).}
   \label{PMT_res}
 \end{figure}
 
@@ -202,16 +207,17 @@ are also reported in Table~\ref{PMT_test_results}.
        SB4762 & 0.629  & 7.174 & 1008.8           & 1.9      & 198 &  85.1  & 4.3 \\
       \bottomrule
     \end{tabu}}
-    \caption{\gls{PMT} characterization test results for five different
+    \caption[\gls{PMT} characterization test results for five different
+    \glspl{PMT}.]{\gls{PMT} characterization test results for five different
     \glspl{PMT}, identified by their serial number. The parameters $a$ and $k$
     are used in eqn~\ref{anode_current_vs_voltage} to calculate the
     $V_\text{cathode}$ required to obtain 10~$\mu$A of anode current for a 1~nW
     light input (approx.\ $1.4\cdot10^9$ photons/s at 271~nm). The `gain' is as
-    calculated via eqn~\ref{PMT_gain_eqn}. The CL and AL values are the cathode and
-    anode luminous sensitivities at $V_\text{cathode}=-1000$~V as reported by
-    Hamamatsu in the test report for these detectors, while the ratio AL/CL also
-    corresponds to the photomultiplier gain. The first \gls{PMT} listed was in
-    use in the main experiment during the \gls{PMT} characterization and will
+    calculated via eqn~\ref{PMT_gain_eqn}. The CL and AL values are the cathode
+    and anode luminous sensitivities at $V_\text{cathode}=-1000$~V as reported
+    by Hamamatsu in the test report for these detectors, while the ratio AL/CL
+    also corresponds to the photomultiplier gain. The first \gls{PMT} listed was
+    in use in the main experiment during the \gls{PMT} characterization and will
     need to be tested in the future.}
     \label{PMT_test_results}
 \end{table*}

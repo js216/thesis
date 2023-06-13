@@ -4,8 +4,7 @@ As detailed in the section on the measurement scheme, \CENTREX\ follows the
 design of a conventional molecular beam experiment. Fig.~\ref{entire} displays
 an outline of the entire apparatus, Table~\ref{parametertable} contains key
 parameter values, and the following paragraphs give information about its
-construction. \todo{Say who did what part of the apparatus, perhaps as a table,
-or in an appendix.}
+construction.
 
 \begin{figure*}[b!]
     \begin{overpic}[width=\textwidth,unit=1mm]{figs/entire.pdf}
@@ -33,10 +32,11 @@ or in an appendix.}
             \put(163,4){6.57}
             \put(176,4){7.08}
     \end{overpic}
-    \caption{Overview of the \CENTREX\ beamline without the magnetic shield
-    around the interaction region. Note that the second state-preparation
-    region, and the detection chamber, have not yet been designed. The
-    horizontal ordinate is given in meters.} \label{entire}
+    \caption[Overview of experimental apparatus.]{Overview of the \CENTREX\
+    beamline without the magnetic shield around the interaction region. Note
+    that the second state-preparation region, and the detection chamber, have
+    not yet been designed. The horizontal ordinate is given in meters.}
+    \label{entire}
 \end{figure*}
 
 \begin{table}[!htb]
@@ -201,12 +201,13 @@ another by a fitting for the window.
     \centering
     \def\svgwidth{1\columnwidth}
     \input{figs/svg/lasers1.pdf_tex}
-    \caption{The ablation laser for the beam source is a pulsed Nd:YAG,
-    provinding 4~ns pulses of maximum energy 130~mJ at max.\ 50~Hz (Nano LG
-    130-50 by Litron Lasers Ltd, UK). In beam source tests, we have commonly run
-    it such that the pulse energy is approx.\ 35~mJ, at a repetition rate of
-    5--10~Hz. The photodiode receives a small amount of light split off the main
-    beam, and is used for monitoring the laser power. [Drawing by O. Grasdijk]}
+    \caption[Ablation laser system.]{The ablation laser for the beam source is a
+    pulsed Nd:YAG, provinding 4~ns pulses of maximum energy 130~mJ at max.\
+    50~Hz (Nano LG 130-50 by Litron Lasers Ltd, UK). In beam source tests, we
+    have commonly run it such that the pulse energy is approx.\ 35~mJ, at a
+    repetition rate of 5--10~Hz. The photodiode receives a small amount of light
+    split off the main beam, and is used for monitoring the laser power.
+    [Drawing by O. Grasdijk]}
     \label{ablationLaser}
 \end{figure}
 
@@ -279,9 +280,9 @@ connectors (Accu-Glass p.n.\ 100460) for ease of disconnecting.
     \centering
     \def\svgwidth{\textwidth}
     \input{figs/svg/lasers2.pdf_tex}
-    \caption{UV laser system (see text). \part{a} Cs reference laser. \part{b}
-    Transfer scanning cavity frequency lock. \part{c} Two-state second harmonic
-    generation (\SHG). [Drawings by O. Grasdijk]}
+    \caption[UV laser system.]{UV laser system (see text). \part{a} Cs reference
+    laser. \part{b} Transfer scanning cavity frequency lock. \part{c} Two-state
+    second harmonic generation (\SHG). [Drawings by O. Grasdijk]}
     \label{lasers}
 \end{figure*}
 
@@ -426,10 +427,11 @@ based on the Red Pitaya STEMlab \FPGA\ board.
         \small
         \input{figs/tikz/micro.tex}
     }
-    \caption{The principle behing frequency-agile rotational cooling microwave
-    generation. The frequencies are shown assuming the $\times1,2$ multipliers
-    for a horn output of 13.4 and 26.8~GHz. For 40.1~GHz, the system is adjusted
-    to generate approx.\ 10~GHz (pre-multiplier).} \label{micro}
+    \caption[Frequency-agile microwave generation.]{The principle behing
+    frequency-agile rotational cooling microwave generation. The frequencies are
+    shown assuming the $\times1,2$ multipliers for a horn output of 13.4 and
+    26.8~GHz. For 40.1~GHz, the system is adjusted to generate approx.\ 10~GHz
+    (pre-multiplier).} \label{micro}
 \end{figure}
 
 \subsection{Rotational cooling}
@@ -498,27 +500,58 @@ transducer before being led to the horn. The horns were custom engineered by
 Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam
 energy onto the molecular beam.
 
-\subsection{State preparation 1}
+\subsection{State preparation A}
 
-The design for the first state preparation region is currently under way.
+The SPA chamber exists to transfer molecular population from the $\ket{J=0,F=0}$
+state populated during rotational cooling to the
+$\ket{J=2,m_J=0,I_\text{tot}=0}$ state that can be efficiently focused by the
+electrostatic lens. \cite[ch.~7]{timgren2023thesis}. This is done by applying
+the adiabatic passage technique \cite{treacy1968adiabatic} twice in succession.
+First, the molecules are transferred from $J=0$ to $J=1$, and then from $J=1$ to
+$J=2$. The molecular beam passes through the middle of two ring-shaped
+electrodes applying the correctly spatially varying electric field along the
+beam axis. The two transitions are driven with two microwave beams that are
+offset by approx.\ 3~cm along the beam direction.
 
 \subsection{Electrostatic lens}
 
-\todoit{Constructed by Oskari Timgren. TBD.}
+The lens \cite[ch.~8]{timgren2023thesis} consists of four rod-shaped electrodes
+arranged in a quadrupole configuration. The rods are manufactured out of
+316-alloy stainless steel with circular cross-section and rounded ends to avoid
+high electric field concentration that would result in sparking. The support
+rods holding the electrodes are machined out of MACOR ceramic. The
+electrodes--rod assembly is held in place by two stainless rings. The pair of
+electrodes diagonally opposite each other have the same voltage of magnitude
+30~kV; the two pairs have opposite polarity. The vacuum chamber is a 16" OD,
+24.6" long cylinder made of 1/8" thick stainless steel, with ISO400F flanges at
+each end and a sequence of smaller ports for electrical feedthroughs, pumps,
+windows, etc.
 
-\subsection{State preparation 2}
+\subsection{State preparation B}
 
-The second state preparation region has not yet been designed.
+The goals of the SPB section \cite[ch.~9]{timgren2023thesis} is to drive
+molecules from the lens state to a state in the $J=1$ manifold that is suitable
+for the Schiff moment measurement.  Much like the SPA region, SPB utilizes
+adiabatic passage with a spatially-varying electric field, and circularly
+polarized microwaves to select the desired $m_J$ state. This time, only a single
+adiabatic passage transition is needed since $|\Delta J|=1$, and it is again
+driven by a Gaussian microwave beam. The beam passes through a pair of
+ring-shaped electrodes, while the molecular beam goes between the two rings in
+contrast to the SPA region.
 
 \subsection{Interaction region}
 
-\todoit{Constructed at UMass. TBD.}
+The interaction region is a glass tube (26~cm OD, 350~cm length, wall thickness
+10~mm) terminated with custom flanges at each end serving as the vacuum chamber
+for the beamline. Inside the chamber, there are two parallel plate electrodes
+separated by exactly 2~cm and held in place using a series of MACOR rings and
+rods. The vacuum chamber is enclosed in the magnetic field control system (see
+section \ref{mfc_chapter}), consisting of the magnetic shield and the shim
+coils.
 
-The coil setup is currently being designed. For a thorough uncertainty analysis,
-the system will need the ability to apply small $B_z$ field in interaction
-region, as well as small $B_y$ and $B_x$ and small gradients, such as $\d B_z/\d
-x$.
+\subsection{State preparation C and readout}
 
-\subsection{State projection and readout}
-
-To be designed.
+The SPC and readout chambers are currently under construction. Their purpose is
+to transfer the population from the superposition of hyperfine states into two
+distinct rotational manifolds, and from there, read out using laser-induced
+fluorescence.

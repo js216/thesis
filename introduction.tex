@@ -554,7 +554,7 @@ $|\delta_T|\ll|D_\text{sp}\mathcal{E}|$.
     \hfill
     \def\svgwidth{.7\columnwidth}
     \input{figs/matplotlib/polarize.pdf_tex}
-    \caption{\part{a} Level diagram for the two-state atom polarization model. \part{b} Distortion of atomic shape due to polarization. The black dot indicates the nucleus / origin of coordinates. The wavefunctions shown are, to within normalization, the hydrogenic $\psi_{\text{s}}\propto e^{-r}$ and $\psi_{\text{p}}\propto re^{-r/2}\cos\theta$, shown in arbitrary radial units and phase but otherwise to scale. Contours placed at $\psi=0.015$; negative wavefunction indicated by dashed contour. The states on the right are mixed by $\eta=0.5$ for emphasis; see text for physical estimates of $\eta$.}
+    \caption[Atomic energy levels and shape due to polarization.]{\part{a} Level diagram for the two-state atom polarization model. \part{b} Distortion of atomic shape due to polarization. The black dot indicates the nucleus / origin of coordinates. The wavefunctions shown are, to within normalization, the hydrogenic $\psi_{\text{s}}\propto e^{-r}$ and $\psi_{\text{p}}\propto re^{-r/2}\cos\theta$, shown in arbitrary radial units and phase but otherwise to scale. Contours placed at $\psi=0.015$; negative wavefunction indicated by dashed contour. The states on the right are mixed by $\eta=0.5$ for emphasis; see text for physical estimates of $\eta$.}
     \label{polarize}
 \end{figure}
 
@@ -860,7 +860,7 @@ infinity,  is then representative of $\nabla\delta(\vec r)$.
 \begin{figure}
    \centering
     \input{figs/tikz/graddelta.tex}
-   \caption{\part{a} Delta function as the limit of a Gaussian. \part{b} Gradient of a Gaussian as a representation of $\nabla\delta(r)$. \part{c} Constant field inside the nucleus gives rise to a truncated linear potential, which has a similar shape to the derivative of the Gaussian and in the appropriate limit becomes $\nabla\delta(r)$.}
+    \caption[Schiff moment as electric field inside a nucleus.]{\part{a} Delta function as the limit of a Gaussian. \part{b} Gradient of a Gaussian as a representation of $\nabla\delta(r)$. \part{c} Constant field inside the nucleus gives rise to a truncated linear potential, which has a similar shape to the derivative of the Gaussian and in the appropriate limit becomes $\nabla\delta(r)$.}
    \label{graddelta}
 \end{figure}
 
@@ -959,11 +959,11 @@ inversion symmetry and a nonzero expectation results.
         \footnotesize
         \input{figs/matplotlib/polarizeTlF.pdf_tex}
     }
-    \caption{Degree of polarization of TlF molecules in an external field. The
-    legends give the labels $(J,m_J)$. Note that $J$ is not a good quantum
-    number at high fields and is to be understood in an asymptotic sense. The
-    calculation that produces this figure is presented in
-    Appendix~\ref{TlF_hamiltonian_python}.}
+    \caption[Polarization of TlF molecules in external field.]{Degree of
+    polarization of TlF molecules in an external field. The legends give the
+    labels $(J,m_J)$. Note that $J$ is not a good quantum number at high fields
+    and is to be understood in an asymptotic sense. The calculation that
+    produces this figure is presented in Appendix~\ref{TlF_hamiltonian_python}.}
     \label{polarizeTlF}
 \end{figure}
 
@@ -1122,7 +1122,14 @@ optimizing the field strength.
         \footnotesize
         \input{figs/matplotlib/SOF.pdf_tex}
     }
-    \caption{Transition probability as a function of detuning $\delta$, averaged over the effusive-source speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$\%\ narrower \FWHM\ for \SOF. \part{b} Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with the same $L=10l$.}
+    \caption[Separated oscillatory fields vs Rabi oscillation.]{Transition
+    probability as a function of detuning $\delta$, averaged over the
+    effusive-source speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession
+    length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$,
+    $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with
+    the same $L$. Notice the $\approx40$\%\ narrower \FWHM\ for \SOF. \part{b}
+    Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with
+    the same $L=10l$.}
     \label{SOFprob}
 \end{figure}
 
@@ -1248,12 +1255,20 @@ as displayed in Fig.~\ref{SOF2}a. For the parameter values in that figure, the
 slope of $S_\text{\SOF}$ around zero detuning is approx.\ 0.094/Hz.
 
 \begin{figure}
-    \def\svgwidth{\columnwidth}
-    \parbox[c][4cm]{\columnwidth}{%
+    \def\svgwidth{\textwidth}
+    \parbox[c][8cm]{\textwidth}{%
         \footnotesize
         \input{figs/matplotlib/SOF2.pdf_tex}
         }
-    \caption{Buffer-gas \SOF\ signal as a function of detuning $\Delta f$ in linear units, averaged over a Gaussian speed distribution $\exp[{-(v-\overline v)^2/2\alpha^2}]$ with $\overline v=200$~m/s and $\alpha=10$~m/s, for a 3~m separation between the oscillatory coils, and field strength $b=9.975\,\pi\alpha/2l$. Observe the effect of the finite coil length: $l=1$~cm (thick gray) and $l=10$~cm (thin black). \part{a} Difference in the averaged probabilities between $\phi=\pi/2$ and $\phi=-\pi/2$. \part{b} Averaged transition probability for $\phi=0$ (detail).}
+    \caption[\SOF\ signal averaged over a Gaussian distribution.]{Buffer-gas
+    \SOF\ signal as a function of detuning $\Delta f$ in linear units, averaged
+    over a Gaussian speed distribution $\exp[{-(v-\overline v)^2/2\alpha^2}]$
+    with $\overline v=200$~m/s and $\alpha=10$~m/s, for a 3~m separation between
+    the oscillatory coils, and field strength $b=9.975\,\pi\alpha/2l$. Observe
+    the effect of the finite coil length: $l=1$~cm (thick gray) and $l=10$~cm
+    (thin black). \part{a} Difference in the averaged probabilities between
+    $\phi=\pi/2$ and $\phi=-\pi/2$. \part{b} Averaged transition probability for
+    $\phi=0$ (detail).}
     \label{SOF2}
 \end{figure}
 
@@ -1471,9 +1486,15 @@ the $c_3$ term to zero, the $c_4$ term survives
 proportional to $T^1(\vec I_1)\cdot T^1(\vec I_2)$.
 
 \begin{figure}
-\input{figs/tikz/diagram.tex}
-\caption{First three rotational levels in the TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the $(2F+1)$-fold degeneracy, corresponding to the quantum numbers $m_F=-F,\dots,0,\dots,F$. The numbers left of the braces are the $F_1$ labels.}
-\label{diagram}
+    \centering
+    \input{figs/tikz/diagram.tex}
+    \caption[Rotational spectrum of TlF.]{First three rotational levels in the
+    TlF ground state $X^1\Sigma^+$ zero-field energy levels. Rotational energies
+    $BJ(J+1)$ are subtracted from the energies indicated on the axis. Note the
+    $(2F+1)$-fold degeneracy, corresponding to the quantum numbers
+    $m_F=-F,\dots,0,\dots,F$. The numbers left of the braces are the $F_1$
+    labels.}
+    \label{diagram}
 \end{figure}
 
 For most of the terms in the effective Hamiltonian, the matrix elements are most
@@ -1879,7 +1900,7 @@ rate.
             \bottomrule
         \end{tabu}}
         \caption{Summary of results and experimental parameters of some of the
-        previous \gls{EDM}-related experiments. \todo{Add more eEDM experiments.}}
+        previous \gls{EDM}-related experiments.}
         \label{previouswork}
 \end{table*}
 
@@ -1925,7 +1946,7 @@ the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported
 $d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and
 systematic uncertainties, respectively. \cite{commins1994improved} The
 experiment was subsequently significantly upgraded, improving the precision to
-$|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new} \todo{Describe ACME.}
+$|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new}
 
 A measurement on ultracold neutrons stored in a trap gave the result
 $|d_\text{n}|<2.9\times10^{-26}e\cm$. Since the particle were kept in a trap,
@@ -1946,12 +1967,14 @@ taken to limit the proton \gls{EDM}\ below $2.0\times10^{-25}\,e\cm$, a tighter
 limit than the old TlF experiments we able to provide.
 \cite{griffith2009improved,graner2016reduced}
 
-\begin{figure*}
+\begin{sidewaysfigure}
     \centering\small
     \input{figs/tikz/conceptdiagram.tex}
-    \caption{Conceptual flow chart of the critical steps in \CENTREX, indicating the applied fields (below) and the quantum states (above).}
+    \caption[Conceptual flow chart of the \CENTREX\ experiment]{Conceptual flow
+    chart of the critical steps in \CENTREX, indicating the applied fields
+    (below) and the quantum states (above).}
     \label{conceptdiagram}
-\end{figure*}
+\end{sidewaysfigure}
 
 \subsection{Overview of the \CENTREX\ scheme}
 
@@ -2040,7 +2063,7 @@ effectively infinite. \cite{shore2009simple}
     \end{minipage}
     \hfill
     \mbox{}
-    \caption{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$. \todo{In your thesis you have a figure for rotational cooling with the percentages in each state below them; however I've checked the numbers and they don't match the description. In your thesis it says the percentages are the population in each rotational state assuming 8K, but if that's true J=0 should have around 5\%, not 31\%}}
+    \caption[Proposed rotational cooling scheme.]{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$.}
     \label{scheme}
 \end{figure*}
 
@@ -2103,7 +2126,7 @@ preparation region.
 
 \paragraph{Interaction region}
 
-\begin{table*}
+\begin{sidewaystable}
     \small
     \makebox[\textwidth][c]{%
         \begin{tabu} to \textwidth {@{}r @{\hspace{3pt}} ccc cc ccc ccc ccc@{}}
@@ -2130,15 +2153,22 @@ preparation region.
                                                                & h & $+$ & $+$ & $+$ & g & $-$ & $-$ & $+$ &                       &                       &                       \\
         \bottomrule
     \end{tabu}}
-    \caption{All non-degenerate pairs of $|m_J|=1$ states in the asymptotic
-    $J=1$ manifold that do not involve the states $\ket{\text{i}}$ and
-    $\ket{\text{l}}$. The quantum numbers given are that of the largest
-    decoupled-basis component; states i and l have two such components with
-    equal amplitude, making it hard to say what spin is flipped. The labels
-    $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}. The column
-    labelled $S_\text{\gls{SMT}}$ gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity $S^z_m$ gives the energy difference between the neighbouring resonances, given per unit external residual $B_z$, and corresponds to flipping the internal molecular magnetic field. Due to degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$ and slopes $df_0/dE_z$ at 30~kV/cm. All quantities (except quantum numbers) are given without their sign.}
+    \caption[Nuclear transitions in TlF.]{All non-degenerate pairs of $|m_J|=1$
+    states in the asymptotic $J=1$ manifold that do not involve the states
+    $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of
+    the largest decoupled-basis component; states i and l have two such
+    components with equal amplitude, making it hard to say what spin is flipped.
+    The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}. The
+    column labelled $S_\text{\gls{SMT}}$ gives the sensitivity to the Schiff
+    moment (eqn~\ref{ssmt}). The quantity $S^z_m$ gives the energy difference
+    between the neighbouring resonances, given per unit external residual $B_z$,
+    and corresponds to flipping the internal molecular magnetic field. Due to
+    degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and
+    $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$
+    and slopes $df_0/dE_z$ at 30~kV/cm. All quantities (except quantum numbers)
+    are given without their sign.}
     \label{statepairs}
-\end{table*}
+\end{sidewaystable}
 
 
 A high external electric field polarizes the molecules, thus enabling the linear

@@ -1,4 +1,5 @@
 \section{Magnetic Field Control}
+\label{mfc_chapter}
 
 The magnetic field control system consists of the magnetic shield, the set of
 shim coils, and the internal and external magnetometers (see
@@ -20,8 +21,8 @@ work requiring higher performance.
 
 \begin{figure}[b]
   \includegraphics[width=\textwidth]{figs/todo/simple_diagram.png}
-   \caption{Some dimensions (in inches) of magnetic shield layers, together with
-   axes used in this chapter.}
+    \caption[Dimensions of the magnetic shield.]{Some dimensions (in inches) of
+    magnetic shield layers, together with axes used in this chapter.}
   \label{simple_diagram}
 \end{figure}
 
@@ -130,11 +131,11 @@ of small time-varying field perturbations).
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/numlayers.png}
-   \caption{Transverse (vertical) dynamic shielding at a low frequency (around
-   10~Hz). \part{a} Along the central axis of the shield, as a function of
-   position. \part{b} The average shielding factor in the central 1~m of the
-   shield fits the simple linear relationship assuming $\mu=67,300$, $2R=16$",
-   and each layer is 18~$\mu$m thick.}
+    \caption[Dynamic shielding factor.]{Transverse (vertical) dynamic shielding
+    at a low frequency (around 10~Hz). \part{a} Along the central axis of the
+    shield, as a function of position. \part{b} The average shielding factor in
+    the central 1~m of the shield fits the simple linear relationship assuming
+    $\mu=67,300$, $2R=16$", and each layer is 18~$\mu$m thick.}
   \label{numlayers}
 \end{figure}
 
@@ -418,16 +419,17 @@ paramagnetic theory.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/beforeafter.png}
-   \caption{Magnetic fields along the central axis of a single layer cylindrical
-   magnetic shield, constructed as a 14"-diameter PVC tube wrapped with 12 turns
-   of 22~$\mu$m-thick metglas ($\mu\approx70,000$). Length of shielded region is
-   approx.\ 2.5~m. The dotted lines indicate the position of the overlaps
-   between the eight circumferential wraps of metglas; dashed lines represent
-   the end of the metglas segments; solid lines show end of
-   plastic tube. The center of the shielded region is the dotted line just right
-   of 200~cm.\part{a} Before degaussing (difficult to predict theoretically).
-   \part{b} After degaussing. Simple model (eqn.~\ref{singlelayer}) would
-   predict 0.2~mG and 4~mG for the transverse and longitudinal components.}
+    \caption[Residual fields before and after degaussing.]{Magnetic fields along
+    the central axis of a single layer cylindrical magnetic shield, constructed
+    as a 14"-diameter PVC tube wrapped with 12 turns of 22~$\mu$m-thick metglas
+    ($\mu\approx70,000$). Length of shielded region is approx.\ 2.5~m. The
+    dotted lines indicate the position of the overlaps between the eight
+    circumferential wraps of metglas; dashed lines represent the end of the
+    metglas segments; solid lines show end of plastic tube. The center of the
+    shielded region is the dotted line just right of 200~cm.\part{a} Before
+    degaussing (difficult to predict theoretically).  \part{b} After degaussing.
+    Simple model (eqn.~\ref{singlelayer}) would predict 0.2~mG and 4~mG for the
+    transverse and longitudinal components.}
   \label{beforeafter}
 \end{figure}
 
@@ -445,19 +447,20 @@ calls the resulting state of minimized internal energy a `demagnetized state'.
 \begin{figure}
   \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton.pdf}
   \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton_offs.pdf}
-    \caption{Magnetization curves, found by numerically integrating
-    eqn~\ref{jiles_atherton_eqn} with the parameters given in the figure.
-    \part{Left} Degaussing: naive picture, an oscillating applied field $H_0$
-    with no offset decreases till the material spirals into the origin of the
-    $M$--$H$ or $B$--$H$ space (demagnetization). All the \emph{minor loops} are
-    centered around the origin. See end of section \ref{degaussing_hysteresis}
-    regarding the negative slope. \part{Right} Degaussing means applying the
-    oscillating field with decaying amplitude in the presence of an offset (lab)
-    field. As the amplitude of the oscillations goes to zero, the material
-    settles on a point on the \emph{anhysteretic curve} (dashed line). Notice
-    how the anhysteretic curve is much steeper than the minor loops, implying a
-    greater effective permeability. See also Fig.~\ref{hysteresis} for curves
-    measured on metglas.}
+    \caption[Magnetization curves from Jiles--Atherton model.]{Magnetization
+    curves, found by numerically integrating eqn~\ref{jiles_atherton_eqn} with
+    the parameters given in the figure.  \part{Left} Degaussing: naive picture,
+    an oscillating applied field $H_0$ with no offset decreases till the
+    material spirals into the origin of the $M$--$H$ or $B$--$H$ space
+    (demagnetization). All the \emph{minor loops} are centered around the
+    origin. See end of section \ref{degaussing_hysteresis} regarding the
+    negative slope. \part{Right} Degaussing means applying the oscillating field
+    with decaying amplitude in the presence of an offset (lab) field. As the
+    amplitude of the oscillations goes to zero, the material settles on a point
+    on the \emph{anhysteretic curve} (dashed line). Notice how the anhysteretic
+    curve is much steeper than the minor loops, implying a greater effective
+    permeability. See also Fig.~\ref{hysteresis} for curves measured on
+    metglas.}
     \label{degaussing_theory}
 \end{figure}
 
@@ -849,9 +852,9 @@ $H=0$.
 \begin{figure}
    \centering
   \includegraphics[width=0.5\textwidth]{figs/mathematica/weiss.pdf}
-  \caption{Magnetization of an annealed ferromagnet as a function of the applied
-   field $H$, as found by solving eqn~\ref{weiss} for interdomain coupling
-   parameter $\alpha=0,1,3$.}
+    \caption[Ferromagnet magnetization vs applied field.]{Magnetization of an
+    annealed ferromagnet as a function of the applied field $H$, as found by
+    solving eqn~\ref{weiss} for interdomain coupling parameter $\alpha=0,1,3$.}
   \label{weiss_plot}
 \end{figure}
 
@@ -1167,14 +1170,14 @@ using a set of seven aluminum semi-circular plates.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/concentric.png}
-  \caption{Cross-sectional view of the magnetic shield. Dimensions are in inches
-   [mm].}
+    \caption[Magnetic shield cross section view.]{Cross-sectional view of the
+    magnetic shield. Dimensions are in inches [mm].}
   \label{concentric}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/longitudinal.png}
-  \caption[Longitudinal cross-section of the magnetic shield]{Longitudinal
+  \caption[Longitudinal cross-section of the magnetic shield.]{Longitudinal
   cross-section of the magnetic shield, showing the unequal lengths of the
   layers.}
   \label{longitudinal}
@@ -1237,9 +1240,9 @@ the solenoidal coil.
       1" sch.\ 40  & 120    & 90 \\
       \bottomrule
     \end{tabu}}
-    \caption{The four layers of the magnetic shield. The spacers are ordered in
-    120" lengths, but are cut to size and inserted to span the entire length of
-    the shield.}
+    \caption[Layers of the magnetic shield.]{The four layers of the magnetic
+    shield. The spacers are ordered in 120" lengths, but are cut to size and
+    inserted to span the entire length of the shield.}
     \label{shieldlayers}
 \end{table*}
 
@@ -1313,9 +1316,10 @@ weights to achieve satisfactory results.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/grooves.png}
-  \caption{\part{a} Milling machine for cutting longitudinal grooves. \part{b}
-  Wires taped inside grooves while silicone hardens.}
-  \label{grooves}
+    \caption[Making shim coils.]{\part{a} Milling machine for cutting
+    longitudinal grooves. \part{b} Wires taped inside grooves while silicone
+    hardens.}
+    \label{grooves}
 \end{figure}
 
 With 80 different pair of wires (twisted into twisted pairs using a hand
@@ -1362,9 +1366,10 @@ tape.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/support.png}
-  \caption{\part{a} Support structure during assembly of the shield layers. \part{b}
-  Detail of aluminum support plates, with nylon strips to distribute pressure
-   against the outer (metglas) layer.}
+    \caption[Magnetic shield support structure.]{\part{a} Support structure
+    during assembly of the shield layers. \part{b} Detail of aluminum support
+    plates, with nylon strips to distribute pressure against the outer (metglas)
+    layer.}
   \label{support}
 \end{figure}
 
@@ -1412,9 +1417,9 @@ board containing an \ADC\ (AD4115).
 
 \begin{figure}
    \includegraphics[width=\textwidth]{figs/todo/pulleys.jpg}
-  \caption{Stepper motor and encoder, connected across pulleys using rope, to
-   drive the magnetometer carriage inside a $4"\times4"$ aluminium rectangular
-   tube.}
+    \caption[Magnetometer motion system.]{Stepper motor and encoder, connected
+    across pulleys using rope, to drive the magnetometer carriage inside a
+    $4"\times4"$ aluminium rectangular tube.}
   \label{pulleys}
 \end{figure}
 
@@ -1457,17 +1462,18 @@ the offset calibration, consisting of all the aforementioned factors.
 \begin{figure}
    \centering
    \includegraphics[width=.75\textwidth]{figs/todo/offset_calibration.png}
-   \caption{Electronic offset of the magnetometer as a function of position along
-   the length of the center of the magnetic shield. Only the two transverse
-   dimensions are shown. \part{Top} The $B_x$ component of the magnetic field
-   measured with the sensor in its usual orientation ($B_{x,\uparrow}$) compared
-   to the sensor rotated upside down ($B_{x,\downarrow}$). \part{Middle}
-   Subtracting the two curves in the upper plot cancels the electronic offset
-   that is presumed constant during the time it takes to measure the two traces.
-   \part{Bottom} The sum of the two traces extracts the electronic offset only,
-   since the actual field seen by the sensor cancels out to the extent that the
-   sensor was rotated upside down precisely, assuming the field has not changed
-   significantly during the sensor reversal and re-measurement.}
+    \caption[Magnetometer offset vs position in shield.]{Electronic offset of
+    the magnetometer as a function of position along the length of the center of
+    the magnetic shield. Only the two transverse dimensions are shown.
+    \part{Top} The $B_x$ component of the magnetic field measured with the
+    sensor in its usual orientation ($B_{x,\uparrow}$) compared to the sensor
+    rotated upside down ($B_{x,\downarrow}$). \part{Middle} Subtracting the two
+    curves in the upper plot cancels the electronic offset that is presumed
+    constant during the time it takes to measure the two traces.  \part{Bottom}
+    The sum of the two traces extracts the electronic offset only, since the
+    actual field seen by the sensor cancels out to the extent that the sensor
+    was rotated upside down precisely, assuming the field has not changed
+    significantly during the sensor reversal and re-measurement.}
    \label{offsetcal}
 \end{figure}
 
@@ -1511,10 +1517,11 @@ magnetic field at two different points in space is not correlated.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/offaxis.png}
-   \caption{Field on-axis ($B_\text{in}$) and off-axis ($B_\text{out}$) at a
-   fixed point inside the magnetic shield. The off-axis sensor is located
-   directly underneath the on-axis sensor. Before plotting, the data is
-   convoluted with a window function of the length stated in the figure.}
+    \caption[On- and off-axis field inside the magnetic shield.]{Field on-axis
+    ($B_\text{in}$) and off-axis ($B_\text{out}$) at a fixed point inside the
+    magnetic shield. The off-axis sensor is located directly underneath the
+    on-axis sensor. Before plotting, the data is convoluted with a window
+    function of the length stated in the figure.}
   \label{on_off_axis}
 \end{figure}
 
@@ -1538,9 +1545,9 @@ measurements around (but of course not inside) that region.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/onoff.png}
-   \caption{Field on-axis (upper plot) and off-axis (lower plot) scanned along
-   the length of the magnetic shield. The off-axis sensor is located
-   directly underneath the on-axis sensor.}
+    \caption[On- and off-axis field vs position.]{Field on-axis (upper plot) and
+    off-axis (lower plot) scanned along the length of the magnetic shield. The
+    off-axis sensor is located directly underneath the on-axis sensor.}
   \label{onoff}
 \end{figure}
 
@@ -1561,16 +1568,17 @@ shield.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/degaussing_system.png}
-  \caption{Simplified diagram of the degaussing circuit. The four degaussing
-   coils are switched on sequentially during the degaussing procedure, but never
-   at the same time.}
+    \caption[Degaussing circuit.]{Simplified diagram of the degaussing circuit.
+    The four degaussing coils are switched on sequentially during the degaussing
+    procedure, but never at the same time.}
   \label{degaussing_system}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/impedance.png}
-  \caption{Real and imaginary parts of the impedance of the degaussing coils
-   wrapped around the innermost two layers of the shield.}
+    \caption[Impedance of degaussing coils.]{Real and imaginary parts of the
+    impedance of the degaussing coils wrapped around the innermost two layers of
+    the shield.}
   \label{impedance}
 \end{figure}
 
@@ -1600,8 +1608,9 @@ $RC$ filter and buffered by an opamp follower (AD8675ARZ-REEL7).
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/repeatability.png}
-  \caption{The repeatability of the measurement, shown as the difference between
-  two measurements, one taken immediately after the other.}
+    \caption[Magnetic field measurement repeatability.]{The repeatability of the
+    measurement, shown as the difference between two measurements, one taken
+    immediately after the other.}
   \label{repeatability}
 \end{figure}
 
@@ -1616,9 +1625,10 @@ impacts the outermost layer.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/solenoid.png}
-  \caption{The axial component of the residual field after degaussing, with shim
-   coils on (solid line) and off (dashed line). \part{a} $B_z$-cancelling
-   solenoid turned off; \part{b} solenoid supplied with a constant current.}
+    \caption[Residual field vs axial solenoid current.]{The axial component of
+    the residual field after degaussing, with shim coils on (solid line) and off
+    (dashed line). \part{a} $B_z$-cancelling solenoid turned off; \part{b}
+    solenoid supplied with a constant current.}
   \label{solenoid}
 \end{figure}
 
@@ -1658,11 +1668,11 @@ the mu-metal layer.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/deg_wfm.png}
-   \caption{Degaussing waveform. The first three pulses, applied to the metglas
-   layers, are identical; the last pulse is different, since it is applied to
-   the mu-metal layer. The two detail plots on the right show the beginning of
-   the first and last pulse, respectively, and the titles show the frequency and
-   exponential decay time constant.}
+    \caption[Degaussing waveform.]{Degaussing waveform. The first three pulses,
+    applied to the metglas layers, are identical; the last pulse is different,
+    since it is applied to the mu-metal layer. The two detail plots on the right
+    show the beginning of the first and last pulse, respectively, and the titles
+    show the frequency and exponential decay time constant.}
   \label{deg_wfm}
 \end{figure}
 
@@ -1686,14 +1696,14 @@ this correlation, which may help optimize the degaussing procedure.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/metglas_loops.png}
-  \caption{Hysteresis loops observed while degaussing a metglas layer. The plots
-   are all on the same  scale in the $B$--$H$ plane. The $\mu$ values stated on
-   the plots are the slopes of the red dashed lines passing through the loops
-   and approximate the permeability relevant for static shielding of a degaussed
-   shield (top two plots) and that for dynamic shielding for perturbations of a
-   certain amplitude (bottom two plots). Note that the scale of $B,H,\mu$ and
-   offset is arbitrary but the same for all four plots. Compare with
-   Fig.~\ref{degaussing_theory}.}
+    \caption[Hysteresis loops in metglas.]{Hysteresis loops observed while
+    degaussing a metglas layer. The plots are all on the same  scale in the
+    $B$--$H$ plane. The $\mu$ values stated on the plots are the slopes of the
+    red dashed lines passing through the loops and approximate the permeability
+    relevant for static shielding of a degaussed shield (top two plots) and that
+    for dynamic shielding for perturbations of a certain amplitude (bottom two
+    plots). Note that the scale of $B,H,\mu$ and offset is arbitrary but the
+    same for all four plots. Compare with Fig.~\ref{degaussing_theory}.}
   \label{hysteresis}
 \end{figure}
 
@@ -1788,8 +1798,9 @@ power supply to cancel (some of) the Earth's magnetic field.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/calibration.png}
-   \caption{Calibration curve for the 8th vertical saddle coil pair (coil
-   dimensions, and other details, are given in section \ref{shim_coil_section}).}
+    \caption[Shim coil calibration curve example.]{Calibration curve for the 8th
+    vertical saddle coil pair (coil dimensions, and other details, are given in
+    section \ref{shim_coil_section}).}
   \label{calibration}
 \end{figure}
 
@@ -1826,13 +1837,14 @@ density would be significantly larger due to $1/f$ noise.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/charging.png}
-   \caption{Effect of charging current on shield magnetization. \part{a}
-   Electric current during for each direction. It is not clear why the noise for
-   positive direction is much larger, but it is insignificant compared to the
-   current magnitude. \part{b} The `charging magnetization' is non-zero for the
-   vertical $B_y$ component of the field. \part{c} $B_y$ is higher than before
-   flowing the current in the positive direction. \part{d} $B_y$ is lower than
-   before flowign the current in the negative direction.}
+    \caption[Effect of charging current on shield magnetization.]{Effect of
+    charging current on shield magnetization. \part{a} Electric current during
+    for each direction. It is not clear why the noise for positive direction is
+    much larger, but it is insignificant compared to the current magnitude.
+    \part{b} The `charging magnetization' is non-zero for the vertical $B_y$
+    component of the field. \part{c} $B_y$ is higher than before flowing the
+    current in the positive direction. \part{d} $B_y$ is lower than before
+    flowing the current in the negative direction.}
   \label{charging}
 \end{figure}
 
@@ -1914,9 +1926,10 @@ measurement of the fields inside after shimming.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/shimmed.png}
-   \caption{The magnetic field \part{a} before shimming, \part{b} immediately
-   after shimming, and \part{c} three weeks later.}
-  \label{shimmed}
+    \caption[Magnetic field development after shimming.]{The magnetic field
+    \part{a} before shimming, \part{b} immediately after shimming, and \part{c}
+    three weeks later.}
+    \label{shimmed}
 \end{figure}
 
 Unless otherwise noted, all measurements have been taken along the axis of
@@ -1941,8 +1954,9 @@ shield, or at any other point inside the shield except on-axis.
 \begin{figure}
    \centering
    \includegraphics[width=.75\textwidth]{figs/todo/threeweeks.png}
-   \caption{Average and \RMS\ magnetic field components in the central 2.5~m of the shield
-   over the course of three weeks.}
+    \caption[Average magnetic field over three weeks.]{Average and \RMS\
+    magnetic field components in the central 2.5~m of the shield over the course
+    of three weeks.}
    \label{threeweeks}
 \end{figure}
 
@@ -2073,9 +2087,10 @@ This is well below the design requirement of 50~nG/$\sqrt{\mathrm{Hz}}$ at
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
-   \caption{Magnetometer sensor noise measured inside and outside the magnetic
-   shield. The noise inside is smaller than the noise of the sensor; it should
-   be approx.\ four orders of magnitude smaller than the noise outside.}
+    \caption[Magnetometer noise.]{Magnetometer sensor noise measured inside and
+    outside the magnetic shield. The noise inside is smaller than the noise of
+    the sensor; it should be approx.\ four orders of magnitude smaller than the
+    noise outside.}
   \label{sensornoise}
 \end{figure}
 

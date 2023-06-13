@@ -49,10 +49,11 @@ to a proton \gls{EDM}\ of $10^{-26}\,e\cm$.
             $S_{\text{d}}$ &   $\ket{d}$       & detection final state                 & ? \\
         \bottomrule
     \end{tabu}%}
-    \caption{Parameters that can be reversed to check for systematics. The
-    symbol in the first column labels the shift corresponding to the reversal of
-    the given parameter; see text for a definition of these shifts. Shifts
-    listed as potentially present depend on as-of-yet unfinished apparatus. The
+    \caption[Parameters that can be reversed for systematics checks.]{Parameters
+    that can be reversed to check for systematics. The symbol in the first
+    column labels the shift corresponding to the reversal of the given
+    parameter; see text for a definition of these shifts. Shifts listed as
+    potentially present depend on as-of-yet unfinished apparatus. The
     high-voltage reversals ($S_\text{int}$ and $S_\text{quad}$) can be done
     either automatically via the \HV\ supplies, or manually by switching the
     leads.}
@@ -112,10 +113,11 @@ function.
 \begin{figure}
    \centering
    \includegraphics[width=.75\textwidth]{figs/todo/comb.pdf}
-   \caption{The frequency comb arises when averaging different segments of a
-   measured signal. Before the segments can be averaged together, they have to
-   be time shifted so they overlap; the Fourier transform of time shifting gives
-   the exponentials that sum to form the frequency comb depicted here.}
+    \caption[Frequency comb vs averaging.]{The frequency comb arises when
+    averaging different segments of a measured signal. Before the segments can
+    be averaged together, they have to be time shifted so they overlap; the
+    Fourier transform of time shifting gives the exponentials that sum to form
+    the frequency comb depicted here.}
    \label{comb}
 \end{figure}
 
@@ -204,14 +206,14 @@ Fig.~\ref{Cslope} and Table \ref{statepairs}).
         \hspace{.4cm}
         \input{figs/matplotlib/slope.pdf_tex}
     }
-    \caption{\part{a} Slope of the \NMR\ resonance frequency $f_0$ in the
-    applied electric field as a measure of the experimental sensitivity to
-    imperfections in the field reversal. The dashed lines are calculated with
-    the $c_3$ term from ref.~\cite{wilkening1984search}, whereas the solid one
-    uses the $c_3$ from eqn~\ref{newc3}. See Table \ref{statepairs} for the
-    meaning of transition labels. \part{b} Difference in transition frequency
-    between the $T$-reversed pairs of transitions, labelled by the spins that
-    get flipped.}
+    \caption[Nuclear resonance frequency vs field reversal.]{\part{a} Slope of
+    the \NMR\ resonance frequency $f_0$ in the applied electric field as a
+    measure of the experimental sensitivity to imperfections in the field
+    reversal. The dashed lines are calculated with the $c_3$ term from
+    ref.~\cite{wilkening1984search}, whereas the solid one uses the $c_3$ from
+    eqn~\ref{newc3}. See Table \ref{statepairs} for the meaning of transition
+    labels. \part{b} Difference in transition frequency between the $T$-reversed
+    pairs of transitions, labelled by the spins that get flipped.}
     \label{Cslope}
 \end{figure}
 
@@ -501,11 +503,10 @@ estimated in section \ref{shield:charging_magnetization}.
 Here we consider two possible effects due to a spatial variation in the magnetic
 field. If there is a periodic variation at the correct frequency of order
 100~kHz, this can drive transitions between the two \NMR\ states, much like the
-\RF\ coils. \todo{Derivation, numerical estimates; the need for bucking coils
-for RF coils.}
+\RF\ coils.
 
 Another way spatially varying fields can affect the measurements is via
-geometric phase effects. \todo{Derivation, numerical estimates.}
+geometric phase effects.
 
 \subsection{RF coils}
 
