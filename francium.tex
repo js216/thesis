@@ -226,11 +226,13 @@ Fig.~\ref{survival}.
 
 \subsection{Safety considerations}
 
+\subsubsection{Dose rate vs activity}
+
 If we would like $10^7$/s Fr-223 atoms emitted from the oven at approx.\ 25\%\
 extraction efficiency, then we need an actinium source with activity
 %
 \[
-   \frac{10^7\text{s}}{25\%\cdot1.38\%}=2.7~\text{GBq}=73~\text{mCi},
+   A=\frac{10^7\text{s}}{25\%\cdot1.38\%}=2.7~\text{GBq}=73~\text{mCi},
 \]
 %
 noting the 1.38\%\ branching ratio from actinium-227 to francium-223. In the
@@ -264,13 +266,16 @@ Table~\ref{radioactivity}.
          \bottomrule
       \end{tabu}}
       \caption[Unshielded dose rates for various nuclides in the decay chain of
-      Ac-227.]{Unshielded dose rates for various nuclides in the decay chain of
-      Ac-227. The 1981 and 2020 values refer to \cite{unger1982specific} and
+      Ac-227.]{Unshielded dose rates 1~m away from a source of activity
+      $A=73$~mCi for various nuclides in the decay chain of Ac-227. The 1981 and
+      2020 values refer to \cite{unger1982specific} and
       \cite{peplow2020specific}, resp., reflecting an updated calculation of the
       gamma-ray dose constants. The attenuation coefficients $\mu$ taken from
       \cite{unger1982specific}.}
       \label{radioactivity}
 \end{table*}
+
+\subsubsection{Shielding}
 
 In order to reduce the radiation below background levels, e.g.\ to 0.5~mSv/yr,
 we need a shielding factor of about 5000:
