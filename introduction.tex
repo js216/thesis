@@ -4,25 +4,27 @@
 technique to measure the nuclear Schiff moment of $^{205}\Tl$ in thallium
 fluoride as a test of physics beyond the Standard Model. In the following, I
 outline the motivation from $CP$-violation and baryon asymmetry, define the
-Schiff moment and suggest how it can be measured, review relevant features of
-the TlF molecule, present previous experiments, the measurement scheme proposed
-in this work, and the projected sensitivity increase over the state of the art.
+Schiff moment and suggest how it can be measured. After reviewing relevant
+features of the TlF molecule, I present previous experiments as well as the
+measurement scheme proposed in this work.
 
 \subsection{Motivation}
 
 Before the early 1960s, it was believed that $CP$ is a good symmetry of nature.
-Landau pointed out that that makes it impossible for fundamental particles to
-have electric dipole moments \cite{landau1957conservation}. When beginning their
-neutron \gls{EDM}\ experiment, Purcell and Ramsey were aware of this objection
-\cite{purcell1950possibility}. Indeed, were such an \gls{EDM}\ to be detected, that
-would provide clear evidence of \gls{CPV}.
+Landau pointed out that that would make it impossible for fundamental particles
+to have electric dipole moments along their spin axes
+\cite{landau1957conservation}. In a letter published in 1950, Purcell and Ramsey
+\cite{purcell1950possibility} stated they are undertaking an experiment to
+directly measure, or set a limit on, the neutron \gls{EDM} experiment. Indeed,
+were such an \gls{EDM}\ to be detected, that would provide clear evidence of
+\gls{CPV}.
 
 It has been found since that while most processes preserve $CP$, certain rare
 weak interactions violate it as observed in neutral $K$ decays at the 0.003
 level \cite{christenson1964evidence} and other systems, where it can be as high
 as 0.7 \cite[chapter 13]{PDG16}. To account for the experimental evidence, the
 flavor-changing part of the standard model quark sector includes a \gls{CPV}\
-phase in the \CKM\ quark-mixing matrix. \cite{peccei1995} This so-called
+phase in the \gls{CKM} quark-mixing matrix. \cite{peccei1995} This so-called
 Kobayashi--Maskawa mechanism, which introduced the third quark generation
 precisely to explain \gls{CPV}\ \cite{kobayashi1973cp}, agrees with all particle
 physics experiments to date.  \cite{hou2011source}
@@ -36,27 +38,45 @@ the \QCD\ Lagrangian could contain a term of the form
    \frac{g^2}{32\pi^2}G_{\mu\nu}^a\widetilde{G}^a_{\mu\nu},
 \end{equation}
 %
-where $G^a$ is the gluon field tensor. Experimental evidence from neutral
-$^{199}$Hg atoms \cite{graner2016reduced} and neutron \gls{EDM}\ experiments
-\cite{baker2006improved} suggests that the strength of this term relative to the
-usual strong interaction is limited to $|\theta|<10^{-10}$. Presently accepted
-theories cannot explain why $\theta$ should be that small; this fine-tuning
-issue is known as the strong $CP$ problem. See \cite{graham2015experimental} for
-a brief review of a few possible solutions.
+where $\theta$ is called the vacuum angle or simply the $\theta$-parameter, $g$
+is the gauge coupling parameter for the strong force, $G^a$ is the gluon field
+tensor, and $\widetilde{G}^a_{\mu\nu}=\frac12\epsilon^{mn}_{\mu\nu}G^a_{mn}$ is
+its Hodge dual \cite[eqn~2.82]{carroll2004spacetime}, defined in terms of the
+Levi-Civita tensor $\epsilon^{mn}_{\mu\nu}$. Experimental evidence from searches
+for the \gls{EDM} of neutral $^{199}$Hg atoms \cite{graner2016reduced} and
+neutron \gls{EDM}\ experiments \cite{baker2006improved} suggests that the
+strength of this term relative to the usual strong interaction is limited to
+$|\theta|<10^{-10}$. Presently accepted theories cannot explain why $\theta$
+should be that small; this fine-tuning issue is known as the strong $CP$
+problem. See \cite{graham2015experimental} for a brief review of a few possible
+solutions.
 
-At present, searches for \gls{EDM} s give the most sensitive constraints on
+At present, searches for \glspl{EDM} give the most sensitive constraints on
 flavor-diagonal \gls{CPV}. Conversely, given a particle physics model with
 \gls{CPV}\ we can predict what the expected \gls{EDM}\ of the particles is. For
-example, in the Standard Model, the \CKM\ phase can produce a lepton \gls{EDM}\
-no larger than $10^{-38}\,e\cm$. Part of the reason the \gls{EDM}\ is so
-suppressed is that it cannot appear below the four-loop level.
-\cite{pospelov1991electric} Given how small these effects are in the Standard
-Model, \gls{EDM} s thus provide nearly background-free evidence of new physics.
-In fact, the \CKM\ background would only become apparent when probing effects
-beyond the energy scale of $10^{11}\GeV$.  \cite{pospelov2005electric}
+example, in the Standard Model, the \gls{CKM} phase can produce a lepton
+\gls{EDM}\ no larger than $10^{-38}\,e\cm$. Part of the reason the electron
+\gls{EDM}\ is so suppressed is that it cannot appear below the four-loop level.
+\cite{pospelov1991electric} In comparison, the quark \gls{EDM} can be induced at
+the three-loop level \cite[sect~4.1.1]{pospelov2005electric}. For example, the
+\gls{EDM} of a down quark has been estimated as $10^{-34}\,e\cm$
+\cite[eqn~4.75]{pospelov2005electric}, and for the neutron, $10^{-32}\,e\cm$
+\cite[eqn~4.76]{pospelov2005electric}. Given how small these effects are in the
+Standard Model, \glspl{EDM} thus provide nearly background-free evidence of new
+physics.
 
-The second major motivation for searching for new physics comes from the
-\gls{BAU}. Compared to the current number density of photons in the universe
+In order to facilitate the comparison of \gls{EDM} experiments to other
+developments in moden physics, we can relate the \gls{EDM} experimental
+sensitivity to the energy scale at which new physical phenomena could be
+expected to take place. Pospelov and Ritz
+\cite[sect~4.1.3]{pospelov2005electric} estimate that at the time of their
+writing (2005), the experimental \gls{EDM} sensitivity corresponds to an energy
+scale of $10^{6}\GeV$, while the \gls{CKM} background discussed in the previous
+paragraph would only become apparent when probing effects beyond the energy
+scale of $10^{11}\GeV$.
+
+The second major motivation for searching for new \gls{CPV} physics comes from
+the \gls{BAU}. Compared to the current number density of photons in the universe
 ($n_\gamma \approx411\cm^{-3}$), the current baryon density
 ($n_\text{B}\approx2.54\cdot 10^{-7}\cm^{-3}$) is some $1.6\cdot10^{9}$ times
 smaller \cite[Table 17]{bennett2013nine}. In contrast, the antibaryon density
@@ -68,21 +88,21 @@ the ratio
 %
 \begin{equation}
 \eta =
-   \frac{n_B-n_{\bar{B}}}{n_{\gamma }}
+    \frac{n_\text{B}-n_{\bar{\text{B}}}}{n_{\gamma }}
    \approx
-   \frac{n_B}{n_{\gamma }}
+    \frac{n_\text{B}}{n_{\gamma }}
    \approx 10^{-10}.
 \end{equation}
 
 There is as of yet no commonly accepted baryogenesis mechanism, i.e.,
 explanation for how the imbalance between the number of particles and
-antiparticles---the $C$ asymmetry---came to be. In a 1967 paper, Sakharov
-hypothesized that \gls{CPV}\ is necessary to explain the present $C$ asymmetry
-\cite{sakharov1991violation} if we assume the initial conditions of the universe
-were $C$-symmetric.
+antiparticles came to be. In a 1967 paper \cite{sakharov1991violation}, Sakharov
+hypothesized that \gls{CPV}\ is necessary to explain the present
+imbalance---which he calls `$C$ asymmetry'---if we assume the initial conditions
+of the universe were $C$-symmetric.
 
 However, it is claimed that the `amount' or the `strength' of \gls{CPV}\ in the
-\CKM\ matrix is not enough to explain the extent of the current \gls{BAU}. A
+\gls{CKM} matrix is not enough to explain the extent of the current \gls{BAU}. A
 common argument to this effect compares the size of the dimensionless constants
 used to parametrize the two effects. For \gls{BAU}\ we have
 $\eta\approx10^{-10}$ as defined above, whereas for \gls{CPV}\ the constant is
@@ -99,24 +119,34 @@ as \cite[eqn~3]{hou2011source}
         (m_\text{s}^2 - m_\text{d}^2),
 \end{equation}
 %
-where $A$ is twice the area of any ``unitarity triangle'' of the \CKM\ matrix
-(see \cite[fig 12.1]{PDG16}). With quark masses from \cite[p40, ``Quark Summary
-Table'']{PDG16} and $A\approx3\cdot10^{-5}$ from
-\cite[p7]{kleinknecht2006unitarity}, we get $J\approx121\cdot 10^3\GeV^{12}$.
-The electroweak phase transition, occurring at temperature
-$T_\text{EW}\approx100\GeV$, was the latest point in the evolution of the
-universe when \gls{BAU}\ could have been generated \cite{fodor2000EW}. Comparing
-$J$ and $T_\text{EW}$, we get the desired dimensionless quantity
-$J/T_\text{EW}^{12}\approx10^{-20}$ to within factors of order unity and we see
-it is ten orders of magnitude smaller than the constant parametrizing the baryon
-asymmetry. Thus, new sources of \gls{CPV}\ are needed.
+where $A$ is twice the area of any ``unitarity triangle'' (the six possible
+triangles all have the same area) of the \gls{CKM} matrix (see \cite[fig
+12.1]{PDG16}). With quark masses from \cite[p40, ``Quark Summary Table'']{PDG16}
+and $A\approx3\cdot10^{-5}$ from \cite[p7]{kleinknecht2006unitarity}, we get
+$J\approx121\cdot 10^3\GeV^{12}$.  The electroweak phase transition, occurring
+at temperature $T_\text{EW}\approx100\GeV$, was the latest point in the
+evolution of the universe when \gls{BAU}\ could have been generated
+\cite{fodor2000EW}. Comparing $J$ and $T_\text{EW}$, we get the desired
+dimensionless quantity $J/T_\text{EW}^{12}\approx10^{-20}$ to within factors of
+order unity. It is ten orders of magnitude smaller than the constant
+parametrizing the baryon asymmetry. Thus, new sources of \gls{CPV}\ are needed.
+
+More sophisticated analyses agree with this basic conclusion. For example,
+Tranberg et al.\ \cite[eqn~20]{tranberg2010cold} calculate that in the standard
+model, the baryon asymmetry has the value
+%
+\[
+    \frac{n_\text{B}}{n_\gamma}=0.978\times(4.4\pm1.9)\times10^{-6},
+\]
+%
+which is four orders of magnitude larger than the observed asymmetry.
 
 \subsection{Schiff moment}
 
 Additional $T$-violating forces would likely give rise to a nuclear \gls{EDM},
 whether through the \gls{EDM}\ of unpaired protons or neutrons, via \gls{CPV}\
 interactions between valence nucleons and the core of the nucleus, or other
-mechanisms. \cite{safronova2018search} The \gls{EDM}\ $\vec d$ would result from
+mechanisms \cite{safronova2018search}. The \gls{EDM}\ $\vec d$ would result from
 a redistribution of nuclear charge density and would violate $T$, as follows.
 Since the nuclear spin $\vec I$ is the only preferred direction in a nucleus,
 the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under
@@ -125,11 +155,13 @@ time-reversal, the \gls{EDM}\ would stay the same but the spin would flip direct
 However, according to the Schiff theorem, an \gls{EDM}\ of a nonrelativistic
 point nucleus would not be observable outside of the atom. More precisely, the
 interaction energy of nonrelativistic point charged electric dipoles in an
-arbitrary external electrostatic potential has no term linear in the \gls{EDM}\
-\cite{schiff1963measurability}. Physically, the system rearranges itself so as
-to screen the external field completely \cite[p33]{safronova2018search}. Thus, a
-$T$-violating \gls{EDM}, if existent, would be very hard to detect
-experimentally without a mechanism to bypass Schiff's theorem.
+arbitrary external electrostatic potential has no term linear in the \gls{EDM}
+if the dipoles are a part of a bound, electrically neutral collection of
+particles \cite{schiff1963measurability}. Physically, the system rearranges
+itself so as to screen the external field completely
+\cite[p33]{safronova2018search}. Thus, a $T$-violating \gls{EDM}, if existent,
+would be very hard to detect experimentally without a mechanism to bypass
+Schiff's theorem.
 
 In the following, we work out the shielding of a nuclear \gls{EDM}\ in an atom
 with a Hamiltonian $\hat H$. In particular, this simple model does not attempt
@@ -157,7 +189,7 @@ following interactions:
     \hat H\;=\quad
     &\sum_{i=1}^Z\frac{\vec p_i^2}{2m}
         \tag{electron kinetic energy}\\
-    +\frac{1}{2}&\sum\limits_{i,j}\frac{e^2}{|\vec r_i-\vec r_k|}
+    +\frac{1}{2}&\sum\limits_{i,j}\frac{e^2}{|\vec r_i-\vec r_j|}
         \tag{electron--electron}\\
     -Ze^2&\sum_i\int\frac{\rho(\vec R)\d^3\vec R}{|\vec r_i-\vec R|}
         \tag{electron--nucleus}\\
@@ -248,7 +280,7 @@ For reasons stated in a previous paragraph, we need only consider the $\ell=1$ p
 \end{equation}
 
 Let $R_\text{N}$ be the radius at which $\rho(R_\text{N})=0$; i.e., the size of
-the nucleus. In the limit of a point-like nucleus, the second term above
+the nucleus. In the limit of a point-like nucleus ($R_\text{N}\to0$), the second term above
 vanishes since there is no nuclear charge in the region $0<R<r_i$, while for
 $r_i=0$ both terms vanish anyway. The first term---all that is left of
 $H_\text{e--n}^{\ell=1}$---gives
@@ -275,14 +307,14 @@ H_\text{dip}+H_\text{e--n}^{\ell=1}.
 \end{equation}
 %
 In the next step, we shall see how these terms fail to cause a first-order
-energy shift in a point nucleus due to Schiff screening.
+energy shift in a point nucleus, due to Schiff screening.
 
 \paragraph{Step 3: Screening in point nucleus}
 
 In this step, we show that any operator that can be written as a commutator with
 $\hat H$ will have a vanishing expectation value in any eigenstate of $\hat H$,
 and will thus cause no energy shift in the first order of perturbation theory.
-We then proceed to re-write $H_\text{\gls{CPV}}$ precisely in terms of such a
+We then proceed to re-write $H_\text{\gls{CPV}}$ in terms of precisely such a
 commutator.
 
 Let $\ket n$ be an eigenstate of the Hamiltonian $\hat H$ with energy $E_n$.
@@ -301,17 +333,51 @@ term $-e\ex{\vec R}\cdot\vec E_0$, plus the $T$-odd part of the
 electron--nucleus interaction from eqn~\ref{l1dipole}, is proportional to the
 commutator
 %
-\begin{align*}
+\begin{align}
+    \label{comm7}
     \left[\textstyle\sum_i\vec p_i,\;\hat H\right]
     =\sum_i\left[\vec p_i,\;\big(
     -Ze^2\int\frac{\dd^3\vec R}{|\vec r_i-\vec R|}
     +e\vec r_i\cdot\vec E_0
-    \big)\right],
+    \big)\right].
+\end{align}
+%
+Here we already dropped those terms from the original Hamiltonian (from Step 1,
+above) that commute with $\sum_i\vec p_i$. This is trivially the case for
+electron kinetic energy ($\propto\sum_i\vec p_i^2$) and the energy of the
+nuclear dipole moment in the external field ($\propto\ex{\vec R}\cdot\vec E_0$).
+The electron--electron interaction energy likewise commutes with $\sum_i\vec
+p_i$:
+%
+\begin{align*}
+    \sum_{i,j,k}\left[\vec p_i,|\vec r_j-\vec r_k|^{-1}\right]
+    &=
+    \sum_{i,j,k}\left[
+        [\vec p_i,\vec r_j]\frac{\partial|\vec r_j-\vec r_k|^{-1}}{\partial\vec r_j}
+        +
+        [\vec p_i,\vec r_k]\frac{\partial|\vec r_j-\vec r_k|^{-1}}{\partial\vec r_k}
+    \right]\\
+    &=-i\hbar
+    \sum_{i,j,k}\left[
+        \delta_{ij}\frac{\partial|\vec r_j-\vec r_k|^{-1}}{\partial\vec r_j}
+        +
+        \delta_{ik}\frac{\partial|\vec r_j-\vec r_k|^{-1}}{\partial\vec r_k}
+    \right]\\
+    &=-i\hbar
+    \sum_{i,j}
+    \frac{\partial}{\partial\vec r_i}
+    \left[
+        \frac1{|\vec r_i-\vec r_j|}
+        +
+        \frac1{|\vec r_j-\vec r_i|}
+    \right]=0,\\
 \end{align*}
-noting that the sum of momenta trivially commutes with the electron kinetic
-energy, the electron--electron interaction energy, and the energy of the nuclear
-dipole moment in the external field. The canonical commutation relation $[\vec
-r_i,\vec p_j]=i\hbar\delta_{ij}$ allows us to transform the above into
+%
+using the commutator identity $[A,f(B)]=[A,B]\;\d f/\d B$
+\cite[eqn~2.25]{binney2013physics}.
+
+The canonical commutation relation $[\vec
+r_i,\vec p_j]=i\hbar\delta_{ij}$ allows us to transform eqn~\ref{comm7} into
 %
 \begin{align*}
     \left[\textstyle\sum_i\vec p_i,\;\hat H\right]  
@@ -359,10 +425,10 @@ Ze^2\sum_i\ex{\vec R}\cdot\nabla_i\left(
 \right).
 \end{equation}
 %
-The $\nabla_i$ acts on the $\vec r_i$ coordinates and not on the $\vec r'$,
+The $\nabla_i$ acts on the $\vec r_i$ coordinates and not on the $\vec R$,
 killing the second \emph{integrand} (not integral!). As the integration limits
 also contains $r_i$, we have to employ Leibniz's integral rule
-\cite{flanders1973differentiation}
+\cite{flanders1973differentiation}:
 %
 \[
 \frac{d}{dx}\left(
@@ -433,7 +499,8 @@ H,\ldots]$ in the limit $R_\text{N}\to0$. To reiterate:
 \end{align*}
 \endgroup
 %
-Thus $H_\text{\gls{CPV}}$ can cause no first order energy shift.
+Thus $H_\text{\gls{CPV}}$ can cause no first order energy shift, even when an
+external $E$ field is applied to the bound neutral system.
 
 \paragraph{Step 4: Finite-size nucleus}
 
@@ -462,7 +529,8 @@ start. So, it is only the difference $\delta H$ that can give a non-zero energy
 shift, under any circumstances, and we can ignore the commutator part.
 
 As will be explained in the next step, the presence of an external electric
-field $E_0$, or a $T$-violating interaction $\delta_T$, mixes the states into
+field $E_0$, or a $T$-violating interaction $\delta_T$, mixes the states of a
+nominally $\ket{\text{s}}$ orbital into
 some superposition $\ket\psi\equiv\ket{\text{s}}+\eta\ket{\text{p}}$ of the
 electronic s and p states. We now show that when both $E_0$ and $H_{\gls{CPV}}$
 are nonzero, the system acquires an energy shift that depends on the sign of
@@ -1900,7 +1968,7 @@ rate.
             \bottomrule
         \end{tabu}}
         \caption{Summary of results and experimental parameters of some of the
-        previous \gls{EDM}-related experiments.}
+        previous related experiments.}
         \label{previouswork}
 \end{table*}
 
