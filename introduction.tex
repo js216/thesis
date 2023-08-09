@@ -534,7 +534,7 @@ nominally $\ket{\text{s}}$ orbital into
 some superposition $\ket\psi\equiv\ket{\text{s}}+\eta\ket{\text{p}}$ of the
 electronic s and p states. We now show that when both $E_0$ and $H_{\gls{CPV}}$
 are nonzero, the system acquires an energy shift that depends on the sign of
-$E_0$, and on the magnitude of the T-violating term in the Hamiltonian.
+$E_0$, and on the magnitude of the $T$-violating term in the Hamiltonian.
 Evaluating the expectation value of $\delta H$ in that superposition state, we
 find that
 %
@@ -575,7 +575,9 @@ Consider a two-level atom with the states $\ket{\text{s}}$ and $\ket{\text{p}}$
 of opposite parity (Fig.~\ref{polarize}a). The two states are separated in
 energy by $\Delta_\text{sp}$, and coupled by the dipole interaction
 $D_\text{sp}\mathcal{E}$, and an additional small coupling $\delta_T$ from new,
-$T$-violating physics. The Hamiltonian matrix is
+$T$-violating physics. (This corresponds to the matrix element from the previous
+step, $\delta_T=\bra{\text{s}}\delta H\ket{\text{p}}$, with $\delta H$ defined
+in eqn~\ref{definedeltaH}.) The Hamiltonian matrix is
 %
 \begin{equation}
     \label{polarizetoy}
@@ -618,17 +620,20 @@ the second approximate equality holds for
 $|\delta_T|\ll|D_\text{sp}\mathcal{E}|$.
 
 \begin{figure}
+    \hfill
     \input{figs/tikz/polarize.tex}
     \hfill
-    \def\svgwidth{.7\columnwidth}
+    \def\svgwidth{.5\columnwidth}
     \input{figs/matplotlib/polarize.pdf_tex}
+    \hfill\mbox{}
     \caption[Atomic energy levels and shape due to polarization.]{\part{a} Level diagram for the two-state atom polarization model. \part{b} Distortion of atomic shape due to polarization. The black dot indicates the nucleus / origin of coordinates. The wavefunctions shown are, to within normalization, the hydrogenic $\psi_{\text{s}}\propto e^{-r}$ and $\psi_{\text{p}}\propto re^{-r/2}\cos\theta$, shown in arbitrary radial units and phase but otherwise to scale. Contours placed at $\psi=0.015$; negative wavefunction indicated by dashed contour. The states on the right are mixed by $\eta=0.5$ for emphasis; see text for physical estimates of $\eta$.}
     \label{polarize}
 \end{figure}
 
 We see that placing the atom in an external field, in the absence of a
-$T$-violating term $\delta_T$, does not cause a first order energy shift. What
-does happen instead is that the states mix. The exact eigenstates are
+$T$-violating term $\delta_T$, does not cause an energy shift to first order in
+$x\propto\mathcal{E}$. What does happen instead is that the states mix. The
+exact eigenstates are
 %
 \begin{equation}
     \label{exactpsi}
@@ -645,9 +650,9 @@ with $N$ a normalizing constant. Expanding the eigenvectors $\ket{\psi_\pm}$ in
 the limit $x\ll\Delta_\text{sp}$ to first order, we obtain
 %
 \[
-\ket{\text{s}}-\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{p}}
+    \ket{\psi_+}\propto\ket{\text{s}}-\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{p}}
 \quad\text{and}\quad
-\ket{\text{p}}+\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{s}},
+\ket{\psi_-}\propto\ket{\text{p}}+\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}\ket{\text{s}},
 \]
 %
 whereas in the opposite limit ($x\gg\Delta_\text{sp}$), of course, the
@@ -655,28 +660,30 @@ eigenstates are $2^{-1/2}(\ket{\text{s}}\pm\ket{\text{p}})$.
 
 Physically, the electron cloud gets repelled by the external field, and the
 nucleus attracted towards it; the change of shape matches what we expect from
-the combined wavefunction (Fig.~\ref{polarize}b). We say that the atom has
-become polarized. To describe the extent of the polarization, define
+the combined wavefunction (Fig.~\ref{polarize}b), for the lowest energy state.
+We say that the atom has become polarized. In terms of the matrix elements of
+the dipole operator, $D_\text{sp}\equiv\bra{\text{s}}\hat d\ket{\text{p}}$, we
+can describe the extent of the polarization with the following quantity:
 %
 \[
 \mathcal{P}\equiv\frac{\text{induced dipole}}{\bra{\text{s}}\hat d\ket{\text{p}}}
 =\frac{\bra{\psi_\pm}\hat d\ket{\psi_\pm}}{D_\text{sp}}
 \xrightarrow{\text{small field}}
-2\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}
+\mp2\frac{D_\text{sp}\mathcal{E}+\delta_T}{\Delta_\text{sp}}
 ,
 \]
 %
 noting that the dipole operator $\hat d$ only has non-zero matrix elements
 ($D_\text{sp}$) between states of opposite parity. In general, for the
 eigenstates $N^{-1/2}(\ket{\text{s}}+\eta\ket{\text p})$ of the two-state
-Hamiltonian, with $N$ a normalizing constant, the polarization will be
-$2\eta/N$. See above for the exact expression of the mixing coefficient $\eta$
+Hamiltonian, with $N$ a normalizing constant, the polarization is $2\eta/N$. See
+above for the exact expression of the mixing coefficient $\eta$
 (eqn~\ref{exactpsi}), as well as the approximate forms valid in the high- and
 low-field limits.
 
 This means that either the external field, or the $T$-violating interactions,
-can both polarize the system. The small-field (alternatively, small $x$) energy
-shift can be written in $\mathcal{P}$ as
+can separately polarize the system. The small-field (alternatively, small $x$
+and small $\mathcal{P}$) energy shift can be written in $\mathcal{P}$ as
 %
 \[
     \Delta E=\frac{\mathcal P}{2}\left(D_\text{sp}\mathcal E+\delta_T\right).
@@ -697,9 +704,10 @@ $\ket{\text{s}}$ and $\ket{\text p}$, but with pure imaginary matrix element.
 \paragraph{Step 6: Matrix elements}
 
 We now evaluate the matrix elements $\delta_T=\bra{\text{s}}\delta
-H\ket{\text{p}}$. Inserting eqns~\ref{HCPV}, \ref{l1dipole}, \ref{actualcomm},
-\ref{approxcomm} and \ref{l0comm} into eqn~\ref{definedeltaH}, we can write out
-the interaction explicitly:
+H\ket{\text{p}}$, with $\delta H$ defined in eqn~\ref{definedeltaH}. Inserting
+eqns~\ref{HCPV}, \ref{l1dipole}, \ref{actualcomm}, \ref{approxcomm} and
+\ref{l0comm} into eqn~\ref{definedeltaH}, we can write out the interaction
+explicitly:
 %
 \begin{align*}
     \frac
@@ -885,30 +893,23 @@ as in eqn~\ref{angular2}.
 
 Knowing the gradient $\nabla(\psi^*_\text{s}\psi_\text{p})$ of the electron
 probability density near the nucleus, we can use eqn~\ref{angular2} to relate
-the measured energy shifts with the expected magnitude of the Schiff moment. As
-a crude approximation, we can take
+the energy shifts (expressed as $\nu$ in linear frequency units) with the
+expected magnitude of the Schiff moment. As a first approximation, we can take
+$\nabla(\psi^*_\text{s}\psi_\text{p})\approx1016/a_0^4$ as per
+ref.~\cite{coveney1983parity}, so we can reproduce eqn~26 of
+ref.~\cite{cho1991search}:
 %
 \begin{equation}
-    \label{1stenergyshiftmatelem}
-    \nabla(\psi^*_\text{s}\psi_\text{p})=
-    \frac{Z^2}{a_0^4}
-    \quad\to\quad
-    S=\frac{\nu}{3.65\cdot10^6}\frac{e\fm^3}{\Hz},
+    S=\frac{\nu}{3.65\cdot10^6}\frac{e\fm^3}{\Hz}.
 \end{equation}
 %
-using $Z=81$ for thallium. More precisely,
-$\nabla(\psi^*_\text{s}\psi_\text{p})\approx1016/a_0^4$ as per
-ref.~\cite{coveney1983parity}, so that, as in eqn~26 of
-ref.~\cite{cho1991search}, we have
+This result from the 1980s has been improved in a more recent calculation
+\cite[eqn~22]{dzuba2002electric} to give
 %
 \begin{equation}
     \label{schiffnumbers}
-    S=\frac{\nu}{5.67\cdot10^5}\frac{e\fm^3}{\Hz}.
+    S=\frac{\nu}{1.98\cdot10^6}\frac{e\fm^3}{\Hz}.
 \end{equation}
-%
-Note, however, that there is a significant uncertainty about this number. For
-instance, a more recent calculation \cite[eqn~22]{dzuba2002electric} gives the
-number in the denumerator above as $1.98\cdot10^6$.
 
 \paragraph{Step 7: Interpretation}
 
@@ -1000,7 +1001,7 @@ effects give rise to an effective interaction of form
 %
 \begin{equation}
    \label{interaction}
-    \H=-\nu\hat{\vec I}\cdot\hat{\vec n},
+    \H_{\text{eff}}=-\nu\hat{\vec I}\cdot\hat{\vec n},
 \end{equation}
 %
 where $\hbar\hat{\vec I}/2$ is the nuclear spin, and $\hat{\vec n}$ is a unit
@@ -1019,7 +1020,7 @@ molecule. Stated more correctly, the rotation of the molecule averages
 $\hat{\vec n}$ to zero, and the Schiff shift---proportional to the internal
 molecular field---vanishes. \cite{cho1989tenfold, cho1991search} However, if we
 apply an external field, the molecule becomes polarized, which destroys the
-inversion symmetry and a nonzero expectation results.
+inversion symmetry and a nonzero expectation of $H_{\text{eff}}$ results.
 
 \begin{figure}
     \def\svgwidth{\columnwidth}
@@ -1050,7 +1051,8 @@ entirely suitable for atoms, no longer applies. When the coupling
 $D_\text{sp}\mathcal{E}+\delta_T$ is no longer small compared to the level
 separation, the states get mixed with a mixing coefficient of order unity. It is
 customary to define the degree of polarization $\mathcal{P}$ of a state $\psi$
-as
+as the expectation value of the cosine of the angle $\theta$ between the
+internuclear axis and the external field:
 %
 \begin{equation}
     \label{polarizationdefinition}
@@ -1066,36 +1068,40 @@ are lower in energy are easier to polarize, while some of the higher-lying
 states can even be polarized against the direction of the applied field at some
 field magnitudes. Despite the fact that the $J=0$ states can be polarized better
 than the $J=1$, $m_J=\pm1$ ones, we prefer the latter due to their internal
-field, nearly exactly aligned with the applied field. The former states woud
-necessitate applying an external magnetic field, suffering from the motional
-magnetic field systematic (discussed in section \ref{section:systematics}).
+magnetic field, which is nearly exactly aligned with the applied electric field.
+The former states woud necessitate applying an external magnetic field,
+suffering from the motional magnetic field systematic (discussed in section
+\ref{section:systematics}).
 
 As we have seen previously, a $T$-violating interaction such as the Schiff
 moment inside a fully polarized molecule gives rise to a first order energy
 shift $h\nu$ as in eqn~\ref{schiffnumbers}. We have also seen two simple models
 of how a dipole moment $d$ inside the nucleus results in a \gls{SMT}\ of
 magnitude $S=ZdR_0^2/10$. We may thus estimate the size of an effective internal
-molecular electric field $\mathcal E_\text{int}^\text{eff}$ via the definition
+molecular electric field $\mathcal E_\text{int}^\text{eff}$ in the
+fully polarized TlF molecule via the definition
 %
 \begin{equation}
     \label{effestimate}
     \mathcal E_\text{int}^\text{eff}\equiv\frac{h\nu}{d}
-    =5.67\cdot10^5\frac{h\;\text{Hz}}{e\;\text{fm}^3}\frac{R_0^2}{10}
-    =117~\text{kV/cm}.
+    =1.98\cdot10^6\frac{h\;\text{Hz}}{e\;\text{fm}^3}\frac{R_0^2}{10}
+    \approx408~\text{kV/cm},
 \end{equation}
 %
+where, as previously stated, $R_0\approx R_\text{N}A^{1/3}$, with the
+characteristic nuclear size $R_\text{N}\approx1.2\fm$.
+
 We emphasize that this is not the average field in the volume of the nucleus;
 that field must be zero to keep the nucleus from accelerating out of the
 molecule. Nor is $\mathcal E_\text{int}^\text{eff}$ to be taken as a proxy for
 the simple $\sim$~GV/cm field due to the nuclear charge at a distance of order
-$a_0$ from the nucleus. Furthermore, the numerical values in
-eqn~\ref{effestimate} obtain hugely different estimates in different papers,
-nearly three orders of magnitude (from 20~kV/cm in
-ref.~\cite{harrison1969experimental} to 10~MV/cm). Trying to estimate a
-generalized form of the \gls{SMT}, Flambaum and Ginges
-\cite{flambaum2002nuclear} found the ``analytical calculation hopeless [for] a
-nucleus with an external proton in state $s_{1/2}$, as is the case for
-$^{203,205}$Tl.''
+$a_0$ from the nucleus. The numerical values in
+eqn~\ref{effestimate} obtain different estimates in different papers; for
+example 20~kV/cm in ref.~\cite{harrison1969experimental} and 32.3~kV/cm in
+ref.~\cite{petrov2002calculation}. Trying to estimate a generalized form of the
+\gls{SMT}, Flambaum and Ginges \cite{flambaum2002nuclear} found the ``analytical
+calculation hopeless [for] a nucleus with an external proton in state $s_{1/2}$,
+as is the case for $^{203,205}$Tl.''
 
 \paragraph{Separated oscillatory fields}
 
@@ -1109,11 +1115,11 @@ in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or
 the level spacing, a $4\nu$ difference (together with its error bars) can be
 quoted as the main result of molecular-beam symmetry-violation experiments.
 
-The spacing between the levels paragraph can be measured by a technique based on
-Rabi oscillations. Consider two states, $\ket p$ and $\ket q$, separated by an
-energy $\hbar\omega_0$, and placed in an oscillating field $\hbar b
-e^{-i\omega\tau}$. Defining the detuning $\delta\equiv\omega_0-\omega$, the
-population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
+The spacing between the levels can be measured by a technique based on Rabi
+oscillations. Consider two states, $\ket p$ and $\ket q$, separated by an energy
+$\hbar\omega_0$, and placed in an oscillating field $\hbar b e^{-i\omega\tau}$.
+Defining the detuning $\delta\equiv\omega_0-\omega$, the population transfer
+probability is given by \cite[eqn~V.10]{ramsey1956molecular}
 %
 \begin{align*}
     P_{p,q}=
@@ -1174,7 +1180,7 @@ expressed in terms of the simple Rabi oscillation probability $P_{p,q}$, is
 \]
 %
 where $\overline{\delta}\equiv\overline{\omega}_0-\omega$ is the detuning of the
-oscillating field frequency $\omega$ from the hyperfine level separation
+oscillating field frequency $\omega$ from the level separation
 $\hbar\overline{\omega}_0$, averaged over the length of the interaction region,
 and $\phi$ is the phase delay between the two oscillating coils. Now $T$ is the
 duration of the molecular flight through the field-free region, while $\tau$ is
