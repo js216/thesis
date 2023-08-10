@@ -5,12 +5,12 @@
     % place nodes
     \node [block] (source)  {beam\\source};
     \node [block, right of=source] (rotcoo)  {rotational\\cooling};
-    \node [block, right of=rotcoo] (SP1)     {state\\prep.\ 1};
+    \node [block, right of=rotcoo] (SP1)     {state\\prep.\ A};
     \node [block, right of=SP1]    (lens)    {quadrupole\\lens};
-    \node [block, right of=lens]   (SP2)     {state\\prep.\ 2};
+    \node [block, right of=lens]   (SP2)     {state\\prep.\ B};
     \node [block, right of=SP2]    (NMR)     {NMR};
-    \node [block, right of=NMR]    (SP3)     {projection};
-    \node [block, right of=SP3]    (readout) {readout};
+    \node [block, right of=NMR]    (SP3)     {state\\prep.\ C};
+    \node [block, right of=SP3]    (readout) {detection};
 
     % connecting arrows
     \path [line] (source) -- (rotcoo);

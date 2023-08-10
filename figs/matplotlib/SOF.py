@@ -21,7 +21,7 @@ Rabi = data[3]
 fig, axx = plt.subplots(nrows=1, ncols=2, figsize=(12,5))
 
 # plot the data
-axx[0].plot(d, SOF1, color="black", lw=3, label="\\SOF")
+axx[0].plot(d, SOF1, color="black", lw=3, label="\\gls{SOF}")
 axx[0].plot(d, Rabi, color="black", lw=2, ls="dashed", label="Rabi")
 axx[1].plot(d, SOF2, color="black", lw=3, label="\$\\phi=\\pi/2\$")
 

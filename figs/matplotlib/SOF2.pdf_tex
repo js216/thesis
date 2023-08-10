@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% Creator: Inkscape 1.2.2 (b0a8486541, 2022-12-01), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'figs/matplotlib/SOF2.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{868.26580652bp}%
+    \setlength{\unitlength}{868.265781bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,56 +50,56 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.6015531)%
+  \begin{picture}(1,0.5781696)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.15133331,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−600\end{tabular}}}}%
+    \put(0.15133331,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−600\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.23100195,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−400\end{tabular}}}}%
+    \put(0.23100195,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−400\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.31067057,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−200\end{tabular}}}}%
+    \put(0.31067057,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−200\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.39033921,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0.39033921,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.47000785,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}200\end{tabular}}}}%
+    \put(0.47000785,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}200\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.54967649,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}400\end{tabular}}}}%
+    \put(0.54967649,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}400\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.62934513,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}600\end{tabular}}}}%
+    \put(0.62934513,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}600\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.39033921,0.07475507){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta f$ [Hz]\end{tabular}}}}%
+    \put(0.39033921,0.06306331){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta f$ [Hz]\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=9]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.11937067,0.14187815){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−1.0\end{tabular}}}}%
+    \put(0.11937067,0.13018638){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−1.0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=10]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.11937067,0.21542022){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−0.5\end{tabular}}}}%
+    \put(0.11937067,0.20372845){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}−0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.11937067,0.28896233){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0.0\end{tabular}}}}%
+    \put(0.11937067,0.27727054){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0.0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=12]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.11937067,0.3625044){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0.5\end{tabular}}}}%
+    \put(0.11937067,0.35081264){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.11937067,0.43604649){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}1.0\end{tabular}}}}%
+    \put(0.11937067,0.42435473){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}1.0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.03192086,0.30077655){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}${S_{\SOF}}$\end{tabular}}}}}%
+    \put(0.03192086,0.28908478){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}${S_{\gls{SOF}}}$\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.39033921,0.4719223){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(a)\end{tabular}}}}%
+    \put(0.39033921,0.46023053){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(a)\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=16]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.72335415,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−50\end{tabular}}}}%
+    \put(0.72335415,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}−50\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=17]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.81098963,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0.81098963,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=18]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.89862517,0.10945749){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}50\end{tabular}}}}%
+    \put(0.89862517,0.09776572){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}50\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=19]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.81098963,0.07475507){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta f$ [Hz]\end{tabular}}}}%
+    \put(0.81098963,0.06306331){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\Delta f$ [Hz]\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=20]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.90668722,0.14186353){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.0\end{tabular}}}}%
+    \put(0.90668722,0.13017176){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=21]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.90668722,0.28888606){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.90668722,0.27719431){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=22]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.90668722,0.43590863){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1.0\end{tabular}}}}%
+    \put(0.90668722,0.42421686){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1.0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=23]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.98437565,0.30077657){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ex{\widetilde P_{p,q}}_\text{BG}$\end{tabular}}}}}%
+    \put(0.98437565,0.2890848){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\ex{\widetilde P_{p,q}}_\text{BG}$\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=24]{figs/matplotlib/SOF2.pdf}}%
-    \put(0.81098963,0.4719223){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(b)\end{tabular}}}}%
+    \put(0.81098963,0.46023053){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}(b)\end{tabular}}}}%
   \end{picture}%
 \endgroup%

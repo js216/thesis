@@ -1150,19 +1150,19 @@ a region where the oscillating field cannot be applied. (3) It is difficult to
 maintain uniform externally applied fields over an extended length.
 
 It turns out that the oscillating field does not need to extend over the entire
-length of the precession region. In Ramsey's resonance scheme, separated
-oscillating fields (\SOF) are only applied in two small regions at the beginning
-and at the end of the interaction region, each applying a $\pi/2$ pulse. The
-resulting \FWHM\ is about 40\%\ smaller that that obtained in a simple Rabi
-oscillation scheme, and the resonances are less broadened by the non-uniformity
-of the fixed field. \cite{PhysRev.78.695} One way to understand the latter point
-is to note that the oscillating field driving the transitions at each end will
-be tuned to the nominal resonant frequency determined by the level spacing in
-the region of the \RF\ coils. If, in the region between the two coils, the
-residual fields cause the level spacing to deviate from its nominal value, this
-should not affect the efficacy of the coils.
+length of the precession region. In Ramsey's resonance scheme, \gls{SOF} are
+only applied in two small regions at the beginning and at the end of the
+interaction region, each applying a $\pi/2$ pulse. The resulting \FWHM\ is about
+40\%\ smaller that that obtained in a simple Rabi oscillation scheme, and the
+resonances are less broadened by the non-uniformity of the fixed field.
+\cite{PhysRev.78.695} One way to understand the latter point is to note that the
+oscillating field driving the transitions at each end will be tuned to the
+nominal resonant frequency determined by the level spacing in the region of the
+\RF\ coils. If, in the region between the two coils, the residual fields cause
+the level spacing to deviate from its nominal value, this should not affect the
+efficacy of the coils.
 
-The transition probability $\widetilde{P}_{p,q}$ for the \SOF\ scheme, here
+The transition probability $\widetilde{P}_{p,q}$ for the \gls{SOF} scheme, here
 expressed in terms of the simple Rabi oscillation probability $P_{p,q}$, is
 \cite[cf.\ eqn~V.37]{ramsey1956molecular}
 %
@@ -1199,20 +1199,20 @@ optimizing the field strength.
     \caption[Separated oscillatory fields vs Rabi oscillation.]{Transition
     probability as a function of detuning $\delta$, averaged over the
     effusive-source speed distribution $v^3e^{-v^2/\alpha^2}$, for a precession
-    length $L=10l$. \part{a} Comparing \SOF\ ($\tilde b_\text{\SOF}=0.600$,
-    $\phi=0$) and Rabi oscillations ($\tilde b_\text{Rabi}=1.200$), both with
-    the same $L$. Notice the $\approx40$\%\ narrower \FWHM\ for \SOF. \part{b}
-    Detection scheme sensitive to small $\delta$: \SOF\ with $\phi=\pi/2$ with
-    the same $L=10l$.}
+    length $L=10l$. \part{a} Comparing \gls{SOF} ($\tilde
+    b_\text{\gls{SOF}}=0.600$, $\phi=0$) and Rabi oscillations ($\tilde
+    b_\text{Rabi}=1.200$), both with the same $L$. Notice the $\approx40$\%\
+    narrower \FWHM\ for \gls{SOF}. \part{b} Detection scheme sensitive to small
+    $\delta$: \gls{SOF}\ with $\phi=\pi/2$ with the same $L=10l$.}
     \label{SOFprob}
 \end{figure}
 
-Schropp \cite{schropp1988thesis} draws a parallel between the method of \SOF,
-where a frequency-domain interference pattern is caused by two coils that are
-separated in times, and Young's double-slit experiment, where the distance
-between two slits causes a spatial interference pattern. In either case, the
-linewidth is inversely proportional to the field-free separation, whether a
-spatial one (double slits) or a temporal one (\SOF).
+Schropp \cite{schropp1988thesis} draws a parallel between the method of
+\gls{SOF}, where a frequency-domain interference pattern is caused by two coils
+that are separated in times, and Young's double-slit experiment, where the
+distance between two slits causes a spatial interference pattern. In either
+case, the linewidth is inversely proportional to the field-free separation,
+whether a spatial one (double slits) or a temporal one (\gls{SOF}).
 
 The above transition probabilities hold for the case of molecules subjected to
 the specified interactions for a fixed amount of time. However, in a realistic
@@ -1268,14 +1268,15 @@ integral in eqn~\ref{avgint} can be expressed in terms of a Meijer $G$-function
 The $G$-function can be evaluated numerically; in particular, we find that
 $\ex{P_{p,q}}(\tilde\delta=0)$ is maximised for $\tilde b=1.200$.
 
-The distribution-averaged form of the \SOF\ probability $\widetilde{P}_{p,q}$
-can also be found in terms of special functions, but is considerably more
-complicated. In addition to the length $l$ of the two oscillating coils, there
-is a further dependence on the free-precession length $L$, as well as the phase
-delay $\phi$ between the two coils. If the coils oscillate in phase ($\phi=0$),
-the peak of the transition probability is centered around the resonant frequency
-with no linear dependence on the detuning $\delta$. Thus \SOF\ experiments
-commonly take $\phi=\pm\pi/2$ as in ref.~\cite{ramsey1951phase}, where
+The distribution-averaged form of the \gls{SOF} probability
+$\widetilde{P}_{p,q}$ can also be found in terms of special functions, but is
+considerably more complicated. In addition to the length $l$ of the two
+oscillating coils, there is a further dependence on the free-precession length
+$L$, as well as the phase delay $\phi$ between the two coils. If the coils
+oscillate in phase ($\phi=0$), the peak of the transition probability is
+centered around the resonant frequency with no linear dependence on the detuning
+$\delta$. Thus \gls{SOF} experiments commonly take $\phi=\pm\pi/2$ as in
+ref.~\cite{ramsey1951phase}, where
 %
 \[
     \ex{\widetilde{P}_{p,q}}
@@ -1317,16 +1318,16 @@ beam, with a spread of velocities $\alpha$. The extended integration limits
 compared with eqn~\ref{effusivef} are not significant, since the
 $f_\text{BG}(v)\to0$ for $v$ far away from $\overline v$. See Fig.~\ref{SOF2}
 for typical parameter values. Since the measurement is repeated for each sign of
-$\phi=\pm\pi/2$, we can define the signal $S_\text{\SOF}$ as
+$\phi=\pm\pi/2$, we can define the signal $S_\text{\gls{SOF}}$ as
 %
 \[
-    S_\text{\SOF}=
+    S_\text{\gls{SOF}}=
     \ex{\widetilde P_{p,q}}_\text{BG}(\phi=\pi/2)
     -\ex{\widetilde P_{p,q}}_\text{BG}(\phi=-\pi/2),
 \]
 %
 as displayed in Fig.~\ref{SOF2}a. For the parameter values in that figure, the
-slope of $S_\text{\SOF}$ around zero detuning is approx.\ 0.094/Hz.
+slope of $S_\text{\gls{SOF}}$ around zero detuning is approx.\ 0.094/Hz.
 
 \begin{figure}
     \def\svgwidth{\textwidth}
@@ -1334,8 +1335,8 @@ slope of $S_\text{\SOF}$ around zero detuning is approx.\ 0.094/Hz.
         \footnotesize
         \input{figs/matplotlib/SOF2.pdf_tex}
         }
-    \caption[\SOF\ signal averaged over a Gaussian distribution.]{Buffer-gas
-    \SOF\ signal as a function of detuning $\Delta f$ in linear units, averaged
+    \caption[SOF signal averaged over a Gaussian distribution.]{Buffer-gas
+    \gls{SOF} signal as a function of detuning $\Delta f$ in linear units, averaged
     over a Gaussian speed distribution $\exp[{-(v-\overline v)^2/2\alpha^2}]$
     with $\overline v=200$~m/s and $\alpha=10$~m/s, for a 3~m separation between
     the oscillatory coils, and field strength $b=9.975\,\pi\alpha/2l$. Observe
@@ -1417,10 +1418,12 @@ fluoride.
 
 In \CENTREX, we use neon as the buffer gas. Compared to helium-based sources,
 neon allows the cell temperature to be higher ($\sim$20~K instead of $\sim$4~K)
-for a compable beam temperature after gas expansion. Furthermore, neon is
-efficiently cryopumped by cold surfaces found in the beam source unlike helium,
-for which a large-area adsorbent, such as activated charcoal, is necessary.
-\cite{hutzler2012buffer}
+for a compable beam velocity after gas expansion (but at a higher temperature).
+Furthermore, neon is efficiently cryopumped by cold surfaces found in the beam
+source unlike helium, for which a large-area adsorbent, such as activated
+charcoal, is necessary. Neon also allows operation at higher pulse
+rates, up to 50~Hz, which has not been found practical with helium
+sources. \cite{hutzler2012buffer}
 
 \subsection{The TlF molecule}
 
@@ -1434,14 +1437,14 @@ Schiff moment is correspondingly relatively large; and the nucleus contains an
 unpaired proton, making measurements potentially sensitive to proton \gls{EDM}\
 effects. \cite{sandars1967measurability, wilkening1984search} By contrast, TlF
 is not a suitable system for electron \gls{EDM}\ measurements due to the closed
-shells zero total electron spin. \cite{kozlov1995parity}
+shells' zero total electron spin. \cite{kozlov1995parity}
 
 Thallium comes in two naturally occurring isotopes, 203 (29.52\% abundance) and
 205 (70.48\%), while $^{19}$F is the only isotope of fluorine \cite{awic2015}.
-In \CENTREX, we are only making use of the more abundant isotope 205, and only
-the transitions between the $v=0$ vibrational sublevels of the electronic states
-$X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$ is one
-of the excited states with a lifetime of about 99~ns
+In \CENTREX, we are only making use of the more abundant isotope $^{205}$Tl, and
+only the transitions between the $v=0$ vibrational sublevels of the electronic
+states $X^1\Sigma^+$ and $B^3\Pi_1$, where $X$ denotes the ground state, and $B$
+is one of the excited states with a lifetime of about 99~ns
 \cite{norrgard2017hyperfine}. The quantum numbers used to describe the states
 usually refer to a modified Hund's case (c) basis with the additional couplings
 $\vec F_1=\vec J+\vec I_1$ and $\vec F=\vec F_1+\vec I_2$, where $\vec I_1$ and
@@ -1534,9 +1537,9 @@ approximation cannot be used. In its stead, Brown and Carrington
 \right\},
 \end{equation}
 %
-where $g_{1,2}$ are the nuclear $g$-factors and $\vec R$ is the internuclear
-displacement vector. The interaction is proportional to a spherical rank-2
-tensor $T^2(\vec I_1,\vec I_2)$ as per eqn~1.34 in
+where $g_{1,2}$ are the nuclear $g$-factors and $\vec R=R\hat{\vec n}$ is the
+internuclear displacement vector. The interaction is proportional to a spherical
+rank-2 tensor $T^2(\vec I_1,\vec I_2)$ as per eqn~1.34 in
 ref.~\cite{brown2003rotational}.
 
 At first glance, the more general form of the $c_3$ term does not change the
@@ -1552,10 +1555,10 @@ cho1990thesis} seems to have copied the slope from Ramsey, claiming it holds at
 
 The $c_4$ term, also known as the scalar- or $J$-coupling term, arises through a
 mechanism involving the transmission of nuclear spin orientation through the
-interven- ing electrons \cite{brown2003rotational}. It is distinguished from the
+intervening electrons \cite{brown2003rotational}. It is distinguished from the
 tensor interaction in that it does not depend on the angle between the nuclear
 directions and the internuclear axis $\vec R$. While molecular rotation averages
-the $c_3$ term to zero, the $c_4$ term survives
+the $c_3$ term to zero in the $J=0$ state, the $c_4$ term survives
 \cite[sect.~7.7]{budker2004atomic}. In spherical tensor form, the interaction is
 proportional to $T^1(\vec I_1)\cdot T^1(\vec I_2)$.
 
@@ -1708,7 +1711,7 @@ $Q$, or $R$ branches if the quantum number $J$ changes by $-1$, 0, or $+1$,
 respectively. \cite[sect.~10.2]{bransden1990physics} Furthermore, we append the
 $J$ number of the original state, and the $F$ of the target state. For instance,
 a $P2$ $F1$ line starts in a $J=2$ state, changes $J$ by $-1$, and ends up in a
-state with $F'=1$.
+state with $F'=1$. \label{P2F2}
 
 Despite the limited ability to collect and detect photons from fluorescing
 molecules, our detection scheme could in principle detect $\approx100$\% of the
@@ -1971,10 +1974,13 @@ rate.
             n       & neutron beam  & 140            & 9              & $-3$   & 8    & $^{-23}$       & 1968 & \cite{dress1968upper} \\
             n       & neutron trap  & 10             & 0.01           & 0.2    & 2.2  & $^{-26}$       & 2006 & \cite{baker2006improved} \\
             Hg      & vapour cell   & 6 \&\ 10       & 0.01           & 4.8    & 9.3  & $^{-27}$       & 2016 & \cite{graner2016reduced} \\
+            n       & neutron trap  & 11             & 0.01           & 0.0    & 1.3  & $^{-26}$       & 2020 & \cite{abel2020measurement} \\
             \bottomrule
         \end{tabu}}
         \caption{Summary of results and experimental parameters of some of the
-        previous related experiments.}
+        previous related experiments. $E_\text{int}$ and $B_\text{int}$ refer to
+        the interation-region electric and magnetic fields (and \emph{not}
+        fields internal to the molecule).}
         \label{previouswork}
 \end{table*}
 
@@ -1993,8 +1999,8 @@ flipped molecules to the $m_J=-1$ hyperfine state which is defocused by the
 second quadrupole, causing a change in the beam intensity measured by the
 hot-wire detector at the end of the beamline.
 
-Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found the upper
-bound $\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or
+Cho, Sangster, and Hinds \cite{cho1989tenfold, cho1991search} found
+$\nu=(1.4\pm2.4)\times10^{-4}\Hz$ or
 $|d_\text{p}|=(-3.7\pm6.3)\times10^{-23}e\cm$. Again, a quadrupole selects
 $J=1$, $m_J=0$ molecules, which subsequently transition to one of the $m_J=\pm1$
 sublevels in a combination of static and \RF\ electric fields, with quantum
@@ -2009,18 +2015,18 @@ states as listed above.
 
 \paragraph{Other systems}
 
-While the thallium fluoride experiments look for proton \gls{EDM} or the Schiff
-moment, other   experiments search for electron or neutron \gls{EDM} s, or
-atomic \gls{EDM} s. There has been a string of experiments on atomic thallium.
-Already in the 1970s, an experiment reported
-$d_\text{Tl}=(1.3\pm2.4)\times10^{-21}e\cm$ looking for a shift between the
-$F=1$, $m_F=0,1$ sublevels of the $6^2P_{1/2}$ ground state of Tl in a uniform
-electric field of 50~kV/cm in the presence of a 1~G magnetic field parallel to
-the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported
-$d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and
-systematic uncertainties, respectively. \cite{commins1994improved} The
-experiment was subsequently significantly upgraded, improving the precision to
-$|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new}
+%While the thallium fluoride experiments look for proton \gls{EDM} or the Schiff
+%moment, other  experiments search for electron or neutron \glspl{EDM}, or
+%atomic \glspl{EDM}. There has been a string of experiments on atomic thallium.
+%Already in the 1970s, an experiment reported
+%$d_\text{Tl}=(1.3\pm2.4)\times10^{-21}e\cm$ looking for a shift between the
+%$F=1$, $m_F=0,1$ sublevels of the $6^2P_{1/2}$ ground state of Tl in a uniform
+%electric field of 50~kV/cm in the presence of a 1~G magnetic field parallel to
+%the electric field. \cite{gould1970search} In 1994, E. Commins et al.\ reported
+%$d_e=(1.8\pm1.2\pm1.0)\times10^{-26}e\cm$, referring to the statistical and
+%systematic uncertainties, respectively. \cite{commins1994improved} The
+%experiment was subsequently significantly upgraded, improving the precision to
+%$|d_e|<1.6\times10^{-27}e\cm$. \cite{regan2002new}
 
 A measurement on ultracold neutrons stored in a trap gave the result
 $|d_\text{n}|<2.9\times10^{-26}e\cm$. Since the particle were kept in a trap,
@@ -2039,7 +2045,10 @@ a neutron \gls{EDM}\ limit $|d_\text{n}|<1.6\times10^{-26}e\cm$, superseding
 ref.~\cite{pendlebury2015revised} as the best such limit. The result can also be
 taken to limit the proton \gls{EDM}\ below $2.0\times10^{-25}\,e\cm$, a tighter
 limit than the old TlF experiments we able to provide.
-\cite{griffith2009improved,graner2016reduced}
+\cite{griffith2009improved,graner2016reduced} The same result can also be
+expressed as a limit on the mercury Schiff moment,
+$|S_\text{Hg}|<3.1\times10^{-13}\,e\,\text{fm}^3$
+\cite[eqn~6]{graner2016reduced}.
 
 \begin{sidewaysfigure}
     \centering\small
@@ -2054,34 +2063,40 @@ limit than the old TlF experiments we able to provide.
 
 Referring to Fig.~\ref{conceptdiagram}, we follow the molecules emerging from a
 cryogenic buffer gas beam source, initially in a range of low-lying states with
-an approximate temperature of 8~K. In order to facilitate transfer to the
-`science' state used for the spin precession measurement, molecules first enter
-a rotational cooling region to accumulate population in a single hyperfine and
-rotational level. Then, to limit the spreading of the beam, the molecules get
-focused by an quadrupole electrostatic lens. Since the lens state is different
-from the interaction state, the molecules are prepared into the correct
-hyperfine state in a two-state adiabatic rapid passage machine. Afterwards, they
-fly through an interaction region with the standard Ramsey separated oscillatory
-field configuration to excite the \NMR\ resonance. Finally, we probe the
-resulting spin direction to determine the extent of the possible dependence of
-the spin precession frequency on the interaction region electric field
-direction.
+an approximate temperature of 8~K \cite{grasdijk2021centrex}. In order to
+facilitate transfer to the `science' state used for the spin precession
+measurement, molecules first enter a rotational cooling region to accumulate
+population in a single hyperfine and rotational level. Then, to limit the
+spreading of the beam, the molecules get transferred to the lensing state in
+state preparation region A (SPA) and focused by an quadrupole electrostatic
+lens. Since the lens state is different from the interaction state, the
+molecules are prepared into the correct hyperfine state in a two-state adiabatic
+rapid passage machine, the state preparation region B. Afterwards, they fly
+through the main interaction region with the standard Ramsey separated
+oscillatory field configuration to excite the \NMR\ resonance. Finally, we probe
+the resulting spin direction to determine the extent of the possible dependence
+of the spin precession frequency on the interaction region electric field
+direction. This is done in state preparation region C (SPC), where each spin
+state is transferred to a different rotational state. Finally, the rotational
+populations are read out with \gls{LIF} and optical cycling in the fluorescence
+detection region. 
 
 \paragraph{Rotational cooling (Fig.~\ref{scheme})}
 
 Assuming a simple Boltzmann distribution at 8~K, almost 90\%\ of the molecules
 have $J$ in the range from 0 to 3. To move these molecules to $J=0$, we first
 set up microwave couplings $J=1\leftrightarrow2$ and $2\leftrightarrow3$. Then,
-a \UV\ laser beam centered on the $P2$ $F1$ line lifts the population from $J=2$
-into the excited state $J'=1$, from where it decays down to either $J=0$ or
-$J=2$. Since the $J=2$ molecules eventually get excited by the laser again, we
-expect the population to accumulate in $J=0$.
+a \UV\ laser beam centered on the $P2$ $F1$ line (terminology defined on page
+\pageref{P2F1}) lifts the population from $J=2$ into the excited state $J'=1$,
+from where it decays down to either $J=0$ or $J=2$. Since the $J=2$ molecules
+eventually get excited by the laser again, we expect the population to
+accumulate in $J=0$.
 
 The preceding description ignores the complications due to the hyperfine
 structure. Since the excited state hyperfine levels are well separated (unlike
-the unresolved \hfs of the electronic ground state), we can address the $F'=1$
+the unresolved \hfs\ of the electronic ground state), we can address the $F'=1$
 level. Due to the selection rule $\Delta F=0,\pm1$, only three of the four $J=2$
-sublevels (with $F=1,2,2$) can be excited into $J'=1$, from where they fall down
+sublevels (with $F=1,2,2$) can be excited into $J'=1$, from where they decay
 into $J=0$ states with $F=1,0$. A further set of microwaves, between $J=0$ and
 $J=1$, is used to remix the $F=1$ states, so as to concentrate the population
 only in the $F=0$ state. (If we were to use the $P2$ $F2$ transition instead,
@@ -2089,14 +2104,19 @@ then it would be possible to excite all four $F$ sublevels of the $J=2$ state up
 into a $F'=2$ level. However, the branching ratio---calculated using
 eqn~\ref{branchingratios}---for decays to $F=0$ are vanishing from $F'=2$.)
 
-As stated, the $P2$ $F1$ does not excite the $F=3$ states, so these are
-trivially dark. But since there are only 3 sublevels in $F'=1$, compared to the
-20 sublevels in the $J=2$ manifold, there is a total of 17 dark states. These
-may be destabilized by frequency-switching microwaves precisely tuned to the
-individual sublevels that cannot be resolved by the laser light; however the
-precise dark-state destabilization scheme has not yet been finalized.
+As stated, the $P2$ $F1$ line (terminology defined on page \pageref{P2F1}) does
+not excite the $F=3$ states, so these are trivially dark. But since there are
+only 3 sublevels in $F'=1$, compared to the 20 sublevels in the $J=2$ manifold,
+there is a total of 17 dark states, i.e.\ states which cannot be excited using
+this laser transition \cite[sect~3.1.3]{barry2013thesis}. These dark states may
+be destabilized \cite{berkeland2002destabilization} by frequency-switching
+microwaves precisely tuned to the individual sublevels that cannot be resolved
+by the laser light. This can also be done, as is the plan in this experiment, by
+switching the polarizations of the laser and both microwave beams, and ensuring
+that no pair of the three beams are either parallel or perpendicular to each
+other.
 
-\paragraph{State transfer 1}
+\paragraph{State preparation A}
 
 The population that has been collected in the $J=0$, $F=0$ sublevel has to be
 moved to the state in the $J=2$ manifold chosen for the optimal operation of the
@@ -2117,7 +2137,7 @@ microwaves $\Omega_{\mu\text{w}}$. For a Rabi frequency much greater than the
 detuning, ref.~\cite{malinovsky2001general} gives the adiabaticity condition as
 %
 \[
-\Omega_{\mu\text{w}}\gg\frac{d}{dt}\Delta\omega(t).
+\Omega^2_{\mu\text{w}}\gg\frac{d}{dt}\Delta\omega(t).
 \]
 %
 The other requirement for \ARP\ is that the passage is \emph{rapid} compared to
@@ -2137,7 +2157,7 @@ effectively infinite. \cite{shore2009simple}
     \end{minipage}
     \hfill
     \mbox{}
-    \caption[Proposed rotational cooling scheme.]{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition, while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$.}
+    \caption[Proposed rotational cooling scheme.]{Proposed rotational cooling scheme. \part{a} The thick solid arrow marks the \UV\ laser driving the $P2$ $F1$ transition (terminology defined on page \pageref{P2F1}), while the bent arrows represent microwaves with the stated frequencies (the dashed 13.4~GHz microwaves might be omitted in the final version). The wavy arrows indicate spontaneous emission, with rotational branching ratios taken from ref.~\cite[Table~IV]{norrgard2017hyperfine}. The odd-parity $\Omega$-doublet excited state can only decay to the states with $J=0,2$ (solid wavy lines), and not the $J=1,3$ ones (dashed wavy lines), and the branching ratios are normalized to unity for each parity. The percentages under the ground-state kets are the expected thermal population at 8~K before beginning rotational cooling. \part{b} Hyperfine details of the rotational cooling scheme. Decays back to $J=2$ not shown here. The $P2$ $F1$ transition, shown here, does not couple to $F=3$. However, the $P2$ $F2$ line (not shown) that does couple to all $F$ has a vanishing branching ratio into $F=0$.}
     \label{scheme}
 \end{figure*}
 
@@ -2154,12 +2174,13 @@ lens, molecules experience a restoring force proportional to the displacement
 $r$ of the molecule from the axis. For a quadrupole field, the magnitude of the
 field is $|E|=Vr/R^2$, where $V$ is the potential difference between
 oppositely-charged electrodes and $2R$ the distance between opposite electrodes.
-\cite{bennewitz1955fokussierung} Furthermore, since the $J=2$ state of thallium
-fluoride has a quadratic Stark effect at high fields ($\propto30\kVcm$), this
-results in the desired quadratic potential energy, or a linear restoring force.
-Ref.~\cite{berg1965determination} makes the optical analogy exact in terms of
-ray-transfer (or `ABCD') matrices, whereby the condition for focusing results in
-the standard expression for a thin lens of focal length $f$
+\cite{bennewitz1955fokussierung} Furthermore, since the $J=2,m=0$ state of thallium
+fluoride has a positive quadratic Stark shift even at high fields
+($\propto30\kVcm$), this results in the desired quadratic potential energy, or a
+linear restoring force.  Ref.~\cite{berg1965determination} makes the optical
+analogy exact in terms of ray-transfer (or `ABCD') matrices, whereby the
+condition for focusing results in the standard expression for a thin lens of
+focal length $f$
 %
 \begin{align*}
     \begin{pmatrix}
@@ -2191,12 +2212,18 @@ molecules of mass $m$ is \cite[cf.\ eqn~12]{berg1965determination}
 where $l$ is the length of the quadrupole lens, and $C$ is a constant encoding
 the $J$, $m_J$ dependence of the quadratic Stark effect.
 
-\paragraph{State transfer 2}
+\paragraph{State preparation B}
 
 A second state preparation region will take molecules out of the lens $J=2$
 state and into the appropriate $J=1$ state required by the interaction region.
-Details will be decided upon based on experimental results from the first state
-preparation region.
+To achieve this, a resonant microwave field with  will be applied in the
+presence of a magnetic field and a quantizing electric field. Since adiabatic
+passage can drive undesired transitions to unwanted states nearby in energy,
+here we use a microwave $\pi$-pulse to achieve optimized transfer efficiency.
+The simulated transfer efficiency is approx.\ 96\%. In practice, the transfer
+efficiency is likely to be reduced due to non-uniformities of the electric and
+magnetic fields, since changes in the fields cause the transition frequencies to
+shift away from the microwave frequency.  \cite[sect~2.5]{grasdijk2021centrex}
 
 \paragraph{Interaction region}
 
@@ -2249,13 +2276,14 @@ A high external electric field polarizes the molecules, thus enabling the linear
 energy shift due to the Schiff moment. The measurement will be done using the
 method of separated oscillatory fields as explained above.
 
-We intend to use a pair of $J=1$, $m_J=\pm1$ states, where the molecular
-rotation leads to an internal magnetic field. By flipping the sign of $m_J$, the
-internal magnetic field can be reversed. The first \RF\ coil in the Ramsey
-sequence creates a superposition of thallium spin-up and spin-down states, and
-the phase accumulated during the interaction time is translated by the second
-pulse back into varying populations of the spin states. The data obtained with
-the two different fluorine spin directions can be used for systematic checks.
+We intend to use in this measurement a pair of $J=1$, $m_J=\pm1$ states, where
+the molecular rotation leads to an internal magnetic field. By flipping the sign
+of $m_J$, the internal magnetic field can be reversed. The first \RF\ coil in
+the Ramsey sequence creates a superposition of thallium spin-up and spin-down
+states, and the phase accumulated during the interaction time is translated by
+the second pulse back into varying populations of the spin states. Data obtained
+with the two different fluorine spin directions can be used for systematic
+checks.
 
 Refer to Table \ref{statepairs} for a list of all available pairs of states we
 can make use of. For the \gls{EDM}\ measurement, of course, only the transitions
@@ -2279,8 +2307,9 @@ transitions (ef/hg) has a much smaller resonant frequency than the other two,
 but is otherwise comparable.
 
 The quantity $S_m^z$ quantifies the sensitivity to the residual magnetic field
-$B_z$ in the interaction region. For a pair of transitions $(i,j)$, where $i$'s
-relevant quantum numbers ($m_J,m_1,m_2$) are reversed compared to $j$, we define
+$B_z$ in the interaction region. For a pair of transitions $(i,j)$, where the
+relevant quantum numbers ($m_J,m_1,m_2$) of the two states involved in $i$ are
+reversed compared to the two states in $j$, we define
 %
 \[
     S_m^z\equiv
@@ -2335,17 +2364,58 @@ half as sensitive to $T$-violating physics. On the other hand, the transition
 between $\ket{\text{i}}$ and $\ket{\text{l}}$ does not flip $m_\text{Tl}$ at
 all.
 
-\paragraph{Projection and detection}
+\paragraph{State preparation C}
 
-While the detection scheme has not yet been finalized, we expect we will be able
-to map the two spin states from the interaction region to two different
-rotational states using microwaves; details TBD. Unlike some of the experiments
-discussed above, \CENTREX\ will employ laser-induced fluorescence (\LIF) to
-detect the number of molecules in the final rotational states, but the pair of
-cycling transitions has not yet been chosen or optimized.
+Before the molecular states can be probed in the detection region, we have to
+map the two spin states---which cannot be distinguished optically---from the
+interaction region to two different rotational states using microwaves. In
+contrast, different rotational states are spectrally resolvable by a probing
+laser. This will allow optical detection of each original spin-state population.
+\cite[sect~2.7]{grasdijk2021centrex} An optimized scheme for this state transfer
+mechanism is currently being investigated, but the principle will likely be
+analogous to SPC.
 
-Compared to hot-wire or absorption techniques, \LIF\ has the advantage of
-observing a signal against a dark background (modulo light scattered from the
-optics and vacuum chamber windows). \cite{tango1968spectroscopy} Furthermore,
-since the emitted light can be collected at different angles, we can obtain
-spatial information about the detection process. \cite{zare2012my}
+\paragraph{Detection}
+
+Unlike some of the experiments discussed above, \CENTREX\ will employ
+laser-induced fluorescence (\LIF) to detect the number of molecules in the final
+rotational states. Compared to hot-wire or absorption techniques, \LIF\ has the
+advantage of observing a signal against a dark background (modulo light
+scattered from the optics and vacuum chamber windows).
+\cite{tango1968spectroscopy} Furthermore, since the emitted light can be
+collected at different angles, we can obtain spatial information about the
+detection process. \cite{zare2012my}
+
+To improve detection efficiency, we will use optical cycling to maximize the
+number of emitted photons from each molecule. This cycling, which has been
+demonstrated experimentally in TlF
+\cite{clayburn2019optical,clayburn2021improved,clayburn2022improved}, will allow
+for near unit-efficiency detection of each molecule.
+
+The rotational sublevels of the TlF ground state are far enough apart to require
+two detection lasers. Rapid switching between the lasers will allow for
+quasi-simultaneous readout of both the spin-up and spin-down populations in a
+single molecular-beam pulse, minimizing the effect of molecule number
+fluctuations within and between pulses \cite{kirilov2013shot}. The switching, to
+be accomplished with acousto-optic modulators, will allow enough dead time
+between switches for the excited state to decay, but also will be rapid enough
+such that each molecule sees both laser frequencies multiple times while
+traveling through the optical interaction region. A similar scheme is
+implemented by the ACME experiment \cite{acme2018improved}.
+
+The resulting fluorescence will be collected by a combination of high numerical
+aperture lenses and mirrors to cover a total solid angle of approx.\
+$0.3\times4\pi$~sr. With PMT quantum efficiency of 25\%, each emitted photon
+will then be detected with 7.5\% efficiency. Hence, scattering 30 photons per
+molecule will be sufficient that each molecule is detected with 90\%
+probability. Based on known branching ratios for decay out of each cycling
+transition in TlF \cite{norrgard2017hyperfine}, this should be feasible.
+
+The fluorescence signals $\mathrm{S}_\uparrow$ and $\mathrm{S}_\downarrow$,
+corresponding to populations in the Tl spin-up and spin-down states after the
+\gls{SOF} sequence, are then used to compute the asymmetry $\mathcal{A}$,
+defined as:
+%
+\begin{equation}
+    \mathcal{A}\equiv\frac{\mathrm{S}_\uparrow-\mathrm{S}_\downarrow}{\mathrm{S}_\uparrow+\mathrm{S}_\downarrow}.
+\end{equation}

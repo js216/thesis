@@ -24,7 +24,7 @@ fig, axx = plt.subplots(nrows=1, ncols=2, figsize=(12,5), gridspec_kw={'width_ra
 # left plot
 axx[0].plot(df, sof1, color="gray", lw=4, label="\$l=1\cm\$")
 axx[0].plot(df, sof2, color="black", lw=2, label="\$l=10\cm\$")
-axx[0].set_ylabel("\${S_{\\SOF}}\$")
+axx[0].set_ylabel("\${S_{\\gls{SOF}}}\$")
 axx[0].set_title("(a)")
 axx[0].xaxis.set_major_locator(MultipleLocator(200))
 axx[0].xaxis.set_minor_locator(AutoMinorLocator(4))
