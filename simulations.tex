@@ -43,9 +43,9 @@ $P_\text{trans}$ very sensitive to the exact timing of the electric field
 changes.
 
 The idea of the preceding paragraph finds application in the problem of
-molecular motion through regions of spatially-varying electric of magnetic
+molecular motion through regions of spatially-varying electric and/or magnetic
 fields. For instance, in \CENTREX\ we prepare molecules in the particular
-hyperfine state that is expected to be focused best by the hyperfine lens.
+hyperfine state that is expected to be focused best by the electrostatic lens.
 However, the molecular beam has a range of velocities, such that different
 molecules will experience a different rate of change of the external fields,
 with some non-adiabatically transferred to a state other than the lens state,
@@ -70,6 +70,8 @@ preventing and defeating the focusing otherwise expected of the lens.
     \label{floquet1}
 \end{figure}
 
+\subsection{Floquet suppression of unwanted transitions}
+
 Adding to the above a rapidly-oscillating \AC\ electric field can under certain
 conditions suppress the transitions otherwise expected in the absence of the
 \AC\ field. A plot of $P_\text{trans}$ with respect to the parameters of the
@@ -82,20 +84,32 @@ $\omega$.
 The above results can be qualitatively be interpreted in terms of Floquet theory
 for `stationary' states of periodically driven systems
 \cite[ch.~5]{dittrich1998quantum}. It can be proven that the \TDSE\ of such a
-system has solutions of form \cite[sect.~II.A]{shirley1965solution}
+system,
 %
 \[
-\exp(-i\epsilon_\alpha t\hbar)\Phi_\alpha(x,t),
+    i\frac{\d F(t)}{\d t}=H(t) F(t),
 \]
 %
-introducing the periodic Floquet modes $\Phi_\alpha(x,t)$ which satisfy a
-`time-independent' Schr\"odinger equation (\TISE) in the extended Hilbert space
-$L_2[0,T]\otimes H$
+has solutions of form \cite[sect.~II.A]{shirley1965solution}
 %
 \[
-\underbrace{\left[H(t)-i\hbar\frac{\partial}{\partial t}\right]}_{\widetilde{H}}\Phi_\alpha(t)=\epsilon_\alpha\Phi_\alpha(t),
+    F(t)=\exp(-i\epsilon_\alpha t\hbar)\Phi_\alpha(x,t),
 \]
 %
+introducing the periodic Floquet modes $\Phi_\alpha(x,t)$ with energies
+$\epsilon_\alpha$, which satisfy a `time-independent' Schr\"odinger equation
+(\TISE) in the extended Hilbert space $L_2[0,T]\otimes H$
+%
+\[
+\underbrace{\left[H(t)-i\hbar\frac{\partial}{\partial
+t}\right]}_{\widetilde{H}}\Phi_\alpha(t)=\epsilon_\alpha\Phi_\alpha(t);
+\]
+%
+(We call this equation time-independent in analogy to the usual \TISE\ of form
+$H\ket{\psi}=E\ket{\psi}$ \cite[eqn~2.33]{binney2013physics}, i.e.\ a simple
+eigenvalue equation of the operator $H$, eigenstates $\ket{\psi}$, and
+eigenvalues $E$.)
+
 To obtain the matrix elements of the Hamiltonian thus modified, we expand the
 Floquet modes in a basis $\{\ket{k}\}$ of $H$, and also in terms of $n$th order
 plane waves $e^{in\omega t}$:
@@ -126,7 +140,7 @@ $H(t)\equiv H_\text{DC}+H_\text{AC}(t)$:
 \end{align*}
 %
 Here, the lower indices refer to a particular `photonic' mode, and the upper
-indices refer to the matrix elements of the original Hamiltonian. This way of
+indices refer to the basis states of the original Hamiltonian. This way of
 separating the Hamiltonian into the atomic, radiation, and interaction operators
 resembles the `dressed state' picture for a two-level atom in a monochromatic
 field of radiation (cf.\ eqn~1.18 in ref.~\cite{metcalf2002laser}); the above
@@ -214,17 +228,22 @@ photons.
     $2\times2$ atomic Hamiltonian, and $j,k$ here limited to the $\{-1,0,1\}$
     part of the infinite Hilbert space. Without the \AC\ field, note that the
     spectrum resembles that of the atomic Hamiltonian (as in
-    Fig.~\ref{floquet2}), thrice replicated. As the \AC\ is turned stronger, the
-    location of the avoided crossings moves around or disappears.}
+    Fig.~\ref{floquet2}), thrice replicated. As the \AC\ field is turned
+    stronger, the location of the avoided crossings---the intersections between
+    the straight and curved lines in this figure---moves around or disappears.
+    Parameters: $\alpha=0.01,\beta=0.1,\delta=1,\omega=5$.}
     \label{dressed}
 \end{figure}
 
 The new crossings typically appear at higher fields than the original ones and
-thus do not cause transitions unless the inverting \DC\ field is of sufficient
-magnitude to reach them. In the simulation resulting in Fig.~\ref{floquet2}, the
-\DC\ field is assumed to traverse the inherent avoided crossing and not much
-further. However, in the flight of molecules towards the electrostatic lens,
-fields of order $30~\kVcm$ get reversed in a characteristic time
+thus do not cause transitions unless the inverting \DC\ field (that is, the part
+of the electric field $\epsilon_\text{\DC}$ that reverses polarity, e.g.\ the
+thick black trace in Fig.~\ref{floquet2}, but changes slowly compared to
+$\epsilon_\text{\AC}$) is of sufficient magnitude to reach them. In the
+simulation resulting in Fig.~\ref{floquet2}, the \DC\ field is assumed to
+traverse the inherent avoided crossing and not much further.  However, in the
+flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$
+get reversed in a characteristic time
 $T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced
 avoided crossings beyond the reach of these fields, the applied \AC\ field would
 need to have a frequency of order $900\GHz$. Alternatively, the \AC\ field could

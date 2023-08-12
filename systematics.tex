@@ -3,15 +3,22 @@
 
 \subsection{Statistical sensitivity}
 
-In general, the statistical sensitivity of a molecular \gls{EDM}\ experiment
-depends on electric polarization $P$, coherence time $\tau$, detection rate
-$\dot N$, total measurement time $T$, and other factors encoding the intrinsic
-sensitivity of the system. For measurements of the Schiff moment in a nucleus
-with mass $A$ and atomic number $Z$, the sensitivity scales as $P\tau\sqrt{\dot
-N T}AZS_0$, where $S_0$ depends on the details of the nuclear structure.
+In general, the statistical sensitivity of a molecular \gls{EDM} experiment
+depends on electric polarization $\mathcal{P}$, coherence time $\tau$, detection
+rate $\dot N$, total measurement time $T$, and other factors encoding the
+intrinsic sensitivity of the system. For measurements of the Schiff moment in a
+nucleus with mass $A$ and atomic number $Z$, the sensitivity (in terms of the
+smallest energy shifts proportional to $T$-violating physics that can be
+detected) scales as
+%
+\[
+    \delta f\propto\mathcal{P}\tau\sqrt{\dot N T}A^{2/3}Z^2S_0,
+\]
+%
+where $S_0$ depends on the details of the nuclear structure.
 \cite{khriplovich2012cp}
 
-As a rough estimate, let us ignore most of the abovementioned details, and
+As a rough estimate, let us ignore most of the above-mentioned details, and
 consider a pulse of duration $t_\text{p}$ with
 $N_\text{p}=t_\text{p}R_\text{det}$ molecules. The Poissonian fluctuations of
 the number of molecules is $\sqrt{N_\text{p}}$, resulting in the detection rate
@@ -21,13 +28,13 @@ in the frequency measurement is
 \[
     \delta f=\delta S/\frac{\d S}{\d f},
 \]
-with the approximate detection curve slope $\d S/\d f\approx R_\text{det}/\Delta
-f$. Plugging in the numbers from Table~\ref{parametertable}, we get a shot noise
-of approx.\ $5\mHz$. For 300 hours of data collected with a 50~Hz pulse rate,
-the final experimental sensitivity is expected to be of the order
-$\approx1\uHz$. The latter figure corresponds to (via eqn~\ref{schiffnumbers})
-to a Schiff moment of the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT})
-to a proton \gls{EDM}\ of $10^{-26}\,e\cm$.
+with the approximate detection curve slope $\d S/\d f$. Plugging in the numbers
+from Table~\ref{parametertable}, we get a shot noise of approx.\ $5\mHz$ in a
+single pulse. For 300 hours of data collected with a 50~Hz pulse rate, the final
+experimental sensitivity is expected to be of the order $\approx1\uHz$. The
+latter figure corresponds to (via eqn~\ref{schiffnumbers}) to a Schiff moment of
+the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a proton
+\gls{EDM} of $10^{-26}\,e\cm$.
 
 \begin{table}
     \small
@@ -45,8 +52,7 @@ to a proton \gls{EDM}\ of $10^{-26}\,e\cm$.
         \multicolumn{4}{@{}l}{\textit{Potentially present:}}\\
             $S_{B\text{ss}}$ & $B_\text{ss}$   & state-selection magnetic field        & ? \\
             $S_{E\text{ss}}$ & $E_\text{ss}$   & state-selection electric field        & ? \\
-            $S_{\text{p1}}$ &  $\ket{p1}$      & initially populated \NMR\ state       & ? \\
-            $S_{\text{d}}$ &   $\ket{d}$       & detection final state                 & ? \\
+            $S_{\text{p}}$   & $\ket{p}$       & unwanted residual population after SPA/SPB & ? \\
         \bottomrule
     \end{tabu}%}
     \caption[Parameters that can be reversed for systematics checks.]{Parameters
@@ -80,6 +86,8 @@ averaged together, this implements a lock-in detection scheme. In the following,
 I will show how this achieves bandpass filtering of the noise, with the
 bandwidth of the filter being inversely proportional to the number of averages.
 
+\paragraph{Single average}
+
 Consider a physical signal $V(t)$ that we measure for a total time $T$ from
 $t=-T/2$ to $t=T/2$. The measured signal thus is
 %
@@ -87,16 +95,20 @@ $$
 V_\text{meas}(t)=V(t)\cdot\Pi(t/T),
 $$
 %
-where $\Pi(t)$ is the rectangular function
+where $\Pi(x)$ is the rectangular function
 %
 $$
-\Pi(t)=\begin{cases}
-   0,&|t|>1/2\\
-   1/2,&|t|=1/2\\
-   1,&|t|<1/2.
+\Pi(x)=\begin{cases}
+   0,&|x|>1/2\\
+   1/2,&|x|=1/2\\
+   1,&|x|<1/2,
 \end{cases}
 $$
 %
+where $\Pi(\pm1/2)$ is defined to be 1/2 to be consistent with the usual
+convention, even though these values are ``almost never important to specify''
+\cite[ch~4]{bracewell2000fourier}.
+
 The spectrum of the measured signal is given by the Fourier transform:
 %
 \begin{align*}
@@ -114,15 +126,15 @@ function.
    \centering
    \includegraphics[width=.75\textwidth]{figs/todo/comb.pdf}
     \caption[Frequency comb vs averaging.]{The frequency comb arises when
-    averaging different segments of a measured signal. Before the segments can
+    averaging $N$ different segments of a measured signal. Before the segments can
     be averaged together, they have to be time shifted so they overlap; the
     Fourier transform of time shifting gives the exponentials that sum to form
     the frequency comb depicted here.}
    \label{comb}
 \end{figure}
 
-\vspace{1cm}
-\noindent
+\paragraph{Multiple averages}
+
 Now consider dividing the measurement into $N$ equal segments $V_k(t)$ of length
 $T_0=T/N$, where $k=1,\ldots,N$. These segments correspond to time-shifting the
 original signal $V(t)$, then truncating it to a length $T_0$:
@@ -173,7 +185,8 @@ yielding the general form of a signal that has been averaged $N$ times:
 It remains to examine the sum of complex exponentials in equation
 (\ref{sumincluded}). Disregarding the constant phase factor, the sum is plotted
 in Fig.~\ref{comb}. We see it takes the form of a frequency comb, the sharper
-the greater the number $N$ of averaged traces.
+the greater the number $N$ of averaged traces but entirely independent of the
+total measurement time.
 
 We see from eqn~(\ref{sumincluded}) that in the frequency domain, averaging is a
 two-step procedure. First, the spectrum of the original signal is multiplied by
@@ -187,7 +200,68 @@ The second step to the procedure is the convolution with $\sinc(\omega T_0/2)$.
 This gives the measured spectrum a linewidth essentially independent of the
 number of averages. Underneath the sinc, however, the noise will be attenuated
 through the action of the bandpass filter (or frequency comb) that derives its
-sharpness from the high number of averages.
+sharpness from the high number of averages, irrespective of the total
+measurement time.
+
+\paragraph{Lock-in detection}
+
+Measuring a signal for a long time, but averaging the whole trace together
+(i.e., $N=1$, $T_0=T$) also yields a sharp filter (in fact, the \emph{sharpest}
+\cite[sect~7.5.1]{oppenheim2010discrete}), attenuating noise outside its
+passband. However, that is merely a low-pass filter. Due to unavoidable `$1/f$'
+noise present in all physical systems, making a low-pass filter sharper (i.e.,
+measuring for a longer time) often does not yield any improvement in the quality
+of the measurement---the reduction in noise bandwidth is offset by the increase
+in noise density.
+
+As shown above, averaging for $N\gg1$ times yields a frequency comb that is
+sensitive to signals away from \DC. This is seen as the peaks at
+$\omega=0,1,2,\ldots$ in Fig.~\ref{comb}. If we modulate the signal of interest
+at the frequency of averaging ($\omega=1$) and in phase with it, then the
+sensitive signal will be located far away from the noisy low-frequency region.
+
+Does this mean that long measurement times are not needed, since we can `chop
+up' a short measurement into a large number $N\gg1$ of segments and average them
+up, taking advantage of the sharp comb filter? The reason this would not work is
+that after multiplying the original spectrum with the comb, the spectrum is
+convolved with $\sinc(\omega T_0/2)$. If $T_0$ is very short, then we are unable
+to distinguish the signal at $\omega=1$ from the noise at $\omega=0$. Furthermore,
+as stated above, the `$1/f$' noise at $\omega=0$ grows with decreasing
+frequency, i.e.\ increasing $N$ at a fixed $T$.
+
+The averaged signal thus retains the low-frequency noise, as well as the noise
+and signal at other integer multiples of the averaging frequency. To remove the
+noise contribution from comb peaks other than $\omega=1$, we first have to make
+sure that the total measurement time is long enough to distinguish the different
+peaks, as explained in the previous paragraph. Then, the spectrum can be shifted
+by mixing the measured signal with an $e^{i\omega t}$ term. After final low-pass
+filtering, we are left with only the signal plus noise in a narrow band around
+the signal frequency (bandwidth proportional to number of averages but
+independent of total measurement time), plus the `leakage' of noise from the
+$\sinc(\omega T_0/2)$ tails of the other peaks. This is the essence of the
+lock-in measurement technique.
+
+In this experiment as well as most (all?) other \gls{EDM} experiments, the final
+$e^{i\omega t}$ shift is approximately effected by reversing some experimental
+parameter(s) in sync with the averaging. This is equivalent to multiplying the
+signal with a square wave. Unlike a true frequency shift, the square wave also
+includes all odd harmonics. Unfortunately this means that a small contribution
+of high-frequency noise around these harmonics gets included in the final
+measurement result, but this is unavoidably a part of the nature of reversals.
+In principle many parameter reversals (e.g., polarity of interaction-region
+electric field) could be replaced by true sinusoidal modulation, but in practice
+the technical complexity of this solution would not be worth the incremental
+noise reduction from losing the odd-harmonic noise.
+
+In sum, there are three components to successful lock-in detection: (1) a large
+number of averages, creating a sharp frequency comb filter independent of total
+measurement time; (2) a large total measurement time, allowing us to distinguish
+the contributions from the different peaks of the comb; (3) parameter reversals
+and final low-pass filtering, effecting the extraction of the final measurement
+result.
+
+We now proceed to look at concrete parameter reversals in terms of the specific
+noise or systematic effects they are designed to counteract.
 
 \subsection{Electric field effects}
 
@@ -219,7 +293,7 @@ Fig.~\ref{Cslope} and Table \ref{statepairs}).
 
 The shift $S_\text{int}$ is thus a sensitive measure of how perfectly the
 interaction-region electric field is reversed. However, a measure independent of
-the \gls{EDM}\ signal is useful. The ACME II experiment characterized the
+the \gls{EDM} signal is useful. The ACME II experiment characterized the
 electric field in the interaction region via microwave spectroscopy of a state
 susceptible to large Stark shifts; see \cite[sect~5.1]{lasner2019thesis} for
 details.
@@ -273,21 +347,75 @@ shield even after the current has stopped flowing. This is a particularly
 and can mimic an \gls{EDM}. Other effects include the noise on the high voltage
 supply and leakage currents; we discuss these and others in the following.
 
+\paragraph{HV supply systematics}
+
+It is possible that the reversal of the interaction-region electric field gives
+rise to a magnetic field, either due to the electronics effecting the reversal,
+or due to currents leaking between the field plates. In
+ref.~\cite{cho1991search}, they employed an additional field reversal by
+manually rewiring the electrode high voltage supply (motivated by the switching
+relay's frequent breakdowns \cite{cho1990thesis}), finding that the switching
+electronics does not noticeably impact the \gls{EDM} measurement (at least, the
+electronics are no worse than the manual electrode polarity switching). To guard
+against the second type of induced magnetic field, they made sure that the
+leakage current remained below 2~nA at the operating voltage, resulting in what
+they claim is an entirely negligible effect.
+
+In \CENTREX, it will also be important to verify that the \HV\ electronics, and
+the plate charging/leakage currents, do not incur significant systematics. While
+we are aiming for a sub-10~$\mu$G residual \DC\ magnetic field, the condition on
+magnetic fields correlated with $E$-reversals is significantly more stringent as
+its contribution adds up---instead of averaging out---with the reversals,
+mimicking an \gls{EDM}-type effect. Our tolerance to these fields can be
+estimated by comparing the energy of a proton \gls{EDM} that we would like to be
+sensitive to ($d_\text{p}\sim10^{-25}e\cm$) in a typical effective field
+($E_\text{eff}\sim30\kVcm$) with the Zeeman frequency shift ($\Delta
+f/B\sim5\mHz/\mu$G). With these numbers, a magnetic field oscillating
+synchronously with the electric field, with a magnitude greater than 150~pG
+would cause a Zeeman shift larger than the proton \gls{EDM} in the effective
+field. This is the field at a distance of one inch away from a long wire
+carrying 2~nA of current (which is a typical upper limit for leakage currents,
+and is also the charging current after $\approx16$ $RC$ time constants for
+$30\kVcm$ electrodes charged via 1~M$\Omega$ resistors).
+
+The extreme sensitivity to stray currents is somewhat ameliorated by the fact
+that the resulting magnetic fields are not necessarily parallel to the $30\kVcm$
+electric field; the perpendicular components cause only a quadratic, $E$-even
+energy shift. In the atomic thallium experiments \cite{regan2001thesis}, the
+authors note that the leakage current can be very asymmetric with respect to the
+direction of the electric field, and also erratic over time. The trouble can be
+mitigated to some extent by making the apparatus as symmetric as possible (using
+coaxial wiring for the electrodes, making connections in the center of the
+plates as far as possible, making sure the return currents flow symmetrically).
+This also underlines the importance of avoiding ferromagnetic materials around
+the interaction region that could retain memory of the direction and magnitude
+of the charging currents.
+
+Any currents in the vicinity of the magnetic shield can also magnetize the
+magnetic shield itself, coupling together seemingly unrelated parameters. For
+example, currents for charging the high-voltage electrodes in the interaction
+region or the lens could do this, and cause a residual magnetic field that
+reverses with the applied electric fields. In the following paragraph, we
+explore this effect.
+
 \subsubsection{Charging magnetization}
 
-The interaction region electrodes are two parallel plates that form a capacitor
-of approximate capacitance of several hundred picofarads. As the voltage on the
-electrodes is increase from zero to $\pm30$~kV, the charging current $I=CdV/dt$
-flows to supply the electric charge. This current is associated with a magnetic
-field which in turn induces a permanent magnetization in the magnetic shield
-that remains after the current has stopped flowing.
+The interaction region electrodes are two parallel plates, approx.\ 15~cm wide
+by 3~m long, separated by 2~cm. The plates form a capacitor of approximate
+capacitance of several hundred picofarads. As the voltage on the electrodes is
+increased from zero to $\pm30$~kV, the charging current $I=CdV/dt$ flows to
+supply the electric charge. This current is associated with a magnetic field
+which in turn induces a permanent magnetization in the magnetic shield that
+remains after the current has stopped flowing.
 
-In the section on magnetic field, we have estimated that the magnetic field
-inside the magnetic shield changes by approx.\ 10~nG when a current of 0.1~A
-flows through the inside of the shield. Assuming the electrodes have a
-capacitance of 200~pF and are linearly charged to a potential difference of
-60~kV in a second, this implies a current of 12~$\mu$A. Extrapolating, this
-would mean a charging magnetization of 1.2~pG, which is acceptable.
+In the section on magnetic field (\ref{shield:charging_magnetization}), we have
+estimated that the magnetic field inside the magnetic shield changes by approx.\
+10~nG when a current of 0.1~A flows through the inside of the shield. Assuming
+the electrodes have a capacitance of 200~pF and are linearly charged to a
+potential difference of 60~kV in a second, this implies a current of 12~$\mu$A.
+Extrapolating, this would mean a charging magnetization of 1.2~pG, which is much
+smaller than the 150~pG figure quoted above when comparing the Zeeman shift of
+the main interaction resonance with the desired experimental sensitivity.
 
 However, if the electrodes are not charged up to the final voltage using a
 constant current, the instantaneous current could be much higher. For example,
@@ -308,10 +436,10 @@ they are within the limits set by the shield charging magnetization.
 The \gls{NMR} resonance responds to electric fields via the first-order Stark
 effect with a slope of approx.\ 30~mHz/(V/cm). If we want the electric field
 noise to result in an effect much smaller than 45~nHz (the expected statistical
-sensitivity of the experiment), then the field noise needs to be limited to far
-below 1.5~$\mu$V/cm. At the scale of 30~kV/cm, this is 50 parts per trillion, a
-fantastically strict noise requirement (34 bits of accuracy, or 10.5 digits, or
-206~dB).
+sensitivity of the experiment \cite[sect~3.1]{grasdijk2021centrex}), then the
+field noise needs to be limited to far below 1.5~$\mu$V/cm. At the scale of
+30~kV/cm, this is 50 parts per trillion, a fantastically strict noise
+requirement (34 bits of accuracy, or 10.5 digits, or 206~dB).
 
 However, we need to keep in mind that due to the lock-in technique inherent to
 the \CENTREX\ experiment, we only care about the noise in a very narrow
@@ -335,10 +463,10 @@ the reversal.
 
 The electric field is to be reversed using a pair of high-voltage relays that
 are pneumatically actuated to reduce the amount of magnetic fields that are
-correlated with the field reversals. Assuming a slope of 2.5~mHz/$\mu$G of the
-\gls{NMR} resonance with respect to magnetic fields, the field due to the relay
-switching needs to be much lower than 18~pG to achieve the sensitivity of 45~nHz
-as mentioned above.
+correlated with the field reversals. Assuming a slope of 5.0~mHz/$\mu$G of the
+\gls{NMR} resonance with respect to magnetic fields (see
+Table~\ref{statepairs}), the field due to the relay switching needs to be much
+lower than $\sim10$~pG to achieve the sensitivity of 45~nHz as mentioned above.
 
 The pneumatic actuation system itself will rely on solenoid valves, which,
 however, can be located in a shielded enclosure and located far away from the
@@ -400,7 +528,7 @@ B_\text{mot}|\approx60\uG$. On the other hand, the Zeeman shift is approximately
 50~nHz/$\mu$G, so the maximum change in magnitude of the total magnetic field
 corresponds to approx.\ 3~$\mu$Hz, which is $60\times$ above the anticipated
 statistical sensitivity of the experiment \cite[sect.~3.1]{grasdijk2021centrex}.
-However, due to $M$ modulation, the shift is further suppresed by an order of
+However, due to $M$ modulation, the shift is further suppressed by an order of
 magnitude, such that the residual fields need only be a factor of $6\times$
 lower than the motional field; that is, the average residual fields of up to
 10~$\mu$G are allowed.
@@ -408,7 +536,7 @@ lower than the motional field; that is, the average residual fields of up to
 The $M$ modulation works as follows. In TlF, there is an internal magnetic field
 $\vec B_\text{int}$ at the site of the thallium nucleus due to the rotational
 motion of the molecule \cite{cho1991search}. To estimate the magnitude of the
-internal magnetic field $B_\text{int}$, compare the magnitude of the the Zeeman
+internal magnetic field $B_\text{int}$, compare the magnitude of the Zeeman
 shift due to the Tl nucleus $-(\mu_1/I_1)(\vec I_1\cdot\vec B)$ to the strength
 of the Tl spin-rotation energy $c_1(\vec I_1\cdot\vec J)$. The two effects are
 equal in strength at $B_\text{int}\approx50.8$~G.
@@ -429,81 +557,36 @@ level separation unless the external fields $\vec B_\text{res}$ change in
 magnitude in phase with the $m_J$ reversals. This could be the case if there are
 leaking electric or magnetic fields from the state-selection chamber.
 
-If the state-selection region will feature a static magnetic field
-$B_\text{ss}$, used to select one of the $m_J=\pm1$ states, the shift
-$S_\text{ss}$ due to the interaction of the leaking state-selection field and
-the internal molecular will vanish when averaged over the $m_J$ modulation since
-$m_J$ determines the direction of the internal magnetic field. Consequently, it
-will be important to measure the shift $S_{\text{ss},m}$ when both $m_J$ and
-$B_\text{ss}$ are reversed simultaneously.
+%If the state-selection region will feature a static magnetic field
+%$B_\text{ss}$, used to select one of the $m_J=\pm1$ states, the shift
+%$S_\text{ss}$ due to the interaction of the leaking state-selection field and
+%the internal molecular will vanish when averaged over the $m_J$ modulation since
+%$m_J$ determines the direction of the internal magnetic field. Consequently, it
+%will be important to measure the shift $S_{\text{ss},m}$ when both $m_J$ and
+%$B_\text{ss}$ are reversed simultaneously.
 
 \paragraph{Noise}
 
-The noise primarily affects $B_x$, the component parallel to the electric field,
-and affects the other two components only quadratically. Since the experiment
-averages a number $N$ of measurements taken at regular intervals $\Delta
-t~1/f_0$, the noise is effectively bandpass-filtered through a bandwidth $f_0/N$
-centered around $f_0$ (see section \ref{systematics:averaging}). We expect to
-accumulate $N\approx10,000$ datapoints, collected at a frequency
+The magnetic noise, such as that due to the Johnson current noise in the
+electric field plates, primarily affects $B_x$, the component parallel to the
+electric field, and affects the other two components only quadratically. Since
+the experiment averages a number $N$ of measurements taken at regular intervals
+$\Delta t~1/f_0$, the noise is effectively bandpass-filtered through a bandwidth
+$f_0/N$ centered around $f_0$ (see section \ref{systematics:averaging}). We
+expect to accumulate $N\approx10,000$ datapoints, collected at a frequency
 $f_0\approx10$~mHz, which corresponds to a bandwidth of approx.\ 1~$\mu$Hz.
 Considering the magnetic moments in TlF are of magnitude $\approx1$~kHz/G, the
-integrated magnetic noise has to be below approx.\ 50~pG.
-
-\paragraph{Effects in phase with $E$ reversals}
-
-It is possible that the reversal of $E_\text{int}$ gives rise to a magnetic
-field, either due to the electronics effecting the reversal, or due to currents
-leaking between the field plates. In ref.~\cite{cho1991search}, they employed an
-additional field reversal by manually rewiring the electrode high voltage supply
-(motivated by the switching relay's frequent breakdowns \cite{cho1990thesis}),
-finding that the switching electronics does not noticably impact the \gls{EDM}\
-measurement (at least, the electronics are no worse than the manual electrode
-polarity switching). To guard against the second type of induced magnetic field,
-they made sure that the leakage current remained below 2~nA at the operating
-voltage, resulting in what they claim is an entirely negligible effect.
-
-In \CENTREX, it will also be important to verify that the \HV\ electronics, and
-the plate charging/leakage currents, do not incur significant systematics. While
-we are aiming for a sub-10~$\mu$G residual magnetic field, the condition on
-magnetic fields correlated with $E$-reversals is significantly more stringent as
-its contribution adds up---instead of averaging out---with the reversals,
-mimicking an \gls{EDM}-type effect. Our tolerance to these fields can be
-estimated by comparing the energy of a proton \gls{EDM}\ that we would like to
-be sensitive to ($d_\text{p}\sim10^{-25}e\cm$) in a typical effective field
-($E_\text{eff}\sim30\kVcm$) with the Zeeman frequency shift ($\Delta
-f/B\sim5\mHz/\mu$G). With these numbers, a magnetic field greater than 150~pG
-would cause a Zeeman shift larger than the proton \gls{EDM}\ in the effective
-field---this is the field at a distance of one inch away from a long wire
-carrying 2~nA of current (which is a typical upper limit for leakage currents,
-and is also the charging current after $\approx16$ $RC$ time constants for
-$30\kVcm$ electrodes charged via 1~M$\Omega$ resistors).
-
-The extreme sensitivity to stray currents is somewhat ameliorated by the fact
-that the resulting magnetic fields are not necessarily parallel to the $30\kVcm$
-electric field; the perpendicular components cause only a quadratic, $E$-even
-energy shift. In the atomic thallium experiments \cite{regan2001thesis}, the
-authors note that the leakage current can be very asymmetric with respect to the
-direction of the electric field, and also erratic over time. The trouble can be
-mitigated to some extent by making the apparatus as symmetric as possible (using
-coaxial wiring for the electrodes, making connections in the center of the
-plates as far as possible, making sure the return currents flow symmetrically).
-This also underlines the importance of avoiding ferromagnetic materials around
-the interaction region that could retain memory of the direction and magnitude
-of the charging currents.
-
-Any currents in the vicinity of the magnetic shield can also magnetize the
-magnetic shield itself, coupling together seemingly unrelated parameters. For
-example, currents for charging the high-voltage electrodes in the interaction
-region or the lens could do this, and cause a residual magnetic field that
-reverses with the applied electric fields. The magnitude of this effect is
-estimated in section \ref{shield:charging_magnetization}.
+integrated magnetic noise has to be below approx.\ 50~pG. While this is too low
+a magnitude to measure directly with the magnetometers available in our lab, we
+estimate that the magnetic shield suppresses the noise well below this level on
+account of its excellent dynamic shielding (see sect~\ref{magnetic:noise}).
 
 \paragraph{Gradients}
 
 Here we consider two possible effects due to a spatial variation in the magnetic
-field. If there is a periodic variation at the correct frequency of order
-100~kHz, this can drive transitions between the two \NMR\ states, much like the
-\RF\ coils.
+field. If the molecules experience a periodic variation at the correct frequency
+of order 100~kHz, this can drive transitions between the two \NMR\ states, much
+like the \RF\ coils.
 
 Another way spatially varying fields can affect the measurements is via
 geometric phase effects.
@@ -516,7 +599,7 @@ acquired no relative phase delay during the molecular precession time, we expect
 to read out two equal populations. (In addition, we can also switch the cables
 used to connect the coils to their sources---their different lengths will cause
 different phase shifts.) Indeed, ref.~\cite{wilkening1984search} found no
-significant effects on the \gls{EDM}\ shift arising from the nominally
+significant effects on the \gls{EDM} shift arising from the nominally
 $\pm1^\circ$ phase accuracy between the two coils. However, in \CENTREX\ we are
 aiming for a more precise measurements, and it is worthwhile estimating the
 allowed phase error.
@@ -574,7 +657,7 @@ The counter-propagating term, ignored when making the rotating-wave
 approximation, causes a small \AC\ Zeeman shift, called a Block--Siegert shift.
 The effect is proportional to the \RF\ drive power and can be observed
 experimentally by applying a power slighly higher or lower than that required
-for $\pm\pi/2$-pulses. Since the \SOF\ signal exhibits only a quadratic
+for $\pm\pi/2$-pulses. Since the \gls{SOF} signal exhibits only a quadratic
 dependence on the drive power, we can thus distinguish the two effects. At any
 rate, the shift only depends on the magnitude of the \RF\ power and will thus
 drop out when averaging over the appropriate parameter reversals.
@@ -583,10 +666,11 @@ drop out when averaging over the appropriate parameter reversals.
 
 In previous experiments \cite{cho1991search}, it was also important to consider
 the shifts in beam intensity corresponding to parameter reversals. In contrast,
-we are able to measure both spin-up and spin-down populations, making us
-insensitive to changes in beam intensity and the resulting systematics. By
-studying the ratio of the difference and the sum of the two populations, the
-overall beam intensity is in principle cancelled out unless the intensity change
-is different for the two \NMR\ states, or for the states they connect to in the
-state preparation regions around the main interaction region. We have not yet
-found that to be the case.
+we are able to measure both spin-up and spin-down populations (as explained in
+the overview of the detection scheme in section \ref{introduction:overview}),
+making us insensitive to changes in beam intensity and the resulting
+systematics. By studying the ratio of the difference and the sum of the two
+populations, the overall beam intensity is in principle cancelled out unless the
+intensity change is different for the two \NMR\ states, or for the states they
+connect to in the state preparation regions around the main interaction region.
+We have not yet found that to be the case.
