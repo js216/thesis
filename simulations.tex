@@ -242,12 +242,13 @@ thick black trace in Fig.~\ref{floquet2}, but changes slowly compared to
 $\epsilon_\text{\AC}$) is of sufficient magnitude to reach them. In the
 simulation resulting in Fig.~\ref{floquet2}, the \DC\ field is assumed to
 traverse the inherent avoided crossing and not much further.  However, in the
-flight of molecules towards the electrostatic lens, fields of order $30~\kVcm$
+flight of molecules towards the electrostatic lens, fields of order 30~kV/cm
 get reversed in a characteristic time
 $T_\text{fall}\propto10^{-4}\s\propto10/\delta$. In order to move the induced
-avoided crossings beyond the reach of these fields, the applied \AC\ field would
-need to have a frequency of order $900\GHz$. Alternatively, the \AC\ field could
-be confined to a region where the \DC\ field does not depart too far from zero.
+avoided crossings between the `photonic' states beyond the reach of these
+fields, the applied \AC\ field would need to have a frequency of order
+$900\GHz$. Alternatively, the \AC\ field could be confined to a region where the
+\DC\ field does not depart too far from zero.
 
 \subsection{Quantum Zeno Effect}
 
@@ -288,7 +289,9 @@ superposition $\ket\Psi=b_1\ket1+b_2\ket2$, where
   \includegraphics[width=.3\textwidth]{figs/todo/twolevel.png}
   \hfill
   \includegraphics[width=.49\textwidth]{figs/todo/threelevel.png}
-   \caption{Two and three level systems.}
+    \caption[Two and three level systems.]{Two and three level systems. In the
+    case of the two-level system, a third `measurement' state is implied. (See
+    text.)}
   \label{level_systems}
 \end{figure}
 
@@ -314,6 +317,12 @@ measurements. This effect has been called the quantum Zeno effect. Note that
 this argument fails for pure exponential decay instead of the cosine or
 quadratic time dependence seen in eqn~\ref{cosP1}.
 
+Note that, as suggested in the caption of Fig.~\ref{level_systems}, the
+two-level system is actually a three (or more) level system, since the
+measurement, critical to the Zeno effect, must connect to some other state that
+rapidly emits a photon that can be detected. In the following paragraph, we
+introduce the third state explicitly.
+
 \paragraph{Three-level system}
 
 Now consider adding a third level $\ket3$, making a three-level system
@@ -335,8 +344,9 @@ When the coupling to the third state is turned off ($\Omega_\text{laser}=0$),
 the system behaves as a two-level system and executes Rabi oscillations
 (Fig.~\ref{rabi_sup}, left). If on the other hand we periodically turn the
 $\Omega_\text{laser}$ on in the form of short $\pi$ pulses (Fig.~\ref{rabi_sup},
-right), executing `measurements', then we see that the evolution of $\ket1$ into
-$\ket2$ is significantly slowed down.
+right), executing `measurements' (e.g.\ by detecting the spontaneously emitted
+photon and concluding that the system must have been in state $\ket1$), then we
+see that the evolution of $\ket1$ into $\ket2$ is significantly slowed down.
 
 In the case illustrated in Fig.~\ref{rabi_sup}, we have applied only four
 measurement pulses. By making the measurements more frequent while keeping the
@@ -395,7 +405,7 @@ Finally, we can look at the total number of photons scattered by the three-level
 system subject to a constant laser excitation. After the ground states are
 promoted to the unstable excited state, the latter decays, emitting photons
 which may in principle be detected in an experiment (`laser-induced
-fluorescence). Naturally, when the laser is turned off or is too weak, there is
+fluorescence'). Naturally, when the laser is turned off or is too weak, there is
 a zero or very small probability of moving population into the excited state,
 thus the number of photons emitted will be correspondingly small. However, an
 initially surprising effect happens when the `detection laser' is too strong:
@@ -405,19 +415,22 @@ the number of photons emitted decreases with the increase in laser power
 \begin{figure}
    \centering
   \includegraphics[width=\textwidth]{figs/todo/lslif.png}
-   \caption{Laser-induced fluorescence is suppressed when the `detection laser'
-   has too much power, just as when it has too little.}
+    \caption[Laser-suppressed laser-induced fluorescence.]{Laser-induced
+    fluorescence is suppressed when the `detection laser' has too much power,
+    just as when it has too little. The smaller plots go from $t=0$ to
+    $t=\pi/\Delta$ for $\Delta=0.1$; the three cases are, from left to right,
+    $\Omega=0.1,0.35,0.8$.}
   \label{lslif}
 \end{figure}
 
 Of course, this ``laser-suppressed laser-induced fluorescence'' paradox is
-merely an example of the quantum Zeno effect. A very strong detection laser
-suppresses the evolution of the dark state into the bright state, thus reducing
-the amount of population that can be moved to the excited state, resulting in a
-lower number of photons detected by the experiment. This has been noted by
-Menskii \cite{menskii1998decoherence} in another context, saying that ``a too
-accurate measurement of the quantum system is not advantageous, and this is a
-manifestation of the paradoxical nature of quantum mechanics''.
+merely an example of the continuous quantum Zeno effect. A very strong detection
+laser suppresses the evolution of the dark state into the bright state, thus
+reducing the amount of population that can be moved to the excited state,
+resulting in a lower number of photons detected by the experiment. This has been
+noted by Menskii \cite{menskii1998decoherence} in another context, saying that
+``a too accurate measurement of the quantum system is not advantageous, and this
+is a manifestation of the paradoxical nature of quantum mechanics''.
 
 Thus an `accurate measurement of the quantum system' involves a trade-off
 between two contradictory requirements: (1) Quickly scattering photons from
@@ -455,8 +468,10 @@ exponential, the argument does not work:
 %
 In atoms the spontaneous decay of an excited state is indeed
 quadratic initially, but only for $\sim10^{-16}$~s \cite{plenio1996inhibition}.
-The laser would need $\Omega_\text{Zeno}\sim10^9\;\Gamma$, or about
-100~MW!
+In order to suppress the decay within such a short timeframe, an impossibly
+laser power would be required unless a way is found to extend the duration of
+the initial quadratic part of the evolution that ultimately results in
+spontaneous decay.
 
 \begin{figure}
    \centering
@@ -550,13 +565,20 @@ is that $\ket1$ is empty afterwards, which is why $\Omega_2$ precedes $\Omega_1$
 
 \paragraph{Conclusion}
 
-We have seen in this section that strong pulsed or continuous laser to
+We have seen in this section that a strong pulsed or continuous laser to a
 short-lived excited state suppresses dark-state evolution. The reason this
 happens can be derived from basic quantum mechanics. With ``frozen'' dark
 states, molecules scatter fewer photons than we can expect based on branching
 ratios alone, therefore there exists an optimal detection laser power.
 Furthermore, by adiabatically changing measurement basis, it is possible to
 force evolution (e.g.\ STIRAP).
+
+In the following section, we consider a different approach to influencing the
+speed of molecular evolution, by continuously switching the polarization of the
+laser in order to reach states that would otherwise be inaccessible due to
+selection rules. In particular, this technique can be useful in the rotational
+cooling part of the experiment; see sect~\ref{introduction:overview} for an
+overview of the apparatus.
 
 \subsection{Polarization switching in rotational cooling}
 
@@ -640,8 +662,9 @@ cooling efficiency.
     \centering
     \includegraphics[width=\textwidth]{figs/mathematica/RC_sw_time.pdf}
     \caption[Final population vs switching time and laser power.]{Final
-    population as a function of \part{Left} Switching time at $\Omega=0.9$, and
-    \part{Right} Laser power for switching time = 25. Time and frequency in
-    units of $\Gamma$, the natural width of the transition.}
+    population vs switching time time and laser power. Time and frequency in
+    units of $\Gamma$, the natural width of the transition. \part{Left}
+    Population vs switching time at $\Omega=0.9$. \part{Right} Population vs
+    laser power for switching time = 25. }
     \label{switching_time}
 \end{figure}
