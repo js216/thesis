@@ -74,8 +74,8 @@ The experiment is expected to result in a null measurement of effects that are
 odd under $T$-reversal. A crucial part of the experimental design is to make
 sure there are no known effects that could mimic genuine $T$-odd interactions.
 During data taking, we plan to continually reverse a number of parameters (see
-Table~\ref{reversallist}) that in principle should not affect the measured \NMR\
-frequency $f$ if done perfectly, and measure the resulting shift
+Table~\ref{reversallist}) that in principle should not affect the measured
+\gls{NMR} frequency $f$ if done perfectly, and measure the resulting shift
 %
 \[
 S_{A,B,\ldots}\equiv f(A,B,\ldots)-f(-A,-B,\ldots).
@@ -281,7 +281,7 @@ Fig.~\ref{Cslope} and Table \ref{statepairs}).
         \input{figs/matplotlib/slope.pdf_tex}
     }
     \caption[Nuclear resonance frequency vs field reversal.]{\part{a} Slope of
-    the \NMR\ resonance frequency $f_0$ in the applied electric field as a
+    the \gls{NMR} resonance frequency $f_0$ in the applied electric field as a
     measure of the experimental sensitivity to imperfections in the field
     reversal. The dashed lines are calculated with the $c_3$ term from
     ref.~\cite{wilkening1984search}, whereas the solid one uses the $c_3$ from
@@ -433,13 +433,13 @@ they are within the limits set by the shield charging magnetization.
 
 \subsubsection{HV noise}
 
-The \gls{NMR} resonance responds to electric fields via the first-order Stark
-effect with a slope of approx.\ 30~mHz/(V/cm). If we want the electric field
-noise to result in an effect much smaller than 45~nHz (the expected statistical
-sensitivity of the experiment \cite[sect~3.1]{grasdijk2021centrex}), then the
-field noise needs to be limited to far below 1.5~$\mu$V/cm. At the scale of
-30~kV/cm, this is 50 parts per trillion, a fantastically strict noise
-requirement (34 bits of accuracy, or 10.5 digits, or 206~dB).
+The \gls{NMR} resonance responds to electric fields with a slope of approx.\
+30~mHz/(V/cm). If we want the electric field noise to result in an effect much
+smaller than 45~nHz (the expected statistical sensitivity of the experiment
+\cite[sect~3.1]{grasdijk2021centrex}), then the field noise needs to be limited
+to far below 1.5~$\mu$V/cm. At the scale of 30~kV/cm, this is 50 parts per
+trillion, a fantastically strict noise requirement (34 bits of accuracy, or 10.5
+digits, or 206~dB).
 
 However, we need to keep in mind that due to the lock-in technique inherent to
 the \CENTREX\ experiment, we only care about the noise in a very narrow
@@ -515,20 +515,16 @@ The allowed transverse residual field perpendicular to the interaction-region
 electric field $\vec E$ is limited by the motional magnetic field experienced by
 the molecules. As they fly through with a velocity $\vec v$, they experience the
 motional field $\vec B_\text{mot}=\vec v\times\vec E/c^2$ that changes direction
-when the electric field is reversed. Any residual field in the same direction
-will add to $\vec B_\text{mot}$, such that the magnitude of the total field will
-change with electric field reversals. Due to the Zeeman splitting between the
-spin up and down states, the change in magnetic field magnitude introduces a
-frequency shift. This does not constrain the other two components (horizontal,
-axial) of the magnetic field.
+when the electric field is reversed. (With our experimental configuration,
+$|\vec E|\approx30\kVcm$ and $|\vec v|\approx180\ms$, the magnitude of the
+motional field is $|\vec B_\text{mot}|\approx60\uG$.) Any residual field in the
+same direction will add to $\vec B_\text{mot}$, such that the magnitude of the
+total field will change with electric field reversals. Due to the Zeeman
+splitting between the spin up and down states, the change in magnetic field
+magnitude introduces a frequency shift. This does not constrain the other two
+components (horizontal, axial) of the magnetic field.
 
-With our experimental configuration, $|\vec E|\approx30\kVcm$ and $|\vec
-v|\approx180\ms$, the magnitude of the motional field is $|\vec
-B_\text{mot}|\approx60\uG$. On the other hand, the Zeeman shift is approximately
-50~nHz/$\mu$G, so the maximum change in magnitude of the total magnetic field
-corresponds to approx.\ 3~$\mu$Hz, which is $60\times$ above the anticipated
-statistical sensitivity of the experiment \cite[sect.~3.1]{grasdijk2021centrex}.
-However, due to $M$ modulation, the shift is further suppressed by an order of
+Due to $M$ modulation, the shift is further suppressed by an order of
 magnitude, such that the residual fields need only be a factor of $6\times$
 lower than the motional field; that is, the average residual fields of up to
 10~$\mu$G are allowed.
@@ -585,7 +581,7 @@ account of its excellent dynamic shielding (see sect~\ref{magnetic:noise}).
 
 Here we consider two possible effects due to a spatial variation in the magnetic
 field. If the molecules experience a periodic variation at the correct frequency
-of order 100~kHz, this can drive transitions between the two \NMR\ states, much
+of order 100~kHz, this can drive transitions between the two \gls{NMR} states, much
 like the \RF\ coils.
 
 Another way spatially varying fields can affect the measurements is via
@@ -611,13 +607,14 @@ reversing error $\Delta\phi_\text{R}$ cancels out when taking the difference of
 the signals between the two signs of the phase, as was noted by Ramsey in
 ref.~\cite{ramsey1951phase}. The non-reversing part $\Delta\phi_\text{NR}$,
 however, does not, and changes the overall signal by about 2~\%\ per degree of
-$\Delta\phi_\text{NR}$. Given that the signal changes by 9.4~\%\ per Hz of NMR
+$\Delta\phi_\text{NR}$. Given that the signal changes by 9.4~\%\ per Hz of
+\gls{NMR}
 resonance frequency change, a one-degree non-reversing phase error causes a
 spurious 0.18~Hz frequency error.
 
 A further shift under simultaneous reversal of $B_\text{ss}$ and $m_J$ is due to
 the so-called Millman effect \cite{millman1939determination}, due to the spatial
-curvature of the fields inducing the \NMR\ transition. The oscillating field can
+curvature of the fields inducing the \gls{NMR} transition. The oscillating field can
 be decomposed into two rotating fields, and only one of them is actually
 inducing the transition, depending on the direction of the magnetic field. In
 the frame of the molecule, the frequency of the oscillating field changes with
@@ -671,6 +668,6 @@ the overview of the detection scheme in section \ref{introduction:overview}),
 making us insensitive to changes in beam intensity and the resulting
 systematics. By studying the ratio of the difference and the sum of the two
 populations, the overall beam intensity is in principle cancelled out unless the
-intensity change is different for the two \NMR\ states, or for the states they
+intensity change is different for the two \gls{NMR} states, or for the states they
 connect to in the state preparation regions around the main interaction region.
 We have not yet found that to be the case.

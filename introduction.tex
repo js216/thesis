@@ -8,6 +8,9 @@ Schiff moment and suggest how it can be measured. After reviewing relevant
 features of the TlF molecule, I present previous experiments as well as the
 measurement scheme proposed in this work.
 
+\textit{Note: This chapter served as the first draft of our overview paper
+\cite{grasdijk2021centrex} and as such contains a lot of the same information.}
+
 \subsection{Motivation}
 
 Before the early 1960s, it was believed that $CP$ is a good symmetry of nature.
@@ -19,15 +22,16 @@ directly measure, or set a limit on, the neutron \gls{EDM} experiment. Indeed,
 were such an \gls{EDM}\ to be detected, that would provide clear evidence of
 \gls{CPV}.
 
-It has been found since that while most processes preserve $CP$, certain rare
-weak interactions violate it as observed in neutral $K$ decays at the 0.003
-level \cite{christenson1964evidence} and other systems, where it can be as high
-as 0.7 \cite[chapter 13]{PDG16}. To account for the experimental evidence, the
-flavor-changing part of the standard model quark sector includes a \gls{CPV}\
-phase in the \gls{CKM} quark-mixing matrix. \cite{peccei1995} This so-called
-Kobayashi--Maskawa mechanism, which introduced the third quark generation
-precisely to explain \gls{CPV}\ \cite{kobayashi1973cp}, agrees with all particle
-physics experiments to date.  \cite{hou2011source}
+It has been found since that while most processes preserve $CP$, certain
+flavor-changing decays of heavy mesons violate it as observed in neutral $K$
+decays at the 0.003 level \cite{christenson1964evidence} and in other systems,
+where it can be as high as 0.7 \cite[chapter 13]{PDG16}. To account for the
+experimental evidence, the flavor-changing part of the standard model quark
+sector includes a \gls{CPV}\ phase in the \gls{CKM} quark-mixing matrix.
+\cite{peccei1995} This so-called Kobayashi--Maskawa mechanism, which introduced
+the third quark generation precisely to explain \gls{CPV}\
+\cite{kobayashi1973cp}, agrees with all particle physics experiments to date.
+\cite{hou2011source}
 
 No corresponding flavor-neutral \gls{CPV}\ has been observed yet. In principle,
 the \QCD\ Lagrangian could contain a term of the form
@@ -153,15 +157,15 @@ the dipole moment also has to point along it: $\vec d=d\vec I/I$. Under
 time-reversal, the \gls{EDM}\ would stay the same but the spin would flip direction.
 
 However, according to the Schiff theorem, an \gls{EDM}\ of a nonrelativistic
-point nucleus would not be observable outside of the atom. More precisely, the
-interaction energy of nonrelativistic point charged electric dipoles in an
-arbitrary external electrostatic potential has no term linear in the \gls{EDM}
-if the dipoles are a part of a bound, electrically neutral collection of
-particles \cite{schiff1963measurability}. Physically, the system rearranges
-itself so as to screen the external field completely
-\cite[p33]{safronova2018search}. Thus, a $T$-violating \gls{EDM}, if existent,
-would be very hard to detect experimentally without a mechanism to bypass
-Schiff's theorem.
+point nucleus would not be observable outside of a neutral atom or molecule
+containing the nucleus. More precisely, the interaction energy of
+nonrelativistic point charged electric dipoles in an arbitrary external
+electrostatic potential has no term linear in the \gls{EDM} if the dipoles are a
+part of a bound, electrically neutral collection of particles
+\cite{schiff1963measurability}. Physically, the system rearranges itself so as
+to screen the external field completely \cite[p33]{safronova2018search}. Thus, a
+$T$-violating \gls{EDM}, if existent, would be very hard to detect
+experimentally without a mechanism to bypass Schiff's theorem.
 
 In the following, we work out the shielding of a nuclear \gls{EDM}\ in an atom
 with a Hamiltonian $\hat H$. In particular, this simple model does not attempt
@@ -199,6 +203,8 @@ following interactions:
         \tag{nuclear dipole in external field}
 \end{align*}
 %
+Note that this Hamiltonian is not expressed in SI units.
+
 The nuclear charge density is normalized to $\int\rho(\vec R)\d^3\vec R=1$.
 Almost all the integrals in this section are weighted by $\rho(\vec R)$,
 suggesting the use of the measure $\dd^3(\vec R)\equiv\rho(\vec R)\d^3(\vec R)$.
@@ -405,7 +411,8 @@ $\ex{\vec R}$, we obtain
 where we identify first term with $H_\text{dip}$ from eqn~\ref{obvious}, and
 name the second term $H_\text{comm}$. Expanding the latter using the multipole
 expansion, we note that the series can be terminated after the $\ell=0$ term due
-to the fact that the higher harmonics are either $T$-even or negligible:
+to the fact that the higher harmonics are negligible
+\cite[sect~II]{flambaum2002nuclear}:
 \begin{equation}
     \label{approxcomm}
 H_\text{comm}=
@@ -499,8 +506,9 @@ H,\ldots]$ in the limit $R_\text{N}\to0$. To reiterate:
 \end{align*}
 \endgroup
 %
-Thus $H_\text{\gls{CPV}}$ can cause no first order energy shift, even when an
-external $E$ field is applied to the bound neutral system.
+Thus $\lim_{R_\text{N}\to0}H_\text{\gls{CPV}}$ can cause no first order energy
+shift, even when an external $E$ field is applied to the bound neutral system,
+in the limit of a point nucleus.
 
 \paragraph{Step 4: Finite-size nucleus}
 
@@ -516,16 +524,17 @@ a commutator with a zero expectation value. Consider the expression
 \frac{\left[\textstyle\sum_i\vec p_i,\;\hat H\right]}{i\hbar},
 \end{equation}
 with the $T$-odd terms $H\equiv H_\text{\gls{CPV}}$ as defined in
-eqn~\ref{HCPV}. The commutator always has a zero expectation value, and
-represents the part of the $T$-odd nuclear interaction that is fully screened by
-the electrons. The above difference thus stands for the residual interaction
-allowed by finite-size limitations of the Schiff theorem.
+eqn~\ref{HCPV}, where we do not, in general, take the limit $R_\text{N}\to0$.
+The commutator always has a zero expectation value, and represents the part of
+the $T$-odd nuclear interaction that is fully screened by the electrons. The
+above difference thus stands for the residual interaction allowed by finite-size
+limitations of the Schiff theorem.
 
 Note that this is not quite equivalent to adding a zero term---the commutator
 does have a zero expectation value, but not necessarily a zero matrix element.
 The expectation value of the commutator is zero even when there is an external
 $E$-field applied since that external field was in the Hamiltonian from the
-start. So, it is only the difference $\delta H$ that can give a non-zero energy
+start. So, it is only the difference $\delta H$ that can give a nonzero energy
 shift, under any circumstances, and we can ignore the commutator part.
 
 As will be explained in the next step, the presence of an external electric
@@ -673,7 +682,7 @@ can describe the extent of the polarization with the following quantity:
 ,
 \]
 %
-noting that the dipole operator $\hat d$ only has non-zero matrix elements
+noting that the dipole operator $\hat d$ only has nonzero matrix elements
 ($D_\text{sp}$) between states of opposite parity. In general, for the
 eigenstates $N^{-1/2}(\ket{\text{s}}+\eta\ket{\text p})$ of the two-state
 Hamiltonian, with $N$ a normalizing constant, the polarization is $2\eta/N$. See
@@ -793,8 +802,9 @@ us with three terms with the same limits:
 The product of wavefunctions can be separated into a product of angular and
 radial functions: $\psi^*_\text{s}\psi_\text{p}=U(\vec\Omega)\sum_{k=1}^\infty
 b_kr^k$, where $\vec\Omega$ stands for the angular coordinates $\theta,\phi$. In
-the nonrelativistic case, only $b_1$ is nonzero \cite{flambaum2002nuclear}. This
-allows us to write the product of wavefunctions near the origin as
+the nonrelativistic case, only $b_1$ is nonzero \cite{flambaum2002nuclear}. (We
+are looking near the origin, so the lowest power of $r$ dominates.) This allows
+us to write the product of wavefunctions near the origin as
 %
 \begin{equation}
     \label{psiSpsiP}
@@ -951,8 +961,10 @@ In fact, in some theory models, the latter contribution to the \gls{SMT}\ can be
 
 (1) Inside the uniform charge distribution---which does not contribute to the
 \gls{SMT}---there are in addition two point charges, separated by a distance
-$2R_0$ along the $z$ axis. The $T$-odd part of the nuclear charge can thus be
-written as
+$2R_0$ along the $z$ axis. The charge asymmetry is defined with respect to the
+spin axis. In the multipole expansion, the terms are grouped by the power of the
+spin operator. These powers can be either even or odd with respect to time
+reversal.  The $T$-odd part of the nuclear charge can thus be written as
 %
 \[
 \rho(\vec R)=\frac{d_\text{N}}{2eZR_0}\big[
@@ -1115,11 +1127,11 @@ in absence of the interaction. (See Fig.~1 of ref.~\cite{hinds1980experiment} or
 the level spacing, a $4\nu$ difference (together with its error bars) can be
 quoted as the main result of molecular-beam symmetry-violation experiments.
 
-The spacing between the levels can be measured by a technique based on Rabi
-oscillations. Consider two states, $\ket p$ and $\ket q$, separated by an energy
-$\hbar\omega_0$, and placed in an oscillating field $\hbar b e^{-i\omega\tau}$.
-Defining the detuning $\delta\equiv\omega_0-\omega$, the population transfer
-probability is given by \cite[eqn~V.10]{ramsey1956molecular}
+The spacing between the levels can be measured by a \gls{NMR} technique based on
+Rabi oscillations. Consider two states, $\ket p$ and $\ket q$, separated by an
+energy $\hbar\omega_0$, and placed in an oscillating field $\hbar b
+e^{-i\omega\tau}$.  Defining the detuning $\delta\equiv\omega_0-\omega$, the
+population transfer probability is given by \cite[eqn~V.10]{ramsey1956molecular}
 %
 \begin{align*}
     P_{p,q}=
@@ -1543,7 +1555,7 @@ rank-2 tensor $T^2(\vec I_1,\vec I_2)$ as per eqn~1.34 in
 ref.~\cite{brown2003rotational}.
 
 At first glance, the more general form of the $c_3$ term does not change the
-eigenenergies significantly. However, the slope of the \NMR\ resonance frequency
+eigenenergies significantly. However, the slope of the \gls{NMR} resonance frequency
 as a function of the applied field is a factor of $\approx2$ greater when using
 eqn~\ref{newc3}, as will be seen in Fig.~\ref{Cslope}, reproducing the result
 41~mHz/(V/cm) reported at 20~kV/cm in Ramsey et al.\ \cite{wilkening1984search},
@@ -1711,7 +1723,7 @@ $Q$, or $R$ branches if the quantum number $J$ changes by $-1$, 0, or $+1$,
 respectively. \cite[sect.~10.2]{bransden1990physics} Furthermore, we append the
 $J$ number of the original state, and the $F$ of the target state. For instance,
 a $P2$ $F1$ line starts in a $J=2$ state, changes $J$ by $-1$, and ends up in a
-state with $F'=1$. \label{P2F2}
+state with $F'=1$. \label{P2F1}
 
 Despite the limited ability to collect and detect photons from fluorescing
 molecules, our detection scheme could in principle detect $\approx100$\% of the
@@ -1979,8 +1991,8 @@ rate.
         \end{tabu}}
         \caption{Summary of results and experimental parameters of some of the
         previous related experiments. $E_\text{int}$ and $B_\text{int}$ refer to
-        the interation-region electric and magnetic fields (and \emph{not}
-        fields internal to the molecule).}
+        the applied interaction-region electric and magnetic fields (and
+        \emph{not} fields internal to the molecule).}
         \label{previouswork}
 \end{table*}
 
@@ -2052,10 +2064,11 @@ $|S_\text{Hg}|<3.1\times10^{-13}\,e\,\text{fm}^3$
 
 \begin{sidewaysfigure}
     \centering\small
-    \input{figs/tikz/conceptdiagram.tex}
+    \includegraphics[width=\textwidth]{figs/fig6overview.pdf}
     \caption[Conceptual flow chart of the \CENTREX\ experiment]{Conceptual flow
     chart of the critical steps in \CENTREX, indicating the applied fields
-    (below) and the quantum states (above).}
+    (below) and the quantum states (above). This is Fig.~6 from our overview
+    paper \cite{grasdijk2021centrex}.}
     \label{conceptdiagram}
 \end{sidewaysfigure}
 
@@ -2074,7 +2087,7 @@ lens. Since the lens state is different from the interaction state, the
 molecules are prepared into the correct hyperfine state in a two-state adiabatic
 rapid passage machine, the state preparation region B. Afterwards, they fly
 through the main interaction region with the standard Ramsey separated
-oscillatory field configuration to excite the \NMR\ resonance. Finally, we probe
+oscillatory field configuration to excite the \gls{NMR} resonance. Finally, we probe
 the resulting spin direction to determine the extent of the possible dependence
 of the spin precession frequency on the interaction region electric field
 direction. This is done in state preparation region C (SPC), where each spin
@@ -2121,15 +2134,15 @@ other.
 
 The population that has been collected in the $J=0$, $F=0$ sublevel has to be
 moved to the state in the $J=2$ manifold chosen for the optimal operation of the
-electrostatic lens. We plan to accomplish the transfer as a two-stage adiabatic
-rapid passage (\ARP): first $J=0\to1$, then $1\to2$. As the particles travel
-through a spatially-varying electric field, the separation between the hyperfine
-levels in the different $J$ states changes due to the \DC\ Zeeman effect. In the
-same region, we place two microwaves beams corresponding to each pair of $J$
-states, and offset them by approximately the \FWHM\ of each beam.  As the
-molecule traverses each beam, it is successively driven through the respective
-microwave resonances, making the population jump first to $J=1$, and then to
-$J=2$.
+electrostatic lens (see next paragraph). We plan to accomplish the transfer as a
+two-stage adiabatic rapid passage (\ARP): first $J=0\to1$, then $1\to2$. As the
+particles travel through a spatially-varying electric field, the separation
+between the hyperfine levels in the different $J$ states changes due to the \DC\
+Zeeman effect. In the same region, we place two microwaves beams corresponding
+to each pair of $J$ states, and offset them by approximately the \FWHM\ of each
+beam. As the molecule traverses each beam, it is successively driven through
+the respective microwave resonances, making the population jump first to $J=1$,
+and then to $J=2$.
 
 To keep the state transfer adiabatic, the electric field (and the resulting
 level separation, and the detuning $\Delta\omega(t)$ between the microwaves and
@@ -2228,6 +2241,15 @@ shift away from the microwave frequency.  \cite[sect~2.5]{grasdijk2021centrex}
 
 \paragraph{Interaction region}
 
+\begin{figure}
+    \centering
+   \includegraphics[width=.5\textwidth]{figs/todo/cho1991fig7.png}
+    \caption[TlF hyperfine levels]{Hyperfine sublevels of $(J=1,M_J=\pm1)$ in an electric
+    field of 29.5~kV/cm. Figure reproduced from Cho et al.\
+    \cite[Fig.~7]{cho1991search}.}
+  \label{cho1991fig7}
+\end{figure}
+
 \begin{sidewaystable}
     \small
     \makebox[\textwidth][c]{%
@@ -2260,11 +2282,11 @@ shift away from the microwave frequency.  \cite[sect~2.5]{grasdijk2021centrex}
     $\ket{\text{i}}$ and $\ket{\text{l}}$. The quantum numbers given are that of
     the largest decoupled-basis component; states i and l have two such
     components with equal amplitude, making it hard to say what spin is flipped.
-    The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search}. The
-    column labelled $S_\text{\gls{SMT}}$ gives the sensitivity to the Schiff
-    moment (eqn~\ref{ssmt}). The quantity $S^z_m$ gives the energy difference
-    between the neighbouring resonances, given per unit external residual $B_z$,
-    and corresponds to flipping the internal molecular magnetic field. Due to
+    The labels $l_\text{R}$ are as given in ref.~\cite{wilkening1984search} and
+    Fig.~\ref{cho1991fig7}, above. The column labelled $S_\text{\gls{SMT}}$
+    gives the sensitivity to the Schiff moment (eqn~\ref{ssmt}). The quantity
+    $S^z_m$ gives the energy difference between the pair of resonances in a
+    single row of the table, given per unit external residual $B_z$ Due to
     degeneracy of pairs $\mathrm{(e,h)}$, $\mathrm{(f,g)}$, and
     $\mathrm{(j,k)}$, there are only three distinct resonant frequencies $f_0$
     and slopes $df_0/dE_z$ at 30~kV/cm. All quantities (except quantum numbers)
@@ -2286,11 +2308,12 @@ the second pulse back into varying populations of the spin states. Data obtained
 with the two different fluorine spin directions can be used for systematic
 checks.
 
-Refer to Table \ref{statepairs} for a list of all available pairs of states we
-can make use of. For the \gls{EDM}\ measurement, of course, only the transitions
-that flip the Tl nuclear spin are suitable. We quantify the sensitivity
-$S_\text{\gls{SMT}}$ to the $T$-violating physics as the extent to which the
-transition between states $i$ and $f$ flips the thallium spin:
+Refer to Table \ref{statepairs} and Fig.~\ref{cho1991fig7} for a list of all
+available pairs of states we can make use of. For the \gls{EDM}\ measurement, of
+course, only the transitions that flip the Tl nuclear spin are suitable. We
+quantify the sensitivity $S_\text{\gls{SMT}}$ to the $T$-violating physics as
+the extent to which the transition between states $i$ and $f$ flips the thallium
+spin:
 %
 \begin{equation}
     \label{ssmt}
