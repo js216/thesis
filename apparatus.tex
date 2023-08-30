@@ -4,7 +4,8 @@ As detailed in the section on the measurement scheme, \CENTREX\ follows the
 design of a conventional molecular beam experiment. Fig.~\ref{entire} displays
 an outline of the entire apparatus, Table~\ref{parametertable} contains key
 parameter values, and the following paragraphs give information about its
-construction.
+construction. Italicized notes at the beginning of each subsection credit the
+main people responsible for implementing each subsystem.
 
 \begin{figure*}[b!]
     \includegraphics[width=\textwidth]{figs/fig5overview.pdf}
@@ -45,7 +46,7 @@ construction.
            resonance FWHM               & $\Delta f$        & 33.2                   & Hz               \\
            SOF coil width               & $d_\text{SOF}$    & 10                     & cm               \\
         \\\multicolumn{3}{@{}l}{\textit{Detection region:}}\\
-           detection efficiency         & $\eta_\text{det}$ & 100~\%                 & ---              \\
+           detection efficiency         & $\eta_\text{det}$ & 30~\%                 & ---              \\
            detection rate               & $R_\text{det}$    & $2\cdot10^9$           & mol./sec         \\
            source-detector distance     & $L_\text{sd}$     & $594\pm10$             & cm               \\
            background count             & $I_\text{b}$      & \todo{???}             & mol./sec         \\
@@ -60,14 +61,26 @@ construction.
 
 \subsection{Control software}
 
+\textit{Concept and implementation of the base code, JK. Additional features,
+upgrades, bug fixes, and the majority of device drivers, Olivier Grasdijk. (As
+of Aug 30, 2023, JK added/removed 126,067/115,315 lines of code, and OG
+45,198/16,949.)}
+
 The experimental parameters are monitored and controlled using a range of
 devices. Most of these have already been integrated into a central data
 acquisition (\DAQ) system. At present, the latter consists of a single highly
 configurable Python program running on all computers attached to the experiment,
 communicating with the devices connected to the computer and writing the
-obtained data to the local disk. In the future, we intend to set up a common
-data and backup server to deal with the greatly increased data generation rate
-once the entire apparatus is up and running.
+obtained data to the local disks (see Fig.~\ref{DAQ_flow}). In the future, we
+intend to set up a common data and backup server to deal with the greatly
+increased data generation rate once the entire apparatus is up and running.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=\textwidth]{figs/DAQ.pdf}
+   \caption{Experiment data flow.}
+  \label{DAQ_flow}
+\end{figure}
 
 The program's code is divided between classes that make up the graphical user
 interface (\GUI), and control classes which make use of driver classes to
@@ -91,6 +104,15 @@ serve as an unified abstract interface to all the drivers and related
 information, especially through the \verb`config` member (of type
 \verb`DeviceConfig`).
 
+The control of devices via the \verb`Device` objects is asynchronous, such that
+the timing of operations is not precisely controlled. For triggered experimental
+sequences, where the precise timing and sequence is important, we use a hardware
+TTL pulse generator (PulseBlaster from SpinCore Technologies, Gainesville, FL).
+
+Warnings and error conditions are reported to the \verb`warnings` list inside
+each \verb`Device` object. These conditions are reported to the user through the
+\verb`Monitoring` class and written to the hard drive.
+
 (2) \verb`Monitoring`: While the \verb`Device` objects collect information from
 the physical devices, they neither record it nor notify the user in case of any
 abnormal condition. Thus the main program instantiates one \verb`Monitoring`
@@ -102,12 +124,14 @@ an file for future reference and analysis. The files are of Hierarchical Data
 Format (\HDF), version 5 format \cite{doecode_9801}, a portable, cross-platform
 format that provides \API s for commonly scientific computing languages. The
 format is extensible, open, and structured, allowing storage of data and its
-description in terms of arbitrary attributes, column names, and groups.
+description in terms of arbitrary attributes, column names, and groups. The
+write speed is comparable to writing raw data to the hard drive
+\cite{malaya2010petascale}.
 
 (4) \verb`Config` classes serve to organize access to program, device, or plot
 configuration. Thus, instead of having classes pass ad hoc pieces of information
 between each other, they set an appropriately-named attribute of the relevant
-\verb`Config` class. The latter in term only allows to set the attributes that
+\verb`Config` class. The latter in turn only allows to set the attributes that
 have been declared previously. This enables the programmer to have a clear
 overview of what configuration parameters exist by simply inspecting the
 relevant \verb`Config` class.
@@ -143,6 +167,10 @@ values. Thus, the program creates a new dataset for each invocation of
 \subsection{Beam source}
 \label{sect:beamsource}
 
+\textit{Entire design and implementation, JK. However, see
+sect.~\ref{beam_source_history} for the origin of the dual pulse tube beam
+source idea.}
+
 The beam source works by ablation of a solid sample of TlF held at cryogenic
 temperatures in a thermally shielded vacuum chamber. The ablated particles are
 expelled from the ablation cell by a flow of cold neon buffer gas. The design
@@ -169,7 +197,7 @@ placement, shape, and dimensions of the collimator). In order to protect the
 window through which the ablation laser (Fig.~\ref{ablationLaser}) enters from
 the immediate ablation by-products, the window is offset by a 3~in-long
 `snorkel', a cylinder of outer diameter 1.250~in, and an hole with internal
-diam. of 0.9~in going through the entire length of the piece. The cylinder is
+diam.\ of 0.9~in going through the entire length of the piece. The cylinder is
 terminated on one end in a way that allows attaching it to the cell, and on
 another by a fitting for the window.
 
@@ -178,7 +206,7 @@ another by a fitting for the window.
     \def\svgwidth{1\columnwidth}
     \input{figs/svg/lasers1.pdf_tex}
     \caption[Ablation laser system.]{The ablation laser for the beam source is a
-    pulsed Nd:YAG, provinding 4~ns pulses of maximum energy 130~mJ at max.\
+    pulsed Nd:YAG, providing 4~ns pulses of maximum energy 130~mJ at max.\
     50~Hz (Nano LG 130-50 by Litron Lasers Ltd, UK). In beam source tests, we
     have commonly run it such that the pulse energy is approx.\ 35~mJ, at a
     repetition rate of 5--10~Hz. The photodiode receives a small amount of light
@@ -213,7 +241,7 @@ the room-temperature vacuum chamber from the cryogenic parts, the connection is
 insulated by smooth-bore seamless 304 stainless steel tubing, \nicefrac{1}{8}~in
 OD, 0.02~in wall thickness (McMaster-Carr Supply Company, Elmhurst, IL; part
 number 89895K711). The stainless tubing is approx.\ 3~ft long, wound in a coil
-(approx.\ diam. 3~in) to save space. The gas line is thermally connected to the
+(approx.\ diam.\ 3~in) to save space. The gas line is thermally connected to the
 40~K shield by flowing through \nicefrac{1}{8}~in copper tubing wound around and
 brazed on a \nicefrac{3}{4}~in-diam.\ copper bobbin that is fixed to the 40~K
 shield with a threaded rod. Another similar coil of stainless tubing limits heat
@@ -224,13 +252,13 @@ the cell.
 
 The cell is screwed onto the cold stage of the PT815 cryocooler (made by
 Cryomech Inc., Syracuse, NY). The cell is shielded from ambient thermal
-radiation by a two-state heat shield. The outer shield, made of aluminum 1100,
+radiation by a two-stage heat shield. The outer shield, made of aluminum 1100,
 hangs from the top plate of the vacuum chamber on stainless threaded rods and
 consists of a frame with removable covering plates and is thermally connected to
 the `warm' stages (approx.\ 40~K) of both pulse-tube cryocoolers. The inner
 shield, hanging from the outer one on four \nicefrac{1}{4}~in stainless threaded
 rods, is made of \nicefrac{1}{4}~in thick Cu101 plates, and is connected to the
-cold stage of the colder PT415 cooler, which cools it to approx. 4--5~K. The 4~K
+cold stage of the colder PT415 cooler, which cools it to approx.\ 4--5~K. The 4~K
 shield has bare openings for optical and molecular access, while the optical
 ports in the 40~K shield are blocked with loosely attached windows to limit the
 buffer gas escaping into to rest of the apparatus. The cell--cryocooler thermal
@@ -258,24 +286,27 @@ connectors (Accu-Glass p.n.\ 100460) for ease of disconnecting.
     \input{figs/svg/lasers2.pdf_tex}
     \caption[UV laser system.]{UV laser system (see text). \part{a} Cs reference
     laser. \part{b} Transfer scanning cavity frequency lock. \part{c} Two-state
-    second harmonic generation (\SHG). [Drawings by O. Grasdijk]}
+    \gls{SHG}. [Drawings by O. Grasdijk]}
     \label{lasers}
 \end{figure*}
 
 Cell windows are standard fused-silica \UV-grade windows (from Thorlabs, Newton,
-NJ). The anti-reflect coatings, done at 271~nm (excited-to-ground molecular
+NJ). The anti-reflection coatings, done at 271~nm (excited-to-ground molecular
 transition) and 1064~nm (ablation laser) were done by Thin Film Lab (Milford,
 PA). All removable mechanical connections are done by means of brass screws into
 threaded holes, reinforced with stainless threaded inserts (Heli-Coil). All
 gas-line connections are done with \VCR\ fittings brazed onto the copper or
 stainless tubing. Where possible and desirable, metal-to-metal thermal
-conductivity has been enhanced either with indium foil, or vacuum-compatible
-grease (Apiezon N).
+conductivity has been enhanced either with indium foil (99.99~\%\ pure, 0.002"
+thick, p.n.\ ribbonin-10101 from Indium Corporation, Utica, NY), or
+vacuum-compatible grease (Apiezon N).
 
 \subsection{Pumping system}
 
+\textit{System mostly assembled by OG, with help from JK and others.}
+
 In addition to providing thermal isolation, the shields also serve as cryopumps,
-lowering the pressure from $\sim10^{-6}$~torr, as can be reached by
+lowering the pressure from $\sim10^{-6}$~torr, as can be reached by our
 turbomolecular pumps, to approx.\ $2\cdot10^{-8}$~torr. Pumping down from
 atmospheric pressure is done with nXDS 6i and 10i dry scroll pumps (Edwards
 Vacuum, UK) and HiPace 700M turbomolecular pumps (Pfeiffer Vacuum Technology AG,
@@ -283,6 +314,11 @@ Germany). Pressure is monitored with ionization vacuum gauges (IGM401 Hornet
 from InstruTech LLC, Longmont, CO).
 
 \subsection{Mounting structure}
+
+\textit{Current mounts for the beam source, RC/SPA, interaction region, as well
+as the transverse-rail system, conceived of and implemented by JK. Original beam
+source mount by OG, and most of the lens mount built by Oskari Timgren. Other
+mounts TBD.}
 
 The vacuum chambers that make up the beamline are mounted on a substructure
 built out of 80/20 aluminum rails. The stands for all chambers but the
@@ -303,19 +339,36 @@ rail.
   \includegraphics[width=\textwidth]{figs/todo/transverse_rail.png}
    \caption[Transverse rail mounting structure.]{Transverse rail mounting
     structure. Only the beam source is shown, but other chambers, with the
-    exception of the interaction region, are to be mounted similarly.}
+    exception of the interaction region, are to be mounted similarly. The
+    beamline direction is approximately from left to right. See text for details
+    of the setup, e.g.\ the available translation distance.}
   \label{transverse_rail}
 \end{figure}
 
-\subsection{Laser system}
+The aluminum rails transverse to the beamline direction, as shown in
+Fig.~\ref{transverse_rail}, are 4' long. Given the size of the mounting
+structures underneath the vacuum chambers, this is enough to translate the
+chamber transverse to the molecular beam by a couple of inches. When a vacuum
+chamber needs to be moved entirely out of the way of the surrounding modules,
+the transverse rails are extended by another set of two 4' pieces per module.
+This way, the chamber can be moved fully four feet away from the beamline
+region. The extension pieces are not normally attached since they are a trip
+hazard and impede the motion of apparatus and people around the room.
 
-See Fig.~\ref{lasers} for a diagram of the \UV\ laser system. It consists of
-three systems working together to (1) provide a stable cesium reference line,
-(2) lock an \IR\ seed laser to the reference, and (3) to quadruple the \IR\ into
-a \UV\ beam that can be used to probe transitions in TlF, occuring around
-271~nm. In order to provide separately-controllable laser frequencies, we have
-three \SHG\ systems connected to two transfer lock cavities (one of them
-currently under construction).
+\subsection{Tunable laser system}
+
+\textit{Majority of laser design, implementation, and maintenance done by OG.
+Some earlier versions by Konrad Wenz. No contribution from JK except for the
+laser power stabilization proof of concept, appendix~\ref{laser_power_control}.}
+
+See Fig.~\ref{lasers} for a diagram of the tunable \UV\ laser system. It
+consists of three systems working together to (1) provide a stable cesium
+reference line, (2) lock an \IR\ seed laser to the reference, and (3) to
+quadruple the \IR\ into a \UV\ beam that can be used to probe transitions in
+TlF, occurring around 271~nm. In order to provide separately-controllable laser
+frequencies, we have three \glsreset{SHG}\gls{SHG} systems connected to two
+transfer lock cavities (explained on page \pageref{transfer_cavity}), one of
+them currently under construction.
 
 \paragraph{Cs lock}
 
@@ -323,7 +376,7 @@ The reference system is based on modulation transfer spectroscopy (\MTS), a
 pump--probe technique resulting in sub-Doppler resolution for laser locking. An
 \EOM\ modulates the pump beam (so as to cause sidebands to accompany the carrier
 frequency) before it gets passed through a vapour cell. Modulation can appear on
-the counterpropagating probe beam, passed through the same vapour, through the
+the counter-propagating probe beam, passed through the same vapour, through the
 interactions of the two beams with the atomic vapour. The interactions are an
 example of four-wave mixing where two pump beam frequency components combine
 with the probe beam, resulting in a sideband for the probe beam.
@@ -342,14 +395,14 @@ Following ref.~\cite{zi2017laser}, the beam sourced from the diode laser (DL pro
 850, Toptica, Germany) is split off for transfer cavities with two polarizing
 beam splitters (with the two half-wave plates controlling the amount of light
 sent to each transfer cavity beam). The remaining beam is split by the
-acousto-optic modulator (\AOM) (AOMO 3080-122 830NM from Gooch \&\ Housego, UK)
-with 80~MHz center frequency, AR-coated for operation at 780--850~nm, into a
-pump and probe beam, the pump having about twice the power of the probe. (The
-\AOM\ also eliminates trouble from backreflection from the Cs cell, or
-photodiodes.) The pump beam is phase-modulated by the custom-built \EOM\
-(Thorlabs Inc.) at 3~MHz before being led through the cesium quartz cell
+acousto-optic modulator (\AOM) (AOMO 3080-122 830NM from Gooch \&\ Housego,
+England, UK) with 80~MHz center frequency, AR-coated for operation at
+780--850~nm, into a pump and probe beam, the pump having about twice the power
+of the probe. (The \AOM\ also eliminates trouble from back-reflection from the Cs
+cell, or photodiodes.) The pump beam is phase-modulated by the custom-built
+\EOM\ (Thorlabs Inc.) at 3~MHz before being led through the cesium quartz cell
 (Thorlabs GC19075-CS, diam.\ 19~mm, length 75~mm), magnetically shielded to the
-milligauss level in a 6~in-long, 2~in inner diam.\, three-layer concentric
+milligauss level in a 6~in-long, 2~in inner diam.\ three-layer concentric
 mu-metal shield (modified ZG-203 from Magnetic Shield Corporation, Bensenville,
 IL). 
 
@@ -361,19 +414,20 @@ $F=4\to5$ transition in the hyperfine structure of the cesium D$_2$ line,
 occuring at 852.35641~nm \cite{steck2003cesium}. However, as the Cs reference is
 only used to set the scale in the \FSR\ of the transfer cavity, the choice of
 the hyperfine level is not important---GHz differences cause differences
-negligible compared to the $\approx0.5$~MHz stability required for the \IR\
+negligible compared to the $\approx0.1$~MHz stability required for the \IR\
 science lasers.
 
 \paragraph{Transfer cavity}
+\label{transfer_cavity}
 
-The Fabry--P\'erot interferometer (Toptica FPI 100) with free spectral range
+Fabry--P\'erot interferometer (Toptica FPI 100) with free spectral range
 (\FSR) 1~GHz is locked to the cesium reference (master) laser. Up to two slave
 lasers can be used in this scheme, one for each of the two orthogonal
 polarizations, while the master can be distinguished by its different wavelength
 and separated away with a dichroic mirror. The cavity length is modulated by
-slighly more than one \FSR\ to scan over the transmission peaks. The timing
-difference between the master and slave peaks is then fed to a \PID\ loop to
-lock the slave frequency.
+slightly more than one \FSR\ to scan over the transmission peaks. The timing
+difference between the master and slave peaks is then fed to a software-defined
+\PID\ loop to lock the slave frequency.
 
 \paragraph{Second harmonic generation}
 
@@ -385,7 +439,7 @@ measurement of the absolute laser frequency to within 50~MHz. The rest of the
 beam is modulated by an \EOM\ and passed through a bowtie-configuration cavity
 (built by K. Wenz at Columbia, NY) containing a ppKTP crystal that generates up
 to 1~W of green light at 543.5~nm. The green beam is coupled into a fiber and
-delivered to a second \SHG\ system (Toptica SHG pro) with a similar
+delivered to a second \gls{SHG} system (Toptica SHG pro) with a similar
 configuration. A BBO crystal is used for frequency doubling, resulting in
 $\approx70$~mW of \UV\ (271.7~nm).
 
@@ -398,42 +452,46 @@ lock is done with a commercial analog setup (Toptica PDH 110, PID 100, and FALC
 110), while for the green cavities we are transitioning to a home-built system,
 based on the Red Pitaya STEMlab \FPGA\ board.
 
-\begin{figure}
-    \makebox[\columnwidth][c]{%
-        \small
-        \input{figs/tikz/micro.tex}
-    }
-    \caption[Frequency-agile microwave generation.]{The principle behing
-    frequency-agile rotational cooling microwave generation. The frequencies are
-    shown assuming the $\times1,2$ multipliers for a horn output of 13.4 and
-    26.8~GHz. For 40.1~GHz, the system is adjusted to generate approx.\ 10~GHz
-    (pre-multiplier).} \label{micro}
-\end{figure}
-
 \subsection{Rotational cooling}
 \label{sect:rotcool}
+
+\textit{Vacuum chamber design and initial purchasing/assembly of microwave
+electronics by JK. Subsequent work by OG.}
 
 We designed a custom aluminum vacuum chamber to allow access for the molecular
 beam, \UV\ laser, and microwaves as required by the rotational cooling scheme.
 
 The microwave system (see Fig.~\ref{micro}) is designed to provide up to three
 microwave beams (at frequencies 13.4, 26.8, and 40.1~GHz, and power of order
-0.1--1~W), each focused with a quasioptical lens built into the transmitting
+0.1--1~W), each focused with a quasi-optical lens built into the transmitting
 antenna so as to position the beam waist in the center of the vacuum chamber. In
 addition, the beams can be switched between either of the two orthogonal linear
 polarizations at 1--2~MHz. In order to be able to separately address the
 hyperfine levels in the molecular ground state, the frequency can be rapidly
 adjusted by means of direct digital synthesis (\DDS).
 
+\begin{figure}
+    \makebox[\columnwidth][c]{%
+        \small
+        \input{figs/tikz/micro.tex}
+    }
+    \caption[Frequency-agile microwave generation.]{The principle behind
+    frequency-agile rotational cooling microwave generation. The frequencies are
+    shown assuming the $\times1,2$ multipliers for a horn output of 13.4 and
+    26.8~GHz. For 40.1~GHz, the system is adjusted to generate approx.\ 10~GHz
+    (pre-multiplier).}
+    \label{micro}
+\end{figure}
+
 The ability of an \RF\ system to resolve spectral features can be described in
 terms of phase noise, defined as the ratio (in decibels) of the noise in a 1~Hz
 bandwidth at a specified offset $f_m$, to the oscillator signal amplitude at
 frequency $f_0$. In a microwave communications context, a local oscillator at
-frequency $f_0$ is used to downconvert the desired signal $f_\text{D}$ to an
+frequency $f_0$ is used to down-convert the desired signal $f_\text{D}$ to an
 intermediate frequency $f_\text{IF}$. We want to know what is the maximum
-allowable phase noise $L_\text{max}$ (in dBc/Hz) so that the downconversion of
+allowable phase noise $L_\text{max}$ (in dBc/Hz) so that the down-conversion of
 an adjacent undesired (interference) signal $f_\text{ID}$ is suppressed by a
-factor of $S$, called selectivity and expresssed in dB. The maximum phase noise
+factor of $S$, called selectivity and expressed in dB. The maximum phase noise
 is \cite[eqn~13.50]{pozar2006microwave}
 %
 \[
@@ -469,7 +527,7 @@ SynthHD output. In the second stage, a high-pass filter has to be used, passing
 the sum of the frequencies, since the signal generator only goes up to 14~GHz.
 This also filters out a strong sub-harmonic in the high-frequency SynthHD
 output. (Two-stage mixing is required because of the difficulty in filtering out
-one of the 100~MHz sidebands from a signal exceding 10~GHz.) The resulting
+one of the 100~MHz sidebands from a signal exceeding 10~GHz.) The resulting
 frequency-agile microwave signal is doubled or quadrupled if necessary,
 amplified, power-split with an SPDT switch, and recombined in an orthomode
 transducer before being led to the horn. The horns were custom engineered by
@@ -477,6 +535,8 @@ Sage Millimeter (now Eravant Inc., Torrance, CA) for spot-focusing the beam
 energy onto the molecular beam.
 
 \subsection{State preparation A}
+
+\textit{Vacuum chamber design by JK; all other work done by OT.}
 
 The SPA chamber exists to transfer molecular population from the $\ket{J=0,F=0}$
 state populated during rotational cooling to the
@@ -490,6 +550,8 @@ beam axis. The two transitions are driven with two microwave beams that are
 offset by approx.\ 3~cm along the beam direction.
 
 \subsection{Electrostatic lens}
+
+\textit{All work done by OT; no contribution from JK.}
 
 The lens \cite[ch.~8]{timgren2023thesis} consists of four rod-shaped electrodes
 arranged in a quadrupole configuration. The 23.622" long rods are manufactured
@@ -508,6 +570,8 @@ etc.
 
 \subsection{State preparation B}
 
+\textit{All work done by OT and Jianhui Li; no contribution from JK.}
+
 The goals of the SPB section \cite[ch.~9]{timgren2023thesis} is to drive
 molecules from the lens state to a state in the $J=1$ manifold that is suitable
 for the Schiff moment measurement.  Much like the SPA region, SPB utilizes
@@ -520,6 +584,9 @@ contrast to the SPA region.
 
 \subsection{Interaction region}
 
+\textit{Vacuum chamber and electrodes by Tristan Winick and David Kawall.
+Magnetic shield and early work on the high-voltage system by JK.}
+
 The interaction region is a glass tube (26~cm OD, 350~cm length, wall thickness
 10~mm) terminated with custom flanges at each end serving as the vacuum chamber
 for the beamline. Inside the chamber, there are two parallel plate electrodes,
@@ -529,6 +596,8 @@ magnetic field control system (see section \ref{mfc_chapter}), consisting of the
 magnetic shield and the shim coils.
 
 \subsection{State preparation C and readout}
+
+\textit{Design and implementation by JL; no contribution from JK.}
 
 The SPC and readout chambers are currently under construction. Their purpose is
 to transfer the population from the superposition of hyperfine states into two
