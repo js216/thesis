@@ -11,7 +11,7 @@
 \def\dyy{.8cm}
 \def\dyyy{1.3cm}
 \def\dx{0.7cm}
-\def\dxx{1.3cm}
+\def\dxx{1.5cm}
 
 \begin{tikzpicture}
     \linespread{.9}
@@ -25,6 +25,7 @@
     \node [block, below = \dy of siggen]  (agile)   {Freq.\\agile\\AWG};
     \node [block, below = \dyyy of HP, text width=6.5em]      (mult)    {$\times1$, 2 or 4\\freq.\ multiplier};
     \node [block, below = \dyyy of mult]   (SPDT)    {SPDT};
+    \node [below = \dy of SPDT]   (SPDT2)    {};
     \node [block, left = \dx of SPDT, text width=4.5em]     (OMT)     {orthomode\\transducer};
     \node [amp,   left = \dx of OMT]      (amp)     {amp};
     \node [block, left = \dx of amp]      (horn)    {horn};
@@ -36,9 +37,11 @@
     \draw [arr] (LP) -- node [right,text width=4.5em] {\freqsize 700 to\\800 MHz} (mix2);
     \draw [arr] (mix1) -- (LP);
     \draw [arr] (mix2) -- (HP);
-    \draw [arr] (HP) --  node[xshift=2.5em, text width=7.5em, text centered] {\freqsize 13.45 GHz\\to\\13.45 GHz} (mult);
+    \draw [arr] (HP) --  node[xshift=2.5em, text width=7.5em, text centered] {\freqsize 13.35 GHz\\to\\13.45 GHz} (mult);
     \draw [arr] (mult) -- (SPDT);
     \draw [arr] (SPDT) -- (OMT);
+    \draw (SPDT) -- (SPDT2.south);
+    \draw [arr] (SPDT2.south) -| (OMT);
     \draw [arr] (OMT) -- (amp);
     \draw [arr] (amp) -- (horn);
 \end{tikzpicture}

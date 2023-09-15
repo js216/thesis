@@ -35,7 +35,7 @@ mu_Tl = 1240.5
 mu_F = 2003.63
 \end{lstlisting}
 
-\paragraph{Representing the states}
+\subsection{Representing the states}
 
 A state, in general, can be written as a weighted superposition of the basis states. We work in the basis $|J, m_J, I_1, m_1, I_2, m_2\rangle$.
 
@@ -201,7 +201,7 @@ class State:
         return self.data[i]
 \end{lstlisting}
 
-\paragraph{Operators in Python}
+\subsection{Operators in Python}
 
 Define QM operators as Python functions that take \verb`BasisState` objects, and
 return \verb`State` objects. Since we are interested in finding matrix elements,
@@ -296,7 +296,7 @@ def I2y(psi):
     return -.5j*( I2p(psi) - I2m(psi) )
 \end{lstlisting}
 
-\paragraph{Composition of operators}
+\subsection{Composition of operators}
 
 All operators defined above can only accept \verb`BasisStates` as their inputs,
 and they all return \verb`States` as output. To allow composition of operators,
@@ -314,7 +314,7 @@ def com(A, B, psi):
     return ABpsi
 \end{lstlisting}
 
-\paragraph{Rotational term}
+\subsection{Rotational term}
 
 The simplest term in the Hamiltonian simply gives the rotational levels:
 %
@@ -325,7 +325,7 @@ def Hrot(psi):
     return Brot * J2(psi)
 \end{lstlisting}
 
-\paragraph{Terms with ang. momentum dot products}
+\subsection{Terms with ang. momentum dot products}
 
 Note that the dot product of two angular momentum operators can be written in terms of the ladder operators as
 %
@@ -373,7 +373,7 @@ def Hff(psi):
             + Hc3c(psi) + Hc4(psi)
 \end{lstlisting}
 
-\paragraph{Zeeman Hamiltonian}
+\subsection{Zeeman Hamiltonian}
 
 In order to separate the task of finding the matrix elements and the eigenvalues, the Hamiltonian
 %
@@ -411,7 +411,7 @@ def HZz(psi):
         return -mu_Tl/psi.I1*I1z(psi) - mu_F/psi.I2*I2z(psi)
 \end{lstlisting}
 
-\paragraph{Stark Hamiltonian}
+\subsection{Stark Hamiltonian}
 
 Again splitting the Hamiltonian into the three spatial components, we have
 %
@@ -540,7 +540,7 @@ def HSz(psi):
     return -D_TlF * R10(psi)
 \end{lstlisting}
 
-\paragraph{An alternative $c_3$ term}
+\subsection{An alternative $c_3$ term}
 
 The $c_3$ term in Ramsey's Hamiltonian assumes that $J$ is a good quantum
 number, which breaks down at high $E$ field. Instead, we have the term
@@ -592,7 +592,7 @@ def Hff_alt(psi):
     return Hrot(psi) + Hc1(psi) + Hc2(psi) + Hc3_alt(psi) + Hc4(psi)
 \end{lstlisting}
 
-\paragraph{Finding the matrix elements}
+\subsection{Finding the matrix elements}
 
 With all the operators defined, we can evaluate the matrix elements for a given
 range of quantum numbers. Write down the basis as a list of \verb`BasisState`
@@ -629,7 +629,7 @@ Hff_m, HSx_m, HSy_m, HSz_m, HZx_m, HZy_m, HZz_m, Hff_alt_m = \
     [np.loadtxt(f"data/H6-{i}.csv", dtype='complex128') for i in range(8)]
 \end{lstlisting}
 
-\paragraph{Find the energies}
+\subsection{Find the energies}
 
 Above, we have evaluated the matrix elements for the zero-field Hamiltonian
 $H_\text{ff}$, as well as the $\vec E=1=\vec B$ cases. For general fields $\vec
@@ -718,7 +718,7 @@ fig.set_size_inches(6, 8)
 plt.show()
 \end{lstlisting}
 
-\paragraph{Polarization}
+\subsection{Polarization}
 
 Define a function that returns the expectation value of the molecular dipole
 operator for a range of states at some given value of external fields, which is
