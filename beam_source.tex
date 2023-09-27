@@ -1072,7 +1072,7 @@ plate increases to about a microtorr.
 
 \textit{Measurements reported in this subsection were carried out almost
 entirely by Oskari Timgren and Olivier Grasdijk as reported in the former's
-thesis \cite{timgren2023thesis}.}
+thesis \cite[ch~5]{timgren2023thesis}.}
 
 The molecular beam coming out of the beam source was probed using \gls{LIF}
 spectroscopy \cite{schultz1972laser} and absorption spectroscopy in order to
@@ -1199,6 +1199,13 @@ spectroscopy inside the beam source itself. The FWHM of the absorption trace was
 found to be $(350\pm30$~MHz, which corresponds to a transverse velocity spread
 of $95\pm8$~m/s given the 272~nm laser beam \cite[sect~5.3.2]{timgren2023thesis}.
 
+Note that the transverse velocity is not expected to be a Gaussian; it is
+determined almost entirely by the collimation and detection geometry rather than
+by the translational temperature of the molecular beam. However, a Gaussian beam
+proves to fit the shape reasonably well nonetheless. The forward velocity is
+expected to be more closely resemble a Gaussian profile, so its width has a more
+direct meaning.
+
 \paragraph{Beam temperature}
 
 The beam translational temperature, ignoring the effect of power broadening, can
@@ -1213,7 +1220,7 @@ where $m_\text{TlF}=3.7\cdot10^{-25}$~kg is the mass of a TlF molecule, and
 $\kB$ is the Boltzmann constant. (Using the $\sigma_{v_z}$ from
 eqn~\ref{sigma_v_z} above, we get $T=5.6$~K instead.)
 
-Another way to measure the temperature is to measure the population in several
+To measure the rotational temperature, we measure the population in several
 of the lowest-lying rotational states of the TlF molecule where the majority of
 the beam population is to be found given the cryogenic temperatures. (We find
 that approx.\ 93\% of the population has $J\leq7$.) For a thermal distribution,
@@ -1230,13 +1237,43 @@ where $B=6.689$~GHz is the rotational constant of the TlF molecule. Fitting the
 measured populations to this formula, we obtain a rotational temperature
 $T=6.5\pm0.2$~K \cite[5.4]{timgren2023thesis}.
 
+Note that not all degrees of freedom thermalize at the same rate, so we do not
+necessarily expect that rotational and translational temperatures should match.
+
+\paragraph{Beam intensity}
+
+One of the advantages of a buffer gas beam source is its high intensity
+\cite{hutzler2012buffer}. We have characterized the molecular flux coming out of
+our beam source as a function of several variables.
+
+The molecular intensity decreases as a function of the TlF rotational quantum
+number $J$. In other words, most of the population---approx.\ $1.4\cdot10^{11}$
+molecules/sr/pulse---appears to be in the lowest-lying $J=0$ state.
+\cite[Fig.~5.8]{timgren2023thesis} The flux is given per pulse, but note that
+there is a significant pulse-to-pulse variation due to the complicated and not
+well understood laser ablation process. This variation needs to be accounted for
+and normalized in measurements that rely on a constant number of molecules
+coming out of the beam source.
+
+As a function of the flow rate of the buffer gas (neon), the flux appears to
+peak at a flow rate of approx.\ 40~sscm. Decreasing the flow rate to half this
+value, as well increasing it by a factor of two, both result in a 20\%\
+reduction in the beam intensity. \cite[Fig.~5.4]{timgren2023thesis} We believe
+that the flux reduction at low neon flow rates is due to an insufficient buffer
+gas density in the cold cell, resulting in fewer collisions between TlF and
+neon. The ablated TlF molecules thus hit the cell walls and remain there, rather
+than getting entrained in the flow of the buffer gas out of the cell. The flux
+reduction at higher flow rates, on the other hand, may be due to an increasing
+beam divergence. \cite[sect~5.2]{timgren2023thesis}
+
 \subsection{Target making}
 \label{target_making}
 
-The thallium fluoride used \CENTREX\ experiment needs to be inserted into the
-beam source in the form of a solid block inside a copper target holder. Since it
-is supplied in the form of a white powder (Strem Chemicals, 93-8106, 99\%), we
-need to melt it down safely. While raising the temperature above the melting
+The thallium fluoride used in the \CENTREX\ experiment needs to be inserted into
+the beam source in the form of a solid block inside a copper target holder.
+Since it is supplied in the form of a white powder (Strem Chemicals, 93-8106,
+99\%), we chose to to melt it down, and of course this must be done safely since
+TlF is extremely poisonous. While raising the temperature above the melting
 point of TlF (327\degC), the target is contained in a vacuum chamber and the
 exhaust of the vacuum pump is filtered before being released into the room. In
 this section, I describe the iteration of the target making setups and
@@ -1245,15 +1282,15 @@ procedures.
 \subsubsection{The `old' setup}
 
 The original setup (by Daniel McCarron) is shown in Fig.~\ref{oldsetup}. The
-vacuum chamber is a 12" CF2.75 vacuum nipple (0.245" OD, 3/8" OD) closed on one
-end by a 2.75" conflat two-channel thermocouple feedthrough (Lesker
+vacuum chamber is a 12" long CF2.75 vacuum nipple (0.245" OD, 3/8" OD) closed on
+one end by a 2.75" conflat two-channel thermocouple feedthrough (Lesker
 TFT2KY00003), and on the other with a VCR feedthrough (0.5", male). The nipple
 is mounted above an optical breadboard with a custom metal holder. The VCR
 feedthrough connects to four turns of a coiled stainless tube with female 0.5"
 VCR connections brazed onto each end of the tube, connected to a metal bellows
 using a VCR to KF40 adapter. The VCR connectors are brazed onto the stainless
-tube with any suitable brazing alloy, even if it contains zinc, which is not UHV
-compatible. The connections are made with standard VCR gaskets.
+tube with any suitable brazing or soldering alloy, even if it contains zinc,
+which is not UHV compatible. The connections are made with standard VCR gaskets.
 
 \begin{figure}[b]
     \centering
@@ -1425,15 +1462,15 @@ The first attempts at producing a target were not successful
 (Fig.~\ref{failed_targets}). The solid surface of the TlF has a crystalline
 appearance and in one case (number 2.) had a bubble, showing that the TlF was
 not just molten, but boiling. I do not know why the TlF appears green after the
-melting when the powdered form was white.  In each case, I was aiming to heat
-the outside of the nipple enough to heat the target holder inside to a
-temperature slightly above 327\degC. Even though the temperature never exceeded
-337\degC, a large part of the TlF has evaporated. In one of the experiments
-(number 5.), the maximum inner temperature was 322\degC\ which should not have
-melted the TlF (melting point 327\degC), but it is obvious from looking at the
-target that the TlF did melt. This shows that there must have been a problem
-with the temperature measurement, either the sensor, the readout, or there might
-have been a large temperature inhomogeneity in the setup itself.
+melting when the powdered form was white. In each case, I was aiming to heat the
+outside of the nipple enough to heat the target holder inside to a temperature
+slightly above 327\degC. Even though the temperature never exceeded 337\degC, a
+large part of the TlF has evaporated. In one of the experiments (number 5.), the
+maximum inner temperature was 322\degC\ which should not have melted the TlF
+(melting point 327\degC), but it is obvious from looking at the target that the
+TlF did melt. This shows that there must have been a problem with the
+temperature measurement, either the sensor, the readout, or there might have
+been a large temperature inhomogeneity in the setup itself.
 
 \subsubsection{Heater inside the vacuum}
 
@@ -1445,7 +1482,7 @@ Rather than heating the outside of the nipple, the idea is to use the heater
 copper plate on top, and a stainless plate on bottom, with the heater clamped on
 the copper plate. The assembly is held together with a 1/4-20 threaded rod with
 wing nuts on top allowing easy disassembly (small screws have been problematic
-in the past since they get filled with TlF and are thus very difficult the
+in the past since they get filled with TlF and are thus very difficult to
 turn).
 
 \begin{figure}
@@ -1476,14 +1513,15 @@ of the nipple, which simplifies the workflow.
 The new heater configuration again required some experimentation to find the
 correct temperature profile (Fig.~\ref{making_good_target}). The difference
 between not melting the TlF at all, and evaporating too much of up (which leaves
-a green, crumbly, crystalline form of the TlF in the target holder) is up to the
-temperature-vs-time profile of the heating. In principle, this should be easy to
-reproduce by keeping the same heater power, but in practice there is a large
-variation of the heat loss by conduction to the vacuum chamber either by metal
-parts touching it, or via the vaporized TlF present in the chamber. In the first
-two experiments shown in Fig.~\ref{making_good_target}, the heater--target
-assembly was wrapped in ceramic sleeving to insulate it and allow a quick rise
-in temperature above the melting point, as in the old target-making procedure.
+a green, crumbly, crystalline form of the TlF in the target holder) is
+determined by the temperature-vs-time profile of the heating. In principle, this
+should be easy to reproduce by keeping the same heater power, but in practice
+there is a large variation of the heat loss by conduction to the vacuum chamber
+either by metal parts touching it, or via the vaporized TlF present in the
+chamber. In the first two experiments shown in Fig.~\ref{making_good_target},
+the heater--target assembly was wrapped in ceramic sleeving to insulate it and
+allow a quick rise in temperature above the melting point, as in the old
+target-making procedure.
 
 \begin{figure}
     \centering
@@ -1583,7 +1621,7 @@ Suppose we need a filter that is capable of removing singly-charged ions that
 are at most as heavy as (TlF)$_4$:
 %
 \[
-   m=4\cdot(204.38+19.00)\;\text{amu}.
+    m=4\cdot(204.38+19.00)\;\text{amu}=893.52\;\text{amu}.
 \]
 %
 When such an ion is placed in an electric field $E$, it gets an acceleration
@@ -1595,18 +1633,17 @@ When such an ion is placed in an electric field $E$, it gets an acceleration
 where $q=1.6\cdot10^{-19}$~C. Suppose we need to move the ions a distance
 $d=15$~cm perpendicularly to the molecular beam. Given that the beam is approx.\
 1~in wide, this should be more than enough to steer charged ions out of the
-beam. The time it takes for the ion to move this distance as a function of the
-applied field, is
+beam. The time it takes for the ion to move this distance is, at $E=10$~V/cm,
 %
 \[
-   t=\sqrt{2\frac{d}{a}}.
+    t=\sqrt{2\frac{d}{a}}=\sqrt{\frac{2dm}{Eq}}=0.05\;\text{ms},
 \]
 %
-Assume the ions move at speed $v=200$~m/s. In time $t$, they thus move a
-distance of 4--10~mm along the beam direction when the filter is operating at
-10--100~V/cm. Thus, a modest voltage applied to the ion filter is enough the
-remove most of them out of them beam before then can reach the high-field
-region.
+and 0.02~ms at $E=100$~V/cm. Assume the ions move at speed $v=200$~m/s. In time
+$t$, they thus move a distance of 4--10~mm along the beam direction when the
+filter is operating at 10--100~V/cm. Thus, a modest voltage applied to the ion
+filter is enough the remove most of them out of them beam before then can reach
+the high-field region.
 
 \subsubsection{Temperature feed-forward}
 
@@ -1713,39 +1750,20 @@ of the cell.
 \end{figure}
 
 A fundamental limit is posed by the heat load delivered by the species of
-interest itself, assuming no additional heat load from the capillary. In the
-case, we can estimate that an unacceptable amount of heating results if
+interest itself, assuming no additional heat load from the capillary. We can
+estimate that an unacceptable amount of heating results if
 \cite[eqn~4.2]{patterson2010thesis}
 %
 \[
    {\phi_\text{A}}>{\phi_\text{B}}\frac{T_\text{B}}{T_\text{A}},
 \]
 %
-where the subscripts A and B refer to the species and the buffer gas,
-respectively. For a typical neon flux of $\phi_\text{B}\approx40$~sccm at a
-temperature $T_\text{B}\approx10$~K, the flux of hot TlF
-($\phi_\text{A}\approx600$~K) would be limited to
+where $\phi$ is the flow rate and $T$ is the temperature. The subscripts A and B
+refer to the species and the buffer gas, respectively. For a typical neon flow
+rate of $\phi_\text{B}\approx40$~sccm at a temperature $T_\text{B}\approx10$~K,
+the flow rate of hot TlF ($\phi_\text{A}\approx600$~K) would be limited to
 $\phi_\text{A}\approx0.7$~sccm, or approx.\ $3\cdot10^{17}$ molecules per
 second.
-
-Let us estimate the expected flow rate through a capillary, assuming laminar
-flow. According to Poiseuille's formula, the mass flow rate for a fluid of
-dynamic viscosity $\mu$ through a pipe of radius $R$ and length $l$ at a
-pressure drop of $\Delta p$ is \cite[eqn~17.10]{landau2013fluid}
-%
-\[
-   Q=\frac{\pi\Delta p}{8\mu l}R^4.
-\]
-%
-The dynamic viscosity is approximately $\mu\sim m\bar{v}N\lambda$
-\cite[eqn~8.11]{pitaevskii2012physical}, where
-$m=223.4\;\text{u}=2.71\cdot10^{25}$~kg is the mass of a TlF molecule
-\cite{linstrom2001nist}, $\bar{v}\sim\sqrt{\kB T/m}$ is the average molecular
-velocity, $N$ is the number of molecules per unit volume, and $\lambda$ is the
-mean free path. At the temperature $T\approx600$~K, TlF oven pressure of
-$\Delta p\approx1$~torr, and assuming a mean free path of $\lambda\sim1$~mm, we
-would get a flow of approx.\ $10^{18}$ molecules per second through a $R=1/16$"
-pipe of length $l=1$".
 
 The radiative heat load from the tip of the hot capillary can be estimated to be
 $\sigma T^4A=\sigma(600~\text{K})^4(3~\text{mm})^2\approx0.07~\text{W}$, which
@@ -1786,6 +1804,44 @@ dependent. In thallium fluoride, this pressure is given by
 Some useful pressures are: $p(616~\text{K})\approx0.1~\text{torr}$ and
 $p(695~\text{K})\approx1~\text{torr}$.
 
+Let us estimate the expected flow rate through a capillary, assuming laminar
+flow. According to Poiseuille's formula, the volumetric flow rate for a fluid of
+dynamic viscosity $\mu$ through a pipe of radius $R$ and length $l$ at a
+pressure drop of $\Delta p$ is \cite[eqn~17.10]{landau2013fluid}
+%
+\[
+   Q=\frac{\pi\Delta p}{8\mu l}R^4.
+\]
+%
+The dynamic viscosity is approximately $\mu\sim m\bar{v}N\lambda$
+\cite[eqn~8.11]{pitaevskii2012physical}, where
+$m=223.4\;\text{u}=3.7\cdot10^{-25}$~kg is the mass of a TlF molecule
+\cite{linstrom2001nist}, $\bar{v}\sim\sqrt{\kB T/m}=149\;\text{m/s}$ is the
+average molecular velocity, and $\lambda$ is the mean free path.  If we assume
+the pressure of the TlF gas in the hot oven is $\Delta p=1$~torr at $T=600$~K,
+then by ideal gas law the number density of molecules in the oven is
+$N=1.6\cdot10^{22}/\text{m}^3$.  Assuming a mean free path of $\lambda\sim1$~mm,
+we would get a flow rate of approx.\ $0.01\;\text{L}/\text{s}$ through a
+$R=1/16$" pipe of length $l=1$". This corresponds to about $10^{17}$ molecules
+per second.
+
+This is only correct in the continuum flow regime at high enough gas pressures,
+when the mean free path $\lambda$ is much less than the radius $R$ of the pipe,
+which itself has to be much less than the length $l$ of the pipe. In the
+opposite case---so-called free molecular flow---where $\lambda\gg R$ and the gas
+dynamics are dominated by molecular collisions with the walls of the pipe, the
+scaling is different. The volumetric conductance $C$ of a long cylindrical
+tube of diameter $d$ and length $l$ is \cite[eqn~2.21]{livesey1998flow}
+%
+\[
+    C=\frac{d^3}{3l}\sqrt{\frac{\pi\kB T}{2m}};
+\]
+%
+we see it scales as the third (rather than fourth) power of the radius. Using
+the tube of the same dimensions as above, this is a flow rate of
+$0.07\;\text{L}/s$, or about $10^{18}$ molecules per second. Despite the
+different scaling, in this instance both formulae give a similar result.
+
 To go beyond the back-of-the-envelope estimates considered so far, it would be
 useful to do simulations of the beam properties as it emerges from a buffer gas
 cell. In order to know what kind of simulations would be appropriate, we can
@@ -1808,7 +1864,7 @@ proceeds as follows:
    \item Simulate collisions between randomly selected pairs of molecules within each cell.
 \end{enumerate}
 %
-There is a number of DSMC codes available. The qualitative simulation of the
+There are a number of DSMC codes available. The qualitative simulation of the
 beam emerging from a 2D axisymmetric model of a cell shown in Fig.~\ref{DS2V}
 was created using DS2V \cite{bird2005ds2v}. Further work could use DS2V, or a
 number of other similar codes, such as SPARTA \cite{plimpton2019direct}, to
@@ -1821,6 +1877,7 @@ thickness of the cell exit hole, the effect of a shaped nozzle, etc.
     \includegraphics[width=.6\textwidth]{figs/todo/DS2V.png}
     \caption[DS2V simulation of a buffer gas cell.]{DS2V simulation of a buffer
     gas cell (qualitative depiction). Color shows velocity component along the
-    beam direction (red is faster than blue).}
+    beam direction (red is faster than blue) of the TlF molecules entering a
+    neon buffer gas cell.}
     \label{DS2V}
 \end{figure}

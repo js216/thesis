@@ -1,5 +1,19 @@
 \section{Rotational Cooling}
 
+As has been explained in the introduction (section \ref{introduction:overview}
+on page \pageref{introduction:overview}), the molecules emerging from the beam
+source exist in a number of thermally-populated quantum states. We can improve
+the experimental signal by concentrating as many of them as possible in a single
+state. In our implementation of rotational cooling, we aim to move molecules
+that have $J$ quantum numbers up to 3 down into the $J=0$ state.
+
+This is accomplished using microwave couplings $J=1\leftrightarrow2$ and
+$2\leftrightarrow3$. Then, a \UV\ laser beam centered on the $P2$ $F1$ line
+(terminology defined on page \pageref{P2F1}) lifts the population from $J=2$
+into the excited state $J'=1$, from where it decays down to either $J=0$ or
+$J=2$. Since the $J=2$ molecules eventually get excited by the laser again, we
+expect the population to accumulate in $J=0$.
+
 \subsection{Required microwave power}
 
 In this section, we work out an estimate of the microwave power needed to drive
@@ -17,8 +31,7 @@ The molecule-fixed dipole moment of TlF, i.e., the dipole moment along the
 symmetry axis of the molecule, is $4.2\;\text{Debye}=1.7\;ea_0$
 \cite[Table~1]{wilkening1984search}. Immediately making the rotating-wave
 approximation, the Rabi frequency due to the applied microwave electric field
-$E_0$ Hamiltonian's interacting with the dipole is (cf.
-\cite[eqn~7.81]{budker2004atomic})
+$E_0$ interacting with the dipole is (cf.  \cite[eqn~7.81]{budker2004atomic})
 %
 \[
     \Omega(J',m',J,m)=\frac{dE_0}{2\hbar}
@@ -27,10 +40,11 @@ $E_0$ Hamiltonian's interacting with the dipole is (cf.
     Y_{J'}^{*m'}(\theta,\phi)
     \cdot\cos\theta\cdot
     Y_J^m(\theta,\phi)
-    \cdot\sin\theta
+    \cdot\sin\theta.
 \]
 %
-The integral will in general be either zero or some order-unity constant. For
+Note that this is for $z$-polarized microwaves, and we assume $\hbar=1$. The
+integral will in general be either zero or some order-unity constant. For
 example, for the $J=3\rightarrow2$ transitions the integrals are
 %
 \[
@@ -64,19 +78,19 @@ Thus, the Rabi frequency is approximately
     \Omega\approx0.4\frac{dE_0}{2\hbar}.
 \]
 
-\subsubsection{Fly-through time, or excited state lifetime}
+\subsubsection{Fly-through time}
 
 Assuming (as an order of magnitude estimate) the rotational cooling region is
 about 10~cm long, the flythrough time is
 %
 \[
-    t_0=\frac{0.02\;\text{m}}{200\;\text{m/s}}=0.1\;\text{ms}.
+    t_0\approx\frac{0.02\;\text{m}}{200\;\text{m/s}}=0.1\;\text{ms}.
 \]
 
 \subsubsection{Microwave power}
 
-Rearranging $\Omega\gg1/t_0$, the microwave electric field must be much greater
-than
+Rearranging the required condition $\Omega\gg1/t_0$, the microwave electric
+field must be much greater than
 %
 \[
     E_0=
@@ -89,11 +103,12 @@ than
 This corresponds to a minimum intensity
 %
 \[
-    I_\text{min}=\frac{c\epsilon_0}{2}E_0^2=7.0\;\text{mW/m}^2.
+    I_\text{min}=\frac{c\epsilon_0}{2}E_0^2\approx7.0\;\text{mW/m}^2.
 \]
 %
-Given a waist size $w\approx5~\text{cm}$, the microwave power required will have
-to be much greater than $P_\text{min}=\pi w_0^2I_\text{min}=0.05~\text{mW}$.
+Given a waist size $w_0\approx5~\text{cm}$, the microwave power required will
+have to be much greater than $P_\text{min}=\pi
+w_0^2I_\text{min}=0.05~\text{mW}$.
 
 \subsection{AR windows}
 
@@ -112,10 +127,11 @@ pressure $p$ is given by \cite[eqn~4.190]{moore2009building}
 %
 where Sf is the safety factor (4 is adequate unless the deformation of the
 window would lead to unacceptable waveform distortion). The modulus of rupture
-$Y$ is 7,000~psi for fused silica, 65,000~psi for sapphire. $K$ is a constant
-whose value can be taken as 0.75 for a clamped edge and 1.125 for a free edge.
-Thus, for example, to withstand atmospheric pressure (14.7~psi), a clamped fused
-silica window of radius 5~cm would have to have a thickness of at least 8~mm.
+$Y$ is about 7,000~psi for fused silica \cite{corningFS}, 65,000~psi for
+sapphire \cite{sapphireWeb}. $K$ is a constant whose value can be taken as 0.75
+for a clamped edge and 1.125 for a free edge.  Thus, for example, to withstand
+atmospheric pressure (14.7~psi), a clamped fused silica window of radius 5~cm
+would have to have a thickness of at least 8~mm.
 
 \subsubsection{Dielectric loss}
 
@@ -146,7 +162,15 @@ much greater in the microwave range. For example, a source with a 1~MHz frequenc
 uncertainty would have a vacuum coherence length of
 $L=c/1\;\text{MHz}=300~\text{m}$.
 
-\subsubsection{Thin film reflectance at normal incidence}
+\subsubsection{Reflectance and interference at normal incidence}
+
+In this section, we express the reflectivity of a window in terms of the
+characteristic admittance $Y$, which is simply the reciprocal of
+characteristic impedance: $Y=1/Z$. The two quantities relate the magnitudes
+$|\vec E|$ and $|\vec H|$ of electric and magnetic fields, respectively, of
+electromagnetic radiation traveling through some medium. For example, the
+admittance of free space is $y_0\approx2.65\cdot10^{-3}$~S
+\cite[eqn~2.25]{macleod2017thin}.
 
 The phase change for planar wavefronts at normal incidence across a window of
 thickness $d$ and refractive index $n$ will be $\delta=2\pi nd/\lambda_0$, where
@@ -159,9 +183,9 @@ $\lambda_0$ is the vacuum wavelength. The admittance of the window is given by
 \end{equation}
 %
 where $y_0$ is the admittance of free space, while for an ideal dielectric
-window, its admittance will be $y_1=\sqrt{\epsilon_1/\mu_1}$. Since for
+window of permittivity $\epsilon_1$ and permeability $\mu_1$, its admittance will be $y_1=\sqrt{\epsilon_1/\mu_1}$. Since for
 dielectrics, $\mu\approx\mu_0$, we can assume
-$y_1\approx\sqrt{\epsilon_\text{r}}y_0$. For fused silica,
+$y_1\approx\sqrt{\epsilon_1}y_0$. For fused silica,
 $y_1\approx\sqrt{3.8}y_0$.
 
 The corresponding power reflectivity is \cite[eqn~2.91]{macleod2017thin}
@@ -224,11 +248,14 @@ Fig.~\ref{AR_win_p2}.
     \label{AR_win_p2}
 \end{figure}
 
-Of course, this assumes a particular value of the refractive index.  For fused
-silica, the refractive index is is $1.812\pm0.003$ at 94.3~GHz, but 1.949 at
-105.3~GHz. \cite[Table~5.1]{goldsmith1998quasioptical} Whatever the material
-used, its refractive index needs to be known precisely in order to determine the
-exact optical thickness of the window (Fig.~\ref{AR_win_p3}).
+Of course, this assumes a particular value of the refractive index. For fused
+silica, the refractive index is given by one reference as $1.812\pm0.003$ at
+94.3~GHz, and 1.949 at 105.3~GHz \cite[Table~5.1]{goldsmith1998quasioptical}.
+Another reference \cite{popovic2019materials} gives the relative permittivity of
+$3.80\pm0.02$ from 5 to 110~GHz, which corresponds to a refractive index of
+$1.95\pm0.005$. Whatever the exact material used, its refractive index needs to
+be known precisely in order to determine the exact optical thickness of the
+window (Fig.~\ref{AR_win_p3}).
 
 \begin{figure}
     \centering
