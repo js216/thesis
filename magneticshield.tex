@@ -22,7 +22,10 @@ work requiring higher performance.
 \begin{figure}[b]
   \includegraphics[width=\textwidth]{figs/todo/simple_diagram.png}
     \caption[Dimensions of the magnetic shield.]{Some dimensions (in inches) of
-    magnetic shield layers, together with axes used in this chapter.}
+    magnetic shield layers, together with axes used in this chapter. The lengths
+    of the outer three layers correspond to the plastic tubes (see text), while
+    the inner layer is a mu-metal tube. The diameter shown is the OD of the
+    outermost plastic tube.}
   \label{simple_diagram}
 \end{figure}
 
@@ -49,12 +52,10 @@ requirements on the static residual field and the magnetic noise.
 %\end{table*}
 
 The static residual field, so called since it remains even after our best
-attempt at degaussing and shimming of the field, provides a limit on the
-vertical component of the field since it combines with the internal and motional
-magnetic fields and is not cancelled under electric field reversals. In order to
-suppress its effect below the level of the statistical sensitivity of our
-experiment, the $B_y$ component of the field (see Fig.~\ref{simple_diagram} for
-axes) has to satisfy
+attempt at degaussing and shimming of the field, was the primary consideration
+in designing this magnetic shield. In order to suppress its effect below the
+level of the statistical sensitivity of our experiment, the $B_y$ (``vertical'')
+component of the field (see Fig.~\ref{simple_diagram} for axes) has to satisfy
 %
 \begin{equation}
    \label{By_criterion}
@@ -68,13 +69,14 @@ measurable effect on our results.
 
 The Schiff moment signal is sensitive at first order only to noise in $B_x$, the
 component parallel to the electric field, and affects the other two components
-only quadratically. With our experimental parameters, the constraint on the
-dynamic shielding is to suppress the lab magnetic noise to below approx.\ 50~pG,
-integrated over a 1~$\mu$Hz bandwidth (approx.\ 300~h integration time), i.e.\
-50~nG/$\sqrt{\text{Hz}}$ around 25~Hz, in order to achieve the projected
-sensitivity of our experiment. With the magnetic moments of order 1~kHz/G, the
-50~pG constraint corresponds to a noise of $\approx50$~nHz as required by the
-planned experimental sensitivity of \CENTREX.
+only quadratically. With our experimental parameters, we were aiming to achieve
+a dynamic shielding sufficient to suppress the lab magnetic noise to below
+approx.\ 50~pG, integrated over a 1~$\mu$Hz bandwidth (approx.\ 300~h
+integration time), i.e.\ 50~nG/$\sqrt{\text{Hz}}$ around 25~Hz, in order to
+achieve the projected sensitivity of our experiment. With the $^{205}$Tl
+and $^9$F magnetic moments of order 1~kHz/G, the 50~pG constraint corresponds to
+a noise of $\approx50$~nHz as required by the planned experimental sensitivity
+of \CENTREX.
 
 \subsection{Theory}
 
@@ -90,11 +92,11 @@ longer periods of time.
 \subsubsection{`Paramagnetic' shielding}
 \label{paramagnetic_shielding}
 
-Consider a long, hollow cylinder of radius $R$ and thickness $t$, made of a
-linear material with permeability $\mu$, placed in a region of initially uniform
-magnetic flux density $\vec B_0$. According to the usual formulae
-\cite[eqns~3.29--30]{khriplovich2012cp}, the flux density inside the shield will
-be attenuated by the shielding factors
+Consider a long, hollow cylinder of length $L$, radius $R\ll L$, and thickness
+$t\ll R$, made of a linear material with permeability $\mu$, placed in a region
+of initially uniform magnetic flux density $\vec B_0$. According to the usual
+formulae \cite[eqns~3.29--30]{khriplovich2012cp}, the flux density inside the
+shield will be attenuated by the shielding factors
 %
 \begin{equation}
     \label{singlelayer}
@@ -173,7 +175,7 @@ where the coefficients $\alpha_1,\beta_1,\gamma_1,\delta_1$ are given by
 \begin{align}
    \label{sphere_coeffs}
    \begin{split}
-      \alpha_1A/H_0&=(2\mu+1)(\mu-1)(b_3-a_3)\\
+      \alpha_1A/H_0&=(2\mu+1)(\mu-1)(b^3-a^3)\\
       \beta_1 A/H_0&=-3(2\mu+1)\\
       \gamma_1A/H_0&=-3a^3(\mu-1)\\
       \delta_1A/H_0&=-9\mu\\
@@ -181,14 +183,30 @@ where the coefficients $\alpha_1,\beta_1,\gamma_1,\delta_1$ are given by
    \end{split}
 \end{align}
 %
-We see that the field $-\delta_1$ inside the cavity ($r<a$) is uniform and has the
-magnitude $-\delta_1\propto\mu^{-1}$ for $\mu\gg1$ as expected for a magnetic shield.
-In the opposite limit of a small $\mu\ll1$, the field inside scales as
-$-\delta_1\propto\mu$.  In fact, the shielding is identical for materials with
-permeability $\mu$ as for $1/\mu$. Of course the shielding effect for most real
-materials with $\mu<1$ would be negligible since the permeability is very close
-to unity. However, the superdiamagnetism ($\mu=0$) of superconductors has been
-exploited for constructing magnetic shields
+We see that the field $E=-\nabla\Phi_\text{M}=-\delta_1\hat{z}$ inside the
+cavity ($r<a$) is uniform and has the magnitude $-\delta_1\propto\mu^{-1}$ for
+$\mu\gg1$ as expected for a magnetic shield:
+%
+\[
+    -\delta_1=\frac{9\mu H_0}{(2\mu+1)(\mu+2)-2(a^3/b^3)(\mu-1)^2}=
+    \frac{1/2}{(1-a^3/b^3)\mu}+O(\mu^{-2})
+    \quad\text{for large $\mu$.}
+\]
+%
+In the opposite limit of a small
+$\mu\ll1$, the field inside scales as $-\delta_1\propto\mu$:
+%
+\[
+    -\delta_1=\frac{\mu/2}{1-a^3/b^3}+O(\mu^2)
+    \quad\text{for small $\mu$.}
+\]
+%
+It is interesting to observe that the
+shielding is identical for materials with permeability $\mu$ as for $1/\mu$. Of
+course the shielding effect for most real materials with $\mu<1$ would be
+negligible since the permeability is very close to unity. However, the
+superdiamagnetism ($\mu=0$) of superconductors has been exploited for
+constructing magnetic shields
 \cite{claycomb1999superconducting,ohta1999neuromagnetic,al2021study}, although
 with the disadvantages of requiring cryogenic temperatures.  For a nonpermeable
 material, $\mu=1$, there is no shielding.
@@ -262,7 +280,7 @@ coefficients from \ref{sphere_coeffs}, we see that
 \end{equation}
 %
 with the same $A$ as in eqn~\ref{sphere_coeffs}. The internal field in the
-cavity is $H(r<a)=-\delta_1$, so
+cavity is $|H(r<a)|=-\delta_1$, so
 %
 \begin{align*}
    \vec K_\text{inner}=-(\mu-1)H(r<a)\sin\theta\;\hat{\boldsymbol\phi}
@@ -405,17 +423,19 @@ that the same shielding obtains for $\mu$ as for $1/\mu$.
 As pointed out in ref.~\cite{dickerson2012high}, the dynamic and static shielding would
 be identical in case of a purely linear material. This does not apply, however,
 to shielding static fields with nonlinear materials such as mu-metal and
-metglas. For example, for a single-layer 14" diameter shield of length 3.5~m
-with $\mu=70,000$ and $t=0.2$~mm, we expect from eqn~\ref{singlelayer} that
-$S_\text{T}\approx40$ and $S_\text{L}\approx2$.  Thus a 400~mG lab magnetic
-field should be attenuated down to 10~mG (200~mG) if oriented perpendicular
-(parallel) to the shield.
+metglas. For example, for a single-layer 14" diameter ($R=17.8$~cm) shield of
+length 3.5~m with $\mu=70,000$ and $t=0.2$~mm, we expect from
+eqn~\ref{singlelayer} that $S_\text{T}\approx40$ and $S_\text{L}\approx2$. Thus
+our roughly 400~mG lab magnetic field should be attenuated down to 10~mG
+(200~mG) if oriented perpendicular (parallel) to the shield.
 
 In practice (see example in Fig.~\ref{beforeafter}), the field inside a shield
 can be greatly reduced by driving a sinusoidal magnetic field around it with a
-gradually decreasing envelope. After degaussing the shield, we find residual
-fields much smaller than expected (approx.\ 0.2~mG and 4~mG, resp.) from simple
-paramagnetic theory.
+gradually decreasing envelope. We call this procedure `degaussing the shield',
+by analogy to the procedure used to protect World War II ships against magnetic
+mines \cite{hook1941medical}. After degaussing, we find residual fields much
+smaller than expected (approx.\ 0.2~mG and 4~mG, resp.) from simple paramagnetic
+theory.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/beforeafter.png}
@@ -434,22 +454,25 @@ paramagnetic theory.
 \end{figure}
 
 A common explanation for the decrease in the internal magnetic field is as
-follows. The sinusoidal magnetic field drives the ferromagnetic material into
-saturation. Regardless of the initial magnetization of the material, it will move
-around its hysteresis curve (see Fig.~\ref{degaussing_theory}) and lose all
-memory of the initial condition. The external magnetizing current is applied
-symmetrically around zero (necessitating some form of DC-blocking, such as a
-transformer or capacitive coupling), so when the amplitude is gradually
-decreased to zero, no net magnetization will remain (e.g.,
-\cite[sect.~3.4.2]{khriplovich2012cp}). Ref.~\cite{thiel2009demagnetization}
-calls the resulting state of minimized internal energy a `demagnetized state'.
+follows. The sinusoidal magnetic field of the `degaussing' coil drives the
+ferromagnetic material into saturation. Regardless of the initial magnetization
+of the material, it will move around its hysteresis curve (see
+Fig.~\ref{degaussing_theory}) and lose all memory of the initial condition. The
+external magnetizing current that is passed through the degaussing coils is
+applied symmetrically around zero (necessitating some form of DC-blocking, such
+as a transformer or capacitive coupling), so when the amplitude of the
+degaussing current is gradually decreased to zero, no net magnetization will
+remain (e.g., \cite[sect.~3.4.2]{khriplovich2012cp}).
+Ref.~\cite{thiel2009demagnetization} calls the resulting state of minimized
+internal energy a `demagnetized state'.
 
 \begin{figure}
   \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton.pdf}
   \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton_offs.pdf}
     \caption[Magnetization curves from Jiles--Atherton model.]{Magnetization
     curves, found by numerically integrating eqn~\ref{jiles_atherton_eqn} with
-    the parameters given in the figure.  \part{Left} Degaussing: naive picture,
+    the parameters given in the figure. See page \pageref{jiles_atherton_par}
+    for a discussion of the model. \part{Left} Degaussing: naive picture,
     an oscillating applied field $H_0$ with no offset decreases till the
     material spirals into the origin of the $M$--$H$ or $B$--$H$ space
     (demagnetization). All the \emph{minor loops} are centered around the
@@ -492,7 +515,19 @@ motion of hysteresis loops of a given material.
 To find what happens to the magnetization of the shield during degaussing, we
 can begin by recalling that any system will likely arrive at the state of lowest
 energy it can reach, so long as it has enough activation energy to leave its
-current local minimum. Given that the magnetic flux density $B$ corresponds to a
+current local minimum. To reiterate:
+
+\vspace{1em}
+
+\label{framed_principle}
+\noindent\fbox{\parbox{\textwidth}{Our model for the effect of degaussing (and
+the resulting large shielding of purely static fields) is that the degaussing
+ends with the particular residual magnetization of the shield material that acts
+to minimize the total energy in the magnetic field eveywhere in space.}}
+
+\vspace{1em}
+
+Given that the magnetic flux density $B$ corresponds to a
 magnetic energy density $u=B^2/2\mu_0$, it is reasonable to expect that the
 shield is striving to minimize the magnetic field, though subject to two
 constraints.
@@ -524,6 +559,10 @@ paramagnetic argument of section \ref{paramagnetic_shielding}.
 
 \subsubsection{Degaussing toy models}
 
+After degaussing, ferromagnetic shields are in a state of nonzero magnetization.
+To model this state of ``frozen in'', or hard-magnet, magnetization, we consider
+a fixed current distribution in the simplest geometry: a sphere.
+
 \paragraph{Rotating sphere of charge}
 
 Consider a spherical shell of radius $R$ that carries a uniform surface charge
@@ -539,7 +578,7 @@ expected the magnetization $\vec M$ and the surface current density $\vec K$ to
 have the same magnitude, since they are related by $\vec K=\vec M\times\hat{\vec
 n}$.
 
-The magnetic vector potential is given by
+The magnetic vector potential for such a uniformly magnetized sphere is given by
 \cite[eqn~5.69]{griffiths2013introduction}
 %
 \begin{equation}
@@ -584,13 +623,28 @@ This is the field of a dipole with a dipole moment \cite[eqn~5.107]{jackson1998c
    =\frac{4\pi R^3}{3}K_0
    =\frac{4\pi R^3}{3}\vec \sigma R\omega.
 \]
-%
-Observe that at $r=R$, both $\vec B_\text{in}^{R,M}$ and $\vec
-B_\text{out}^{R,M}$ take the same magnitude, $|\vec B|=(2/3)\mu_0M$, but the
-directions of the two vectors are different. This is as it should be since the
-field lines of $\vec B$ are closed loops due to $\nabla\cdot\vec B=0$, but their
-direction changes suddenly as the field transitions from the uniform field
-inside the sphere to the dipole field outside.
+
+\begin{figure}
+   \centering
+  \includegraphics[width=0.8\textwidth]{figs/todo/jackson5_11.png}
+    \caption[$B$ and $H$ for a uniformly magnetized sphere. ]{Magnetic fields
+    $B$ (left) and $H$ (right) for a uniformly magnetized sphere. Figure
+    reproduced from Jackson \cite[Fig.~5.11]{jackson1998classical}.}
+  \label{jackson5_11}
+\end{figure}
+
+The field is plotted in Fig.~\ref{jackson5_11}. Observe that at $r=R$, both
+$\vec B_\text{in}^{R,M}$ and $\vec B_\text{out}^{R,M}$ take the same magnitude,
+$|\vec B|=(2/3)\mu_0M$, but the directions of the two vectors are different.
+This is as it should be since the field lines of $\vec B$ are closed loops due
+to $\nabla\cdot\vec B=0$, but their direction changes suddenly as the field
+transitions from the uniform field inside the sphere to the dipole field
+outside.
+
+As emphasized in the framed paragraph on page \pageref{framed_principle}, in our
+model of degaussing, the total magnetic energy is minimized during degaussing.
+Thus we next consider the magnetic energy corresponding to the above magnetic
+field distribution.
 
 For a linear material, the total magnetic energy is
 \cite[eqn~5.148]{jackson1998classical}
@@ -602,16 +656,17 @@ For a linear material, the total magnetic energy is
 %
 We emphasize that this relation only holds for linear materials, including,
 trivially, vacuum, where $\vec B=\mu_0\vec H$. For a general magnetic medium,
-including ferromagnetic substances, the total work done per unit volume by a
-magnetic field is instead given by \cite[eqn~5.147]{jackson1998classical}
+including ferromagnetic substances, the total work done by a magnetic field is
+instead given by the following integral over \emph{all of space}
+\cite[eqn~5.147]{jackson1998classical}
 %
 \begin{align}
    \label{general_energy}
    u=\int\vec H\cdot\vec\d\vec B,
 \end{align}
 %
-which we would need to integrate over all space to find the total energy. In the
-present example, we do not have any magnetic material present, so we can use
+where to find the total energy, \textbf{the integral is done over all space}. In
+the present example, we do not have any magnetic material present, so we can use
 eqn~\ref{linear_energy} together with the magnetic fields given in
 eqns~\ref{rotating_sphere_field_inside} and \ref{rotating_sphere_field_outside}
 to find the total magnetic energy density $u^2=B^2/2\mu_0$ when the sphere is
@@ -649,15 +704,21 @@ R^3u_\text{in}$. The energy outside the sphere is found by integration:
    &+2B_0M\frac{\mu_0R^3}{3}2\pi\int\limits_R^\infty\frac{r^2\d
    r}{r^3}\underbrace{\int\limits_0^\pi f(\theta)\sin\theta\;\d\theta}_0\nonumber\\
    &+M^2\left(\frac{\mu_0R^3}{3}\right)^22\pi\underbrace{\int\limits_R^\infty\frac{r^2\d
-   r}{r^6}\int\limits_0^\pi g(\theta)\sin\theta\;\d\theta}_{4/(3R^3)}\nonumber
+   r}{r^6}\int\limits_0^\pi g(\theta)\sin\theta\;\d\theta}_{4/(3R^3)}\nonumber\\
+    =B_0^2&\int\d^3x+\frac{8\pi}{27}(\mu_0M)^2R^3.\nonumber
 \end{align}
-%
-Note that while the internal energy can be lowered by choosing a correct value for $M$,
-the external energy always increases whenever $M$ is changed from zero. Thus the
-lowest-energy configuration is, as remarked at the end of the previous section,
-a tradeoff between decreased field (energy) inside and an increased field
-(energy) outside. I see no obvious reason why after equilibration, the internal
-field should entirely vanish rather than settling on a small but nonzero value.
+
+The first term is of course infinite. This makes sense, since it would take an
+infinite amount of work to set up a uniform magnetic field throughout all of
+space.
+
+Note that while the internal energy can be lowered by choosing a correct value
+for $M$, the external energy always increases whenever $M$ is changed from zero.
+Thus the lowest-energy configuration is, as remarked at the end of the previous
+section, a tradeoff between decreased field (energy) inside and an increased
+field (energy) outside. I see no obvious reason why after degaussing, the
+internal field should entirely vanish rather than settling on a small but
+nonzero value.
 
 To minimize the total energy, consider the derivative
 %
@@ -691,7 +752,7 @@ the following paragraph, we expand the model to include this observation.
 
 \paragraph{Two `$\cos\theta$' shells}
 
-Let there be two concentric spherical shells with radii $R1<R2$. As in the
+Let there be two concentric spheres with radii $R_1<R_2$. As in the
 previous example, there are three equivalent physical pictures: (1) rotating
 shells with uniform surface electric charge densities $\sigma_i$; (2)
 solid spheres with uniform magnetic polarizations $M_i$; (3) spherical
@@ -804,13 +865,30 @@ real ferromagnetic materials.
 \subsubsection{Hysteresis during degaussing}
 \label{degaussing_hysteresis}
 
+Recall that, as stated emphatically in the framed paragraph on page
+\pageref{framed_principle}, that our model for the effect of degaussing is that
+the degaussing ends with the particular residual magnetization of the shield
+material that acts to minimize the total energy in the magnetic field eveywhere
+in space. In other words, the total magnetic energy is minimized during
+degaussing.
+
 In general, finding the minimum-energy magnetization $\vec M$ of a ferromagnet
 placed in an external field $\vec B_0$ is a very challenging task. In this
 section, I will review theoretical expressions for a ferromagnet with and
-without domain wall pinning from the theories of Weiss and Jiles--Atherton,
-respectively. Afterwards, I relate the two situations to the behavior of a
-magnetic shield during and after degaussing, which will explain the mystery of
-the significantly better static than dynamic shielding.
+without domain wall pinning from the theories of Weiss \cite{weiss1907hypothese}
+and Jiles--Atherton \cite{jiles1984theory}, respectively. Afterwards, I relate
+the two situations to the behavior of a magnetic shield during and after
+degaussing, which will explain the mystery of the significantly better static
+than dynamic shielding.
+
+No attempt is made here to try to present a quantitatively valid description of
+the ferromagnetic materials used in our experiments and to relate the parameters
+of the models to measurable material quantities. The theories presented below
+serve merely as examples of results obtained from a more thorough study of the
+magnetic minimum energy state, going far beyond the simple toy models presented
+above. However, the study of ferromagnetic hysteresis is a rich and complex
+field; I refer the interested reader to textbooks
+\cite{mayergoyz2003mathematical} for further information.
 
 \paragraph{Weiss mean field theory}
 
@@ -859,48 +937,73 @@ $H=0$.
 \end{figure}
 
 The modified Langevin expression \ref{weiss_langevin} gives only the global
-energy minimum state of a ferromagnet. We know that in a real material, the
-motion of domain walls is impeded by the presence of various defects, such as
-impurities or mechanical stresses. These `pinning sites' cause a decrease of the
-magnetic permeability of the material as the material gets stuck in metastable
-states above the global equilibrium, which is observed as hysteresis on a
-$M$--$H$ diagram. \cite{jiles1984theory} Nonetheless, the global equilibrium
-state can be reached when the material is either annealed, by a controlled
-heating and cooling of the material, or degaussed by a slowly decaying
-oscillaying external field. On a hysteresis diagram, such as
-\ref{degaussing_theory}, the degaussing procedure will appear as a spiraling
-motion from the outermost hysteresis loop into a point on a curve given by
-eqn~\ref{weiss_langevin} and called the \emph{anhysteretic curve}.
+energy minimum, or thermal equilibrium, state of a ferromagnet. We know that in
+a real material, the motion of domain walls is impeded by the presence of
+various defects, such as impurities or mechanical stresses. These `pinning
+sites' cause a decrease of the magnetic permeability of the material as the
+material gets stuck in metastable states above the global equilibrium, which is
+observed as hysteresis on a $M$--$H$ diagram. \cite{jiles1984theory}
+Nonetheless, the global equilibrium state can be reached when the material is
+either annealed, by a controlled heating and cooling of the material, or
+degaussed by a slowly decaying oscillaying external field. On a hysteresis
+diagram, such as \ref{degaussing_theory}, the degaussing procedure will appear
+as a spiraling motion from the outermost hysteresis loop into a point on a curve
+given by eqn~\ref{weiss_langevin} and called the \emph{anhysteretic curve}.
 
 In other words, the state of the magnetization that is created by degaussing is
 qualitatively similar to that of a paramagnet with a very large effective
 anhysteretic permeability $\mu_\text{an}$, found from the slope of the
 anhysteretic curve at the field of interest. This number is rarely quoted by the
-manufacturers of magnetic shielding materials, but is easy to estimate in the
-lab (see Fig.~\ref{hysteresis}) or from supplied hysteresis curves, noting that
-the anhysteretic curve normally lies approximately in the middle of the major
-(saturated) hysteresis loops.
+manufacturers of magnetic shielding materials since it requires a measurement of
+the magnetization after degaussing for a range of DC magnetic field offsets.
+However, it is my hypothesis that the anhysteretic curve normally lies
+approximately in the middle of the major (saturated) hysteresis loops, allowing
+one to estimate the anhysteretic permeability in the lab (see
+Fig.~\ref{hysteresis}) or from supplied hysteresis curves.
 
-When calculating the expected shielding of static fields following degaussing,
-we have to use $\mu_\text{an}$ to obtain a realistic estimate. However, we have
-to keep in mind that unlike a real paramagnet, the degaussed ferromagnet will
-not dynamically change its state of magnetization as dramatically as we might
-expect from the huge value of $\mu_\text{an}$. Instead, if we are interested in
-the attenuation of small dynamic perturbations to the magnetic field, we have to
-use the much smaller dynamic permeability $\mu=\d B/\d H$ from the slope of the
-$B(H)$ curves, which are minor loops on the hysteresis diagram. In the following
-paragraph, we will consider an extension of the theory that can predict the
-behavior of the hysteresis loops in a magnetic material with domain pinning.
+Having introduced the distinction between the hysteresis curves and the
+anhysteretic curve, and their corresponding permeabilities, we can formulate the
+essential point of this section:
+
+\vspace{1em}
+
+\noindent\fbox{\parbox{\textwidth}{When calculating the expected shielding of
+static fields following degaussing, we have to use $\mu_\text{an}$ to obtain a
+realistic estimate. However, unlike a real paramagnet, the degaussed ferromagnet
+will not dynamically change its state of magnetization as dramatically as we
+might expect from the huge value of $\mu_\text{an}$. Instead, the attenuation of
+small dynamic perturbations to the magnetic field has to be calculated using the
+much smaller dynamic permeability $\mu=\d B/\d H$ obtained from the slope of the
+$B(H)$ curves, which are minor loops on the hysteresis diagram
+(Fig.~\ref{degaussing_theory2}).}}
+
+\vspace{1em}
+
+These loops are not predicted by the Weiss theory. In the following paragraph,
+we will consider an extension of the theory that can predict the behavior of the
+hysteresis loops in a magnetic material with domain pinning.
 
 \paragraph{Jiles--Atherton model}
+\label{jiles_atherton_par}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\textwidth]{figs/mathematica/jiles_atherton_offs.pdf}
+    \caption[Magnetization curves from Jiles--Atherton model.]{Magnetization
+    curves from eqn~\ref{jiles_atherton_eqn}. Observe the difference in slope
+    between the anhysteretic curve (dashed) and the minor loops it intersects.
+    Figure reproduced from Fig.~\ref{degaussing_theory} (right).}
+    \label{degaussing_theory2}
+\end{figure}
 
 Under small perturbations in the external field, the magnetic domains are not
 entirely free to align their magnetization axis with the applied field because
 they are impeded from doing so by the presence of pinning sites in the form of
 inclusions in the material and other inhomogeneities. By considering these
 pinning sites to be uniformly distributed throughout the material,
-\cite{jiles1986theory} were able to derive a differential equation describing
-the trajectories in the $M$--$H$ plane for a ferromagnet, as follows:
+Jiles and Atherton \cite{jiles1986theory} were able to derive a differential
+equation describing the trajectories in the $M$--$H$ plane for a ferromagnet, as
+follows:
 %
 \begin{align}
    \label{jiles_atherton_eqn}
@@ -911,26 +1014,35 @@ the trajectories in the $M$--$H$ plane for a ferromagnet, as follows:
 Here we introduce two new parameters, $k$ and $c$, and note that the $\pm$ in
 the denominator is $+$ for $\d H/\d t>0$ and $-$ for $\d H/\d t<0$. I have
 plotted the solutions to this equation for a particular choice of parameters in
-Fig.~\ref{degaussing_theory}, with an initial condition of saturation
-magnetization at a negative $H$. The plots show the `spiraling' motion
-characteristic of a degaussing process; the integration of the differential
-equation proceeds on an interval $[H_\text{i},H_\text{f}]$, where $H_\text{f}$
-gets reduced by 20~\%\ each time $\d M/\d t$ gets reversed. (Of course the
-Jiles--Atherton theory is not time dependent, so this merely refers to the $\pm$
-sign in the denominator of eqn~\ref{jiles_atherton_eqn} above.)
+Fig.~\ref{degaussing_theory} (here reproduced as Fig.~\ref{degaussing_theory2}),
+with an initial condition of saturation magnetization at a negative $H$. As
+above, I shall make \emph{no attempt whatsoever} to relate the magnitude or
+units of these parameters to measurable material quantities, since this would
+distract from the thread of the argument.  As far as this demonstration is
+concerned, the model parameters are merely a set of numbers that happens to
+reproduce what appears like a `stereotypical' hysteresis loop. The reader
+interested in the diversion is encouraged to peruse the pletora of papers on the
+topic \cite{jiles1983ferromagnetic, jiles1984theory, jiles1986theory,
+lewis1996modeling}.
+
+The plots show the `spiraling' motion characteristic of a degaussing process;
+the integration of the differential equation proceeds on an interval
+$[H_\text{i},H_\text{f}]$, where $H_\text{f}$ gets reduced by 20~\%\ each time
+$\d M/\d t$ gets reversed. (Of course the Jiles--Atherton theory is not time
+dependent, so this merely refers to the $\pm$ sign in the denominator of
+eqn~\ref{jiles_atherton_eqn} above.)
 
 As seen in Fig.~\ref{degaussing_theory} and noted in its caption, equation
 \ref{jiles_atherton_eqn} can have minor loop solutions with negative slopes,
-which is unphysical. We see that $\d M/\d H$ would change sign when
-the magnetization $M(H)$ crosses the anhysteretic magnetization $M_\text{an}(H)$ if
-$c$ is small enough and $k$ large enough. The original papers presenting the theory
-\cite{jiles1983ferromagnetic,jiles1984theory,jiles1986theory} do not discuss
-this feature at any great length, except for noting that in the $c=0$ case, the
-rate of change of magnetization is proportional to the displacement from the
-anhysteretic. This rate of change, which is equal to the permeability of the
-material, can then therefore be zero or nonzero with
-either sign. See \cite{carpenter1991differential} for a discussion of ways
-around this issue.
+which is unphysical. We see that $\d M/\d H$ would change sign when the
+magnetization $M(H)$ crosses the anhysteretic magnetization $M_\text{an}(H)$ if
+$c$ is small enough and $k$ large enough. The original papers presenting the
+theory \cite{jiles1983ferromagnetic,jiles1984theory,jiles1986theory} do not
+discuss this feature at any great length, except for noting that in the $c=0$
+case, the rate of change of magnetization is proportional to the displacement
+from the anhysteretic. This rate of change, which is equal to the permeability
+of the material, can then therefore be zero or nonzero with either sign. See
+\cite{carpenter1991differential} for a discussion of ways around this issue.
 
 Since the publication of the model in the 1980s, a lot of work has focused on
 offering improvements and interpretation of the theory, such as a generalization
@@ -940,7 +1052,21 @@ $M_\text{s},a,\alpha,k,c$ to physical attributes of real materials
 stress on the material \cite{sablik1987model}, and parameter identification
 \cite{lederer1999parameter,leite2004real,fulginei2005softcomputing}.
 
-\subsubsection{Noise spectral density}
+These generalizations of the hysteresis model would be a good starting point for
+a quantitative modeling investigation of ferromagnetic materials used in
+magnetic shielding. However, the presentation above suffices for our
+purpose here. We have introduced two models, each explaining one key facet
+of the behaviour of a magnetic shield. The Weiss mean field theory
+introduced the concept of the anhysteretic cure, which accounts for the
+better-than-expected performance of degaussed shields in attenuating static lab
+fields. On the other hand, the Jiles--Atherton model introduced hysteresis and
+the concept of minor loops, with a smaller corresponding permeability, and hence
+lesser shielding for non-static fields.
+
+Having concluded the theoretical discussion of degaussing, we turn to what
+happens to the shield after degaussing.
+
+\subsubsection{General aspects of magnetic noise}
 
 The previous sections discussed the behavior of the magnetic shield during and
 just after degaussing. However, in an actual experiment we are also interested
@@ -967,8 +1093,8 @@ sensitivity and gain of the sensor.
 
 If the spectrum is calculated manually from the voltage signal $V(t_i)$ sampled
 at discrete time points ($t_i$, $i=1,\dots,N$, with $t_{i+1}-t_i=\Delta t$)
-using a real-valued \gls{FFT}, then the correct way to interpret it
-as a power spectral density is given by
+using a real-valued \gls{FFT} \cite{cooley1965algorithm}, then the correct way
+to interpret it as a power spectral density is given by
 %
 $$
 \text{PSD}=2\frac{\Delta t}{N}\left|\mathcal{F}\left[V(t)\right]\right|^2.
@@ -979,8 +1105,9 @@ that for a real-valued \gls{FFT}, the negative-frequency components are folded
 into the positive ones. (Here we ignore the DC component corresponding to the
 mean value of the recorded voltages.) The ratio $\Delta t/N$, with units of
 reciprocal frequency, allows the interpretation of the above as a spectral
-density. If any windowing function $w(t_n)$, $n=1,\dots,L$ is applied, the
-spectral density has to be multiplied by the \gls{ENBW}\ correction factor,
+density. If any windowing function $w(t_n)$, $n=1,\dots,L$ is applied by
+convolving it with the signal $V(t)$, the spectral density has to be multiplied
+by the \gls{ENBW}\ correction factor,
 %
 $$
 c_\text{w}=L\frac{\sum_n|w(t_n)|^2}{|\sum_n w(t_n)|^2}.
@@ -990,38 +1117,45 @@ This expresses the fact the window function determines the bandwidth of each
 frequency bin. More precisely, it expresses the width of a rectangular window
 with the same peak power that accumulates the same noise power.
 \cite{harris1978use} For a boxcar window, $c_\text{w}=1$, since it is the window
-with the narrowest frequency resolution. This comes at the cost of a reduced
+with the narrowest frequency resolution as is well known in signal processing
+\cite[sect~5.2.4]{broughton2018discrete}. This comes at the cost of a reduced
 dynamic range due to large sidelobes of the sinc function. Other window
 functions, such as Hann, Hamming, or Blackman come with significantly smaller
 sidelobes, but a wider main lobe. \cite{proakis2006digital,
-oppenheim2010discrete}
+oppenheim2010discrete} In the magnetic field measurements done with our magnetic
+shield, we are not primarily concerned in distinguishing nearby frequencies from
+each other---a good application for the very selective boxcar window---but are
+instead interested in integrated, broadband noise, which is better displayed
+using a `smoother' window such as the Hann.
 
+In the next section, we consider the low-frequency part of noise using a
+different approach: that of a random walk.
 
 \subsubsection{Random walk}
 
 The magnetic noise, as characterized in the previous section using a \gls{NSD},
-directly adds to the noise of the final measurement through the Zeeman effect in
+directly adds to the noise of the final measurement through the Zeeman shifts in
 the hyperfine structure. Since the \CENTREX\ experiment is based on the lock-in
 technique, we only have to consider the noise in a very narrow bandwidth as
 explained in section \ref{shield:requirements}. However, the very low frequency
 part of the spectrum is also of interest. Here we refer to the very slow drifts
 of the residual field over the course of days, weeks, or months, corresponding
-to absolute frequencies around and below $1\uHz$. In particular, we are interested
-to find out how long we may expect the magnetic shield to keep its initial state
-of a low `static' residual field, or, alternatively, what is the probability
-that over the course of a given time period, the average magnetic field has
-increased beyond what is acceptable according to our design requirements? To
-answer this question, I present a simple model for the stochastic time
-dependence of the average field inside the magnetic shield.
+to absolute frequencies around and below $1\uHz$. In particular, we are
+interested to find out how long we may expect the magnetic shield to keep its
+initial state of a low `static' residual field, or, alternatively, what is the
+probability that over the course of a given time period, the average magnetic
+field has increased beyond what is acceptable according to our design
+requirements? To answer this question, I present a simple model for the
+stochastic time dependence of the average field inside the magnetic shield.
 
-Consider the case of random walk (Brown noise, Brownian motion; related to a
-Wiener process), in particular, continuous random walk $W(t)$ starting from the
-origin where the $dW$ increments are normally distributed (with variance
-$\propto t$) random variables. Such noise may be obtained by integrating white
-noise (with a flat spectrum, such as resistor Johnson noise with
-$\text{PSD}=4k_\text{B} T R$), or, expressed in the frequency domain, by
-applying a single-pole low-pass filter (attenuating higher frequencies
-proportionally more than the lower ones).
+Consider the case of random walk of some quantity $W$ (Brown noise, Brownian
+motion; related to a Wiener process). In particular, a continuous random walk
+$W(t)$ starting from the origin where the $dW$ increments are normally
+distributed (with variance $\propto t$) random variables. Such noise may be
+obtained by integrating white noise (with a flat spectrum, such as resistor
+Johnson noise with $\text{PSD}=4k_\text{B} T R$), or, expressed in the frequency
+domain, by applying a single-pole low-pass filter (attenuating higher
+frequencies proportionally more than the lower ones).
 %
 It is interesting to observe that as defined above, the process $W(t)$, while
 continuous everywhere, is differentiable nowhere. This can be readily seen by
@@ -1034,7 +1168,9 @@ In this work, we are interested in the low-frequency behaviour of the noisy
 system. In particularly, we want to know what is the probability that the
 magnetic field $B(t)$ reaches some threshold value $B_T$ in a time $T$. For a
 random walk, the probability density function takes the form of a L\'evy
-distribution. \cite{jacobs2010stochastic}
+distribution. \cite{jacobs2010stochastic} Further work would be required to
+provide the qualitative model of this distribution as applied to our (or any
+other) magnetic shield.
 
 \subsection{Magnetic shields in literature}
 

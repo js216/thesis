@@ -244,7 +244,9 @@ Fig.~\ref{AR_win_p2}.
     \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p2.pdf}
     \caption[Residual microwave reflectivity vs window thickness.]{Residual
     microwave reflectivity when the window ($t=11.494$~mm) is not of the optimal
-    thickness.}
+    thickness. The actual window thickness, 11.762~mm, corresponds to the
+    rightmost point of the horizontal axis. This plot assumes the refractive
+    index of $\sqrt{3.8}$.}
     \label{AR_win_p2}
 \end{figure}
 
@@ -291,7 +293,8 @@ Fig.~\ref{AR_win_p5}.
     \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p5.pdf}
     \caption[Residual reflectivity versus angle of incidence.]{Residual
     reflectivity versus angle of incidence. The legend shows the three window
-    thicknesses.}
+    thicknesses listed in the plot legend (in units of mm). Index of
+    refraction is assumed to be $\sqrt{3.8}$.}
     \label{AR_win_p5}
 \end{figure}
 
@@ -303,16 +306,19 @@ the effect due to curvature, while the chamber reflections are considered in the
 next section.
 
 For a Gaussian beam of waist $w_0$ at a distance $z$ away from the waist, we
-have the beam radius of curvature and width
+have the beam radius of curvature $R$ and width $w$
 \cite[eqn~2.21]{goldsmith1998quasioptical}:
 %
 \begin{align}
     \label{radius_width}
     R=z+\frac{1}{z}\left(\frac{\pi w_0^2}{\lambda}\right)^2
     ;\quad
-    w=w_0\sqrt{1+\left(\frac{cz}{\pi w_0^2f}\right)^2}
+    w=w_0\sqrt{1+\left(\frac{cz}{\pi w_0^2f}\right)^2},
 \end{align}
 %
+where $\lambda$ is the wavelength, $f$ is the frequency, and $c$ is the speed of
+light. (In this experiment, typical values are $w_0=1$~in, $f=14$~GHz.)
+
 The beam intensity at a transverse position $r$ is
 \cite[eqn~2.25]{goldsmith1998quasioptical}:
 %
@@ -332,16 +338,16 @@ the same time, the reflectivity increases.
     \centering
     \includegraphics[width=.7\textwidth]{figs/mathematica/AR_win_p6.pdf}
     \caption[Residual reflectivity due to wavefront curvature.]{Residual
-    reflectivity due to wavefront curvature.}
+    reflectivity due to wavefront curvature. Note that all quantities are
+    dimensionless and therefore plotted on the same vertical axis. The window
+    index of refraction is assumed to be $\sqrt{3.8}$.}
     \label{AR_win_p6}
 \end{figure}
 
-The outer parts of the beam will be reflected much more than the beam
-centre. However, the beam intensity near the outer parts of the window is
-greatly reduced since most of the beam power is near the centre. At angles where
-we would predict a high reflectivity, the Gaussian is exponentially suppressed.
-Thus, the actual power reflected from the edges of the windows due to the beam
-curvature is negligible.
+The outer parts of the beam will be reflected much more than the beam centre.
+However, the beam intensity near the outer parts of the window is greatly
+reduced since most of the beam power is near the centre. Thus, the actual power
+reflected from the edges of the windows due to the beam curvature is negligible.
 
 \subsection{Clipping}
 
@@ -353,21 +359,23 @@ needed to lose an acceptable amount of the beam power.
 
 According to eqn~\ref{Gaussian_intensity}, the beam intensity decays
 exponentially as $\exp(-2r^2/w^2)$ with the transverse position $r$ away from
-the beam axis. If we want the intensity at the edge of the windows to be 0.25\%\
-of the intensity at the center of the beam, then the window diameter $D$ needs
-to be
+the beam axis, given a certain beam waist $w$ (defined in
+eqn~\ref{radius_width}). If we want the intensity at the edge of the windows to
+be, say, 0.25\%\ of the intensity at the center of the beam, then the window
+diameter $D$ needs to be
 %
 \[
     D>2w\sqrt{-\frac{\ln0.0025}{2}}\approx3.5\;w,
 \]
 %
-where the beam width is given in eqn~\ref{radius_width}. The vacuum chamber as
-built (Fig.~\ref{RCch}) has three pairs of identical microwave windows. The two
-holes for 13.4~GHz microwaves have a diameters of 8.150" and are separated by
-14.58", while the other two pairs (for 26.8 and 40.1~GHz) both have a 5.450"
+where the beam width $w$ is given in eqn~\ref{radius_width}. The vacuum chamber
+as built (Fig.~\ref{RCch}) has three pairs of identical microwave windows. The
+two holes for 13.4~GHz microwaves have a diameters of 8.150" and are separated
+by 14.58", while the other two pairs (for 26.8 and 40.1~GHz) both have a 5.450"
 diameter and are separated by 16.13". The chamber also has a pair of 2" holes
 for a laser, as well as the connection for the molecular beam, perpendicular to
-all the laser and microwave beams.
+all the laser and microwave beams. With these dimensions, the clipping of the
+the 1"-waist microwave beams is kept below 0.2\%.
 
 The vacuum connection is an ISO200 F-style flange on one side, and a custom
 ``Input Nipple'' on the other (3/4" long nipple, 2.87" ID, flange 5.8" OD and
@@ -396,9 +404,10 @@ constituent one-dimensional inductive grid''
 \cite[p.~242]{goldsmith1998quasioptical}.
 
 Consider infinite-length wires of radius $a$, permeability $\mu_1$, and
-conductivity $\sigma=1/\rho$, arranged in an array with spacing $d$. The
-reflection coefficient for radiation of frequency $\omega=2\pi f$ and wavelength
-$\lambda=c/f$ at normal incidence is \cite[eqns~24--25]{wait1955reflection}
+conductivity $\sigma=1/\rho$ (which is the reciprocal of resistivity $\rho$),
+arranged in an array with spacing $d$. The reflection coefficient for radiation
+of frequency $\omega=2\pi f$ and wavelength $\lambda=c/f$ at normal incidence is
+\cite[eqns~24--25]{wait1955reflection}
 %
 \[
     R=\frac{-1}{1+2Z_\text{g}/Z_0},
@@ -421,16 +430,24 @@ where $Z_0\approx376.7~\Omega$ is the impedance of free space and
     .
 \end{align*}
 %
-The transmission $T\approx1-|R|^2$ of 13.4~GHz microwaves through a grid is
-shown in Fig.~\ref{wires}. The resistivity of the austenitic (non-magnetic) 304
-stainless steel is $\rho=72~\mu\Omega\cdot\text{cm}$
-\cite[p.~12-234]{haynes2016crc}, while the permeability is close to the vacuum
-value ($\mu_0\approx4\pi\cdot10^{-7}$~H/m).
+The mesh used in the experiment is made of copper (Precision Electroforming
+MC12, 0.53~mm wire spacing, 17.5~$\mu$m wire radius). The transmission
+$T\approx1-|R|^2$ of 26.7~GHz microwaves through such a grid is shown in
+Fig.~\ref{wires}. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figs/mathematica/wires.pdf}
     \caption[Microwave transmission through wire mesh.]{Transmission of 13.4~GHz
-    microwaves at normal incidence through a wire mesh.}
+    microwaves at normal incidence through a copper wire mesh. Here
+    $\mu_1=\mu_0$.}
     \label{wires}
 \end{figure}
+
+The attenuation of the 26.7~GHz microwaves through this mesh was measured to be
+approx.\ 13~dB \cite[sect~6.3]{timgren2023thesis}, or about 5\%\ transmission,
+which is more than the $\approx2$\%\ shown in the plot in Fig.~\ref{wires}. It
+is possible that some of the microwave power found its way around the mesh,
+either because the mesh was not properly sealed against the chamber aperture, or
+because the microwaves were transmitted ouf through the laser windows of one
+chamber and again through the windows into the next one.
