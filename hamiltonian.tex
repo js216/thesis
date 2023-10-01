@@ -45,8 +45,10 @@ The operations we can define on the basis states are:
    \item construction: e.g. calling \verb`BasisState(QN)` creates a basis state
       with quantum numbers \verb`QN = (J, mJ, I1, m1, I2, m2)`;
    \item equality testing;
-   \item inner product, returning either 0 or 1;
-   \item superposition and scalar multiplication, returning a \verb`State` object
+   \item inner product, returning either 0 or 1 (assuming an orthonormal set of
+       basis states);
+   \item superposition and scalar multiplication, returning a \verb`State`
+       object (described on the next page)
    \item a convenience function to print out all quantum numbers
 \end{itemize}
 
@@ -102,7 +104,7 @@ component must not appear twice on the list.
 There are three operations we can define on the states:
 
 \begin{itemize}
-   \item construction
+    \item construction (i.e., instantiating an object of type \verb`State`)
    \item superposition: concatenate component arrays and return a \verb`State`
    \item scalar multiplication \verb`a * psi` and \verb`psi * a`, division, negation
    \item component-wise inner product \verb`psi1 @ psi2`, where \verb`psi1` is a bra,
@@ -229,10 +231,10 @@ The other angular momentum operators we can obtain through the ladder operators
 %
 $$ J_\pm=J_x\pm iJ_y. $$
 %
-These are defined through their action on the basis states as (Sakurai eqns
-3.5.39-40)
+These are defined through their action on the basis states as (Sakurai
+\cite{sakurai2011modern} eqns 3.5.39-40)
 %
-$$ J_\pm|J,m\rangle=\sqrt{(j\mp m)(j\pm m+1)}|jm\pm1\rangle. $$
+$$ J_\pm|J,m\rangle=\sqrt{(J\mp m)(J\pm m+1)}|Jm\pm1\rangle. $$
 %
 Similarly, $I_{1\pm},I_{2\pm}$ act on the $|I_1,m_1\rangle$ and
 $|I_2,m_2\rangle$ subspaces in the same way.
@@ -331,7 +333,8 @@ Note that the dot product of two angular momentum operators can be written in te
 %
 $$\vec A\cdot\vec B=A_zB_z+\frac{1}{2}(A_+B_-+A_-B_+).$$
 %
-We have the following terms (from Table 1 of Ramsey's paper):
+We have the following terms (from Table 1 of Ramsey's paper
+\cite{wilkening1984search}):
 %
 \begin{align*}
 H_\text{c1}=c_1\vec I_1\cdot\vec J;\quad
@@ -691,7 +694,14 @@ def spectrum2(Ex_arr,Ey_arr,Ez_arr,Bx_arr,By_arr,Bz_arr, Hff_matrix=Hff_alt_m):
 
 Evaluate find the energies for $B_z$ of 18.4 gauss, and $E_z$ between 0 and 70
 V/cm, and plot the result. This reproduces Fig.~4 from
-\cite{wilkening1984search}.
+\cite{wilkening1984search}, and is shown here as Fig.~\ref{ram4_mine}.
+
+\begin{figure}
+    \centering
+  \includegraphics[width=0.7\textwidth]{figs/matplotlib/ram4.pdf}
+    \caption{Hyperfine states at $B_z=18.4$~G.}
+  \label{ram4_mine}
+\end{figure}
 
 \begin{lstlisting}
 Ez = np.linspace(0,70,100)
@@ -721,8 +731,9 @@ plt.show()
 \subsection{Polarization}
 
 Define a function that returns the expectation value of the molecular dipole
-operator for a range of states at some given value of external fields, which is
-proportional to the polarization of the molecule:
+operator (internuclear axis $z$-component) for a range of states at some given
+value of external fields, which is proportional to the polarization of the
+molecule:
 
 \begin{lstlisting}
 def polarization(Ex,Ey,Ez,Bx,By,Bz):
@@ -774,5 +785,6 @@ axx[1].yaxis.set_label_position("right")
 axx[1].yaxis.tick_right();
 \end{lstlisting}
 
-This produces Fig.~\ref{polarizeTlF} for the polarization of TlF as a function
-of the electric field.
+This produces Fig.~\ref{polarizeTlF} (all the way back at page
+\pageref{polarizeTlF}) for the polarization of TlF as a function of the electric
+field.

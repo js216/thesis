@@ -1177,40 +1177,38 @@ other) magnetic shield.
 %\newgeometry{margin=0cm}
 %\begin{landscape}
 \begin{sidewaystable}[p]
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  %\makebox[\textwidth][c]{%
-     \begin{tabu} to \textwidth {rC{4cm}C{4cm}C{3cm}C{4cm}C{4cm}}
-      \toprule
-       & \CENTREX & \cite{wodey2020scalable} & \cite{malkowski2011technique} & \cite{dickerson2012high} & \cite{bitter1991large} \\\midrule
-      \multicolumn{6}{@{}l}{\textit{Construction:}}\\
-       overall length  & 3.8 m                                       & 10 m                                 & 1.8 m                & 8.7 m                        & 76.5 m\\
-       weight          & approx. 600 kg                              & 7500 kg                              & ?                    & ?                            & ?\\
-       shape           & cylinder                                    & octagonal prism                      & cylinder             & cylinder                     & cylinder\\
-       materials       & metglas on PVC, welded \&\ annealed mumetal & permalloy sheets on plywood          & metglas on cardboard & welded \&\ annealed mu-metal & mechanically joined mu-metal segments\\
-       layer thickness & 0.2 mm (metglas), 1 mm (mu-metal)           & 3 mm at ends, 8 mm in central region & 0.08 mm              & 1.27 mm                      & 1 mm\\
-       layer diameters & (37, 41, 46, 51) cm                         & (45, 75) cm                          & 60 cm                & (19, 28, 39) cm              & 110 cm\\
-       endcaps         & no                                          & yes, with 22 cm circular opening     & no                   & yes, >10 cm opening          & no\\
-       scalable design & no (mu-metal $\leq$ 10ft)                       & yes                                  & yes                  & no                           & yes\\\\
-      \multicolumn{6}{@{}l}{\textit{Performance:}}\\
-        size of shielded region & 2.25 m                          & 8 m                         & 0.8 m      & 8 m                                                                      & 75 m\\
-        avg.\ transverse field  & 25 uG, $<$ 5 uG shimmed           & 15 uG                       & 6,000 uG   & 460 and 730 uG (rms)                                                     & ?\\
-        avg.\ axial field       & .100 uG, $<$ 10 uG shimmed        & 5 uG
-        & 140,000 uG & 420 uG (rms)
-        & $<$ 100 uG shimmed\\
-        long-term drift         & avg(By) $<$ 5 uG over 3 wks       & ?                           & ?          & ?                                                                        & ?\\
-        transverse dynamic SF   & 32,500                          & 4000 @ 0.01 Hz              & ?          & ?                                                                        & ?\\
-        axial dynamic SF        & ?                               & 30 @ 0.01 Hz                & ?          & ~5 over central 4 m @ quasi-DC                                           & ?\\
-        coils for dyn.\ SF      & rect. coil pairs, (0.8 x 3.7) m & rect. coil pairs, (3 x 2) m & none       & 10" long solenoid wrapped around outermost layer at the center of shield & none\\\\
-      \multicolumn{6}{@{}l}{\textit{Degaussing:}}\\
-        sequence          & 20", 18", 16", mu-metal & inner, endcaps, outer, inner   & N/A   & ?      & N/A\\
-        coil turns        & 12 each layer           & 16 (inner), 8 (outer)          & ?     & ?      & 1 (toroidal), 1/m (solenoid)\\
-        frequency         & ?                       & 6 Hz                           & 60 Hz & 60 Hz? & 50 Hz, 0.5 Hz\\
-        initial amplitude & ?                       & 10 A                           & ?     & ?      & 230 A, 25 A\\
-        decrease          & ?                       & linearly over 100 s            & ?     & ?      & within several minutes\\
-        field change      & ?                       & 15 uG change between two scans & ?     & ?      & ?\\
-      \bottomrule
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    %\makebox[\textwidth][c]{%
+    \begin{tabu} to \textwidth {rC{4cm}C{5cm}C{4cm}C{4cm}}%C{4cm}}
+        \toprule
+                                & \CENTREX                                    & Wodey (2020) \cite{wodey2020scalable} & Malkowski (2011) \cite{malkowski2011technique} & Dickerson (2012) \cite{dickerson2012high} \\\midrule%& Bitter (1991) \cite{bitter1991large} \\\midrule
+        \multicolumn{5}{@{}l}{\textit{Construction:}}\\
+        overall length          & 3.8 m                                       & 10 m                                  & 1.8 m                                          & 8.7 m                                     \\%& 76.5 m\\
+        weight                  & approx. 600 kg                              & 7500 kg                               & ?                                              & ?                                         \\%& ?\\
+        shape                   & cylinder                                    & octagonal prism                       & cylinder                                       & cylinder                                  \\%& cylinder\\
+        materials               & metglas on PVC, welded \&\ annealed mumetal & permalloy sheets on plywood           & metglas on cardboard                           & welded \&\ annealed mu-metal              \\%& mechanically joined mu-metal segments\\
+        layer thickness         & 0.2 mm (metglas), 1 mm (mu-metal)           & 3 mm at ends, 8 mm in central region  & 0.08 mm                                        & 1.27 mm                                   \\%& 1 mm\\
+        layer diameters         & (37, 41, 46, 51) cm                         & (45, 75) cm                           & 60 cm                                          & (19, 28, 39) cm                           \\%& 110 cm\\
+        endcaps                 & no                                          & yes, with 22 cm circular opening      & no                                             & yes, >10 cm opening                       \\%& no\\
+        scalable design         & no (mu-metal $\leq$ 10ft)                   & yes                                   & yes                                            & no                                        \\%& yes\\\\
+        \multicolumn{5}{@{}l}{\textit{Performance:}}\\
+        size of shielded region & 2.25 m                                      & 8 m                                   & 0.8 m                                          & 8 m                                       \\%& 75 m\\
+        avg.\ transverse field  & 25 uG, $<$ 5 uG shimmed                     & 15 uG                                 & 6,000 uG                                       & 460 and 730 uG (rms)                      \\%& ?\\
+        avg.\ axial field       & .100 uG, $<$ 10 uG shimmed                  & 5 uG                                  & 140,000 uG                                     & 420 uG (rms)                              \\%& $<$ 100 uG shimmed\\
+        long-term drift         & avg(By) $<$ 5 uG over 3 wks                 & ?                                     & ?                                              & ?                                         \\%& ?\\
+        transverse dynamic SF   & 32,500                                      & 4000 @ 0.01 Hz                        & ?                                              & ?                                         \\%& ?\\
+        axial dynamic SF        & ?                                           & 30 @ 0.01 Hz                          & ?                                              & ~5 over central 4 m @ quasi-DC            \\%& ?\\
+        coils for dyn.\ SF      & rect. coil pairs, (0.8 x 3.7) m             & rect. coil pairs, (3 x 2) m           & none                                           & 10" long solenoid                         \\%& none\\\\
+        \multicolumn{5}{@{}l}{\textit{Degaussing:}}\\
+        sequence                & 20", 18", 16", mu-metal                     & inner, endcaps, outer, inner          & N/A                                            & ?                                         \\%& N/A\\
+        coil turns              & 12 each layer                               & 16 (inner), 8 (outer)                 & ?                                              & ?                                         \\%& 1 (toroidal), 1/m (solenoid)\\
+        frequency               & ?                                           & 6 Hz                                  & 60 Hz                                          & 60 Hz?                                    \\%& 50 Hz, 0.5 Hz\\
+%        initial amplitude       & ?                                           & 10 A                                  & ?                                              & ?                                         \\%& 230 A, 25 A\\
+%        decrease                & ?                                           & linearly over 100 s                   & ?                                              & ?                                         \\%& within several minutes\\
+%        field change            & ?                                           & 15 uG change between two scans        & ?                                              & ?                                         \\%& ?\\
+        \bottomrule
     \end{tabu}%}
     \caption{Representative magnetic shields from the literature.}
     \label{oldshields}
@@ -1241,11 +1239,12 @@ saturation effects due to the increased density of magnetic flux lines captured
 by the material in the middle compared to the ends. The transverse shielding
 factor of 4,000 would be almost sufficient for our experiment and easy to
 augment with one or two additional outer metglas layers. The reported 40~$\mu$G
-residual field over the central 8~m, while impressive for a shield of this
-geometry, would nonetheless have to be shimmed with internal coils down to our
-desired 10~$\mu$G. The improved performance compared to the shield reported in
-this chapter comes with increased cost of materials and a considerably more
-complex mechanical assembly.
+residual field along the shield symmetry axis over the central 8~m of length,
+while impressive for a shield of this geometry, would nonetheless have to be
+shimmed with internal coils down to our desired 10~$\mu$G. (The field off-axis
+is not reported in the paper.) The improved performance compared to the shield
+reported in this chapter comes with increased cost of materials and a
+considerably more complex mechanical assembly.
 
 Plaster et al.\ \cite{malkowski2011technique} investigated different assembly
 methods for shields constructed from metglas wrapped on a non-magnetic
@@ -1279,13 +1278,14 @@ location of the welded joints. (The absolute offset of the magnetic field is
 reported to within `a few mG' with no reasons given for absence of sensor
 calibration.) The authors unfortunately do not attempt to corroborate the
 predicted transverse shielding factor of 400,000 to 3,000,000 with experimental
-dynamic SF measurements.  The disappointing performance receives no comment in
-the paper, but is most likely due to the small inner diameter of the shield
-(19~cm) compared to our work (37~cm) or the state of the art (45~cm) reported in
-\cite{wodey2020scalable}.  The smaller inner diameter places the region of
-interest close to the shield walls, where the fields may be substantially larger
-than at the center of the shield. It is not inconceivable that the residual
-field would be improved by removing the innermost layer. 
+dynamic shielding factor measurements. The disappointing performance receives
+no comment in the paper, but is most likely due to the small inner diameter of
+the shield (19~cm) compared to our work (37~cm) or the state of the art (45~cm)
+reported in \cite{wodey2020scalable}. The smaller inner diameter places the
+region of interest close to the shield walls, where the fields likely due to
+pinned omains in the shield material may be substantially larger than at the
+center of the shield. It is not inconceivable that the residual field would be
+improved by removing the innermost layer. 
 
 
 \subsection{Physical structure}
@@ -1296,18 +1296,28 @@ these are built by wrapping metglas foil (FINEMET Wide Format Film, Hitachi Part
 MS-FR 470-100M-T0, containing 18~$\mu$m-thick FINEMET FT-3M metglas between
 protective layers of plastic) around PVC pipes, while the fourth, innermost
 layer has been welded out of two sheets of mu-metal rolled into a tubular form,
-and annealed.  The mu-metal tube, being 1~mm thick, is relatively fragile; in
-order to limit its motion, it is sandwiched between the hard plastic PVC tubes
-of the inner metglas layer and that of the shim coils. The inner two metglas
-layers are spaced apart using small-diameter PVC tubing; the same method is
-employed to suspend the glass vacuum chamber of the interaction region centered
-inside the shim coils tube. The outermost tube is mounted on an 80/20 frame
-using a set of seven aluminum semi-circular plates.
+and annealed. The inner mu-metal cylinder is fabricated from two identical
+rectangular sheets of mu-metal, 22.79"~$\times$~120", that are joined together
+with two 180\deg-opposed planished (i.e., flattened) welds, and the entire
+cylinder annealed after fabrication. The mu-metal tube, having a wall thickness
+of only 1~mm, is relatively fragile; in order to limit its motion, it is
+sandwiched between the hard plastic PVC tubes of the inner metglas layer and
+that of the shim coils. The inner two metglas layers are spaced apart using an
+array small-diameter PVC tubes; the same method is employed to support the glass
+vacuum chamber of the interaction region centered inside the shim coils tube.
+The outermost tube is mounted on an 80/20 frame using a set of seven aluminum
+semi-circular plates.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/concentric.png}
     \caption[Magnetic shield cross section view.]{Cross-sectional view of the
-    magnetic shield. Dimensions are in inches [mm].}
+    magnetic shield. Dimensions are in inches [mm]. The layers are as follows:
+    \part{20" duct} Metglas outer layer support pipe, constructed out of a PVC
+    duct (thinner pipe used for air handling). \part{18" duct} The support for
+    the second metglas layer. \part{16" sch.\ 40} Schedule 40 (thicker than
+    `duct') PVC pipe supporting the innermost metglas layer. \part{mu-metal} A
+    mu-metal cylinder, 1~mm thick. \part{14" sch.\ 40} Schedule 40 pipe
+    supporting the shim coils. \part{glass} Glass vacuum chamber.}
   \label{concentric}
 \end{figure}
 
@@ -1327,12 +1337,13 @@ to size with a handsaw if necessary (see Table~\ref{shieldlayers} for layer
 lengths and material details) and roughly cleaned with water and paper towels on
 the outside and, as far as possible, also on the inside to remove the dirt it
 comes with, probably due to outdoors storage. Then, I cut 96 pieces (eight
-segments, 12 layers each) of metglas (only 84 pieces, or seven segments of 12
-layers each, for the 16" layer since it is 15" shorter than the other
-two) to the length required to wrap around the tube with approx.\ 1" of
-circumferential as well as longitudinal overlap. The pieces are secured to the
-PVC tube and to each other with a few short pieces of Kapton tape (McMaster
-p.n.\ 7648A63) so that they do not fall down during assembly.
+segments, 12 layers each) of metglas for each of the two outer layers (and 84
+pieces, or seven segments of 12 layers each, for the inner 16" layer since it is
+15" shorter than the other two) to the length required to wrap around the tube
+once with approx.\ 1" of circumferential as well as longitudinal overlap between
+adjacent pieces in a layer. The pieces are secured to the PVC tube and to each
+other with a few short pieces of Kapton tape (McMaster p.n.\ 7648A63) so that
+they do not fall down during assembly.
 
 The prepared and cleaned tubes are put on a stand with wheels under them so they
 can be rotated, facilitating the circumferential wrapping of the metglas foil.
@@ -1347,39 +1358,50 @@ homogeneous, but in practice we find that this is unimportant as long as the
 overall shielding is sufficiently high.)
 
 To secure the metglas pieces and prevent them from coming loose in case the
-Kapton tape fails, the entire tube is wrapped in polyethylene plastic stretch
-wrap. Following that, 12 turns of degaussing wire are wrapped in a toroidal
-fashion around the tube. The wire is 22 or 24 gauge lacquered copper wire,
-sufficiently thick for approx.\ 2 amps of degaussing current. The 12 turns are
-uniformly distributed around the circumference of the tube; we believe this may
-be important for the performance of the degaussing but unfortunately I do not
-have conclusive evidence for this oft-repeated statement. On the outermost (20")
-tube only, we also have a solenoidal coil with approx 1 turn per in spacing for
-rough cancellation of axial fields. (Given the metglas wrapping geometry, this
-solenoidal coil would not be effective for degaussing.) Finally, each tube is
-again wrapped in plastic wrap to secure the degaussing and (for 20" tube only)
-the solenoidal coil.
+Kapton tape fails, the entire tube is also wrapped in polyethylene plastic
+stretch wrap. (I did not keep track of the number of wraps of the plastic
+stretch wrap; it is approx.\ 3--5 wraps.) Following that, 12 turns of degaussing
+wire are wrapped in a toroidal fashion around the tube. The wire is 22 or 24
+gauge lacquered copper wire, sufficiently thick for approx.\ 2 amps of
+degaussing current. The 12 turns are uniformly distributed around the
+circumference of the tube; we believe this may be important for the performance
+of the degaussing but unfortunately I do not have conclusive evidence for this
+oft-repeated statement (D. DeMille, personal communication, 2020--22). On the
+outermost (20") tube only, we also have a solenoidal coil with approx 1 turn per
+in spacing for rough cancellation of axial fields. (Given the metglas wrapping
+geometry, this solenoidal coil would not be effective for degaussing
+\cite{malkowski2011technique}.) Finally, each tube is again wrapped in plastic
+wrap to secure the degaussing and (for 20" tube only) the solenoidal coil.
 
 \begin{table*}
-  %\small
-  \makebox[\textwidth][c]{%
-    \begin{tabu} to \textwidth {ccc}
-      \toprule
-      Layer     & Length [in] & Weight [lbs] \\\midrule
-      \multicolumn{3}{@{}l}{\textit{Main layers:}}\\
-      20" duct   & 149     & 100 \\
-      18" duct   & 149     & 80 \\
-      16" sch.\ 40 & 134     & 180 \\
-      14" sch.\ 40 & 134     & 140 \\\\
-      \multicolumn{3}{@{}l}{\textit{Spacers:}}\\
-      3/8" sch.\ 40 & 120    & 190 \\
-      1" sch.\ 40  & 120    & 90 \\
-      \bottomrule
-    \end{tabu}}
-    \caption[Layers of the magnetic shield.]{The four layers of the magnetic
-    shield. The spacers are ordered in 120" lengths, but are cut to size and
-    inserted to span the entire length of the shield.}
-    \label{shieldlayers}
+    %\small
+    \makebox[\textwidth][c]{%
+        \begin{tabu} to \textwidth {ccccc}
+            \toprule
+            Layer         & Length [in] & OD [in] & Wall th.\ [in] & Weight [lbs] \\\midrule
+            \multicolumn{3}{@{}l}{\textit{Main layers:}}\\
+            20" duct      & 149         & 20.03   & 0.22                & 100 \\
+            18" duct      & 149         & 18.03   & 0.20                & 80 \\
+            16" sch.\ 40  & 134         & 16.00   & 0.53                & 180 \\
+            14" sch.\ 40  & 134         & 14.00   & 0.46                & 140 \\\\
+            \multicolumn{3}{@{}l}{\textit{Spacers:}}\\
+            3/8" sch.\ 40 & 120         & 0.68    & 0.09                & 190 \\
+            1" sch.\ 40   & 120         & 1.32    & 0.13                & 90 \\
+            \bottomrule
+        \end{tabu}}
+        \caption[Layers of the magnetic shield.]{The four layers of the
+        magnetic shield. The spacers are ordered in 120" lengths, but are cut
+        to size and inserted to span the entire length of the shield. The
+        layers are as follows: \part{20" duct} Metglas outer layer support
+        pipe, constructed out of a PVC duct (thinner pipe used for air
+        handling). \part{18" duct} The support for the second metglas layer.
+        \part{16" sch.\ 40} Schedule 40 (thicker than `duct') PVC pipe
+        supporting the innermost metglas layer. \part{14" sch.\ 40} Schedule 40
+        pipe supporting the shim coils. \part{3/8" sch.\ 40} Array of pipes
+        separating the 20" and 18" layers, as well as the 18" and 16". \part{1"
+        sch.\ 40} Array of pipes supporting the glass tube in the center of the
+        shield.}
+        \label{shieldlayers}
 \end{table*}
 
 The mu-metal layer does not, of course, require wrapping with metglas, only the
@@ -1395,42 +1417,60 @@ been better to use a wire with more durable insulation instead.
 As shipped, the mu-metal tube had a visibly non-circular cross section at one
 end, potentially due to deformations that took place during shipping. This did
 not pose difficulties with the shield assembly, since the tolerances of the
-design allow for sufficient deviations from circularity, as well as because the
-mu-metal tube is flexible enough to accommodate small shape changes.
+design (as given by the dimensions of the plastic tubes, see
+Table~\ref{shieldlayers}) allow for sufficient deviations from circularity, as
+well as because the mu-metal tube is flexible enough to accommodate small (say,
+approx.\ 1/4" difference from the nominal diameter) shape changes.
 Unfortunately, I do not have data to determine to what extent these deformations
 that inevitably take place during assembly cause magnetic domain wall pinning or
 other effects that may ultimately result in a larger than expected residual
 magnetic field.
 
 At each end, the magnetic shield has a large circular opening matching the
-diameter of each layer. We have considered attaching custom-fabricated mu-metal
-endcaps to extend the innermost layer, as well as to reduce the diameter of the
-opening. However, this would pose difficulties since the caps would most likely
-have to be removed whenever the vacuum chamber is to be opened, such as during
-initial assembly or subsequent maintenance. Since the mu-metal cylinder is not
-perfectly circular in cross section, attaching the endcaps would involve bending
-the cylinder and the cap sufficiently for them to be of a matching cross
-section, or else designing endcaps large enough to accommodate the non-circular
-shape. The latter case would likely be a bad idea on account of poor magnetic
-contact between the main cylinder and the caps. In the end, seeing the shield
-performs according to our requirements even without any endcaps, we have decided
-to forgo them.
+diameter of each layer. (Mechanically, this is the inner diameter of the plastic
+tubes. Magnetically, it would be the outer diameter of the same plastic tubes,
+or the inner diameter of the metglas wrapping. For the mu-metal layer, this is
+the inner diameter of the mu-metal tube.) We have considered attaching
+custom-fabricated mu-metal endcaps to extend the innermost layer, as well as to
+reduce the diameter of the opening. However, this would pose difficulties since
+the caps would most likely have to be removed whenever the vacuum chamber is to
+be opened, such as during initial assembly or subsequent maintenance. Since the
+mu-metal cylinder is not perfectly circular in cross section, attaching the
+endcaps would involve bending the cylinder and the cap sufficiently for them to
+be of a matching cross section, or else designing endcaps large enough to
+accommodate the non-circular shape. The latter case would likely be a bad idea
+on account of poor magnetic contact between the main cylinder and the caps. In
+the end, since we found that the shield performs according to our requirements
+(see sect~\ref{magnetic_shield_performance_residual}) even without any endcaps,
+we have decided to forgo them.
 
 After assembling all four layers into the completed shield, I measured the
-resistance of degaussing wires to ensure continuity. The measured value matches
-the expected one (as determined from coil length, gauge, and resistivity of
-copper) to within 5~\%.
+resistance of degaussing wires to ensure continuity. The measured values match
+the expected ones (as determined from coil length, gauge, and resistivity of
+copper) to within 5~\%, showing no evidence of a short or open circuit.
 
 \subsubsection{Shim coils}
 \label{shim_coil_section}
 
+To further attenuate the static residual fields within the magnetic shield, the
+innermost (14") PVC pipe is covered with an array (described in the following)
+of 80 single-turn magnetic field coils. Given a measurement of the field inside
+the shield, the coils can be set to the appropriate current in each one so as to
+minimize the resulting residual static magnetic field inside.
+
 The set of shim coils consists of 16 segments of three dimensions each (see
-Fig.~\ref{shimcoils}). The two transverse dimensions ($B_x$ and $B_y$) are
-implemented as pairs of one-loop saddle coils (8" by 60\deg\ each), while
-the axial field is controlled by simple circular current loops (spaced 8" apart
-from each other). This gives a total of $5\times16=80$ degrees of freedom. The
-22g magnet wires are fixed in place by being glued into a series of grooves on
-the surface of the 14" PVC tube using neutral-cure RTV silicone sealant (Dow
+Fig.~\ref{shimcoils}). The axial field is controlled by simple circular current
+loops (spaced 8" apart from each other). The two transverse dimensions ($B_x$
+and $B_y$) are implemented as pairs of one-loop saddle coils (8" by 60\deg\
+each). These consist of a rectangle `bent' onto the surface of a cylinder,
+resulting in two straight sides and two curved sides. The saddle-coil geometry
+allows for the calculation of the exact magnetic field expressions
+\cite{hanssum1983exact}, although in practice we rely on the measured fields
+instead (see section \ref{shimming_operation} below).
+
+The coils listed above give a total of $5\times16=80$ degrees of freedom. The
+22 gauge magnet wires are fixed in place by being glued into a series of grooves
+on the surface of the 14" PVC tube using neutral-cure RTV silicone sealant (Dow
 Dowsil 737) and wrapped in plastic foil for added protection. During the curing
 of the silicone, the wires are held in place by Kapton tape, which is removed
 after the silicone hardens.
@@ -1441,14 +1481,14 @@ after the silicone hardens.
   \label{shimcoils}
 \end{figure}
 
-The size of the tube makes it impractical to use standard milling machines.
-While the circular grooves can easily be cut using a hand saw, the axial ones
-were done on a custom-made setup (Fig.~\ref{grooves}) involving a hand drill
-clamped on a 80/20 frame, which in turn is mounted using linear bearings to a
-larger frame. The setup is not as rigid as a true milling machine would be,
-which is why it is important to use a constant force while moving the carriage
-forward to avoid cutting wavy grooves. I used a system of ropes, pulleys, and
-weights to achieve satisfactory results.
+The size of the tube made it impractical to use standard milling machines to cut
+the grooves for the shim coils. While the circular grooves were easily cut using
+a hand saw, the axial ones were done on a custom-made setup (Fig.~\ref{grooves})
+involving a hand drill clamped on a 80/20 frame, which in turn is mounted using
+linear bearings to a larger frame. The setup is not as rigid as a true milling
+machine would be, which is why it is important to use a constant force while
+moving the carriage forward to avoid cutting wavy grooves.  I used a system of
+ropes, pulleys, and weights to achieve satisfactory results.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/grooves.png}
@@ -1458,27 +1498,44 @@ weights to achieve satisfactory results.
     \label{grooves}
 \end{figure}
 
-With 80 different pair of wires (twisted into twisted pairs using a hand
+With 80 different coils (whose leads are twisted into twisted pairs using a hand
 drill), cable management is essential so as not to confuse the cables with each
-other. For each coil, a linear groove is cut from one end of the tube to
-the location of the coil; thus all coils can be connected to at one end of the
+other. For each coil, a linear groove is cut from one end of the tube to the
+location of the coil; thus all coils can be connected to at one end of the
 shield. There, the sets of wire pairs belonging to each dimension are bundled
 together into five bundles of 16 pairs using zip ties; each wire pair is
-temporarily labelled by a numbered piece of Kapton tape at the end. For ease of
-connecting and disconnecting, these wires are attached to adapter boards that
-are permanently attached to the 80/20 support frame of the shield. The adaptor
-boards bundle four pairs of wires into one RJ45 jack to enable using standard
-patch cables.
+temporarily labeled by a numbered piece of Kapton tape at the end. For ease of
+connecting and disconnecting, these wires are attached to adapter boards
+(Fig.~\ref{shim_adapters}) that are permanently attached to the 80/20 support
+frame of the shield. The adapter boards bundle four pairs of coil leads into the
+pins of one RJ45 jack to enable using standard patch cables.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{figs/todo/adaptors.png}
+    \caption[Shim coil adapter boards]{Shim coil adapter boards. The labeling of
+    boards, connectors, and wire pads is consistent with the labels posted on
+    the current sources and cables in the lab.}
+    \label{shim_adapters}
+\end{figure}
+
+These adapter boards also serve to organize the coils in case the
+temporary Kapton-tape labels fall off. In case the coils need to be disconnected
+from the adapter boards, the coils must be checked to see if the labels are
+still attached. However, if the coils do get confused, this can easily be
+remedied later, when the magnetic fields corresponding to each coil are
+measured. The coils are sufficiently separated in space so they can be easily
+identified by their magnetic field pattern.
 
 The shim coils are driven by a home-build current source PCB
-(Fig.~\ref{current_source}) inspired by the current source shown in
-\cite[Fig.~5.69A]{horowitz2016art}. An Arduino microcontroller board controls
-two 8-channel \DAC\ (AD5676R) via a digital isolator (ADUM7441) to remove
-potential noise from the USB port. Each \DAC\ output is connected to the
-non-inverting terminal of a difference amplifier, directly controlling the
-voltage drop over a precision 100~$\Omega$ resistor. This implements a voltage
-to current converter, allowing for computer-controlled $\pm10$~mA adjustment to
-each of the 80 coils individually (using five of the PCBs).
+(Fig.~\ref{current_source}) inspired by the current source shown in Horowitz and
+Hill \cite[Fig.~5.69A]{horowitz2016art}. An Arduino microcontroller board, which
+is connected via USB to a computer, controls two 8-channel \DAC s (AD5676R) via
+a digital isolator (ADUM7441) to remove potential noise from the USB port. Each
+\DAC\ output is connected to the non-inverting terminal of a difference
+amplifier, directly controlling the voltage drop over a precision 100~$\Omega$
+resistor. This implements a voltage to current converter, allowing for
+computer-controlled $\pm10$~mA adjustment to each of the 80 coils individually
+(using five of the PCBs).
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/current_source.png}
@@ -1486,7 +1543,7 @@ each of the 80 coils individually (using five of the PCBs).
   \label{current_source}
 \end{figure}
 
-\subsubsection{Support structure}
+\subsubsection{Magnetic shield support structure}
 
 The considerable total weight of the magnetic shield (780 lbs of plastic, plus
 140 lbs of mu-metal, metglas, and other materials) requires a sufficiently strong support
@@ -1505,31 +1562,31 @@ tape.
     \caption[Magnetic shield support structure.]{\part{a} Support structure
     during assembly of the shield layers. \part{b} Detail of aluminum support
     plates, with nylon strips to distribute pressure against the outer (metglas)
-    layer.}
+    layer. Also seen is the outer axial coil (there is only one).}
   \label{support}
 \end{figure}
 
-\subsection{Operation and measurements}
+\subsection{Characterization and optimization}
 
-The characterization and use of the shield is an iterative process requiring a
-repeated sequence of three operations: magnetic field measurement, degaussing,
-and shimming.
+The characterization and optimization of the shield is an iterative process
+requiring a repeated sequence of three operations: magnetic field measurement,
+degaussing, and shimming. The main goal of these procedures is to meet the
+specification on residual static magnetic field of 10~$\mu$G inside the shield
+(see section \ref{shield:requirements} more more information).
 
-I distinguish two types of measurement of the magnetic field of interest to us.
-Residual field is the field inside the shield assuming no changes in the
+I distinguish two properties of the magnetic field of interest to us. We refer
+to residual field as the field inside the shield assuming no changes in the
 external magnetic conditions. In our four-layer shield, this is the dominant
-magnetic field inside the interaction region and it is driven primarily by the
-interaction between the magnetization of the ferromagnetic shield layers with
-the external magnetic field. Despite our best attempts at degaussing, these
-residual fields are typically of the order of 50--200~$\mu$G in the center of
-the shield.
+magnetic field inside the interaction region. Despite our best attempts at
+degaussing, these residual fields are typically of the order of 50--200~$\mu$G
+in the center of the shield.
 
-The other set of measurements consists of determining the response of the shield
-to external time-varying fields. Primarily, we are interested in the attenuation
-of external dynamic fields during the time when the external field is present.
-We are also interested in fields that remain \emph{after} the external field has
-been turned off; in other words, in the shield magnetization caused by an
-external field transient.
+The other property of interest is the response of the shield to external
+time-varying fields. Primarily, we are interested in the attenuation of external
+dynamic fields during the time when the external field is present. We are also
+interested in fields that remain \emph{after} the external field has been turned
+off; in other words, in the shield magnetization caused by an external field
+transient.
 
 \subsubsection{Residual field measurement}
 
@@ -1546,10 +1603,11 @@ fluxgate magnetometer with a measuring range of 1~G and a typical electronic
 offset of several hundred microgauss. (The specified noise level of
 0.1~$\mu$G/$\sqrt{\mathrm{Hz}}$ at 1 Hz, integrated over the 3~kHz bandwidth of
 the sensor, is below the mechanical stability of the sensor translation setup
-with a typical repeatability of approx. 1~$\mu$G as determining by measuring the
-field twice in quick succession.) The magnetic signal is amplified by a signal
-conditioning unit (Bartington SCU-1), then read out by a home-build circuit
-board containing an \ADC\ (AD4115).
+with a typical repeatability of approx. 1~$\mu$G as determined by measuring the
+field across the length of the shield two times in a row.) The fluxgate signal
+is amplified by a signal conditioning unit (Bartington SCU-1), then read out by
+a home-built circuit board containing an \ADC\ (AD4115), as described further in
+appendix \ref{decapsu_adc_board}.
 
 \begin{figure}
    \includegraphics[width=\textwidth]{figs/todo/pulleys.jpg}
@@ -1562,38 +1620,40 @@ board containing an \ADC\ (AD4115).
 The sensor is specified to have 100~nG/$\sqrt{\text{Hz}}$ of noise at 1~Hz. To
 verify this, I measured the noise spectrum while the sensor was located inside
 the shield. Given the dynamic shielding factor and the magnetic noise level in
-the lab, the sensor noise is significantly larger than the true magnetic noise
-inside the shield. The results are shown in Fig.~\ref{sensornoise}.
+the lab, we expected the sensor noise to be significantly larger than the true
+magnetic noise inside the shield. This was indeed the case; the results are
+shown in Fig.~\ref{sensornoise}.
 
 The electronic offset of the sensor and its associated electronics is
-significant. It is specified as 50~$\mu$G, with a temperature coefficient of
-1~$\mu$G/\degC, although in practice offsets of several hundred
-microgauss are typical. The offset calibration is done by taking a measurement
-and immediately repeating it with the sensor rotated upside down. This is
-accomplished by mounting the sensor in a short rectangular aluminum tube with
-enough plastic tape on the outside so that the sensor carriage fits tightly inside
-the long square tube going through the center of the shield. After a measurement
-is done, the sensor is pulled out of the long tube and reinserted rotated
-upside down. The accuracy of the offset calibration then depends on how
-well-centered the sensor is in the carriage, how much the field inside the
-shield changes during the time it takes to perform the calibration, how much
-the electronic offset itself changes in the same time, and how perfectly square the
-cross-sections of the long tube and the carriage are.
+significant. It is specified as less than 50~$\mu$G, with a temperature
+coefficient of 1~$\mu$G/\degC, although in practice we have found that offsets
+of several hundred microgauss are typical. The offset calibration is done by
+taking a measurement and immediately repeating it with the sensor rotated upside
+down. This is accomplished by mounting the sensor in a short rectangular
+aluminum tube with enough plastic tape on the outside so that the sensor
+carriage fits tightly inside the long square tube going through the center of
+the shield. After a measurement is done, the sensor is pulled out of the long
+tube and reinserted rotated upside down. The accuracy of the offset calibration
+then depends on how well-centered the sensor is in the carriage, how much the
+field inside the shield changes during the time it takes to perform the
+calibration, how much the electronic offset itself changes in the same time, and
+how perfectly square the cross-sections of the long tube and the carriage are.
 
 Rather than attempt to estimate the magnitudes of these effects individually, I
 estimate the precision/accuracy of the calibration from the calibration curve
 itself; see Fig.~\ref{offsetcal} for a typical example. It shows the two
-transverse components of the magnetic field ($B_x$ and $B_y$) as measured by the
-sensor in its normal orientation, as well as with the sensor inverted. The data
-is presented in the symmetrized form: $(\text{normal}+\text{inverted})/2$, which
-corresponds to the sensor offset, and $(\text{normal}-\text{inverted})/2$, which
-corresponds to the physical magnetic field plus any calibration imperfections.
-Given the time scale of the changes in the electronic offset is primarily driven
-by temperature changes, which are negligible in the time it takes to do the
-calibration (around two minutes), we expect the curves showing the offset to be
-perfectly flat within the noise of the measurement, but that is typically not
-the case. The \RMS\ deviations from the average value I identify as the error in
-the offset calibration, consisting of all the aforementioned factors.
+transverse components of the magnetic field (here, labeled as $B_x$ and $B_y$)
+as measured by the sensor in its normal orientation, as well as with the sensor
+inverted. The data is presented in the symmetrized form:
+$(\text{normal}+\text{inverted})/2$, which corresponds to the sensor offset, and
+$(\text{normal}-\text{inverted})/2$, which corresponds to the physical magnetic
+field plus any calibration imperfections.  Given the time scale of the changes
+in the electronic offset is primarily driven by temperature changes, which are
+negligible in the time it takes to do the calibration (around two minutes), we
+expect the curves showing the offset to be perfectly flat within the noise of
+the measurement, but that is typically not the case. The \RMS\ deviations from
+the average value I identify as the error in the offset calibration, consisting
+of all the aforementioned factors.
 
 \begin{figure}
    \centering
@@ -1622,18 +1682,19 @@ subtract this constant value from all subsequent measurements. This way, the
 overall offset is subject to an uncertainty, but the shape of the field pattern
 is known much more precisely.
 
-The typical repeatability of a measurement can be within $\pm1$~$\mu$G, as shown
-in the example measurement in Fig.~\ref{repeatability}. In addition to the
-random errors introduced by the mechanical instability of the measurement setup,
-we also have to pay attention to the systematic errors induced by the signal
-chain from the sensor onwards. The sensor and its preamplifier have a limited
-bandwidth; 3~kHz for the sensor, and a settable low-pass filter for the preamp.
-This must not be set too low in relation to the speed of the sensor motion. In
-practice, I use the lowest reasonable LPF cutoff frequency, verifying the choice
-by repeating the measurement with the next higher available frequency. If the
-two measurements are sufficiently close to each other, I use the lower of the
-two frequencies. I use a similar process to decide upon the digital LPF included
-with the \ADC.
+The typical repeatability of a measurement, including the effects of translating
+the sensor back and forth within the magnetic shield, can be within
+$\pm1$~$\mu$G, as shown in the example measurement in Fig.~\ref{repeatability}.
+In addition to the random errors introduced by the mechanical instability of the
+measurement setup, we also have to pay attention to the systematic errors
+induced by the signal chain from the sensor onwards. The sensor and its
+preamplifier have a limited bandwidth; 3~kHz for the sensor, and a settable
+low-pass filter for the preamp.  This must not be set too low in relation to the
+speed of the sensor motion. In practice, I use the lowest reasonable LPF cutoff
+frequency, verifying the choice by repeating the measurement with the next
+higher available frequency. If the two measurements are sufficiently close to
+each other, I use the lower of the two frequencies. I use a similar process to
+decide upon the digital LPF included with the \ADC.
 
 \subsubsection{Off-axis magnetometry}
 
@@ -1657,7 +1718,8 @@ magnetic field at two different points in space is not correlated.
     ($B_\text{in}$) and off-axis ($B_\text{out}$) at a fixed point inside the
     magnetic shield. The off-axis sensor is located directly underneath the
     on-axis sensor. Before plotting, the data is convoluted with a window
-    function of the length stated in the figure.}
+    function of the length 500~s. The three panels show the components
+    $B_x,B_y,B_z$.}
   \label{on_off_axis}
 \end{figure}
 
@@ -1852,6 +1914,7 @@ consistently increases or decreases the average field; most likely the change is
 randomly distributed around zero mean.
 
 \subsubsection{Shimming the residual field}
+\label{shimming_operation}
 
 Once the shield has been degaussed as well as is possible, the remaining
 magnetic field has to be cancelled, to the extent possible, using the system of
@@ -2055,6 +2118,7 @@ transitioning between nearby codes.
 \subsection{Performance and limitations}
 
 \subsubsection{Residual field}
+\label{magnetic_shield_performance_residual}
 
 The design requirements for the shield specified a 10~$\mu$G maximum average
 residual field. This has been met; see Fig.~\ref{shimmed} for a typical
@@ -2226,26 +2290,25 @@ This is well below the design requirement of 50~nG/$\sqrt{\mathrm{Hz}}$ at
   \includegraphics[width=\textwidth]{figs/todo/sensornoise.png}
     \caption[Magnetometer noise.]{Magnetometer sensor noise measured inside and
     outside the magnetic shield. The noise inside is smaller than the noise of
-    the sensor; it should be approx.\ four orders of magnitude smaller than the
-    noise outside.}
-  \label{sensornoise}
+    the sensor (100~nG/$\sqrt{\text{Hz}}$); it should be approx.\ four orders of
+    magnitude smaller than the noise outside.} \label{sensornoise}
 \end{figure}
 
 \subsection{Discussion}
 
-I have build a four-layer cylindrical magnetic shield combining the ease of
+We have built a four-layer cylindrical magnetic shield combining the ease of
 handling of metglas for the outer three layers with the superior residual field
 characteristics of mu-metal for the inner layer. The dynamic shielding in excess
 of $10^4$ is sufficient to reduce the magnetic noise to a level well below the
 requirements of the \CENTREX\ experiment. The static residual field can be
 controlled using shim coils to the level needed for the experiment.
 
-I have explained the mechanism that causes the static shielding to be much
+We have explained the mechanism that causes the static shielding to be much
 better than the dynamic shielding, but it is still not entirely understood what
 determines the pattern of the residual field. It is likely something to do with
-magnetic domains that refuse to move during degaussing, since they are pinned on
-inhomogeneities caused by internal mechanical stresses or inclusions of
-impurities in the material. The former can be reduced to a large degree by
+magnetic domains that remain pinned during degaussing, for example if they are
+pinned on inhomogeneities caused by internal mechanical stresses or inclusions
+of impurities in the material. The former can be reduced to a large degree by
 annealing (heating the material to a high temperature in a controlled
 enviroment), while the latter are determined by the time the alloy is prepared
 at the factory. After the annealing, the mu-metal needs to be subjected to a
