@@ -1,36 +1,200 @@
 \section{Electrostatic Lens}
 
-\subsection{Testing procedure}
+This chapter describes the work done preparing for testing the performance of
+the electrostatic quadrupole lens. The lens is used to increase the amount of
+signal by bending the trajectories of molecules towards the final detection
+chamber. These molecules, emitted from the beam source over a wider range of
+angles, would otherwise collide with the walls of the apparatus. According to
+our early estimates \cite{grasdijk2021centrex}, the lens would provide an
+estimated gain of 24 in the number of molecules making it to detection.
+
+As of this thesis, the lens gain has not yet been measured. Instead, we describe
+in the following sections an overview of the testing setup, a simulation of the
+lens gain factor, and the experimental progress towards the measurement of the
+lens gain.
+
+\subsection{Testing setup}
+
+We plan to test the performance of the lens by including it in an experimental
+setup that is simplified from the full \CENTREX\ setup. As with the full setup,
+the lens is attached to the state preparation A chamber that follows the beam
+source and rotational cooling regions. However, instead of proceeding with the
+state preparation B, interaction region, state preparation C, and detection
+region, the modules after the lens are reduced to two detection chamber, with
+the second detection chamber situated a variable distance away from the lens.
+The detection regions are simplified from the one that is to be used in the
+final experiment; see section \ref{reentrant_sect} for details.
+
+Unlike the full experimental setup, here we include two detection chambers. The
+reason to include the one right after the lens is to simplify the initial
+configuration of the measurement. If the lens is not fully operational yet, it
+will be much easier to detect a molecular signal a short distance away from the
+beam source rather than the full $\approx3$ meters away.
+
+To implement the variable distance between the two detection chambers, a number
+of 1~meter-long tubes (with ISO160 flanges) will be inserted in between. With
+three such tubes, the overall setup approximates the length of the full setup.
 
 \subsection{Simulations}
 
-\subsection{Vacuum chambers for testing}
+Following X. Wu \cite{wu2022electrostatic}, we define the lens gain factor as
+the ratio of signals detected at a given lens voltage versus that with the lens
+turned off. Note that this is not equivalent to the ratio of the molecular
+signals with the lens present versus absent; in our definition of the gain
+factor the lens is present in both cases, although turned off in one of them.
+The effect of the present but inactive lens is to prolong the beam path and
+therefore reduce the overall signal.
 
-\subsection{HV connections}
+The simulation code (written by O. Grasdijk) initializes the starting positions
+and velocities of a large (between $10^5$ and $10^9$) number of molecules. The
+transverse positions in the beam source cryogenic cell exit aperture are
+selected at random from a normal distribution with a width similar to the size
+of the exit aperture. Similarly, the velocities are selected at random from a
+normal distribution approximately corresponding to the measured beam properties
+(see section \ref{beam_char_section}). Here we assume the transverse velocity
+spread of 39.4~m/s, and average longitudinal velocity of $v_z=184$~m/s, and a
+longitudinal velocity spread of 16~m/s. In addition, the molecules are assumed
+to experience a gravitational acceleration of 9.81~m/s acting downwards (in the
+negative $y$ direction).
+
+\begin{table*}
+    %\small
+    \makebox[\textwidth][c]{%
+        \begin{tabu} to \textwidth {ccc}
+            \toprule
+            Aperture    & $z$ position [m] & radius [in]  \\\midrule
+            4 K shield  & 0.050            & 0.50\\
+            40 K shield & 0.089            & 0.50\\
+            BS exit     & 0.173            & 2.00\\
+            RC          & 1.038            & 0.88\\
+            Det 1       & 1.725            & 1.00\\
+            Det 2       & 4.696            & 1.00\\
+            \bottomrule
+        \end{tabu}}
+        \caption[Apertures in the lens gain factor simulation]{Apertures in the
+        lens gain factor simulation. The apertures are as follows. \part{4~K
+        shield} Hole in the front plate of the 4~K heat shield. \part{40~K
+        shield} Hole in the front plate of the 40~K heat shield. \part{BS exit}
+        The exit port of the beam source (BS) vacuum chamber. \part{RC} The
+        entrance port to the rotational cooling (RC) vacuum chamber. \part{Det
+        1} Aperture inside the first detection chamber. \part{Det 2} Aperture
+        inside the second detection chamber.}
+        \label{sim_apertures}
+\end{table*}
+
+Furthermore, the code defines a number of circular apertures centered around the
+beam axis that the molecules need to traverse in order to arrive at the final
+detection region. Any molecule that is found outside the bounds of any of these
+aperture is considered lost. These apertures are listed with their position
+along the beam line and radius in Table~\ref{sim_apertures}.
+
+Except for the lens region, containing a quadrupole electric field, the
+molecules are assumed to propagate ballistically, i.e.\ with only the
+gravitational force acting on them. In the lens region itself, the simulation
+assumes a perfect quadrupole electric fields and solves for the molecular energy
+levels. The resulting potential gradients apply a focusing force to the
+molecular trajectories.
+
+The simulated lens gain factor is shown in Fig.~\ref{lensgain} for two different
+lengths assumed for the quadrupole region, as a function of the voltage applied
+to the lens electrodes. In Fig.~\ref{lensprofiles}, we show histograms for the
+molecular distributions as a function of the two dimensions of transverse
+position, $x$ (horizontal) and $y$ (vertical). Also shown are the distributions
+with respect to the three components of velocity, as well as the transverse
+velocity $\sqrt{v_x^2+v_y^2}$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/lensgain.png}
+    \caption[Lens gain factor vs voltage.]{Lens gain factor at the second
+    detection chamber vs lens voltage, assuming two different lengths for the
+    electric quadrupole region. See text for values of other simulation
+    parameters. \part{Left} Assuming quadrupole length = 23.6", corresponding to
+    the length of electrodes. $10^7$ trajectories in the simulation.
+    \part{Right} Assuming quadrupole length = 26.5", corresponding to the length
+    of vacuum chamber. $10^8$ trajectories in the simulation.}
+    \label{lensgain}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/profiles.jpg}
+    \caption[Spatial and velocity distribution profiles.]{Histograms of spatial
+    and velocity distribution profiles. The histograms are shown for simulations
+    with different lens electrode voltages, as stated in the plot legends.
+    $10^8$ molecules in simulation.}
+    \label{lensprofiles}
+\end{figure}
+
+The operation of the lens could be verified using just the first detection
+chamber, placed immediately after the lens. However, in that case the expected
+lens gain factor is significantly lower, as can be seen in Fig.~\ref{lensgain}.
+This is to be expected, since the lens has been designed to focus molecules onto
+the detection chamber that is placed several meters away from the lens; the
+focusing at the first detection chamber is thus insufficient to demonstrate a
+large increase in the detected signal.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth]{figs/todo/firstDet.png}
+    \caption[Lens gain factor vs voltage at first detection.]{Lens gain factor
+    at the first detection chamber vs lens voltage. The quadrupole length is
+    assumed to be 23.6". $10^7$ molecules in the simulation.}
+    \label{lensgain}
+\end{figure}
 
 \subsection{Electrode conditioning at HV}
 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/splitters.png}
+    \caption[`Splitter' boxes for lens high voltage connections.]{`Splitter'
+    boxes for lens high voltage connections. \part{Left} Before potting.
+    \part{Right} After potting.}
+    \label{splitters}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/radDet.png}
+    \caption[Radiation monitoring.]{Radiation monitoring using an X-ray detector
+    placed at a vacuum viewport.}
+    \label{splitters}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.45\textwidth]{figs/todo/spark.png}
+    \includegraphics[width=.45\textwidth]{figs/todo/lens2wks.png}
+    \caption[Dose rate, current, voltage.]{Dose rate, current, voltage.}
+    \label{splitters}
+\end{figure}
+
 \subsection{Re-entrant flanges for detection}
+\label{reentrant_sect}
+
+TODO: drawing with dimensions of all parts
 
 \begin{figure}[b]
     \centering
     \includegraphics[width=\textwidth]{figs/todo/reentrant.png}
-    \caption{Reentrant flange for lens testing detection chamber.}
+    \caption[Reentrant flange.]{Reentrant flange and PMT mount for lens testing
+    detection chamber. \part{Left} PMT mount assembly in white nylon plastic, as
+    well as the aluminum reentrant flange into which the PMT assembly is
+    inserted from the top. \part{Right} SolidWorks rendering of the PMT mount
+    assembly, incl.\ the PMT.}
     \label{reentrant}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figs/todo/det_cross.png}
-    \caption{Reentrant flanges in a `cross' vacuum chamber.}
+    \caption[Reentrant flanges in a `cross' vacuum chamber.]{Reentrant flanges
+    in an ISO160 `cross' vacuum chamber. \part{Left} view into the cross from
+    the side the laser enters. Molecules would travel from right to left.
+    \part{Right} View from the side/top onto the same chamber. Same flange is
+    left open in both views.}
     \label{det_cross}
 \end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{figs/todo/splitters.png}
-    \caption{`Splitter' boxes for lens high voltage connections.}
-    \label{splitters}
-\end{figure}
-
-\subsection{X-ray monitoring}
