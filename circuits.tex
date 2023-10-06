@@ -1,6 +1,6 @@
 \section{Circuits}
 
-This section describes some of the electronic circuits I have designed and built
+This section describes some of the electronic circuits we have designed and built
 on printed circuit boards. There are some features common to most of these:
 
 \begin{itemize}
@@ -24,7 +24,7 @@ on printed circuit boards. There are some features common to most of these:
       cases, the communication is done via the SPI protocol, either 3-wire or
       4-wire.
    \item Relays are highly inductive which can cause high voltage transients if
-      not properly protected. In all circuits involving relays, I use a power
+      not properly protected. In all circuits involving relays, we use a power
       driver IC (NUD3124LT1G) which integrates all the necessary protection
       diodes, so that relays can be easily controlled from a microcontroller or
       a digital isolator.
@@ -121,9 +121,9 @@ to a USB hub in order to control all the coils from a computer.
 The circuit uses an Arduino to control two 8-channel voltage-output DACs (U1 and
 U37, AD5676RBRUZ) via a digital isolator (U4, ADUM7441ARQZ-RL7). Originally,
 this circuit used a single 16-channel DAC, which became hard to obtain due to
-the global chip shortage. I have thus adapted the board to the two 8-channel
+the global chip shortage. We have thus adapted the board to the two 8-channel
 DACs, and in order to avoid having to change the digital isolator to add another
-CS line, I generate it using an inverter (U38, SN74LVC1GU04DRLR).
+CS line, we generate it using an inverter (U38, SN74LVC1GU04DRLR).
 
 The current source section of the circuit is identical between the 16 outputs
 and consists of a unity-gain differential amplifier (AD8276) and an opamp
@@ -174,7 +174,7 @@ Arduino) of the same kind as the resistors used in the part of the circuit that
 generates the constant current. By connecting the output of any of the
 current-source channels to the resistor, we can test the stability of the output
 current by measuring the voltage across the resistor, available at the BNC
-connector J4. With one of the current-source channels set to midscale, I have
+connector J4. With one of the current-source channels set to midscale, we have
 observed this voltage over three weeks as shown in Fig.~\ref{shim_stability}
 (top part).
 
