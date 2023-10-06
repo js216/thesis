@@ -14,6 +14,7 @@ lens gain factor, and the experimental progress towards the measurement of the
 lens gain.
 
 \subsection{Testing setup}
+\label{testing_setup}
 
 We plan to test the performance of the lens by including it in an experimental
 setup that is simplified from the full \CENTREX\ setup. As with the full setup,
@@ -145,7 +146,15 @@ large increase in the detected signal.
 
 \subsection{Electrode conditioning at HV}
 
-
+The four lens electrodes are connected in a quadrupole configuration, such that
+two adjacent electrodes have opposite polarity. The two polarities are sourced
+from two separate power supply units; to connect these to the four electrodes,
+we employ `splitter' boxes shown in Fig.~\ref{splitters}. Each of these connects
+one pair of electrodes to one power supply, such that there is a high-voltage
+200~M$\Omega$ current-limiting resistor between each electrode and the power
+supply. In case the electrodes become shorted to ground, this limits the current
+to 150~$\mu$A. Due to the potential for corona discharge, the connections are
+potted inside a grounded enclosure.
 
 \begin{figure}
     \centering
@@ -156,45 +165,129 @@ large increase in the detected signal.
     \label{splitters}
 \end{figure}
 
+The lens electrodes operate at a high voltage of $\pm30$~kV with respect to the
+grounded vacuum chamber. Given the centimeter-scale spacing between the
+electrodes, this gives rise to large electric fields, which in turn present the
+danger of sparking and the attendant X-ray generation. To monitor for these
+effects, we use a commercial X-ray detector that we attach to a viewport on the
+lens vacuum chamber (Fig.~\ref{monitoring_xrays}). At the same time, we monitor
+the current drawn from the power supply.
+
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figs/todo/radDet.png}
     \caption[Radiation monitoring.]{Radiation monitoring using an X-ray detector
     placed at a vacuum viewport.}
-    \label{splitters}
+    \label{monitoring_xrays}
 \end{figure}
+
+The data from two such measurements is presented in Fig.~\ref{dose_voltage}. In
+the plots on the left, the lens has been at high voltage for about two hours
+before a spike in the reported X-ray dose rate has been detected; the spike
+corresponds to a spike in the power supply current. However, there are other
+current spikes which do not correspond to spikes in the dose rate; these may
+correspond to discharges that either do not generate X-rays, or whose X-rays did
+not arrive at the radiation detector. During the second measurement, presented
+in the plots on the right in Fig.~\ref{dose_voltage}, no such dose rate spikes
+were detected, presenting tentative evidence that such events are much more
+likely during the initial period when the lens has just been connected to the
+high voltage.
 
 \begin{figure}
     \centering
     \includegraphics[width=.45\textwidth]{figs/todo/spark.png}
     \includegraphics[width=.45\textwidth]{figs/todo/lens2wks.png}
-    \caption[Dose rate, current, voltage.]{Dose rate, current, voltage.}
-    \label{splitters}
+    \caption[Dose rate, current, voltage.]{Dose rate, current, voltage.
+    \part{Left} Approx.\ two hours of data. \part{Right} Approx.\ two weeks of
+    data. The dose rate data is incomplete since the dose meter ran out of
+    battery.}
+    \label{dose_voltage}
 \end{figure}
 
 \subsection{Re-entrant flanges for detection}
 \label{reentrant_sect}
 
-TODO: drawing with dimensions of all parts
-
-\begin{figure}[b]
-    \centering
-    \includegraphics[width=\textwidth]{figs/todo/reentrant.png}
-    \caption[Reentrant flange.]{Reentrant flange and PMT mount for lens testing
-    detection chamber. \part{Left} PMT mount assembly in white nylon plastic, as
-    well as the aluminum reentrant flange into which the PMT assembly is
-    inserted from the top. \part{Right} SolidWorks rendering of the PMT mount
-    assembly, incl.\ the PMT.}
-    \label{reentrant}
-\end{figure}
+As mentioned above (section \ref{testing_setup}), the operation of the lens will
+be verified by detecting the molecular signal with the lens turned on, and
+comparing it with the signal detected when the lens is turned off. This
+detection will be done in two detection chambers. One of these is shown in
+Fig.~\ref{det_cross}. It consists of a six-way ISO160 cross, with two of the six
+ports used for the molecular beam, two for the detection laser, and the other
+two for for two reentrant flanges containing one \gls{PMT} each.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figs/todo/det_cross.png}
     \caption[Reentrant flanges in a `cross' vacuum chamber.]{Reentrant flanges
     in an ISO160 `cross' vacuum chamber. \part{Left} view into the cross from
-    the side the laser enters. Molecules would travel from right to left.
+    the side the laser enters. Molecules would travel from right to left. The
+    vertical spacing between the two reentrant flanges is approx.\ 1.75".
     \part{Right} View from the side/top onto the same chamber. Same flange is
     left open in both views.}
     \label{det_cross}
 \end{figure}
+
+In addition to increasing the amount of signal, the two-\gls{PMT} configuration
+is more symmetric compared to a single-\gls{PMT} detection chamber that has been
+used in other tests (such as testing the beam source, section
+\ref{beam_char_section}). This can be important for measuring the profile of the
+molecular beam by scanning a thin laser beam vertically across the molecular
+beam. With just a single \gls{PMT}, the parts of the beam further away from the
+\gls{PMT} will appear less bright than the parts closer. With two opposing
+\glspl{PMT} as shown here, the decrease of signal in one detection can be
+balanced by the increase in the other.
+
+In an attempt to verify the symmetry of this detection setup, we have
+constructed the setup shown Fig.~\ref{diodestick}. A standard 5~mm red (645~nm)
+LED (Würth 151051RS11000) has been mounted on the end of a 0.148" OD, 0.128" ID
+stainless tube (McMaster 8987K445). The tube is mounted perpendicular to a
+vertical translation stage (with a Zaber T-NA08A50 actuator), such that the LED
+can be translated vertically up or down. Assuming the LED emits equal light
+power in all directions around the axis of the stainless tube, and if the tube
+is mounted horizontally, equal amounts of light should arrive at each \gls{PMT}
+when the LED is centered between the two reentrant flanges. By scanning the
+vertical position of the LED, we can quantify how the signal in each \gls{PMT}
+depends on the vertical position between the two flanges.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/diodestick.png}
+    \caption[Testing symmetry of detection chamber.]{Testing symmetry of
+    detection chamber. \part{Left} Two reentrant flanges mounted in a six-way
+    ISO160 cross, suspended from aluminum rails. Each \gls{PMT} is connected to
+    a high-voltage power supply (SRS PS300 series) and to an oscilloscope for
+    readout. \part{Right} View from the top down into the vacuum chamber, with
+    the \glspl{PMT} absent. The inset shows the LED calibration light source.}
+    \label{diodestick}
+\end{figure}
+
+In order to subtract the effect of the background light, the LED is powered by a
+square-wave signal generator. The voltage from the signal generator, as well as
+the signal from each \gls{PMT}, is measured by an oscilloscope. The \gls{PMT}
+signal shown in Fig.~\ref{calib} as a function of LED height for two sets of
+\gls{PMT} voltages. In each case, the voltage of each \gls{PMT} has been chosen
+to equalize the signal as per the \gls{PMT} calibration reported in
+Appendix~\ref{PMT_char_app}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figs/todo/calib.png}
+    \caption[Detection chamber calibration example.]{Example of lens detection
+    chamber calibration measurements. The absolute height with respect to the
+    reentrant flanges has not been determined for this plot. Parameter
+    \part{Left} Slightly lower \gls{PMT} voltages, $(-909,-836)$~V. \part{Right}
+    Higher \gls{PMT} voltages, $(-1003,-920)$~V.}
+    \label{calib}
+\end{figure}
+
+In practice, this calibration scheme is severely compromised by the difficulty
+in achieving equal light output in the upwards and downwards directions from the
+LED. Even assuming equal light output from the diode in all directions around
+its long axis, which could be corrected by rotating the LED around its long
+axis, the setup does not allow for precise enough pointing adjustment of the
+LED. The majority of light from an LED is emitted in the forwards direction. If
+the LED is mounted as little as 5\deg\ from the horizontal (which is
+approximately the mechanical precision of this setup), the light going up will
+be different by approx.\ 25\%\ from the amount of light power going down, as per
+the LED datasheet. The calibration should be repeated with either a more precise
+mounting structure for the light source, or using a more isotropic light source.

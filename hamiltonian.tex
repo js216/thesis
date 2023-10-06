@@ -1,7 +1,7 @@
 \section{TlF Ground State Hamiltonian}
 \label{TlF_hamiltonian_python}
 
-In this section, I present a simple way to calculate the matrix elements of the
+In this section, we present a simple way to calculate the matrix elements of the
 TlF Hamiltonian (eqn~\ref{TlF_hamiltonian}) in Python. First, import packages
 and define units and constants:
 
@@ -111,7 +111,7 @@ There are three operations we can define on the states:
 and \verb`psi2` a ket, returning a complex number
 \end{itemize}
 
-In addition, I define an iterator method to loop through the components, and the
+In addition, we define an iterator method to loop through the components, and the
 \verb`__getitem__()` method to access the components (which are not necessarily
 in any particular order!).
 
@@ -659,7 +659,7 @@ H^\text{Z}_x\\H^\text{Z}_y\\H^\text{Z}_z
 $$
 %
 When looking at the Zeeman/Stark effects on the hyperfine structure, the
-rotational structure is not of interest, so I subtract it for clarity in the
+rotational structure is not of interest, so we subtract it for clarity in the
 following \verb`spectrum()` function. It evaluates the above Hamiltonian for
 each point on the array of fields, and returns a list of energy levels, sorted
 by size:
