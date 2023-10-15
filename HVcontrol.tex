@@ -10,19 +10,13 @@ In the following section, we discuss the limitations on the accuracy of the high
 voltage system and present some methods of voltage measurement and control.
 
 \subsection{Voltage measurement schemes}
+\label{volt_meas_sect}
 
-In the `standard' voltage measurement scheme (Fig.~\ref{standard}), two separate
+In the `standard' voltage measurement scheme (Fig.~\fref{standard}), two separate
 power supplies are used to create the $\pm30$~kV applied to the two interaction
 region electrodes, and each is measured by its own resistive divider. Each
 polarity is then connected to the electrodes via a (floating) picoammeter and a
 set of two relays used to switch the electrode polarity.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{figs/todo/standard.png}
-    \caption{The `standard' voltage measurement scheme.}
-    \label{standard}
-\end{figure}
 
 Besides the voltage divider and voltmeter limitations discussed above, this
 method is particularly sensitive to thermoelectric voltages that can develop at
@@ -32,8 +26,8 @@ and the voltmeter. As explained previously, these voltages (of order 3~$\mu$V/K)
 are significant at the scale of the low voltages measured: $3~\mu\text{V/K}/3~\text{V}=1~\text{ppm/K}$.
 
 The problems associated with the thermocouple voltages can be avoided by using
-the `ammeter' technique illustrated in Fig.~\ref{ammeter}. Only the upper half
-of the resistive divider (Fig.~\ref{resistor_box}) is used, with the large
+the `ammeter' technique illustrated in Fig.~\fref{ammeter}. Only the upper half
+of the resistive divider (Fig.~\fref{resistor_box}) is used, with the large
 resistor to `convert' the high voltage into a low current. The current is then
 led into a current-measuring device, from whose measurement we can then
 calculate the high voltage. While the problems with the resistor's temperature
@@ -44,13 +38,20 @@ $3~\mu\text{V/K}/30~\text{kV}=0.1~\text{ppb/K}$.
 
 \begin{figure}
     \centering
+    \includegraphics[width=\textwidth]{figs/todo/standard.png}
+    \caption{The `standard' voltage measurement scheme.}
+    \label{standard}
+\end{figure}
+
+\begin{figure}
+    \centering
     \includegraphics[width=\textwidth]{figs/todo/resistor_box.png}
     \caption[Potted 10~G$\Omega$ resistor.]{Potted, connectorized 10~G$\Omega$
     resistor for measuring high voltage as a low current.}
     \label{resistor_box}
 \end{figure}
 
-The `ammeter' in Fig.~\ref{ammeter} could be a stand-alone ammeter, such as a
+The `ammeter' in Fig.~\fref{ammeter} could be a stand-alone ammeter, such as a
 digital multimeter. For example, the Keysight 3458A comes with a 1~pA resolution
 in the 10~$\mu$A range, or 0.1~ppm, with a temperature coefficient of 10~ppm/K.
 Better performance can be obtained by attaching a resistor with a low
@@ -74,7 +75,7 @@ positive and the negative voltages. Therefore, measuring both of the power
 supplies independently is not necessary; it is enough measure the total voltage
 drop between the positive and the negative supply. Thus in addition to the two
 high-resistance resistors, one for each supply, all that is needed is a single
-low-resistance resistance to measure the total voltage drop (Fig.~\ref{ammeter},
+low-resistance resistance to measure the total voltage drop (Fig.~\fref{ammeter},
 right). This single resistor can be measured using a digital multimeter, or, as
 shown in the figure, using an instrumentation amplifier to subtract a constant
 reference voltage from the measured resistor voltage.
@@ -195,15 +196,15 @@ is just a way to control the high voltage using the same DAQ system that
 controls most of the rest of the \CENTREX\ experiment. This is done using a
 commercial high-voltage module (Spellman TOF3000) with a home-built PCB to
 supply the analog control voltage and to read out the current from the
-high-resistance resistor (the electronics box is shown in Fig.~\ref{HV_pic},
-right).
+high-resistance resistor (the electronics box is shown in section
+\ref{HVcont_secti}, Fig.~\fref{HV_pic}, right).
 
 \subsection{HV relays}
 
 To switch the polarity of the electric field in the main interaction region, we
 use a set of two SPDT relays (schematic of the connection in
-Fig.~\ref{standard}). The relays are by Ross Engineering (p.n.\
-E60-DTP-80-2U-40-P/BD) and are pneumatically actuated (Fig.~\ref{HV_relays}).
+Fig.~\fref{standard}). The relays are by Ross Engineering (p.n.\
+E60-DTP-80-2U-40-P/BD) and are pneumatically actuated (Fig.~\fref{HV_relays}).
 The pneumatic system is in turn controlled using solenoid valves (McMaster p.n.\
 4639K933). This allows us to place the solenoids far away from the interaction
 region, since they cause a magnetic field that changes in phase with the
@@ -217,7 +218,7 @@ electric field reversals.
     \label{HV_relays}
 \end{figure}
 
-The solenoids will have to be shielded; Fig.~\ref{solenoid_valve} shows the
+The solenoids will have to be shielded; Fig.~\fref{solenoid_valve} shows the
 crude way we used to estimate the how much magnetic field the solenoids `emit'.
 The solenoid was placed in a 6" diameter cardboard tube that was wrapped
 circumferentially with two layers of metglas foil of the same type as used in
@@ -228,7 +229,7 @@ perpendicular to the axis of the cardboard tube with a magnetic sensor located
 approximately along the axis of the solenoid. As a function of the distance $d$
 between the solenoid and the magnetometer, we measured the difference in the
 magnetic field with the solenoid energized and disconnected; the result is
-plotted in Fig.~\ref{solenoid_valve} as the negative reciprocal third power,
+plotted in Fig.~\fref{solenoid_valve} as the negative reciprocal third power,
 $B^{-1/3}$, since that is the approximate functional dependence for how the
 strength of a magnetic dipole falls away with distance.
 
@@ -291,7 +292,7 @@ the shielding requirement.
 
 The simultaneous availability of a high voltage source and a nanoammeter
 presents the opportunity for measuring high impedances. For example,
-Fig.~\ref{cable_leakage} shows the direct measurement of the leakage current
+Fig.~\fref{cable_leakage} shows the direct measurement of the leakage current
 across the silicone insulation of a 30~cm segment of a cable rated up to 30~kV.
 The cable was wrapped in aluminum foil, which was grounded via the nanoammeter.
 The cable was `terminated' in a blob of RTV silicone (Dow Dowsil 737). We expect
@@ -310,7 +311,7 @@ leakage current given by the cable's insulation resistance. In practice, we see
 a slow relaxation of the current over a time scale of minutes to hours, which is
 likely due to dielectric absorption \cite[1x.3.10]{horowitz2020art} and can be
 modelled as a combination of several series $RC$ time constants
-(Fig.~\ref{cable_leakage}, right). Eventually, the leakage current settles down
+(Fig.~\fref{cable_leakage}, right). Eventually, the leakage current settles down
 to approx.\ 1~nA over the $L=30$~cm cable segment, implying an insulation
 resistance of $R=V/(IL)=8~\text{T}\Omega\cdot\text{m}$.
 
@@ -333,7 +334,7 @@ Similarly, we can measure the insulation resistance of the potted resistor. In
 principle, the resistance should be high enough to result in a leakage current
 unmeasurable using the technique used here: the resistivity of the potting
 compound, of the order $10^{15}~\Omega\cdot\text{cm}$, should mean $\sim30$~pA
-currents. In practice (Fig.~\ref{potted_leakage}), we again measure currents of
+currents. In practice (Fig.~\fref{potted_leakage}), we again measure currents of
 the order of nanoamperes which relax slowly over the course of tens of minutes.
 This emphasizes the need to ground the resistor box, or else the leakage current
 would charge it to tens of kilovolts within seconds.
@@ -363,7 +364,7 @@ compound.
 To monitor leakage currents in the high voltage connections of the interaction
 region electrodes, we intend to employ a `floating' picoammeter similar to the
 one described in ref.\ \cite{sauer2008robust}. Following the simplified
-schematic in Fig.~\ref{picoammeter}, the device works by measuring the current
+schematic in Fig.~\fref{picoammeter}, the device works by measuring the current
 developed across a large sense resistor. A biasing circuit, consisting of the
 $33.2:133.2$ resistive divider and the opamp follower, sets the lower terminal
 of the sense resistor approx.\ 1.25~V above the PCB common. The upper terminal
@@ -407,7 +408,7 @@ than measures the current. It would be preferable if both terminals of the sense
 resistor were connected to high-impedance inputs of a precision instrumentation
 amplifier, for example AD8221 with input bias/offset current temperature
 coefficient of 1~pA/\deg C. An example implementation is suggested in
-Fig.~\ref{modern_pA}.
+Fig.~\fref{modern_pA}.
 
 \begin{figure}
     \centering
@@ -423,16 +424,25 @@ Fig.~\ref{modern_pA}.
 
 \keypoint{What have we learned here?}
 
-
+In this chapter, we have enumerated the issues that attend the generation of a
+stable high voltage for use with the electrodes in the interaction region and
+the electrostatic lens.
 
 \keypoint{Why is it important for CeNTREX?}
 
-
+The lens is essential to the experiment, as it provides a large boost of the
+signal, enabling the excellent systematics we are projecting. The interaction
+region, of course, is the key part of the separated oscillatory fields
+measurement scheme. Both of these require the high voltage supply.
 
 \keypoint{Will we revisit it in later sections?}
 
-
+In the next and final chapter, we will see the high voltage supply applied in
+order to test that the lens electrodes are capable of operation at the high
+voltage without sparking and other issues.
 
 \keypoint{What are the biggest remaining challenges to getting a measurement?}
 
-
+While the lens power supply has been built already, the one for the interaction
+region electrodes has not. After its construction, it will have to be verified
+against the potential systematic effects mentioned earlier in this chapter.

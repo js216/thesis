@@ -35,7 +35,7 @@ transmitted, reflected, and absorbed is \cite[eqn~8.79]{goldsmith1998quasioptica
    .
 \end{align*}
 %       
-These expressions are plotted in Fig.~\ref{simplest}, where it is evident that
+These expressions are plotted in Fig.~\fref{simplest}, where it is evident that
 the resistive sheet can absorb at most half of the power when $x=1$, i.e.\ when
 the sheet thickness is $t=2\rho/Z_0$. For gold
 ($\rho\approx2.4\cdot10^{-8}\;\Omega\cdot\text{m}$), this corresponds to a
@@ -85,7 +85,7 @@ sheets needs to be
 \]
 %
 At 26~GHz, the quarter wavelength is $\lambda_0/4\approx2.89$~mm, showing that
-this approach could be implemented in practice. Fig.~\ref{salisbury} shows the
+this approach could be implemented in practice. Fig.~\fref{salisbury} shows the
 result for a HFSS simulation of a finite size absorber of this type; note how
 the absorption as a function of sheet spacing shows a decaying sinusoidal
 pattern. (An infinite-sized absorber, as simulated using periodic boundary
@@ -135,7 +135,7 @@ rather than cavity-type resonances.
 
 \subsection{Metamaterial absorbers}
 
-In a typical microwave metamaterial absorber (see Fig.~\ref{MA} for examples), a
+In a typical microwave metamaterial absorber (see Fig.~\fref{MA} for examples), a
 simple pattern (typically, circles, crosses, lines, rectangles) is repeated many
 times on a printed circuit board. On the absorption spectrum, the peaks are
 typically very sharp. To achieve effective absorption at several frequencies,
@@ -226,7 +226,7 @@ semiconductor substrates. \cite{pozar2006microwave}
 As with any kind of transmission line, a length of a microstrip transmission
 line forms a resonator with resonant frequencies approximately determined by the
 line length, and the $Q$ factor determined by the various transmission line
-losses. For example, in a microstrip ring resonator (see Fig.~\ref{ring}, as
+losses. For example, in a microstrip ring resonator (see Fig.~\fref{ring}, as
 well as \cite[problem~6.16]{pozar2006microwave}), the resonant frequencies are
 %
 \[
@@ -261,7 +261,7 @@ The microstrip patch antenna has a relatively wide radiation pattern on account
 of its small size. Assembling an array of such antenna elements and driving it
 with a fixed phase relationship between the antenna elements creates a phased
 antenna array which has a response similar to a diffraction grating
-(Fig.~\ref{grating}). The greater the number of antenna elements, the sharper
+(Fig.~\fref{grating}). The greater the number of antenna elements, the sharper
 the peaks in the spectrum. The peak spacing in terms of wavelength is proportional
 to the reciprocal antenna element spacing.
 
@@ -349,7 +349,7 @@ scattered power would find its way out of the chambers, where it can get
 reflected from the metallic lab equipment, and return back into the chamber
 through the same windows.
 
-To define the problem more precisely, consider Fig.~\ref{quarter} showing a
+To define the problem more precisely, consider Fig.~\fref{quarter} showing a
 quarter of the SPA vacuum chamber. (To speed up computation, we can apply
 suitable boundary conditions based on the symmetry of the problem, and need only
 solve for the fields in one quarter of the volume.) The microwave beam will
@@ -369,7 +369,7 @@ microwaves in the off-center green region to the right.
 \end{figure}
 
 The magnitude of the microwave electric field is shown qualitatively in
-Fig.~\ref{magnE} on a logarithmic scale. The simulation is repeated several
+Fig.~\fref{magnE} on a logarithmic scale. The simulation is repeated several
 times. In the leftmost figure, only the microwave beam is included in the
 simulation. In the figures to the right, various experimental features are
 included in order to study their effect on scattering the microwave beam.
@@ -413,6 +413,6 @@ significantly affect the scattered microwaves.
     \caption[Average field magnitude vs parts of the apparatus.]{The ratio,
     expressed in percent, of the average magnitude of the electric field in the
     off-center region compared to the center region. The two regions are defined
-    in Fig.~\ref{quarter}.}
+    in Fig.~\fref{quarter}.}
     \label{absorbing_table}
 \end{table*}

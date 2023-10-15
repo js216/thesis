@@ -157,6 +157,11 @@
   aboveskip=20pt,                  % adjust spacing above the listing
 }
 
+%\usepackage{refcount}
+\newcommand{\fref}[1]{%
+    \typeout{p(ref)_p(fig):\thepage:\getpagerefnumber{#1}}%
+    \ref{#1}}
+
 \begin{document}
 
 \pagenumbering{roman}

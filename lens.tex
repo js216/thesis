@@ -97,9 +97,9 @@ assumes a perfect quadrupole electric fields and solves for the molecular energy
 levels. The resulting potential gradients apply a focusing force to the
 molecular trajectories.
 
-The simulated lens gain factor is shown in Fig.~\ref{lensgain} for two different
+The simulated lens gain factor is shown in Fig.~\fref{lensgain} for two different
 lengths assumed for the quadrupole region, as a function of the voltage applied
-to the lens electrodes. In Fig.~\ref{lensprofiles}, we show histograms for the
+to the lens electrodes. In Fig.~\fref{lensprofiles}, we show histograms for the
 molecular distributions as a function of the two dimensions of transverse
 position, $x$ (horizontal) and $y$ (vertical). Also shown are the distributions
 with respect to the three components of velocity, as well as the transverse
@@ -130,7 +130,7 @@ velocity $\sqrt{v_x^2+v_y^2}$.
 
 The operation of the lens could be verified using just the first detection
 chamber, placed immediately after the lens. However, in that case the expected
-lens gain factor is significantly lower, as can be seen in Fig.~\ref{lensgain}.
+lens gain factor is significantly lower, as can be seen in Fig.~\fref{lensgain}.
 This is to be expected, since the lens has been designed to focus molecules onto
 the detection chamber that is placed several meters away from the lens; the
 focusing at the first detection chamber is thus insufficient to demonstrate a
@@ -150,7 +150,7 @@ large increase in the detected signal.
 The four lens electrodes are connected in a quadrupole configuration, such that
 two adjacent electrodes have opposite polarity. The two polarities are sourced
 from two separate power supply units; to connect these to the four electrodes,
-we employ `splitter' boxes shown in Fig.~\ref{splitters}. Each of these connects
+we employ `splitter' boxes shown in Fig.~\fref{splitters}. Each of these connects
 one pair of electrodes to one power supply, such that there is a high-voltage
 200~M$\Omega$ current-limiting resistor between each electrode and the power
 supply. In case the electrodes become shorted to ground, this limits the current
@@ -171,7 +171,7 @@ grounded vacuum chamber. Given the centimeter-scale spacing between the
 electrodes, this gives rise to large electric fields, which in turn present the
 danger of sparking and the attendant X-ray generation. To monitor for these
 effects, we use a commercial X-ray detector that we attach to a viewport on the
-lens vacuum chamber (Fig.~\ref{monitoring_xrays}). At the same time, we monitor
+lens vacuum chamber (Fig.~\fref{monitoring_xrays}). At the same time, we monitor
 the current drawn from the power supply.
 
 \begin{figure}
@@ -182,14 +182,14 @@ the current drawn from the power supply.
     \label{monitoring_xrays}
 \end{figure}
 
-The data from two such measurements is presented in Fig.~\ref{dose_voltage}. In
+The data from two such measurements is presented in Fig.~\fref{dose_voltage}. In
 the plots on the left, the lens has been at high voltage for about two hours
 before a spike in the reported X-ray dose rate has been detected; the spike
 corresponds to a spike in the power supply current. However, there are other
 current spikes which do not correspond to spikes in the dose rate; these may
 correspond to discharges that either do not generate X-rays, or whose X-rays did
 not arrive at the radiation detector. During the second measurement, presented
-in the plots on the right in Fig.~\ref{dose_voltage}, no such dose rate spikes
+in the plots on the right in Fig.~\fref{dose_voltage}, no such dose rate spikes
 were detected, presenting tentative evidence that such events are much more
 likely during the initial period when the lens has just been connected to the
 high voltage.
@@ -212,7 +212,7 @@ As mentioned above (section \ref{testing_setup}), the operation of the lens will
 be verified by detecting the molecular signal with the lens turned on, and
 comparing it with the signal detected when the lens is turned off. This
 detection will be done in two detection chambers. One of these is shown in
-Fig.~\ref{det_cross}. It consists of a six-way ISO160 cross, with two of the six
+Fig.~\fref{det_cross}. It consists of a six-way ISO160 cross, with two of the six
 ports used for the molecular beam, two for the detection laser, and the other
 two for for two reentrant flanges containing one \gls{PMT} each.
 
@@ -239,7 +239,7 @@ beam. With just a single \gls{PMT}, the parts of the beam further away from the
 balanced by the increase in the other.
 
 In an attempt to verify the symmetry of this detection setup, we have
-constructed the setup shown Fig.~\ref{diodestick}. A standard 5~mm red (645~nm)
+constructed the setup shown Fig.~\fref{diodestick}. A standard 5~mm red (645~nm)
 LED (Würth 151051RS11000) has been mounted on the end of a 0.148" OD, 0.128" ID
 stainless tube (McMaster 8987K445). The tube is mounted perpendicular to a
 vertical translation stage (with a Zaber T-NA08A50 actuator), such that the LED
@@ -265,7 +265,7 @@ depends on the vertical position between the two flanges.
 In order to subtract the effect of the background light, the LED is powered by a
 square-wave signal generator. The voltage from the signal generator, as well as
 the signal from each \gls{PMT}, is measured by an oscilloscope. The \gls{PMT}
-signal shown in Fig.~\ref{calib} as a function of LED height for two sets of
+signal shown in Fig.~\fref{calib} as a function of LED height for two sets of
 \gls{PMT} voltages. In each case, the voltage of each \gls{PMT} has been chosen
 to equalize the signal as per the \gls{PMT} calibration reported in
 Appendix~\ref{PMT_char_app}.
@@ -292,3 +292,33 @@ approximately the mechanical precision of this setup), the light going up will
 be different by approx.\ 25\%\ from the amount of light power going down, as per
 the LED datasheet. The calibration should be repeated with either a more precise
 mounting structure for the light source, or using a more isotropic light source.
+
+\subsection{Conclusion}
+
+\keypoint{What have we learned here?}
+
+In this chapter, we reported on the initial testing done to begin evaluating the
+performance of the electrostatic quadrupole lens. We have presented the testing
+setup and shown the results of trajectory simulations. We have also presented
+short-term and long-term results showing an absence of any significant amount of
+unwanted X-ray radiation from the lens. Finally, we have presented the detection
+chamber that will be used when testing the lens for how effectively it can focus
+the molecular beam.
+
+\keypoint{Why is it important for CeNTREX?}
+
+The lens is essential to the experiment's ability to provide a significant
+increase in sensitivity over the current upper bounds on the strength of
+$T$-violating interactions. Before the lens can be used for this end in the
+experiment, it has to be verified that it performs as expected.
+
+\keypoint{Will we revisit it in later sections?}
+
+This is the final chapter of this text. On the next page, we present the
+conclusion of the entire work.
+
+\keypoint{What are the biggest remaining challenges to getting a measurement?}
+
+This chapter presented only the beginning of the testing done on the lens. Work
+following this dissertation will measure the increase in signal as a function of
+the lens voltage, and compare it against the simulations presented here.

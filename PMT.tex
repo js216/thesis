@@ -11,7 +11,7 @@ procedure, and the test results.
 
 \subsection{Measurement apparatus}
 
-Fig.~\ref{PMT_testing_setup} shows an outside and inside view of the apparatus.
+Fig.~\fref{PMT_testing_setup} shows an outside and inside view of the apparatus.
 The \gls{PMT} under test is contained within an aluminum tube (3" outer
 diameter, 1/4" wall thickness, 12" long, McMaster p.n.\ 9056K21) together with
 the light source (UV \gls{LED}, Quelighting Corp p.n.\ QLUV07N2DM, mounted on a small
@@ -36,8 +36,8 @@ dash number 405, McMaster p.n.\ 9452K501), approx.\ 2" long segment of an UHMW
 plastic tube (McMaster p.n., 8705K23), another O-ring, and a custom aluminum
 plate (1/8" thick) with cutouts to attach a flange-to-SM1 adapter (Thorlabs p.n.
 SM1F1), from which a short lens tube can be suspended, holding the optics. Refer
-to Fig.~\ref{bottom_assy} for a rendered view. The entire assembly is clamped to
-a simple 80/20 frame (Fig.~\ref{PMT_testing_setup}, left) that is kept in the
+to Fig.~\fref{bottom_assy} for a rendered view. The entire assembly is clamped to
+a simple 80/20 frame (Fig.~\fref{PMT_testing_setup}, left) that is kept in the
 same position throughout the testing. The setup does not contain magnetic
 shielding.
 
@@ -56,15 +56,15 @@ Before the setup is used for testing individual \glspl{PMT}, we calibrate the
 amount of light emitted by the \gls{LED} as a function of transverse position. To do
 so, we replace the top part of the assembly that normally contains the \gls{PMT}
 with an assembly that holds a photodiode in a sliding mount
-(Fig.~\ref{sliding_mount}). The top plate consists of two parts (3D printed from
+(Fig.~\fref{sliding_mount}). The top plate consists of two parts (3D printed from
 nylon 12), such that the photodiode (silicon, 200--1100~nm, Thorlabs SM05PD2A),
 located at the end of the long lens tube, can be scanned in the radial and
 azimuthal directions. Inside the shorter lower lens tube we mount three 120 grit UVFS
 diffuser plates (Thorlabs DGUV10-120) as well as a colored glass filter
 (245--400~nm, Thorlabs FGUV11-UV). The three diffuser plates are stacked with
 approx.\ 1/2" space between them to create an approximately Gaussian light
-source (Fig.~\ref{diffusors}, right), which is preferable over the rectangular
-\gls{LED} shape (Fig.~\ref{diffusors}, left) since it covers a broader area.
+source (Fig.~\fref{diffusors}, right), which is preferable over the rectangular
+\gls{LED} shape (Fig.~\fref{diffusors}, left) since it covers a broader area.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{figs/todo/sliding_mount.png}
@@ -89,13 +89,13 @@ respective datasheets, we obtain the spectrum of the \gls{LED} and the bandpass
 filter. By integrating the response of the photodiode over that spectrum, we
 find that the photodiode gain is approx.\ 32.1~mA/W. Thus we can estimate the
 light intensity as a function of transverse position as shown in
-Fig.~\ref{spatial_distn} together with Gaussian fits. By integrating the fits
+Fig.~\fref{spatial_distn} together with Gaussian fits. By integrating the fits
 over a 46~mm diameter circle (the diameter of the \gls{PMT} photocathode), we
 find that approx.\ 45\%\ of the emitted light is within this diameter. The
 photodiode is significantly smaller (0.8~mm$^2$) than the \gls{PMT} and receives
 1593$\times$ less light.
 
-The amount of light observed and reported in Fig.~\ref{spatial_distn} would
+The amount of light observed and reported in Fig.~\fref{spatial_distn} would
 overwhelm the \gls{PMT}. At an approximate gain of $10^5$ and cathode
 sensitivity 49.3~mA/W, the light power needs to be limit to below 20~nW to keep
 the anode current below the maximum value of 0.1~mA. At a \gls{LED} current of 25~mA
@@ -132,7 +132,7 @@ where ND is the attenuation of the ND filter (nominally 10,000). The integral in
 the denominator is the integrated \gls{PMT} cathode sensitivity of 49.3~mA/W,
 and $P_\text{PD}(I_\text{\gls{LED}})$ is the power incident on the photodiode at a
 given \gls{LED} current $I_\text{\gls{LED}}$, multiplied by the area factor 1593. See
-Fig.~\ref{SB4715} for gain curves measured at a range of different cathode
+Fig.~\fref{SB4715} for gain curves measured at a range of different cathode
 voltages and incident light levels. The left plot shows the \gls{PMT} gain as
 per eqn~\ref{PMT_gain} as a function of cathode voltage, while the right plot
 directly shows the anode current as a function of light input. We see that the

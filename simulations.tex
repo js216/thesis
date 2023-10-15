@@ -46,7 +46,7 @@ to the other field-free eigenstate.
 If the electric field is chosen such that the system is taken through the
 avoided crossing in a time $T_\text{fall}$, then the transition probability
 $P_\text{trans}(T_\text{fall})$ approaches zero in both limits
-$T_\text{fall}\to0$ and $T_\text{fall}\to\infty$ (see Fig.~\ref{floquet1}). For
+$T_\text{fall}\to0$ and $T_\text{fall}\to\infty$ (see Fig.~\fref{floquet1}). For
 intermediate times, the system exhibits a pattern of interference fringes, with
 $P_\text{trans}$ very sensitive to the exact timing of the electric field
 changes.
@@ -84,11 +84,27 @@ preventing and defeating the focusing otherwise expected of the lens.
 Adding to the above a rapidly-oscillating \AC\ electric field can under certain
 conditions suppress the transitions otherwise expected in the absence of the
 \AC\ field. A plot of $P_\text{trans}$ with respect to the parameters of the
-\AC\ field (Fig.~\ref{floquet2}) shows separated regions of high
+\AC\ field (Fig.~\fref{floquet2}) shows separated regions of high
 $P_\text{trans}$ against a transition-free background. Furthermore, one of the
 regions does not show dependence on the frequency $\omega$ of the oscillating
 field, while the other regions show what appears to be polynomial dependence on
 $\omega$.
+
+\begin{figure}
+    \makebox[\textwidth][c]{%
+        \small
+        \begin{minipage}[c]{\textwidth}
+            \def\svgwidth{\textwidth}
+            \input{figs/matplotlib/Ptrans2.pdf_tex}
+        \end{minipage}
+    }
+    \caption[Transition frequency with \AC\ field.]{Adding an \AC\ field results
+    (magnitude shown in left plot, dashed line) in separated regions of high
+    $P_\text{trans}$ against a transition-free background (right plot). $T_0=1$,
+    $T_\text{fall}^\text{\,\DC}=196.6$, $\Delta T=200$,
+    $T_\text{rise}^\text{\,\AC}=T_\text{fall}^\text{\,\AC}=1$.}
+    \label{floquet2}
+\end{figure}
 
 The above results can be qualitatively be interpreted in terms of Floquet theory
 for `stationary' states of periodically driven systems
@@ -156,22 +172,6 @@ field of radiation (cf.\ eqn~1.18 in ref.~\cite{metcalf2002laser}); the above
 Hamiltonian appears to provide a generalization beyond the two-state model,
 since $H_\text{AC}^{jk}(t)$ can be of any dimensionality.
 
-\begin{figure}
-    \makebox[\textwidth][c]{%
-        \small
-        \begin{minipage}[c]{\textwidth}
-            \def\svgwidth{\textwidth}
-            \input{figs/matplotlib/Ptrans2.pdf_tex}
-        \end{minipage}
-    }
-    \caption[Transition frequency with \AC\ field.]{Adding an \AC\ field results
-    (magnitude shown in left plot, dashed line) in separated regions of high
-    $P_\text{trans}$ against a transition-free background (right plot). $T_0=1$,
-    $T_\text{fall}^\text{\,\DC}=196.6$, $\Delta T=200$,
-    $T_\text{rise}^\text{\,\AC}=T_\text{fall}^\text{\,\AC}=1$.}
-    \label{floquet2}
-\end{figure}
-
 The interaction term in the above general expression can easily be found for the
 case of the two-level model in eqn~\ref{twostate}. When an electric field
 $\epsilon(t)\equiv\epsilon_\text{DC}+\epsilon_\text{AC}(t)$ is applied, the \AC\
@@ -237,7 +237,7 @@ photons.
     $2\times2$ atomic Hamiltonian, and $j,k$ here limited to the $\{-1,0,1\}$
     part of the infinite Hilbert space. Without the \AC\ field, note that the
     spectrum resembles that of the atomic Hamiltonian (as in
-    Fig.~\ref{floquet2}), thrice replicated. As the \AC\ field is turned
+    Fig.~\fref{floquet2}), thrice replicated. As the \AC\ field is turned
     stronger, the location of the avoided crossings---the intersections between
     the straight and curved lines in this figure---moves around or disappears.
     Parameters: $\alpha=0.01,\beta=0.1,\delta=1,\omega=5$.}
@@ -247,9 +247,9 @@ photons.
 The new crossings typically appear at higher fields than the original ones and
 thus do not cause transitions unless the inverting \DC\ field (that is, the part
 of the electric field $\epsilon_\text{\DC}$ that reverses polarity, e.g.\ the
-thick black trace in Fig.~\ref{floquet2}, but changes slowly compared to
+thick black trace in Fig.~\fref{floquet2}, but changes slowly compared to
 $\epsilon_\text{\AC}$) is of sufficient magnitude to reach them. In the
-simulation resulting in Fig.~\ref{floquet2}, the \DC\ field is assumed to
+simulation resulting in Fig.~\fref{floquet2}, the \DC\ field is assumed to
 traverse the inherent avoided crossing and not much further.  However, in the
 flight of molecules towards the electrostatic lens, fields of order 30~kV/cm
 get reversed in a characteristic time
@@ -282,7 +282,7 @@ to increase the number of photons scattered in the detection.
 
 \paragraph{Two-level system}
 
-Consider a two level system (Fig.~\ref{level_systems}, left) where a laser with
+Consider a two level system (Fig.~\fref{level_systems}, left) where a laser with
 Rabi frequency $\Omega$ and detuning $\Delta$ couples states $\ket1$ and
 $\ket2$. Let the system be initially in state $\ket1$. The solution is a
 superposition $\ket\Psi=b_1\ket1+b_2\ket2$, where
@@ -326,7 +326,7 @@ measurements. This effect has been called the quantum Zeno effect. Note that
 this argument fails for pure exponential decay instead of the cosine or
 quadratic time dependence seen in eqn~\ref{cosP1}.
 
-Note that, as suggested in the caption of Fig.~\ref{level_systems}, the
+Note that, as suggested in the caption of Fig.~\fref{level_systems}, the
 two-level system is actually a three (or more) level system, since the
 measurement, critical to the Zeno effect, must connect to some other state that
 rapidly emits a photon that can be detected. In the following paragraph, we
@@ -335,7 +335,7 @@ introduce the third state explicitly.
 \paragraph{Three-level system}
 
 Now consider adding a third level $\ket3$, making a three-level system
-(Fig.~\ref{level_systems}, right) from the two-level system considered
+(Fig.~\fref{level_systems}, right) from the two-level system considered
 previously. The third level is unstable and decays with a rate $\Gamma$ back to
 $\ket1$. To distinguish the Rabi rate that connects $\ket1$ to $\ket2$ from the
 one coupling to $\ket3$, call them $\Omega_\text{RF},\Omega_\text{laser}$,
@@ -351,15 +351,15 @@ respectively.
 
 When the coupling to the third state is turned off ($\Omega_\text{laser}=0$),
 the system behaves as a two-level system and executes Rabi oscillations
-(Fig.~\ref{rabi_sup}, left). If on the other hand we periodically turn the
-$\Omega_\text{laser}$ on in the form of short $\pi$ pulses (Fig.~\ref{rabi_sup},
+(Fig.~\fref{rabi_sup}, left). If on the other hand we periodically turn the
+$\Omega_\text{laser}$ on in the form of short $\pi$ pulses (Fig.~\fref{rabi_sup},
 right), executing `measurements' (e.g.\ by detecting the spontaneously emitted
 photon and concluding that the system must have been in state $\ket1$), then we
 see that the evolution of $\ket1$ into $\ket2$ is significantly slowed down.
 
-In the case illustrated in Fig.~\ref{rabi_sup}, we have applied only four
+In the case illustrated in Fig.~\fref{rabi_sup}, we have applied only four
 measurement pulses. By making the measurements more frequent while keeping the
-total evolution time the same (Fig.~\ref{strobed_vs_cont}, left), we can almost
+total evolution time the same (Fig.~\fref{strobed_vs_cont}, left), we can almost
 arbitrarily suppress to evolution of $\ket1$ into $\ket2$, in accordance with
 the Zeno effect. However, there is no need for the measurement laser to be
 pulsed. Instead, it can be turned on with a constant power the entire time and
@@ -397,10 +397,10 @@ in other words, we form the superpositions $\ket1\pm\ket2$ between the two
 `ground' states, while keeping the excited state $\ket3$ same as before. Now let
 the laser couple to the ground states $\ket1$ and $\ket2$ equally, with equal
 decay rates from $\ket3$ to either of the ground states
-(Fig.~\ref{bright_dark}, right). We find that the positive superposition $\ket1+\ket2$
+(Fig.~\fref{bright_dark}, right). We find that the positive superposition $\ket1+\ket2$
 is `bright' with respect to the laser, meaning the laser is able to pump the
 population from it to the excited state, while the negative superposition is
-`dark'. The quantum Zeno effect operates as before (Fig.~\ref{bright_dark}).
+`dark'. The quantum Zeno effect operates as before (Fig.~\fref{bright_dark}).
 
 \begin{figure}
    \centering
@@ -419,7 +419,7 @@ a zero or very small probability of moving population into the excited state,
 thus the number of photons emitted will be correspondingly small. However, an
 initially surprising effect happens when the `detection laser' is too strong:
 the number of photons emitted decreases with the increase in laser power
-(Fig.~\ref{lslif})!
+(Fig.~\fref{lslif})!
 
 Of course, this ``laser-suppressed laser-induced fluorescence'' paradox is
 merely an example of the continuous quantum Zeno effect. A very strong detection
@@ -456,7 +456,7 @@ interrogating the system whether the dark state has evolved into a bright state
 yet, and that causes the dark state to never evolve. This suggests the following
 question: would it be possible to add another level to the system and drive a
 transition between it and the dark state with a very strong laser to
-Zeno-inhibit the decays into the dark state (Fig.~\ref{4level_zeno}, left)?
+Zeno-inhibit the decays into the dark state (Fig.~\fref{4level_zeno}, left)?
 
 The `measurement' implemented by the additional laser (Rabi frequency
 $\Omega_\text{Zeno}$) would be repeatedly asking the question: has $\ket3$
@@ -503,7 +503,7 @@ interrogating the $\ket1\leftrightarrow\ket3$ transition with a strong enough
 laser suppresses the evolution $\ket1\leftrightarrow\ket2$. If we were to add
 another level, $\ket4$, and drive an even stronger transition
 $\ket3\leftrightarrow\ket4$, then the evolution to the state $\ket3$ would be
-frozen out by Zeno effect (see Fig.~\ref{antiZeno}). In turn, this would resume
+frozen out by Zeno effect (see Fig.~\fref{antiZeno}). In turn, this would resume
 the Rabi oscillation $\ket1\leftrightarrow\ket2$.
 
 \begin{figure}
@@ -549,7 +549,7 @@ manipulate the quantum state almost arbitrarily.
 
 Consider again a three-level system that starts out initially in $\ket 1$, but
 now have drive two independent lasers between the two ground states and the
-excited state (Fig.~\ref{genZ}, left). The measurement basis is determined by
+excited state (Fig.~\fref{genZ}, left). The measurement basis is determined by
 what states the laser couples to. Initially, we turn on $\Omega_2$, so that the
 laser is interrogating whether there is any population in $\ket2$. As required
 by Zeno, we will find there none. Then slowly turn down $\Omega_2$ while turning
@@ -592,7 +592,7 @@ overview of the apparatus.
 \subsection{Polarization switching in rotational cooling}
 
 Consider a model where a laser drives transitions between the electronic ground
-and excited states (Fig.~\ref{tm1}). The excited state has $J'=1$ and has a
+and excited states (Fig.~\fref{tm1}). The excited state has $J'=1$ and has a
 lifetime of about 100~ns. In the ground state, only decays/transitions to $J=0$
 and $J=2$ are allowed. 
 
@@ -637,9 +637,9 @@ ratios
     \frac{b_2}{b_0+b_2}=\frac23.
 \]
 
-The system in Fig.~\ref{tm1} was entered into the Mathematica
+The system in Fig.~\fref{tm1} was entered into the Mathematica
 \verb|AtomicDensityMatrix| package (by Simon Rochester) to solve for the density
-matrix as a function of time (Fig.~\ref{switching}). We make use of polarization
+matrix as a function of time (Fig.~\fref{switching}). We make use of polarization
 switching since each laser polarization can only reach three of the five $J=2$
 states. We see that eventually, all of the population is transferred to the
 $J=0$ state, achieving rotational cooling.
@@ -656,7 +656,7 @@ $J=0$ state, achieving rotational cooling.
     \label{switching}
 \end{figure}
 
-If we change the switching time (Fig.~\ref{switching_time}, left), the
+If we change the switching time (Fig.~\fref{switching_time}, left), the
 rotational cooling efficiency changes. In particular, if the switching is done
 very quickly, the procedure does not work well. On the other hand, switching too
 slowly means that the molecules can pass through the entire rotational cooling
