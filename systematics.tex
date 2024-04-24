@@ -3,8 +3,8 @@
 
 In this chapter, we will consider several sources of systematic errors. The
 \CENTREX\ experiment is a search for $T$-violating phenomena that are expected
-to occur at very small energy scales, far below the current threshold of
-detection.
+to occur at very small energy scales, so minute errors could easily mimic a
+Schiff moment signal.
 
 \subsection{Statistical sensitivity}
 
@@ -25,7 +25,7 @@ where $S_0$ depends on the details of the nuclear structure.
 
 As a rough estimate, let us ignore most of the above-mentioned details, and
 consider a pulse of duration $t_\text{p}$ with
-$N_\text{p}=t_\text{p}R_\text{det}$ molecules. The Poissonian fluctuations of
+$N_\text{p}=t_\text{p}R_\text{det}$ molecules detected. The Poissonian fluctuations of
 the number of molecules is $\sqrt{N_\text{p}}$, resulting in the detection rate
 shot noise of $\delta S=\sqrt{N_\text{p}}/t_\text{p}$. The corresponding error
 in the frequency measurement is
@@ -37,9 +37,9 @@ with the approximate detection curve slope $\d S/\d f$. Plugging in the numbers
 from Table~\ref{parametertable}, we get a shot noise of approx.\ $5\mHz$ in a
 single pulse. For 300 hours of data collected with a 50~Hz pulse rate, the final
 experimental sensitivity is expected to be of the order $\approx1\uHz$. The
-latter figure corresponds to (via eqn~\ref{schiffnumbers}) to a Schiff moment of
-the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a proton
-\gls{EDM} of $10^{-26}\,e\cm$.
+latter figure corresponds to (via eqn~\ref{schiffnumbers}) to a Schiff moment
+sensitivity of the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a
+proton \gls{EDM} of $10^{-26}\,e\cm$.
 
 \begin{table}
     \small
@@ -57,7 +57,6 @@ the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a proton
         \multicolumn{4}{@{}l}{\textit{Potentially present:}}\\
             $S_{B\text{ss}}$ & $B_\text{ss}$   & state-selection magnetic field        & ? \\
             $S_{E\text{ss}}$ & $E_\text{ss}$   & state-selection electric field        & ? \\
-            $S_{\text{p}}$   & $\ket{p}$       & unwanted residual population after SPA/SPB & ? \\
         \bottomrule
     \end{tabu}%}
     \caption[Parameters that can be reversed for systematics checks.]{Parameters
@@ -75,7 +74,7 @@ the order $10^{-12}\,e\fm^3$, or (via eqn~\ref{protonSMT}) to a proton
 \subsection{Parameter reversals, averaging, lock-in detection}
 \label{systematics:averaging}
 
-The experiment is expected to result in a null measurement of effects that are
+The experiment is designed to measure the effects that are
 odd under $T$-reversal. A crucial part of the experimental design is to make
 sure there are no known effects that could mimic genuine $T$-odd interactions.
 During data taking, we plan to continually reverse a number of parameters (see
@@ -246,7 +245,7 @@ independent of total measurement time), plus the `leakage' of noise from the
 $\sinc(\omega T_0/2)$ tails of the other peaks. This is the essence of the
 lock-in measurement technique.
 
-In this experiment as well as most (all?) other \gls{EDM} experiments, the final
+In this experiment, as well as all other \gls{EDM} experiments, the final
 $e^{i\omega t}$ shift is approximately effected by reversing some experimental
 parameter(s) in sync with the averaging. This is equivalent to multiplying the
 signal with a square wave. Unlike a true frequency shift, the square wave also
@@ -620,7 +619,7 @@ spurious 0.18~Hz frequency error.
 A further shift under simultaneous reversal of $B_\text{ss}$ and $m_J$ is due to
 the so-called Millman effect \cite{millman1939determination}, due to the spatial
 curvature of the fields inducing the \gls{NMR} transition. The oscillating field can
-be decomposed into two rotating fields, and only one of them is actually
+be decomposed into two counter-rotating fields, and only one of them is actually
 inducing the transition, depending on the direction of the magnetic field. In
 the frame of the molecule, the frequency of the oscillating field changes with
 the curvature of the fields, resulting in $B$-dependent change in the resonant
@@ -637,7 +636,7 @@ means that the time of detection is strongly correlated with the velocity. By
 analyzing the data separately for different velocity classes, we should be able
 to find the extent of the Millman effect. As a crude estimate, assume the
 minimum and maximum times of flight $T$ are simply
-$L_\text{sd}/(v_\text{CM}\pm\alpha)$. Then the uncertainty due to the Millman
+$L_\text{sd}/(v_\text{CM}\pm\alpha)$. Then the shift due to the Millman
 effect is
 %
 \[
@@ -677,7 +676,7 @@ intensity change is different for the two \gls{NMR} states, or for the states th
 connect to in the state preparation regions around the main interaction region.
 We have not yet found that to be the case.
 
-\subsection{Conclusion}
+\subsection{Summary}
 
 \keypoint{What have we learned here?}
 
